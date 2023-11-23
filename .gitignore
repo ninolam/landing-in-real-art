@@ -39,4 +39,8 @@ next-env.d.ts
 .history
 
 
-
+# env file
+.env
+.env.prod
+.env.production
+.env.test 

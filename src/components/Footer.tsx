@@ -1,5 +1,34 @@
+"use client"
+import { useEffect, useState } from 'react';
+import { db } from '../firebaseConfig';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+
 
 const Footer = () => {
+
+    const FIREBASE_FOOTER_COLLECTION = 'Footer'
+
+    const [email, setEmail] = useState<string>('');
+    const [phone, setPhone] = useState<string>('');
+    const [address, setAddress] = useState<string>('');
+
+    useEffect(() => {
+        const fetchText = async () => {
+            const textDoc      = collection(db, FIREBASE_FOOTER_COLLECTION);
+            const textSnapshot = await getDocs(textDoc);
+            const textList     = textSnapshot.docs.map(doc => doc.data());
+            const email   = textList[0]['Email'];
+            const phone   = textList[0]['Telephone'];
+            const address = textList[0]['Adresse'];
+            setEmail(email)   
+            setPhone(phone)
+            setAddress(address)
+        }
+    
+        fetchText();
+        
+      }, []);
+
     return (
         <>
             <div className="frame-16">
@@ -25,9 +54,9 @@ const Footer = () => {
                 <img className="line-2" alt="Line" src="/img/line-5.svg" />
                 <div className="group-11">
                 <div className="text-wrapper-10">Contact</div>
-                <p className="text-wrapper-11">02 00 00 00 00</p>
-                <div className="text-wrapper-12">01 Rue Dory, Paris</div>
-                <div className="text-wrapper-13">Mail@gmail.com</div>
+                <p className="text-wrapper-11">{phone}</p>
+                <div className="text-wrapper-12">{address}</div>
+                <div className="text-wrapper-13">{email}</div>
                 </div>
             </div>
             </div>
