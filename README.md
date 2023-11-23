@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+This app is the landing page of "In Real Art"
+
+<img src="./public/img/Landing_IRA.png" alt="" title="">
+
+
+
 ## Getting Started
 
 First, run the development server:
