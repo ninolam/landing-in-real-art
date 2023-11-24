@@ -1470,6 +1470,22 @@ a {
   width: 1324px;
 }
 
+.LP .menu-sticky {
+  position: fixed;
+  top: 0;
+  align-items: center;
+  background-color: #5551ff;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-between;
+  left: 58px;
+  padding: 20px 96px;
+  width: 1324px;
+}
+
+
+
+
 .LP .wrapper-link {
   align-items: center;
   display: inline-flex;
