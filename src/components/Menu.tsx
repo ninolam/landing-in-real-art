@@ -2,7 +2,7 @@
 
 const Menu = () => {
     return (
-        <header className="header">
+        <div className="menu">
             <img className="logo-2" alt="Logo" src="/img/logo.png" />
             <div className="wrapper-link">
                 <div className="div-2">
@@ -29,7 +29,7 @@ const Menu = () => {
                 </button>
                 </div>
             </div>
-        </header>
+        </div>
 
     )
 }

@@ -2,8 +2,8 @@
 const HowToJoinIra = () => 
     {
         return (
-            <div className="group-6">
-            <div className="group-7">
+          <div className="how-to-join-ira">
+            <div className="how-to-join-ira-block-right">
               <div className="frame-10">
                 <div className="text-wrapper-8">Comment ?</div>
                 <p className="ira-ambitionne-de-cr">
@@ -25,7 +25,7 @@ const HowToJoinIra = () => 
               </div>
               <div className="cr-er-en">CRÉER EN 2023</div>
             </div>
-            <div className="group-8">
+            <div className="how-to-join-ira-block-left">
               <div className="overlap-group-5">
                 <img className="rectangle-6" alt="Rectangle" src="/img/rectangle-62.svg" />
                 <img className="rectangle-7" alt="Rectangle" src="/img/rectangle-210.svg" />

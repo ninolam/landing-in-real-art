@@ -882,7 +882,7 @@ a {
   width: 34px;
 }
 
-.LP .group-6 {
+.LP .how-to-join-ira {
   height: 589px;
   left: 152px;
   position: absolute;
@@ -890,7 +890,7 @@ a {
   width: 1135px;
 }
 
-.LP .group-7 {
+.LP .how-to-join-ira-block-right {
   height: 542px;
   left: 741px;
   position: absolute;
@@ -975,7 +975,7 @@ a {
   transform: rotate(-90deg);
 }
 
-.LP .group-8 {
+.LP .how-to-join-ira-block-left {
   height: 589px;
   left: 0;
   position: absolute;
@@ -1457,7 +1457,7 @@ a {
   width: 1px;
 }
 
-.LP .header {
+.LP .menu {
   align-items: center;
   background-color: #5551ff;
   border-radius: 100px;
@@ -1465,7 +1465,7 @@ a {
   justify-content: space-between;
   left: 58px;
   padding: 20px 96px;
-  position: fixed;
+  position: absolute;
   top: 887px;
   width: 1324px;
 }
