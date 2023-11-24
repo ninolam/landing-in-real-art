@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from 'react';
 import { db } from '../firebaseConfig';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { collection, getDocs } from 'firebase/firestore/lite';
 
 
 const Footer = () => {

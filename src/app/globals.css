@@ -1511,7 +1511,7 @@ a {
   position: relative;
 }
 
-.LP .text-wrapper-20 {
+.LP .menu-link-element {
   color: var(--primairewhite);
   font-family: var(--text-link-text-font-family);
   font-size: var(--text-link-text-font-size);
