@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from 'next/link';
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
@@ -24,12 +24,15 @@ const Menu = () => {
     const [presale, setPresale]     = useState<string>('');
     const [testnet, setTestnet]     = useState<string>('');
 
+    const divRef = useRef<HTMLDivElement>(null);// Reference to the div
+    let lastScrollTop = 0; // To keep track of scroll direction
+
     useEffect(() => {
         const fetchText = async () => {
             const menuCollection = collection(db, FIREBASE_MENU_COLLECTION);
             const menuDocuments = await getDocs(menuCollection);
             const menuData     = menuDocuments.docs.map(doc => doc.data());
-            console.log(menuData)
+            
             //Index 0 ===> Menu_Buttons
             setPresale(menuData[0][FIREBASE_KEY_PRESALE][LANGUAGE])
             setTestnet(menuData[0][FIREBASE_KEY_TESTNET][LANGUAGE])
@@ -48,9 +51,29 @@ const Menu = () => {
     useEffect(() => {    
         const checkSticky = () => {
             const scrollTop = window.scrollY;
+            const menuElement = document.getElementById('menu');
+
+            if (menuElement) {
+            const menuOffsetTop = menuElement.offsetTop;
+            
+            // Determine scroll direction
+            const scrollingDown = scrollTop > lastScrollTop;
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Update lastScrollTop, but never less than 0
+
+            // Set 'isSticky' based on scroll position and direction
+            if (scrollingDown && scrollTop >= menuOffsetTop) {
+                setSticky(true);
+            } else if (!scrollingDown) {
+                setSticky(false);
+            }
+            }
+
+            /*
+            const scrollTop = window.scrollY;
             let divOffsetTop = document.getElementById('menu')?.offsetTop
             divOffsetTop = (divOffsetTop === undefined)?0:divOffsetTop
             setSticky(scrollTop >= divOffsetTop)
+            */
         }
         window.addEventListener('scroll', checkSticky);
         return () => {

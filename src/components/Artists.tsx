@@ -1,5 +1,26 @@
+"use client"
+import { getDownloadURL, ref } from "firebase/storage";
+import { useEffect, useState } from "react";
+import { storage } from "../firebaseConfig";
 
 const Artists = () => {
+
+  const [imageUrl, setImageUrl] = useState("");
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            const imageRef = ref(storage, 'images/clem-onojeghuo-yhgxfs80rjo-unsplash-1.png'); // Path to your image in Firebase Storage
+            try {
+                const url = await getDownloadURL(imageRef);
+                setImageUrl(url);
+            } catch (error) {
+                console.error("Error fetching image", error);
+            }
+        };
+
+        fetchImages();
+    }, []);
+    
     return (
 
         <div className="overlap-3">
@@ -14,7 +35,7 @@ const Artists = () => {
             <img
               className="clem-onojeghuo"
               alt="Clem onojeghuo"
-              src="/img/clem-onojeghuo-yhgxfs80rjo-unsplash-1.png"
+              src={imageUrl}
             />
             <img className="rayul" alt="Rayul" src="/img/rayul.png" />
             <div className="overlap-group-3">
