@@ -18,7 +18,7 @@ const HowToJoinIra = () => 
                   <button className="button">
                     <div className="text-wrapper-5">Rejoindre IRA</div>
                   </button>
-                  <button className="button-2">
+                  <button className="button-start-ira-2">
                     <div className="text-wrapper-5">Je démarre</div>
                   </button>
                 </div>

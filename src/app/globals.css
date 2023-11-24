@@ -746,6 +746,10 @@ a {
   position: relative;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .LP .text-wrapper-5 {
   color: var(--primaireblack);
   font-family: var(--text-link-text-font-family);
@@ -940,7 +944,7 @@ a {
   position: relative;
 }
 
-.LP .button-2 {
+.LP .button-start-ira-2 {
   all: unset;
   align-items: center;
   background: linear-gradient(
@@ -959,6 +963,10 @@ a {
   justify-content: center;
   padding: 16px;
   position: relative;
+}
+
+.button-start-ira-2:hover {
+  cursor: pointer;
 }
 
 .LP .cr-er-en {
@@ -1305,7 +1313,7 @@ a {
   width: 253px;
 }
 
-.LP .overlap-6 {
+.LP .header {
   height: 847px;
   left: 64px;
   position: absolute;
@@ -1367,7 +1375,7 @@ a {
   width: 92px;
 }
 
-.LP .button-3 {
+.LP .button-join-ira {
   all: unset;
   -webkit-backdrop-filter: blur(185.9px) brightness(100%);
   align-items: center;
@@ -1386,6 +1394,10 @@ a {
   width: 237px;
 }
 
+.button-join-ira:hover {
+  cursor: pointer;
+}
+
 .LP .text-wrapper-19 {
   color: var(--primairewhite);
   font-family: var(--heading-h4-font-family);
@@ -1400,7 +1412,7 @@ a {
   width: fit-content;
 }
 
-.LP .button-4 {
+.LP .button-start-ira {
   all: unset;
   -webkit-backdrop-filter: blur(185.9px) brightness(100%);
   align-items: center;
@@ -1417,6 +1429,10 @@ a {
   position: absolute;
   top: 165px;
   width: 237px;
+}
+
+.button-start-ira:hover {
+  cursor: pointer;
 }
 
 .LP .paragraph-2 {
@@ -1525,7 +1541,7 @@ a {
   width: fit-content;
 }
 
-.LP .button-5 {
+.LP .button-presale {
   all: unset;
   align-items: center;
   background-color: var(--primairewhite);
@@ -1547,3 +1563,8 @@ a {
   position: relative;
   width: 108px;
 }
+
+.button-presale:hover {
+    cursor: pointer;
+}
+

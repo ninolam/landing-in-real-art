@@ -1,7 +1,7 @@
 
 const Header = () => {
     return (
-        <div className="overlap-6">
+        <div className="header">
           <div className="group-12">
             <p className="heading-5">
               <span className="span">
@@ -13,10 +13,10 @@ const Header = () => {
           <img className="union-2" alt="Union" src="/img/union.png" />
           <img className="sphere" alt="Sphere" src="/img/sphere-1.png" />
           <img className="sphere-2" alt="Sphere" src="/img/sphere.svg" />
-          <button className="button-3">
+          <button className="button-join-ira">
             <div className="text-wrapper-19">Rejoindre IRA</div>
           </button>
-          <button className="button-4">
+          <button className="button-start-ira">
             <div className="text-wrapper-19">Je démarre</div>
           </button>
           <p className="paragraph-2">

@@ -86,7 +86,7 @@ const Menu = () => {
                 </div>
                 </div>
                 <div className="div-2">
-                <button className="button-5">
+                <button className="button-presale">
                     <div className="text-wrapper-5">{presale}</div>
                 </button>
                 <button className="button">
