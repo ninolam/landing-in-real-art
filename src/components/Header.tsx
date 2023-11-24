@@ -1,5 +1,40 @@
+"use client"
+import { useEffect, useState } from "react";
+import { db } from '../firebaseConfig';
+import { collection, getDocs } from 'firebase/firestore/lite';
+
 
 const Header = () => {
+
+  const FIREBASE_HEADER_COLLECTION = 'Header'
+  const FIREBASE_KEY_JOIN_IRA      = 'Join Ira'
+  const FIREBASE_KEY_START_IRA     = 'Start Ira'
+  const FIREBASE_KEY_TEXT_1        = 'text1'
+  const LANGUAGE                   = 'FR'
+
+  const [startIra, setStartIra] = useState<string>('');
+  const [joinIra, setJoinIra]   = useState<string>('');
+  const [text1, setText1]       = useState<string>('');
+
+
+  useEffect(() => {
+    const fetchText = async () => {
+        const headerCollection = collection(db, FIREBASE_HEADER_COLLECTION);
+        const headerDocuments  = await getDocs(headerCollection);
+        const headerData       = headerDocuments.docs.map(doc => doc.data());
+        
+        //Index 0 ===> Header_Buttons
+        setStartIra(headerData[0][FIREBASE_KEY_START_IRA][LANGUAGE])
+        setJoinIra(headerData[0][FIREBASE_KEY_JOIN_IRA][LANGUAGE])
+        //Index 1 ===> Header Text
+        setText1(headerData[1][FIREBASE_KEY_TEXT_1][LANGUAGE])
+        
+    }
+
+    fetchText();
+    
+  }, []);
+
     return (
         <div className="header">
           <div className="group-12">
@@ -14,14 +49,13 @@ const Header = () => {
           <img className="sphere" alt="Sphere" src="/img/sphere-1.png" />
           <img className="sphere-2" alt="Sphere" src="/img/sphere.svg" />
           <button className="button-join-ira">
-            <div className="text-wrapper-19">Rejoindre IRA</div>
+            <div className="text-wrapper-19">{joinIra}</div>
           </button>
           <button className="button-start-ira">
-            <div className="text-wrapper-19">Je démarre</div>
+            <div className="text-wrapper-19">{startIra}</div>
           </button>
           <p className="paragraph-2">
-            Notre mission est de briser les frontières entre l’art numérique et l’art physique pour démocratiser le
-            pouvoir du Web3 dans le monde de l’art
+            {text1}
           </p>
         </div>
     )
