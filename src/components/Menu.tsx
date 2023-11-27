@@ -4,10 +4,16 @@ import Link from 'next/link';
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { getDoc, doc } from "firebase/firestore";
+import { useAppContext } from "../context";
+import LanguageSelector from "./LanguagaSelector";
 
 
 const Menu = () => {
     const [isSticky, setSticky] = useState(false);
+
+    const {lang, setLang} = useAppContext()
+    console.log('LANGUAGE : ')
+    console.log(lang)
 
     const FIREBASE_MENU_COLLECTION = 'Menu'
     
@@ -110,12 +116,14 @@ const Menu = () => {
                 </div>
                 <div className="div-2">
                 <button className="button-presale">
-                    <div className="text-wrapper-5">{presale}</div>
+                    <div className="text-wrapper-5">{presale}</div> 
                 </button>
                 <button className="button">
                     <div className="text-wrapper-5">{testnet}</div>
                 </button>
                 </div>
+
+              <LanguageSelector/>
             </div>
         </div>
 
