@@ -1,5 +1,4 @@
-import { useContext, useState } from "react";
-import Image from 'next/image';
+import { useState } from "react";
 import { useAppContext } from "../context";
 
 const LanguageSelector = () => {
