@@ -2,10 +2,14 @@
 import { getDownloadURL, ref } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { storage } from "../firebaseConfig";
+import { useAppContext } from "../context";
 
 const Artists = () => {
 
   const [imageUrl, setImageUrl] = useState("");
+
+  //Get the language of the global context
+  const {lang, setLang} = useAppContext()
 
     useEffect(() => {
         const fetchImages = async () => {

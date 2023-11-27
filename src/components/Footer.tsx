@@ -2,9 +2,13 @@
 import { useEffect, useState } from 'react';
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
+import { useAppContext } from '../context';
 
 
 const Footer = () => {
+
+    //Get the language of the global context
+    const {lang, setLang} = useAppContext()
 
     const FIREBASE_FOOTER_COLLECTION = 'Footer'
 
@@ -27,7 +31,7 @@ const Footer = () => {
     
         fetchText();
         
-      }, []);
+      }, [lang]);
 
     return (
         <>

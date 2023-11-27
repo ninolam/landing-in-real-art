@@ -11,9 +11,9 @@ import LanguageSelector from "./LanguagaSelector";
 const Menu = () => {
     const [isSticky, setSticky] = useState(false);
 
-    const {lang, setLang} = useAppContext()
-    console.log('LANGUAGE : ')
-    console.log(lang)
+    
+    // console.log('LANGUAGE IN MENU : ')
+    // console.log(lang)
 
     const FIREBASE_MENU_COLLECTION = 'Menu'
     
@@ -22,7 +22,7 @@ const Menu = () => {
     const FIREBASE_KEY_COMMUNITY   = 'Community'
     const FIREBASE_KEY_TEAM        = 'Team'
     const FIREBASE_KEY_ABOUT       = 'About'
-    const LANGUAGE                 = 'FR'
+    // let LANGUAGE                   = 'FR'
 
     const [community, setCommunity] = useState<string>('');
     const [team, setTeam]           = useState<string>('');
@@ -32,25 +32,27 @@ const Menu = () => {
 
     const divRef = useRef<HTMLDivElement>(null);// Reference to the div
     let lastScrollTop = 0; // To keep track of scroll direction
+    const {lang, setLang} = useAppContext()
 
     useEffect(() => {
+        
         const fetchText = async () => {
             const menuCollection = collection(db, FIREBASE_MENU_COLLECTION);
             const menuDocuments = await getDocs(menuCollection);
             const menuData     = menuDocuments.docs.map(doc => doc.data());
-            
+            console.log(menuData[0])    
             //Index 0 ===> Menu_Buttons
-            setPresale(menuData[0][FIREBASE_KEY_PRESALE][LANGUAGE])
-            setTestnet(menuData[0][FIREBASE_KEY_TESTNET][LANGUAGE])
+            setPresale(menuData[0][FIREBASE_KEY_PRESALE][lang])
+            setTestnet(menuData[0][FIREBASE_KEY_TESTNET][lang])
             //Index 1 ===> Menu_Elements
-            setCommunity(menuData[1][FIREBASE_KEY_COMMUNITY][LANGUAGE])   
-            setTeam(menuData[1][FIREBASE_KEY_TEAM][LANGUAGE])
-            setAbout(menuData[1][FIREBASE_KEY_ABOUT][LANGUAGE])
+            setCommunity(menuData[1][FIREBASE_KEY_COMMUNITY][lang])   
+            setTeam(menuData[1][FIREBASE_KEY_TEAM][lang])
+            setAbout(menuData[1][FIREBASE_KEY_ABOUT][lang])
         }
     
         fetchText();
         
-      }, []);
+      }, [lang]);
 
 
     // Use Effect to stick the menu at the top when scrolling down

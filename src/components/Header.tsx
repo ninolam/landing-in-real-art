@@ -2,15 +2,19 @@
 import { useEffect, useState } from "react";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
+import { useAppContext } from "../context";
 
 
 const Header = () => {
+
+  //Get the language of the global context
+  const {lang, setLang} = useAppContext()
 
   const FIREBASE_HEADER_COLLECTION = 'Header'
   const FIREBASE_KEY_JOIN_IRA      = 'Join Ira'
   const FIREBASE_KEY_START_IRA     = 'Start Ira'
   const FIREBASE_KEY_TEXT_1        = 'text1'
-  const LANGUAGE                   = 'FR'
+  const LANGUAGE                   = lang
 
   const [startIra, setStartIra] = useState<string>('');
   const [joinIra, setJoinIra]   = useState<string>('');
@@ -33,7 +37,7 @@ const Header = () => {
 
     fetchText();
     
-  }, []);
+  }, [lang]);
 
     return (
         <div className="header">
