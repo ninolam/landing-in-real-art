@@ -1487,16 +1487,17 @@ a {
 }
 
 .LP .menu-sticky {
-  position: fixed;
-  top: 0;
   align-items: center;
   background-color: #5551ff;
   border-radius: 100px;
   display: flex;
   justify-content: space-between;
-  left: 290px;
+  left: 0;  /* Adjusted to align with the top of the screen */
   padding: 20px 96px;
-  width: 1324px;
+  position: fixed;  /* Changed from absolute to fixed */
+  top: 0;  /* Adjusted to align with the top of the screen */
+  width: 100%;  /* Adjusted to span the full width of the screen */
+  margin: auto;
 }
 
 

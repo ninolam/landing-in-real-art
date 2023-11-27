@@ -1,5 +1,44 @@
+"use client"
+import { useEffect, useState } from "react"
+import { useAppContext } from "../context"
+import { db } from '../firebaseConfig';
+import { collection, getDocs } from 'firebase/firestore/lite';
+
 
 const Team = () => {
+
+    //Get the language of the global context
+    const {lang, setLang} = useAppContext()
+
+    const FIREBASE_TEAM_COLLECTION         = 'Team'
+    const FIREBASE_KEY_TEXT_1              = 'text1'
+    const FIREBASE_KEY_TEXT_2              = 'text2'
+    const FIREBASE_KEY_PROJECT_LEADER      = 'project_leader'
+    const FIREBASE_KEY_PROJECT_LEADER_NAME = 'project_leader_name'
+    let LANGUAGE                           = lang
+
+    const [text1, setText1]                         = useState<string>('');
+    const [text2, setText2]                         = useState<string>('');
+    const [projectLeader, setProjectLeader]         = useState<string>('');
+    const [projectLeaderName, setProjectLeaderName] = useState<string>('');
+  
+    useEffect(() => {
+      const fetchText = async () => {
+          const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
+          const teamDocuments  = await getDocs(teamCollection);
+          const teamData       = teamDocuments.docs.map(doc => doc.data());
+          // console.log(teamData)  
+          //Index 0 ===> Team Text
+          setText1(teamData[0][FIREBASE_KEY_TEXT_1][LANGUAGE])
+          setText2(teamData[0][FIREBASE_KEY_TEXT_2][LANGUAGE])
+          setProjectLeader(teamData[0][FIREBASE_KEY_PROJECT_LEADER][LANGUAGE])
+          setProjectLeaderName(teamData[0][FIREBASE_KEY_PROJECT_LEADER_NAME][LANGUAGE])
+      }
+  
+      fetchText();
+      
+    }, [lang]);
+  
     return (
         <div className="overlap-5">
           <div className="text-wrapper-15">Notre équipe</div>
@@ -9,19 +48,15 @@ const Team = () => {
               <div className="wrapper-text">
                 <div className="def">
                   <p className="passionn-par-l-art">
-                    &#34;Passionné par l&#39;art et les hommes, je m&#39;inspire de la perfection artistique pour
-                    m&#39;améliorer sans cesse, poursuivant inlassablement mes objectifs avec un esprit
-                    autodidacte.&#34;
+                    {text1}
                   </p>
                   <p className="enrichi-par-mes-exp">
-                    Enrichi par mes expériences en finance et passionné par l&#39;art, je rêve de créer un projet
-                    innovant et inclusif pour tous. Mon parcours m&#39;inspire à mêler expertise financière et
-                    expression artistique, dans la quête d&#39;un avenir meilleur et partagé.
+                    {text2}
                   </p>
                 </div>
                 <div className="chara">
                   <div className="text-wrapper-16">Timothée Roy</div>
-                  <div className="text-wrapper-17">Porteur du projet</div>
+                  <div className="text-wrapper-17">{projectLeader}</div>
                 </div>
               </div>
               <img className="slider" alt="Slider" src="/img/slider.svg" />
