@@ -5,7 +5,7 @@ import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 
 
-const TeamMember = () => {
+const TeamMember = ( ) => {
 
     //Get the language of the global context
     const {lang, setLang} = useAppContext()
@@ -21,16 +21,14 @@ const TeamMember = () => {
     const [text2, setText2]                         = useState<string>('');
     const [projectLeader, setProjectLeader]         = useState<string>('');
     const [projectLeaderName, setProjectLeaderName] = useState<string>('');
-    const [members, setMembers]                     = useState<[]>([]);
-
+    
   
     useEffect(() => {
       const fetchText = async () => {
           const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
           const teamDocuments  = await getDocs(teamCollection);
           const teamData       = teamDocuments.docs.map(doc => doc.data());
-          setMembers(teamData[0]['members'])
-          console.log(teamData)   
+          //console.log(teamData)   
           //Index 0 ===> Team Text
           setText1(teamData[0][FIREBASE_KEY_TEXT_1][LANGUAGE])
           setText2(teamData[0][FIREBASE_KEY_TEXT_2][LANGUAGE])
@@ -60,8 +58,8 @@ const TeamMember = () => {
                       </p>
                     </div>
                     <div className="chara">
-                      <div className="text-wrapper-16">Timothée Roy</div>
-                      <div className="text-wrapper-17">{projectLeader}</div>
+                      <div className="text-wrapper-16">Tim Roy</div>
+                      <div className="text-wrapper-17">project leader</div>
                     </div>
                   </div>
                 </div>

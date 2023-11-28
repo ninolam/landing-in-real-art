@@ -29,7 +29,8 @@ const Team = () => {
           const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
           const teamDocuments  = await getDocs(teamCollection);
           const teamData       = teamDocuments.docs.map(doc => doc.data());
-          // console.log(teamData)  
+          setMembers(teamData[0]['members'])
+          console.log(teamData[0]['members'])  
           //Index 0 ===> Team Text
           setText1(teamData[0][FIREBASE_KEY_TEXT_1][LANGUAGE])
           setText2(teamData[0][FIREBASE_KEY_TEXT_2][LANGUAGE])
