@@ -48,16 +48,37 @@ const HelpIra = () => {
     
   }, [lang]);
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => setIsModalVisible(true);
+  const hideModal = () => setIsModalVisible(false);
+  
     return (
         <div className="group-3">
           <div className="wrapper">
             <div className="question">
               <p className="text-wrapper-3">{question1}</p>
-              <Add1 className="add" color="#2B3058" />
+              <div onClick={showModal}>
+                <Add1 className="add" color="#2B3058"/>
+              </div>
+              {isModalVisible && (
+              <div className="modalOverlay">
+                <div className="modal">
+                  <div className="styles.roundedRectangle">
+                    {/* Content of your rounded rectangle */}
+                  </div>
+                  <button onClick={hideModal}>Close</button>
+                </div>
+              </div>
+      )}
+              
             </div>
             <div className="question">
               <div className="text-wrapper-3">{question2}</div>
               <Add1 className="add" color="#2B3058" />
+            </div>
+            <div className="question">
+              LoremIpsum
             </div>
             <div className="question">
               <p className="text-wrapper-3">{question3}</p>
@@ -79,6 +100,7 @@ const HelpIra = () => {
 
 
     )
+
 }
 
 export default HelpIra

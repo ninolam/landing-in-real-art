@@ -156,13 +156,12 @@ a {
 }
 
 /**
-
-
+* Importé de Figma
 */
 
 
 .LP {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgb(236, 238, 250);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -690,6 +689,7 @@ a {
 .LP .add {
   flex: 0 0 auto !important;
   position: relative !important;
+  cursor: pointer;
 }
 
 .LP .frame-9 {
@@ -1158,16 +1158,19 @@ a {
   width: 152px;
 }
 
-.LP .overlap-5 {
+.LP .team {
   border-radius: 60px;
   height: 650px;
   left: 96px;
   position: absolute;
   top: 4452px;
   width: 1248px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.LP .text-wrapper-15 {
+.LP .team-title {
   color: var(--primaireblack);
   font-family: var(--heading-h1-font-family);
   font-size: var(--heading-h1-font-size);
@@ -1181,7 +1184,7 @@ a {
   width: 654px;
 }
 
-.LP .frame-15 {
+.LP .team-card {
   align-items: center;
   background-color: var(--primairewhite);
   border: 1px solid;
@@ -1199,7 +1202,6 @@ a {
   left: 0;
   overflow: hidden;
   padding: 0px 80px 0px 0px;
-  position: absolute;
   top: 0;
   width: 1248px;
 }
@@ -1211,7 +1213,18 @@ a {
   width: 474px;
 }
 
-.LP .colum {
+.LP .team-member-description {
+  align-items: flex-end;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 10px;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.LP .team-member-container {
   align-items: flex-end;
   display: flex;
   flex: 1;
@@ -1255,6 +1268,11 @@ a {
   line-height: var(--heading-h3-line-height);
   margin-top: -1px;
   position: relative;
+}
+
+.LP .scrollTeam {
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 .LP .enrichi-par-mes-exp {

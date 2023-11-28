@@ -3,10 +3,9 @@ import { useEffect, useState } from "react"
 import { useAppContext } from "../context"
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import TeamMember from "./TeamMember";
 
 
-const Team = () => {
+const TeamMember = () => {
 
     //Get the language of the global context
     const {lang, setLang} = useAppContext()
@@ -24,12 +23,14 @@ const Team = () => {
     const [projectLeaderName, setProjectLeaderName] = useState<string>('');
     const [members, setMembers]                     = useState<[]>([]);
 
+  
     useEffect(() => {
       const fetchText = async () => {
           const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
           const teamDocuments  = await getDocs(teamCollection);
           const teamData       = teamDocuments.docs.map(doc => doc.data());
-          // console.log(teamData)  
+          setMembers(teamData[0]['members'])
+          console.log(teamData)   
           //Index 0 ===> Team Text
           setText1(teamData[0][FIREBASE_KEY_TEXT_1][LANGUAGE])
           setText2(teamData[0][FIREBASE_KEY_TEXT_2][LANGUAGE])
@@ -41,26 +42,35 @@ const Team = () => {
       
     }, [lang]);
   
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const handleArrowClick = (direction: string) => {
-      if (direction === 'right') {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % members.length);
-      } else {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + members.length) % members.length);
-      }
-    };
-
-
     return (
-        <div className="team">
-          <TeamMember/>
-          <div className="scrollTeam">
-                  <img alt="left" src="/img/icons8-arrow-left.png" onClick={() => handleArrowClick('left')}/>
-                  <img alt="right" src="/img/icons8-arrow-right.png" onClick={() => handleArrowClick('right')}/>
-          </div>  
-        </div>
+        
+          <>
+            <div className="team-card">
+              <img className="rectangle-8" alt="Rectangle" src="/img/rectangle-150.png" />
+
+              <div className="team-member-container">
+                <div className="team-member-description">
+                  <div className="wrapper-text">
+                    <div className="def">
+                      <p className="passionn-par-l-art">
+                        {text1}
+                      </p>
+                      <p className="enrichi-par-mes-exp">
+                        {text2}
+                      </p>
+                    </div>
+                    <div className="chara">
+                      <div className="text-wrapper-16">Timothée Roy</div>
+                      <div className="text-wrapper-17">{projectLeader}</div>
+                    </div>
+                  </div>
+                </div>
+
+                
+              </div>
+            </div>
+          </>
     )
 }
 
-export default Team
+export default TeamMember
