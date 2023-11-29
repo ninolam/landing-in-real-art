@@ -20,14 +20,14 @@ const Artists = () => {
 
     useEffect(() => {
         const fetchImages = async () => {
-            const imageRef1 = ref(storage, 'images/artist1.png') //seth doyle
-            const imageRef2 = ref(storage, 'images/artist2.png') //justin luebke
-            const imageRef3 = ref(storage, 'images/artist3.png') 
-            const imageRef4 = ref(storage, 'images/artist4.png') //jonas allert
-            const imageRef5 = ref(storage, 'images/artist5.png') // Rayul
-            const imageRef6 = ref(storage, 'images/artist6.png') //jennifer marquez
-            const imageRef7 = ref(storage, 'images/artist7.png') 
-            const imageRef8 = ref(storage, 'images/artist8.png')
+            const imageRef1 = ref(storage, 'artists/artist1.png') //seth doyle
+            const imageRef2 = ref(storage, 'artists/artist2.png') //justin luebke
+            const imageRef3 = ref(storage, 'artists/artist3.png') 
+            const imageRef4 = ref(storage, 'artists/artist4.png') //jonas allert
+            const imageRef5 = ref(storage, 'artists/artist5.png') // Rayul
+            const imageRef6 = ref(storage, 'artists/artist6.png') //jennifer marquez
+            const imageRef7 = ref(storage, 'artists/artist7.png') 
+            const imageRef8 = ref(storage, 'artists/artist8.png')
             
             try {
               const url1 = await getDownloadURL(imageRef1)

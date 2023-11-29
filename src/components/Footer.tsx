@@ -4,6 +4,9 @@ import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { useAppContext } from '../context';
 import Link from 'next/link';
+import { getDownloadURL, ref } from "firebase/storage";
+import { storage } from "../firebaseConfig";
+
 
 
 const Footer = () => {
@@ -16,21 +19,47 @@ const Footer = () => {
     const [email, setEmail] = useState<string>('');
     const [phone, setPhone] = useState<string>('');
     const [address, setAddress] = useState<string>('');
+    const [twitterLogo, setTwitterLogo]     = useState("")
+    const [linkedInLogo, setLinkedInLogo]   = useState("")
+    const [instagramLogo, setInstagramLogo] = useState("")
+    const [twitterUrl, setTwitterUrl]       = useState("")
+    const [linkedInUrl, setLinkedInUrl]     = useState("")
+    const [instagramUrl, setInstagramUrl]   = useState("")
+    const [leftBlockText, setleftBlockText] = useState("")
 
     useEffect(() => {
-        const fetchText = async () => {
-            const textDoc      = collection(db, FIREBASE_FOOTER_COLLECTION);
-            const textSnapshot = await getDocs(textDoc);
-            const textList     = textSnapshot.docs.map(doc => doc.data());
-            const email   = textList[0]['Email'];
-            const phone   = textList[0]['Telephone'];
-            const address = textList[0]['Adresse'];
+        const fetchData = async () => {
+            const dataDoc      = collection(db, FIREBASE_FOOTER_COLLECTION);
+            const dataSnapshot = await getDocs(dataDoc);
+            const dataList     = dataSnapshot.docs.map(doc => doc.data());
+
+            //Left block
+            const imageRefTwitter   = ref(storage, 'footer/twitter-logo.png')
+            const imageRefLinkedIn  = ref(storage, 'footer/linkedin-logo.png') 
+            const imageRefInstagram = ref(storage, 'footer/instagram-logo.png')
+            const urlTwitter   = await getDownloadURL(imageRefTwitter)
+            const urlLinkedIn  = await getDownloadURL(imageRefLinkedIn) 
+            const urlInstagram = await getDownloadURL(imageRefInstagram)
+            setTwitterLogo(urlTwitter)
+            setLinkedInLogo(urlLinkedIn)
+            setInstagramLogo(urlInstagram)   
+            setTwitterUrl(dataList[1]['twitterUrl'])
+            setInstagramUrl(dataList[1]['instagramUrl'])
+            setLinkedInUrl(dataList[1]['linkedInUrl'])
+            setleftBlockText(dataList[1]['text'][lang])
+
+            //Right block  
+            const email   = dataList[0]['Email'];
+            const phone   = dataList[0]['Telephone'];
+            const address = dataList[0]['Adresse'];
             setEmail(email)   
             setPhone(phone)
             setAddress(address)
+            
+
         }
     
-        fetchText();
+        fetchData();
         
       }, [lang]);
 
@@ -40,18 +69,18 @@ const Footer = () => {
                 <div className="frame-12">
                     <img className="logo-2" alt="Logo" src="/img/logo-IRA.png" />
                     <div className="logo-social-network">
-                        <Link href="/">
-                            <img className="add" alt="Frame" src="/img/linkedin-logo.png" />
+                        <Link href={linkedInUrl}>
+                            <img className="add" alt="Frame" src={linkedInLogo} />
                         </Link>
-                        <Link href="/">
-                            <img className="add" alt="Frame" src="/img/instagram-logo.png" />
+                        <Link href={instagramUrl}>
+                            <img className="add" alt="Frame" src={instagramLogo} />
                         </Link>
-                        <Link href="/">
-                            <img className="add" alt="Frame" src="/img/twitter-logo.png" />
+                        <Link href={twitterUrl}>
+                            <img className="add" alt="Frame" src={twitterLogo} />
                         </Link>
                         
                     </div>
-                    <p className="text-wrapper-9">Rendez physique vos œuvres digital</p>
+                    <p className="text-wrapper-9">{leftBlockText}</p>
                 </div>
                 <div className="frame-14">
                     <div className="group-9">
