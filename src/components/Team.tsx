@@ -39,9 +39,9 @@ const Team = () => {
           setMembers(members_)
           console.log(members_)
 
-          setText1(members_[currentIndex][FIREBASE_KEY_TEXT_1])
-          setText2(members_[currentIndex][FIREBASE_KEY_TEXT_2])
-          setRole(members_[currentIndex][FIREBASE_KEY_ROLE])
+          setText1(members_[currentIndex][FIREBASE_KEY_TEXT_1][LANGUAGE])
+          setText2(members_[currentIndex][FIREBASE_KEY_TEXT_2][LANGUAGE])
+          setRole(members_[currentIndex][FIREBASE_KEY_ROLE][LANGUAGE])
           setName(members_[currentIndex][FIREBASE_KEY_NAME])
           const photo_ = members_[currentIndex][FIREBASE_KEY_PHOTO] 
           setPhoto(photo_)
