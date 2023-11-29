@@ -1467,7 +1467,7 @@ a {
   width: 334px;
 }
 
-.LP .frame-16 {
+.LP .footer {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
@@ -1476,6 +1476,15 @@ a {
   position: absolute;
   top: 6236px;
   width: 1440px;
+}
+
+.LP .logo-social-network {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
 .LP .logo-2 {
