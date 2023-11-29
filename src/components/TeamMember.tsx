@@ -4,8 +4,15 @@ import { useAppContext } from "../context"
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 
+interface Props {
+  name: string
+  photo: string
+  role: string
+  text1: string
+  text2: string
+}
 
-const TeamMember = ( ) => {
+const TeamMember: React.FC<Props> = ( {name, photo, role, text1, text2} ) => {
 
     //Get the language of the global context
     const {lang, setLang} = useAppContext()
@@ -17,29 +24,6 @@ const TeamMember = ( ) => {
     const FIREBASE_KEY_PROJECT_LEADER_NAME = 'project_leader_name'
     let LANGUAGE                           = lang
 
-    const [text1, setText1]                         = useState<string>('');
-    const [text2, setText2]                         = useState<string>('');
-    const [projectLeader, setProjectLeader]         = useState<string>('');
-    const [projectLeaderName, setProjectLeaderName] = useState<string>('');
-    
-  
-    useEffect(() => {
-      const fetchText = async () => {
-          const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
-          const teamDocuments  = await getDocs(teamCollection);
-          const teamData       = teamDocuments.docs.map(doc => doc.data());
-          //console.log(teamData)   
-          //Index 0 ===> Team Text
-          setText1(teamData[0][FIREBASE_KEY_TEXT_1][LANGUAGE])
-          setText2(teamData[0][FIREBASE_KEY_TEXT_2][LANGUAGE])
-          setProjectLeader(teamData[0][FIREBASE_KEY_PROJECT_LEADER][LANGUAGE])
-          setProjectLeaderName(teamData[0][FIREBASE_KEY_PROJECT_LEADER_NAME][LANGUAGE])
-      }
-  
-      fetchText();
-      
-    }, [lang]);
-  
     return (
         
           <>
@@ -58,8 +42,8 @@ const TeamMember = ( ) => {
                       </p>
                     </div>
                     <div className="chara">
-                      <div className="text-wrapper-16">Tim Roy</div>
-                      <div className="text-wrapper-17">project leader</div>
+                      <div className="text-wrapper-16">{name}</div>
+                      <div className="text-wrapper-17">{role}</div>
                     </div>
                   </div>
                 </div>

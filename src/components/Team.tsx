@@ -55,7 +55,7 @@ const Team = () => {
 
     return (
         <div className="team">
-          <TeamMember/>
+          <TeamMember name="Tim Roy" photo="test" role="Project leader" text1="text1" text2="text2"/>
           <div className="scrollTeam">
                   <img alt="left" src="/img/icons8-arrow-left.png" onClick={() => handleArrowClick('left')}/>
                   <img alt="right" src="/img/icons8-arrow-right.png" onClick={() => handleArrowClick('right')}/>
