@@ -9,7 +9,7 @@ import { collection, getDocs } from 'firebase/firestore/lite';
 const HelpIra = () => {
   
   //Get the language of the global context
-  const {lang, setLang} = useAppContext()
+  const {lang } = useAppContext()
 
   const FIREBASE_FAQ_COLLECTION = 'Faq'
   const FIREBASE_KEY_FAQ_MAIN   = 'faqMain'
@@ -25,8 +25,13 @@ const HelpIra = () => {
   const [question3, setQuestion3] = useState<string>('');
   const [faqMain, seFaqMain]      = useState<string>('');
   const [readFaq, setReadFaq]      = useState<string>('');
+  const [isAnswer1Visible, setIsAnswer1Visible] = useState<boolean>(false);
+  const [imageExpandQuestion1, setImageExpandQuestion1] = useState<string>("/img/plus_16px.png");
+  const [imageExpandQuestion2, setImageExpandQuestion2] = useState<string>("/img/plus_16px.png");
+  const [imageExpandQuestion3, setImageExpandQuestion3] = useState<string>("/img/plus_16px.png");
 
   useEffect(() => {
+
     const fetchText = async () => {
         const faqCollection = collection(db, FIREBASE_FAQ_COLLECTION);
         const faqDocuments  = await getDocs(faqCollection);
@@ -40,49 +45,44 @@ const HelpIra = () => {
         setQuestion1(faqData[1][FIREBASE_KEY_QUESTION1][LANGUAGE])
         setQuestion2(faqData[1][FIREBASE_KEY_QUESTION2][LANGUAGE])
         setQuestion3(faqData[1][FIREBASE_KEY_QUESTION3][LANGUAGE])
-
-
     }
-
     fetchText();
-    
+
   }, [lang]);
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const showModal = () => setIsModalVisible(true);
-  const hideModal = () => setIsModalVisible(false);
+  const showAnswer1 = () => {
+    setIsAnswer1Visible(true)
+    setImageExpandQuestion1("/img/minus_16px.png")
+  }
+  const hideModal = () => {
+    setIsAnswer1Visible(false)
+    setImageExpandQuestion1("/img/plus_16px.png")
+  }  
   
     return (
         <div className="group-3">
           <div className="wrapper">
             <div className="question">
               <p className="text-wrapper-3">{question1}</p>
-              <div onClick={showModal}>
-                <Add1 className="add" color="#2B3058"/>
+              <div onClick={showAnswer1}>
+                <img className="plus" alt="plus" src={imageExpandQuestion1} />
               </div>
-              {isModalVisible && (
-              <div className="modalOverlay">
-                <div className="modal">
-                  <div className="styles.roundedRectangle">
-                    {/* Content of your rounded rectangle */}
-                  </div>
-                  <button onClick={hideModal}>Close</button>
-                </div>
-              </div>
-      )}
-              
             </div>
+            {isAnswer1Visible && (
+              <div className="answer">
+                LoremIpsum
+              </div>
+              )}
             <div className="question">
               <div className="text-wrapper-3">{question2}</div>
-              <Add1 className="add" color="#2B3058" />
+              <img className="plus" alt="plus" src="/img/plus_16px.png" />
             </div>
-            <div className="question">
+            <div className="answer">
               LoremIpsum
             </div>
             <div className="question">
               <p className="text-wrapper-3">{question3}</p>
-              <Add1 className="add" color="#2B3058" />
+              <img className="plus" alt="plus" src="/img/plus_16px.png" />
             </div>
           </div>
           <div className="frame-9">

@@ -660,6 +660,10 @@ a {
   top: 16px;
 }
 
+.LP .plus {
+  cursor: pointer;
+}
+
 .LP .question {
   align-items: center;
   border-color: var(--primairewhite);
@@ -764,7 +768,7 @@ a {
   width: fit-content;
 }
 
-.LP .div-wrapper {
+.LP .newsletter {
   height: 548px;
   left: 96px;
   position: absolute;

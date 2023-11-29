@@ -1,7 +1,7 @@
 
 const NewsLetter = () => {
     return (
-        <div className="div-wrapper">
+        <div className="newsletter">
           <div className="overlap-4">
             <div className="rectangle-3" />
             <img className="unsplash-augtvvqxdhg" alt="Unsplash augtvvqxdhg" src="/img/unsplash-augtvvqxdhg.png" />

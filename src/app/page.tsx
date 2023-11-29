@@ -1,12 +1,3 @@
-import Image from 'next/image'
-import vector2191 from '../../src/images/vector-219-1.svg'
-import vector219 from '../../src/images/vector-219.svg'
-import rayul from '../../src/images/rayul.png'
-import jusdevoyage1 from '../../src/images/jusdevoyage-a7unalmmqi-unsplash-1.png'
-
-
-import styles from './page.module.css'
-
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
