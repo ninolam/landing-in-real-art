@@ -65,50 +65,34 @@ const HelpIra = () => {
   const imagePlus2Ref = useRef(null);
   const imagePlus3Ref = useRef(null);
   
+  
   //-------------------------------------------------------------------
-  const toggleAnswer1 = () => {
-    const currentImage: any = imagePlus1Ref.current
+  const toggleAnswer = (index: number) => {
+    const currentImage: any = index === 1 ? imagePlus1Ref.current : index === 2 ? imagePlus2Ref.current : imagePlus3Ref.current;
     if (currentImage) {
       const src = currentImage.src; 
       if (src.includes('plus')) {
-        setIsAnswer1Visible(true)
-        setImageExpandQuestion1("/img/minus_16px.png")
-      }
-      else {
-        setIsAnswer1Visible(false)
-        setImageExpandQuestion1("/img/plus_16px.png")
-      }
-    }
-  }
-
-  //-------------------------------------------------------------------
-  const toggleAnswer2 = () => {
-    const currentImage: any = imagePlus2Ref.current
-    if (currentImage) {
-      const src = currentImage.src; 
-      if (src.includes('plus')) {
-        setIsAnswer2Visible(true)
-        setImageExpandQuestion2("/img/minus_16px.png")
-      }
-      else {
-        setIsAnswer2Visible(false)
-        setImageExpandQuestion2("/img/plus_16px.png")
-      }
-    }
-  }
-
-  //-------------------------------------------------------------------
-  const toggleAnswer3 = () => {
-    const currentImage: any = imagePlus3Ref.current
-    if (currentImage) {
-      const src = currentImage.src; 
-      if (src.includes('plus')) {
-        setIsAnswer3Visible(true)
-        setImageExpandQuestion3("/img/minus_16px.png")
-      }
-      else {
-        setIsAnswer3Visible(false)
-        setImageExpandQuestion3("/img/plus_16px.png")
+        if (index === 1) {
+          setIsAnswer1Visible(true);
+          setImageExpandQuestion1("/img/minus_16px.png");
+        } else if (index === 2) {
+          setIsAnswer2Visible(true);
+          setImageExpandQuestion2("/img/minus_16px.png");
+        } else if (index === 3) {
+          setIsAnswer3Visible(true);
+          setImageExpandQuestion3("/img/minus_16px.png");
+        }
+      } else {
+        if (index === 1) {
+          setIsAnswer1Visible(false);
+          setImageExpandQuestion1("/img/plus_16px.png");
+        } else if (index === 2) {
+          setIsAnswer2Visible(false);
+          setImageExpandQuestion2("/img/plus_16px.png");
+        } else if (index === 3) {
+          setIsAnswer3Visible(false);
+          setImageExpandQuestion3("/img/plus_16px.png");
+        }
       }
     }
   }
@@ -118,7 +102,7 @@ const HelpIra = () => {
           <div className="wrapper">
             <div className="question">
               <p className="text-wrapper-3">{question1}</p>
-              <div onClick={toggleAnswer1}>
+              <div onClick={() => toggleAnswer(1)}>
                 <img ref={imagePlus1Ref} className="plus" alt="plus" src={imageExpandQuestion1} />
               </div>
             </div>
@@ -129,7 +113,7 @@ const HelpIra = () => {
               )}
             <div className="question">
               <div className="text-wrapper-3">{question2}</div>
-              <div onClick={toggleAnswer2}>
+              <div onClick={() => toggleAnswer(2)}>
                 <img ref={imagePlus2Ref} className="plus" alt="plus" src={imageExpandQuestion2} />
               </div>
             </div>
@@ -140,7 +124,7 @@ const HelpIra = () => {
               )}
             <div className="question">
               <p className="text-wrapper-3">{question3}</p>
-              <div onClick={toggleAnswer3}>
+              <div onClick={() => toggleAnswer(3)}>
                 <img ref={imagePlus3Ref} className="plus" alt="plus" src={imageExpandQuestion3} />
               </div>
             </div>
