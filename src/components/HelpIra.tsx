@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react'
+import { MutableRefObject, useEffect, useRef, useState } from 'react'
 import Add1 from '../components/Add1'
 import { useAppContext } from '../context'
 import { db } from '../firebaseConfig';
@@ -16,6 +16,9 @@ const HelpIra = () => {
   const FIREBASE_KEY_QUESTION1  = 'question1'
   const FIREBASE_KEY_QUESTION2  = 'question2'
   const FIREBASE_KEY_QUESTION3  = 'question3'
+  const FIREBASE_KEY_ANSWER1    = 'answer1'
+  const FIREBASE_KEY_ANSWER2    = 'answer2'
+  const FIREBASE_KEY_ANSWER3    = 'answer3'
   const FIREBASE_KEY_READ_FAQ   = 'readFaq'
   
   let LANGUAGE                  = lang
@@ -23,9 +26,14 @@ const HelpIra = () => {
   const [question1, setQuestion1] = useState<string>('');
   const [question2, setQuestion2] = useState<string>('');
   const [question3, setQuestion3] = useState<string>('');
+  const [answer1, setAnswer1]     = useState<string>('');
+  const [answer2, setAnswer2]     = useState<string>('');
+  const [answer3, setAnswer3]     = useState<string>('');
   const [faqMain, seFaqMain]      = useState<string>('');
-  const [readFaq, setReadFaq]      = useState<string>('');
+  const [readFaq, setReadFaq]     = useState<string>('');
   const [isAnswer1Visible, setIsAnswer1Visible] = useState<boolean>(false);
+  const [isAnswer2Visible, setIsAnswer2Visible] = useState<boolean>(false);
+  const [isAnswer3Visible, setIsAnswer3Visible] = useState<boolean>(false);
   const [imageExpandQuestion1, setImageExpandQuestion1] = useState<string>("/img/plus_16px.png");
   const [imageExpandQuestion2, setImageExpandQuestion2] = useState<string>("/img/plus_16px.png");
   const [imageExpandQuestion3, setImageExpandQuestion3] = useState<string>("/img/plus_16px.png");
@@ -45,45 +53,102 @@ const HelpIra = () => {
         setQuestion1(faqData[1][FIREBASE_KEY_QUESTION1][LANGUAGE])
         setQuestion2(faqData[1][FIREBASE_KEY_QUESTION2][LANGUAGE])
         setQuestion3(faqData[1][FIREBASE_KEY_QUESTION3][LANGUAGE])
+        setAnswer1(faqData[1][FIREBASE_KEY_ANSWER1][LANGUAGE])
+        setAnswer2(faqData[1][FIREBASE_KEY_ANSWER2][LANGUAGE])
+        setAnswer3(faqData[1][FIREBASE_KEY_ANSWER3][LANGUAGE])
     }
     fetchText();
 
   }, [lang]);
 
-  const showAnswer1 = () => {
-    setIsAnswer1Visible(true)
-    setImageExpandQuestion1("/img/minus_16px.png")
-  }
-  const hideModal = () => {
-    setIsAnswer1Visible(false)
-    setImageExpandQuestion1("/img/plus_16px.png")
-  }  
+  const imagePlus1Ref = useRef(null);
+  const imagePlus2Ref = useRef(null);
+  const imagePlus3Ref = useRef(null);
   
+  //-------------------------------------------------------------------
+  const toggleAnswer1 = () => {
+    const currentImage: any = imagePlus1Ref.current
+    if (currentImage) {
+      const src = currentImage.src; 
+      if (src.includes('plus')) {
+        setIsAnswer1Visible(true)
+        setImageExpandQuestion1("/img/minus_16px.png")
+      }
+      else {
+        setIsAnswer1Visible(false)
+        setImageExpandQuestion1("/img/plus_16px.png")
+      }
+    }
+  }
+
+  //-------------------------------------------------------------------
+  const toggleAnswer2 = () => {
+    const currentImage: any = imagePlus2Ref.current
+    if (currentImage) {
+      const src = currentImage.src; 
+      if (src.includes('plus')) {
+        setIsAnswer2Visible(true)
+        setImageExpandQuestion2("/img/minus_16px.png")
+      }
+      else {
+        setIsAnswer2Visible(false)
+        setImageExpandQuestion2("/img/plus_16px.png")
+      }
+    }
+  }
+
+  //-------------------------------------------------------------------
+  const toggleAnswer3 = () => {
+    const currentImage: any = imagePlus3Ref.current
+    if (currentImage) {
+      const src = currentImage.src; 
+      if (src.includes('plus')) {
+        setIsAnswer3Visible(true)
+        setImageExpandQuestion3("/img/minus_16px.png")
+      }
+      else {
+        setIsAnswer3Visible(false)
+        setImageExpandQuestion3("/img/plus_16px.png")
+      }
+    }
+  }
+
     return (
         <div className="group-3">
           <div className="wrapper">
             <div className="question">
               <p className="text-wrapper-3">{question1}</p>
-              <div onClick={showAnswer1}>
-                <img className="plus" alt="plus" src={imageExpandQuestion1} />
+              <div onClick={toggleAnswer1}>
+                <img ref={imagePlus1Ref} className="plus" alt="plus" src={imageExpandQuestion1} />
               </div>
             </div>
             {isAnswer1Visible && (
               <div className="answer">
-                LoremIpsum
+                {answer1}
               </div>
               )}
             <div className="question">
               <div className="text-wrapper-3">{question2}</div>
-              <img className="plus" alt="plus" src="/img/plus_16px.png" />
+              <div onClick={toggleAnswer2}>
+                <img ref={imagePlus2Ref} className="plus" alt="plus" src={imageExpandQuestion2} />
+              </div>
             </div>
-            <div className="answer">
-              LoremIpsum
-            </div>
+            {isAnswer2Visible && (
+              <div className="answer">
+                {answer2}
+              </div>
+              )}
             <div className="question">
               <p className="text-wrapper-3">{question3}</p>
-              <img className="plus" alt="plus" src="/img/plus_16px.png" />
+              <div onClick={toggleAnswer3}>
+                <img ref={imagePlus3Ref} className="plus" alt="plus" src={imageExpandQuestion3} />
+              </div>
             </div>
+            {isAnswer3Visible && (
+              <div className="answer">
+                {answer3}
+              </div>
+              )}
           </div>
           <div className="frame-9">
             <div className="text-wrapper-2">FAQ</div>
