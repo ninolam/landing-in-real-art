@@ -36,7 +36,7 @@ const HelpIra = () => {
         const faqCollection = collection(db, FIREBASE_FAQ_COLLECTION);
         const faqDocuments  = await getDocs(faqCollection);
         const faqData       = faqDocuments.docs.map(doc => doc.data());
-        //console.log(faqData)  
+        
         //Index 0 ===> FAQ Buttons
         setReadFaq(faqData[0][FIREBASE_KEY_READ_FAQ][LANGUAGE])
         

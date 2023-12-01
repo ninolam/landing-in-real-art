@@ -28,7 +28,7 @@ const HowToJoinIra = () => 
         const joinIRACollection = collection(db, FIREBASE_JOIN_IRA_COLLECTION);
         const joinIRADocuments  = await getDocs(joinIRACollection);
         const joinIRAData       = joinIRADocuments.docs.map(doc => doc.data());
-        //console.log(joinIRAData)  
+        
         //Index 0 ===> joinIRA Buttons
         setStartIra(joinIRAData[0][FIREBASE_KEY_START_IRA][LANGUAGE])
         setJoinIra(joinIRAData[0][FIREBASE_KEY_JOIN_IRA][LANGUAGE])

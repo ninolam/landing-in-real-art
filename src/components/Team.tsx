@@ -11,7 +11,7 @@ import TeamMember from "./TeamMember";
 const Team = () => {
 
     //Get the language of the global context
-    const {lang, setLang} = useAppContext()
+    const {lang} = useAppContext()
 
     const FIREBASE_TEAM_COLLECTION = 'Team'
     const FIREBASE_KEY_TEXT_1      = 'text1'
@@ -37,8 +37,7 @@ const Team = () => {
           const teamData       = teamDocuments.docs.map(doc => doc.data());
           const members_ = teamData[0]['members'] 
           setMembers(members_)
-          console.log(members_)
-
+          
           setText1(members_[currentIndex][FIREBASE_KEY_TEXT_1][LANGUAGE])
           setText2(members_[currentIndex][FIREBASE_KEY_TEXT_2][LANGUAGE])
           setRole(members_[currentIndex][FIREBASE_KEY_ROLE][LANGUAGE])
@@ -61,7 +60,6 @@ const Team = () => {
       } else {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + members.length) % members.length);
       }
-      console.log(currentIndex)
     };
 
 

@@ -11,10 +11,6 @@ import LanguageSelector from "./LanguagaSelector";
 const Menu = () => {
     const [isSticky, setSticky] = useState(false);
 
-    
-    // console.log('LANGUAGE IN MENU : ')
-    // console.log(lang)
-
     const FIREBASE_MENU_COLLECTION = 'Menu'
     
     const FIREBASE_KEY_PRESALE     = 'Presale'
@@ -40,7 +36,7 @@ const Menu = () => {
             const menuCollection = collection(db, FIREBASE_MENU_COLLECTION);
             const menuDocuments = await getDocs(menuCollection);
             const menuData     = menuDocuments.docs.map(doc => doc.data());
-            console.log(menuData[0])    
+            
             //Index 0 ===> Menu_Buttons
             setPresale(menuData[0][FIREBASE_KEY_PRESALE][lang])
             setTestnet(menuData[0][FIREBASE_KEY_TESTNET][lang])

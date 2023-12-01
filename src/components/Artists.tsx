@@ -49,7 +49,6 @@ const Artists = () => {
               const url7 = await getDownloadURL(imageRef7)
               const url8 = await getDownloadURL(imageRef8)
 
-              console.log('URL8 : ' + url8)
               setImageUrl1(url1)
               setImageUrl2(url2)
               setImageUrl3(url3)
@@ -68,8 +67,6 @@ const Artists = () => {
         const artistsCollection = collection(db, FIREBASE_ARTISTS_COLLECTION);
         const artistsDocuments  = await getDocs(artistsCollection);
         const artistsData       = artistsDocuments.docs.map(doc => doc.data());
-        console.log(lang)
-        console.log(artistsData)
         setTitle(artistsData[0][FIREBASE_ARTISTS_KEY_TITLE][lang])
         setDescription(artistsData[0][FIREBASE_ARTISTS_KEY_DESC][lang])
       }
