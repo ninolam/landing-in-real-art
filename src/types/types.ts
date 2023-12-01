@@ -90,3 +90,55 @@ export interface ArtistsData {
       [key: string]: string
     }    
   }
+
+export interface JoinIraData {
+    JoinIRA: {
+        [key: string]: string
+    }
+    StartIRA: {
+        [key: string]: string
+    }    
+    text1: {
+        [key: string]: string
+    }
+    text2: {
+        [key: string]: string
+    }    
+    headerText: {
+        [key: string]: string
+    }    
+}
+
+export interface JoinTrendData {
+    title: {
+        [key: string]: string
+    }
+    artgallery_title: {
+        [key: string]: string
+    }    
+    artgallery_description: {
+        [key: string]: string
+    }
+    aas_title: {
+        [key: string]: string
+    }    
+    aas_description: {
+        [key: string]: string
+    }    
+
+    marketplace_title: {
+        [key: string]: string
+    }
+    marketplace_description: {
+        [key: string]: string
+    }    
+    artgallery_join: {
+        [key: string]: string
+    }
+    aas_join: {
+        [key: string]: string
+    }    
+    marketplace_join: {
+        [key: string]: string
+    }    
+}

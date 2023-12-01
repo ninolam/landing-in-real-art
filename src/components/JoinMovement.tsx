@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import parse from 'html-react-parser';
+import { JoinTrendData } from '../types/types';
 
 const JoinMovement = () => {
 
@@ -12,16 +13,6 @@ const JoinMovement = () => {
     const {lang} = useAppContext()
 
     const FIREBASE_JOIN_MOVEMENT_COLLECTION = 'JoinMovement'
-    const FIREBASE_JOIN_MOVEMENT_KEY_TITLE  = 'title'
-    const FIREBASE_ARTGALLERY_TITLE         = 'artgallery_title'
-    const FIREBASE_ARTGALLERY_DESC          = 'artgallery_description'
-    const FIREBASE_AAS_TITLE                = 'aas_title'
-    const FIREBASE_AAS_DESC                 = 'aas_description'
-    const FIREBASE_MARKETPLACE_TITLE        = 'marketplace_title'
-    const FIREBASE_MARKETPLACE_DESC         = 'marketplace_description'
-    const FIREBASE_ARTGALLERY_BUTTON        = 'artgallery_join'
-    const FIREBASE_AAS_BUTTON               = 'aas_join'
-    const FIREBASE_MARKETPLACE_BUTTON       = 'marketplace_join'
 
     const [title, setTitle]                         = useState<string>('')
     const [artgalleryTitle, setArtgalleryTitle]     = useState<string>('')
@@ -39,21 +30,21 @@ const JoinMovement = () => {
       const fetchText = async () => {
           const joinMovementCollection = collection(db, FIREBASE_JOIN_MOVEMENT_COLLECTION);
           const joinMovementDocuments  = await getDocs(joinMovementCollection);
-          const joinMovementlData      = joinMovementDocuments.docs.map(doc => doc.data());
+          const joinMovementlData      = joinMovementDocuments.docs.map(doc => doc.data() as JoinTrendData);
           
           //Buttons : indice 0
-          setArtgalleryButton(joinMovementlData[0][FIREBASE_ARTGALLERY_BUTTON][lang])
-          setAasButton(joinMovementlData[0][FIREBASE_AAS_BUTTON][lang])
-          setMarketplaceButton(joinMovementlData[0][FIREBASE_MARKETPLACE_BUTTON][lang])
+          setArtgalleryButton(joinMovementlData[0].artgallery_join[lang])
+          setAasButton(joinMovementlData[0].aas_join[lang])
+          setMarketplaceButton(joinMovementlData[0].marketplace_join[lang])
 
           //Texts : indice 1
-          setTitle(joinMovementlData[1][FIREBASE_JOIN_MOVEMENT_KEY_TITLE][lang])
-          setArtgalleryTitle(joinMovementlData[1][FIREBASE_ARTGALLERY_TITLE][lang])
-          setArtgalleryDesc(joinMovementlData[1][FIREBASE_ARTGALLERY_DESC][lang])
-          setAasTitle(joinMovementlData[1][FIREBASE_AAS_TITLE][lang])
-          setAasDesc(joinMovementlData[1][FIREBASE_AAS_DESC][lang])
-          setMarketplaceTitle(joinMovementlData[1][FIREBASE_MARKETPLACE_TITLE][lang])
-          setMarketplaceDesc(joinMovementlData[1][FIREBASE_MARKETPLACE_DESC][lang])
+          setTitle(joinMovementlData[1].title[lang])
+          setArtgalleryTitle(joinMovementlData[1].artgallery_title[lang])
+          setArtgalleryDesc(joinMovementlData[1].artgallery_description[lang])
+          setAasTitle(joinMovementlData[1].aas_title[lang])
+          setAasDesc(joinMovementlData[1].aas_description[lang])
+          setMarketplaceTitle(joinMovementlData[1].marketplace_title[lang])
+          setMarketplaceDesc(joinMovementlData[1].marketplace_description[lang])
 
       }
       fetchText();
