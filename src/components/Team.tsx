@@ -13,12 +13,21 @@ const Team = () => {
     //Get the language of the global context
     const {lang} = useAppContext()
 
+    type MemberData = {
+      text1: {
+        [key: string]: string
+      }
+      text2: {
+        [key: string]: string
+      }    
+      role: {
+        [key: string]: string
+      }
+      name: string
+      photo: string
+    }[];
+
     const FIREBASE_TEAM_COLLECTION = 'Team'
-    const FIREBASE_KEY_TEXT_1      = 'text1'
-    const FIREBASE_KEY_TEXT_2      = 'text2'
-    const FIREBASE_KEY_ROLE        = 'role'
-    const FIREBASE_KEY_NAME        = 'name'
-    const FIREBASE_KEY_PHOTO       = 'photo'
     let LANGUAGE                   = lang
 
     const [text1, setText1] = useState<string>('');
@@ -28,21 +37,21 @@ const Team = () => {
     const [photo, setPhoto] = useState<string>('');
     const [photoUrl, setPhotoUrl] = useState<string>('');
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [members, setMembers] = useState<[]>([]);
+    const [members, setMembers] = useState<MemberData>([]);
 
     useEffect(() => {
       const fetchTeamMembers = async () => {
           const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
           const teamDocuments  = await getDocs(teamCollection);
           const teamData       = teamDocuments.docs.map(doc => doc.data());
-          const members_ = teamData[0]['members'] 
+          const members_ = teamData[0]['members'] as MemberData
           setMembers(members_)
           
-          setText1(members_[currentIndex][FIREBASE_KEY_TEXT_1][LANGUAGE])
-          setText2(members_[currentIndex][FIREBASE_KEY_TEXT_2][LANGUAGE])
-          setRole(members_[currentIndex][FIREBASE_KEY_ROLE][LANGUAGE])
-          setName(members_[currentIndex][FIREBASE_KEY_NAME])
-          const photo_ = members_[currentIndex][FIREBASE_KEY_PHOTO] 
+          setText1(members_[currentIndex].text1[LANGUAGE])
+          setText2(members_[currentIndex].text2[LANGUAGE])
+          setRole(members_[currentIndex].role[LANGUAGE])
+          setName(members_[currentIndex].name)
+          const photo_ = members_[currentIndex].photo 
           setPhoto(photo_)
           const imageRef = ref(storage, photo_)
           const url = await getDownloadURL(imageRef)

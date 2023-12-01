@@ -6,6 +6,7 @@ import { useAppContext } from '../context';
 import Link from 'next/link';
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../firebaseConfig";
+import { FooterData } from '../types/types';
 
 
 
@@ -53,7 +54,7 @@ const Footer = () => {
         const fetchData = async () => {
             const dataDoc      = collection(db, FIREBASE_FOOTER_COLLECTION);
             const dataSnapshot = await getDocs(dataDoc);
-            const dataList     = dataSnapshot.docs.map(doc => doc.data());
+            const dataList     = dataSnapshot.docs.map(doc => doc.data() as FooterData);
 
             //Left block
             const imageRefTwitter   = ref(storage, 'footer/twitter-logo.png')
@@ -65,38 +66,37 @@ const Footer = () => {
             setTwitterLogo(urlTwitter)
             setLinkedInLogo(urlLinkedIn)
             setInstagramLogo(urlInstagram)   
-            setTwitterUrl(dataList[1]['twitterUrl'])
-            setInstagramUrl(dataList[1]['instagramUrl'])
-            setLinkedInUrl(dataList[1]['linkedInUrl'])
-            setleftBlockText(dataList[1]['text'][lang])
+            setTwitterUrl(dataList[1].twitterUrl)
+            setInstagramUrl(dataList[1].instagramUrl)
+            setLinkedInUrl(dataList[1].linkedInUrl)
+            setleftBlockText(dataList[1].text[lang])
 
             //Links block
-            setOurPagesTitle(dataList[2]['ourPagesTitle'][lang])
-            setOurCompanyTitle(dataList[2]['ourCompanyTitle'][lang])
-            setHomeLinkText(dataList[2]['homeLinkText'][lang])
-            setAboutLinkText(dataList[2]['aboutLinkText'][lang])
-            setMarketPlaceLinkText(dataList[2]['marketPlaceLinkText'][lang])
-            setFaqLinkText(dataList[2]['faqLinkText'][lang])
-            setTeamLinkText(dataList[2]['teamLinkText'][lang])
-            setPartnersLinkText(dataList[2]['partnersLinkText'][lang])
+            setOurPagesTitle(dataList[2].ourPagesTitle[lang])
+            setOurCompanyTitle(dataList[2].ourCompanyTitle[lang])
+            setHomeLinkText(dataList[2].homeLinkText[lang])
+            setAboutLinkText(dataList[2].aboutLinkText[lang])
+            setMarketPlaceLinkText(dataList[2].marketPlaceLinkText[lang])
+            setFaqLinkText(dataList[2].faqLinkText[lang])
+            setTeamLinkText(dataList[2].teamLinkText[lang])
+            setPartnersLinkText(dataList[2].partnersLinkText[lang])
 
-            setHomeLinkUrl(dataList[2]['homeLinkUrl'])
-            setAboutLinkUrl(dataList[2]['aboutLinkUrl'])
-            setMarketPlaceLinkUrl(dataList[2]['marketPlaceLinkUrl'])
-            setFaqLinkUrl(dataList[2]['faqLinkUrl'])
-            setTeamLinkUrl(dataList[2]['teamLinkUrl'])
-            setpartnersLinkUrl(dataList[2]['partnersLinkUrl'])
+            setHomeLinkUrl(dataList[2].homeLinkUrl)
+            setAboutLinkUrl(dataList[2].aboutLinkUrl)
+            setMarketPlaceLinkUrl(dataList[2].marketPlaceLinkUrl)
+            setFaqLinkUrl(dataList[2].faqLinkUrl)
+            setTeamLinkUrl(dataList[2].teamLinkUrl)
+            setpartnersLinkUrl(dataList[2].partnersLinkUrl)
 
             //Right block  
             const contactTitle = dataList[0]['contactTitle'][lang];
-            const email   = dataList[0]['Email'];
-            const phone   = dataList[0]['Telephone'];
-            const address = dataList[0]['Adresse'];
+            const email   = dataList[0].Email;
+            const phone   = dataList[0].Telephone;
+            const address = dataList[0].Adresse;
             setEmail(email)   
             setPhone(phone)
             setAddress(address)
             setContactTitle(contactTitle)
-
         }
     
         fetchData();

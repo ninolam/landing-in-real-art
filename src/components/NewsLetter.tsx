@@ -4,16 +4,13 @@ import { useAppContext } from '../context'
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import React from "react";
+import { NewsletterData } from "../types/types";
 
 const NewsLetter = () => {
   //Get the language of the global context
   const {lang } = useAppContext()
 
   const FIREBASE_NEWSLETTER_COLLECTION = 'Newsletter'
-  const FIREBASE_KEY_TITLE             = 'title'
-  const FIREBASE_KEY_DESC              = 'description'
-  const FIREBASE_KEY_EMAIL_PH_DESC     = 'email_placeholder'
-  
 
   const [title, setTitle]             = useState<string>('')
   const [description, setDescription] = useState<string>('')
@@ -24,11 +21,11 @@ const NewsLetter = () => {
     const fetchText = async () => {
         const nlCollection = collection(db, FIREBASE_NEWSLETTER_COLLECTION);
         const nlDocuments  = await getDocs(nlCollection);
-        const nlData       = nlDocuments.docs.map(doc => doc.data());
+        const nlData       = nlDocuments.docs.map(doc => doc.data() as NewsletterData)
         
-        setTitle(nlData[0][FIREBASE_KEY_TITLE][lang])
-        setDescription(nlData[0][FIREBASE_KEY_DESC][lang])
-        setEmailPh(nlData[0][FIREBASE_KEY_EMAIL_PH_DESC][lang])
+        setTitle(nlData[0].title[lang])
+        setDescription(nlData[0].description[lang])
+        setEmailPh(nlData[0].email_placeholder[lang])
         
     }
     fetchText();

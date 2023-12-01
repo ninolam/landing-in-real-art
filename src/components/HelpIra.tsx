@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useAppContext } from '../context'
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
+import { HelpIraData } from '../types/types';
 
 
 const HelpIra = () => {
@@ -11,15 +12,6 @@ const HelpIra = () => {
   const {lang } = useAppContext()
 
   const FIREBASE_FAQ_COLLECTION = 'Faq'
-  const FIREBASE_KEY_FAQ_MAIN   = 'faqMain'
-  const FIREBASE_KEY_QUESTION1  = 'question1'
-  const FIREBASE_KEY_QUESTION2  = 'question2'
-  const FIREBASE_KEY_QUESTION3  = 'question3'
-  const FIREBASE_KEY_ANSWER1    = 'answer1'
-  const FIREBASE_KEY_ANSWER2    = 'answer2'
-  const FIREBASE_KEY_ANSWER3    = 'answer3'
-  const FIREBASE_KEY_READ_FAQ   = 'readFaq'
-  
   let LANGUAGE                  = lang
 
   const [question1, setQuestion1] = useState<string>('');
@@ -35,19 +27,19 @@ const HelpIra = () => {
     const fetchText = async () => {
         const faqCollection = collection(db, FIREBASE_FAQ_COLLECTION);
         const faqDocuments  = await getDocs(faqCollection);
-        const faqData       = faqDocuments.docs.map(doc => doc.data());
+        const faqData       = faqDocuments.docs.map(doc => doc.data() as HelpIraData);
         
         //Index 0 ===> FAQ Buttons
-        setReadFaq(faqData[0][FIREBASE_KEY_READ_FAQ][LANGUAGE])
+        setReadFaq(faqData[0].readFaq[LANGUAGE])
         
         //Index 1 ===> FAQ Text
-        seFaqMain(faqData[1][FIREBASE_KEY_FAQ_MAIN][LANGUAGE])
-        setQuestion1(faqData[1][FIREBASE_KEY_QUESTION1][LANGUAGE])
-        setQuestion2(faqData[1][FIREBASE_KEY_QUESTION2][LANGUAGE])
-        setQuestion3(faqData[1][FIREBASE_KEY_QUESTION3][LANGUAGE])
-        setAnswer1(faqData[1][FIREBASE_KEY_ANSWER1][LANGUAGE])
-        setAnswer2(faqData[1][FIREBASE_KEY_ANSWER2][LANGUAGE])
-        setAnswer3(faqData[1][FIREBASE_KEY_ANSWER3][LANGUAGE])
+        seFaqMain(faqData[1].faqMain[LANGUAGE])
+        setQuestion1(faqData[1].question1[LANGUAGE])
+        setQuestion2(faqData[1].question2[LANGUAGE])
+        setQuestion3(faqData[1].question3[LANGUAGE])
+        setAnswer1(faqData[1].answer1[LANGUAGE])
+        setAnswer2(faqData[1].answer2[LANGUAGE])
+        setAnswer3(faqData[1].answer3[LANGUAGE])
     }
     fetchText();
 

@@ -5,6 +5,7 @@ import { storage } from "../firebaseConfig";
 import { useAppContext } from "../context";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
+import { ArtistsData } from "../types/types";
 
 const Artists = () => {
 
@@ -12,8 +13,6 @@ const Artists = () => {
   const {lang} = useAppContext()
 
   const FIREBASE_ARTISTS_COLLECTION = 'Artists'
-  const FIREBASE_ARTISTS_KEY_TITLE  = 'title'
-  const FIREBASE_ARTISTS_KEY_DESC   = 'description'
 
   const [imageUrl1, setImageUrl1] = useState<string>("")
   const [imageUrl2, setImageUrl2] = useState<string>("")
@@ -61,14 +60,14 @@ const Artists = () => {
             } catch (error) {
                 console.error("Error fetching image", error);
             }
-        };
+        }
 
       const fetchTexts = async() => {
         const artistsCollection = collection(db, FIREBASE_ARTISTS_COLLECTION);
         const artistsDocuments  = await getDocs(artistsCollection);
-        const artistsData       = artistsDocuments.docs.map(doc => doc.data());
-        setTitle(artistsData[0][FIREBASE_ARTISTS_KEY_TITLE][lang])
-        setDescription(artistsData[0][FIREBASE_ARTISTS_KEY_DESC][lang])
+        const artistsData       = artistsDocuments.docs.map(doc => doc.data() as ArtistsData);
+        setTitle(artistsData[0].title[lang])
+        setDescription(artistsData[0].description[lang])
       }
 
         fetchImages()
