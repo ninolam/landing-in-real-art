@@ -14,7 +14,7 @@ const TeamMember: React.FC<Props> = ( {name, photo, role, text1, text2} ) => {
         
           <>
             <div className="team-card">
-              <img className="rectangle-8" alt="Rectangle" src={photo} />
+              <img className="photo-team-member" alt="Rectangle" src={photo} />
 
               <div className="team-member-container">
                 <div className="team-member-description">

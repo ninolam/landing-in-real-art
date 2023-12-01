@@ -38,9 +38,25 @@ const Team = () => {
     const [photoUrl, setPhotoUrl] = useState<string>('');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [members, setMembers] = useState<MemberData>([]);
-
+    const [key, setKey] = useState(0);
+    
     useEffect(() => {
-      const fetchTeamMembers = async () => {
+
+      const displayMember = async() => {
+
+        fetchTeamMember();
+
+        // const timer = setTimeout(() => {
+        //   fetchTeamMember();
+        //   setTransitioning(false);
+        // }, 500);
+
+        // return () => clearTimeout(timer);
+      }
+
+      const fetchTeamMember = async () => {
+
+        
           const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
           const teamDocuments  = await getDocs(teamCollection);
           const teamData       = teamDocuments.docs.map(doc => doc.data());
@@ -58,11 +74,15 @@ const Team = () => {
           setPhotoUrl(url)
       }
   
-      fetchTeamMembers();
+      displayMember();
       
     }, [lang, currentIndex]);
   
     
+    useEffect(() => {
+      setKey(prevKey => prevKey + 1)
+    }, [photoUrl]);
+
     const handleArrowClick = (direction: string) => {
       if (direction === 'right') {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % members.length);

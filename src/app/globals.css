@@ -1221,11 +1221,18 @@ a {
   width: 1248px;
 }
 
-.LP .rectangle-8 {
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.LP .photo-team-member {
   height: 650px;
   object-fit: cover;
   position: relative;
   width: 474px;
+  animation: fadeIn 4000ms ease-in-out;
 }
 
 .LP .team-member-description {
