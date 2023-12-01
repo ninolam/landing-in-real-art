@@ -75,8 +75,10 @@ const Artists = () => {
     }, [lang]);
     
     return (
-
-        <div className="overlap-3">
+      <div className="carousel-artists">
+        <div className="arrow left-arrow">
+          <img src="img/angle-circle-left.png" alt=""/>
+        </div>
         <div className="frame-6">
           <div className="frame-7">
             <div className="text-wrapper-2">{title}</div>
@@ -98,8 +100,11 @@ const Artists = () => {
         </div>
         <img className="star" alt="Star" src="/img/star-1.png" />
         <img className="polygon" alt="Polygon" src="/img/polygon-3.png" />
+        <div className="arrow right-arrow">
+        <img src="img/angle-circle-right.png" alt=""/>
+        </div>
       </div>
-
+      
     )
 }
 
