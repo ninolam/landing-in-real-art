@@ -6,44 +6,38 @@ import { collection, getDocs } from 'firebase/firestore/lite';
 import { getDoc, doc } from "firebase/firestore";
 import { useAppContext } from "../context";
 import LanguageSelector from "./LanguagaSelector";
+import { MenuData } from "../types/types";
 
 
 const Menu = () => {
+    const {lang} = useAppContext()
     const [isSticky, setSticky] = useState(false);
 
     const FIREBASE_MENU_COLLECTION = 'Menu'
     
-    const FIREBASE_KEY_PRESALE     = 'Presale'
-    const FIREBASE_KEY_TESTNET     = 'Testnet'
-    const FIREBASE_KEY_COMMUNITY   = 'Community'
-    const FIREBASE_KEY_TEAM        = 'Team'
-    const FIREBASE_KEY_ABOUT       = 'About'
-    // let LANGUAGE                   = 'FR'
-
     const [community, setCommunity] = useState<string>('');
     const [team, setTeam]           = useState<string>('');
     const [about, setAbout]         = useState<string>('');
     const [presale, setPresale]     = useState<string>('');
     const [testnet, setTestnet]     = useState<string>('');
 
-    const divRef = useRef<HTMLDivElement>(null);// Reference to the div
     let lastScrollTop = 0; // To keep track of scroll direction
-    const {lang, setLang} = useAppContext()
+    
 
     useEffect(() => {
         
         const fetchText = async () => {
             const menuCollection = collection(db, FIREBASE_MENU_COLLECTION);
             const menuDocuments = await getDocs(menuCollection);
-            const menuData     = menuDocuments.docs.map(doc => doc.data());
+            const menuData     = menuDocuments.docs.map(doc => doc.data() as MenuData);
             
             //Index 0 ===> Menu_Buttons
-            setPresale(menuData[0][FIREBASE_KEY_PRESALE][lang])
-            setTestnet(menuData[0][FIREBASE_KEY_TESTNET][lang])
+            setPresale(menuData[0].Presale[lang])
+            setTestnet(menuData[0].Testnet[lang])
             //Index 1 ===> Menu_Elements
-            setCommunity(menuData[1][FIREBASE_KEY_COMMUNITY][lang])   
-            setTeam(menuData[1][FIREBASE_KEY_TEAM][lang])
-            setAbout(menuData[1][FIREBASE_KEY_ABOUT][lang])
+            setCommunity(menuData[1].Community[lang])   
+            setTeam(menuData[1].Team[lang])
+            setAbout(menuData[1].About[lang])
         }
     
         fetchText();
