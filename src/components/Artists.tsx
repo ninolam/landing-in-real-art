@@ -1,5 +1,5 @@
 "use client"
-import { getDownloadURL, ref } from "firebase/storage";
+import { ListResult, StorageReference, getDownloadURL, list, listAll, ref } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { storage } from "../firebaseConfig";
 import { useAppContext } from "../context";
@@ -26,6 +26,17 @@ const Artists = () => {
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
 
+  //-------------------------------------------------------------
+  async function listDirectories(directoryPath?: any) {
+    const storageRef = ref(storage, directoryPath);
+    // console.log(storageRef)
+    const list_: ListResult = await listAll(storageRef)
+    const directories: StorageReference[] = list_['prefixes']
+    const dirName = directories.map((dir) => {
+      return dir.name
+    })
+    return directories
+  }
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -56,6 +67,7 @@ const Artists = () => {
               setImageUrl6(url6)
               setImageUrl7(url7)
               setImageUrl8(url8)
+              await listDirectories('artists')
 
             } catch (error) {
                 console.error("Error fetching image", error);
@@ -72,7 +84,7 @@ const Artists = () => {
 
         fetchImages()
         fetchTexts()
-    }, [lang]);
+    }, [lang]); 
     
     return (
       <div className="carousel-artists">
@@ -84,7 +96,7 @@ const Artists = () => {
             <div className="text-wrapper-2">{title}</div>
             <p className="p">{description}</p>
           </div>
-          <div className="frame-8">
+          <div className="artists">
             <img className="jusdevoyage" alt="Jusdevoyage" src={imageUrl3} />
             <img className="jusdevoyage-2" alt="Jusdevoyage" src={imageUrl7} />
             <img className="clem-onojeghuo" alt="" src={imageUrl8}/>
