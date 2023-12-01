@@ -3,20 +3,30 @@ import { getDownloadURL, ref } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { storage } from "../firebaseConfig";
 import { useAppContext } from "../context";
+import { db } from '../firebaseConfig';
+import { collection, getDocs } from 'firebase/firestore/lite';
 
 const Artists = () => {
 
-  const [imageUrl1, setImageUrl1] = useState("")
-  const [imageUrl2, setImageUrl2] = useState("")
-  const [imageUrl3, setImageUrl3] = useState("")
-  const [imageUrl4, setImageUrl4] = useState("")
-  const [imageUrl5, setImageUrl5] = useState("")
-  const [imageUrl6, setImageUrl6] = useState("")
-  const [imageUrl7, setImageUrl7] = useState("")
-  const [imageUrl8, setImageUrl8] = useState("")
-
   //Get the language of the global context
-  const {lang, setLang} = useAppContext()
+  const {lang} = useAppContext()
+
+  const FIREBASE_ARTISTS_COLLECTION = 'Artists'
+  const FIREBASE_ARTISTS_KEY_TITLE  = 'title'
+  const FIREBASE_ARTISTS_KEY_DESC   = 'description'
+
+  const [imageUrl1, setImageUrl1] = useState<string>("")
+  const [imageUrl2, setImageUrl2] = useState<string>("")
+  const [imageUrl3, setImageUrl3] = useState<string>("")
+  const [imageUrl4, setImageUrl4] = useState<string>("")
+  const [imageUrl5, setImageUrl5] = useState<string>("")
+  const [imageUrl6, setImageUrl6] = useState<string>("")
+  const [imageUrl7, setImageUrl7] = useState<string>("")
+  const [imageUrl8, setImageUrl8] = useState<string>("")
+
+  const [title, setTitle] = useState<string>('')
+  const [description, setDescription] = useState<string>('')
+
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -47,23 +57,34 @@ const Artists = () => {
               setImageUrl5(url5)
               setImageUrl6(url6)
               setImageUrl7(url7)
-              setImageUrl8(url8);
+              setImageUrl8(url8)
 
             } catch (error) {
                 console.error("Error fetching image", error);
             }
         };
 
-        fetchImages();
-    }, []);
+      const fetchTexts = async() => {
+        const artistsCollection = collection(db, FIREBASE_ARTISTS_COLLECTION);
+        const artistsDocuments  = await getDocs(artistsCollection);
+        const artistsData       = artistsDocuments.docs.map(doc => doc.data());
+        console.log(lang)
+        console.log(artistsData)
+        setTitle(artistsData[0][FIREBASE_ARTISTS_KEY_TITLE][lang])
+        setDescription(artistsData[0][FIREBASE_ARTISTS_KEY_DESC][lang])
+      }
+
+        fetchImages()
+        fetchTexts()
+    }, [lang]);
     
     return (
 
         <div className="overlap-3">
         <div className="frame-6">
           <div className="frame-7">
-            <div className="text-wrapper-2">Nos artistes</div>
-            <p className="p">Découvez notre catalogue de’artiste galeries physique IRA</p>
+            <div className="text-wrapper-2">{title}</div>
+            <p className="p">{description}</p>
           </div>
           <div className="frame-8">
             <img className="jusdevoyage" alt="Jusdevoyage" src={imageUrl3} />

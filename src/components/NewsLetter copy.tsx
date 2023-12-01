@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { useAppContext } from '../context'
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import React from "react";
 
 const NewsLetter = () => {
   //Get the language of the global context
@@ -35,39 +34,25 @@ const NewsLetter = () => {
 
   }, [lang]);
   
-  const EmailInput = React.memo(() => {
-    return <input type="text" className="email" autoFocus placeholder={emailPh}/>
-  });
-
     return (
       
         <div className="newsletter">
           <div className="overlap-4">
             <div className="rectangle-3" />
             <img className="unsplash-augtvvqxdhg" alt="Unsplash augtvvqxdhg" src="/img/unsplash-augtvvqxdhg.png" />
-            <div className="group-4">
+            <div className="newsletter-left-blank"></div>
+            <div className="newsletter-left">
               <div className="frame-9">
                 <div className="text-wrapper-6">{title}</div>
                 <p className="ne-louper-pas-la">
                   {description}
                 </p>
+                <input type="email" placeholder="Envoyez votre mail !" />
               </div>
-              <div className="group-5">
-                <div className="overlap-group-4">
-                  {/*
-                    <EmailInput></EmailInput>
-                    */
-                  }
-                  
-                  
-                  <div className="rectangle-4" />
-                  <div className="rectangle-5" />
-                  <img
-                    className="material-symbols"
-                    alt="Material symbols"
-                    src="/img/material-symbols-arrow-insert.svg"
-                  />
-                </div>
+              
+              <div>
+                <input type="email" placeholder="Envoyez votre mail !" />
+                <button type="submit"><i className="arrow">→</i></button>
               </div>
             </div>
           </div>

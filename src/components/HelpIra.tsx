@@ -72,7 +72,6 @@ const HelpIra = () => {
   
   const Question1 = () => {
     const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png");
-  
     return (
       <>
         <div className="question">
@@ -111,7 +110,6 @@ const HelpIra = () => {
   
   const Question3 = () => {
     const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png");
-  
     return (
       <>
         <div className="question">
