@@ -78,7 +78,7 @@ const Team = () => {
       
     }, [lang, currentIndex]);
   
-    
+    //Re-render component with useEffect for the fade-in (but it does not work)
     useEffect(() => {
       setKey(prevKey => prevKey + 1)
     }, [photoUrl]);
