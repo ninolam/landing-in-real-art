@@ -182,28 +182,12 @@ a {
   width: 1440px;
 }
 
-.LP .overlap {
-  height: 622px;
-  left: 0;
-  position: absolute;
-  top: 1729px;
-  width: 1330px;
-}
-
 .LP .union {
   height: 396px;
   left: 0;
   position: absolute;
   top: 221px;
   width: 150px;
-}
-
-.LP .group {
-  height: 622px;
-  left: 147px;
-  position: absolute;
-  top: 0;
-  width: 1183px;
 }
 
 .LP .text-wrapper {
@@ -220,28 +204,6 @@ a {
   width: 394px;
 }
 
-.LP .overlap-group {
-  height: 502px;
-  left: 0;
-  position: absolute;
-  top: 120px;
-  width: 1181px;
-}
-
-.LP .frame {
-  align-items: flex-start;
-  background-color: var(--primairewhite);
-  border-radius: 24px;
-  display: inline-flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 435px;
-  justify-content: center;
-  left: 0;
-  padding: 40px;
-  position: absolute;
-  top: 67px;
-}
 
 .LP .overlap-group-wrapper {
   height: 73px;
@@ -337,19 +299,6 @@ a {
   width: fit-content;
 }
 
-.LP .frame-3 {
-  align-items: flex-start;
-  background-color: var(--primairewhite);
-  border-radius: 24px;
-  display: inline-flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-  left: 406px;
-  padding: 40px;
-  position: absolute;
-  top: 0;
-}
 
 .LP .heading-3 {
   color: #000000;
@@ -363,19 +312,6 @@ a {
   width: 289px;
 }
 
-.LP .frame-4 {
-  align-items: flex-start;
-  background-color: var(--primairewhite);
-  border-radius: 24px;
-  display: inline-flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-  left: 839px;
-  padding: 40px;
-  position: absolute;
-  top: 67px;
-}
 
 .LP .frame-5 {
   align-items: flex-start;
@@ -398,14 +334,6 @@ a {
   width: fit-content;
 }
 
-.LP .group-2 {
-  height: 73px;
-  left: 706px;
-  position: absolute;
-  top: 134px;
-  transform: rotate(45.79deg);
-  width: 141px;
-}
 
 .LP .vector {
   height: 74px;
@@ -436,14 +364,6 @@ a {
   top: 5px;
   transform: rotate(-10.85deg);
   width: 9px;
-}
-
-.LP .overlap-wrapper {
-  height: 77px;
-  left: 278px;
-  position: absolute;
-  top: 206px;
-  width: 155px;
 }
 
 .LP .overlap-2 {
@@ -616,7 +536,7 @@ a {
   width: 214px;
 }
 
-.LP .group-3 {
+.LP .help {
   height: 262px;
   left: 130px;
   position: absolute;
@@ -624,7 +544,7 @@ a {
   width: 1180px;
 }
 
-.LP .wrapper {
+.LP .help-right {
   align-items: flex-start;
   display: inline-flex;
   flex-direction: column;

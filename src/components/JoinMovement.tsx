@@ -54,12 +54,12 @@ const JoinMovement = () => {
     
     
     return (
-        <div className="overlap">
+        <div className="join-trend">
           <img className="union" alt="Union" src="/img/union-1.png" />
-          <div className="group">
+          <div className="join-trend-sub1">
             <div className="text-wrapper">{parse(title)}</div>
-            <div className="overlap-group">
-              <div className="frame">
+            <div className="join-trend-cards">
+              <div className="join-trend-card1">
                 <div className="overlap-group-wrapper">
                   <div className="overlap-group-2">
                     <div className="rectangle" />
@@ -79,7 +79,7 @@ const JoinMovement = () => {
                   <div className="heading-2">{artgalleryButton}</div>
                 </div>
               </div>
-              <div className="frame-3">
+              <div className="join-trend-card2">
                 <div className="overlap-group-wrapper">
                   <div className="overlap-group-2">
                     <div className="rectangle" />
@@ -96,7 +96,7 @@ const JoinMovement = () => {
                   <div className="heading-2">{aasButton}</div>
                 </div>
               </div>
-              <div className="frame-4">
+              <div className="join-trend-card3">
                 <div className="overlap-group-wrapper">
                   <div className="overlap-group-2">
                     <div className="rectangle" />
@@ -113,12 +113,12 @@ const JoinMovement = () => {
                   <div className="heading-2">{marketplaceButton}</div>
                 </div>
               </div>
-              <div className="group-2">
+              <div className="join-trend-cards-link1">
                 <img className="vector" alt="Vector" src="/img/vector-219-1.svg" />
                 <div className="ellipse" />
                 <div className="ellipse-2" />
               </div>
-              <div className="overlap-wrapper">
+              <div className="join-trend-cards-link2">
                 <div className="overlap-2">
                   <img className="img" alt="Vector" src="/img/vector-219.svg" />
                   <div className="ellipse-3" />

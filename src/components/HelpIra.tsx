@@ -121,8 +121,8 @@ const HelpIra = () => {
   }
 
     return (
-        <div className="group-3">
-          <div className="wrapper">
+        <div className="help">
+          <div className="help-right">
             <Question1 />
             <Question2 />
             <Question3 />

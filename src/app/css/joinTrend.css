@@ -1,0 +1,85 @@
+.LP .join-trend-sub1 {
+    height: 622px;
+    left: 147px;
+    position: absolute;
+    top: 0;
+    width: 1183px;
+}
+
+.LP .join-trend {
+    height: 622px;
+    left: 0;
+    position: absolute;
+    top: 1729px;
+    width: 1330px;
+}
+
+
+.LP .join-trend-cards-link2 {
+    height: 77px;
+    left: 278px;
+    position: absolute;
+    top: 206px;
+    width: 155px;
+}
+
+.LP .join-trend-cards {
+    height: 502px;
+    left: 0;
+    position: absolute;
+    top: 120px;
+    width: 1181px;
+}
+.LP .join-trend-card1 {
+    align-items: flex-start;
+    background-color: var(--primairewhite);
+    border-radius: 24px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 435px;
+    justify-content: center;
+    left: 0;
+    padding: 40px;
+    position: absolute;
+    top: 67px;
+}
+
+.LP .join-trend-card2 {
+    align-items: flex-start;
+    background-color: var(--primairewhite);
+    border-radius: 24px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    left: 406px;
+    padding: 40px;
+    position: absolute;
+    top: 0;
+}
+  
+ 
+.LP .join-trend-card3 {
+    align-items: flex-start;
+    background-color: var(--primairewhite);
+    border-radius: 24px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    left: 839px;
+    padding: 40px;
+    position: absolute;
+    top: 67px;
+}
+  
+.LP .join-trend-cards-link1 {
+    height: 73px;
+    left: 706px;
+    position: absolute;
+    top: 134px;
+    transform: rotate(45.79deg);
+    width: 141px;
+}
+  
