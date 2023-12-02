@@ -1,7 +1,7 @@
 "use client"
 import { useAppContext } from "../context";
 
-interface Artist {
+interface ArtistPanel {
     imageUrl1: string
     imageUrl2: string
     imageUrl3: string
@@ -13,7 +13,7 @@ interface Artist {
   }
 
   
-const Artist: React.FC<Artist> = ({imageUrl1, imageUrl2, imageUrl3, imageUrl4, imageUrl5, imageUrl6, imageUrl7, imageUrl8}) => {
+const ArtistPanel: React.FC<ArtistPanel> = ({imageUrl1, imageUrl2, imageUrl3, imageUrl4, imageUrl5, imageUrl6, imageUrl7, imageUrl8}) => {
 
   //Get the language of the global context
   const {lang} = useAppContext()
@@ -39,4 +39,4 @@ const Artist: React.FC<Artist> = ({imageUrl1, imageUrl2, imageUrl3, imageUrl4, i
     )
 }
 
-export default Artist
+export default ArtistPanel

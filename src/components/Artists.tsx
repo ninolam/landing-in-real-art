@@ -6,6 +6,7 @@ import { useAppContext } from "../context";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { ArtistsData } from "../types/types";
+import Artist from "./ArtistPanel";
 
 const Artists = () => {
 
@@ -96,19 +97,16 @@ const Artists = () => {
             <div className="text-wrapper-2">{title}</div>
             <p className="p">{description}</p>
           </div>
-          <div className="artists">
-            <img className="jusdevoyage" alt="Jusdevoyage" src={imageUrl3} />
-            <img className="jusdevoyage-2" alt="Jusdevoyage" src={imageUrl7} />
-            <img className="clem-onojeghuo" alt="" src={imageUrl8}/>
-            <img className="rayul" alt="Rayul" src={imageUrl5} />
-            <div className="overlap-group-3">
-              <img className="jonas-allert" alt="Jonas allert" src={imageUrl4} />
-              <img className="rectangle-2" alt="Rectangle" src="/img/rectangle-158.png" />
-            </div>
-            <img className="justin-luebke" alt="Justin luebke" src={imageUrl2} />
-            <img className="seth-doyle" alt="Seth doyle" src={imageUrl1} />
-            <img className="jennifer-marquez" alt="Jennifer marquez" src={imageUrl6}/>
-          </div>
+          <Artist 
+            imageUrl1={imageUrl1} 
+            imageUrl2={imageUrl2} 
+            imageUrl3={imageUrl3} 
+            imageUrl4={imageUrl4} 
+            imageUrl5={imageUrl5}
+            imageUrl6={imageUrl6}
+            imageUrl7={imageUrl7}
+            imageUrl8={imageUrl8}
+            />
         </div>
         <img className="star" alt="Star" src="/img/star-1.png" />
         <img className="polygon" alt="Polygon" src="/img/polygon-3.png" />
