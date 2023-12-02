@@ -482,33 +482,6 @@ a {
   width: 9px;
 }
 
-.LP .carousel-artists {
-  height: 1820px;
-  left: 0;
-  position: absolute;
-  top: 2403px;
-  width: 1440px;
-}
-
-.LP .frame-6 {
-  align-items: center;
-  display: inline-flex;
-  flex-direction: column;
-  gap: 80px;
-  left: 0;
-  position: absolute;
-  top: 108px;
-}
-
-.LP .frame-7 {
-  align-items: center;
-  display: inline-flex;
-  flex: 0 0 auto;
-  flex-direction: column;
-  gap: 16px;
-  position: relative;
-}
-
 .LP .text-wrapper-2 {
   color: var(--primaireblack);
   font-family: var(--heading-h2-font-family);
@@ -1645,32 +1618,3 @@ a {
   background-color: #f1f1f1;
 }
 
-
-.LP .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  z-index: 99;
-  transition: opacity 0.5s ease;
-  cursor: pointer;
-  /* Additional styling for the arrows */
-}
-
-.LP .left-arrow {
-  width: 32px;
-  height: 32px;
-  left: 10px;
-}
-
-.LP .right-arrow {
-  right: 10px;
-}
-
-.LP .carousel-artists:hover .arrow {
-  opacity: 1;
-}
-
-.LP .carousel-artists:hover {
-  opacity: 1;
-}

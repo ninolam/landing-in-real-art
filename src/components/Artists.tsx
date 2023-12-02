@@ -92,8 +92,8 @@ const Artists = () => {
         <div className="arrow left-arrow">
           <img src="img/angle-circle-left.png" alt=""/>
         </div>
-        <div className="frame-6">
-          <div className="frame-7">
+        <div className="frame-artists">
+          <div className="artists-title">
             <div className="text-wrapper-2">{title}</div>
             <p className="p">{description}</p>
           </div>
