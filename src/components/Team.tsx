@@ -29,16 +29,18 @@ const Team = () => {
 
     const FIREBASE_TEAM_COLLECTION = 'Team'
     
-    const [text1, setText1] = useState<string>('');
-    const [text2, setText2] = useState<string>('');
-    const [role, setRole]   = useState<string>('');
-    const [name, setName]   = useState<string>('');
-    const [photo, setPhoto] = useState<string>('');
-    const [photoUrl, setPhotoUrl] = useState<string>('');
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [members, setMembers] = useState<MemberData>([]);
-    const [key, setKey] = useState(0);
-    
+    const [text1, setText1] = useState<string>('')
+    const [text2, setText2] = useState<string>('')
+    const [role, setRole]   = useState<string>('')
+    const [name, setName]   = useState<string>('')
+    const [photo, setPhoto] = useState<string>('')
+    const [cssClassPhoto, setCssClassPhoto] = useState<string>('')
+    const [photoUrl, setPhotoUrl]           = useState<string>('')
+    const [currentIndex, setCurrentIndex]   = useState(0)
+    const [members, setMembers]             = useState<MemberData>([])
+    const [key, setKey] = useState(0)
+    const [fade, setFade] = useState(true)
+
     const setMembersData = async(currentIndex: number, members: MemberData) => {
       console.log('members', members)
       setText1(members[currentIndex].text1[lang])
@@ -49,7 +51,9 @@ const Team = () => {
       setPhoto(photo_)
       const imageRef = ref(storage, photo_)
       const url = await getDownloadURL(imageRef)
+      //photo-team-member
       setPhotoUrl(url)
+      setCssClassPhoto(``)
     }
 
     //--------------------------------------------------------------------- useEffect
@@ -77,11 +81,20 @@ const Team = () => {
      */
     useEffect(() => {
       if (members.length !== 0) {
-          setMembersData(currentIndex, members)
+        setMembersData(currentIndex, members)
+        // When imageUrl changes, start the fade-out effect
+        setFade(false);
+        // Wait for fade-out to complete, then fade in the new image
+        const timer = setTimeout(() => {
+          setFade(true);
+        }, 500); // Adjust this duration to match your fade-out CSS animation
+
+        return () => clearTimeout(timer);
+        
       }
     }, [lang, currentIndex])
 
-    
+
     //Re-render component with useEffect for the fade-in (but it does not work)
     useEffect(() => {
       setKey(prevKey => prevKey + 1)
@@ -98,11 +111,21 @@ const Team = () => {
 
     return (
         <div className="team">
+          <div className="arrow left-arrow" >
+            <img alt="left" src="img/angle-circle-left.png" onClick={() => handleArrowClick('left')}/>
+          </div>
           <TeamMember name={name} photo={photoUrl} role={role} text1={text1} text2={text2}/>
+          <div className="arrow right-arrow" >
+            <img alt="right" src="img/angle-circle-right.png" onClick={() => handleArrowClick('right')}/>
+          </div>
+          {
+            /*
           <div className="scrollTeam">
                   <img alt="left" src="/img/icons8-arrow-left.png" onClick={() => handleArrowClick('left')}/>
                   <img alt="right" src="/img/icons8-arrow-right.png" onClick={() => handleArrowClick('right')}/>
           </div>  
+          */
+          }
         </div>
     )
 }
