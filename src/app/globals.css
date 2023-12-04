@@ -434,56 +434,12 @@ a {
   width: 1440px;
 }
 
-.LP .jusdevoyage {
-  height: 572px;
-  left: 137px;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 423px;
-}
-
-.LP .jusdevoyage-2 {
-  height: 473px;
-  left: 1003px;
-  object-fit: cover;
-  position: absolute;
-  top: 592px;
-  width: 437px;
-}
-
-.LP .clem-onojeghuo {
-  height: 372px;
-  left: 1004px;
-  object-fit: cover;
-  position: absolute;
-  top: 1085px;
-  width: 436px;
-}
-
-.LP .rayul {
-  height: 420px;
-  left: 580px;
-  object-fit: cover;
-  position: absolute;
-  top: 152px;
-  width: 681px;
-}
 
 .LP .overlap-group-3 {
   height: 944px;
   left: 137px;
   position: absolute;
   top: 592px;
-  width: 846px;
-}
-
-.LP .jonas-allert {
-  height: 783px;
-  left: 0;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
   width: 846px;
 }
 
@@ -495,30 +451,6 @@ a {
   width: 382px;
 }
 
-.LP .justin-luebke {
-  height: 583px;
-  left: 0;
-  position: absolute;
-  top: 953px;
-  width: 117px;
-}
-
-.LP .seth-doyle {
-  height: 933px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 117px;
-}
-
-.LP .jennifer-marquez {
-  height: 473px;
-  left: 1281px;
-  object-fit: cover;
-  position: absolute;
-  top: 99px;
-  width: 159px;
-}
 
 .LP .star {
   height: 256px;

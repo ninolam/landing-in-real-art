@@ -135,10 +135,19 @@ export interface JoinTrendData {
     artgallery_join: {
         [key: string]: string
     }
+    artgallery_join_link: {
+        [key: string]: string
+    }
     aas_join: {
         [key: string]: string
     }    
+    aas_join_link: {
+        [key: string]: string
+    }    
     marketplace_join: {
+        [key: string]: string
+    }    
+    marketplace_join_link: {
         [key: string]: string
     }    
 }

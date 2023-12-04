@@ -6,6 +6,7 @@ import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import parse from 'html-react-parser';
 import { JoinTrendData } from '../types/types';
+import Link from 'next/link';
 
 const JoinMovement = () => {
 
@@ -14,16 +15,19 @@ const JoinMovement = () => {
 
     const FIREBASE_JOIN_MOVEMENT_COLLECTION = 'JoinMovement'
 
-    const [title, setTitle]                         = useState<string>('')
-    const [artgalleryTitle, setArtgalleryTitle]     = useState<string>('')
-    const [artgalleryDesc, setArtgalleryDesc]       = useState<string>('')
-    const [artgalleryButton, setArtgalleryButton]   = useState<string>('')
-    const [aasTitle, setAasTitle]                   = useState<string>('')
-    const [aasDesc, setAasDesc]                     = useState<string>('')
-    const [aasButton, setAasButton]                 = useState<string>('')
-    const [marketplaceTitle, setMarketplaceTitle]   = useState<string>('')
-    const [marketplaceDesc, setMarketplaceDesc]     = useState<string>('')
-    const [marketplaceButton, setMarketplaceButton] = useState<string>('')
+    const [title, setTitle]                                 = useState<string>('')
+    const [artgalleryTitle, setArtgalleryTitle]             = useState<string>('')
+    const [artgalleryDesc, setArtgalleryDesc]               = useState<string>('')
+    const [artgalleryButton, setArtgalleryButton]           = useState<string>('')
+    const [artgalleryButtonLink, setArtgalleryButtonLink]   = useState<string>('')
+    const [aasTitle, setAasTitle]                           = useState<string>('')
+    const [aasDesc, setAasDesc]                             = useState<string>('')
+    const [aasButton, setAasButton]                         = useState<string>('')
+    const [aasButtonLink, setAasButtonLink]                 = useState<string>('')
+    const [marketplaceTitle, setMarketplaceTitle]           = useState<string>('')
+    const [marketplaceDesc, setMarketplaceDesc]             = useState<string>('')
+    const [marketplaceButton, setMarketplaceButton]         = useState<string>('')
+    const [marketplaceButtonLink, setMarketplaceButtonLink] = useState<string>('')
 
     useEffect(() => {
 
@@ -75,9 +79,11 @@ const JoinMovement = () => {
                     
                   </p>
                 </div>
-                <div className="heading-wrapper">
-                  <div className="heading-2">{artgalleryButton}</div>
-                </div>
+                <Link href="">
+                  <div className="heading-wrapper">
+                      <div className="heading-2">{artgalleryButton}</div>
+                  </div>
+                </Link>    
               </div>
               <div className="join-trend-card2">
                 <div className="overlap-group-wrapper">
@@ -92,9 +98,11 @@ const JoinMovement = () => {
                   </div>
                   <p className="paragraph">{parse(aasDesc)}</p>
                 </div>
-                <div className="heading-wrapper">
-                  <div className="heading-2">{aasButton}</div>
-                </div>
+                <Link href="">
+                  <div className="heading-wrapper">
+                    <div className="heading-2">{aasButton}</div>
+                  </div>
+                </Link>
               </div>
               <div className="join-trend-card3">
                 <div className="overlap-group-wrapper">
@@ -109,9 +117,11 @@ const JoinMovement = () => {
                     {parse(marketplaceDesc)}                    
                   </p>
                 </div>
-                <div className="heading-wrapper">
-                  <div className="heading-2">{marketplaceButton}</div>
-                </div>
+                <Link href="">
+                  <div className="heading-wrapper">
+                    <div className="heading-2">{marketplaceButton}</div>
+                  </div>
+                </Link>
               </div>
               <div className="join-trend-cards-link1">
                 <img className="vector" alt="Vector" src="/img/vector-219-1.svg" />

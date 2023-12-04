@@ -54,5 +54,151 @@
     gap: 16px;
     position: relative;
 }
+
+  /** CARD ARTIST 2 **/
+  .LP .artist1-card-container {
+    height: 933px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 117px;
+  }
   
+  
+/** CARD ARTIST 2 **/
+
+  .LP .artist2-card-container {
+    height: 583px;
+    left: 0;
+    position: absolute;
+    top: 953px;
+    width: 117px;
+  }
+  
+/** CARD ARTIST 3 **/
+
+/* This container is needed to position the front and back side */
+.artist3-card-container {
+    height: 572px;
+    left: 137px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 423px;
+}
+
+.LP .artist1-card-front, 
+.LP .artist1-card-back,
+
+.LP .artist2-card-front, 
+.LP .artist2-card-back,
+.LP .artist3-card-front, 
+.LP .artist3-card-back,
+.LP .artist4-card-front, 
+.LP .artist4-card-back,
+.LP .artist5-card-front, 
+.LP .artist5-card-back,
+.LP .artist6-card-front, 
+.LP .artist6-card-back,
+.LP .artist7-card-front, 
+.LP .artist7-card-back,
+
+.LP .artist8-card-front, 
+.LP .artist8-card-back
+ {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: opacity 0.6s;
+}
+
+.LP .artist1-card-back,
+.LP .artist2-card-back,
+.LP .artist3-card-back,
+.LP .artist4-card-back,
+.LP .artist5-card-back,
+.LP .artist6-card-back,
+.LP .artist7-card-back,
+.LP .artist8-card-back {
+    opacity: 0;
+    border: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.artist1-card-container:hover .artist1-card-front,
+.artist2-card-container:hover .artist2-card-front,
+.artist3-card-container:hover .artist3-card-front,
+.artist4-card-container:hover .artist4-card-front,
+.artist5-card-container:hover .artist5-card-front,
+.artist6-card-container:hover .artist6-card-front,
+.artist7-card-container:hover .artist7-card-front,
+.artist8-card-container:hover .artist8-card-front {
+    opacity: 0;
+}
+
+.artist1-card-container:hover .artist1-card-back,
+.artist2-card-container:hover .artist2-card-back,
+.artist3-card-container:hover .artist3-card-back,
+.artist4-card-container:hover .artist4-card-back,
+.artist5-card-container:hover .artist5-card-back,
+.artist6-card-container:hover .artist6-card-back,
+.artist7-card-container:hover .artist7-card-back,
+.artist8-card-container:hover .artist8-card-back {
+    opacity: 1;
+}
+
+  /** CARD ARTIST 4 **/
+.LP .artist4-card-container {
+    height: 783px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 846px;
+  }
+
+/** CARD ARTIST 5 **/
+.LP .artist5-card-container {
+    height: 420px;
+    left: 580px;
+    object-fit: cover;
+    position: absolute;
+    top: 152px;
+    width: 681px;
+  }
+  
+  
+  /** CARD ARTIST 6 **/
+  .LP .artist6-card-container {
+    height: 473px;
+    left: 1281px;
+    object-fit: cover;
+    position: absolute;
+    top: 99px;
+    width: 159px;
+  }
+
+/** CARD ARTIST 7 **/
+  .LP .artist7-card-container {
+    height: 473px;
+    left: 1003px;
+    object-fit: cover;
+    position: absolute;
+    top: 592px;
+    width: 437px;
+  }
+    
+/** CARD ARTIST 8 **/
+  .LP .artist8-card-container {
+    height: 372px;
+    left: 1004px;
+    object-fit: cover;
+    position: absolute;
+    top: 1085px;
+    width: 436px;
+  }
   

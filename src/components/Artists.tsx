@@ -33,6 +33,15 @@ const Artists = () => {
   const [image7Hidden, setImage7Hidden] = useState<boolean>(false)
   const [image8Hidden, setImage8Hidden] = useState<boolean>(false)
 
+  const [artistName1, setArtistName1] = useState<string>("")
+  const [artistName2, setArtistName2] = useState<string>("")
+  const [artistName3, setArtistName3] = useState<string>("")
+  const [artistName4, setArtistName4] = useState<string>("")
+  const [artistName5, setArtistName5] = useState<string>("")
+  const [artistName6, setArtistName6] = useState<string>("")
+  const [artistName7, setArtistName7] = useState<string>("")
+  const [artistName8, setArtistName8] = useState<string>("")
+
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
 
@@ -176,14 +185,14 @@ const Artists = () => {
             <p className="p">{description}</p>
           </div>
           <ArtistPanel 
-            imageUrl1={imageUrl1} image1Hidden={image1Hidden}
-            imageUrl2={imageUrl2} image2Hidden={image2Hidden}
-            imageUrl3={imageUrl3} image3Hidden={image3Hidden}
-            imageUrl4={imageUrl4} image4Hidden={image4Hidden}
-            imageUrl5={imageUrl5} image5Hidden={image5Hidden}
-            imageUrl6={imageUrl6} image6Hidden={image6Hidden}
-            imageUrl7={imageUrl7} image7Hidden={image7Hidden}
-            imageUrl8={imageUrl8} image8Hidden={image8Hidden}            
+            imageUrl1={imageUrl1} image1Hidden={image1Hidden} artistName1={artistName1} artistDesc1={artistName1} 
+            imageUrl2={imageUrl2} image2Hidden={image2Hidden} artistName2={artistName2} artistDesc2={artistName2} 
+            imageUrl3={imageUrl3} image3Hidden={image3Hidden} artistName3={artistName3} artistDesc3={artistName3} 
+            imageUrl4={imageUrl4} image4Hidden={image4Hidden} artistName4={artistName4} artistDesc4={artistName4} 
+            imageUrl5={imageUrl5} image5Hidden={image5Hidden} artistName5={artistName5} artistDesc5={artistName5} 
+            imageUrl6={imageUrl6} image6Hidden={image6Hidden} artistName6={artistName6} artistDesc6={artistName6} 
+            imageUrl7={imageUrl7} image7Hidden={image7Hidden} artistName7={artistName7} artistDesc7={artistName7} 
+            imageUrl8={imageUrl8} image8Hidden={image8Hidden} artistName8={artistName8} artistDesc8={artistName8} 
             />
         </div>
         <img className="star" alt="Star" src="/img/star-1.png" />
