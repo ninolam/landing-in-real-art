@@ -28,8 +28,7 @@ const Team = () => {
     }[];
 
     const FIREBASE_TEAM_COLLECTION = 'Team'
-    let LANGUAGE                   = lang
-
+    
     const [text1, setText1] = useState<string>('');
     const [text2, setText2] = useState<string>('');
     const [role, setRole]   = useState<string>('');
@@ -40,44 +39,49 @@ const Team = () => {
     const [members, setMembers] = useState<MemberData>([]);
     const [key, setKey] = useState(0);
     
+    const setMembersData = async(currentIndex: number, members: MemberData) => {
+      console.log('members', members)
+      setText1(members[currentIndex].text1[lang])
+      setText2(members[currentIndex].text2[lang])
+      setRole(members[currentIndex].role[lang])
+      setName(members[currentIndex].name)
+      const photo_ = members[currentIndex].photo 
+      setPhoto(photo_)
+      const imageRef = ref(storage, photo_)
+      const url = await getDownloadURL(imageRef)
+      setPhotoUrl(url)
+    }
+
+    //--------------------------------------------------------------------- useEffect
+    /**
+     * UseEffect called at the first page loading 
+     */
     useEffect(() => {
-
-      const displayMember = async() => {
-
-        fetchTeamMember();
-
-        // const timer = setTimeout(() => {
-        //   fetchTeamMember();
-        //   setTransitioning(false);
-        // }, 500);
-
-        // return () => clearTimeout(timer);
+      const fetchTeamMembers = async () => {
+        const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
+        const teamDocuments  = await getDocs(teamCollection);
+        const teamData       = teamDocuments.docs.map(doc => doc.data());
+        const members_ = teamData[0]['members'] as MemberData
+        setMembers(members_)        
+        console.log('CURR INDEX', currentIndex)
+        console.log(members_)
+        setMembersData(currentIndex, members_)
       }
-
-      const fetchTeamMember = async () => {
-
-        
-          const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
-          const teamDocuments  = await getDocs(teamCollection);
-          const teamData       = teamDocuments.docs.map(doc => doc.data());
-          const members_ = teamData[0]['members'] as MemberData
-          setMembers(members_)
-          
-          setText1(members_[currentIndex].text1[LANGUAGE])
-          setText2(members_[currentIndex].text2[LANGUAGE])
-          setRole(members_[currentIndex].role[LANGUAGE])
-          setName(members_[currentIndex].name)
-          const photo_ = members_[currentIndex].photo 
-          setPhoto(photo_)
-          const imageRef = ref(storage, photo_)
-          const url = await getDownloadURL(imageRef)
-          setPhotoUrl(url)
-      }
-  
-      displayMember();
+      fetchTeamMembers()
       
-    }, [lang, currentIndex]);
-  
+    }, [])
+
+    //--------------------------------------------------------------------- useEffect
+    /**
+     * UseEffect called when 'lang' or 'currentIndex' has changed
+     */
+    useEffect(() => {
+      if (members.length !== 0) {
+          setMembersData(currentIndex, members)
+      }
+    }, [lang, currentIndex])
+
+    
     //Re-render component with useEffect for the fade-in (but it does not work)
     useEffect(() => {
       setKey(prevKey => prevKey + 1)

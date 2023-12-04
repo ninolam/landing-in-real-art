@@ -13,17 +13,6 @@ const Artists = () => {
   //Get the language of the global context
   const {lang} = useAppContext()
 
-  type urlImage = {
-    url1?: string
-    url2?: string
-    url3?: string
-    url4?: string
-    url5?: string
-    url6?: string
-    url7?: string
-    url8?: string
-  }
-
   const FIREBASE_ARTISTS_COLLECTION = 'Artists'
 
   const [imageUrl1, setImageUrl1] = useState<string>("")
@@ -115,7 +104,6 @@ const Artists = () => {
       const fetchFirestoreImagesUrls = async() => {
           const artistsPanels = await listDirectories('artists')
           let artistsCarousel: Array<string[]> = []
-          let urls: urlImage = {}
           let currentDir = ''
           for (let i=0; i< artistsPanels.length; i++) {
             currentDir = 'artists/'+artistsPanels[i]
