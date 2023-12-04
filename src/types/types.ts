@@ -1,3 +1,5 @@
+export type Lang = 'CN' | 'EN' | 'FR'
+
 export interface FooterData {
     twitterUrl: string
     instagramUrl: string
@@ -90,6 +92,25 @@ export interface ArtistsData {
       [key: string]: string
     }    
   }
+
+export interface AtristNameDesc {
+    name: string
+    desc: Record<string, string>
+}  
+
+export interface ArtistCarouselElement {
+    artist1: AtristNameDesc,
+    artist2: AtristNameDesc,
+    artist3: AtristNameDesc,
+    artist4: AtristNameDesc,
+    artist5: AtristNameDesc,
+    artist6: AtristNameDesc,
+    artist7: AtristNameDesc,
+    artist8: AtristNameDesc
+}
+
+export type Artists  = Array<ArtistCarouselElement>
+
 
 export interface JoinIraData {
     JoinIRA: {

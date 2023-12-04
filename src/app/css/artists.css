@@ -127,6 +127,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 3px solid #666a6d; /* Blue border, adjust color and thickness as needed */
+    border-radius: 15px; 
 }
 
 .artist1-card-container:hover .artist1-card-front,

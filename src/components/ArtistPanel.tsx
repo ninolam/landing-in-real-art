@@ -39,8 +39,12 @@ interface ArtistPanel {
 
   
 const ArtistPanel: React.FC<ArtistPanel> = (
-    {imageUrl1, imageUrl2, imageUrl3, imageUrl4, imageUrl5, imageUrl6, imageUrl7, imageUrl8, 
-      image1Hidden, image2Hidden, image3Hidden, image4Hidden, image5Hidden, image6Hidden, image7Hidden, image8Hidden}) => {
+    {
+      imageUrl1, imageUrl2, imageUrl3, imageUrl4, imageUrl5, imageUrl6, imageUrl7, imageUrl8, 
+      image1Hidden, image2Hidden, image3Hidden, image4Hidden, image5Hidden, image6Hidden, image7Hidden, image8Hidden,
+      artistName1, artistName2, artistName3, artistName4, artistName5, artistName6, artistName7, artistName8,
+      artistDesc1, artistDesc2, artistDesc3, artistDesc4, artistDesc5, artistDesc6, artistDesc7, artistDesc8,
+    }) => {
 
   //Get the language of the global context
   const {lang} = useAppContext()
@@ -55,8 +59,8 @@ const ArtistPanel: React.FC<ArtistPanel> = (
                 <img className="image1" alt="image1" src={imageUrl1} />
               </div>
               <div className="artist1-card-back">
-                <h1>artist 1</h1>
-                <p>desc artist1</p>
+                <h1>{artistName1}</h1>
+                <p>{artistDesc1}</p>
               </div>
             </div>
 
@@ -65,9 +69,9 @@ const ArtistPanel: React.FC<ArtistPanel> = (
               <div className="artist2-card-front">
                 <img className="image2" alt="image2" src={imageUrl2} hidden={image2Hidden}/>
               </div>
-              <div className="artist3-back">
-                <h1>artist 2</h1>
-                <p>desc artist2</p>
+              <div className="artist2-card-back">
+                <h1>{artistName2}</h1>
+                <p>{artistDesc2}</p>
               </div>
             </div>
 
@@ -77,8 +81,8 @@ const ArtistPanel: React.FC<ArtistPanel> = (
                 <img className="image3" alt="Jusdevoyage" src={imageUrl3}/>
               </div>
               <div className="artist3-card-back">
-                <h1>artist 3</h1>
-                <p>desc artist3</p>
+                <h1>{artistName3}</h1>
+                <p>{artistDesc3}</p>
               </div>
             </div>
             
@@ -89,8 +93,8 @@ const ArtistPanel: React.FC<ArtistPanel> = (
                     <img className="image4" alt="Jonas allert" src={imageUrl4} />
                   </div>
                   <div className="artist4-card-back">
-                  <h1>artist 4</h1>
-                  <p>desc artist4</p>
+                  <h1>{artistName4}</h1>
+                  <p>{artistDesc4}</p>
                 </div>
               </div>  
               <img className="rectangle-2" alt="Rectangle" src="/img/rectangle-158.png" />
@@ -102,8 +106,8 @@ const ArtistPanel: React.FC<ArtistPanel> = (
                 <img className="image5" alt="Rayul" src={imageUrl5} />
               </div>
               <div className="artist5-card-back">
-                <h1>artist 5</h1>
-                <p>desc artist5</p>
+                <h1>{artistName5}</h1>
+                <p>{artistDesc5}</p>
               </div>
             </div>
 
@@ -113,8 +117,8 @@ const ArtistPanel: React.FC<ArtistPanel> = (
                 <img className="image6" alt="image6" src={imageUrl6} />
               </div>
               <div className="artist6-card-back">
-                <h1>artist 6</h1>
-                <p>desc artist6</p>
+                <h1>{artistName6}</h1>
+                <p>{artistDesc6}</p>
               </div>
             </div>
 
@@ -124,8 +128,8 @@ const ArtistPanel: React.FC<ArtistPanel> = (
                 <img className="image7" alt="image7" src={imageUrl7}/>
               </div>
               <div className="artist7-card-back">
-                <h1>artist 7</h1>
-                <p>desc artist7</p>
+              <h1>{artistName7}</h1>
+                <p>{artistDesc7}</p>
               </div>
             </div>
 
@@ -135,8 +139,8 @@ const ArtistPanel: React.FC<ArtistPanel> = (
                 <img className="image8" alt="image8" src={imageUrl8}/>
               </div>  
               <div className="artist8-card-back">
-                <h1>artist 8</h1>
-                <p>desc artist8</p>
+                <h1>{artistName8}</h1>
+                <p>{artistDesc8}</p>
               </div>
             </div>  
           </div>  

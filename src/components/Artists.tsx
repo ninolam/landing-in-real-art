@@ -5,7 +5,8 @@ import { storage } from "../firebaseConfig";
 import { useAppContext } from "../context";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { ArtistsData } from "../types/types";
+import { Artists, ArtistsData, Lang } from "../types/types";
+
 import ArtistPanel from "./ArtistPanel";
 
 const Artists = () => {
@@ -42,11 +43,21 @@ const Artists = () => {
   const [artistName7, setArtistName7] = useState<string>("")
   const [artistName8, setArtistName8] = useState<string>("")
 
+  const [artistDesc1, setArtistDesc1] = useState<string>("")
+  const [artistDesc2, setArtistDesc2] = useState<string>("")
+  const [artistDesc3, setArtistDesc3] = useState<string>("")
+  const [artistDesc4, setArtistDesc4] = useState<string>("")
+  const [artistDesc5, setArtistDesc5] = useState<string>("")
+  const [artistDesc6, setArtistDesc6] = useState<string>("")
+  const [artistDesc7, setArtistDesc7] = useState<string>("")
+  const [artistDesc8, setArtistDesc8] = useState<string>("")
+
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
 
   const [artistsPanels, setArtistsPanels]     = useState<string[]>([]);
   const [artistsCarousel, setArtistsCarousel] = useState<Array<string[]>>([]);
+  const [allArtists, setAllArtists]           = useState<Artists>([])
   const [currentIndex, setCurrentIndex]       = useState<number>(0);
 
   //--------------------------------------------------------------- listDirectories
@@ -133,7 +144,37 @@ const Artists = () => {
           setImagesHidden(artistsCarousel, currentIndex)
           setArtistsPanels(artistsPanels)
       }
+
+      const fetchArtistsNameAndDesc = async() => {
+        const artistsCollection = collection(db, FIREBASE_ARTISTS_COLLECTION);
+        const artistsDocuments  = await getDocs(artistsCollection);
+        const artistsData       = artistsDocuments.docs.map(doc => doc.data());
+        const allArtists_ = artistsData[0] as Artists
+        setAllArtists(allArtists_)
+
+        setArtistName1(allArtists_[currentIndex]['artist1']['name'])  
+        setArtistName2(allArtists_[currentIndex]['artist2']['name'])  
+        setArtistName3(allArtists_[currentIndex]['artist3']['name'])  
+        setArtistName4(allArtists_[currentIndex]['artist4']['name'])  
+        setArtistName5(allArtists_[currentIndex]['artist5']['name'])  
+        setArtistName6(allArtists_[currentIndex]['artist6']['name'])  
+        setArtistName7(allArtists_[currentIndex]['artist7']['name'])  
+        setArtistName8(allArtists_[currentIndex]['artist8']['name'])  
+
+
+        setArtistDesc1(allArtists_[currentIndex]['artist1']['desc'][lang])  
+        setArtistDesc2(allArtists_[currentIndex]['artist2']['desc'][lang])  
+        setArtistDesc3(allArtists_[currentIndex]['artist3']['desc'][lang])  
+        setArtistDesc4(allArtists_[currentIndex]['artist4']['desc'][lang])  
+        setArtistDesc5(allArtists_[currentIndex]['artist5']['desc'][lang])  
+        setArtistDesc6(allArtists_[currentIndex]['artist6']['desc'][lang])  
+        setArtistDesc7(allArtists_[currentIndex]['artist7']['desc'][lang])  
+        setArtistDesc8(allArtists_[currentIndex]['artist8']['desc'][lang])   
+
+      }
+
       fetchFirestoreImagesUrls()
+      fetchArtistsNameAndDesc()
       
   }, [])
 
@@ -157,11 +198,36 @@ const Artists = () => {
         const fetchTexts = async() => {
           const artistsCollection = collection(db, FIREBASE_ARTISTS_COLLECTION);
           const artistsDocuments  = await getDocs(artistsCollection);
-          const artistsData       = artistsDocuments.docs.map(doc => doc.data() as ArtistsData);
-          setTitle(artistsData[0].title[lang])
-          setDescription(artistsData[0].description[lang])
+          const artistsData       = artistsDocuments.docs.map(doc => doc.data());
+          setTitle(artistsData[1].title[lang])
+          setDescription(artistsData[1].description[lang])
+        }
+
+        const fetchArtistsNameAndDesc = async () => {
+          console.log(allArtists)
+          if (allArtists.length !==0) {
+            setArtistName1(allArtists[currentIndex]['artist1']['name'])  
+            setArtistName2(allArtists[currentIndex]['artist2']['name'])  
+            setArtistName3(allArtists[currentIndex]['artist3']['name'])  
+            setArtistName4(allArtists[currentIndex]['artist4']['name'])  
+            setArtistName5(allArtists[currentIndex]['artist5']['name'])  
+            setArtistName6(allArtists[currentIndex]['artist6']['name'])  
+            setArtistName7(allArtists[currentIndex]['artist7']['name'])  
+            setArtistName8(allArtists[currentIndex]['artist8']['name'])  
+  
+  
+            setArtistDesc1(allArtists[currentIndex]['artist1']['desc'][lang])  
+            setArtistDesc2(allArtists[currentIndex]['artist2']['desc'][lang])  
+            setArtistDesc3(allArtists[currentIndex]['artist3']['desc'][lang])  
+            setArtistDesc4(allArtists[currentIndex]['artist4']['desc'][lang])  
+            setArtistDesc5(allArtists[currentIndex]['artist5']['desc'][lang])  
+            setArtistDesc6(allArtists[currentIndex]['artist6']['desc'][lang])  
+            setArtistDesc7(allArtists[currentIndex]['artist7']['desc'][lang])  
+            setArtistDesc8(allArtists[currentIndex]['artist8']['desc'][lang])   
+          }
         }
         fetchTexts()
+        fetchArtistsNameAndDesc()
     }, [lang]); 
     
 
@@ -185,14 +251,14 @@ const Artists = () => {
             <p className="p">{description}</p>
           </div>
           <ArtistPanel 
-            imageUrl1={imageUrl1} image1Hidden={image1Hidden} artistName1={artistName1} artistDesc1={artistName1} 
-            imageUrl2={imageUrl2} image2Hidden={image2Hidden} artistName2={artistName2} artistDesc2={artistName2} 
-            imageUrl3={imageUrl3} image3Hidden={image3Hidden} artistName3={artistName3} artistDesc3={artistName3} 
-            imageUrl4={imageUrl4} image4Hidden={image4Hidden} artistName4={artistName4} artistDesc4={artistName4} 
-            imageUrl5={imageUrl5} image5Hidden={image5Hidden} artistName5={artistName5} artistDesc5={artistName5} 
-            imageUrl6={imageUrl6} image6Hidden={image6Hidden} artistName6={artistName6} artistDesc6={artistName6} 
-            imageUrl7={imageUrl7} image7Hidden={image7Hidden} artistName7={artistName7} artistDesc7={artistName7} 
-            imageUrl8={imageUrl8} image8Hidden={image8Hidden} artistName8={artistName8} artistDesc8={artistName8} 
+            imageUrl1={imageUrl1} image1Hidden={image1Hidden} artistName1={artistName1} artistDesc1={artistDesc1} 
+            imageUrl2={imageUrl2} image2Hidden={image2Hidden} artistName2={artistName2} artistDesc2={artistDesc2} 
+            imageUrl3={imageUrl3} image3Hidden={image3Hidden} artistName3={artistName3} artistDesc3={artistDesc3} 
+            imageUrl4={imageUrl4} image4Hidden={image4Hidden} artistName4={artistName4} artistDesc4={artistDesc4} 
+            imageUrl5={imageUrl5} image5Hidden={image5Hidden} artistName5={artistName5} artistDesc5={artistDesc5} 
+            imageUrl6={imageUrl6} image6Hidden={image6Hidden} artistName6={artistName6} artistDesc6={artistDesc6} 
+            imageUrl7={imageUrl7} image7Hidden={image7Hidden} artistName7={artistName7} artistDesc7={artistDesc7} 
+            imageUrl8={imageUrl8} image8Hidden={image8Hidden} artistName8={artistName8} artistDesc8={artistDesc8} 
             />
         </div>
         <img className="star" alt="Star" src="/img/star-1.png" />
