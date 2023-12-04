@@ -13,6 +13,17 @@ const Artists = () => {
   //Get the language of the global context
   const {lang} = useAppContext()
 
+  type urlImage = {
+    url1?: string
+    url2?: string
+    url3?: string
+    url4?: string
+    url5?: string
+    url6?: string
+    url7?: string
+    url8?: string
+  }
+
   const FIREBASE_ARTISTS_COLLECTION = 'Artists'
 
   const [imageUrl1, setImageUrl1] = useState<string>("")
@@ -36,9 +47,10 @@ const Artists = () => {
   const [title, setTitle] = useState<string>('')
   const [description, setDescription] = useState<string>('')
 
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [artistsPanels, setArtistsPanels] = useState<string[]>([]);
-  
+  const [artistsPanels, setArtistsPanels]     = useState<string[]>([]);
+  const [artistsCarousel, setArtistsCarousel] = useState<Array<string[]>>([]);
+  const [currentIndex, setCurrentIndex]       = useState<number>(0);
+
   //--------------------------------------------------------------- listDirectories
   async function listDirectories(directoryPath?: any) {
     const storageRef = ref(storage, directoryPath)
@@ -50,87 +62,101 @@ const Artists = () => {
     return dirName
   }
 
-    //--------------------------------------------------------------------- useEffect
-    useEffect(() => {
-        const fetchFirestoreImagesDirecteories = async() => {
-            const artistsPanels = await listDirectories('artists')
-            setArtistsPanels(artistsPanels)
-        }
-        // fetchFirestoreImagesDirecteories()
-        
-    }, [])
+  //----------------------------------------------------------------- setImagesUrls
+  const setImagesUrls = (artistsCarousel: Array<string[]>, currentIndex: number) => {
+    setImageUrl1(artistsCarousel[currentIndex][0])
+    setImageUrl2(artistsCarousel[currentIndex][1])
+    setImageUrl3(artistsCarousel[currentIndex][2])
+    setImageUrl4(artistsCarousel[currentIndex][3])
+    setImageUrl5(artistsCarousel[currentIndex][4])
+    setImageUrl6(artistsCarousel[currentIndex][5])
+    setImageUrl7(artistsCarousel[currentIndex][6])
+    setImageUrl8(artistsCarousel[currentIndex][7])
+  }
+
+  //----------------------------------------------------------------- setImagesUrls
+  const setImagesHidden = (artistsCarousel: Array<string[]>, currentIndex: number) => {
+    setImage1Hidden((artistsCarousel[currentIndex][0])?false:true)
+    setImage2Hidden((artistsCarousel[currentIndex][1])?false:true)
+    setImage3Hidden((artistsCarousel[currentIndex][2])?false:true)
+    setImage4Hidden((artistsCarousel[currentIndex][3])?false:true)
+    setImage5Hidden((artistsCarousel[currentIndex][4])?false:true)
+    setImage6Hidden((artistsCarousel[currentIndex][5])?false:true)
+    setImage7Hidden((artistsCarousel[currentIndex][6])?false:true)
+    setImage8Hidden((artistsCarousel[currentIndex][7])?false:true)
+  }
+
+  //--------------------------------------------------------------------- useEffect
+  /**
+   * UseEffect called at the first loading : cache all the images Url we get 
+   * from Firstore to be used after
+   */
+  useEffect(() => {
+
+      const getUrl = (imageNr: number, currentDir: string) => {
+        const imageRef = ref(storage, `${currentDir}/artist${imageNr}.png`) //seth doyle  
+        return getDownloadURL(imageRef)
+      } 
+      /*
+      Another way to get the results of images URL is by using "allSettled" of "Promise" object
+      const promisesImageUrl: Promise<string>[] = []
+
+      for (let i = 1; i <= 8; i++) {
+        promisesImageUrl.push(getUrl(i, 'artists/carousel_2'));
+      }
+
+      Promise.allSettled(promisesImageUrl).then(results => {
+        const finalResults: string[] = results.map(result => 
+          result.status === 'fulfilled' ? result.value : ""
+        );  
+      });
+      */
+
+      const fetchFirestoreImagesUrls = async() => {
+          const artistsPanels = await listDirectories('artists')
+          let artistsCarousel: Array<string[]> = []
+          let urls: urlImage = {}
+          let currentDir = ''
+          for (let i=0; i< artistsPanels.length; i++) {
+            currentDir = 'artists/'+artistsPanels[i]
+            const urlImages: string[] = [];
+            for (let j=1; j<=8; j++) {
+              try {
+                const urlImage = await getUrl(j, currentDir);
+                urlImages.push(urlImage)
+              } catch (error) {
+                urlImages.push(""); // Push an empty string for image Url if there's an error
+              }     
+            }            
+            artistsCarousel[i] = urlImages
+          }
+          
+          setArtistsCarousel(artistsCarousel)
+          setImagesUrls(artistsCarousel, currentIndex)
+          setImagesHidden(artistsCarousel, currentIndex)
+          setArtistsPanels(artistsPanels)
+      }
+      fetchFirestoreImagesUrls()
+      
+  }, [])
 
     //--------------------------------------------------------------------- useEffect
+    /**
+     * UseEffect called when we scroll right or left on the artists carousel. 
+     * It reset all the props for the child Component
+     */
     useEffect(() => {
-        const fetchImages = async () => {
-            
-            const artistsPanels = await listDirectories('artists')
-            console.log(artistsPanels)
-            setArtistsPanels(artistsPanels)
+      if (artistsCarousel.length !== 0) {
+        setImagesUrls(artistsCarousel, currentIndex)
+        setImagesHidden(artistsCarousel, currentIndex)
+      }
+    }, [currentIndex])
 
-            let currentDir = artistsPanels[currentIndex]
-            currentDir = 'artists/'+currentDir
-            console.log(currentDir)
-            const imageRef1 = ref(storage, `${currentDir}/artist11.png`) //seth doyle  
-            const imageRef2 = ref(storage, `${currentDir}/artist2.png`) //justin luebke
-            const imageRef3 = ref(storage, `${currentDir}/artist3.png`) 
-            const imageRef4 = ref(storage, `${currentDir}/artist4.png`) //jonas allert
-            const imageRef5 = ref(storage, `${currentDir}/artist5.png`) // Rayul
-            const imageRef6 = ref(storage, `${currentDir}/artist6.png`) //jennifer marquez
-            const imageRef7 = ref(storage, `${currentDir}/artist7.png`) 
-            const imageRef8 = ref(storage, `${currentDir}/artist8.png`)
-            
-            try {
-              const url1 = await getDownloadURL(imageRef1)
-              setImageUrl1(url1)
-            } catch (error) {
-              setImage1Hidden(true)
-            }
-            finally {}
-            try {
-              const url2 = await getDownloadURL(imageRef2)
-              setImageUrl2(url2)
-            } catch (error) {
-              setImage2Hidden(true)
-            }
-            try {
-              const url3 = await getDownloadURL(imageRef3)
-              setImageUrl3(url3)
-            } catch (error) {
-              setImage3Hidden(true)
-            }
-            try {
-              const url4 = await getDownloadURL(imageRef4)
-              setImageUrl4(url4)
-            } catch (error) {
-              setImage4Hidden(true)
-            }
-            try {
-              const url5 = await getDownloadURL(imageRef5)
-              setImageUrl5(url5)
-            } catch (error) {
-              setImage5Hidden(true)
-            }
-            try {
-              const url6 = await getDownloadURL(imageRef6)
-              setImageUrl6(url6)
-            } catch (error) {
-              setImage6Hidden(true)
-            }
-            try {
-              const url7 = await getDownloadURL(imageRef7)
-              setImageUrl7(url7)
-            } catch (error) {
-              setImage7Hidden(true)
-            }
-            try {
-              const url8 = await getDownloadURL(imageRef8)
-              setImageUrl8(url8)
-            } catch (error) {
-              setImage1Hidden(true)
-            }
-        }
-
+  //--------------------------------------------------------------------- useEffect
+  /**
+   * UseEffect called when the lang is changed
+   */
+    useEffect(() => {
         const fetchTexts = async() => {
           const artistsCollection = collection(db, FIREBASE_ARTISTS_COLLECTION);
           const artistsDocuments  = await getDocs(artistsCollection);
@@ -138,10 +164,8 @@ const Artists = () => {
           setTitle(artistsData[0].title[lang])
           setDescription(artistsData[0].description[lang])
         }
-
-        fetchImages()
         fetchTexts()
-    }, [lang,currentIndex]); 
+    }, [lang]); 
     
 
     //-------------------------------------------------------------- handleArrowClick
