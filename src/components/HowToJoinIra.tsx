@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { useAppContext } from "../context";
-import { JoinIraData, JoinIraDataButton, JoinIraDataText } from "../types/types";
+import { JoinIraData, JoinIraDataButton, JoinIraDataText, defaultLangObject } from "../types/types";
 
 const HowToJoinIra = () => 
 {
@@ -18,34 +18,14 @@ const HowToJoinIra = () => 
   const [text2, setText2]           = useState<string>('');
   const [headerText, setHeaderText] = useState<string>('');
   const defaultJoinIraText = {
-    text1: {
-      'CN': '',
-      'EN': '',
-      'FR': ''
-    },
-    text2: {
-      'CN': '',
-      'EN': '',
-      'FR': ''
-    },
-    headerText: {
-      'CN': '',
-      'EN': '',
-      'FR': ''
-    }
+    text1: defaultLangObject,
+    text2: defaultLangObject,
+    headerText: defaultLangObject
   }
 
   const defaultJoinIraButton = {
-    JoinIRA: {
-      'CN': '',
-      'EN': '',
-      'FR': ''
-    },
-    StartIRA: {
-      'CN': '',
-      'EN': '',
-      'FR': ''
-    }
+    JoinIRA: defaultLangObject,
+    StartIRA: defaultLangObject
   }
 
 

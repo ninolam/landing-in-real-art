@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { useAppContext } from "../context";
-import { HeaderButtons, HeaderData, HeaderTexts } from "../types/types";
+import { HeaderButtons, HeaderData, HeaderTexts, defaultLangObject } from "../types/types";
 
 
 const Header = () => {
@@ -20,12 +20,12 @@ const Header = () => {
   const [joinIra, setJoinIra]       = useState<string>('');
   const [text1, setText1]           = useState<string>('');
   const defaultHeaderButtons = {
-    JoinIRA: {'CN': '', 'EN': '', 'FR': ''},
-    StartIRA: {'CN': '', 'EN': '', 'FR': ''},
+    JoinIRA: defaultLangObject,
+    StartIRA: defaultLangObject,
   }
 
   const defaultHeaderTexts = {
-    text1: {'CN': '', 'EN': '', 'FR': ''}
+    text1: defaultLangObject
   }
   const [headerButtons, setHeaderButtons] = useState<HeaderButtons>(defaultHeaderButtons);
   const [headerTexts, setHeaderTexts] = useState<HeaderTexts>(defaultHeaderTexts);

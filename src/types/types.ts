@@ -1,5 +1,10 @@
 export type Lang = 'CN' | 'EN' | 'FR'
 
+export const defaultLangObject = {
+    'CN': '',
+    'EN': '',
+    'FR': ''
+}
 export type HeaderButtons = {
     JoinIRA: Record<string,string>,
     StartIRA: Record<string,string>
@@ -154,48 +159,26 @@ export interface JoinIraDataText {
 
 export type JoinIraData = JoinIraDataButton & JoinIraDataText
 
-export interface JoinTrendData {
-    title: {
-        [key: string]: string
-    }
-    artgallery_title: {
-        [key: string]: string
-    }    
-    artgallery_description: {
-        [key: string]: string
-    }
-    aas_title: {
-        [key: string]: string
-    }    
-    aas_description: {
-        [key: string]: string
-    }    
-
-    marketplace_title: {
-        [key: string]: string
-    }
-    marketplace_description: {
-        [key: string]: string
-    }    
-    artgallery_join: {
-        [key: string]: string
-    }
-    artgallery_join_link: {
-        [key: string]: string
-    }
-    aas_join: {
-        [key: string]: string
-    }    
-    aas_join_link: {
-        [key: string]: string
-    }    
-    marketplace_join: {
-        [key: string]: string
-    }    
-    marketplace_join_link: {
-        [key: string]: string
-    }    
+export type JoinTrendButtons = {
+    artgallery_join: Record<Lang, string>
+    artgallery_join_link: string
+    aas_join: Record<Lang, string>
+    aas_join_link: string
+    marketplace_join: Record<Lang, string>
+    marketplace_join_link: string    
 }
+
+export type JoinTrendTexts = {
+    title: Record<Lang, string>
+    artgallery_title: Record<Lang, string>
+    artgallery_description: Record<Lang, string>
+    aas_title: Record<Lang, string>
+    aas_description: Record<Lang, string>
+    marketplace_title: Record<Lang, string>
+    marketplace_description: Record<Lang, string>
+}
+
+export type JoinTrendData = JoinTrendButtons & JoinTrendTexts
 
 export interface MenuData {
     Presale: {
