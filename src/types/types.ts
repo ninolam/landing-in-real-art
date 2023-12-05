@@ -69,32 +69,39 @@ export interface NewsletterData {
     };
   }
 
-export interface HelpIraData {
+export type FaqButtons = {
+    readFaq: {
+        [key: string]: string
+      }  
+}  
+
+export type FaqTexts = {
     faqMain: {
-      [key: string]: string
-    }
+        [key: string]: string
+      }
     question1: {
-      [key: string]: string
+    [key: string]: string
     }
     question2: {
-      [key: string]: string
+    [key: string]: string
     }
     question3: {
-      [key: string]: string
+    [key: string]: string
     }
     answer1: {
-      [key: string]: string
+    [key: string]: string
     }
     answer2: {
-      [key: string]: string
+    [key: string]: string
     }
     answer3: {
-      [key: string]: string
+    [key: string]: string
     }
-    readFaq: {
-      [key: string]: string
-    }
-  }
+  
+}  
+
+export type HelpIraData = FaqButtons & FaqTexts
+
 
 export interface ArtistsData {
     title: {

@@ -3,17 +3,16 @@ import { useEffect, useRef, useState } from 'react'
 import { useAppContext } from '../context'
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { HelpIraData } from '../types/types';
+import { FaqButtons, FaqTexts, HelpIraData } from '../types/types';
 
 
 const HelpIra = () => {
   
   //Get the language of the global context
-  const {lang } = useAppContext()
+  const {lang} = useAppContext()
 
   const FIREBASE_FAQ_COLLECTION = 'Faq'
-  let LANGUAGE                  = lang
-
+  
   const [question1, setQuestion1] = useState<string>('');
   const [question2, setQuestion2] = useState<string>('');
   const [question3, setQuestion3] = useState<string>('');
@@ -22,27 +21,57 @@ const HelpIra = () => {
   const [answer3, setAnswer3]     = useState<string>('');
   const [faqMain, seFaqMain]      = useState<string>('');
   const [readFaq, setReadFaq]     = useState<string>('');
+  const defaultFaqButtons = {
+    readFaq: {}
+  }
+  const defaultFaqTexts = {
+    faqMain: {},
+    question1: {},
+    question2: {},
+    question3: {},
+    answer1: {},
+    answer2: {},
+    answer3: {}
+  }
+
+  const [faqButtons,setFaqButtons] = useState<FaqButtons>(defaultFaqButtons);
+  const [faqTexts,setFaqTexts]     = useState<FaqTexts>(defaultFaqTexts);
+
   useEffect(() => {
-
-    const fetchText = async () => {
-        const faqCollection = collection(db, FIREBASE_FAQ_COLLECTION);
-        const faqDocuments  = await getDocs(faqCollection);
-        const faqData       = faqDocuments.docs.map(doc => doc.data() as HelpIraData);
-        
-        //Index 0 ===> FAQ Buttons
-        setReadFaq(faqData[0].readFaq[LANGUAGE])
-        
-        //Index 1 ===> FAQ Text
-        seFaqMain(faqData[1].faqMain[LANGUAGE])
-        setQuestion1(faqData[1].question1[LANGUAGE])
-        setQuestion2(faqData[1].question2[LANGUAGE])
-        setQuestion3(faqData[1].question3[LANGUAGE])
-        setAnswer1(faqData[1].answer1[LANGUAGE])
-        setAnswer2(faqData[1].answer2[LANGUAGE])
-        setAnswer3(faqData[1].answer3[LANGUAGE])
+    const fetchData = async () => {
+      const faqCollection = collection(db, FIREBASE_FAQ_COLLECTION);
+      const faqDocuments  = await getDocs(faqCollection);
+      const faqData       = faqDocuments.docs.map(doc => doc.data());
+      
+      //Index 0 ===> FAQ Buttons
+      setFaqButtons(faqData[0] as FaqButtons)
+      setReadFaq(faqData[0].readFaq[lang])
+      
+      //Index 1 ===> FAQ Text
+      setFaqTexts(faqData[1] as FaqTexts)
+      seFaqMain(faqData[1].faqMain[lang])
+      setQuestion1(faqData[1].question1[lang])
+      setQuestion2(faqData[1].question2[lang])
+      setQuestion3(faqData[1].question3[lang])
+      setAnswer1(faqData[1].answer1[lang])
+      setAnswer2(faqData[1].answer2[lang])
+      setAnswer3(faqData[1].answer3[lang])
     }
-    fetchText();
+    fetchData();
+  }, [])
 
+  useEffect(() => {
+    // Buttons
+    setReadFaq(faqButtons.readFaq[lang])
+      
+    // Texts
+    seFaqMain(faqTexts.faqMain[lang])
+    setQuestion1(faqTexts.question1[lang])
+    setQuestion2(faqTexts.question2[lang])
+    setQuestion3(faqTexts.question3[lang])
+    setAnswer1(faqTexts.answer1[lang])
+    setAnswer2(faqTexts.answer2[lang])
+    setAnswer3(faqTexts.answer3[lang])
   }, [lang]);
 
   const imagePlus1Ref = useRef(null);
