@@ -111,14 +111,16 @@ export interface ArtistCarouselElement {
 
 export type Artists  = Array<ArtistCarouselElement>
 
-
-export interface JoinIraData {
+export interface JoinIraDataButton {
     JoinIRA: {
         [key: string]: string
     }
     StartIRA: {
         [key: string]: string
-    }    
+    }
+}
+
+export interface JoinIraDataText {
     text1: {
         [key: string]: string
     }
@@ -129,6 +131,9 @@ export interface JoinIraData {
         [key: string]: string
     }    
 }
+
+
+export type JoinIraData = JoinIraDataButton & JoinIraDataText
 
 export interface JoinTrendData {
     title: {

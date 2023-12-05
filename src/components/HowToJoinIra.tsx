@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { useAppContext } from "../context";
-import { JoinIraData } from "../types/types";
+import { JoinIraData, JoinIraDataButton, JoinIraDataText } from "../types/types";
 
 const HowToJoinIra = () => 
 {
@@ -11,28 +11,79 @@ const HowToJoinIra = () => 
   const {lang} = useAppContext()
 
   const FIREBASE_JOIN_IRA_COLLECTION = 'JoinIRA'
-  let LANGUAGE                       = lang
-
+  
   const [joinIra, setJoinIra]       = useState<string>('');
   const [startIra, setStartIra]     = useState<string>('');
   const [text1, setText1]           = useState<string>('');
   const [text2, setText2]           = useState<string>('');
   const [headerText, setHeaderText] = useState<string>('');
+  const defaultJoinIraText = {
+    text1: {
+      'CN': '',
+      'EN': '',
+      'FR': ''
+    },
+    text2: {
+      'CN': '',
+      'EN': '',
+      'FR': ''
+    },
+    headerText: {
+      'CN': '',
+      'EN': '',
+      'FR': ''
+    }
+  }
+
+  const defaultJoinIraButton = {
+    JoinIRA: {
+      'CN': '',
+      'EN': '',
+      'FR': ''
+    },
+    StartIRA: {
+      'CN': '',
+      'EN': '',
+      'FR': ''
+    }
+  }
+
+
+  const [joinIraDataText, setJoinIraDataText] = useState<JoinIraDataText>(defaultJoinIraText);
+  const [joinIraDataButton, setJoinIraDataButton] = useState<JoinIraDataButton>(defaultJoinIraButton);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const joinIRACollection = collection(db, FIREBASE_JOIN_IRA_COLLECTION);
+      const joinIRADocuments  = await getDocs(joinIRACollection);
+      const joinIRAData       = joinIRADocuments.docs.map(doc => doc.data());
+      
+      //Index 0 ===> joinIRA Buttons
+      setJoinIraDataButton(joinIRAData[0] as JoinIraDataButton)
+      setStartIra(joinIRAData[0].StartIRA[lang])
+      setJoinIra(joinIRAData[0].JoinIRA[lang])
+
+      //Index 1 ===> joinIRA Text
+      setJoinIraDataText(joinIRAData[1] as JoinIraDataText)
+      setText1(joinIRAData[1].text1[lang])
+      setText2(joinIRAData[1].text2[lang])
+      setHeaderText(joinIRAData[1].headerText[lang])
+  }  
+  fetchData();
+  }, [])
+
 
   useEffect(() => {
     const fetchText = async () => {
-        const joinIRACollection = collection(db, FIREBASE_JOIN_IRA_COLLECTION);
-        const joinIRADocuments  = await getDocs(joinIRACollection);
-        const joinIRAData       = joinIRADocuments.docs.map(doc => doc.data() as JoinIraData);
-        
-        //Index 0 ===> joinIRA Buttons
-        setStartIra(joinIRAData[0].StartIRA[LANGUAGE])
-        setJoinIra(joinIRAData[0].JoinIRA[LANGUAGE])
+      console.log(joinIraDataButton)
+      // Index 0 ===> joinIRA Buttons
+      setStartIra(joinIraDataButton.StartIRA[lang])
+      setJoinIra(joinIraDataButton.JoinIRA[lang])
 
-        //Index 1 ===> joinIRA Text
-        setText1(joinIRAData[1].text1[LANGUAGE])
-        setText2(joinIRAData[1].text2[LANGUAGE])
-        setHeaderText(joinIRAData[1].headerText[LANGUAGE])
+      // Index 1 ===> joinIRA Text
+      setText1(joinIraDataText.text1[lang])
+      setText2(joinIraDataText.text2[lang])
+      setHeaderText(joinIraDataText.headerText[lang])
     }
     
     fetchText();
