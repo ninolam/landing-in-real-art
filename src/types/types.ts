@@ -180,20 +180,16 @@ export type JoinTrendTexts = {
 
 export type JoinTrendData = JoinTrendButtons & JoinTrendTexts
 
-export interface MenuData {
-    Presale: {
-        [key: string]: string
-    }
-    Testnet: {
-        [key: string]: string
-    }    
-    Community: {
-        [key: string]: string
-    }
-    Team: {
-        [key: string]: string
-    }    
-    About: {
-        [key: string]: string
-    }    
+export type MenuButtons = {
+    Presale: Record<Lang, string>,
+    Testnet: Record<Lang, string>
 }
+
+export type MenuElements = {
+    About: Record<Lang, string>,
+    Community: Record<Lang, string>
+    Team: Record<Lang, string>
+}
+
+
+export type MenuData = MenuButtons & MenuElements

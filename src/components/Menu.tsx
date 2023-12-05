@@ -6,42 +6,68 @@ import { collection, getDocs } from 'firebase/firestore/lite';
 import { getDoc, doc } from "firebase/firestore";
 import { useAppContext } from "../context";
 import LanguageSelector from "./LanguagaSelector";
-import { MenuData } from "../types/types";
+import { Lang, MenuButtons, MenuData, MenuElements, defaultLangObject } from "../types/types";
 
 
 const Menu = () => {
     const {lang} = useAppContext()
+    const lang_ = lang as Lang
     const [isSticky, setSticky] = useState(false);
 
     const FIREBASE_MENU_COLLECTION = 'Menu'
     
-    const [community, setCommunity] = useState<string>('');
-    const [team, setTeam]           = useState<string>('');
-    const [about, setAbout]         = useState<string>('');
-    const [presale, setPresale]     = useState<string>('');
-    const [testnet, setTestnet]     = useState<string>('');
+    const [community, setCommunity] = useState<string>('')
+    const [team, setTeam]           = useState<string>('')
+    const [about, setAbout]         = useState<string>('')
+    const [presale, setPresale]     = useState<string>('')
+    const [testnet, setTestnet]     = useState<string>('')
 
+    const defaultMenuButtons = {
+        Presale: defaultLangObject,
+        Testnet: defaultLangObject
+    }
+    const defaultMenuElements = {
+        About: defaultLangObject,
+        Community: defaultLangObject,
+        Team: defaultLangObject
+    }
+
+    const [menuButtons, setMenuButtons]    = useState<MenuButtons>(defaultMenuButtons)
+    const [menuElements, setMenuElements] = useState<MenuElements>(defaultMenuElements)
     let lastScrollTop = 0; // To keep track of scroll direction
     
-
     useEffect(() => {
-        
-        const fetchText = async () => {
+        const fetchData = async () => {
             const menuCollection = collection(db, FIREBASE_MENU_COLLECTION);
             const menuDocuments = await getDocs(menuCollection);
             const menuData     = menuDocuments.docs.map(doc => doc.data() as MenuData);
             
             //Index 0 ===> Menu_Buttons
-            setPresale(menuData[0].Presale[lang])
-            setTestnet(menuData[0].Testnet[lang])
+            setMenuButtons(menuData[0] as MenuButtons)
+            setPresale(menuData[0].Presale[lang_])
+            setTestnet(menuData[0].Testnet[lang_])
+
             //Index 1 ===> Menu_Elements
-            setCommunity(menuData[1].Community[lang])   
-            setTeam(menuData[1].Team[lang])
-            setAbout(menuData[1].About[lang])
+            setMenuElements(menuData[1] as MenuElements)
+            setCommunity(menuData[1].Community[lang_])   
+            setTeam(menuData[1].Team[lang_])
+            setAbout(menuData[1].About[lang_])
         }
     
-        fetchText();
-        
+        fetchData();
+
+    }, [])
+
+    
+    useEffect(() => {
+        // Menu_Buttons
+        setPresale(menuButtons.Presale[lang_])
+        setTestnet(menuButtons.Testnet[lang_])
+
+        // Menu_Elements
+        setCommunity(menuElements.Community[lang_])   
+        setTeam(menuElements.Team[lang_])
+        setAbout(menuElements.About[lang_])        
       }, [lang]);
 
 
