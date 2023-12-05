@@ -3,13 +3,14 @@ import { useEffect, useRef, useState } from 'react'
 import { useAppContext } from '../context'
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { FaqButtons, FaqTexts, HelpIraData } from '../types/types';
+import { FaqButtons, FaqTexts, HelpIraData, Lang, defaultLangObject } from '../types/types';
 
 
 const HelpIra = () => {
   
   //Get the language of the global context
   const {lang} = useAppContext()
+  const lang_ = lang as Lang
 
   const FIREBASE_FAQ_COLLECTION = 'Faq'
   
@@ -22,16 +23,16 @@ const HelpIra = () => {
   const [faqMain, seFaqMain]      = useState<string>('');
   const [readFaq, setReadFaq]     = useState<string>('');
   const defaultFaqButtons = {
-    readFaq: {}
+    readFaq: defaultLangObject
   }
   const defaultFaqTexts = {
-    faqMain: {},
-    question1: {},
-    question2: {},
-    question3: {},
-    answer1: {},
-    answer2: {},
-    answer3: {}
+    faqMain: defaultLangObject,
+    question1: defaultLangObject,
+    question2: defaultLangObject,
+    question3: defaultLangObject,
+    answer1: defaultLangObject,
+    answer2: defaultLangObject,
+    answer3: defaultLangObject
   }
 
   const [faqButtons,setFaqButtons] = useState<FaqButtons>(defaultFaqButtons);
@@ -62,16 +63,16 @@ const HelpIra = () => {
 
   useEffect(() => {
     // Buttons
-    setReadFaq(faqButtons.readFaq[lang])
+    setReadFaq(faqButtons.readFaq[lang_])
       
     // Texts
-    seFaqMain(faqTexts.faqMain[lang])
-    setQuestion1(faqTexts.question1[lang])
-    setQuestion2(faqTexts.question2[lang])
-    setQuestion3(faqTexts.question3[lang])
-    setAnswer1(faqTexts.answer1[lang])
-    setAnswer2(faqTexts.answer2[lang])
-    setAnswer3(faqTexts.answer3[lang])
+    seFaqMain(faqTexts.faqMain[lang_])
+    setQuestion1(faqTexts.question1[lang_])
+    setQuestion2(faqTexts.question2[lang_])
+    setQuestion3(faqTexts.question3[lang_])
+    setAnswer1(faqTexts.answer1[lang_])
+    setAnswer2(faqTexts.answer2[lang_])
+    setAnswer3(faqTexts.answer3[lang_])
   }, [lang]);
 
   const imagePlus1Ref = useRef(null);

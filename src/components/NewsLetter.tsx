@@ -4,32 +4,44 @@ import { useAppContext } from '../context'
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import React from "react";
-import { NewsletterData } from "../types/types";
+import { Lang, NewsletterData, NewsletterText, defaultLangObject } from "../types/types";
 
 const NewsLetter = () => {
   //Get the language of the global context
   const {lang } = useAppContext()
+  const lang_ = lang as Lang
 
   const FIREBASE_NEWSLETTER_COLLECTION = 'Newsletter'
 
   const [title, setTitle]             = useState<string>('')
   const [description, setDescription] = useState<string>('')
   const [emailPh, setEmailPh]         = useState<string>('')
+  const defaultNlText = {
+    title: defaultLangObject,
+    description: defaultLangObject,
+    email_placeholder: defaultLangObject,
+  }
+  const [nlTexts, setNlTexts] = useState<NewsletterText>(defaultNlText)
 
   useEffect(() => {
-
-    const fetchText = async () => {
+    const fetchData = async () => {
         const nlCollection = collection(db, FIREBASE_NEWSLETTER_COLLECTION);
         const nlDocuments  = await getDocs(nlCollection);
         const nlData       = nlDocuments.docs.map(doc => doc.data() as NewsletterData)
         
-        setTitle(nlData[0].title[lang])
-        setDescription(nlData[0].description[lang])
-        setEmailPh(nlData[0].email_placeholder[lang])
-        
+        setNlTexts(nlData[0] as NewsletterText)
+        setTitle(nlData[0].title[lang_])
+        setDescription(nlData[0].description[lang_])
+        setEmailPh(nlData[0].email_placeholder[lang_])      
     }
-    fetchText();
+    fetchData();
 
+  }, []);
+
+  useEffect(() => {
+    setTitle(nlTexts.title[lang_])
+    setDescription(nlTexts.description[lang_])
+    setEmailPh(nlTexts.email_placeholder[lang_])      
   }, [lang]);
   
   const EmailInput = React.memo(() => {

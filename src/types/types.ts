@@ -62,46 +62,26 @@ export interface FooterData {
     }        
   }
 
-export interface NewsletterData {
-    title: {
-      [key: string]: string;
-    };
-    description: {
-      [key: string]: string;
-    };
-    email_placeholder: {
-      [key: string]: string;
-    };
-  }
+export type NewsletterText = {
+    title: Record<Lang, string>
+    description: Record<Lang, string>
+    email_placeholder: Record<Lang, string>
+}  
+
+export type NewsletterData = NewsletterText
 
 export type FaqButtons = {
-    readFaq: {
-        [key: string]: string
-      }  
+    readFaq: Record<Lang, string>
 }  
 
 export type FaqTexts = {
-    faqMain: {
-        [key: string]: string
-      }
-    question1: {
-    [key: string]: string
-    }
-    question2: {
-    [key: string]: string
-    }
-    question3: {
-    [key: string]: string
-    }
-    answer1: {
-    [key: string]: string
-    }
-    answer2: {
-    [key: string]: string
-    }
-    answer3: {
-    [key: string]: string
-    }
+    faqMain: Record<Lang, string>
+    question1: Record<Lang, string>
+    question2: Record<Lang, string>
+    question3: Record<Lang, string>
+    answer1: Record<Lang, string>
+    answer2: Record<Lang, string>
+    answer3: Record<Lang, string>
   
 }  
 
