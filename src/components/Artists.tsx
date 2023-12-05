@@ -1,11 +1,11 @@
 "use client"
-import { ListResult, StorageReference, getDownloadURL, list, listAll, ref } from "firebase/storage";
+import { ListResult, StorageReference, getDownloadURL, listAll, ref } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { storage } from "../firebaseConfig";
 import { useAppContext } from "../context";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { Artists, ArtistsData, Lang } from "../types/types";
+import { Artists, Lang } from "../types/types";
 
 import ArtistPanel from "./ArtistPanel";
 
@@ -13,7 +13,7 @@ const Artists = () => {
 
   //Get the language of the global context
   const {lang} = useAppContext()
-
+  const lang_ = lang as Lang
   const FIREBASE_ARTISTS_COLLECTION = 'Artists'
 
   const [imageUrl1, setImageUrl1] = useState<string>("")
@@ -162,14 +162,14 @@ const Artists = () => {
         setArtistName8(allArtists_[currentIndex]['artist8']['name'])  
 
 
-        setArtistDesc1(allArtists_[currentIndex]['artist1']['desc'][lang])  
-        setArtistDesc2(allArtists_[currentIndex]['artist2']['desc'][lang])  
-        setArtistDesc3(allArtists_[currentIndex]['artist3']['desc'][lang])  
-        setArtistDesc4(allArtists_[currentIndex]['artist4']['desc'][lang])  
-        setArtistDesc5(allArtists_[currentIndex]['artist5']['desc'][lang])  
-        setArtistDesc6(allArtists_[currentIndex]['artist6']['desc'][lang])  
-        setArtistDesc7(allArtists_[currentIndex]['artist7']['desc'][lang])  
-        setArtistDesc8(allArtists_[currentIndex]['artist8']['desc'][lang])   
+        setArtistDesc1(allArtists_[currentIndex]['artist1']['desc'][lang_])  
+        setArtistDesc2(allArtists_[currentIndex]['artist2']['desc'][lang_])  
+        setArtistDesc3(allArtists_[currentIndex]['artist3']['desc'][lang_])  
+        setArtistDesc4(allArtists_[currentIndex]['artist4']['desc'][lang_])  
+        setArtistDesc5(allArtists_[currentIndex]['artist5']['desc'][lang_])  
+        setArtistDesc6(allArtists_[currentIndex]['artist6']['desc'][lang_])  
+        setArtistDesc7(allArtists_[currentIndex]['artist7']['desc'][lang_])  
+        setArtistDesc8(allArtists_[currentIndex]['artist8']['desc'][lang_])   
 
       }
 
@@ -216,14 +216,14 @@ const Artists = () => {
             setArtistName8(allArtists[currentIndex]['artist8']['name'])  
   
   
-            setArtistDesc1(allArtists[currentIndex]['artist1']['desc'][lang])  
-            setArtistDesc2(allArtists[currentIndex]['artist2']['desc'][lang])  
-            setArtistDesc3(allArtists[currentIndex]['artist3']['desc'][lang])  
-            setArtistDesc4(allArtists[currentIndex]['artist4']['desc'][lang])  
-            setArtistDesc5(allArtists[currentIndex]['artist5']['desc'][lang])  
-            setArtistDesc6(allArtists[currentIndex]['artist6']['desc'][lang])  
-            setArtistDesc7(allArtists[currentIndex]['artist7']['desc'][lang])  
-            setArtistDesc8(allArtists[currentIndex]['artist8']['desc'][lang])   
+            setArtistDesc1(allArtists[currentIndex]['artist1']['desc'][lang_])  
+            setArtistDesc2(allArtists[currentIndex]['artist2']['desc'][lang_])  
+            setArtistDesc3(allArtists[currentIndex]['artist3']['desc'][lang_])  
+            setArtistDesc4(allArtists[currentIndex]['artist4']['desc'][lang_])  
+            setArtistDesc5(allArtists[currentIndex]['artist5']['desc'][lang_])  
+            setArtistDesc6(allArtists[currentIndex]['artist6']['desc'][lang_])  
+            setArtistDesc7(allArtists[currentIndex]['artist7']['desc'][lang_])  
+            setArtistDesc8(allArtists[currentIndex]['artist8']['desc'][lang_])   
           }
         }
         fetchTexts()

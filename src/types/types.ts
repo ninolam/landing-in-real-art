@@ -6,12 +6,12 @@ export const defaultLangObject = {
     'FR': ''
 }
 export type HeaderButtons = {
-    JoinIRA: Record<string,string>,
-    StartIRA: Record<string,string>
+    JoinIRA: Record<Lang,string>,
+    StartIRA: Record<Lang,string>
 }
 
 export type HeaderTexts = {
-    text1: Record<string,string>
+    text1: Record<Lang,string>
 }
 
 

@@ -6,7 +6,7 @@ import { useAppContext } from '../context';
 import Link from 'next/link';
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../firebaseConfig";
-import { FooterData } from '../types/types';
+import { FooterData, Lang } from '../types/types';
 
 
 
@@ -14,7 +14,7 @@ const Footer = () => {
 
     //Get the language of the global context
     const {lang } = useAppContext()
-
+    const lang_ = lang as Lang
     const FIREBASE_FOOTER_COLLECTION = 'Footer'
 
     const [contactTitle, setContactTitle] = useState<string>('');
@@ -69,17 +69,17 @@ const Footer = () => {
             setTwitterUrl(dataList[1].twitterUrl)
             setInstagramUrl(dataList[1].instagramUrl)
             setLinkedInUrl(dataList[1].linkedInUrl)
-            setleftBlockText(dataList[1].text[lang])
+            setleftBlockText(dataList[1].text[lang_])
 
             //Links block
-            setOurPagesTitle(dataList[2].ourPagesTitle[lang])
-            setOurCompanyTitle(dataList[2].ourCompanyTitle[lang])
-            setHomeLinkText(dataList[2].homeLinkText[lang])
-            setAboutLinkText(dataList[2].aboutLinkText[lang])
-            setMarketPlaceLinkText(dataList[2].marketPlaceLinkText[lang])
-            setFaqLinkText(dataList[2].faqLinkText[lang])
-            setTeamLinkText(dataList[2].teamLinkText[lang])
-            setPartnersLinkText(dataList[2].partnersLinkText[lang])
+            setOurPagesTitle(dataList[2].ourPagesTitle[lang_])
+            setOurCompanyTitle(dataList[2].ourCompanyTitle[lang_])
+            setHomeLinkText(dataList[2].homeLinkText[lang_])
+            setAboutLinkText(dataList[2].aboutLinkText[lang_])
+            setMarketPlaceLinkText(dataList[2].marketPlaceLinkText[lang_])
+            setFaqLinkText(dataList[2].faqLinkText[lang_])
+            setTeamLinkText(dataList[2].teamLinkText[lang_])
+            setPartnersLinkText(dataList[2].partnersLinkText[lang_])
 
             setHomeLinkUrl(dataList[2].homeLinkUrl)
             setAboutLinkUrl(dataList[2].aboutLinkUrl)
@@ -89,7 +89,7 @@ const Footer = () => {
             setpartnersLinkUrl(dataList[2].partnersLinkUrl)
 
             //Right block  
-            const contactTitle = dataList[0]['contactTitle'][lang];
+            const contactTitle = dataList[0]['contactTitle'][lang_];
             const email   = dataList[0].Email;
             const phone   = dataList[0].Telephone;
             const address = dataList[0].Adresse;

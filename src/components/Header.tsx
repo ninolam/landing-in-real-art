@@ -3,13 +3,14 @@ import { useEffect, useState } from "react";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { useAppContext } from "../context";
-import { HeaderButtons, HeaderData, HeaderTexts, defaultLangObject } from "../types/types";
+import { HeaderButtons, HeaderData, HeaderTexts, Lang, defaultLangObject } from "../types/types";
 
 
 const Header = () => {
 
   //Get the language of the global context
   const {lang} = useAppContext()
+  const lang_ = lang as Lang
 
   const FIREBASE_HEADER_COLLECTION = 'Header'
   const FIREBASE_KEY_JOIN_IRA      = 'JoinIRA'
@@ -50,9 +51,9 @@ const Header = () => {
 
 
   useEffect(() => {
-      setStartIra(headerButtons[FIREBASE_KEY_START_IRA][lang])
-      setJoinIra(headerButtons[FIREBASE_KEY_JOIN_IRA][lang])
-      setText1(headerTexts[FIREBASE_KEY_TEXT_1][lang])
+      setStartIra(headerButtons[FIREBASE_KEY_START_IRA][lang_])
+      setJoinIra(headerButtons[FIREBASE_KEY_JOIN_IRA][lang_])
+      setText1(headerTexts[FIREBASE_KEY_TEXT_1][lang_])
   }, [lang]);
 
     return (
