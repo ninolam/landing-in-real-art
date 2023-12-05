@@ -1,5 +1,17 @@
 export type Lang = 'CN' | 'EN' | 'FR'
 
+export type HeaderButtons = {
+    JoinIRA: Record<string,string>,
+    StartIRA: Record<string,string>
+}
+
+export type HeaderTexts = {
+    text1: Record<string,string>
+}
+
+
+export type HeaderData = HeaderButtons & HeaderTexts
+
 export interface FooterData {
     twitterUrl: string
     instagramUrl: string
