@@ -1,3 +1,36 @@
+.LP .star {
+  height: 256px;
+  left: 1188px;
+  position: absolute;
+  top: 0;
+  width: 252px;
+}
+
+.LP .polygon {
+  height: 231px;
+  left: 31px;
+  position: absolute;
+  top: 143px;
+  width: 214px;
+}
+
+.LP .overlap-group-3 {
+  height: 944px;
+  left: 137px;
+  position: absolute;
+  top: 592px;
+  width: 846px;
+}
+
+.LP .rectangle-2 {
+  height: 241px;
+  left: 3px;
+  position: absolute;
+  top: 703px;
+  width: 382px;
+}
+
+
 .LP .carousel-artists {
     height: 1820px;
     left: 0;
@@ -204,3 +237,6 @@
     width: 436px;
   }
   
+  .LP .image1, .LP .image2, .LP .image3, .LP .image5, .LP .image5, .LP .image6, .LP .image7, .LP .image8 {
+    width: 100%;
+  }
