@@ -11,8 +11,8 @@ const Header = () => {
   const {lang, setLang} = useAppContext()
 
   const FIREBASE_HEADER_COLLECTION = 'Header'
-  const FIREBASE_KEY_JOIN_IRA      = 'Join Ira'
-  const FIREBASE_KEY_START_IRA     = 'Start Ira'
+  const FIREBASE_KEY_JOIN_IRA      = 'JoinIRA'
+  const FIREBASE_KEY_START_IRA     = 'StartIRA'
   const FIREBASE_KEY_TEXT_1        = 'text1'
   const LANGUAGE                   = lang
 
