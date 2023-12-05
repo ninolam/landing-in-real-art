@@ -30,36 +30,16 @@ export interface FooterData {
     Email: string
     Telephone: string
     Adresse: string
-    text: {
-        [key: string]: string
-    }
-    ourPagesTitle: {
-        [key: string]: string
-    }
-    ourCompanyTitle: {
-        [key: string]: string
-    }
-    homeLinkText: {
-        [key: string]: string
-    }
-    aboutLinkText: {
-        [key: string]: string
-    }
-    marketPlaceLinkText: {
-        [key: string]: string
-    }
-    faqLinkText: {
-        [key: string]: string
-    }
-    teamLinkText: {
-        [key: string]: string
-    }
-    partnersLinkText: {
-        [key: string]: string
-    }
-    contactTitle: {
-        [key: string]: string
-    }        
+    text: Record<Lang, string>
+    ourPagesTitle: Record<Lang, string>
+    ourCompanyTitle: Record<Lang, string>
+    homeLinkText: Record<Lang, string>
+    aboutLinkText: Record<Lang, string>
+    marketPlaceLinkText: Record<Lang, string>
+    faqLinkText: Record<Lang, string>
+    teamLinkText: Record<Lang, string>
+    partnersLinkText: Record<Lang, string>
+    contactTitle: Record<Lang, string>
   }
 
 export type NewsletterText = {
@@ -99,7 +79,7 @@ export interface ArtistsData {
 
 export interface AtristNameDesc {
     name: string
-    desc: Record<string, string>
+    desc: Record<Lang, string>
 }  
 
 export interface ArtistCarouselElement {
@@ -125,15 +105,9 @@ export interface JoinIraDataButton {
 }
 
 export interface JoinIraDataText {
-    text1: {
-        [key: string]: string
-    }
-    text2: {
-        [key: string]: string
-    }    
-    headerText: {
-        [key: string]: string
-    }    
+    text1: Record<Lang, string>
+    text2: Record<Lang, string>
+    headerText: Record<Lang, string>
 }
 
 
@@ -173,3 +147,12 @@ export type MenuElements = {
 
 
 export type MenuData = MenuButtons & MenuElements
+
+
+export type MemberData = {
+    text1: Record<Lang,string>
+    text2: Record<Lang,string>
+    role: Record<Lang,string>
+    name: string
+    photo: string
+  }[];

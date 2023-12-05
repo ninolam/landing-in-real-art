@@ -6,26 +6,14 @@ import { collection, getDocs } from 'firebase/firestore/lite';
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../firebaseConfig";
 import TeamMember from "./TeamMember";
+import { Lang, MemberData } from "../types/types";
 
 
 const Team = () => {
 
     //Get the language of the global context
     const {lang} = useAppContext()
-
-    type MemberData = {
-      text1: {
-        [key: string]: string
-      }
-      text2: {
-        [key: string]: string
-      }    
-      role: {
-        [key: string]: string
-      }
-      name: string
-      photo: string
-    }[];
+    const lang_ = lang as Lang
 
     const FIREBASE_TEAM_COLLECTION = 'Team'
     
@@ -43,9 +31,9 @@ const Team = () => {
 
     const setMembersData = async(currentIndex: number, members: MemberData) => {
       console.log('members', members)
-      setText1(members[currentIndex].text1[lang])
-      setText2(members[currentIndex].text2[lang])
-      setRole(members[currentIndex].role[lang])
+      setText1(members[currentIndex].text1[lang_])
+      setText2(members[currentIndex].text2[lang_])
+      setRole(members[currentIndex].role[lang_])
       setName(members[currentIndex].name)
       const photo_ = members[currentIndex].photo 
       setPhoto(photo_)
@@ -67,8 +55,6 @@ const Team = () => {
         const teamData       = teamDocuments.docs.map(doc => doc.data());
         const members_ = teamData[0]['members'] as MemberData
         setMembers(members_)        
-        console.log('CURR INDEX', currentIndex)
-        console.log(members_)
         setMembersData(currentIndex, members_)
       }
       fetchTeamMembers()

@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { useAppContext } from "../context";
-import { JoinIraData, JoinIraDataButton, JoinIraDataText, defaultLangObject } from "../types/types";
+import { JoinIraData, JoinIraDataButton, JoinIraDataText, Lang, defaultLangObject } from "../types/types";
 
 const HowToJoinIra = () => 
 {
   //Get the language of the global context
   const {lang} = useAppContext()
+  const lang_ = lang as Lang
 
   const FIREBASE_JOIN_IRA_COLLECTION = 'JoinIRA'
   
@@ -61,9 +62,9 @@ const HowToJoinIra = () => 
       setJoinIra(joinIraDataButton.JoinIRA[lang])
 
       // Index 1 ===> joinIRA Text
-      setText1(joinIraDataText.text1[lang])
-      setText2(joinIraDataText.text2[lang])
-      setHeaderText(joinIraDataText.headerText[lang])
+      setText1(joinIraDataText.text1[lang_])
+      setText2(joinIraDataText.text2[lang_])
+      setHeaderText(joinIraDataText.headerText[lang_])
     }
     
     fetchText();
