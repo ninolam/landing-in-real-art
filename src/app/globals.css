@@ -159,6 +159,12 @@ a {
 * Importé de Figma
 */
 
+.lang {
+  width: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 .LP {
   background-color: rgb(236, 238, 250);
