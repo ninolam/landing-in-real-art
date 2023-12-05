@@ -36,7 +36,6 @@ const Header = () => {
       const headerCollection = collection(db, FIREBASE_HEADER_COLLECTION);
       const headerDocuments  = await getDocs(headerCollection);
       const headerData       = headerDocuments.docs.map(doc => doc.data());
-      console.log(headerData)
       //Index 0 ===> Header_Buttons
       setHeaderButtons(headerData[0] as HeaderButtons)
       setStartIra(headerData[0][FIREBASE_KEY_START_IRA][lang])

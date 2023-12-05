@@ -30,7 +30,6 @@ const Team = () => {
     const [fade, setFade] = useState(true)
 
     const setMembersData = async(currentIndex: number, members: MemberData) => {
-      console.log('members', members)
       setText1(members[currentIndex].text1[lang_])
       setText2(members[currentIndex].text2[lang_])
       setRole(members[currentIndex].role[lang_])

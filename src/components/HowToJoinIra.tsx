@@ -56,7 +56,6 @@ const HowToJoinIra = () => 
 
   useEffect(() => {
     const fetchText = async () => {
-      console.log(joinIraDataButton)
       // Index 0 ===> joinIRA Buttons
       setStartIra(joinIraDataButton.StartIRA[lang])
       setJoinIra(joinIraDataButton.JoinIRA[lang])

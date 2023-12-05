@@ -204,7 +204,6 @@ const Artists = () => {
         }
 
         const fetchArtistsNameAndDesc = async () => {
-          console.log(allArtists)
           if (allArtists.length !==0) {
             setArtistName1(allArtists[currentIndex]['artist1']['name'])  
             setArtistName2(allArtists[currentIndex]['artist2']['name'])  
