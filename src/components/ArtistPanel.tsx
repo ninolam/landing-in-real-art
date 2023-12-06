@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import { useAppContext } from "../context";
 
 interface ArtistPanel {
@@ -56,7 +57,7 @@ const ArtistPanel: React.FC<ArtistPanel> = (
             {/** IMAGE 1 */}
             <div className="artist1-card-container" hidden={image1Hidden}>
               <div className="artist1-card-front">
-                <img className="image1" alt="image1" src={imageUrl1} />
+                <Image className="image1" alt="image1" src={imageUrl1} fill={true} />
               </div>
               <div className="artist1-card-back">
                 <h1>{artistName1}</h1>
@@ -67,7 +68,7 @@ const ArtistPanel: React.FC<ArtistPanel> = (
             {/** IMAGE 2 */}
             <div className="artist2-card-container"  hidden={image2Hidden}>
               <div className="artist2-card-front">
-                <img className="image2" alt="image2" src={imageUrl2} hidden={image2Hidden}/>
+                <Image className="image2" alt="image2" src={imageUrl2} hidden={image2Hidden} fill={true}/>
               </div>
               <div className="artist2-card-back">
                 <h1>{artistName2}</h1>
@@ -78,7 +79,7 @@ const ArtistPanel: React.FC<ArtistPanel> = (
             {/** IMAGE 3 */}
             <div className="artist3-card-container" hidden={image3Hidden}>
               <div className="artist3-card-front">
-                <img className="image3" alt="Jusdevoyage" src={imageUrl3}/>
+                <Image className="image3" alt="Jusdevoyage" src={imageUrl3} fill={true}/>
               </div>
               <div className="artist3-card-back">
                 <h1>{artistName3}</h1>
@@ -90,7 +91,7 @@ const ArtistPanel: React.FC<ArtistPanel> = (
             <div className="overlap-group-3">
               <div className="artist4-card-container" hidden={image4Hidden}>
                   <div className="artist4-card-front">
-                    <img className="image4" alt="Jonas allert" src={imageUrl4} />
+                    <Image className="image4" alt="Jonas allert" src={imageUrl4} fill={true}/>
                   </div>
                   <div className="artist4-card-back">
                   <h1>{artistName4}</h1>
@@ -103,7 +104,7 @@ const ArtistPanel: React.FC<ArtistPanel> = (
             {/** IMAGE 5 */}
             <div className="artist5-card-container" hidden={image5Hidden}>
               <div className="artist5-card-front">
-                <img className="image5" alt="Rayul" src={imageUrl5} />
+                <Image className="image5" alt="Rayul" src={imageUrl5} fill={true}/>
               </div>
               <div className="artist5-card-back">
                 <h1>{artistName5}</h1>
@@ -114,7 +115,7 @@ const ArtistPanel: React.FC<ArtistPanel> = (
             {/** IMAGE 6 */}
             <div className="artist6-card-container" hidden={image6Hidden}>
               <div className="artist6-card-front">
-                <img className="image6" alt="image6" src={imageUrl6} />
+                <Image className="image6" alt="image6" src={imageUrl6} fill={true}/>
               </div>
               <div className="artist6-card-back">
                 <h1>{artistName6}</h1>
@@ -125,7 +126,7 @@ const ArtistPanel: React.FC<ArtistPanel> = (
             {/** IMAGE 7 */}
             <div className="artist7-card-container"  hidden={image7Hidden}>
               <div className="artist7-card-front">
-                <img className="image7" alt="image7" src={imageUrl7}/>
+                <Image className="image7" alt="image7" src={imageUrl7} fill={true}/>
               </div>
               <div className="artist7-card-back">
               <h1>{artistName7}</h1>
@@ -136,7 +137,7 @@ const ArtistPanel: React.FC<ArtistPanel> = (
             {/** IMAGE 8 */}
             <div className="artist8-card-container" hidden={image8Hidden}>
               <div className="artist8-card-front">
-                <img className="image8" alt="image8" src={imageUrl8}/>
+                <Image className="image8" alt="image8" src={imageUrl8} fill={true}/>
               </div>  
               <div className="artist8-card-back">
                 <h1>{artistName8}</h1>

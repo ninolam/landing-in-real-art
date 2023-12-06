@@ -7,7 +7,7 @@ import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { ArtistCarouselElement, Artists, Lang } from "../types/types";
 import ArtistPanel from "./ArtistPanel";
-
+import Image from "next/image";
 const Artists = () => {
 
   //Get the language of the global context
