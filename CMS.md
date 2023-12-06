@@ -14,7 +14,8 @@ https://console.firebase.google.com/project/inrealartlanding-3a094/overview
 
 You need credentials to authenticate. Ask them to Timothée
 
-### Firebase
+
+### Firebase 
 
 When you are on the dashboard of Firebase, you will interact with only 2 Google cloud services : 
  - Firestore Database
@@ -22,7 +23,7 @@ When you are on the dashboard of Firebase, you will interact with only 2 Google 
 
 Below is the left menu of the dashboard : 
 
-<img src="./public/img/firebaseProcedure/firebase_left_menu.png" alt="Nginx" title="Nginx">
+<img src="./public/img/firebaseProcedure/firebase_left_menu.png" >
 
 <i>Firestore Database</i> to modify only texts
 <i>Storage</i> to modify only images
@@ -34,7 +35,7 @@ The <i>Firestore Database</i> contains 3 entities :
  - Documents
  - Fields
 
-<img src="./public/img/firebaseProcedure/firebase_entities.png" alt="Nginx" title="Nginx">
+<img src="./public/img/firebaseProcedure/firebase_entities.png" >
 
 You will only change the entity <i>Fields</i> to modify the texts on the website
 
@@ -53,7 +54,7 @@ The landing page is divided into several components :
 
 ### <i>Header</i> Component    
 
-<img src="./public/img/firebaseProcedure/header.png" alt="Nginx" title="Nginx">
+<img src="./public/img/firebaseProcedure/header.png" >
 
 In the header, we have 3 texts : 
  - 1 part of the title in black font called _title1_
@@ -69,8 +70,43 @@ As you can handle translations, each of these fields contains sub-fields for tra
 So, in order to modify texts of the header of the website, Go to 
 _Header_ (collection) > _Header_Text_ (document) > Fields
 
+<img src="./public/img/firebaseProcedure/Header_Texts.png" >
+
+<br>
+<br>
+With the screenshot above, you can clearly see the matching between the text in the website and the text you can modify.
+
+To modify the text, you must make a mouse hover on the field. <br>
+Then a pen appears.
+Click on the pen to modify the field
+
+<img src="./public/img/firebaseProcedure/mouse_hover.png" >
+
+As you can notice, there is no text in the firestore DB for the _EN_ language.
+So when you want to change the _lang_ on the website with the world icon on the menu
 
 
+<img src="./public/img/firebaseProcedure/lang_selector.png" >
+
+The title is empty
+
+<img src="./public/img/firebaseProcedure/header_en_lang.png" >
+
+To modify this, do it in firestore DB :
+
+
+<img src="./public/img/firebaseProcedure/header_modify_lang.png" >
+
+Now, refresh the page of the website and select english language
+
+
+<img src="./public/img/firebaseProcedure/header_en_lang_visible.png" >
+
+It works !!
+
+You can now customize everything in the page by doing like this.
+
+There are some tricks for artists carousel and tealm carousel, but the way of chnaging texts, images, links is the same !
 
 
 ### <i>JoinMovement</i> Component    
