@@ -130,8 +130,38 @@ You can customize all the links in the page like this
 
 ### <i>JoinMovement</i> Component    
 
+This component is this one : 
+
+<img src="./public/img/firebaseProcedure/JoinTrend.png" >
+
+On this component, you can modify texts, texts insiode buttons and links of the buttons
+Below is the matching collection in _Firestore DB_
+
+<img src="./public/img/firebaseProcedure/JoinTrend_Firestore.png" >
+
 
 ### <i>Artists</i> Component    
+
+This component is this one : 
+
+<img src="./public/img/firebaseProcedure/Artists.png" >
+
+It behaves like a carousel. I mean you can scroll left and right and customize all the images you want 
+for the panel #1 in the carousel and the panel #2, etc ...
+
+To scroll left or rioght, when you do a mouse hover on the panel some light arrows appear on the left and on the right 
+
+Example below : 
+
+<img src="./public/img/firebaseProcedure/Artists_scroll_right.png" >
+
+The question is : How to customize my images of each panels ?
+Quite simple. 
+Go to the appropriate collection in _Firestore DB_
+
+<img src="./public/img/firebaseProcedure/Artists_Firestore.png" >
+
+The carousel is set with document called _Artists_Carousel_
 
 
 ### <i>HelpIra</i> Component    
