@@ -190,7 +190,7 @@ This image is stored in the _Storage_ service of the Google cloud platform (GCP)
 
 <img src="./public/img/firebaseProcedure/FB_Storage.png" >
 
-Open the directory _artists_
+Open the directory _artists_.<br>
 We can see 2 directories : 
 
 <img src="./public/img/firebaseProcedure/Storage_artists.png" >
@@ -209,7 +209,7 @@ So here, 2 panels called _1_ and _2_ both in "Firestore DB" & "Storage"
 </b>
 
 #### Example 1
-If you want to make an image unvisible, just empty the subfield _image_ of the panel element.
+If you want to make an image unvisible, just empty the subfield _image_ of the panel element.<br>
 Example : the image #3 has no image
 
 <img src="./public/img/firebaseProcedure/empty_image_FS.png" >
@@ -220,7 +220,7 @@ Refresh the page
 
 
 #### Example 2
-Add a second panel in the carousel with only the image on position #3 visible
+Add a second panel in the carousel with only the image on position #3 visible.<br>
 You must create all elements panel before the element panel you want, 
 so element panel #1, element panel #2 and element panel #3 of course like below
 
@@ -239,7 +239,7 @@ This way, when you scroll right in the carousel, you will see only this image on
 
 #### Example 3
 
-You can customize the name of the artist and the description of the artist as well !
+You can customize the name of the artist and the description of the artist as well !<br>
 When you do a mouse hover on an image, the image smoothly disappear to let you see name and desc.
 
 <img src="./public/img/firebaseProcedure/Artist_name_desc.png" >
@@ -258,7 +258,7 @@ This component represents the team carousel
 
 <img src="./public/img/firebaseProcedure/Team.png" >
 
-This carousel is completely customizable like the artists carousel.
+This carousel is completely customizable like the artists carousel.<br>
 You can add team member, texts, photos like you want
 
 
@@ -268,7 +268,7 @@ This component represents the FAQ
 
 <img src="./public/img/firebaseProcedure/FAQ.png" >
 
-Completely customizable component.
+Completely customizable component.<br>
 You can customize the question and answer that appear when you click on "+" button
 
 
@@ -276,13 +276,13 @@ You can customize the question and answer that appear when you click on "+" butt
 
 <img src="./public/img/firebaseProcedure/NL.png" >
 
-This component represents the Newsletter
+This component represents the _Newsletter_
 
 
 
 ### <i>Menu</i> Component    
 
-This component represents the Menu
+This component represents the _Menu_
 
 <img src="./public/img/firebaseProcedure/Menu.png" >
 
@@ -290,7 +290,7 @@ This component represents the Menu
 
 <img src="./public/img/firebaseProcedure/Footer.png" >
 
-This component represents the Footer.
+This component represents the _Footer_.<br>
 You can customize texts, buttons texts, and button links on the footer 
 
 
