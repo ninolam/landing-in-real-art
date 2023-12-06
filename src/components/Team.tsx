@@ -52,7 +52,6 @@ const Team = () => {
         const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
         const teamDocuments  = await getDocs(teamCollection);
         const teamData       = teamDocuments.docs.map(doc => doc.data());
-        console.log(teamData)
         const members_ = teamData[0]['members'] as MemberData
         setMembers(members_)        
         setMembersData(currentIndex, members_)

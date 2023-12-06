@@ -77,22 +77,14 @@ export interface ArtistsData {
     }    
   }
 
-export interface AtristNameDesc {
+export interface ArtistNameDesc {
     name: string
     desc: Record<Lang, string>
     image: string
 }  
 
-export interface ArtistCarouselElement {
-    artist1: AtristNameDesc,
-    artist2: AtristNameDesc,
-    artist3: AtristNameDesc,
-    artist4: AtristNameDesc,
-    artist5: AtristNameDesc,
-    artist6: AtristNameDesc,
-    artist7: AtristNameDesc,
-    artist8: AtristNameDesc
-}
+export type ArtistCarouselElement = Record<string, ArtistNameDesc>
+
 
 export type Artists  = Array<ArtistCarouselElement>
 

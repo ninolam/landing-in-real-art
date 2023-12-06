@@ -7,7 +7,7 @@ import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { ArtistCarouselElement, Artists, Lang } from "../types/types";
 import ArtistPanel from "./ArtistPanel";
-import Image from "next/image";
+
 const Artists = () => {
 
   //Get the language of the global context
@@ -72,27 +72,36 @@ const Artists = () => {
   }
 
   //----------------------------------------------------------------- setImagesUrls
-  const setImagesUrls = (artistsCarousel: Array<string[]>, currentIndex: number) => {
-    setImageUrl1(artistsCarousel[currentIndex][0])
-    setImageUrl2(artistsCarousel[currentIndex][1])
-    setImageUrl3(artistsCarousel[currentIndex][2])
-    setImageUrl4(artistsCarousel[currentIndex][3])
-    setImageUrl5(artistsCarousel[currentIndex][4])
-    setImageUrl6(artistsCarousel[currentIndex][5])
-    setImageUrl7(artistsCarousel[currentIndex][6])
-    setImageUrl8(artistsCarousel[currentIndex][7])
+  const setImagesUrls = (artistsCarousel: Array<string[]>) => {
+    let currentIndex_ = currentIndex
+    if (Number.isNaN(currentIndex)) { 
+      currentIndex_ = 0
+    }
+    console.log(artistsCarousel)
+    setImageUrl1(artistsCarousel[currentIndex_][0])
+    setImageUrl2(artistsCarousel[currentIndex_][1])
+    setImageUrl3(artistsCarousel[currentIndex_][2])
+    setImageUrl4(artistsCarousel[currentIndex_][3])
+    setImageUrl5(artistsCarousel[currentIndex_][4])
+    setImageUrl6(artistsCarousel[currentIndex_][5])
+    setImageUrl7(artistsCarousel[currentIndex_][6])
+    setImageUrl8(artistsCarousel[currentIndex_][7])
   }
 
   //----------------------------------------------------------------- setImagesUrls
-  const setImagesHidden = (artistsCarousel: Array<string[]>, currentIndex: number) => {
-    setImage1Hidden((artistsCarousel[currentIndex][0])?false:true)
-    setImage2Hidden((artistsCarousel[currentIndex][1])?false:true)
-    setImage3Hidden((artistsCarousel[currentIndex][2])?false:true)
-    setImage4Hidden((artistsCarousel[currentIndex][3])?false:true)
-    setImage5Hidden((artistsCarousel[currentIndex][4])?false:true)
-    setImage6Hidden((artistsCarousel[currentIndex][5])?false:true)
-    setImage7Hidden((artistsCarousel[currentIndex][6])?false:true)
-    setImage8Hidden((artistsCarousel[currentIndex][7])?false:true)
+  const setImagesHidden = (artistsCarousel: Array<string[]>) => {
+    let currentIndex_ = currentIndex
+    if (Number.isNaN(currentIndex)) { 
+      currentIndex_ = 0
+    }
+    setImage1Hidden((artistsCarousel[currentIndex_][0])?false:true)
+    setImage2Hidden((artistsCarousel[currentIndex_][1])?false:true)
+    setImage3Hidden((artistsCarousel[currentIndex_][2])?false:true)
+    setImage4Hidden((artistsCarousel[currentIndex_][3])?false:true)
+    setImage5Hidden((artistsCarousel[currentIndex_][4])?false:true)
+    setImage6Hidden((artistsCarousel[currentIndex_][5])?false:true)
+    setImage7Hidden((artistsCarousel[currentIndex_][6])?false:true)
+    setImage8Hidden((artistsCarousel[currentIndex_][7])?false:true)
   }
 
   //--------------------------------------------------------------------- useEffect
@@ -102,11 +111,14 @@ const Artists = () => {
    */
   useEffect(() => {
 
-      const getUrl = (imageNr: number, currentDir: string) => {
-        const imageRef = ref(storage, `${currentDir}/artist${imageNr}.png`) //seth doyle  
+      const getUrl = (currentDir: string, image: string) => {
+        const imageRef = ref(storage, `artists/${currentDir}/${image}`) //seth doyle  
         return getDownloadURL(imageRef)
       } 
 
+      //Can not be used as we have one token per image 
+      //It will work if we can set unique token for all images but don't know how to do it
+      
       const generateImageUrl = (directory: string, imageName: string) => {
         let domain = 'firebasestorage.googleapis.com'
         let urlImage = `https://${domain}/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET}/o/artists`
@@ -115,7 +127,6 @@ const Artists = () => {
         const urlImg = new URL(urlImage)
         urlImg.searchParams.append('alt', 'media')
         urlImg.searchParams.append('token', '514b5e2e-db08-445c-a2f8-7bdb31acf863')
-        console.log(process.env.NEXT_PUBLIC_FIREBASE_IMAGES_TOKEN)
         return `${urlImg}`;
       } 
     
@@ -135,33 +146,38 @@ const Artists = () => {
       */
 
       const fetchFirestoreImagesUrls = async() => {
-        
+        const artistsPanels = await listDirectories('artists')
+        const indexFirstPanel = 1
         const artistsCollection = collection(db, FIREBASE_ARTISTS_COLLECTION);
         const artistsDocuments  = await getDocs(artistsCollection);
         const artistsData       = artistsDocuments.docs.map(doc => doc.data());
-        const allArtists_ = artistsData[0] as Artists
+        let allArtists_ = artistsData[0] as Artists
         const listDirArtistPhotos = Object.keys(allArtists_) 
-        console.log(allArtists_)
-        //console.log(listDirArtistPhotos)
         
+        //Test 
+        // const urlImage = await getUrl('artists/2', 'gilles_bruno.jpeg')
+        // console.log(urlImage)
+
         let artistsCarousel: Array<string[]> = []
-        let currentDir = ''
-        const urlImages: string[] = [];
-        for (let i=0; i< listDirArtistPhotos.length; i++) {
-          currentDir = listDirArtistPhotos[i]
-          const artistsOfCurrentCarousel = allArtists_[0] as ArtistCarouselElement
+        let currentDir: string
+        let currentDirInFirebase: string
+        allArtists_ = Object.values(allArtists_)
+        for (let i = 0; i < allArtists_.length; i++) {
+          let urlImages: Array<string> = []
+          currentDir = i.toString()
+          currentDirInFirebase = (i+1).toString()
+          const artistsOfCurrentCarousel = allArtists_[i] as ArtistCarouselElement
           const artistsOfCurrentCarousel_ = Object.values(artistsOfCurrentCarousel)
           for (let j=0; j< artistsOfCurrentCarousel_.length; j++) {
             const imageName = artistsOfCurrentCarousel_[j]['image']
-            const urlImage = generateImageUrl(currentDir, imageName)
+            const urlImage = (imageName)?await getUrl(currentDirInFirebase, imageName):''
             urlImages.push(urlImage)
           }
           artistsCarousel[i] = urlImages
         }
-        console.log(artistsCarousel)
         setArtistsCarousel(artistsCarousel)
-        setImagesUrls(artistsCarousel, currentIndex)
-        setImagesHidden(artistsCarousel, currentIndex)
+        setImagesUrls(artistsCarousel)
+        setImagesHidden(artistsCarousel)
         setArtistsPanels(artistsPanels)
       }
 
@@ -169,30 +185,28 @@ const Artists = () => {
         const artistsCollection = collection(db, FIREBASE_ARTISTS_COLLECTION);
         const artistsDocuments  = await getDocs(artistsCollection);
         const artistsData       = artistsDocuments.docs.map(doc => doc.data());
-        console.log(artistsData)
         const allArtists_ = artistsData[0] as Artists
         const listDirArtistPhotos = Object.keys(allArtists_) 
         setListDirArtistPhotos(listDirArtistPhotos)
         setAllArtists(allArtists_)
+        const indexCurrentPanel = currentIndex+1
+        setArtistName1(allArtists_[indexCurrentPanel]['0']['name'])  
+        setArtistName2(allArtists_[indexCurrentPanel]['1']['name'])  
+        setArtistName3(allArtists_[indexCurrentPanel]['2']['name'])  
+        setArtistName4(allArtists_[indexCurrentPanel]['3']['name'])  
+        setArtistName5(allArtists_[indexCurrentPanel]['4']['name'])  
+        setArtistName6(allArtists_[indexCurrentPanel]['5']['name'])  
+        setArtistName7(allArtists_[indexCurrentPanel]['6']['name'])  
+        setArtistName8(allArtists_[indexCurrentPanel]['7']['name'])  
         
-        setArtistName1(allArtists_[currentIndex]['artist1']['name'])  
-        setArtistName2(allArtists_[currentIndex]['artist2']['name'])  
-        setArtistName3(allArtists_[currentIndex]['artist3']['name'])  
-        setArtistName4(allArtists_[currentIndex]['artist4']['name'])  
-        setArtistName5(allArtists_[currentIndex]['artist5']['name'])  
-        setArtistName6(allArtists_[currentIndex]['artist6']['name'])  
-        setArtistName7(allArtists_[currentIndex]['artist7']['name'])  
-        setArtistName8(allArtists_[currentIndex]['artist8']['name'])  
-
-
-        setArtistDesc1(allArtists_[currentIndex]['artist1']['desc'][lang_])  
-        setArtistDesc2(allArtists_[currentIndex]['artist2']['desc'][lang_])  
-        setArtistDesc3(allArtists_[currentIndex]['artist3']['desc'][lang_])  
-        setArtistDesc4(allArtists_[currentIndex]['artist4']['desc'][lang_])  
-        setArtistDesc5(allArtists_[currentIndex]['artist5']['desc'][lang_])  
-        setArtistDesc6(allArtists_[currentIndex]['artist6']['desc'][lang_])  
-        setArtistDesc7(allArtists_[currentIndex]['artist7']['desc'][lang_])  
-        setArtistDesc8(allArtists_[currentIndex]['artist8']['desc'][lang_])   
+        setArtistDesc1(allArtists_[indexCurrentPanel]['0']['desc'][lang_])  
+        setArtistDesc2(allArtists_[indexCurrentPanel]['1']['desc'][lang_])  
+        setArtistDesc3(allArtists_[indexCurrentPanel]['2']['desc'][lang_])  
+        setArtistDesc4(allArtists_[indexCurrentPanel]['3']['desc'][lang_])  
+        setArtistDesc5(allArtists_[indexCurrentPanel]['4']['desc'][lang_])  
+        setArtistDesc6(allArtists_[indexCurrentPanel]['5']['desc'][lang_])  
+        setArtistDesc7(allArtists_[indexCurrentPanel]['6']['desc'][lang_])  
+        setArtistDesc8(allArtists_[indexCurrentPanel]['7']['desc'][lang_])   
 
       }
 
@@ -208,8 +222,9 @@ const Artists = () => {
      */
     useEffect(() => {
       if (artistsCarousel.length !== 0) {
-        setImagesUrls(artistsCarousel, currentIndex)
-        setImagesHidden(artistsCarousel, currentIndex)
+        console.log(artistsCarousel)
+        setImagesUrls(artistsCarousel)
+        setImagesHidden(artistsCarousel)
       }
     }, [currentIndex])
 
@@ -260,7 +275,7 @@ const Artists = () => {
       } else {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + artistsPanels.length) % artistsPanels.length);
       }
-    };
+    }
 
     return (
       <div className="carousel-artists">
