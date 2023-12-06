@@ -25,10 +25,10 @@ Below is the left menu of the dashboard :
 
 <img src="./public/img/firebaseProcedure/firebase_left_menu.png" >
 
-<i>Firestore Database</i> to modify only texts
+<i>Firestore Database</i> to modify only texts<br>
 <i>Storage</i> to modify only images
 
-Remarks : you will be able to handle transtions with this system as wel
+Remarks : you will be able to handle translations with this system as well
 
 The <i>Firestore Database</i> contains 3 entities : 
  - Collections
@@ -106,7 +106,7 @@ It works !!
 
 You can now customize everything in the page by doing like this.
 
-There are some tricks for artists carousel and tealm carousel, but the way of chnaging texts, images, links is the same !
+There are some tricks for artists carousel and team carousel, but the way of changing texts, images, links is the same !
 
 For instance to modify the texts of the buttons in the header component, go to the document _Header_Buttons_
 
@@ -134,7 +134,7 @@ This component is this one :
 
 <img src="./public/img/firebaseProcedure/JoinTrend.png" >
 
-On this component, you can modify texts, texts insiode buttons and links of the buttons
+On this component, you can modify texts, texts inside buttons and links of the buttons
 Below is the matching collection in _Firestore DB_
 
 <img src="./public/img/firebaseProcedure/JoinTrend_Firestore.png" >
@@ -146,7 +146,8 @@ This component is this one :
 
 <img src="./public/img/firebaseProcedure/ArtistsPanel.png" >
 
-It behaves like a carousel. I mean you can scroll left and right and customize all the images you want 
+It behaves like a carousel. <br> 
+I mean you can scroll left and right and customize all the images you want 
 for the panel #1 in the carousel and the panel #2, etc ...
 
 The panel of the carousel is organized with specific psotions for images : 
@@ -154,13 +155,13 @@ The panel of the carousel is organized with specific psotions for images :
 <img src="./public/img/firebaseProcedure/Artists_with_position.png" >
 
 
-To scroll left or right, when you do a mouse hover on the panel some light arrows appear on the left and on the right 
+To scroll left or right, when you do a mouse hover on the panel, some light arrows appear on the left and on the right 
 
 Example below : 
 
 <img src="./public/img/firebaseProcedure/Artists_scroll_right.png" >
 
-The question is : How to customize my images of each panels ?
+The question is : How to customize my images of each panels ?<br>
 Quite simple. 
 Go to the appropriate collection in _Firestore DB_
 
@@ -183,9 +184,9 @@ See below :
 
 
 We provide the string _artists2.png_ for the subfield _image_.<br>
-But where is store this image ?
+But where is stored this image ?
 
-This image is stored in the _Storage_ servide of the Google cloud platform (GCP)
+This image is stored in the _Storage_ service of the Google cloud platform (GCP)
 
 <img src="./public/img/firebaseProcedure/FB_Storage.png" >
 
@@ -203,7 +204,7 @@ One important thing is that the panels in the _Storage_ must be the same than th
 <img src="./public/img/firebaseProcedure/FB_Panels.png" >
 
 <b>
-You must absolutely respect this rule otherwise the website will not work.
+You must absolutely respect this rule otherwise the website will not work.<br>
 So here, 2 panels called _1_ and _2_ both in "Firestore DB" & "Storage"
 </b>
 
