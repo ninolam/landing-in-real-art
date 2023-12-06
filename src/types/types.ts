@@ -91,12 +91,10 @@ export type ArtistCarouselElement = Record<string, ArtistNameDesc>
 export type Artists  = Array<ArtistCarouselElement>
 
 export interface JoinIraDataButton {
-    JoinIRA: {
-        [key: string]: string
-    }
-    StartIRA: {
-        [key: string]: string
-    }
+    JoinIRA: Record<Lang, string>
+    StartIRA: Record<Lang, string>
+    JoinIRALink: string
+    StartIRALink: string
 }
 
 export interface JoinIraDataText {

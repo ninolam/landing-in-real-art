@@ -4,6 +4,7 @@ import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { useAppContext } from "../context";
 import { JoinIraData, JoinIraDataButton, JoinIraDataText, Lang, defaultLangObject } from "../types/types";
+import Link from 'next/link';
 
 const HowToJoinIra = () => 
 {
@@ -13,11 +14,13 @@ const HowToJoinIra = () => 
 
   const FIREBASE_JOIN_IRA_COLLECTION = 'JoinIRA'
   
-  const [joinIra, setJoinIra]       = useState<string>('');
-  const [startIra, setStartIra]     = useState<string>('');
-  const [text1, setText1]           = useState<string>('');
-  const [text2, setText2]           = useState<string>('');
-  const [headerText, setHeaderText] = useState<string>('');
+  const [joinIra, setJoinIra]           = useState<string>('');
+  const [startIra, setStartIra]         = useState<string>('');
+  const [joinIraLink, setJoinIraLink]   = useState<string>('');
+  const [startIraLink, setStartIraLink] = useState<string>('');
+  const [text1, setText1]               = useState<string>('');
+  const [text2, setText2]               = useState<string>('');
+  const [headerText, setHeaderText]     = useState<string>('');
   const defaultJoinIraText = {
     text1: defaultLangObject,
     text2: defaultLangObject,
@@ -26,7 +29,9 @@ const HowToJoinIra = () => 
 
   const defaultJoinIraButton = {
     JoinIRA: defaultLangObject,
-    StartIRA: defaultLangObject
+    StartIRA: defaultLangObject,
+    JoinIRALink: '',
+    StartIRALink: ''
   }
 
 
@@ -43,6 +48,8 @@ const HowToJoinIra = () => 
       setJoinIraDataButton(joinIRAData[0] as JoinIraDataButton)
       setStartIra(joinIRAData[0].StartIRA[lang])
       setJoinIra(joinIRAData[0].JoinIRA[lang])
+      setJoinIraLink(joinIRAData[0].JoinIRALink)
+      setStartIraLink(joinIRAData[0].StartIRALink)
 
       //Index 1 ===> joinIRA Text
       setJoinIraDataText(joinIRAData[1] as JoinIraDataText)
@@ -57,8 +64,10 @@ const HowToJoinIra = () => 
   useEffect(() => {
     const fetchText = async () => {
       // Index 0 ===> joinIRA Buttons
-      setStartIra(joinIraDataButton.StartIRA[lang])
-      setJoinIra(joinIraDataButton.JoinIRA[lang])
+      setStartIra(joinIraDataButton.StartIRA[lang_])
+      setJoinIra(joinIraDataButton.JoinIRA[lang_])
+      setJoinIraLink(joinIraDataButton.JoinIRALink)
+      setStartIraLink(joinIraDataButton.StartIRALink)
 
       // Index 1 ===> joinIRA Text
       setText1(joinIraDataText.text1[lang_])
@@ -82,7 +91,9 @@ const HowToJoinIra = () => 
             </p>
             <div className="link-button-2">
               <button className="button">
-                <div className="text-wrapper-5">{joinIra}</div>
+                <Link href={joinIraLink}>
+                  <div className="text-wrapper-5">{joinIra}</div>
+                </Link>
               </button>
               <button className="button-start-ira-2">
                 <div className="text-wrapper-5">{startIra}</div>

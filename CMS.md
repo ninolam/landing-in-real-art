@@ -108,6 +108,25 @@ You can now customize everything in the page by doing like this.
 
 There are some tricks for artists carousel and tealm carousel, but the way of chnaging texts, images, links is the same !
 
+For instance to modify the texts of the buttons in the header component, go to the document _Header_Buttons_
+
+
+### <i>HowToJoinIra</i> Component    
+
+This component is the one just below the menu
+
+<img src="./public/img/firebaseProcedure/JoinIRA_Component.png" >
+
+On this component, you can modify some raw texts, some buttons texts and some links for buttons.
+Go to appropriate fields in the Firestore Database
+
+<img src="./public/img/firebaseProcedure/JoinIRA_Fields.png" >
+
+On the example above, we just set the link for the button _Join IRA_. 
+It is set to _google.com_. <br>
+It means that the URL set on the button is _https://google.com_.
+You can customize all the links in the page like this
+
 
 ### <i>JoinMovement</i> Component    
 
@@ -119,7 +138,7 @@ There are some tricks for artists carousel and tealm carousel, but the way of ch
 
 ### <i>NewsLetter</i> Component    
 
-### <i>HowToJoinIra</i> Component    
+
 
 ### <i>Team</i> Component    
 
