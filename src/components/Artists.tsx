@@ -243,24 +243,17 @@ const Artists = () => {
 
         const fetchArtistsNameAndDesc = async () => {
           if (allArtists.length !==0) {
-            setArtistName1(allArtists[currentIndex]['artist1']['name'])  
-            setArtistName2(allArtists[currentIndex]['artist2']['name'])  
-            setArtistName3(allArtists[currentIndex]['artist3']['name'])  
-            setArtistName4(allArtists[currentIndex]['artist4']['name'])  
-            setArtistName5(allArtists[currentIndex]['artist5']['name'])  
-            setArtistName6(allArtists[currentIndex]['artist6']['name'])  
-            setArtistName7(allArtists[currentIndex]['artist7']['name'])  
-            setArtistName8(allArtists[currentIndex]['artist8']['name'])  
-  
-  
-            setArtistDesc1(allArtists[currentIndex]['artist1']['desc'][lang_])  
-            setArtistDesc2(allArtists[currentIndex]['artist2']['desc'][lang_])  
-            setArtistDesc3(allArtists[currentIndex]['artist3']['desc'][lang_])  
-            setArtistDesc4(allArtists[currentIndex]['artist4']['desc'][lang_])  
-            setArtistDesc5(allArtists[currentIndex]['artist5']['desc'][lang_])  
-            setArtistDesc6(allArtists[currentIndex]['artist6']['desc'][lang_])  
-            setArtistDesc7(allArtists[currentIndex]['artist7']['desc'][lang_])  
-            setArtistDesc8(allArtists[currentIndex]['artist8']['desc'][lang_])   
+            console.log(allArtists)
+            console.log(currentIndex)
+            const currentIndex_ = currentIndex+1
+            setArtistDesc1(allArtists[currentIndex_]['0']['desc'][lang_])  
+            setArtistDesc2(allArtists[currentIndex_]['1']['desc'][lang_])  
+            setArtistDesc3(allArtists[currentIndex_]['2']['desc'][lang_])  
+            setArtistDesc4(allArtists[currentIndex_]['3']['desc'][lang_])  
+            setArtistDesc5(allArtists[currentIndex_]['4']['desc'][lang_])  
+            setArtistDesc6(allArtists[currentIndex_]['5']['desc'][lang_])  
+            setArtistDesc7(allArtists[currentIndex_]['6']['desc'][lang_])  
+            setArtistDesc8(allArtists[currentIndex_]['7']['desc'][lang_])   
           }
         }
         fetchTexts()

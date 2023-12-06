@@ -11,6 +11,8 @@ export type HeaderButtons = {
 }
 
 export type HeaderTexts = {
+    title1: Record<Lang,string> 
+    title2: Record<Lang,string> 
     text1: Record<Lang,string>
 }
 
