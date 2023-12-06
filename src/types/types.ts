@@ -80,6 +80,7 @@ export interface ArtistsData {
 export interface AtristNameDesc {
     name: string
     desc: Record<Lang, string>
+    image: string
 }  
 
 export interface ArtistCarouselElement {

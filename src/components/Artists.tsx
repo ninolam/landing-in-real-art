@@ -5,8 +5,7 @@ import { storage } from "../firebaseConfig";
 import { useAppContext } from "../context";
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { Artists, Lang } from "../types/types";
-
+import { ArtistCarouselElement, Artists, Lang } from "../types/types";
 import ArtistPanel from "./ArtistPanel";
 
 const Artists = () => {
@@ -57,6 +56,7 @@ const Artists = () => {
 
   const [artistsPanels, setArtistsPanels]     = useState<string[]>([]);
   const [artistsCarousel, setArtistsCarousel] = useState<Array<string[]>>([]);
+  const [listDirArtistPhotos, setListDirArtistPhotos ]= useState<string[]>([]);
   const [allArtists, setAllArtists]           = useState<Artists>([])
   const [currentIndex, setCurrentIndex]       = useState<number>(0);
 
@@ -106,6 +106,19 @@ const Artists = () => {
         const imageRef = ref(storage, `${currentDir}/artist${imageNr}.png`) //seth doyle  
         return getDownloadURL(imageRef)
       } 
+
+      const generateImageUrl = (directory: string, imageName: string) => {
+        let domain = 'firebasestorage.googleapis.com'
+        let urlImage = `https://${domain}/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET}/o/artists`
+        let subUrlImg = encodeURIComponent(`/${directory}/${imageName}`)
+        urlImage += subUrlImg
+        const urlImg = new URL(urlImage)
+        urlImg.searchParams.append('alt', 'media')
+        urlImg.searchParams.append('token', '514b5e2e-db08-445c-a2f8-7bdb31acf863')
+        console.log(process.env.NEXT_PUBLIC_FIREBASE_IMAGES_TOKEN)
+        return `${urlImg}`;
+      } 
+    
       /*
       Another way to get the results of images URL is by using "allSettled" of "Promise" object
       const promisesImageUrl: Promise<string>[] = []
@@ -122,36 +135,46 @@ const Artists = () => {
       */
 
       const fetchFirestoreImagesUrls = async() => {
-          const artistsPanels = await listDirectories('artists')
-          let artistsCarousel: Array<string[]> = []
-          let currentDir = ''
-          for (let i=0; i< artistsPanels.length; i++) {
-            currentDir = 'artists/'+artistsPanels[i]
-            const urlImages: string[] = [];
-            for (let j=1; j<=8; j++) {
-              try {
-                const urlImage = await getUrl(j, currentDir);
-                urlImages.push(urlImage)
-              } catch (error) {
-                urlImages.push(""); // Push an empty string for image Url if there's an error
-              }     
-            }            
-            artistsCarousel[i] = urlImages
+        
+        const artistsCollection = collection(db, FIREBASE_ARTISTS_COLLECTION);
+        const artistsDocuments  = await getDocs(artistsCollection);
+        const artistsData       = artistsDocuments.docs.map(doc => doc.data());
+        const allArtists_ = artistsData[0] as Artists
+        const listDirArtistPhotos = Object.keys(allArtists_) 
+        console.log(allArtists_)
+        //console.log(listDirArtistPhotos)
+        
+        let artistsCarousel: Array<string[]> = []
+        let currentDir = ''
+        const urlImages: string[] = [];
+        for (let i=0; i< listDirArtistPhotos.length; i++) {
+          currentDir = listDirArtistPhotos[i]
+          const artistsOfCurrentCarousel = allArtists_[0] as ArtistCarouselElement
+          const artistsOfCurrentCarousel_ = Object.values(artistsOfCurrentCarousel)
+          for (let j=0; j< artistsOfCurrentCarousel_.length; j++) {
+            const imageName = artistsOfCurrentCarousel_[j]['image']
+            const urlImage = generateImageUrl(currentDir, imageName)
+            urlImages.push(urlImage)
           }
-          
-          setArtistsCarousel(artistsCarousel)
-          setImagesUrls(artistsCarousel, currentIndex)
-          setImagesHidden(artistsCarousel, currentIndex)
-          setArtistsPanels(artistsPanels)
+          artistsCarousel[i] = urlImages
+        }
+        console.log(artistsCarousel)
+        setArtistsCarousel(artistsCarousel)
+        setImagesUrls(artistsCarousel, currentIndex)
+        setImagesHidden(artistsCarousel, currentIndex)
+        setArtistsPanels(artistsPanels)
       }
 
       const fetchArtistsNameAndDesc = async() => {
         const artistsCollection = collection(db, FIREBASE_ARTISTS_COLLECTION);
         const artistsDocuments  = await getDocs(artistsCollection);
         const artistsData       = artistsDocuments.docs.map(doc => doc.data());
+        console.log(artistsData)
         const allArtists_ = artistsData[0] as Artists
+        const listDirArtistPhotos = Object.keys(allArtists_) 
+        setListDirArtistPhotos(listDirArtistPhotos)
         setAllArtists(allArtists_)
-
+        
         setArtistName1(allArtists_[currentIndex]['artist1']['name'])  
         setArtistName2(allArtists_[currentIndex]['artist2']['name'])  
         setArtistName3(allArtists_[currentIndex]['artist3']['name'])  

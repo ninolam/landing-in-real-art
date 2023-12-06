@@ -23,13 +23,13 @@ export default function Home() {
 
         <HowToJoinIra/>
         
-        <Team/>
+        {/*<Team/>*/}
 
         <Header/>
         
         <Menu/>
 
-        <Footer/>
+        {/*<Footer/>*/}
         
         
       </div>
