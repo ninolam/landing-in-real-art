@@ -44,9 +44,11 @@ const NewsLetter = () => {
     setEmailPh(nlTexts.email_placeholder[lang_])      
   }, [lang]);
   
+  /*
   const EmailInput = React.memo(() => {
     return <input type="text" className="email" autoFocus placeholder={emailPh}/>
   });
+  */
 
     return (
       
