@@ -93,7 +93,7 @@ Click on the pen to modify the field
 
 <img src="./public/img/firebaseProcedure/mouse_hover.png" >
 
-As you can notice, there is no text in the firestore DB for the _EN_ language.
+As you can notice, there is no text in the firestore DB for the _EN_ language.<br>
 So when you want to change the _lang_ on the website with the world icon on the menu
 
 
@@ -128,7 +128,7 @@ This component is the one just below the menu
 
 <img src="./public/img/firebaseProcedure/JoinIRA_Component.png" >
 
-On this component, you can modify some raw texts, some buttons texts and some links for buttons.
+On this component, you can modify some raw texts, some buttons texts and some links for buttons.<br>
 Go to appropriate fields in the Firestore Database
 
 <img src="./public/img/firebaseProcedure/JoinIRA_Fields.png" >
@@ -161,7 +161,7 @@ It behaves like a carousel. <br>
 I mean you can scroll left and right and customize all the images you want 
 for the panel #1 in the carousel and the panel #2, etc ...
 
-The panel of the carousel is organized with specific psotions for images : 
+The panel of the carousel is organized with specific positions for images : 
 
 <img src="./public/img/firebaseProcedure/Artists_with_position.png" >
 
@@ -173,7 +173,7 @@ Example below :
 <img src="./public/img/firebaseProcedure/Artists_scroll_right.png" >
 
 The question is : How to customize my images of each panels ?<br>
-Quite simple. 
+Quite simple. <br>
 Go to the appropriate collection in _Firestore DB_
 
 <img src="./public/img/firebaseProcedure/Artists_Firestore.png" >
@@ -188,7 +188,7 @@ The elements in the panel are the images that appear in the panel of the website
 according to the specific position explained above.
 
 For instance, in _Firestore_, the image at position 2 must be 
-the second element of the array so with index _1_ (because the first index is 0).
+the second element of the array so with index _1_ (because the first index is 0).<br>
 See below : 
 
 <img src="./public/img/firebaseProcedure/Artists_panel_element.png" >
@@ -216,9 +216,11 @@ One important thing is that the panels in the _Storage_ must be the same than th
 
 <b>
 You must absolutely respect this rule otherwise the website will not work.<br>
-So here, 2 panels called _1_ and _2_ both in "Firestore DB" & "Storage"
+So here, 2 panels called "1" and "2" both in "Firestore DB" & "Storage"
 </b>
 
+<br>
+<br>
 #### Example 1
 If you want to make an image unvisible, just empty the subfield _image_ of the panel element.<br>
 Example : the image #3 has no image
@@ -237,8 +239,10 @@ so element panel #1, element panel #2 and element panel #3 of course like below
 
 <img src="./public/img/firebaseProcedure/2nd_panel_example.png" >
 
-You provide the image _gilles_bruno.jpeg_. So you must upload this image with the same name in the appropriate panel in the _Storage_. <br>
-So the path must be _artists > 2 > <your_image>_
+You provide the image _gilles_bruno.jpeg_. <br>
+So you must upload this image with the same name in the appropriate panel in the _Storage_. <br>
+So the path must be : <br>
+_artists > 2 > |your_image|_
 
 <img src="./public/img/firebaseProcedure/2nd_panel_example_Storage.png" >
 
@@ -257,7 +261,7 @@ When you do a mouse hover on an image, the image smoothly disappear to let you s
 
 <br>
 To do it : simple !
-Modify the fields like below : 
+Modify the fields called _desc_ (for description) like below : 
 
 <br>
 
