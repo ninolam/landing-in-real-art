@@ -210,13 +210,20 @@ We can see 2 directories :
 IMPORTANT REMARK !!
 </b>
 
-One important thing is that the panels in the _Storage_ must be the same than the panels in the _Firestore Database_
+Two important points: <br>
+ 1) The panels in the _Storage_ must be the same than the panels in the _Firestore Database_.<br>
+ Ex: 2 panels called _1_ and _2_ in _Firestore DB_ must appear as _1_ and _2_ in the  _Storage_
+ 2) The value in the subfield _image_ (in _Firestore DB_) must be the same than the file uploaded in the _Storage_<br>
+ So if you have image='artist3.png' for panel #1 > artist #3 (i.e at position #3), <br>
+ you must upload an image called precisely 'artist3.png' in the directory with path _artists > 1_ 
+
+
 
 <img src="./public/img/firebaseProcedure/FB_Panels.png" >
 
 <b>
 You must absolutely respect this rule otherwise the website will not work.<br>
-So here, 2 panels called "1" and "2" both in "Firestore DB" & "Storage"
+
 </b>
 
 <br>
