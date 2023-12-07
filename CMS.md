@@ -220,7 +220,7 @@ So here, 2 panels called "1" and "2" both in "Firestore DB" & "Storage"
 </b>
 
 <br>
-<br>
+
 #### Example 1
 If you want to make an image unvisible, just empty the subfield _image_ of the panel element.<br>
 Example : the image #3 has no image
