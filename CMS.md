@@ -39,6 +39,15 @@ The <i>Firestore Database</i> contains 3 entities :
 
 You will only change the entity <i>Fields</i> to modify the texts on the website
 
+<b><u>IMPORTANT REMARK :</u>
+
+WHEN YOU CHANGE SOMETHING IN FIRESTORE DATABASE OR STORAGE, <br>
+YOU ALWAYS HAVE TO REFRESH THE LANDING PAGE TO SEE EFFECTS ON YOUR CHANGES
+</b>
+
+
+
+
 ## Components
 
 The landing page is divided into several components : 
