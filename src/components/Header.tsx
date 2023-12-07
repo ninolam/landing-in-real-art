@@ -69,7 +69,7 @@ const Header = () => {
     return (
         <div className="header">
           <div className="group-12">
-            <p className="heading-5">
+            <p className="header-title">
               <span className="span">
                 {title1} <br />
               </span>

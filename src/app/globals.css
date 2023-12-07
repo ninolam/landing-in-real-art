@@ -1167,7 +1167,7 @@ a {
   width: 933px;
 }
 
-.LP .heading-5 {
+.LP .header-title {
   color: transparent;
   font-family: "Unbounded", Helvetica;
   font-size: 70px;
@@ -1175,7 +1175,6 @@ a {
   left: 0;
   letter-spacing: 0;
   line-height: 69px;
-  position: absolute;
   text-align: center;
   top: 0;
 }
