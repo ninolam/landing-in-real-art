@@ -4,6 +4,7 @@ import './globals.css'
 import './css/artists.css'
 import './css/team.css'
 import './css/joinTrend.css'
+import './css/faq.css'
 
 import { AppWrapper } from '@/context'
 
