@@ -134,7 +134,9 @@ const Menu = () => {
                 </div>
                 <div className="div-2">
                 <button className="button-presale">
-                    <div className="text-wrapper-5">{presale}</div> 
+                    <Link href="/presale">
+                        <div className="text-wrapper-5">{presale}</div> 
+                    </Link>    
                 </button>
                 <button className="button">
                     <div className="text-wrapper-5">{testnet}</div>
