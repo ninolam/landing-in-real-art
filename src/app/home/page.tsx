@@ -3,7 +3,7 @@ export default function HomePage() {
 
     return (
 
-      <div className="lp">
+      <div className="home">
 
         <div className="hero-section">
           <div className="wrapper-top-contain">

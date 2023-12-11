@@ -57,11 +57,11 @@
     --background-blur-backdrop-filter: blur(22px);
   }
   
-.lp,
-.lp * {
+.home,
+.home * {
   box-sizing: border-box;
 }
-.lp {
+.home {
   background: var(
     --bg-bgcolor,
     linear-gradient(
@@ -1615,7 +1615,6 @@
   position: relative;
 }
 .header {
-  background: #5552ff;
   border-radius: 100px;
   padding: 20px 96px 20px 96px;
   display: flex;
