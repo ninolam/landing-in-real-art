@@ -841,7 +841,6 @@
     all: unset;
     align-items: center;
     background-color: var(--primairewhite);
-    border: 1px solid;
     border-color: transparent;
     border-image: linear-gradient(
         to bottom,
@@ -864,7 +863,6 @@
     all: unset;
     align-items: center;
     background-color: var(--primairewhite);
-    border: 1px solid;
     border-color: transparent;
     border-image: linear-gradient(
         to bottom,
