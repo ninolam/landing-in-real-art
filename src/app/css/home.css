@@ -312,7 +312,7 @@
   position: relative;
   width: 394px;
 }
-.ira-ambitionne-de-cr-er-de-vraies-galeries-d-arts-physique-auto-g-r-es-par-la-communaut-dao-nos-galeries-seront-des-portails-entre-le-monde-du-web-3-et-le-monde-r-el-de-l-art-toutes-les-uvres-distribu-es-par-ira-sont-des-uvres-physiques-cr-s-par-des-artistes-reconnus-dans-le-monde-de-l-art {
+.ira-ambition {
   color: var(--bleu-bleusombre-100, #021056);
   text-align: left;
   font-family: "Inter-Regular", sans-serif;
@@ -332,6 +332,7 @@
   position: relative;
 }
 .button2 {
+  cursor: pointer;
   background: var(--primaire-white, #f6f8ff);
   border-radius: 10px;
   border-width: 1px;
