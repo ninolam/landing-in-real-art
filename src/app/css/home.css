@@ -863,7 +863,7 @@
   height: 0px;
   position: relative;
 }
-.frame-36648 {
+.frame-team {
   background: var(--primaire-white, #f6f8ff);
   border-radius: 60px;
   border-width: 1px;
@@ -925,7 +925,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.passionn-par-l-art-et-les-hommes-je-m-inspire-de-la-perfection-artistique-pour-m-am-liorer-sans-cesse-poursuivant-inlassablement-mes-objectifs-avec-un-esprit-autodidacte {
+.team-member-p-1 {
   color: #000000;
   text-align: left;
   font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);
@@ -934,7 +934,7 @@
   position: relative;
   align-self: stretch;
 }
-.enrichi-par-mes-exp-riences-en-finance-et-passionn-par-l-art-je-r-ve-de-cr-er-un-projet-innovant-et-inclusif-pour-tous-mon-parcours-m-inspire-m-ler-expertise-financi-re-et-expression-artistique-dans-la-qu-te-d-un-avenir-meilleur-et-partag {
+.team-member-p-2 {
   color: #000000;
   text-align: left;
   font-family: var(
@@ -1807,4 +1807,35 @@
   font-size: var(--text-linktext-font-size, 16px);
   font-weight: var(--text-linktext-font-weight, 500);
   position: relative;
+}
+
+
+.home .frame-team .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  z-index: 99;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+/* Additional styling for the arrows */
+}
+
+.home .frame-team .left-arrow {
+  width: 32px;
+  height: 32px;
+  left: 10px;
+}
+
+.home .frame-team .right-arrow {
+  right: 10px;
+}
+
+
+.home .frame-team:hover .arrow {
+  opacity: 1;
+}
+
+.home .frame-team:hover {
+  opacity: 1;
 }

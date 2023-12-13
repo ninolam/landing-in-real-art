@@ -1,80 +1,105 @@
 "use client"
+import { useEffect, useState } from "react"
+import { useAppContext } from "../../context"
+import { db } from '../../firebaseConfig';
+import { collection, getDocs } from 'firebase/firestore/lite';
+import { getDownloadURL, ref } from "firebase/storage";
+import { storage } from "../../firebaseConfig";
+import { Lang, MemberData } from "../../types/types";
+import TeamMember from "./TeamMember";
+
 
 const Team = () => {
 
+      //Get the language of the global context
+      const {lang} = useAppContext()
+      const lang_ = lang as Lang
+  
+      const FIREBASE_TEAM_COLLECTION = 'Team'
+      
+      const [text1, setText1] = useState<string>('')
+      const [text2, setText2] = useState<string>('')
+      const [role, setRole]   = useState<string>('')
+      const [name, setName]   = useState<string>('')
+      const [photo, setPhoto] = useState<string>('')
+      const [cssClassPhoto, setCssClassPhoto] = useState<string>('')
+      const [photoUrl, setPhotoUrl]           = useState<string>('')
+      const [currentIndex, setCurrentIndex]   = useState(0)
+      const [members, setMembers]             = useState<MemberData>([])
+      const [key, setKey] = useState(0)
+      const [fade, setFade] = useState(true)
+  
+      const setMembersData = async(currentIndex: number, members: MemberData) => {
+        setText1(members[currentIndex].text1[lang_])
+        setText2(members[currentIndex].text2[lang_])
+        setRole(members[currentIndex].role[lang_])
+        setName(members[currentIndex].name)
+        const photo_ = members[currentIndex].photo 
+        setPhoto(photo_)
+        const imageRef = ref(storage, photo_)
+        const url = await getDownloadURL(imageRef)
+        //photo-team-member
+        setPhotoUrl(url)
+        setCssClassPhoto(``)
+      }
+  
+      //--------------------------------------------------------------------- useEffect
+      /**
+       * UseEffect called at the first page loading 
+       */
+      useEffect(() => {
+        const fetchTeamMembers = async () => {
+          const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
+          const teamDocuments  = await getDocs(teamCollection);
+          const teamData       = teamDocuments.docs.map(doc => doc.data());
+          const members_ = teamData[0]['members'] as MemberData
+          setMembers(members_)        
+          setMembersData(currentIndex, members_)
+        }
+        fetchTeamMembers()
+        
+      }, [])
+  
+      //--------------------------------------------------------------------- useEffect
+      /**
+       * UseEffect called when 'lang' or 'currentIndex' has changed
+       */
+      useEffect(() => {
+        if (members.length !== 0) {
+          setMembersData(currentIndex, members)
+          // When imageUrl changes, start the fade-out effect
+          setFade(false);
+          // Wait for fade-out to complete, then fade in the new image
+          const timer = setTimeout(() => {
+            setFade(true);
+          }, 500); // Adjust this duration to match your fade-out CSS animation
+  
+          return () => clearTimeout(timer);
+          
+        }
+      }, [lang, currentIndex])
+  
+  
+      //Re-render component with useEffect for the fade-in (but it does not work)
+      useEffect(() => {
+        setKey(prevKey => prevKey + 1)
+      }, [photoUrl]);
+  
+      const handleArrowClick = (direction: string) => {
+        if (direction === 'right') {
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % members.length);
+        } else {
+          setCurrentIndex((prevIndex) => (prevIndex - 1 + members.length) % members.length);
+        }
+      };
     return (
-        <div className="frame-36648">
-          <img className="rectangle-150" src="rectangle-1500.png" />
-          <div className="colum">
-            <div className="wrapper-text">
-              <div className="def">
-                <div
-                  className="passionn-par-l-art-et-les-hommes-je-m-inspire-de-la-perfection-artistique-pour-m-am-liorer-sans-cesse-poursuivant-inlassablement-mes-objectifs-avec-un-esprit-autodidacte"
-                >
-                  &quot;Passionné par l&#039;art et les hommes, je m&#039;inspire de
-                  la perfection artistique pour m&#039;améliorer sans cesse,
-                  poursuivant inlassablement mes objectifs avec un esprit
-                  autodidacte.&quot;
-                </div>
-                <div
-                  className="enrichi-par-mes-exp-riences-en-finance-et-passionn-par-l-art-je-r-ve-de-cr-er-un-projet-innovant-et-inclusif-pour-tous-mon-parcours-m-inspire-m-ler-expertise-financi-re-et-expression-artistique-dans-la-qu-te-d-un-avenir-meilleur-et-partag"
-                >
-                  Enrichi par mes expériences en finance et passionné par l&#039;art,
-                  je rêve de créer un projet innovant et inclusif pour tous. Mon
-                  parcours m&#039;inspire à mêler expertise financière et expression
-                  artistique, dans la quête d&#039;un avenir meilleur et partagé.
-                </div>
-              </div>
-              <div className="chara">
-                <div className="timoth-e-roy">Timothée Roy</div>
-                <div className="porteur-du-projet">Porteur du projet</div>
-              </div>
-            </div>
-            <div className="slider">
-              <svg
-                className="guidance-up-arrow"
-                width="120"
-                height="56"
-                viewBox="0 0 120 56"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.5"
-                  y="0.5"
-                  width="119"
-                  height="55"
-                  rx="27.5"
-                  stroke="black"
-                />
-                <path
-                  d="M45.3333 40C45.3333 38.728 44.1117 36.8286 42.875 35.2343C41.285 33.1771 39.385 31.3823 37.2067 30.0126C35.5733 28.9857 33.5933 28 32 28M32 28C33.5933 28 35.575 27.0143 37.2067 25.9874C39.385 24.616 41.285 22.8211 42.875 20.7674C44.1117 19.1714 45.3333 17.2686 45.3333 16M32 28L88 28"
-                  stroke="black"
-                />
-              </svg>
-
-              <svg
-                className="guidance-up-arrow2"
-                width="120"
-                height="56"
-                viewBox="0 0 120 56"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.5"
-                  y="0.5"
-                  width="119"
-                  height="55"
-                  rx="27.5"
-                  stroke="black"
-                />
-                <path
-                  d="M74.6667 16C74.6667 17.272 75.8883 19.1714 77.125 20.7657C78.715 22.8229 80.615 24.6177 82.7933 25.9874C84.4267 27.0143 86.4067 28 88 28M88 28C86.4067 28 84.425 28.9857 82.7933 30.0126C80.615 31.384 78.715 33.1789 77.125 35.2326C75.8883 36.8286 74.6667 38.7314 74.6667 40M88 28L32 28"
-                  stroke="black"
-                />
-              </svg>
-            </div>
+        <div className="frame-team">
+          <div className="arrow left-arrow" >
+            <img alt="left" src="img/angle-circle-left.png" onClick={() => handleArrowClick('left')}/>
+          </div>
+          <TeamMember name={name} photo={photoUrl} role={role} text1={text1} text2={text2}/>
+          <div className="arrow right-arrow" >
+            <img alt="right" src="img/angle-circle-right.png" onClick={() => handleArrowClick('right')}/>
           </div>
         </div>
 

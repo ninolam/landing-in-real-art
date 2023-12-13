@@ -149,3 +149,13 @@ export type MemberData = {
     name: string
     photo: string
   }[];
+
+
+export interface TeamMemberProps {
+    name: string
+    photo: string
+    role: string
+    text1: string
+    text2: string
+}
+  

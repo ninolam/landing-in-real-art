@@ -1,14 +1,8 @@
 "use client"
 
-interface Props {
-  name: string
-  photo: string
-  role: string
-  text1: string
-  text2: string
-}
+import { TeamMemberProps } from "../types/types"
 
-const TeamMember: React.FC<Props> = ( {name, photo, role, text1, text2} ) => {
+const TeamMember: React.FC<TeamMemberProps> = ( {name, photo, role, text1, text2} ) => {
 
     return (
         
