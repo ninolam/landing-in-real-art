@@ -1,57 +1,76 @@
 "use client"
+"use client"
+import { useEffect, useState } from "react"
+import { useAppContext } from '../../context'
+import { db } from '../../firebaseConfig';
+import { collection, getDocs } from 'firebase/firestore/lite';
+import React from "react";
+import { Lang, NewsletterData, NewsletterText, defaultLangObject } from "../../types/types";
+
 
 const Newsletter = () => {
 
+    //Get the language of the global context
+    const {lang } = useAppContext()
+    const lang_ = lang as Lang
+  
+    const FIREBASE_NEWSLETTER_COLLECTION = 'Newsletter'
+  
+    const [title, setTitle]             = useState<string>('')
+    const [description, setDescription] = useState<string>('')
+    const [emailPh, setEmailPh]         = useState<string>('')
+    const defaultNlText = {
+      title: defaultLangObject,
+      description: defaultLangObject,
+      email_placeholder: defaultLangObject,
+    }
+    const [nlTexts, setNlTexts] = useState<NewsletterText>(defaultNlText)
+  
+    useEffect(() => {
+      const fetchData = async () => {
+          const nlCollection = collection(db, FIREBASE_NEWSLETTER_COLLECTION);
+          const nlDocuments  = await getDocs(nlCollection);
+          const nlData       = nlDocuments.docs.map(doc => doc.data() as NewsletterData)
+          
+          setNlTexts(nlData[0] as NewsletterText)
+          setTitle(nlData[0].title[lang_])
+          setDescription(nlData[0].description[lang_])
+          setEmailPh(nlData[0].email_placeholder[lang_])      
+      }
+      fetchData();
+  
+    }, []);
+  
+    useEffect(() => {
+      setTitle(nlTexts.title[lang_])
+      setDescription(nlTexts.description[lang_])
+      setEmailPh(nlTexts.email_placeholder[lang_])      
+    }, [lang]);
+    
+    /*
+    const EmailInput = React.memo(() => {
+      return <input type="text" className="email" autoFocus placeholder={emailPh}/>
+    });
+    */
+  
     return (
         <div className="frame-36598">
         <div className="frame-36563">
           <div className="frame-3351">
-            <div className="newsletter">Newsletter</div>
-            <div
-              className="ne-louper-pas-la-chance-qui-s-ouvre-vous-et-rejoignez-le-projet-en-vous-inscrivant-la-newsletter-in-real-art-pour-ne-rien-manquer-du-projet-et-tre-toujours-le-premier-informer-des-avancer"
-            >
-              Ne louper pas la chance qui s’ouvre à vous et rejoignez le projet en
-              vous inscrivant à la newsletter InRealArt pour ne rien manquer du
-              projet et être toujours le premier informer des avancer !
+            <div className="newsletter">{title}</div>
+            <div className="newsletter-p-1">
+              {description}
             </div>
           </div>
           <div className="group-159">
             <div className="envoyez-votre-mail">Envoyez votre mail !</div>
             <div className="rectangle-96"></div>
             <div className="rectangle-97"></div>
-            <svg
-              className="material-symbols-arrow-insert"
-              width="35"
-              height="34"
-              viewBox="0 0 35 34"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clipPath="url(#clip0_771_41146)">
-                <path
-                  d="M8.85977 16.6858H22.5203L16.4015 10.6047L17.8245 9.1905L26.3623 17.6758L17.8245 26.1611L16.4015 24.7468L22.5203 18.6657H8.85977V16.6858Z"
-                  fill="#7472FF"
-                />
-                <path
-                  d="M8.85977 16.6858H22.5203L16.4015 10.6047L17.8245 9.1905L26.3623 17.6758L17.8245 26.1611L16.4015 24.7468L22.5203 18.6657H8.85977V16.6858Z"
-                  fill="white"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_771_41146">
-                  <rect
-                    width="24.0744"
-                    height="24.0744"
-                    rx="12.0372"
-                    transform="matrix(-0.709286 0.704921 -0.709286 -0.704921 34.1885 16.9688)"
-                    fill="white"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
+            
+
           </div>
         </div>
-        <img className="unsplash-a-ug-tvv-qx-dhg" src="unsplash-a-ug-tvv-qx-dhg0.png" />
+        <img className="unsplash-a-ug-tvv-qx-dhg" src="/img/unsplash-augtvvqxdhg.png" />
       </div>
 
     )
