@@ -1,4 +1,4 @@
-import Menu from "../../components/Menu";
+import Menu from "../../components/home/Menu";
 import Artists from "../../components/home/Artists";
 import Faq from "../../components/home/Faq";
 import Footer from "../../components/home/Footer";
@@ -16,13 +16,13 @@ export default function HomePage() {
 
         <HeroSection />
 
+        <Menu/>
+        
         <HowToJoinIra/>
 
         <JoinMovement/>
 
-
         <Artists />
-
 
         <Team/>
 
@@ -32,7 +32,7 @@ export default function HomePage() {
 
         <Footer/>
 
-        <Menu/>        
+
     </div>
 
     )

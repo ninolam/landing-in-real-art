@@ -335,8 +335,6 @@
   cursor: pointer;
   background: var(--primaire-white, #f6f8ff);
   border-radius: 10px;
-  border-width: 1px;
-  border-style: solid;
   border-image: var(
     --bg-bgcolor,
     linear-gradient(
@@ -1617,6 +1615,7 @@
   position: relative;
 }
 .header {
+  background: #5552ff;
   border-radius: 100px;
   padding: 20px 96px 20px 96px;
   display: flex;
@@ -1760,11 +1759,9 @@
   flex-shrink: 0;
   position: relative;
 }
-.button4 {
+.menu-button-presale {
   background: var(--primaire-white, #f6f8ff);
   border-radius: 10px;
-  border-width: 1px;
-  border-style: solid;
   border-image: var(
     --bg-bgcolor,
     linear-gradient(
