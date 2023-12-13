@@ -27,7 +27,7 @@ const Newsletter = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_771_41146)">
+              <g clipPath="url(#clip0_771_41146)">
                 <path
                   d="M8.85977 16.6858H22.5203L16.4015 10.6047L17.8245 9.1905L26.3623 17.6758L17.8245 26.1611L16.4015 24.7468L22.5203 18.6657H8.85977V16.6858Z"
                   fill="#7472FF"

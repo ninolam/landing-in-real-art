@@ -79,7 +79,7 @@ const ArtistPanel: React.FC<ArtistPanel> = (
 
             </div>
             <div className="frame-48095746">
-              <div className="frame-48095741">
+              <div className="image-3-5-6">
                 <img
                   className="jusdevoyage-a-7-un-al-m-mq-i-unsplash-1"
                   src="jusdevoyage-a-7-un-al-m-mq-i-unsplash-10.png"

@@ -23,9 +23,9 @@ function Rectangle() {
         y2="359.474"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#ECEEFA" />
-        <stop offset="0.526042" stop-color="#EAECFB" />
-        <stop offset="1" stop-color="#E1E6FF" />
+        <stop stopColor="#ECEEFA" />
+        <stop offset="0.526042" stopColor="#EAECFB" />
+        <stop offset="1" stopColor="#E1E6FF" />
       </linearGradient>
     </defs>
   </svg>
