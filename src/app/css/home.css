@@ -1614,7 +1614,7 @@
   font-weight: var(--text-linktext-font-weight, 500);
   position: relative;
 }
-.header {
+.home .header {
   background: #5552ff;
   border-radius: 100px;
   padding: 20px 96px 20px 96px;
