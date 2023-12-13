@@ -1,5 +1,6 @@
 "use client"
 import Footer from "../../components/home/Footer"
+import Menu from "../../components/home/Menu"
 import DropPanel from "../../components/presale/DropPanel"
 import HeroSection from "../../components/presale/HeroSection"
 import PresalePros from "../../components/presale/PresalePros"
@@ -62,38 +63,7 @@ export default function PresalePage() {
     */}
                 <Footer/>
 
-                <header className="header">
-                <img
-                    className="logo"
-                    alt="Logo"
-                    src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/logo-1@2x.png"
-                />
-                <div className="wrapper-link">
-                    <div className="div-2">
-                    <div className="link-text" />
-                    <div className="link-text-2">
-                        <div className="text-wrapper-15">Communauté</div>
-                    </div>
-                    <div className="link-text-2">
-                        <div className="text-wrapper-15">Equipe</div>
-                    </div>
-                    <div className="link-text-2">
-                        <div className="text-wrapper-15">A propos</div>
-                    </div>
-                    <div className="link-text-2">
-                        <div className="text-wrapper-15">Ressources</div>
-                    </div>
-                    </div>
-                    <div className="div-2">
-                    <button className="button-3">
-                        <div className="text-wrapper-6">prévente</div>
-                    </button>
-                    <button className="button-4">
-                        <div className="text-wrapper-6">testnet</div>
-                    </button>
-                    </div>
-                </div>
-                </header>
+                <Menu/>
             </div>
         </div>
         </>

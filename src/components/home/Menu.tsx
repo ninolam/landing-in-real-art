@@ -204,6 +204,9 @@ const Menu = () => {
                 <div className="testnet">{testnet}</div>
               </div>
             </div>
+
+            <LanguageSelector/>
+            
           </div>
         </div>
 
