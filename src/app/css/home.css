@@ -1018,7 +1018,7 @@
   transform: translate(0px, 0px);
   overflow: visible;
 }
-.frame-36564 {
+.home-faq {
   display: flex;
   flex-direction: row;
   gap: 179px;
@@ -1043,8 +1043,9 @@
   font-size: var(--heading-h-2-font-size, 48px);
   font-weight: var(--heading-h-2-font-weight, 600);
   position: relative;
+  margin-bottom: 20px;
 }
-.bien-souvent-vous-avez-des-questions-l-gitime-alors-nous-avons-anticip-cela-et-si-vous-avez-une-autre-question-consulter-la-page-faq {
+.faq-main-p {
   color: var(--bleu-bleusombre-300, #6979a7);
   text-align: left;
   font-family: var(
@@ -1078,7 +1079,7 @@
   font-weight: var(--text-linktext-font-weight, 500);
   position: relative;
 }
-.wrapper {
+.faq-right {
   display: flex;
   flex-direction: column;
   gap: 0px;
@@ -1838,4 +1839,17 @@
 
 .home .frame-team:hover {
   opacity: 1;
+}
+
+.home .answer {
+  background-color: rgb(236, 238, 250);
+  z-index:10;
+}
+
+.home .plus {
+  cursor: pointer;
+}
+
+.home .plus {
+  cursor: pointer;
 }

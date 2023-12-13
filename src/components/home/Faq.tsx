@@ -1,68 +1,178 @@
 "use client"
+import { useEffect, useRef, useState } from 'react'
+import { useAppContext } from '../../context'
+import { db } from '../../firebaseConfig';
+import { collection, getDocs } from 'firebase/firestore/lite';
+import { FaqButtons, FaqTexts, HelpIraData, Lang, defaultLangObject } from '../../types/types';
 
 const Faq = () => {
 
+    //Get the language of the global context
+    const {lang} = useAppContext()
+    const lang_ = lang as Lang
+  
+    const FIREBASE_FAQ_COLLECTION = 'Faq'
+    
+    const [question1, setQuestion1] = useState<string>('');
+    const [question2, setQuestion2] = useState<string>('');
+    const [question3, setQuestion3] = useState<string>('');
+    const [answer1, setAnswer1]     = useState<string>('');
+    const [answer2, setAnswer2]     = useState<string>('');
+    const [answer3, setAnswer3]     = useState<string>('');
+    const [faqMain, seFaqMain]      = useState<string>('');
+    const [readFaq, setReadFaq]     = useState<string>('');
+    const defaultFaqButtons = {
+      readFaq: defaultLangObject
+    }
+    const defaultFaqTexts = {
+      faqMain: defaultLangObject,
+      question1: defaultLangObject,
+      question2: defaultLangObject,
+      question3: defaultLangObject,
+      answer1: defaultLangObject,
+      answer2: defaultLangObject,
+      answer3: defaultLangObject
+    }
+  
+    const [faqButtons,setFaqButtons] = useState<FaqButtons>(defaultFaqButtons);
+    const [faqTexts,setFaqTexts]     = useState<FaqTexts>(defaultFaqTexts);
+  
+    useEffect(() => {
+      const fetchData = async () => {
+        const faqCollection = collection(db, FIREBASE_FAQ_COLLECTION);
+        const faqDocuments  = await getDocs(faqCollection);
+        const faqData       = faqDocuments.docs.map(doc => doc.data());
+        
+        //Index 0 ===> FAQ Buttons
+        setFaqButtons(faqData[0] as FaqButtons)
+        setReadFaq(faqData[0].readFaq[lang])
+        
+        //Index 1 ===> FAQ Text
+        setFaqTexts(faqData[1] as FaqTexts)
+        seFaqMain(faqData[1].faqMain[lang])
+        setQuestion1(faqData[1].question1[lang])
+        setQuestion2(faqData[1].question2[lang])
+        setQuestion3(faqData[1].question3[lang])
+        setAnswer1(faqData[1].answer1[lang])
+        setAnswer2(faqData[1].answer2[lang])
+        setAnswer3(faqData[1].answer3[lang])
+      }
+      fetchData();
+    }, [])
+  
+    useEffect(() => {
+      // Buttons
+      setReadFaq(faqButtons.readFaq[lang_])
+        
+      // Texts
+      seFaqMain(faqTexts.faqMain[lang_])
+      setQuestion1(faqTexts.question1[lang_])
+      setQuestion2(faqTexts.question2[lang_])
+      setQuestion3(faqTexts.question3[lang_])
+      setAnswer1(faqTexts.answer1[lang_])
+      setAnswer2(faqTexts.answer2[lang_])
+      setAnswer3(faqTexts.answer3[lang_])
+    }, [lang]);
+  
+    const imagePlus1Ref = useRef(null);
+    const imagePlus2Ref = useRef(null);
+    const imagePlus3Ref = useRef(null);
+    
+    
+    const useQuestionVisibility = (initialVisibility: boolean, plusImageSrc: string, minusImageSrc: string) => {
+      const [isVisible, setIsVisible] = useState<boolean>(initialVisibility);
+      const [imageSrc, setImageSrc] = useState<string>(plusImageSrc);
+    
+      const toggleVisibility = () => {
+        setIsVisible(!isVisible);
+        setImageSrc(isVisible ? plusImageSrc : minusImageSrc);
+      };
+    
+      return { isVisible, imageSrc, toggleVisibility };
+    };
+    
+    const Question1 = () => {
+      const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png");
+      return (
+        <>
+           <div className="question-01">
+            <div className="comment-fonctionne-la-inrealart">
+              {question1}
+            </div>
+            <div onClick={toggleVisibility}>
+              <img ref={imagePlus1Ref} className="plus" alt="plus" src={imageSrc} />
+            </div>
+          </div>
+          {isVisible && (
+              <div className="answer">
+                {answer1}
+              </div>
+            )}
+        </>  
+      )
+    }
+    
+    const Question2 = () => {
+      const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png");
+      return (
+        <>
+          <div className="question-02">
+            <div className="pour-qui">{question2}</div>        
+            <div onClick={toggleVisibility}>
+              <img ref={imagePlus2Ref} className="plus" alt="plus" src={imageSrc} />
+            </div>
+          </div>
+          
+          {isVisible && (
+              <div className="answer">
+                {answer2}
+              </div>
+            )}
+        </>
+      )
+    }
+    
+    const Question3 = () => {
+      const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png");
+      return (
+        <>
+          <div className="question-03">
+            <div className="y-a-t-il-un-guide-de-d-marrage">{question3}</div>  
+            <div onClick={toggleVisibility}>
+              <img ref={imagePlus3Ref} className="plus" alt="plus" src={imageSrc} />
+            </div>
+          </div>          
+          {isVisible && (
+            <div className="answer">
+              {answer3}
+            </div>
+          )}
+        </>
+      );
+    }
+
+    
     return (
-        <div className="frame-36564">
-        <div className="frame-3350">
+        <div className="home-faq">
+        <div className="faq-left">
           <div className="faq">FAQ</div>
           <div
-            className="bien-souvent-vous-avez-des-questions-l-gitime-alors-nous-avons-anticip-cela-et-si-vous-avez-une-autre-question-consulter-la-page-faq"
-          >
-            Bien souvent vous avez des questions légitime alors nous avons anticipé
-            cela ! Et si vous avez une autre question consulter la page FAQ
+            className="faq-main-p">
+            {faqMain}
+            <br />
             <br />
           </div>
           <div className="link-button2">
             <div className="button2">
-              <div className="consulter-la-faq">Consulter la FAQ</div>
+              <div className="consulter-la-faq">{readFaq}</div>
             </div>
           </div>
         </div>
-        <div className="wrapper">
-          <div className="question-01">
-            <div className="comment-fonctionne-la-inrealart">
-              Comment fonctionne la Inrealart ?
-            </div>
-            <svg
-              className="add"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M11 19V13H5V11H11V5H13V11H19V13H13V19H11Z" fill="#2B3058" />
-            </svg>
-          </div>
-          <div className="question-02">
-            <div className="pour-qui">Pour qui ?</div>
-            <svg
-              className="add2"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M11 19V13H5V11H11V5H13V11H19V13H13V19H11Z" fill="#2B3058" />
-            </svg>
-          </div>
-          <div className="question-03">
-            <div className="y-a-t-il-un-guide-de-d-marrage">
-              Y a t’il un guide de démarrage ?
-            </div>
-            <svg
-              className="add3"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M11 19V13H5V11H11V5H13V11H19V13H13V19H11Z" fill="#2B3058" />
-            </svg>
-          </div>
+        
+        <div className="faq-right">
+          <Question1/>
+          <Question2/>
+          <Question3/>
         </div>
       </div>
 
