@@ -159,3 +159,13 @@ export interface TeamMemberProps {
     text2: string
 }
   
+export interface PresaleDataTexts {
+    title1: Record<Lang, string>
+    title2: Record<Lang, string>
+    description: Record<Lang, string>
+}
+
+export interface PresaleDataButtons {
+    seeDrop: Record<Lang, string>
+    seeDropLink: string
+}
