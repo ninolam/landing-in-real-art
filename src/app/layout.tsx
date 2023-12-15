@@ -7,6 +7,7 @@ import './css/joinTrend.css'
 import './css/faq.css'
 import './css/presale.css'
 import './css/home.css'
+import './css/footer.css'
 
 import { AppWrapper } from '@/context'
 

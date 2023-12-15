@@ -106,7 +106,7 @@ const Footer = () => {
     return (
         <>
             <div className="footer">
-                <div className="frame-12">
+                <div className="footer-left">
                     <img className="logo-2" alt="Logo" src="/img/logo-IRA.png" />
                     <div className="logo-social-network">
                         <Link href={linkedInUrl}>
@@ -120,56 +120,56 @@ const Footer = () => {
                         </Link>
                         
                     </div>
-                    <p className="text-wrapper-9">{leftBlockText}</p>
+                    <p className="footer-left-footer">{leftBlockText}</p>
                 </div>
-                <div className="frame-14">
-                    <div className="group-9">
-                    <div className="text-wrapper-10">{ourPagesTitle}</div>
-                    <div className="text-wrapper-11">
+                <div className="footer-right">
+                    <div className="footer-our-pages">
+                    <div className="footer-our-pages-title">{ourPagesTitle}</div>
+                    <div className="footer-our-pages-line-1">
                         <Link href={homeLinkUrl}>
                             {homeLinkText}
                         </Link>    
                     </div>
-                    <div className="text-wrapper-12">
+                    <div className="footer-our-pages-line-2">
                         <Link href={aboutLinkUrl}>
                             {aboutLinkText}
                         </Link>    
                     </div>
-                    <div className="text-wrapper-13">
+                    <div className="footer-our-pages-line-3">
                         <Link href={marketPlaceLinkUrl}>
                             {marketPlaceLinkText}
                         </Link>    
                     </div>
-                    <div className="text-wrapper-14">
+                    <div className="footer-our-pages-line-4">
                         <Link href={faqLinkUrl}>
                             {faqLinkText}
                         </Link>    
                     </div>
                     </div>
-                    <div className="group-10">
-                    <div className="text-wrapper-10">
+                    <div className="footer-company">
+                    <div className="footer-our-pages-title">
                         {ourCompanyTitle}
                     </div>
-                    <div className="text-wrapper-11">
+                    <div className="footer-our-pages-line-1">
                         <Link href={teamLinkUrl}>
                             {teamLinkText}
                         </Link>    
                     </div>
-                    <div className="text-wrapper-12">
+                    <div className="footer-our-pages-line-2">
                         <Link href={partnersLinkUrl}>
                             {partnersLinkText}
                         </Link>
                     </div>
-                    <div className="text-wrapper-13">
+                    <div className="footer-our-pages-line-3">
                         CGU
                     </div>
                     </div>
                     <img className="line-2" alt="Line" src="/img/line-5.svg" />
-                    <div className="group-11">
-                    <div className="text-wrapper-10">{contactTitle}</div>  
-                    <p className="text-wrapper-11">{phone}</p>
-                    <div className="text-wrapper-12">{address}</div>
-                    <div className="text-wrapper-13">{email}</div>
+                    <div className="footer-contact">
+                    <div className="footer-our-pages-title">{contactTitle}</div>  
+                    <p className="footer-our-pages-line-1">{phone}</p>
+                    <div className="footer-our-pages-line-2">{address}</div>
+                    <div className="footer-our-pages-line-3">{email}</div>
                     </div>
                 </div>
             </div>

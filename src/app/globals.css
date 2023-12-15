@@ -788,15 +788,6 @@ a {
   width: 1440px;
 }
 
-.LP .frame-12 {
-  align-items: flex-start;
-  display: inline-flex;
-  flex: 0 0 auto;
-  flex-direction: column;
-  gap: 16px;
-  position: relative;
-}
-
 .LP .logo {
   height: 32.43px;
   margin-bottom: -2917px;
@@ -810,102 +801,6 @@ a {
   position: relative;
 }
 
-.LP .text-wrapper-9 {
-  color: var(--bleubleu-sombre-300);
-  font-family: var(--text-paragraphe-font-family);
-  font-size: var(--text-paragraphe-font-size);
-  font-style: var(--text-paragraphe-font-style);
-  font-weight: var(--text-paragraphe-font-weight);
-  letter-spacing: var(--text-paragraphe-letter-spacing);
-  line-height: var(--text-paragraphe-line-height);
-  position: relative;
-  width: 223px;
-}
-
-.LP .frame-14 {
-  align-items: flex-start;
-  display: inline-flex;
-  flex: 0 0 auto;
-  gap: 56px;
-  position: relative;
-}
-
-.LP .group-9 {
-  height: 152px;
-  position: relative;
-  width: 115px;
-}
-
-.LP .text-wrapper-10 {
-  color: var(--primaireblack);
-  font-family: var(--heading-h4-font-family);
-  font-size: var(--heading-h4-font-size);
-  font-style: var(--heading-h4-font-style);
-  font-weight: var(--heading-h4-font-weight);
-  left: 0;
-  letter-spacing: var(--heading-h4-letter-spacing);
-  line-height: var(--heading-h4-line-height);
-  position: absolute;
-  top: 0;
-}
-
-.LP .text-wrapper-11 {
-  color: var(--bleubleu-sombre-300);
-  font-family: var(--text-link-text-font-family);
-  font-size: var(--text-link-text-font-size);
-  font-style: var(--text-link-text-font-style);
-  font-weight: var(--text-link-text-font-weight);
-  left: 0;
-  letter-spacing: var(--text-link-text-letter-spacing);
-  line-height: var(--text-link-text-line-height);
-  position: absolute;
-  top: 45px;
-}
-
-.LP .text-wrapper-12 {
-  color: var(--bleubleu-sombre-300);
-  font-family: var(--text-link-text-font-family);
-  font-size: var(--text-link-text-font-size);
-  font-style: var(--text-link-text-font-style);
-  font-weight: var(--text-link-text-font-weight);
-  left: 0;
-  letter-spacing: var(--text-link-text-letter-spacing);
-  line-height: var(--text-link-text-line-height);
-  position: absolute;
-  top: 74px;
-}
-
-.LP .text-wrapper-13 {
-  color: var(--bleubleu-sombre-300);
-  font-family: var(--text-link-text-font-family);
-  font-size: var(--text-link-text-font-size);
-  font-style: var(--text-link-text-font-style);
-  font-weight: var(--text-link-text-font-weight);
-  left: 0;
-  letter-spacing: var(--text-link-text-letter-spacing);
-  line-height: var(--text-link-text-line-height);
-  position: absolute;
-  top: 103px;
-}
-
-.LP .text-wrapper-14 {
-  color: var(--bleubleu-sombre-300);
-  font-family: var(--text-link-text-font-family);
-  font-size: var(--text-link-text-font-size);
-  font-style: var(--text-link-text-font-style);
-  font-weight: var(--text-link-text-font-weight);
-  left: 0;
-  letter-spacing: var(--text-link-text-letter-spacing);
-  line-height: var(--text-link-text-line-height);
-  position: absolute;
-  top: 132px;
-}
-
-.LP .group-10 {
-  height: 123px;
-  position: relative;
-  width: 111px;
-}
 
 .LP .line {
   height: 1px;
@@ -916,12 +811,6 @@ a {
   width: 196px;
 }
 
-.LP .group-11 {
-  height: 123px;
-  margin-right: -8px;
-  position: relative;
-  width: 152px;
-}
 
 .LP .team {
   border-radius: 60px;
@@ -1238,37 +1127,12 @@ a {
   width: 334px;
 }
 
-.LP .footer {
-  align-items: flex-start;
-  display: flex;
-  justify-content: space-between;
-  left: 0;
-  padding: 64px 96px;
-  position: absolute;
-  top: 6236px;
-  width: 1440px;
-}
 
-.LP .logo-social-network {
-  width: 100px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
 
-}
-
-.LP .logo-2 {
+.logo-2 {
   height: 32.43px;
   position: relative;
   width: 101.49px;
-}
-
-.LP .line-2 {
-  height: 196px;
-  object-fit: cover;
-  position: relative;
-  width: 1px;
 }
 
 .LP .menu {
