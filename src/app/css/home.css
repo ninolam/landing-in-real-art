@@ -1056,13 +1056,14 @@
   position: relative;
 }
 .faq-right {
-  display: flex;
+  display: flex;  
   flex-direction: column;
   gap: 0px;
   align-items: flex-start;
   justify-content: flex-start;
   flex-shrink: 0;
   position: relative;
+  width: 500px;
 }
 .question-01 {
   border-style: solid;
@@ -1817,7 +1818,15 @@
 }
 
 .home .answer {
-  background-color: rgb(236, 238, 250);
+  background-color: var(
+    --bg-bgcolor,
+    linear-gradient(
+      135.65deg,
+      rgba(236, 238, 250, 1) 0%,
+      rgba(234, 236, 251, 1) 52.60416865348816%,
+      rgba(225, 229, 255, 1) 100%
+    )
+  );
   z-index:10;
 }
 
