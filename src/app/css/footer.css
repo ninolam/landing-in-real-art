@@ -9,7 +9,8 @@
     width: 1440px;
   }
 
-  .home .footer
+  .home .footer,
+  .index .footer
 {
     align-items: flex-start;
     display: flex;
@@ -21,6 +22,7 @@
   }
 
   .home .footer-left,
+  .index .footer-left,
   .LP .footer-left {
     align-items: flex-start;
     display: inline-flex;
@@ -31,6 +33,7 @@
   }
     
   .home .footer-right,
+  .index .footer-right,
   .LP .footer-right {
     align-items: flex-start;
     display: inline-flex;

@@ -1,5 +1,5 @@
 "use client"
-import Footer from "../../components/home/Footer"
+import Footer from "../../components/Footer"
 import Menu from "../../components/home/Menu"
 import DropPanel from "../../components/presale/DropPanel"
 import HeroSection from "../../components/presale/HeroSection"
