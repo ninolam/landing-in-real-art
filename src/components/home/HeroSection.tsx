@@ -18,10 +18,10 @@ const HeroSection = () => {
               </div>
             </div>
             <div className="container-button">
-              <div className="button">
+              <div className="button-hero-section">
                 <div className="rejoindre-ira">Rejoindre IRA</div>
               </div>
-              <div className="button">
+              <div className="button-hero-section">
                 <div className="je-d-marre">Je démarre</div>
               </div>
             </div>
