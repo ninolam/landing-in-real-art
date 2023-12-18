@@ -91,7 +91,6 @@ const HowToJoinIra = () => {
           </div>
         </div>
         <div className="frame-48095733">
-          <div className="cr-er-en-2023">Créer en 2023</div>
           <div className="frame-303">
             <div className="comment">Comment ?</div>
             <div

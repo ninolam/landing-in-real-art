@@ -100,7 +100,6 @@ const HowToJoinIra = () => 
               </button>
             </div>
           </div>
-          <div className="cr-er-en">CRÉER EN 2023</div>
         </div>
         <div className="how-to-join-ira-block-left">
           <div className="overlap-group-5">
