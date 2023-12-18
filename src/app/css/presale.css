@@ -65,8 +65,10 @@
     color: #1e344f;
   }
   
-  .index .span {
+  .index .presale-header-title2 {
     color: #5551ff;
+    position: relative;
+    left: -110px;
   }
   
   .index .rectangle {

@@ -74,7 +74,7 @@ const HeroSection = () => {
         <div className="frame-3">   
         <p className="heading">
             <span className="text-wrapper"> {title1} </span>
-            <span className="span">{title2}</span>
+            <span className="presale-header-title2">{title2}</span>
         </p>
         <img
             className="rectangle"
