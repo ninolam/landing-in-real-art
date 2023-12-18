@@ -4,6 +4,7 @@ import { useAppContext } from "../../context";
 import { db } from '../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { Lang, PresaleDataButtons, PresaleDataTexts, defaultLangObject } from "../../types/types";
+import Link from "next/link";
 
 const HeroSection = () => {
     //Get the language of the global context
@@ -93,9 +94,11 @@ const HeroSection = () => {
             alt="Rectangle"
             src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39773.svg"
         />
-        <button className="button">
-            <div className="text-wrapper-2">{seeDropButton}</div>
-        </button>
+        <div className="button">
+            <Link href={seeDropButtonLink}>
+                <div className="text-wrapper-2">{seeDropButton}</div>
+            </Link>
+        </div>
         </div>
     </div>
     <img

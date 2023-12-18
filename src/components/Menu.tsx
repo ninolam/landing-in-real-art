@@ -1,9 +1,8 @@
 "use client"
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from 'next/link';
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { getDoc, doc } from "firebase/firestore";
 import { useAppContext } from "../context";
 import LanguageSelector from "./LanguagaSelector";
 import { Lang, MenuButtons, MenuData, MenuElements, defaultLangObject } from "../types/types";

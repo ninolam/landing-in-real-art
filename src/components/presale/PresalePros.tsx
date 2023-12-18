@@ -1,19 +1,69 @@
 "use client"
 import VuesaxLinearStatusUp1 from "../../components/VuesaxLinearStatusUp1"
+import { useEffect, useState } from "react";
+import Link from 'next/link';
+import { db } from '../../firebaseConfig';
+import { collection, getDocs } from 'firebase/firestore/lite';
+import { useAppContext } from "../../context";
+import { Lang, defaultLangObject } from "../../types/types";
+import { PresaleProsButtons, PresaleProsTexts } from "../../types/presale.types";
+import parse from 'html-react-parser';
 
 function PresalePros() {
+
+    const {lang} = useAppContext()
+    const lang_ = lang as Lang
+
+    const FIREBASE_PRESALE_PROS_COLLECTION = 'Presale_Pros'
+    
+    const defaultPresaleProsTexts = {
+        mainTitle: defaultLangObject,
+        mainDescription: defaultLangObject,
+        buyArtWorkTitle: defaultLangObject,
+        buyArtWorkDescription: defaultLangObject,
+        exclusiveBenefitsTitle: defaultLangObject,
+        exclusiveBenefitsDescription: defaultLangObject,
+        bonusTitle: defaultLangObject,
+        bonusDescription: defaultLangObject
+    }
+
+    const defaultPresaleProsButtons = {
+        buyArtWork: defaultLangObject,
+        buyArtWorkLink: '',
+        exclusiveBenefits: defaultLangObject,
+        exclusiveBenefitsLink: '',
+        bonus: defaultLangObject,
+        bonusLink: ''
+    }
+
+    const [presaleProsTexts, setPresaleProsTexts]     = useState<PresaleProsTexts>(defaultPresaleProsTexts);
+    const [presaleProsButtons, setPresaleProsButtons] = useState<PresaleProsButtons>(defaultPresaleProsButtons);
+    
+    useEffect(() => {
+        const fetchData = async () => {
+          const collection_ = collection(db, FIREBASE_PRESALE_PROS_COLLECTION);
+          const documents  = await getDocs(collection_);
+          const data       = documents.docs.map(doc => doc.data());
+          
+          //Index 0 ===> presalePros Buttons
+          setPresaleProsButtons(data[0] as PresaleProsButtons)
+          
+          //Index 1 ===> presalePros Pros Texts
+          setPresaleProsTexts(data[1] as PresaleProsTexts)
+          
+      }  
+      fetchData();
+      }, [])
+
   return (
     <div className="frame-13">
     <div className="frame-wrapper">
         <div className="frame-14">
         <div className="avantages-d-achats">
-            Avantages d’achats
-            <br />
-            en prévente
+            {parse(presaleProsTexts.mainTitle[lang_])}
         </div>
         <p className="ne-louper-pas-la">
-            Ne louper pas la chance qui s’ouvre à vous et rejoignez le projet en vous inscrivant à la newsletter
-            InRealArt pour ne rien manquer du projet et être toujours le premier informer des avancer&nbsp;&nbsp;!
+            {parse(presaleProsTexts.mainDescription[lang_])}
         </p>
         </div>
     </div>
@@ -24,11 +74,13 @@ function PresalePros() {
             <VuesaxLinearStatusUp1 className="vuesax-linear-status" />
         </div>
         <div className="frame-18">
-            <div className="heading-2">Investissement</div>
-            <p className="paragraph">Possibilité d’acquérir nos œuvres sous le prix su marché</p>
+            <div className="heading-2">{parse(presaleProsTexts.buyArtWorkTitle[lang_])}</div>
+            <p className="paragraph">{parse(presaleProsTexts.buyArtWorkDescription[lang_])}</p>
         </div>
         <div className="heading-wrapper">
-            <div className="heading-3">Acquérir une œuvre</div>
+            <Link href={presaleProsButtons.buyArtWorkLink}>
+                <div className="heading-3">{presaleProsButtons.buyArtWork[lang_]}</div>
+            </Link>
         </div>
         </div>
         <div className="frame-19">
@@ -39,17 +91,13 @@ function PresalePros() {
                 <VuesaxLinearStatusUp1 className="vuesax-linear-status" />
             </div>
             <div className="frame-18">
-                <div className="heading-2">
-                Avantages
-                <br />
-                Exclusifs
-                </div>
-                <p className="paragraph">
-                Bénéficiez d’accès anticipé à certaines fonctionnalités et avantages InRealArt.
-                </p>
+                <div className="heading-2">{parse(presaleProsTexts.exclusiveBenefitsTitle[lang_])}</div>
+                <p className="paragraph">{parse(presaleProsTexts.exclusiveBenefitsDescription[lang_])}</p>
             </div>
             <div className="heading-wrapper">
-                <div className="heading-3">Acquérir une œuvre</div>
+                <Link href={presaleProsButtons.exclusiveBenefitsLink}>
+                    <div className="heading-3">{presaleProsButtons.exclusiveBenefits[lang_]}</div>
+                </Link>    
             </div>
             </div>
         </div>
@@ -60,11 +108,13 @@ function PresalePros() {
             <VuesaxLinearStatusUp1 className="vuesax-linear-status" />
         </div>
         <div className="frame-18">
-            <div className="heading-2">Bonus</div>
-            <p className="paragraph">Recevez des bonus spéciaux en tant qu’aquéreur prévente</p>
+            <div className="heading-2">{parse(presaleProsTexts.bonusTitle[lang_])}</div>
+            <p className="paragraph">{parse(presaleProsTexts.bonusDescription[lang_])}</p>
         </div>
         <div className="heading-wrapper">
-            <div className="heading-3">Acquérir une œuvre</div>
+            <Link href={presaleProsButtons.bonusLink}>
+                <div className="heading-3">{presaleProsButtons.bonus[lang_]}</div>
+            </Link>    
         </div>
         </div>
     </div>
