@@ -118,7 +118,7 @@ const JoinMovement = () => {
                 </div>
               </div>
               <div className="button-join-movement">
-                <Link href="">
+                <Link href={artgalleryButtonLink}>
                   <div className="heading3">{artgalleryButton}</div>
                 </Link>  
               </div>
@@ -138,7 +138,9 @@ const JoinMovement = () => {
                   </div>
                 </div>
                 <div className="button-join-movement">
-                  <div className="heading3">{aasButton}</div>
+                  <Link href={aasButtonLink}>
+                    <div className="heading3">{aasButton}</div>
+                  </Link>  
                 </div>
               </div>
             </div>
@@ -155,7 +157,9 @@ const JoinMovement = () => {
                 </div>
               </div>
               <div className="button-join-movement">
-                <div className="heading3">{marketplaceButton}</div>
+                <Link href={marketplaceButtonLink}>
+                  <div className="heading3">{marketplaceButton}</div>
+                </Link>  
               </div>
             </div>
 
