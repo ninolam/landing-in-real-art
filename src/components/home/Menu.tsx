@@ -21,6 +21,11 @@ const Menu = () => {
   const [community, setCommunity] = useState<string>('')
   const [team, setTeam]           = useState<string>('')
   const [about, setAbout]         = useState<string>('')
+  const [resources, setResources] = useState<string>('')
+  const [communityLink, setCommunityLink] = useState<string>('')
+  const [teamLink, setTeamLink]           = useState<string>('')
+  const [aboutLink, setAboutLink]         = useState<string>('')
+  const [resourcesLink, setResourcesLink] = useState<string>('')
   const [presale, setPresale]     = useState<string>('')
   const [testnet, setTestnet]     = useState<string>('')
 
@@ -31,7 +36,12 @@ const Menu = () => {
   const defaultMenuElements = {
       About: defaultLangObject,
       Community: defaultLangObject,
-      Team: defaultLangObject
+      Team: defaultLangObject,
+      Resources: defaultLangObject,
+      AboutLink: '',
+      CommunityLink: '',
+      TeamLink: '',
+      ResourcesLink: ''
   }
 
   const [menuButtons, setMenuButtons]    = useState<MenuButtons>(defaultMenuButtons)
@@ -54,6 +64,12 @@ const Menu = () => {
           setCommunity(menuData[1].Community[lang_])   
           setTeam(menuData[1].Team[lang_])
           setAbout(menuData[1].About[lang_])
+          setResources(menuData[1].Resources[lang_])
+          setCommunityLink(menuData[1].CommunityLink)   
+          setTeamLink(menuData[1].TeamLink)
+          setAboutLink(menuData[1].AboutLink)
+          setResourcesLink(menuData[1].ResourcesLink)
+
       }
   
       fetchData();
@@ -69,7 +85,12 @@ const Menu = () => {
       // Menu_Elements
       setCommunity(menuElements.Community[lang_])   
       setTeam(menuElements.Team[lang_])
-      setAbout(menuElements.About[lang_])        
+      setAbout(menuElements.About[lang_])     
+      setResources(menuElements.Resources[lang_])     
+      setCommunityLink(menuElements.CommunityLink)   
+      setTeamLink(menuElements.TeamLink)
+      setAboutLink(menuElements.AboutLink)        
+      setResourcesLink(menuElements.ResourcesLink)        
     }, [lang]);
 
 
@@ -165,29 +186,29 @@ const Menu = () => {
               <div className="link-text"></div>
               <div className="link-text2">
                 <div className="communaut">
-                  <Link className="menu-link-element" href="/">
+                  <Link className="menu-link-element" href={communityLink}>
                     {community}
                   </Link>
                 </div>
               </div>
               <div className="link-text2">
                 <div className="equipe">
-                  <Link className="menu-link-element" href="/">
+                  <Link className="menu-link-element" href={teamLink}>
                     {team}
                   </Link>
                 </div>
               </div>
               <div className="link-text2">
                 <div className="a-propos2">
-                  <Link className="menu-link-element" href="/">
+                  <Link className="menu-link-element" href={aboutLink}>
                     {about}
                   </Link>
                 </div>
               </div>
               <div className="link-text2">
                 <div className="ressources">
-                  <Link className="menu-link-element" href="/">
-                    Ressources
+                  <Link className="menu-link-element" href={resourcesLink}>
+                    {resources}
                   </Link>
                 </div>
               </div>

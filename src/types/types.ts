@@ -136,6 +136,11 @@ export type MenuElements = {
     About: Record<Lang, string>,
     Community: Record<Lang, string>
     Team: Record<Lang, string>
+    Resources: Record<Lang, string>
+    AboutLink: string
+    CommunityLink: string
+    TeamLink: string
+    ResourcesLink: string
 }
 
 
