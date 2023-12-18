@@ -29,10 +29,15 @@ const Menu = () => {
     const defaultMenuElements = {
         About: defaultLangObject,
         Community: defaultLangObject,
-        Team: defaultLangObject
+        Team: defaultLangObject,
+        Resources: defaultLangObject,
+        AboutLink: '',
+        CommunityLink: '',
+        TeamLink: '',
+        ResourcesLink: '',
     }
 
-    const [menuButtons, setMenuButtons]    = useState<MenuButtons>(defaultMenuButtons)
+    const [menuButtons, setMenuButtons]   = useState<MenuButtons>(defaultMenuButtons)
     const [menuElements, setMenuElements] = useState<MenuElements>(defaultMenuElements)
     let lastScrollTop = 0; // To keep track of scroll direction
     
