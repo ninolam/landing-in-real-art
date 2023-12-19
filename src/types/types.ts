@@ -5,6 +5,7 @@ export const defaultLangObject = {
     'EN': '',
     'FR': ''
 }
+
 export type HeaderButtons = {
     JoinIRA: Record<Lang,string>,
     StartIRA: Record<Lang,string>

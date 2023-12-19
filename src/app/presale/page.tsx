@@ -1,6 +1,7 @@
 "use client"
 import Footer from "../../components/Footer"
 import Menu from "../../components/home/Menu"
+import BuyingProcess from "../../components/presale/BuyingProcess"
 import DropPanel from "../../components/presale/DropPanel"
 import HeroSection from "../../components/presale/HeroSection"
 import PresalePros from "../../components/presale/PresalePros"
@@ -18,6 +19,8 @@ export default function PresalePage() {
 
                 <PresalePros/>
 
+                <BuyingProcess/>
+                
                 {/*                
                 <div className="frame-29">
                 <div className="frame-11">
