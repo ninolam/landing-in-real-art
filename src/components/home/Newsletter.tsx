@@ -33,20 +33,11 @@ const Newsletter = () => {
           const nlData       = nlDocuments.docs.map(doc => doc.data() as NewsletterData)
           
           setNlTexts(nlData[0] as NewsletterText)
-          setTitle(nlData[0].title[lang_])
-          setDescription(nlData[0].description[lang_])
-          setEmailPh(nlData[0].email_placeholder[lang_])      
       }
       fetchData();
   
     }, []);
   
-    useEffect(() => {
-      setTitle(nlTexts.title[lang_])
-      setDescription(nlTexts.description[lang_])
-      setEmailPh(nlTexts.email_placeholder[lang_])      
-    }, [lang]);
-    
     /*
     const EmailInput = React.memo(() => {
       return <input type="text" className="email" autoFocus placeholder={emailPh}/>
@@ -57,13 +48,13 @@ const Newsletter = () => {
         <div className="frame-36598">
         <div className="frame-36563">
           <div className="frame-3351">
-            <div className="newsletter">{title}</div>
+            <div className="newsletter">{nlTexts.title[lang_]}</div>
             <div className="newsletter-p-1">
-              {description}
+              {nlTexts.description[lang_]}
             </div>
           </div>
           <div className="group-159">
-            <div className="envoyez-votre-mail">Envoyez votre mail !</div>
+            <div className="envoyez-votre-mail">{nlTexts.email_placeholder[lang_]}</div>
             <div className="rectangle-96"></div>
             <div className="rectangle-97"></div>
             

@@ -13,14 +13,6 @@ const Faq = () => {
   
     const FIREBASE_FAQ_COLLECTION = 'Faq'
     
-    const [question1, setQuestion1] = useState<string>('');
-    const [question2, setQuestion2] = useState<string>('');
-    const [question3, setQuestion3] = useState<string>('');
-    const [answer1, setAnswer1]     = useState<string>('');
-    const [answer2, setAnswer2]     = useState<string>('');
-    const [answer3, setAnswer3]     = useState<string>('');
-    const [faqMain, seFaqMain]      = useState<string>('');
-    const [readFaq, setReadFaq]     = useState<string>('');
     const defaultFaqButtons = {
       readFaq: defaultLangObject
     }
@@ -45,34 +37,12 @@ const Faq = () => {
         
         //Index 0 ===> FAQ Buttons
         setFaqButtons(faqData[0] as FaqButtons)
-        setReadFaq(faqData[0].readFaq[lang])
         
         //Index 1 ===> FAQ Text
         setFaqTexts(faqData[1] as FaqTexts)
-        seFaqMain(faqData[1].faqMain[lang])
-        setQuestion1(faqData[1].question1[lang])
-        setQuestion2(faqData[1].question2[lang])
-        setQuestion3(faqData[1].question3[lang])
-        setAnswer1(faqData[1].answer1[lang])
-        setAnswer2(faqData[1].answer2[lang])
-        setAnswer3(faqData[1].answer3[lang])
       }
       fetchData();
     }, [])
-  
-    useEffect(() => {
-      // Buttons
-      setReadFaq(faqButtons.readFaq[lang_])
-        
-      // Texts
-      seFaqMain(faqTexts.faqMain[lang_])
-      setQuestion1(faqTexts.question1[lang_])
-      setQuestion2(faqTexts.question2[lang_])
-      setQuestion3(faqTexts.question3[lang_])
-      setAnswer1(faqTexts.answer1[lang_])
-      setAnswer2(faqTexts.answer2[lang_])
-      setAnswer3(faqTexts.answer3[lang_])
-    }, [lang]);
   
     const imagePlus1Ref = useRef(null);
     const imagePlus2Ref = useRef(null);
@@ -97,7 +67,7 @@ const Faq = () => {
         <>
            <div className="question-01">
             <div className="comment-fonctionne-la-inrealart">
-              {question1}
+              {faqTexts.question1[lang_]}
             </div>
             <div onClick={toggleVisibility}>
               <img ref={imagePlus1Ref} className="plus" alt="plus" src={imageSrc} />
@@ -105,7 +75,7 @@ const Faq = () => {
           </div>
           {isVisible && (
               <div className="answer">
-                {answer1}
+                {faqTexts.answer1[lang_]}
               </div>
             )}
         </>  
@@ -117,7 +87,7 @@ const Faq = () => {
       return (
         <>
           <div className="question-02">
-            <div className="pour-qui">{question2}</div>        
+            <div className="pour-qui">{faqTexts.question2[lang_]}</div>        
             <div onClick={toggleVisibility}>
               <img ref={imagePlus2Ref} className="plus" alt="plus" src={imageSrc} />
             </div>
@@ -125,7 +95,7 @@ const Faq = () => {
           
           {isVisible && (
               <div className="answer">
-                {answer2}
+                {faqTexts.answer2[lang_]}
               </div>
             )}
         </>
@@ -137,14 +107,14 @@ const Faq = () => {
       return (
         <>
           <div className="question-03">
-            <div className="y-a-t-il-un-guide-de-d-marrage">{question3}</div>  
+            <div className="y-a-t-il-un-guide-de-d-marrage">{faqTexts.question3[lang_]}</div>  
             <div onClick={toggleVisibility}>
               <img ref={imagePlus3Ref} className="plus" alt="plus" src={imageSrc} />
             </div>
           </div>          
           {isVisible && (
             <div className="answer">
-              {answer3}
+              {faqTexts.answer3[lang_]}
             </div>
           )}
         </>
@@ -158,13 +128,13 @@ const Faq = () => {
           <div className="faq">FAQ</div>
           <div
             className="faq-main-p">
-            {faqMain}
+            {faqTexts.faqMain[lang_]}
             <br />
             <br />
           </div>
           <div className="link-button2">
             <div className="button2">
-              <div className="consulter-la-faq">{readFaq}</div>
+              <div className="consulter-la-faq">{faqButtons.readFaq[lang_]}</div>
             </div>
           </div>
         </div>
