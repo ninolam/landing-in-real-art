@@ -129,9 +129,10 @@ const Menu = () => {
     }, []);
 
 
-    return (
-        <div className="header">
-          <div className="logo2">
+    const LogoIRAMenu = () => {
+      return (
+        <div className="logoIraMenu">
+          <Link href="/home">
             <div className="fichier-3-12">
               <svg
                 className="calque-1-22"
@@ -180,7 +181,15 @@ const Menu = () => {
                 fill="#F6F8FF"
               />
             </svg>
-          </div>
+          </Link>
+      </div>
+      )
+    }
+
+    
+    return (
+        <div className="header">
+          <LogoIRAMenu/>
           <div className="wrapper-link">
             <div className="wrapper-link-menu">
               <div className="link-text"></div>
