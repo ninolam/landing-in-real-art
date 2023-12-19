@@ -3,12 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import Link from 'next/link';
 import { db } from '../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { getDoc, doc } from "firebase/firestore";
 import { useAppContext } from "../../context";
 import LanguageSelector from "../LanguagaSelector";
 import { Lang, MenuButtons, MenuData, MenuElements, defaultLangObject } from "../../types/types";
-
-
 
 const Menu = () => {
 
@@ -45,7 +42,7 @@ const Menu = () => {
   }
 
   const [menuButtons, setMenuButtons]    = useState<MenuButtons>(defaultMenuButtons)
-  const [menuElements, setMenuElements] = useState<MenuElements>(defaultMenuElements)
+  const [menuElements, setMenuElements]  = useState<MenuElements>(defaultMenuElements)
   let lastScrollTop = 0; // To keep track of scroll direction
   
   useEffect(() => {
@@ -97,30 +94,21 @@ const Menu = () => {
   // Use Effect to stick the menu at the top when scrolling down
   useEffect(() => {    
       const checkSticky = () => {
-          const scrollTop = window.scrollY;
-          const menuElement = document.getElementById('menu');
+          const menu = document.getElementById('menu')
+          if (menu) {
+            // Calculate the scroll position at which the bottom of the menu reaches the bottom of the viewport
+             // Calculate the distance from the top of the document to the bottom of the menu
+            const menuBottomPosition = menu.offsetTop + menu.offsetHeight;
 
-          if (menuElement) {
-          const menuOffsetTop = menuElement.offsetTop;
-          
-          // Determine scroll direction
-          const scrollingDown = scrollTop > lastScrollTop;
-          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Update lastScrollTop, but never less than 0
+            // Determine if the bottom of the menu is at or above the bottom of the viewport
+            const isMenuBottomAtViewportBottom = menuBottomPosition <= window.scrollY + window.innerHeight;
 
-          // Set 'isSticky' based on scroll position and direction
-          if (scrollingDown && scrollTop >= menuOffsetTop) {
-              setSticky(true);
-          } else if (!scrollingDown) {
-              setSticky(false);
+            if (isMenuBottomAtViewportBottom) {
+                setSticky(true);
+            } else {
+                setSticky(false);
+            }            
           }
-          }
-
-          /*
-          const scrollTop = window.scrollY;
-          let divOffsetTop = document.getElementById('menu')?.offsetTop
-          divOffsetTop = (divOffsetTop === undefined)?0:divOffsetTop
-          setSticky(scrollTop >= divOffsetTop)
-          */
       }
       window.addEventListener('scroll', checkSticky);
       return () => {
@@ -188,7 +176,7 @@ const Menu = () => {
 
     
     return (
-        <div className="header">
+        <div className={isSticky ? 'header-sticky' : 'header'} id="menu">
           <LogoIRAMenu/>
           <div className="wrapper-link">
             <div className="wrapper-link-menu">

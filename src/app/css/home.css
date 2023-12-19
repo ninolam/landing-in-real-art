@@ -1627,6 +1627,23 @@
   /*left: calc(50% - 662px);*/
   /*top: 851px;*/
 }
+
+.home .header-sticky {
+  background: #5552ff;
+  border-radius: 100px;
+  padding: 20px 96px 20px 96px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 1324px;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+
+
 .logoIraMenu {
   flex-shrink: 0;
   width: 101.49px;
