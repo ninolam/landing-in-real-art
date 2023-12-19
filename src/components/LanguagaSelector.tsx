@@ -14,9 +14,6 @@ const LanguageSelector = () => {
 
   return (
     <div className="languageSelector">
-      <div onClick={() => setShowDropdown(!showDropdown)}>
-        <img src="img/world.png" alt="Language" width={30} height={30} />
-      </div>
       {showDropdown && (
         <div className="dropdown">
           <div className='lang' onClick={() => setLanguage('EN')}>EN &nbsp;<img src='img/flag_EN.png' alt="english"></img></div>
@@ -24,6 +21,10 @@ const LanguageSelector = () => {
           <div className='lang' onClick={() => setLanguage('CN')}>CN &nbsp;<img src='img/flag_CN.png' alt="chinese"></img></div>
         </div>
       )}
+      <div onClick={() => setShowDropdown(!showDropdown)}>
+        <img src="img/world.png" alt="Language" width={30} height={30} />
+      </div>
+      
     </div>
   );
 };
