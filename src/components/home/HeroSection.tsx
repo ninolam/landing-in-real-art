@@ -4,6 +4,9 @@ import { db } from '../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { useAppContext } from "../../context";
 import { HeaderButtons, HeaderTexts, Lang, defaultLangObject } from "../../types/types";
+import ImageHeroSection from "./ImageHeroSection";
+import SpheresHeroSection from "./SpheresHeroSection";
+import Link from "next/link";
 
 
 const HeroSection = () => { 
@@ -44,40 +47,45 @@ const HeroSection = () => {
   
   
     return (
-        <div className="hero-section">
-        <div className="wrapper-top-contain">
-          <div className="top-contain">
-            <div className="title">
-              <div className="heading">
-                <span>
-                  <span className="heading-span">
-                  {headerTexts.title1[lang_]}
-                    <br />
-                  </span>
-                  <span className="heading-span2">{headerTexts.title2[lang_]}</span>
-                </span>
-              </div>
-            </div>
-            <div className="container-button">
-              <div className="button-hero-section">
-                <div className="rejoindre-ira">{headerButtons.JoinIRA[lang_]}</div>
-              </div>
-              <div className="button-hero-section">
-                <div className="je-d-marre">{headerButtons.StartIRA[lang_]}</div>
-              </div>
-            </div>
-            
-          </div>
-          <img className="union-2" alt="Union" src="/img/union.png" />
-        </div>
-        <div className="parapgraphe">
-          <div className="paragraph">
-            {headerTexts.text1[lang_]}
-          </div>
-         
+<div className="hero-section">
+  <div className="hero-section__wrapper-top-contain">
+    <div className="hero-section__top-contain">
+      <div className="hero-section__title">
+        <div className="hero-section__heading">
+          <span>
+            <span className="hero-section-heading-span">
+              {headerTexts.title1[lang_]}
+              <br />
+            </span>
+            <span className="hero-section-heading-span2">{headerTexts.title2[lang_]}</span>
+          </span>
         </div>
       </div>
+      <div className="hero-section__container-button">
+        
+        <div className="hero-section__button">
+          <Link href="/test">
+            <div className="hero-section__rejoindre-ira">{headerButtons.JoinIRA[lang_]}</div>
+          </Link>
+        </div>
+        
+        <div className="hero-section__button">
+          <div className="hero-section__je-d-marre">{headerButtons.StartIRA[lang_]}</div>
+        </div>
+      </div>
+    </div>
+    <ImageHeroSection/>
+  </div>
+  <div className="hero-section__parapgraphe">
+    <div className="hero-section__paragraph">
+      {headerTexts.text1[lang_]}
+    </div>
 
+      <SpheresHeroSection/>
+  </div>
+</div>
+
+     
     )
 
 }

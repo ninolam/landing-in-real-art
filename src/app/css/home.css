@@ -1624,6 +1624,7 @@
   flex-shrink: 0;
   width: 1324px;
   position: relative;
+  margin-top: -120px;
   /*left: calc(50% - 662px);*/
   /*top: 851px;*/
 }

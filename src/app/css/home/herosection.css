@@ -1,0 +1,173 @@
+.sphere,
+.sphere * {
+  box-sizing: border-box;
+}
+.sphere {
+  background: linear-gradient(
+    112.72deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  border-radius: 50%;
+  border-width: 0.5px;
+  border-style: solid;
+  border-image: transparent;
+  border-image-slice: 1;
+  width: 92px;
+  height: 90px;
+  position: relative;
+  box-shadow: inset -35.04px -50.05px 80.1px 0px rgba(172, 60, 225, 0.86),
+    inset -5.01px -5.01px 34.02px 0px rgba(109, 44, 193, 1),
+    inset 0px 20.02px 40px 0px rgba(194, 255, 255, 0.25),
+    inset 0px 0px 24px 0px rgba(255, 255, 255, 0.26);
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+
+
+.hero-section,
+.hero-section * {
+  box-sizing: border-box;
+}
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.hero-section__wrapper-top-contain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.hero-section__top-contain {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.hero-section__title {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+.hero-section__heading {
+  text-align: center;
+  font-family: "Unbounded-Regular", sans-serif;
+  font-size: 70px;
+  line-height: 69px;
+  font-weight: 400;
+  position: relative;
+}
+.hero-section-heading-span {
+  color: #1e344f;
+  font-family: "Unbounded-Regular", sans-serif;
+  font-size: 70px;
+  line-height: 69px;
+  font-weight: 400;
+}
+.hero-section-heading-span2 {
+  color: #5552ff;
+  font-family: "Unbounded-Regular", sans-serif;
+  font-size: 70px;
+  line-height: 69px;
+  font-weight: 400;
+}
+.hero-section__container-button {
+  display: flex;
+  flex-direction: row;
+  gap: 738px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.hero-section__button {
+    background: #5552ff;
+    border-radius: 20px;
+    padding: 32px 16px 32px 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 237px;
+    position: relative;
+    box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(92.95px);
+}
+.hero-section__rejoindre-ira {
+  color: var(--primaire-white, #f6f8ff);
+  text-align: center;
+  font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
+  font-size: var(--heading-h-4-font-size, 16px);
+  font-weight: var(--heading-h-4-font-weight, 500);
+  position: relative;
+}
+.hero-section__je-d-marre {
+  color: var(--primaire-white, #f6f8ff);
+  text-align: center;
+  font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
+  font-size: var(--heading-h-4-font-size, 16px);
+  font-weight: var(--heading-h-4-font-weight, 500);
+  position: relative;
+}
+.hero-section__image {
+  margin: -74px 0 0 0;
+  flex-shrink: 0;
+  width: 1312px;
+  height: 645px;
+  position: relative;
+  overflow: visible;
+}
+.hero-section__parapgraphe {
+  margin: -96px 0 0 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.hero-section__paragraph {
+  color: var(--primaire-black, #000035);
+  text-align: left;
+  font-family: var(
+    --text-paragraphe-font-family,
+    "Montserrat-Regular",
+    sans-serif
+  );
+  font-size: var(--text-paragraphe-font-size, 16px);
+  font-weight: var(--text-paragraphe-font-weight, 400);
+  position: relative;
+  width: 334px;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+.hero-section__shepre {
+  flex-shrink: 0;
+  width: 677px;
+  height: 716px;
+  position: absolute;
+  left: 374px;
+  top: -593px;
+  overflow: visible;
+}
