@@ -852,6 +852,22 @@ a {
 }
 
 
+.frame-team-member {
+  height: 650px;
+  object-fit: cover;
+  position: relative;
+  width: 474px;
+  animation: fadeIn 4000ms ease-in-out;
+  overflow: hidden;
+}
+
+.frame-team-member > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
 .LP .photo-team-member {
   height: 650px;
   object-fit: cover;

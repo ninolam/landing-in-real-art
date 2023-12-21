@@ -5,7 +5,9 @@ import { TeamMemberProps } from "../../types/types"
 const TeamMember: React.FC<TeamMemberProps> = ( {name, photo, role, text1, text2} ) => {
   return (
     <>
-        <img className="photo-team-member" alt="Rectangle" src={photo} />
+        <div className="frame-team-member">
+          <img className="photo-team-member" alt="Rectangle" src={photo} />
+        </div>
         <div className="colum">
         <div className="wrapper-text">
             <div className="def">
