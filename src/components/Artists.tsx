@@ -292,7 +292,6 @@ const Artists = () => {
             />
         </div>
         <img className="star" alt="Star" src="/img/star-1.png" />
-        <img className="polygon" alt="Polygon" src="/img/polygon-3.png" />
         <div className="arrow right-arrow">
         <img alt="right" src="img/angle-circle-right.png" onClick={() => handleArrowClick('right')}/>
         </div>

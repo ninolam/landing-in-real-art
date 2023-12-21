@@ -6,8 +6,6 @@ import { useAppContext } from "../../context";
 import { db } from '../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { ArtistCarouselElement, Artists, Lang } from "../../types/types";
-import Polygon from "./Polygon";
-import Rectangle from "./Rectangle";
 import ArtistPanel from "./ArtistPanel";
 
 
@@ -26,6 +24,7 @@ const Artists = () => {
     const [imageUrl6, setImageUrl6] = useState<string>("")
     const [imageUrl7, setImageUrl7] = useState<string>("")
     const [imageUrl8, setImageUrl8] = useState<string>("")
+    const [imageUrl9, setImageUrl9] = useState<string>("")
   
     const [image1Hidden, setImage1Hidden] = useState<boolean>(false)
     const [image2Hidden, setImage2Hidden] = useState<boolean>(false)
@@ -35,6 +34,7 @@ const Artists = () => {
     const [image6Hidden, setImage6Hidden] = useState<boolean>(false)
     const [image7Hidden, setImage7Hidden] = useState<boolean>(false)
     const [image8Hidden, setImage8Hidden] = useState<boolean>(false)
+    const [image9Hidden, setImage9Hidden] = useState<boolean>(false)
   
     const [artistName1, setArtistName1] = useState<string>("")
     const [artistName2, setArtistName2] = useState<string>("")
@@ -44,6 +44,7 @@ const Artists = () => {
     const [artistName6, setArtistName6] = useState<string>("")
     const [artistName7, setArtistName7] = useState<string>("")
     const [artistName8, setArtistName8] = useState<string>("")
+    const [artistName9, setArtistName9] = useState<string>("")
   
     const [artistDesc1, setArtistDesc1] = useState<string>("")
     const [artistDesc2, setArtistDesc2] = useState<string>("")
@@ -53,6 +54,7 @@ const Artists = () => {
     const [artistDesc6, setArtistDesc6] = useState<string>("")
     const [artistDesc7, setArtistDesc7] = useState<string>("")
     const [artistDesc8, setArtistDesc8] = useState<string>("")
+    const [artistDesc9, setArtistDesc9] = useState<string>("")
   
     const [title, setTitle] = useState<string>('')
     const [description, setDescription] = useState<string>('')
@@ -89,6 +91,7 @@ const Artists = () => {
       setImageUrl6(artistsCarousel[currentIndex_][5])
       setImageUrl7(artistsCarousel[currentIndex_][6])
       setImageUrl8(artistsCarousel[currentIndex_][7])
+      setImageUrl9(artistsCarousel[currentIndex_][8])
     }
   
     //----------------------------------------------------------------- setImagesUrls
@@ -105,6 +108,7 @@ const Artists = () => {
       setImage6Hidden((artistsCarousel[currentIndex_][5])?false:true)
       setImage7Hidden((artistsCarousel[currentIndex_][6])?false:true)
       setImage8Hidden((artistsCarousel[currentIndex_][7])?false:true)
+      setImage9Hidden((artistsCarousel[currentIndex_][8])?false:true)
     }
   
     //--------------------------------------------------------------------- useEffect
@@ -201,6 +205,7 @@ const Artists = () => {
           setArtistName6(allArtists_[indexCurrentPanel]['5']['name'])  
           setArtistName7(allArtists_[indexCurrentPanel]['6']['name'])  
           setArtistName8(allArtists_[indexCurrentPanel]['7']['name'])  
+          setArtistName9(allArtists_[indexCurrentPanel]['8']['name'])  
           
           setArtistDesc1(allArtists_[indexCurrentPanel]['0']['desc'][lang_])  
           setArtistDesc2(allArtists_[indexCurrentPanel]['1']['desc'][lang_])  
@@ -210,7 +215,7 @@ const Artists = () => {
           setArtistDesc6(allArtists_[indexCurrentPanel]['5']['desc'][lang_])  
           setArtistDesc7(allArtists_[indexCurrentPanel]['6']['desc'][lang_])  
           setArtistDesc8(allArtists_[indexCurrentPanel]['7']['desc'][lang_])   
-  
+          setArtistDesc9(allArtists_[indexCurrentPanel]['8']['desc'][lang_])   
         }
   
         fetchFirestoreImagesUrls()
@@ -257,6 +262,7 @@ const Artists = () => {
               setArtistDesc6(allArtists[currentIndex_]['5']['desc'][lang_])  
               setArtistDesc7(allArtists[currentIndex_]['6']['desc'][lang_])  
               setArtistDesc8(allArtists[currentIndex_]['7']['desc'][lang_])   
+              setArtistDesc9(allArtists[currentIndex_]['8']['desc'][lang_])   
             }
           }
           fetchTexts()
@@ -291,10 +297,8 @@ const Artists = () => {
             imageUrl6={imageUrl6} image6Hidden={image6Hidden} artistName6={artistName6} artistDesc6={artistDesc6} 
             imageUrl7={imageUrl7} image7Hidden={image7Hidden} artistName7={artistName7} artistDesc7={artistDesc7} 
             imageUrl8={imageUrl8} image8Hidden={image8Hidden} artistName8={artistName8} artistDesc8={artistDesc8} 
+            imageUrl9={imageUrl9} image9Hidden={image8Hidden} artistName9={artistName9} artistDesc9={artistDesc9} 
             />
-          <Polygon/>
-          
-          <div className="frame-36616"></div>
         </div>
 
     )

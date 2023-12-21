@@ -8,6 +8,7 @@ import './css/faq.css'
 import './css/presale.css'
 import './css/home.css'
 import './css/home/herosection.css'
+import './css/home/artists.css'
 import './css/footer.css'
 
 import { AppWrapper } from '@/context'

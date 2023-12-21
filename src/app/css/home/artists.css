@@ -1,0 +1,181 @@
+.frame-3357,
+.frame-3357 * {
+  box-sizing: border-box;
+}
+.frame-3357 {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 1417px;
+  height: 1701px;
+  position: relative;
+}
+.frame-3357__frame-3349 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-3357__nos-artistes {
+  color: var(--primaire-black, #000035);
+  text-align: left;
+  font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
+  font-size: var(--heading-h-2-font-size, 48px);
+  font-weight: var(--heading-h-2-font-weight, 600);
+  position: relative;
+}
+.frame-3357__d-couvez-notre-catalogue-de-artiste-galeries-physique-ira {
+  color: var(--bleu-bleusombre-300, #6979a7);
+  text-align: center;
+  font-family: var(
+    --text-paragraphe-font-family,
+    "Montserrat-Regular",
+    sans-serif
+  );
+  font-size: var(--text-paragraphe-font-size, 16px);
+  font-weight: var(--text-paragraphe-font-weight, 400);
+  position: relative;
+  width: 544px;
+}
+.artists-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 1500px;
+    height: 1000px;
+    /*
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1500px;
+    height: 1000px;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    */
+}
+
+.artist-item {
+    flex: 0 0 calc(33.333% - 10px);
+    height: calc(33.333% - 10px);
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Prevents image from overflowing */
+    position: relative; /* Needed for proper image positioning */
+}
+
+.artist-item > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the box without distorting */
+    border-radius: 10px; /* Rounded corners to match the box */
+}
+
+
+.frame-3357__jusdevoyage-a-7-un-al-m-mq-i-unsplash-1 {
+  border-radius: 20px;
+  width: 423px;
+  height: 494px;
+  position: absolute;
+  left: 37.5px;
+  top: 0px;
+}
+.frame-3357__jusdevoyage-eq-ce-8-q-4-xr-08-unsplash-1 {
+  border-radius: 20px;
+  width: 467px;
+  height: 473px;
+  position: absolute;
+  left: 495.5px;
+  top: 531px;
+}
+.frame-3357__jusdevoyage-eq-ce-8-q-4-xr-08-unsplash-2 {
+  border-radius: 20px;
+  width: 434px;
+  height: 473px;
+  position: absolute;
+  left: 983.5px;
+  top: 531px;
+}
+.frame-3357__jusdevoyage-eq-ce-8-q-4-xr-08-unsplash-3 {
+  border-radius: 20px;
+  width: 467px;
+  height: 473px;
+  position: absolute;
+  left: 495.5px;
+  top: 1041px;
+}
+.frame-3357__clem-onojeghuo-yhg-xfs-80-r-jo-unsplash-1 {
+  border-radius: 20px;
+  width: 434px;
+  height: 473px;
+  position: absolute;
+  left: 983.5px;
+  top: 1041px;
+}
+.frame-3357__rayul-m-6-gy-9-o-hg-ii-unsplash-1 {
+  border-radius: 20px;
+  width: 482px;
+  height: 494px;
+  position: absolute;
+  left: 480.5px;
+  top: 0px;
+}
+.frame-3357__jonas-allert-zlot-9-osc-764-unsplash-1 {
+  border-radius: 20px;
+  width: 443px;
+  height: 473px;
+  position: absolute;
+  left: 37.5px;
+  top: 531px;
+}
+.frame-3357__justin-luebke-tmtizw-sh-v-ro-unsplash-1 {
+  border-radius: 20px;
+  width: 443px;
+  height: 473px;
+  position: absolute;
+  left: 37.5px;
+  top: 1041px;
+}
+.frame-3357__jennifer-marquez-oc-ld-7-rz-7-a-6-o-unsplash-1 {
+  border-radius: 20px;
+  width: 434px;
+  height: 494px;
+  position: absolute;
+  left: 983.5px;
+  top: 0px;
+}
+
+.artist1-card-front, 
+.artist1-card-back,
+
+.artist2-card-front, 
+.artist2-card-back,
+.artist3-card-front, 
+.artist3-card-back,
+.artist4-card-front, 
+.artist4-card-back,
+.artist5-card-front, 
+.artist5-card-back,
+.artist6-card-front, 
+.artist6-card-back,
+.artist7-card-front, 
+.artist7-card-back,
+
+.artist8-card-front, 
+.artist8-card-back,
+.artist9-card-front, 
+.artist9-card-back
+
+ {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: opacity 0.6s;
+}
