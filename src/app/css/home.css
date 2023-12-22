@@ -953,7 +953,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.timoth-e-roy {
+.member-name {
   color: #000000;
   text-align: left;
   font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
@@ -962,7 +962,7 @@
   position: relative;
   align-self: stretch;
 }
-.porteur-du-projet {
+.member-role {
   color: #465c79;
   text-align: left;
   font-family: var(

@@ -21,26 +21,21 @@ const Team = () => {
       const [text2, setText2] = useState<string>('')
       const [role, setRole]   = useState<string>('')
       const [name, setName]   = useState<string>('')
-      const [photo, setPhoto] = useState<string>('')
-      const [cssClassPhoto, setCssClassPhoto] = useState<string>('')
       const [photoUrl, setPhotoUrl]           = useState<string>('')
       const [currentIndex, setCurrentIndex]   = useState(0)
       const [members, setMembers]             = useState<MemberData>([])
-      const [key, setKey] = useState(0)
-      const [fade, setFade] = useState(true)
-  
+      const [isLoading, setIsLoading] = useState(false);
+
       const setMembersData = async(currentIndex: number, members: MemberData) => {
         setText1(members[currentIndex].text1[lang_])
         setText2(members[currentIndex].text2[lang_])
         setRole(members[currentIndex].role[lang_])
         setName(members[currentIndex].name)
         const photo_ = members[currentIndex].photo 
-        setPhoto(photo_)
         const imageRef = ref(storage, photo_)
         const url = await getDownloadURL(imageRef)
         //photo-team-member
         setPhotoUrl(url)
-        setCssClassPhoto(``)
       }
   
       //--------------------------------------------------------------------- useEffect
@@ -65,33 +60,76 @@ const Team = () => {
        * UseEffect called when 'lang' or 'currentIndex' has changed
        */
       useEffect(() => {
+        
         if (members.length !== 0) {
           setMembersData(currentIndex, members)
-          // When imageUrl changes, start the fade-out effect
-          setFade(false);
-          // Wait for fade-out to complete, then fade in the new image
-          const timer = setTimeout(() => {
-            setFade(true);
-          }, 500); // Adjust this duration to match your fade-out CSS animation
-  
-          return () => clearTimeout(timer);
-          
+
+          setIsLoading(true)
+          const img = new Image()
+          img.src = photoUrl
+          img.onload = () => {
+            // Introduce a slight delay
+            setTimeout(() => {
+              setIsLoading(false)
+            }, 800); // Adjust the delay as needed
+          }
         }
+
       }, [lang, currentIndex])
   
   
-      //Re-render component with useEffect for the fade-in (but it does not work)
-      useEffect(() => {
-        setKey(prevKey => prevKey + 1)
-      }, [photoUrl]);
-  
+      
       const handleArrowClick = (direction: string) => {
         if (direction === 'right') {
           setCurrentIndex((prevIndex) => (prevIndex + 1) % members.length);
         } else {
           setCurrentIndex((prevIndex) => (prevIndex - 1 + members.length) % members.length);
         }
-      };
+      }
+
+      useEffect(() => {
+        const dynamicImageElement = document.getElementById('photo-member');
+        const paragraph1 = document.getElementById('team-member-p-1');
+        const paragraph2 = document.getElementById('team-member-p-2');
+        const memberName = document.getElementById('member-name');
+        const memberRole = document.getElementById('member-role');
+
+        console.log(dynamicImageElement)
+        if (isLoading 
+            && dynamicImageElement !== null 
+            && paragraph1 !== null 
+            && paragraph2 !== null
+            && memberName !== null
+            && memberRole !== null
+            ) {
+          dynamicImageElement.style.opacity = '0';
+          paragraph1.style.opacity = '0';
+          paragraph2.style.opacity = '0';
+          memberName.style.opacity = '0';
+          memberRole.style.opacity = '0';
+        } else {
+          if (dynamicImageElement !== null 
+            && paragraph1 !== null 
+            && paragraph2 !== null
+            && memberName !== null
+            && memberRole !== null
+            ) {
+            dynamicImageElement.style.transition = 'opacity 0.5s ease;';
+            paragraph1.style.transition = 'opacity 0.5s ease;';
+            paragraph2.style.transition = 'opacity 0.5s ease;';
+            memberName.style.transition = 'opacity 0.5s ease;';
+            memberRole.style.transition = 'opacity 0.5s ease;';
+            dynamicImageElement.style.opacity = '1';
+            paragraph1.style.opacity = '1';
+            paragraph2.style.opacity = '1';
+            memberName.style.opacity = '1';
+            memberRole.style.opacity = '1';
+          }
+        }
+      }, [isLoading]);
+
+
+
     return (
         <div className="frame-team">
           <div className="arrow left-arrow" >

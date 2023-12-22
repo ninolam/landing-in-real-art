@@ -852,6 +852,10 @@ a {
 }
 
 
+.photo-team-member {  
+  transition: opacity 0.5s ease;
+}
+
 .frame-team-member {
   height: 650px;
   object-fit: cover;
