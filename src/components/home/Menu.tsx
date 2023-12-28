@@ -1,5 +1,6 @@
 "use client"
-import { useEffect, useRef, useState } from "react";
+import styles from './Menu.module.css'
+import { useEffect, useState } from "react";
 import Link from 'next/link';
 import { db } from '../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
@@ -183,37 +184,37 @@ const Menu = () => {
               <div className="link-text"></div>
               <div className="link-text2">
                 <div className="communaut">
-                  <Link className="menu-link-element" href={communityLink}>
+                  <Link className={styles.menuLinkElement} href={communityLink}>
                     {community}
                   </Link>
                 </div>
               </div>
               <div className="link-text2">
                 <div className="equipe">
-                  <Link className="menu-link-element" href={teamLink}>
+                  <Link className={styles.menuLinkElement} href={teamLink}>
                     {team}
                   </Link>
                 </div>
               </div>
               <div className="link-text2">
                 <div className="a-propos2">
-                  <Link className="menu-link-element" href={aboutLink}>
+                  <Link className={styles.menuLinkElement} href={aboutLink}>
                     {about}
                   </Link>
                 </div>
               </div>
               <div className="link-text2">
                 <div className="ressources">
-                  <Link className="menu-link-element" href={resourcesLink}>
+                  <Link className={styles.menuLinkElement} href={resourcesLink}>
                     {resources}
                   </Link>
                 </div>
               </div>
             </div>
             <div className="wrapper-button">
-              <div className="menu-button-presale">
-                <div className="pr-vente">
-                  <Link href="/presale">
+              <div className={styles.menuButtonPresale}>
+                <div className={styles.prSale}>
+                  <Link className={styles.linkPresale} href="/presale">
                     <div className="text-wrapper-5">{presale}</div> 
                   </Link>    
                 </div>

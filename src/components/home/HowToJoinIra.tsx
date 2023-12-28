@@ -1,5 +1,5 @@
 "use client"
-
+import styles from './HowToJoinIra.module.css'
 import { useEffect, useState } from "react"
 import { useAppContext } from "../../context"
 import { JoinIraDataButton, JoinIraDataText, Lang, defaultLangObject } from "../../types/types"
@@ -50,20 +50,19 @@ const HowToJoinIra = () => {
   
   
     return (
-        <div className="feature">
-        <div className="frame-36597">
-          <div className="frame-48095734">
-            <img className="rectangle-62" src="/img/rectangle-62.svg" />
+        <div className={styles.feature}>
+        <div className={styles.frame36597}>
+          <div className={styles.frame48095734}>
+            <img className={styles.rectangle62} src="/img/rectangle-62.svg" />
           </div>
-          <div className="frame-48095735">
+          <div className={styles.frame48095735}>
             <img className="rectangle-210" src="/img/rectangle-210.svg" />
           </div>
         </div>
-        <div className="frame-48095733">
-          <div className="frame-303">
-            <div className="comment">{joinIraDataText.headerText[lang_]}</div>
-            <div
-              className="ira-ambition">
+        <div className={styles.frame48095733}>
+          <div className={styles.frame303}>
+            <div className={styles.comment}>{joinIraDataText.headerText[lang_]}</div>
+            <div className={styles.iraAmbition}>
               {joinIraDataText.text1[lang_]}
               <br />
               <br />
@@ -71,12 +70,12 @@ const HowToJoinIra = () => {
             </div>
             <div className="link-button">
               <div className="button2">
-                <Link href={joinIraDataButton.JoinIRALink}>
+                <Link className={styles.joinIRALink} href={joinIraDataButton.JoinIRALink}>
                   <div className="rejoindre-ira2">{joinIraDataButton.JoinIRA[lang_]}</div>
                 </Link>  
               </div>
               <div className="button3">
-                <Link href={joinIraDataButton.StartIRALink}>
+                <Link className={styles.startIRALink} href={joinIraDataButton.StartIRALink}>
                   <div className="je-d-marre2">{joinIraDataButton.StartIRA[lang_]}</div>
                 </Link>  
               </div>

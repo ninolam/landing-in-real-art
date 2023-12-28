@@ -241,51 +241,6 @@
   top: -593px;
   overflow: visible;
 }
-.feature {
-  display: flex;
-  flex-direction: row;
-  gap: 216px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.frame-36597 {
-  display: flex;
-  flex-direction: row;
-  gap: 0px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.frame-48095734 {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.rectangle-62 {
-  border-radius: 40px;
-  flex-shrink: 0;
-  width: 525px;
-  height: 500px;
-  position: relative;
-}
-.frame-48095735 {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: absolute;
-  left: 132px;
-  top: 71px;
-}
 .rectangle-210 {
   border-radius: 300px 300px 20px 20px;
   flex-shrink: 0;
@@ -293,44 +248,7 @@
   height: 518px;
   position: relative;
 }
-.frame-48095733 {
-  display: flex;
-  flex-direction: column;
-  gap: 95px;
-  align-items: flex-end;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
 
-.frame-303 {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.comment {
-  color: var(--primaire-black, #000035);
-  text-align: left;
-  font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
-  font-size: var(--heading-h-2-font-size, 48px);
-  font-weight: var(--heading-h-2-font-weight, 600);
-  position: relative;
-  width: 394px;
-}
-.ira-ambition {
-  color: var(--bleu-bleusombre-100, #021056);
-  text-align: left;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 16px;
-  line-height: 150%;
-  font-weight: 400;
-  position: relative;
-  width: 379px;
-}
 .link-button {
   display: flex;
   flex-direction: row;
@@ -409,35 +327,6 @@
   font-size: var(--text-linktext-font-size, 16px);
   font-weight: var(--text-linktext-font-weight, 500);
   position: relative;
-}
-.frame-48095739 {
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.title2 {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-.rejoindre-le-mouvement {
-  color: var(--primaire-black, #000035);
-  text-align: left;
-  font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
-  font-size: var(--heading-h-2-font-size, 48px);
-  font-weight: var(--heading-h-2-font-weight, 600);
-  position: relative;
-  width: 394px;
 }
 .wrraper-card {
   display: flex;

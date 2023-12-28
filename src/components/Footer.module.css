@@ -1,0 +1,110 @@
+.footerOurPages {
+    height: 152px;
+    position: relative;
+    width: 115px;
+  }
+
+  .footerOurPagesTitle {
+    color: var(--primaireblack);
+    font-family: var(--heading-h4-font-family);
+    font-size: var(--heading-h4-font-size);
+    font-style: var(--heading-h4-font-style);
+    font-weight: var(--heading-h4-font-weight);
+    left: 0;
+    letter-spacing: var(--heading-h4-letter-spacing);
+    line-height: var(--heading-h4-line-height);
+    position: absolute;
+    top: 0;
+  }
+  
+  .footerOurPagesLine1 {
+    color: var(--bleubleu-sombre-300);
+    font-family: var(--text-link-text-font-family);
+    font-size: var(--text-link-text-font-size);
+    font-style: var(--text-link-text-font-style);
+    font-weight: var(--text-link-text-font-weight);
+    left: 0;
+    letter-spacing: var(--text-link-text-letter-spacing);
+    line-height: var(--text-link-text-line-height);
+    position: absolute;
+    top: 45px;
+  }
+
+  .footerOurPagesLine2 {
+    color: var(--bleubleu-sombre-300);
+    font-family: var(--text-link-text-font-family);
+    font-size: var(--text-link-text-font-size);
+    font-style: var(--text-link-text-font-style);
+    font-weight: var(--text-link-text-font-weight);
+    left: 0;
+    letter-spacing: var(--text-link-text-letter-spacing);
+    line-height: var(--text-link-text-line-height);
+    position: absolute;
+    top: 74px;
+  }
+
+  .footerOurPagesLine3 {
+    color: var(--bleubleu-sombre-300);
+    font-family: var(--text-link-text-font-family);
+    font-size: var(--text-link-text-font-size);
+    font-style: var(--text-link-text-font-style);
+    font-weight: var(--text-link-text-font-weight);
+    left: 0;
+    letter-spacing: var(--text-link-text-letter-spacing);
+    line-height: var(--text-link-text-line-height);
+    position: absolute;
+    top: 103px;
+  }
+
+  .footerOurPagesLine4 {
+    color: var(--bleubleu-sombre-300);
+    font-family: var(--text-link-text-font-family);
+    font-size: var(--text-link-text-font-size);
+    font-style: var(--text-link-text-font-style);
+    font-weight: var(--text-link-text-font-weight);
+    left: 0;
+    letter-spacing: var(--text-link-text-letter-spacing);
+    line-height: var(--text-link-text-line-height);
+    position: absolute;
+    top: 132px;
+  }
+
+  .footerCompany {
+    height: 123px;
+    position: relative;
+    width: 111px;
+  }
+  
+  .line2 {
+    height: 196px;
+    object-fit: cover;
+    position: relative;
+    width: 1px;
+  }
+  
+  .footerContact {
+    height: 123px;
+    margin-right: -8px;
+    position: relative;
+    width: 152px;
+  }
+  
+  .footerLeftFooter {
+    color: var(--bleubleu-sombre-300);
+    font-family: var(--text-paragraphe-font-family);
+    font-size: var(--text-paragraphe-font-size);
+    font-style: var(--text-paragraphe-font-style);
+    font-weight: var(--text-paragraphe-font-weight);
+    letter-spacing: var(--text-paragraphe-letter-spacing);
+    line-height: var(--text-paragraphe-line-height);
+    position: relative;
+    width: 223px;
+  }
+  
+a.footerLink {
+    text-decoration: none;
+    color: var(--bleubleu-sombre-300);
+}  
+  
+  
+  

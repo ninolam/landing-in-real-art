@@ -89,7 +89,7 @@ export interface ArtistNameDesc {
 export type ArtistCarouselElement = Record<string, ArtistNameDesc>
 
 
-export type Artists  = Array<ArtistCarouselElement>
+export type Artists  = Array<ArtistNameDesc>
 
 export interface JoinIraDataButton {
     JoinIRA: Record<Lang, string>

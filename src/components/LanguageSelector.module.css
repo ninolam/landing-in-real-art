@@ -1,0 +1,26 @@
+.languageSelector {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: -135px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .dropdown div {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown div:hover {
+    background-color: #f1f1f1;
+  }
+  

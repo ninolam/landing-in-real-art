@@ -1,0 +1,35 @@
+.frame48095739 {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .titleJoinMovement {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .rejoindreLeMouvement {
+    color: var(--primaire-black, #000035);
+    text-align: left;
+    font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
+    font-size: var(--heading-h-2-font-size, 48px);
+    font-weight: var(--heading-h-2-font-weight, 600);
+    position: relative;
+    width: 394px;
+  }
+  
+a.joinMovementLink {
+    text-decoration: none;
+}  

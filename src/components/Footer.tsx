@@ -1,4 +1,5 @@
 "use client"
+import styles from './Footer.module.css'
 import { useEffect, useState } from 'react';
 import { db } from '../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
@@ -120,47 +121,47 @@ const Footer = () => {
                         </Link>
                         
                     </div>
-                    <p className="footer-left-footer">{leftBlockText}</p>
+                    <p className={styles.footerLeftFooter}>{leftBlockText}</p>
                 </div>
                 <div className="footer-right">
-                    <div className="footer-our-pages">
-                    <div className="footer-our-pages-title">{ourPagesTitle}</div>
-                    <div className="footer-our-pages-line-1">
-                        <Link href={homeLinkUrl}>
+                    <div className={styles.footerOurPages}>
+                    <div className={styles.footerOurPagesTitle}>{ourPagesTitle}</div>
+                    <div className={styles.footerOurPagesLine1}>
+                        <Link className={styles.footerLink} href={homeLinkUrl}>
                             {homeLinkText}
                         </Link>    
                     </div>
-                    <div className="footer-our-pages-line-2">
-                        <Link href={aboutLinkUrl}>
+                    <div className={styles.footerOurPagesLine2}>
+                        <Link className={styles.footerLink} href={aboutLinkUrl}>
                             {aboutLinkText}
                         </Link>    
                     </div>
-                    <div className="footer-our-pages-line-3">
-                        <Link href={marketPlaceLinkUrl}>
+                    <div className={styles.footerOurPagesLine3}>
+                        <Link className={styles.footerLink} href={marketPlaceLinkUrl}>
                             {marketPlaceLinkText}
                         </Link>    
                     </div>
-                    <div className="footer-our-pages-line-4">
-                        <Link href={faqLinkUrl}>
+                    <div className={styles.footerOurPagesLine4}>
+                        <Link className={styles.footerLink} href={faqLinkUrl}>
                             {faqLinkText}
                         </Link>    
                     </div>
                     </div>
-                    <div className="footer-company">
-                    <div className="footer-our-pages-title">
+                    <div className={styles.footerCompany}>
+                    <div className={styles.footerOurPagesTitle}>
                         {ourCompanyTitle}
                     </div>
-                    <div className="footer-our-pages-line-1">
-                        <Link href={teamLinkUrl}>
+                    <div className={styles.footerOurPagesLine1}>
+                        <Link className={styles.footerLink} href={teamLinkUrl}>
                             {teamLinkText}
                         </Link>    
                     </div>
-                    <div className="footer-our-pages-line-2">
-                        <Link href={partnersLinkUrl}>
+                    <div className={styles.footerOurPagesLine2}>
+                        <Link className={styles.footerLink} href={partnersLinkUrl}>
                             {partnersLinkText}
                         </Link>
                     </div>
-                    <div className="footer-our-pages-line-3">
+                    <div className={styles.footerOurPagesLine3}>
                         CGU
                     </div>
                     </div>

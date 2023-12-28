@@ -1,4 +1,5 @@
 "use client"
+import styles from './JoinMovement.module.css'
 import { useAppContext } from '../../context'
 import { useEffect, useState } from "react";
 import { db } from '../../firebaseConfig';
@@ -57,9 +58,9 @@ const JoinMovement = () => {
     }, [])
 
     return (
-        <div className="frame-48095739">
-          <div className="title2">
-            <div className="rejoindre-le-mouvement">{parse(joinTrendtexts.title[lang_])}</div>
+        <div className={styles.frame48095739}>
+          <div className={styles.titleJoinMovement}>
+            <div className={styles.rejoindreLeMouvement}>{parse(joinTrendtexts.title[lang_])}</div>
           </div>
           <div className="wrraper-card">
             <div className="frame-artgallery">
@@ -78,7 +79,7 @@ const JoinMovement = () => {
                 </div>
               </div>
               <div className="button-join-movement">
-                <Link href={joinTrendButtons.artgallery_join_link}>
+                <Link className={styles.joinMovementLink} href={joinTrendButtons.artgallery_join_link}>
                   <div className="heading3">{joinTrendButtons.artgallery_join[lang_]}</div>
                 </Link>  
               </div>
@@ -98,7 +99,7 @@ const JoinMovement = () => {
                   </div>
                 </div>
                 <div className="button-join-movement">
-                  <Link href={joinTrendButtons.aas_join_link}>
+                  <Link className={styles.joinMovementLink} href={joinTrendButtons.aas_join_link}>
                     <div className="heading3">{joinTrendButtons.aas_join[lang_]}</div>
                   </Link>  
                 </div>
@@ -117,7 +118,7 @@ const JoinMovement = () => {
                 </div>
               </div>
               <div className="button-join-movement">
-                <Link href={joinTrendButtons.marketplace_join_link}>
+                <Link className={styles.joinMovementLink} href={joinTrendButtons.marketplace_join_link}>
                   <div className="heading3">{joinTrendButtons.marketplace_join[lang_]}</div>
                 </Link>  
               </div>

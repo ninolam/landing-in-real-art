@@ -1,0 +1,99 @@
+.feature {
+    display: flex;
+    flex-direction: row;
+    gap: 216px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .frame36597 {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .frame48095734 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .rectangle62 {
+    border-radius: 40px;
+    flex-shrink: 0;
+    width: 525px;
+    height: 500px;
+    position: relative;
+  }
+
+  .frame48095735 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: absolute;
+    left: 132px;
+    top: 71px;
+  }
+
+  .frame48095733 {
+    display: flex;
+    flex-direction: column;
+    gap: 95px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .frame303 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .iraAmbition {
+    color: var(--bleu-bleusombre-100, #021056);
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    position: relative;
+    width: 379px;
+  }
+  
+  .comment {
+    color: var(--primaire-black, #000035);
+    text-align: left;
+    font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
+    font-size: var(--heading-h-2-font-size, 48px);
+    font-weight: var(--heading-h-2-font-weight, 600);
+    position: relative;
+    width: 394px;
+  }
+  
+  a.joinIRALink {
+    text-decoration: none;
+  }
+  
+  a.startIRALink {
+    text-decoration: none;
+  }
+  
