@@ -73,7 +73,7 @@ const CarouselArtists = () => {
                 {description}
             </div>
         </div>
-            <Carousel interval={null}>
+            <Carousel>
                 {
                     allArtists.map(
                         (record, index) => (

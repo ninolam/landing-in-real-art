@@ -1,4 +1,5 @@
 "use client"
+import styles from './Faq.module.scss'
 import { useEffect, useRef, useState } from 'react'
 import { useAppContext } from '../../context'
 import { db } from '../../firebaseConfig';
@@ -65,16 +66,16 @@ const Faq = () => {
       const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png");
       return (
         <>
-           <div className="question-01">
-            <div className="comment-fonctionne-la-inrealart">
+           <div className={styles.question01}>
+            <div className={styles.commentFonctionneLaInrealart}>
               {faqTexts.question1[lang_]}
             </div>
             <div onClick={toggleVisibility}>
-              <img ref={imagePlus1Ref} className="plus" alt="plus" src={imageSrc} />
+              <img ref={imagePlus1Ref} className={styles.plus} alt="plus" src={imageSrc} />
             </div>
           </div>
           {isVisible && (
-              <div className="answer">
+              <div className={styles.answer}>
                 {faqTexts.answer1[lang_]}
               </div>
             )}
@@ -86,15 +87,15 @@ const Faq = () => {
       const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png");
       return (
         <>
-          <div className="question-02">
-            <div className="pour-qui">{faqTexts.question2[lang_]}</div>        
+          <div className={styles.question02}>
+            <div className={styles.pourQui}>{faqTexts.question2[lang_]}</div>        
             <div onClick={toggleVisibility}>
-              <img ref={imagePlus2Ref} className="plus" alt="plus" src={imageSrc} />
+              <img ref={imagePlus2Ref} className={styles.plus} alt="plus" src={imageSrc} />
             </div>
           </div>
           
           {isVisible && (
-              <div className="answer">
+              <div className={styles.answer}>
                 {faqTexts.answer2[lang_]}
               </div>
             )}
@@ -106,14 +107,14 @@ const Faq = () => {
       const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png");
       return (
         <>
-          <div className="question-03">
-            <div className="y-a-t-il-un-guide-de-d-marrage">{faqTexts.question3[lang_]}</div>  
+          <div className={styles.question03}>
+            <div className={styles.startingGuide}>{faqTexts.question3[lang_]}</div>  
             <div onClick={toggleVisibility}>
-              <img ref={imagePlus3Ref} className="plus" alt="plus" src={imageSrc} />
+              <img ref={imagePlus3Ref} className={styles.plus} alt="plus" src={imageSrc} />
             </div>
           </div>          
           {isVisible && (
-            <div className="answer">
+            <div className={styles.answer}>
               {faqTexts.answer3[lang_]}
             </div>
           )}
@@ -123,23 +124,23 @@ const Faq = () => {
 
     
     return (
-        <div className="home-faq">
-        <div className="faq-left">
-          <div className="faq">FAQ</div>
+      <div className={styles.homeFaq}>
+        <div className={styles.faqLeft}>
+          <div className={styles.faq}>FAQ</div>
           <div
-            className="faq-main-p">
+            className={styles.faqMainP}>
             {faqTexts.faqMain[lang_]}
             <br />
             <br />
           </div>
-          <div className="link-button2">
-            <div className="button2">
-              <div className="consulter-la-faq">{faqButtons.readFaq[lang_]}</div>
+          <div className={styles.linkButton2}>
+            <div className={styles.button2}>
+              <div className={styles.readTheFaq}>{faqButtons.readFaq[lang_]}</div>
             </div>
           </div>
         </div>
         
-        <div className="faq-right">
+        <div className={styles.faqRight}>
           <Question1/>
           <Question2/>
           <Question3/>
