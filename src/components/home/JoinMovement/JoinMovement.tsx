@@ -62,64 +62,64 @@ const JoinMovement = () => {
           <div className={styles.titleJoinMovement}>
             <div className={styles.rejoindreLeMouvement}>{parse(joinTrendtexts.title[lang_])}</div>
           </div>
-          <div className="wrraper-card">
-            <div className="frame-artgallery">
-              <div className="frame-76">
-                <div className="rectangle-52"></div>
+          <div className={styles.wrraperCard}>
+            <div className={styles.frameArtgallery}>
+              <div className={styles.frame76}>
+                <div className={styles.rectangle52}></div>
 
                 <VuesaxLinearStatusUp/>
 
               </div>
-              <div className="frame-7">
-                <div className="heading2">
+              <div className={styles.frame7}>
+                <div className={styles.heading2}>
                   {parse(joinTrendtexts.artgallery_title[lang_])}
                 </div>
-                <div className="paragraph2">
+                <div className={styles.paragraph2}>
                   {parse(joinTrendtexts.artgallery_description[lang_])}
                 </div>
               </div>
-              <div className="button-join-movement">
+              <div className={styles.buttonJoinMovement}>
                 <Link className={styles.joinMovementLink} href={joinTrendButtons.artgallery_join_link}>
-                  <div className="heading3">{joinTrendButtons.artgallery_join[lang_]}</div>
+                  <div className={styles.heading3}>{joinTrendButtons.artgallery_join[lang_]}</div>
                 </Link>  
               </div>
             </div>
-            <div className="frame-artasservice">
-              <div className="frame-48095731">
-                <div className="frame-76">
-                  <div className="rectangle-52"></div>
+            <div className={styles.frameArtasservice}>
+              <div className={styles.frame48095731}>
+                <div className={styles.frame76}>
+                  <div className={styles.rectangle52}></div>
                   <VuesaxLinearStatusUp/>
                 </div>
-                <div className="frame-7">
-                  <div className="heading4">
+                <div className={styles.frame7}>
+                  <div className={styles.heading4}>
                     {parse(joinTrendtexts.aas_title[lang_])}
                   </div>
-                  <div className="paragraph2">
+                  <div className={styles.paragraph2}>
                     {parse(joinTrendtexts.aas_description[lang_])}
                   </div>
                 </div>
-                <div className="button-join-movement">
+                <div className={styles.buttonJoinMovement}>
                   <Link className={styles.joinMovementLink} href={joinTrendButtons.aas_join_link}>
-                    <div className="heading3">{joinTrendButtons.aas_join[lang_]}</div>
+                    <div className={styles.heading3}>{joinTrendButtons.aas_join[lang_]}</div>
                   </Link>  
                 </div>
               </div>
             </div>
-            <div className="frame-marketplace">
-              <div className="frame-76">
-                <div className="rectangle-52"></div>
+            <div className={styles.frameMarketplace}>
+              <div className={styles.frame76}>
+                <div className={styles.rectangle52}></div>
                 <VuesaxLinearStatusUp/>
 
               </div>
-              <div className="frame-72">
-                <div className="heading5">{joinTrendtexts.marketplace_title[lang_]}</div>
-                <div className="paragraph2">
+              <div className={styles.frame72}>
+                <div className={styles.heading5}>{joinTrendtexts.marketplace_title[lang_]}</div>
+                <div className={styles.paragraph2}>
                   {parse(joinTrendtexts.marketplace_description[lang_])}  
                 </div>
               </div>
-              <div className="button-join-movement">
+              <div className={styles.buttonJoinMovement}>
                 <Link className={styles.joinMovementLink} href={joinTrendButtons.marketplace_join_link}>
-                  <div className="heading3">{joinTrendButtons.marketplace_join[lang_]}</div>
+                  <div className={styles.heading3}>{joinTrendButtons.marketplace_join[lang_]}</div>
                 </Link>  
               </div>
             </div>

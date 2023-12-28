@@ -33,3 +33,195 @@
 a.joinMovementLink {
     text-decoration: none;
 }  
+
+.wrraperCard {
+  display: flex;
+  flex-direction: row;
+  gap: 64px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frameArtgallery {
+  background: var(--primaire-white, #f6f8ff);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 435px;
+  position: relative;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+
+.frame76 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame7 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+
+.rectangle52 {
+  background: #efe4fc;
+  border-radius: 41px;
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(
+    114.95deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-image-slice: 1;
+  flex-shrink: 0;
+  width: 70px;
+  height: 73px;
+  position: relative;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+  backdrop-filter: blur(107.5px);
+}
+
+.heading2 {
+  color: #000000;
+  text-align: left;
+  font-family: "Unbounded-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  position: relative;
+  width: 229px;
+}
+
+.paragraph2 {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 160%;
+  font-weight: 400;
+  opacity: 0.699999988079071;
+  position: relative;
+  width: 262px;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+
+.buttonJoinMovement {
+  cursor: pointer;
+  background: #6052ff;
+  border-radius: 6px;
+  padding: 14px 31px 14px 31px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+
+.heading3 {
+  color: #ffffff;
+  text-align: left;
+  font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
+  font-size: var(--heading-h-4-font-size, 16px);
+  font-weight: var(--heading-h-4-font-weight, 500);
+  position: relative;
+}
+
+.heading4 {
+  color: #000000;
+  text-align: left;
+  font-family: "Unbounded-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  position: relative;
+  width: 289px;
+}
+
+.frameArtasservice {
+  padding: 0px 0px 123px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.frame48095731 {
+  background: var(--primaire-white, #f6f8ff);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+
+.frameMarketplace {
+  background: var(--primaire-white, #f6f8ff);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 435px;
+  position: relative;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+
+.frame72 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 190px;
+  position: relative;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+
+.heading5 {
+  color: #000000;
+  text-align: left;
+  font-family: "Unbounded-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  position: relative;
+}
+
