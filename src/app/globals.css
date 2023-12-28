@@ -504,20 +504,6 @@ a {
   cursor: pointer;
 }
 
-.LP .text-wrapper-5 {
-  color: var(--primaireblack);
-  font-family: var(--text-link-text-font-family);
-  font-size: var(--text-link-text-font-size);
-  font-style: var(--text-link-text-font-style);
-  font-weight: var(--text-link-text-font-weight);
-  letter-spacing: var(--text-link-text-letter-spacing);
-  line-height: var(--text-link-text-line-height);
-  margin-top: -1px;
-  position: relative;
-  text-align: center;
-  width: fit-content;
-}
-
 .LP .newsletter {
   height: 548px;
   left: 96px;
@@ -1261,5 +1247,12 @@ a {
 
 .dropdown div:hover {
   background-color: #f1f1f1;
+}
+
+
+div .carousel-inner,
+div.carousel.slide {
+  width: auto;
+  height: auto;
 }
 

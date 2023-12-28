@@ -64,5 +64,162 @@
     text-decoration: none;
   }
   
+  .linkText2 {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
   
-   
+  .linkText {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 121px;
+    height: 40px;
+    position: relative;
+  }
+     
+  .wrapperLinkMenu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .wrapperButton {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .textWrapper5 {
+    color: var(--primaireblack);
+    font-family: var(--text-link-text-font-family);
+    font-size: var(--text-link-text-font-size);
+    font-style: var(--text-link-text-font-style);
+    font-weight: var(--text-link-text-font-weight);
+    letter-spacing: var(--text-link-text-letter-spacing);
+    line-height: var(--text-link-text-line-height);
+    margin-top: -1px;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+  }
+
+  .button2 {
+    cursor: pointer;
+    background: var(--primaire-white, #f6f8ff);
+    border-radius: 10px;
+    border-image: var(
+      --bg-bgcolor,
+      linear-gradient(
+        135.65deg,
+        rgba(236, 238, 250, 1) 0%,
+        rgba(234, 236, 251, 1) 52.60416865348816%,
+        rgba(225, 229, 255, 1) 100%
+      )
+    );
+    border-image-slice: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .testnet {
+    color: var(--primaire-black, #000035);
+    text-align: center;
+    font-family: var(
+      --text-linktext-font-family,
+      "Montserrat-Medium",
+      sans-serif
+    );
+    font-size: var(--text-linktext-font-size, 16px);
+    font-weight: var(--text-linktext-font-weight, 500);
+    position: relative;
+  }
+
+  .ressources {
+    color: var(--primaire-white, #f6f8ff);
+    text-align: center;
+    font-family: var(
+      --text-linktext-font-family,
+      "Montserrat-Medium",
+      sans-serif
+    );
+    font-size: var(--text-linktext-font-size, 16px);
+    font-weight: var(--text-linktext-font-weight, 500);
+    position: relative;
+  }
+  
+  .equipe {
+    color: var(--primaire-white, #f6f8ff);
+    text-align: center;
+    font-family: var(
+      --text-linktext-font-family,
+      "Montserrat-Medium",
+      sans-serif
+    );
+    font-size: var(--text-linktext-font-size, 16px);
+    font-weight: var(--text-linktext-font-weight, 500);
+    position: relative;
+  }
+  
+  .aPropos2 {
+    color: var(--primaire-white, #f6f8ff);
+    text-align: center;
+    font-family: var(
+      --text-linktext-font-family,
+      "Montserrat-Medium",
+      sans-serif
+    );
+    font-size: var(--text-linktext-font-size, 16px);
+    font-weight: var(--text-linktext-font-weight, 500);
+    position: relative;
+  }
+  
+  .wrapperLink {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .communaut {
+    color: var(--primaire-white, #f6f8ff);
+    text-align: center;
+    font-family: var(
+      --text-linktext-font-family,
+      "Montserrat-Medium",
+      sans-serif
+    );
+    font-size: var(--text-linktext-font-size, 16px);
+    font-weight: var(--text-linktext-font-weight, 500);
+    position: relative;
+  }
+  
+  
+  

@@ -179,48 +179,50 @@ const Menu = () => {
     return (
         <div className={isSticky ? 'header-sticky' : 'header'} id="menu">
           <LogoIRAMenu/>
-          <div className="wrapper-link">
-            <div className="wrapper-link-menu">
-              <div className="link-text"></div>
-              <div className="link-text2">
-                <div className="communaut">
+          <div className={styles.wrapperLink}>
+            <div className={styles.wrapperLinkMenu}>
+              <div className={styles.linkText}></div>
+              <div className={styles.linkText2}>
+                <div className={styles.communaut}>
                   <Link className={styles.menuLinkElement} href={communityLink}>
                     {community}
                   </Link>
                 </div>
               </div>
-              <div className="link-text2">
-                <div className="equipe">
+              <div className={styles.linkText2}>
+                <div className={styles.equipe}>
                   <Link className={styles.menuLinkElement} href={teamLink}>
                     {team}
                   </Link>
                 </div>
               </div>
-              <div className="link-text2">
-                <div className="a-propos2">
+              <div className={styles.linkText2}>
+                <div className={styles.aPropos2}>
                   <Link className={styles.menuLinkElement} href={aboutLink}>
                     {about}
                   </Link>
                 </div>
               </div>
-              <div className="link-text2">
-                <div className="ressources">
+              <div className={styles.linkText2}>
+                <div className={styles.ressources}>
                   <Link className={styles.menuLinkElement} href={resourcesLink}>
                     {resources}
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="wrapper-button">
+            <div className={styles.wrapperButton}>
               <div className={styles.menuButtonPresale}>
                 <div className={styles.prSale}>
                   <Link className={styles.linkPresale} href="/presale">
-                    <div className="text-wrapper-5">{presale}</div> 
+                    <div className={styles.testnet}>{presale}</div> 
                   </Link>    
                 </div>
               </div>
-              <div className="button2">
-                <div className="testnet">{testnet}</div>
+              <div className={styles.button2}>
+                  <Link className={styles.linkPresale} href="/presale">
+                    <div className={styles.testnet}>{testnet}</div>
+                  </Link>  
               </div>
             </div>
 

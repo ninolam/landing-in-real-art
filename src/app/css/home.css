@@ -1568,103 +1568,6 @@
   top: 35.38px;
   overflow: visible;
 }
-.wrapper-link {
-  display: flex;
-  flex-direction: row;
-  gap: 80px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.wrapper-link-menu {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.link-text {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  width: 121px;
-  height: 40px;
-  position: relative;
-}
-.link-text2 {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.communaut {
-  color: var(--primaire-white, #f6f8ff);
-  text-align: center;
-  font-family: var(
-    --text-linktext-font-family,
-    "Montserrat-Medium",
-    sans-serif
-  );
-  font-size: var(--text-linktext-font-size, 16px);
-  font-weight: var(--text-linktext-font-weight, 500);
-  position: relative;
-}
-.equipe {
-  color: var(--primaire-white, #f6f8ff);
-  text-align: center;
-  font-family: var(
-    --text-linktext-font-family,
-    "Montserrat-Medium",
-    sans-serif
-  );
-  font-size: var(--text-linktext-font-size, 16px);
-  font-weight: var(--text-linktext-font-weight, 500);
-  position: relative;
-}
-.a-propos2 {
-  color: var(--primaire-white, #f6f8ff);
-  text-align: center;
-  font-family: var(
-    --text-linktext-font-family,
-    "Montserrat-Medium",
-    sans-serif
-  );
-  font-size: var(--text-linktext-font-size, 16px);
-  font-weight: var(--text-linktext-font-weight, 500);
-  position: relative;
-}
-.ressources {
-  color: var(--primaire-white, #f6f8ff);
-  text-align: center;
-  font-family: var(
-    --text-linktext-font-family,
-    "Montserrat-Medium",
-    sans-serif
-  );
-  font-size: var(--text-linktext-font-size, 16px);
-  font-weight: var(--text-linktext-font-weight, 500);
-  position: relative;
-}
-.wrapper-button {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
 .menu-button-presale {
   background: var(--primaire-white, #f6f8ff);
   border-radius: 10px;
@@ -1700,19 +1603,6 @@
   font-weight: var(--text-linktext-font-weight, 500);
   position: relative;
 }
-.testnet {
-  color: var(--primaire-black, #000035);
-  text-align: center;
-  font-family: var(
-    --text-linktext-font-family,
-    "Montserrat-Medium",
-    sans-serif
-  );
-  font-size: var(--text-linktext-font-size, 16px);
-  font-weight: var(--text-linktext-font-weight, 500);
-  position: relative;
-}
-
 
 .home .frame-team .arrow {
   position: absolute;
