@@ -1,12 +1,13 @@
 "use client"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import styles from './CarouselArtists.module.scss'
 import Carousel from 'react-bootstrap/Carousel'
-import { ArtistNameDesc, Artists, Lang } from '../../types/types'
+import { ArtistNameDesc, Artists, Lang } from '../../../types/types'
 import { ListResult, StorageReference, getDownloadURL, listAll, ref } from "firebase/storage";
 import { useEffect, useState } from "react";
-import { storage } from "../../firebaseConfig";
-import { useAppContext } from "../../context";
-import { db } from '../../firebaseConfig';
+import { storage } from "../../../firebaseConfig";
+import { useAppContext } from "../../../context";
+import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 
 
@@ -66,10 +67,10 @@ const CarouselArtists = () => {
 
   return (
 
-    <div className="homeArtists">
-        <div className="frame-3349">
-            <div className="nos-artistes">{title}</div>
-            <div className="d-couvez-notre-catalogue-de-artiste-galeries-physique-ira">
+    <div className={styles.homeArtists}>
+        <div className={styles.frame3349}>
+            <div className={styles.nosArtistes}>{title}</div>
+            <div className={styles.artistsDescription}>
                 {description}
             </div>
         </div>

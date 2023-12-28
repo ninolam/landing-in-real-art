@@ -291,45 +291,6 @@
   transform: translate(-1.26px, -4.26px);
   overflow: visible;
 }
-.homeArtists {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.frame-3349 {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.nos-artistes {
-  color: var(--primaire-black, #000035);
-  text-align: left;
-  font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
-  font-size: var(--heading-h-2-font-size, 48px);
-  font-weight: var(--heading-h-2-font-weight, 600);
-  position: relative;
-}
-.d-couvez-notre-catalogue-de-artiste-galeries-physique-ira {
-  color: var(--bleu-bleusombre-300, #6979a7);
-  text-align: center;
-  font-family: var(
-    --text-paragraphe-font-family,
-    "Montserrat-Regular",
-    sans-serif
-  );
-  font-size: var(--text-paragraphe-font-size, 16px);
-  font-weight: var(--text-paragraphe-font-weight, 400);
-  position: relative;
-  width: 544px;
-}
 .frame-48095747 {
   display: flex;
   flex-direction: row;
