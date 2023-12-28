@@ -80,8 +80,9 @@ const CarouselArtists = () => {
                         (record, index) => (
                             <Carousel.Item key={index}> 
                                 <img src={record.image}/>
-                                <Carousel.Caption>
+                                <Carousel.Caption style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', maxHeight: '150px', overflowY: 'auto' }}>
                                     <h3>{record.name}</h3>
+                                    <p style={{ textAlign: 'justify' }}>{record.desc[lang_]}</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             
