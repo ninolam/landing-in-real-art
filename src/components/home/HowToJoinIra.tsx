@@ -1,5 +1,5 @@
 "use client"
-import styles from './HowToJoinIra.module.css'
+import styles from './HowToJoinIra.module.scss'
 import { useEffect, useState } from "react"
 import { useAppContext } from "../../context"
 import { JoinIraDataButton, JoinIraDataText, Lang, defaultLangObject } from "../../types/types"
@@ -56,7 +56,7 @@ const HowToJoinIra = () => {
             <img className={styles.rectangle62} src="/img/rectangle-62.svg" />
           </div>
           <div className={styles.frame48095735}>
-            <img className="rectangle-210" src="/img/rectangle-210.svg" />
+            <img className={styles.rectangle210} src="/img/rectangle-210.svg" />
           </div>
         </div>
         <div className={styles.frame48095733}>
@@ -68,15 +68,15 @@ const HowToJoinIra = () => {
               <br />
               {joinIraDataText.text2[lang_]}
             </div>
-            <div className="link-button">
-              <div className="button2">
+            <div className={styles.linkButton}>
+              <div className={styles.button2}>
                 <Link className={styles.joinIRALink} href={joinIraDataButton.JoinIRALink}>
-                  <div className="rejoindre-ira2">{joinIraDataButton.JoinIRA[lang_]}</div>
+                  <div className={styles.rejoindreIra2}>{joinIraDataButton.JoinIRA[lang_]}</div>
                 </Link>  
               </div>
-              <div className="button3">
+              <div className={styles.button3}>
                 <Link className={styles.startIRALink} href={joinIraDataButton.StartIRALink}>
-                  <div className="je-d-marre2">{joinIraDataButton.StartIRA[lang_]}</div>
+                  <div className={styles.jeDemarre2}>{joinIraDataButton.StartIRA[lang_]}</div>
                 </Link>  
               </div>
             </div>

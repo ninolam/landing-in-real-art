@@ -241,14 +241,6 @@
   top: -593px;
   overflow: visible;
 }
-.rectangle-210 {
-  border-radius: 300px 300px 20px 20px;
-  flex-shrink: 0;
-  width: 424px;
-  height: 518px;
-  position: relative;
-}
-
 .link-button {
   display: flex;
   flex-direction: row;
@@ -279,53 +271,6 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  position: relative;
-}
-.rejoindre-ira2 {
-  color: var(--primaire-black, #000035);
-  text-align: center;
-  font-family: var(
-    --text-linktext-font-family,
-    "Montserrat-Medium",
-    sans-serif
-  );
-  font-size: var(--text-linktext-font-size, 16px);
-  font-weight: var(--text-linktext-font-weight, 500);
-  position: relative;
-}
-.button3 {
-  background: var(
-    --bg-bgcolor,
-    linear-gradient(
-      135.65deg,
-      rgba(236, 238, 250, 1) 0%,
-      rgba(234, 236, 251, 1) 52.60416865348816%,
-      rgba(225, 229, 255, 1) 100%
-    )
-  );
-  border-radius: 10px;
-  border-style: solid;
-  border-color: var(--primaire-white, #f6f8ff);
-  border-width: 1px;
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  position: relative;
-}
-.je-d-marre2 {
-  color: var(--primaire-black, #000035);
-  text-align: center;
-  font-family: var(
-    --text-linktext-font-family,
-    "Montserrat-Medium",
-    sans-serif
-  );
-  font-size: var(--text-linktext-font-size, 16px);
-  font-weight: var(--text-linktext-font-weight, 500);
   position: relative;
 }
 .wrraper-card {
