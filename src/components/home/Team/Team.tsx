@@ -1,11 +1,11 @@
 "use client"
 import { useEffect, useState } from "react"
-import { useAppContext } from "../../context"
-import { db } from '../../firebaseConfig';
+import { useAppContext } from "../../../context"
+import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { getDownloadURL, ref } from "firebase/storage";
-import { storage } from "../../firebaseConfig";
-import { Lang, MemberData } from "../../types/types";
+import { storage } from "../../../firebaseConfig";
+import { Lang, MemberData } from "../../../types/types";
 import TeamMember from "./TeamMember";
 
 

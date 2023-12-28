@@ -1,11 +1,11 @@
 "use client"
-"use client"
+import styles from './Newsletter.module.scss'
 import { useEffect, useState } from "react"
-import { useAppContext } from '../../context'
-import { db } from '../../firebaseConfig';
+import { useAppContext } from '../../../context'
+import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import React from "react";
-import { Lang, NewsletterData, NewsletterText, defaultLangObject } from "../../types/types";
+import { Lang, NewsletterData, NewsletterText, defaultLangObject } from "../../../types/types";
 
 
 const Newsletter = () => {
@@ -45,23 +45,23 @@ const Newsletter = () => {
     */
   
     return (
-        <div className="frame-36598">
-        <div className="frame-36563">
-          <div className="frame-3351">
-            <div className="newsletter">{nlTexts.title[lang_]}</div>
-            <div className="newsletter-p-1">
+        <div className={styles.frame36598}>
+        <div className={styles.frame36563}>
+          <div className={styles.frame3351}>
+            <div className={styles.newsletter}>{nlTexts.title[lang_]}</div>
+            <div className={styles.newsletterP1}>
               {nlTexts.description[lang_]}
             </div>
           </div>
-          <div className="group-159">
-            <div className="envoyez-votre-mail">{nlTexts.email_placeholder[lang_]}</div>
-            <div className="rectangle-96"></div>
-            <div className="rectangle-97"></div>
+          <div className={styles.group159}>
+            <div className={styles.envoyezVotreMail}>{nlTexts.email_placeholder[lang_]}</div>
+            <div className={styles.rectangle96}></div>
+            <div className={styles.rectangle97}></div>
             
 
           </div>
         </div>
-        <img className="unsplash-a-ug-tvv-qx-dhg" src="/img/unsplash-augtvvqxdhg.png" />
+        <img className={styles.imageNL} src="/img/unsplash-augtvvqxdhg.png" />
       </div>
 
     )

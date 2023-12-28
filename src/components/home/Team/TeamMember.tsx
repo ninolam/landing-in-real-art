@@ -1,6 +1,6 @@
 "use client"
 
-import { TeamMemberProps } from "../../types/types"
+import { TeamMemberProps } from "../../../types/types"
 
 const TeamMember: React.FC<TeamMemberProps> = ( {name, photo, role, text1, text2} ) => {
   return (

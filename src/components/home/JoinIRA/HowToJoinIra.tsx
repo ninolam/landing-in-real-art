@@ -1,9 +1,9 @@
 "use client"
 import styles from './HowToJoinIra.module.scss'
 import { useEffect, useState } from "react"
-import { useAppContext } from "../../context"
-import { JoinIraDataButton, JoinIraDataText, Lang, defaultLangObject } from "../../types/types"
-import { db } from '../../firebaseConfig';
+import { useAppContext } from "../../../context"
+import { JoinIraDataButton, JoinIraDataText, Lang, defaultLangObject } from "../../../types/types"
+import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import Link from 'next/link';
 

@@ -1,10 +1,10 @@
 "use client"
 import styles from './Faq.module.scss'
 import { useEffect, useRef, useState } from 'react'
-import { useAppContext } from '../../context'
-import { db } from '../../firebaseConfig';
+import { useAppContext } from '../../../context'
+import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { FaqButtons, FaqTexts, HelpIraData, Lang, defaultLangObject } from '../../types/types';
+import { FaqButtons, FaqTexts, HelpIraData, Lang, defaultLangObject } from '../../../types/types';
 
 const Faq = () => {
 

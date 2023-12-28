@@ -662,97 +662,6 @@
   position: relative;
   overflow: visible;
 }
-.frame-36598 {
-  background: #6979a7;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  align-items: flex-start;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 1246px;
-  height: 438px;
-  position: relative;
-}
-.frame-36563 {
-  padding: 0px 0px 0px 157px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  align-items: flex-start;
-  justify-content: center;
-  flex-shrink: 0;
-  position: relative;
-}
-.frame-3351 {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.newsletter {
-  color: #ffffff;
-  text-align: left;
-  font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
-  font-size: var(--heading-h-2-font-size, 48px);
-  font-weight: var(--heading-h-2-font-weight, 600);
-  position: relative;
-}
-.newsletter-p-1 {
-  color: #ffffff;
-  text-align: left;
-  font-family: var(
-    --text-paragraphe-font-family,
-    "Montserrat-Regular",
-    sans-serif
-  );
-  font-size: var(--text-paragraphe-font-size, 16px);
-  font-weight: var(--text-paragraphe-font-weight, 400);
-  position: relative;
-  width: 423px;
-}
-.group-159 {
-  flex-shrink: 0;
-  width: 383.36px;
-  height: 68px;
-  position: static;
-}
-.envoyez-votre-mail {
-  color: #ffffff;
-  text-align: left;
-  font-family: var(--textbouton-font-family, "Montserrat-Medium", sans-serif);
-  font-size: var(--textbouton-font-size, 18px);
-  line-height: var(--textbouton-line-height, 150%);
-  font-weight: var(--textbouton-font-weight, 500);
-  position: absolute;
-  left: 184.17px;
-  top: 208px;
-  width: 223.37px;
-}
-.rectangle-96 {
-  border-radius: 20px;
-  border-style: solid;
-  border-color: #ffffff;
-  border-width: 1px;
-  width: 383.36px;
-  height: 68px;
-  position: absolute;
-  left: 157px;
-  top: 188px;
-}
-.rectangle-97 {
-  background: #465c79;
-  border-radius: 20px;
-  width: 54.33px;
-  height: 54px;
-  position: absolute;
-  left: 477.98px;
-  top: 195px;
-}
 .material-symbols-arrow-insert {
   border-radius: 20px;
   width: 24.07px;
@@ -762,14 +671,6 @@
   top: 220.97px;
   transform: translate(-34.15px, -16.97px);
   overflow: visible;
-}
-.unsplash-a-ug-tvv-qx-dhg {
-  flex-shrink: 0;
-  width: 568px;
-  height: 548px;
-  position: absolute;
-  left: 678px;
-  top: -110px;
 }
 .frame-36649 {
   padding: 64px 96px 64px 96px;
