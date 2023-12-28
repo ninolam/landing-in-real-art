@@ -1,4 +1,13 @@
-.sphere,
+.heroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .sphere,
 .sphere * {
   box-sizing: border-box;
 }
@@ -25,19 +34,12 @@
 }
 
 
-.hero-section,
-.hero-section * {
+.heroSection,
+.heroSection * {
   box-sizing: border-box;
 }
-.hero-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-.hero-section__wrapper-top-contain {
+
+.heroSectionWrapperTopContain {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +47,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.hero-section__top-contain {
+.heroSectionTopContain {
   display: flex;
   flex-direction: column;
   gap: 27px;
@@ -54,7 +56,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.hero-section__title {
+.heroSectionTitle {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -65,7 +67,7 @@
   transform-origin: 0 0;
   transform: rotate(0deg) scale(1, 1);
 }
-.hero-section__heading {
+.heroSectionHeading {
   text-align: center;
   font-family: "Unbounded-Regular", sans-serif;
   font-size: 70px;
@@ -73,21 +75,21 @@
   font-weight: 400;
   position: relative;
 }
-.hero-section-heading-span {
+.heroSectionHeadingSpan {
   color: #1e344f;
   font-family: "Unbounded-Regular", sans-serif;
   font-size: 70px;
   line-height: 69px;
   font-weight: 400;
 }
-.hero-section-heading-span2 {
+.heroSectionHeadingSpan2 {
   color: #5552ff;
   font-family: "Unbounded-Regular", sans-serif;
   font-size: 70px;
   line-height: 69px;
   font-weight: 400;
 }
-.hero-section__container-button {
+.heroSectionContainerButton {
   display: flex;
   flex-direction: row;
   gap: 738px;
@@ -96,7 +98,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.hero-section__button {
+.heroSectionButton {
     background: #5552ff;
     border-radius: 20px;
     padding: 32px 16px 32px 16px;
@@ -111,7 +113,7 @@
     box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(92.95px);
 }
-.hero-section__rejoindre-ira {
+.heroSectionRejoindreIra {
   color: var(--primaire-white, #f6f8ff);
   text-align: center;
   font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
@@ -119,7 +121,7 @@
   font-weight: var(--heading-h-4-font-weight, 500);
   position: relative;
 }
-.hero-section__je-d-marre {
+.heroSectionJeDemarre {
   color: var(--primaire-white, #f6f8ff);
   text-align: center;
   font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
@@ -127,7 +129,7 @@
   font-weight: var(--heading-h-4-font-weight, 500);
   position: relative;
 }
-.hero-section__image {
+.heroSectionImage {
   margin: -74px 0 0 0;
   flex-shrink: 0;
   width: 1312px;
@@ -135,7 +137,7 @@
   position: relative;
   overflow: visible;
 }
-.hero-section__parapgraphe {
+.heroSectionParapgraphe {
   margin: -96px 0 0 0;
   padding: 10px;
   display: flex;
@@ -147,7 +149,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.hero-section__paragraph {
+.heroSectionParagraph {
   color: var(--primaire-black, #000035);
   text-align: left;
   font-family: var(
@@ -162,7 +164,7 @@
   transform-origin: 0 0;
   transform: rotate(0deg) scale(1, 1);
 }
-.hero-section__shepre {
+.heroSectionShepre {
   flex-shrink: 0;
   width: 677px;
   height: 716px;
@@ -171,3 +173,4 @@
   top: -593px;
   overflow: visible;
 }
+

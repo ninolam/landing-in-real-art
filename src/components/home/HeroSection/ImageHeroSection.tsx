@@ -1,9 +1,9 @@
-
+import styles from './ImageHeroSection.module.scss'
 const ImageHeroSection = () => {
   return (
 
     <svg
-    className="hero-section__image"
+    className={styles.heroSectionImage}
     width="1312"
     height="645"
     viewBox="0 0 1312 645"

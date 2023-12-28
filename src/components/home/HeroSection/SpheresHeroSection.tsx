@@ -1,8 +1,9 @@
+import styles from './SpheresHeroSection.module.scss'
 
 const SpheresHeroSection = () => {
   return (
     <svg
-    className="hero-section__shepre"
+    className={styles.heroSectionSphere}
     width="677"
     height="716"
     viewBox="0 0 677 716"
