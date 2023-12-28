@@ -2,7 +2,6 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 import HowToJoinIra from '../components/HowToJoinIra'
-import Artists from '../components/Artists'
 import JoinMovement from '../components/JoinMovement'
 import HelpIra from '../components/HelpIra'
 import NewsLetter from '../components/NewsLetter'
@@ -15,8 +14,6 @@ export default function Home() {
 
         <JoinMovement/>
         
-        <Artists/>
-
         <HelpIra/>
         
         <NewsLetter/>
