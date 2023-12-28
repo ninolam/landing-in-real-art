@@ -1,11 +1,11 @@
 "use client"
-import styles from './JoinMovement.module.css'
-import { useAppContext } from '../../context'
+import styles from './JoinMovement.module.scss'
+import { useAppContext } from '../../../context'
 import { useEffect, useState } from "react";
-import { db } from '../../firebaseConfig';
+import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import parse from 'html-react-parser';
-import { JoinTrendButtons, JoinTrendData, JoinTrendTexts, Lang, defaultLangObject } from '../../types/types';
+import { JoinTrendButtons, JoinTrendData, JoinTrendTexts, Lang, defaultLangObject } from '../../../types/types';
 import Link from 'next/link';
 import JoinMovementLink1 from './JoinMovementLink1';
 import VuesaxLinearStatusUp from './VuesaxLinearStatusUp';
