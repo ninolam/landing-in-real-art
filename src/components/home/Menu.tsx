@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { db } from '../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { useAppContext } from "../../context";
-import LanguageSelector from "../LanguagaSelector";
+import LanguageSelector from "../language/LanguagaSelector";
 import { Lang, MenuButtons, MenuData, MenuElements, defaultLangObject } from "../../types/types";
 
 const Menu = () => {

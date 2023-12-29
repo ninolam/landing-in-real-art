@@ -1,6 +1,6 @@
 import styles from './LanguageSelector.module.css'
 import { useState } from "react";
-import { useAppContext } from "../context";
+import { useAppContext } from "../../context";
 
 const LanguageSelector = () => {
 
