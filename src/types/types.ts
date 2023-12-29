@@ -72,12 +72,8 @@ export type HelpIraData = FaqButtons & FaqTexts
 
 
 export interface ArtistsData {
-    title: {
-      [key: string]: string
-    }
-    description: {
-      [key: string]: string
-    }    
+    title: Record<Lang, string>
+    description: Record<Lang, string>
   }
 
 export interface ArtistNameDesc {

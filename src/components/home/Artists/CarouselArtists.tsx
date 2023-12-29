@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import styles from './CarouselArtists.module.scss'
 import Carousel from 'react-bootstrap/Carousel'
-import { ArtistNameDesc, Artists, Lang } from '../../../types/types'
+import { ArtistNameDesc, Artists, ArtistsData, Lang, defaultLangObject } from '../../../types/types'
 import { ListResult, StorageReference, getDownloadURL, listAll, ref } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { storage } from "../../../firebaseConfig";
@@ -18,9 +18,15 @@ const CarouselArtists = () => {
     const lang_ = lang as Lang
     const FIREBASE_ARTISTS_COLLECTION = 'Artists'
     
+    const defaultArtistsTexts = {
+        title: defaultLangObject,
+        description: defaultLangObject
+    }
+
     const [allArtists, setAllArtists]   = useState<Array<ArtistNameDesc>>([])
     const [title, setTitle]             = useState<string>('')
     const [description, setDescription] = useState<string>('')
+    const [artistsTexts, setArtistsTexts] = useState<ArtistsData>(defaultArtistsTexts);
   
     //--------------------------------------------------------------------- useEffect
     /**
@@ -40,6 +46,8 @@ const CarouselArtists = () => {
             const artistsData       = artistsDocuments.docs.map(doc => doc.data());
             setTitle(artistsData[1].title[lang])
             setDescription(artistsData[1].description[lang])
+            //Index 1 ===> Header Text
+            setArtistsTexts(artistsData[1] as ArtistsData)
         }
   
         const fetchArtistsNameAndDesc = async() => {
@@ -69,9 +77,9 @@ const CarouselArtists = () => {
 
     <div className={styles.homeArtists}>
         <div className={styles.frame3349}>
-            <div className={styles.nosArtistes}>{title}</div>
+            <div className={styles.nosArtistes}>{artistsTexts.title[lang_]}</div>
             <div className={styles.artistsDescription}>
-                {description}
+                {artistsTexts.description[lang_]}
             </div>
         </div>
             <Carousel>
