@@ -790,19 +790,6 @@
     width: 152px;
   }
   
-  .index .header {
-    align-items: center;
-    background-color: #5551ff;
-    border-radius: 100px;
-    display: flex;
-    justify-content: space-between;
-    left: 58px;
-    padding: 20px 96px;
-    position: absolute;
-    top: 833px;
-    width: 1324px;
-  }
-  
   .index .wrapper-link {
     align-items: center;
     display: inline-flex;

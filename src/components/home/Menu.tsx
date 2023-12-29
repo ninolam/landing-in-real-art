@@ -177,7 +177,7 @@ const Menu = () => {
 
     
     return (
-        <div className={isSticky ? 'header-sticky' : 'header'} id="menu">
+        <div className={isSticky ? styles.headerSticky : styles.header} id="menu">
           <LogoIRAMenu/>
           <div className={styles.wrapperLink}>
             <div className={styles.wrapperLinkMenu}>
