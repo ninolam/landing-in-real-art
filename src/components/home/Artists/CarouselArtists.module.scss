@@ -40,4 +40,25 @@
     position: relative;
     width: 544px;
   }
+
+  .imageArtist {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .imageContainer {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 900px; 
+    height: 700px
+  }
+
+  .carouselCaption {
+    background-color: rgba(0, 0, 0, 0.5);
+    max-height: 150px;
+    overflow-y: auto
+  }
   
