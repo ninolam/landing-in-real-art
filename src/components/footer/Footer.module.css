@@ -1,10 +1,13 @@
-.footerOurPages {
+.footerBlock1 {
     height: 152px;
     position: relative;
     width: 115px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .footerOurPagesTitle {
+  .footerBlock1Title {
     color: var(--primaireblack);
     font-family: var(--heading-h4-font-family);
     font-size: var(--heading-h4-font-size);
@@ -13,11 +16,11 @@
     left: 0;
     letter-spacing: var(--heading-h4-letter-spacing);
     line-height: var(--heading-h4-line-height);
-    position: absolute;
-    top: 0;
+    position: relative;
+    margin-bottom: 5px;
   }
   
-  .footerOurPagesLine1 {
+  .footerBlockLine {
     color: var(--bleubleu-sombre-300);
     font-family: var(--text-link-text-font-family);
     font-size: var(--text-link-text-font-size);
@@ -26,8 +29,7 @@
     left: 0;
     letter-spacing: var(--text-link-text-letter-spacing);
     line-height: var(--text-link-text-line-height);
-    position: absolute;
-    top: 45px;
+    position: relative;
   }
 
   .footerOurPagesLine2 {
@@ -39,8 +41,8 @@
     left: 0;
     letter-spacing: var(--text-link-text-letter-spacing);
     line-height: var(--text-link-text-line-height);
-    position: absolute;
-    top: 74px;
+    position: relative;
+    /*top: 74px;*/
   }
 
   .footerOurPagesLine3 {
@@ -52,8 +54,8 @@
     left: 0;
     letter-spacing: var(--text-link-text-letter-spacing);
     line-height: var(--text-link-text-line-height);
-    position: absolute;
-    top: 103px;
+    position: relative;
+    /*top: 103px;*/
   }
 
   .footerOurPagesLine4 {
@@ -65,14 +67,17 @@
     left: 0;
     letter-spacing: var(--text-link-text-letter-spacing);
     line-height: var(--text-link-text-line-height);
-    position: absolute;
-    top: 132px;
+    position: relative;
+    /*top: 132px;*/
   }
 
-  .footerCompany {
+  .footerBlock2 {
     height: 123px;
     position: relative;
     width: 111px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   
   .line2 {
@@ -87,6 +92,10 @@
     margin-right: -8px;
     position: relative;
     width: 152px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
   }
   
   .footerLeftFooter {
@@ -113,25 +122,7 @@ a.footerLink {
   width: 1px;
 }
 
-.footerContact {
-  height: 123px;
-  margin-right: -8px;
-  position: relative;
-  width: 152px;
-}
 
-.footerOurPagesTitle {
-  color: var(--primaireblack);
-  font-family: var(--heading-h4-font-family);
-  font-size: var(--heading-h4-font-size);
-  font-style: var(--heading-h4-font-style);
-  font-weight: var(--heading-h4-font-weight);
-  left: 0;
-  letter-spacing: var(--heading-h4-letter-spacing);
-  line-height: var(--heading-h4-line-height);
-  position: absolute;
-  top: 0;
-}
 
 
 

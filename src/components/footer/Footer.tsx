@@ -7,7 +7,7 @@ import { useAppContext } from '../../context';
 import Link from 'next/link';
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../../firebaseConfig";
-import { FooterData, Lang } from '../../types/types';
+import { FooterBlock, FooterData, Lang, defaultLangObject } from '../../types/types';
 
 
 
@@ -18,7 +18,7 @@ const Footer = () => {
     const lang_ = lang as Lang
     const FIREBASE_FOOTER_COLLECTION = 'Footer'
 
-    const [contactTitle, setContactTitle] = useState<string>('');
+    const [contactTitle, setContactTitle] = useState<Record<Lang, string>>(defaultLangObject);
     const [email, setEmail] = useState<string>('');
     const [phone, setPhone] = useState<string>('');
     const [address, setAddress] = useState<string>('');
@@ -28,35 +28,21 @@ const Footer = () => {
     const [twitterUrl, setTwitterUrl]       = useState("")
     const [linkedInUrl, setLinkedInUrl]     = useState("")
     const [instagramUrl, setInstagramUrl]   = useState("")
-    const [leftBlockText, setleftBlockText] = useState("")
+    const [leftBlockText, setLeftBlockText] = useState("")
 
-    const [ourPagesTitle, setOurPagesTitle]     = useState("")
-    const [ourCompanyTitle, setOurCompanyTitle] = useState("")
-
-    const [homeLinkText, setHomeLinkText]   = useState("")
-    const [homeLinkUrl, setHomeLinkUrl]     = useState("")
-
-    const [aboutLinkText, setAboutLinkText] = useState("")
-    const [aboutLinkUrl, setAboutLinkUrl]   = useState("")
-
-    const [marketPlaceLinkText, setMarketPlaceLinkText] = useState("")
-    const [marketPlaceLinkUrl, setMarketPlaceLinkUrl] = useState("")
-
-    const [faqLinkText, setFaqLinkText] = useState("")
-    const [faqLinkUrl, setFaqLinkUrl]   = useState("")
-
-    const [teamLinkText, setTeamLinkText] = useState("")
-    const [teamLinkUrl, setTeamLinkUrl]   = useState("")
-
-    const [partnersLinkText, setPartnersLinkText] = useState("")
-    const [partnersLinkUrl, setpartnersLinkUrl]   = useState("")
+    const defaultFooterBlock = {
+        title: defaultLangObject,
+        lines: []
+    }
+    const [footerBlock1, setFooterBlock1] = useState<FooterBlock>(defaultFooterBlock)
+    const [footerBlock2, setFooterBlock2] = useState<FooterBlock>(defaultFooterBlock)
 
     useEffect(() => {
         const fetchData = async () => {
             const dataDoc      = collection(db, FIREBASE_FOOTER_COLLECTION);
             const dataSnapshot = await getDocs(dataDoc);
             const dataList     = dataSnapshot.docs.map(doc => doc.data() as FooterData);
-
+            
             //Left block
             const imageRefTwitter   = ref(storage, 'footer/twitter-logo.png')
             const imageRefLinkedIn  = ref(storage, 'footer/linkedin-logo.png') 
@@ -70,27 +56,14 @@ const Footer = () => {
             setTwitterUrl(dataList[1].twitterUrl)
             setInstagramUrl(dataList[1].instagramUrl)
             setLinkedInUrl(dataList[1].linkedInUrl)
-            setleftBlockText(dataList[1].text[lang_])
+            setLeftBlockText(dataList[1].text[lang_])
 
             //Links block
-            setOurPagesTitle(dataList[2].ourPagesTitle[lang_])
-            setOurCompanyTitle(dataList[2].ourCompanyTitle[lang_])
-            setHomeLinkText(dataList[2].homeLinkText[lang_])
-            setAboutLinkText(dataList[2].aboutLinkText[lang_])
-            setMarketPlaceLinkText(dataList[2].marketPlaceLinkText[lang_])
-            setFaqLinkText(dataList[2].faqLinkText[lang_])
-            setTeamLinkText(dataList[2].teamLinkText[lang_])
-            setPartnersLinkText(dataList[2].partnersLinkText[lang_])
-
-            setHomeLinkUrl(dataList[2].homeLinkUrl)
-            setAboutLinkUrl(dataList[2].aboutLinkUrl)
-            setMarketPlaceLinkUrl(dataList[2].marketPlaceLinkUrl)
-            setFaqLinkUrl(dataList[2].faqLinkUrl)
-            setTeamLinkUrl(dataList[2].teamLinkUrl)
-            setpartnersLinkUrl(dataList[2].partnersLinkUrl)
+            setFooterBlock1(dataList[2].block1)
+            setFooterBlock2(dataList[2].block2)
 
             //Right block  
-            const contactTitle = dataList[0]['contactTitle'][lang_];
+            const contactTitle = dataList[0]['contactTitle'];
             const email   = dataList[0].Email;
             const phone   = dataList[0].Telephone;
             const address = dataList[0].Adresse;
@@ -102,7 +75,7 @@ const Footer = () => {
     
         fetchData();
         
-      }, [lang]);
+      }, []);
 
     return (
         <>
@@ -124,53 +97,48 @@ const Footer = () => {
                     <p className={styles.footerLeftFooter}>{leftBlockText}</p>
                 </div>
                 <div className="footer-right">
-                    <div className={styles.footerOurPages}>
-                    <div className={styles.footerOurPagesTitle}>{ourPagesTitle}</div>
-                    <div className={styles.footerOurPagesLine1}>
-                        <Link className={styles.footerLink} href={homeLinkUrl}>
-                            {homeLinkText}
-                        </Link>    
+                    {/** BLOCK 1**/}
+                    <div className={styles.footerBlock1}>
+                        <div className={styles.footerBlock1Title}>{footerBlock1.title[lang_]}</div>
+                        {
+                            footerBlock1.lines.map(
+                                (line, index) => (
+                                    <div key={index} className={styles.footerBlockLine}>
+                                        <Link className={styles.footerLink} href={line.url}>
+                                            {line.text[lang_]}
+                                        </Link>    
+                                    </div>            
+                                )
+                            )
+                        }
                     </div>
-                    <div className={styles.footerOurPagesLine2}>
-                        <Link className={styles.footerLink} href={aboutLinkUrl}>
-                            {aboutLinkText}
-                        </Link>    
+
+                    {/** BLOCK 2 **/}
+                    <div className={styles.footerBlock2}>
+                    <div className={styles.footerBlock1Title}>{footerBlock2.title[lang_]}</div>
+
+                    {
+                            footerBlock2.lines.map(
+                                (line, index) => (
+                                    <div key={index} className={styles.footerBlockLine}>
+                                        <Link className={styles.footerLink} href={line.url}>
+                                            {line.text[lang_]}
+                                        </Link>    
+                                    </div>            
+                                )
+                            )
+                        }
+
                     </div>
-                    <div className={styles.footerOurPagesLine3}>
-                        <Link className={styles.footerLink} href={marketPlaceLinkUrl}>
-                            {marketPlaceLinkText}
-                        </Link>    
-                    </div>
-                    <div className={styles.footerOurPagesLine4}>
-                        <Link className={styles.footerLink} href={faqLinkUrl}>
-                            {faqLinkText}
-                        </Link>    
-                    </div>
-                    </div>
-                    <div className={styles.footerCompany}>
-                    <div className={styles.footerOurPagesTitle}>
-                        {ourCompanyTitle}
-                    </div>
-                    <div className={styles.footerOurPagesLine1}>
-                        <Link className={styles.footerLink} href={teamLinkUrl}>
-                            {teamLinkText}
-                        </Link>    
-                    </div>
-                    <div className={styles.footerOurPagesLine2}>
-                        <Link className={styles.footerLink} href={partnersLinkUrl}>
-                            {partnersLinkText}
-                        </Link>
-                    </div>
-                    <div className={styles.footerOurPagesLine3}>
-                        CGU
-                    </div>
-                    </div>
+
                     <img className={styles.line2} alt="Line" src="/img/line-5.svg" />
+                    
+                    {/** BLOCK CONTACT **/}
                     <div className={styles.footerContact}>
-                    <div className={styles.footerOurPagesTitle}>{contactTitle}</div>  
-                    <p className={styles.footerOurPagesLine1}>{phone}</p>
-                    <div className={styles.footerOurPagesLine2}>{address}</div>
-                    <div className={styles.footerOurPagesLine3}>{email}</div>
+                        <div className={styles.footerBlock1Title}>{contactTitle[lang_]}</div>  
+                        <p className={styles.footerBlockLine}>{phone}</p>
+                        <div className={styles.footerBlockLine}>{address}</div>
+                        <div className={styles.footerBlockLine}>{email}</div>
                     </div>
                 </div>
             </div>

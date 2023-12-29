@@ -24,26 +24,30 @@ export interface FooterData {
     twitterUrl: string
     instagramUrl: string
     linkedInUrl: string
-    homeLinkUrl: string
-    aboutLinkUrl: string
-    marketPlaceLinkUrl: string
-    faqLinkUrl: string
     teamLinkUrl: string
     partnersLinkUrl: string
     Email: string
     Telephone: string
     Adresse: string
     text: Record<Lang, string>
-    ourPagesTitle: Record<Lang, string>
     ourCompanyTitle: Record<Lang, string>
-    homeLinkText: Record<Lang, string>
-    aboutLinkText: Record<Lang, string>
-    marketPlaceLinkText: Record<Lang, string>
-    faqLinkText: Record<Lang, string>
     teamLinkText: Record<Lang, string>
     partnersLinkText: Record<Lang, string>
     contactTitle: Record<Lang, string>
+    block1: FooterBlock
+    block2: FooterBlock
   }
+
+export interface FooterBlock {
+    title: Record<Lang, string>
+    lines: Array<FooterBlockLine>
+}  
+
+export interface FooterBlockLine {
+    text: Record<Lang, string>
+    url: string
+
+}
 
 export type NewsletterText = {
     title: Record<Lang, string>

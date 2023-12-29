@@ -55,15 +55,12 @@ const CarouselArtists = () => {
             const artistsDocuments  = await getDocs(artistsCollection);
             const artistsData       = artistsDocuments.docs.map(doc => doc.data());
             //Index 0 
-            console.log(artistsData)
             const allArtists_ = artistsData[0]['artists'] as Artists
-            console.log(allArtists_)
             for (let i = 0; i < allArtists_.length; i++) {
                 const imageName = allArtists_[i].image
                 const urlImage = (imageName)?await getUrl(imageName):''
                 allArtists_[i].image = urlImage
             }    
-            console.log(allArtists_)
             setAllArtists(allArtists_)
         }
   
