@@ -69,9 +69,9 @@
     font-size: var(--textbouton-font-size, 18px);
     line-height: var(--textbouton-line-height, 150%);
     font-weight: var(--textbouton-font-weight, 500);
-    position: absolute;
-    left: 184.17px;
-    top: 208px;
+    position: relative;
+    left: 20px;
+    top: 50px;
     width: 223.37px;
   }
   
@@ -82,18 +82,26 @@
     border-width: 1px;
     width: 383.36px;
     height: 68px;
+    position: relative;
+    /*
     position: absolute;
     left: 157px;
     top: 188px;
+    */
   }
   .rectangle97 {
     background: #465c79;
     border-radius: 20px;
     width: 54.33px;
     height: 54px;
+    position: relative;
+    top: -60px;
+    left: 300px;
+    /*
     position: absolute;
     left: 477.98px;
     top: 195px;
+    */
   }
   
   .imageNL {
