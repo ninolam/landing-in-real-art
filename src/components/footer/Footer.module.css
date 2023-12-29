@@ -106,5 +106,35 @@ a.footerLink {
     color: var(--bleubleu-sombre-300);
 }  
   
+.line2 {
+  height: 196px;
+  object-fit: cover;
+  position: relative;
+  width: 1px;
+}
+
+.footerContact {
+  height: 123px;
+  margin-right: -8px;
+  position: relative;
+  width: 152px;
+}
+
+.footerOurPagesTitle {
+  color: var(--primaireblack);
+  font-family: var(--heading-h4-font-family);
+  font-size: var(--heading-h4-font-size);
+  font-style: var(--heading-h4-font-style);
+  font-weight: var(--heading-h4-font-weight);
+  left: 0;
+  letter-spacing: var(--heading-h4-letter-spacing);
+  line-height: var(--heading-h4-line-height);
+  position: absolute;
+  top: 0;
+}
+
+
+
+
   
   

@@ -1,13 +1,13 @@
 "use client"
 import styles from './Footer.module.css'
 import { useEffect, useState } from 'react';
-import { db } from '../firebaseConfig';
+import { db } from '../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { useAppContext } from '../context';
+import { useAppContext } from '../../context';
 import Link from 'next/link';
 import { getDownloadURL, ref } from "firebase/storage";
-import { storage } from "../firebaseConfig";
-import { FooterData, Lang } from '../types/types';
+import { storage } from "../../firebaseConfig";
+import { FooterData, Lang } from '../../types/types';
 
 
 
@@ -165,12 +165,12 @@ const Footer = () => {
                         CGU
                     </div>
                     </div>
-                    <img className="line-2" alt="Line" src="/img/line-5.svg" />
-                    <div className="footer-contact">
-                    <div className="footer-our-pages-title">{contactTitle}</div>  
-                    <p className="footer-our-pages-line-1">{phone}</p>
-                    <div className="footer-our-pages-line-2">{address}</div>
-                    <div className="footer-our-pages-line-3">{email}</div>
+                    <img className={styles.line2} alt="Line" src="/img/line-5.svg" />
+                    <div className={styles.footerContact}>
+                    <div className={styles.footerOurPagesTitle}>{contactTitle}</div>  
+                    <p className={styles.footerOurPagesLine1}>{phone}</p>
+                    <div className={styles.footerOurPagesLine2}>{address}</div>
+                    <div className={styles.footerOurPagesLine3}>{email}</div>
                     </div>
                 </div>
             </div>
