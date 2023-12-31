@@ -10,6 +10,13 @@ import Team from "../../components/home/Team/Team";
 import CarouselComponent from "../../components/home/Artists/CarouselArtists";
 import { useEffect, useState } from "react";
 import HeroSectionMobile from "../../components/home/HeroSection/HeroSectionMobile";
+import HowToJoinIraMobile from "../../components/home/JoinIRA/HowToJoinIraMobile";
+import JoinMovementMobile from "../../components/home/JoinMovement/JoinMovementMobile";
+import TeamMobile from "../../components/home/Team/TeamMobile";
+import FaqMobile from "../../components/home/Faq/FaqMobile";
+import NewsletterMobile from "../../components/home/Newsletter/NewsletterMobile";
+import FooterMobile from "../../components/footer/FooterMobile";
+import CarouselArtistsMobile from "../../components/home/Artists/CarouselArtistsMobile";
 
 export default function HomePage() {
 
@@ -32,22 +39,23 @@ export default function HomePage() {
 
       {isMobile ? <HeroSectionMobile /> : <HeroSection />}
         
+      {isMobile ? '' : <Menu/>}
 
-        <Menu/>
+      {isMobile ? <HowToJoinIraMobile/> : <HowToJoinIra/>}  
         
-        <HowToJoinIra/>
+      {isMobile ? <JoinMovementMobile/> : <JoinMovement/>}    
 
-        <JoinMovement/>
+      {isMobile ? <CarouselArtistsMobile/> : <CarouselComponent/>}      
 
-        <CarouselComponent/>
+      {isMobile ? <TeamMobile/> : <Team/>}        
         
-        <Team/>
+      {isMobile ? <FaqMobile/> : <Faq/>}          
 
-        <Faq/>
+      {isMobile ? <NewsletterMobile/> : <Newsletter/>}            
 
-        <Newsletter/>
+      {isMobile ?  <FooterMobile/> :  <Footer/>}              
 
-        <Footer/>
+       
 
 
     </div>
