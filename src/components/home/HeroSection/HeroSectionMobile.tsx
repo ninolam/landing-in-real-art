@@ -1,8 +1,8 @@
-import styles from './HeroSection.module.scss'
-import HeroSectionImage from './HeroSectionImage'
+import styles from './HeroSectionMobile.module.scss'
+import HeroSectionImage from './HeroSectionImageMobile'
 
 
-const HeroSection = () => {
+const HeroSectionMobile = () => {
   return (
     <div className={styles["lp-mobile__frame-48095810"]}>
     <div className={styles["lp-mobile__frame-48095809"]}>
@@ -38,4 +38,4 @@ const HeroSection = () => {
   )
 }
 
-export default HeroSection
+export default HeroSectionMobile

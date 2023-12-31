@@ -1,4 +1,4 @@
-import styles from './HeroSectionImage.module.scss'
+import styles from './HeroSectionImageMobile.module.scss'
 
 const HeroSectionImage = () => {
   return (
