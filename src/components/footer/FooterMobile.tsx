@@ -1,5 +1,4 @@
 "use client"
-import { ButonPrimary } from './ButonPrimary/ButonPrimary'
 import styles from './FooterMobile.module.css'
 import { IconFacebook } from './IconFacebook/IconFacebook'
 import IconInstagram from './IconInstagram/IconInstagram'
@@ -31,7 +30,7 @@ const FooterMobile = () => {
         </div>
       </div>
     </div>
-    
+
     <div className={styles["lp-mobile__newsletter2"]}>
       <div className={styles["lp-mobile__h-3"]}>Restez informée </div>
       <div className={styles["lp-mobile__search-bar"]}>
