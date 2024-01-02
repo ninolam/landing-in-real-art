@@ -56,6 +56,24 @@
     height: 700px
   }
 
+  @media (max-width: 900px) {
+    .imageContainer {
+      width: 700px; 
+    }
+  }
+
+  @media (max-width: 650px) {
+    .imageContainer {
+      width: 500px; 
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .imageContainer {
+      width: 400px; 
+    }
+  }
+  
   .carouselCaption {
     background-color: rgba(0, 0, 0, 0.5);
     max-height: 150px;

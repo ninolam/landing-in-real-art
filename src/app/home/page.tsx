@@ -7,7 +7,6 @@ import HowToJoinIra from "../../components/home/JoinIRA/HowToJoinIra";
 import JoinMovement from "../../components/home/JoinMovement/JoinMovement";
 import Newsletter from "../../components/home/Newsletter/Newsletter";
 import Team from "../../components/home/Team/Team";
-import CarouselComponent from "../../components/home/Artists/CarouselArtists";
 import { useEffect, useState } from "react";
 import HeroSectionMobile from "../../components/home/HeroSection/HeroSectionMobile";
 import HowToJoinIraMobile from "../../components/home/JoinIRA/HowToJoinIraMobile";
@@ -16,7 +15,7 @@ import TeamMobile from "../../components/home/Team/TeamMobile";
 import FaqMobile from "../../components/home/Faq/FaqMobile";
 import NewsletterMobile from "../../components/home/Newsletter/NewsletterMobile";
 import FooterMobile from "../../components/footer/FooterMobile";
-import CarouselArtistsMobile from "../../components/home/Artists/CarouselArtistsMobile";
+import CarouselArtists from "../../components/home/Artists/CarouselArtists";
 
 export default function HomePage() {
 
@@ -45,7 +44,7 @@ export default function HomePage() {
         
       {isMobile ? <JoinMovementMobile/> : <JoinMovement/>}    
 
-      {isMobile ? <CarouselArtistsMobile/> : <CarouselComponent/>}      
+      {isMobile ? <CarouselArtists/> : <CarouselArtists/>}      
 
       {isMobile ? <TeamMobile/> : <Team/>}        
         
