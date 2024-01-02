@@ -1,10 +1,7 @@
 "use client"
 import styles from './HeroSection.module.scss'
-import { useEffect, useState } from "react";
-import { db } from '../../../firebaseConfig';
-import { collection, getDocs } from 'firebase/firestore/lite';
 import { useAppContext } from "../../../context";
-import { HeaderButtons, HeaderTexts, Lang, defaultLangObject } from "../../../types/types";
+import { Lang } from "../../../types/types";
 import ImageHeroSection from "./ImageHeroSection";
 import SpheresHeroSection from "./SpheresHeroSection";
 import Link from "next/link";
