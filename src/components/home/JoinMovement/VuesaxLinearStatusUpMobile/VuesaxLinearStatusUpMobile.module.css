@@ -1,0 +1,16 @@
+.vuesax-linear-status-up,
+.vuesax-linear-status-up * {
+  box-sizing: border-box;
+}
+.vuesax-linear-status-up {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.vuesax-linear-status-up__vuesax-linear-status-up2 {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
