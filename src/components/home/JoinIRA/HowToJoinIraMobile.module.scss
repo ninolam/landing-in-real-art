@@ -60,7 +60,7 @@ a.startIRALink {
   .lp-mobile__link-button {
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 20px;
     align-items: flex-start;
     justify-content: flex-start;
     flex-shrink: 0;
@@ -142,4 +142,9 @@ a.startIRALink {
     position: relative;
   }
   
+  @media (max-width: 500px) {
+    .lp-mobile__link-button {
+      gap: 4px;
+    }
+  }  
   

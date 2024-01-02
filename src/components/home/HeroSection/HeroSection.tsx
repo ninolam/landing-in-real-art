@@ -40,7 +40,9 @@ const HeroSection = () => {
               </div>
               
               <div className={styles.heroSectionButton}>
-                <div className={styles.heroSectionJeDemarre}>{headerButtons.StartIRA[lang_]}</div>
+                <Link href="/test">
+                  <div className={styles.heroSectionJeDemarre}>{headerButtons.StartIRA[lang_]}</div>
+                </Link>  
               </div>
             </div>
           </div>

@@ -113,6 +113,11 @@
     box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(92.95px);
 }
+
+.heroSectionButton > a {
+  text-decoration: none;
+}
+
 .heroSectionRejoindreIra {
   color: var(--primaire-white, #f6f8ff);
   text-align: center;
