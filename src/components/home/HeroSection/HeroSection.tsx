@@ -8,6 +8,7 @@ import { HeaderButtons, HeaderTexts, Lang, defaultLangObject } from "../../../ty
 import ImageHeroSection from "./ImageHeroSection";
 import SpheresHeroSection from "./SpheresHeroSection";
 import Link from "next/link";
+import useSharedLogicHeroSection from './useSharedLogicHeroSection';
 
 
 const HeroSection = () => { 
@@ -16,37 +17,8 @@ const HeroSection = () => {
     const {lang} = useAppContext()
     const lang_ = lang as Lang
   
-    const FIREBASE_HEADER_COLLECTION = 'Header'
-  
-    const defaultHeaderButtons = {
-      JoinIRA: defaultLangObject,
-      StartIRA: defaultLangObject,
-    }
-  
-    const defaultHeaderTexts = {
-      title1: defaultLangObject,
-      title2: defaultLangObject,
-      text1: defaultLangObject
-    }
-    const [headerButtons, setHeaderButtons] = useState<HeaderButtons>(defaultHeaderButtons);
-    const [headerTexts, setHeaderTexts] = useState<HeaderTexts>(defaultHeaderTexts);
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        const headerCollection = collection(db, FIREBASE_HEADER_COLLECTION);
-        const headerDocuments  = await getDocs(headerCollection); 
-        const headerData       = headerDocuments.docs.map(doc => doc.data());
-        //Index 0 ===> Header_Buttons
-        setHeaderButtons(headerData[0] as HeaderButtons)
+    const {headerButtons, setHeaderButtons, headerTexts, setHeaderTexts} = useSharedLogicHeroSection();
 
-        //Index 1 ===> Header Text
-        setHeaderTexts(headerData[1] as HeaderTexts)
-      }
-  
-      fetchData();
-    }, [])
-  
-  
     return (
       <div className={styles.heroSection}>
         <div className={styles.heroSectionWrapperTopContain}>
