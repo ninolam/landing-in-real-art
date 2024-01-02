@@ -1,0 +1,10 @@
+.icon-facebook,
+.icon-facebook * {
+  box-sizing: border-box;
+}
+.icon-facebook {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  overflow: visible;
+}

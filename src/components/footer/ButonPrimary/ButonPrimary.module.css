@@ -1,0 +1,31 @@
+.buton-primary,
+.buton-primary * {
+  box-sizing: border-box;
+}
+.buton-primary {
+  background: var(--other-tertiary, #37ac50);
+  border-radius: 10px;
+  padding: 16px 24px 16px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.buton-primary__suivant {
+  color: var(--neutral-white, #ffffff);
+  text-align: left;
+  font-family: var(
+    --header-16-medium-font-family,
+    "Montserrat-Medium",
+    sans-serif
+  );
+  font-size: var(--header-16-medium-font-size, 16px);
+  line-height: var(--header-16-medium-line-height, 140%);
+  font-weight: var(--header-16-medium-font-weight, 500);
+  position: relative;
+}
+.buton-primary__system-arrows-arrow-forward-instance {
+  flex-shrink: 0 !important;
+}
