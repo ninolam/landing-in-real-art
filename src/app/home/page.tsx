@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import HeroSectionMobile from "../../components/home/HeroSection/HeroSectionMobile";
 import HowToJoinIraMobile from "../../components/home/JoinIRA/HowToJoinIraMobile";
 import JoinMovementMobile from "../../components/home/JoinMovement/JoinMovementMobile";
-import TeamMobile from "../../components/home/Team/TeamMobile";
 import FaqMobile from "../../components/home/Faq/FaqMobile";
 import NewsletterMobile from "../../components/home/Newsletter/NewsletterMobile";
 import FooterMobile from "../../components/footer/FooterMobile";
@@ -46,7 +45,7 @@ export default function HomePage() {
 
       {isMobile ? <CarouselArtists/> : <CarouselArtists/>}      
 
-      {isMobile ? <TeamMobile/> : <Team/>}        
+      {isMobile ? <Team/> : <Team/>}        
         
       {isMobile ? <FaqMobile/> : <Faq/>}          
 

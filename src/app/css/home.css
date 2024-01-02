@@ -480,25 +480,6 @@
   height: 650px;
   position: relative;
 }
-.colum {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-end;
-  justify-content: flex-end;
-  flex: 1;
-  position: relative;
-}
-.wrapper-text {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
 .def {
   display: flex;
   flex-direction: column;
@@ -508,60 +489,6 @@
   align-self: stretch;
   flex-shrink: 0;
   position: relative;
-}
-.team-member-p-1 {
-  color: #000000;
-  text-align: left;
-  font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);
-  font-size: var(--heading-h-3-font-size, 24px);
-  font-weight: var(--heading-h-3-font-weight, 500);
-  position: relative;
-  align-self: stretch;
-}
-.team-member-p-2 {
-  color: #000000;
-  text-align: left;
-  font-family: var(
-    --text-paragraphe-font-family,
-    "Montserrat-Regular",
-    sans-serif
-  );
-  font-size: var(--text-paragraphe-font-size, 16px);
-  font-weight: var(--text-paragraphe-font-weight, 400);
-  position: relative;
-  align-self: stretch;
-}
-.chara {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: stretch;
-  flex-shrink: 0;
-  position: relative;
-}
-.member-name {
-  color: #000000;
-  text-align: left;
-  font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
-  font-size: var(--heading-h-4-font-size, 16px);
-  font-weight: var(--heading-h-4-font-weight, 500);
-  position: relative;
-  align-self: stretch;
-}
-.member-role {
-  color: #465c79;
-  text-align: left;
-  font-family: var(
-    --text-paragraphe-font-family,
-    "Montserrat-Regular",
-    sans-serif
-  );
-  font-size: var(--text-paragraphe-font-size, 16px);
-  font-weight: var(--text-paragraphe-font-weight, 400);
-  position: relative;
-  align-self: stretch;
 }
 .slider {
   display: flex;

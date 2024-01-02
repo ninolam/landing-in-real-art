@@ -1,4 +1,5 @@
 "use client"
+import styles from './Team.module.scss'
 import { useEffect, useState } from "react"
 import { useAppContext } from "../../../context"
 import { db } from '../../../firebaseConfig';
@@ -7,7 +8,7 @@ import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../../../firebaseConfig";
 import { Lang, MemberData } from "../../../types/types";
 import TeamMember from "./TeamMember";
-
+import classNames from 'classnames';
 
 const Team = () => {
 
@@ -131,12 +132,12 @@ const Team = () => {
 
 
     return (
-        <div className="frame-team">
-          <div className="arrow left-arrow" >
+        <div className={styles["frame-team"]}>
+          <div className={classNames(styles["arrow"], styles["left-arrow"])} >
             <img alt="left" src="img/angle-circle-left.png" onClick={() => handleArrowClick('left')}/>
           </div>
           <TeamMember name={name} photo={photoUrl} role={role} text1={text1} text2={text2}/>
-          <div className="arrow right-arrow" >
+          <div className={classNames(styles["arrow"], styles["right-arrow"])} >
             <img alt="right" src="img/angle-circle-right.png" onClick={() => handleArrowClick('right')}/>
           </div>
         </div>
