@@ -1,7 +1,18 @@
 "use client"
+import Link from 'next/link'
+import { useAppContext } from '../../../context'
+import { Lang } from '../../../types/types'
 import styles from './HowToJoinIraMobile.module.scss'
+import useSharedLogicHowToJoinIra from './useSharedLogicHowToJoinIra'
 
 const HowToJoinIraMobile = () => {
+
+  //Get the language of the global context
+  const {lang} = useAppContext()
+  const lang_ = lang as Lang
+
+  const {joinIraDataText, setJoinIraDataText, joinIraDataButton, setJoinIraDataButton} = useSharedLogicHowToJoinIra()
+  
   return (
     <div className={styles["lp-mobile__feature"]}>
     <img
@@ -10,27 +21,23 @@ const HowToJoinIraMobile = () => {
     />
     <div className={styles["lp-mobile__frame-303"]}>
       <div className={styles["lp-mobile__comment"]}>Comment ? </div>
-      <div
-        className={
-          styles[
-            "lp-mobile__ira-ambitionne-de-cr-er-de-vraies-galeries-d-arts-physique-auto-g-r-es-par-la-communaut-dao-nos-galeries-seront-des-portails-entre-le-monde-du-web-3-et-le-monde-r-el-de-l-art"
-          ]
-        }
-      >
-        Ira ambitionne de créer de vraies galeries d’arts physique
-        auto-gérées par la communauté (DAO). Nos galeries seront des
-        portails entre le monde du Web3 et le monde réel de l’art{" "}
+      <div className={styles["lp-mobile-join-ira-main-description"]}>
+        {joinIraDataText.text1[lang_]}
       </div>
       <div className={styles["lp-mobile__link-button"]}>
         <div className={styles["lp-mobile__button2"]}>
-          <div className={styles["lp-mobile__rejoindre-ira2"]}>
-            Rejoindre IRA{" "}
-          </div>
+          <Link className={styles.joinIRALink} href={joinIraDataButton.JoinIRALink}>
+            <div className={styles["lp-mobile__rejoindre-ira2"]}>
+              {joinIraDataButton.JoinIRA[lang_]}
+            </div>
+         </Link>   
         </div>
         <div className={styles["lp-mobile__button3"]}>
-          <div className={styles["lp-mobile__je-d-marre2"]}>
-            Je démarre{" "}
-          </div>
+          <Link className={styles.startIRALink} href={joinIraDataButton.StartIRALink}>
+            <div className={styles["lp-mobile__je-d-marre2"]}>
+              {joinIraDataButton.StartIRA[lang_]}
+            </div>
+          </Link>     
         </div>
       </div>
     </div>
