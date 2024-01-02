@@ -173,7 +173,7 @@
         width: 100%;
     }
     .wrapper-text {
-        padding: 10px;
+        padding: 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -194,7 +194,7 @@
         width: 550px; 
     }
     .frame-team-member {
-        height: 650px; 
+        height: 500px; 
         width: 100%;
     }
     .wrapper-text {
@@ -206,6 +206,12 @@
     }
     .member-role {
         text-align: center;
+    }
+    .team-member-p-1 {
+        font-size: large;
+    }
+    .team-member-p-2 {
+        font-size: smaller;
     }
 
 
@@ -218,7 +224,7 @@
         width: 400px; 
     }
     .frame-team-member {
-        height: 650px; 
+        height: 500px; 
         width: 100%;
     }
     .wrapper-text {
@@ -230,6 +236,13 @@
     }
     .member-role {
         text-align: center;
+    }
+
+    .team-member-p-1 {
+        font-size: large;
+    }
+    .team-member-p-2 {
+        font-size: smaller;
     }
 
   }
