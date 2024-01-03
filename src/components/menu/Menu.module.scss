@@ -349,5 +349,15 @@
       width: 500px; 
       padding: 10px;
     }
+  }  
 
+  @media (max-width: 500px) {
+    .header {
+      width: 400px; 
+      padding: 10px;
+    }
+    .headerSticky {
+      width: 400px; 
+      padding: 10px;
+    }
   }  
