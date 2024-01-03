@@ -35,26 +35,31 @@ export default function HomePage() {
 
       <div id="home" className="home">
 
-      {isMobile ? <HeroSectionMobile /> : <HeroSection />}
-        
-      {isMobile ? <Menu/> : <Menu/>}
-
-      {isMobile ? <HowToJoinIraMobile/> : <HowToJoinIra/>}  
-        
-      {isMobile ? <JoinMovementMobile/> : <JoinMovement/>}    
-
-      {isMobile ? <CarouselArtists/> : <CarouselArtists/>}      
-
-      {isMobile ? <Team/> : <Team/>}        
-        
-      {isMobile ? <FaqMobile/> : <Faq/>}          
-
-      {isMobile ? <NewsletterMobile/> : <Newsletter/>}            
-
-      {isMobile ?  <FooterMobile/> :  <Footer/>}              
-
-       
-
+      {isMobile ? 
+        <>
+          <HeroSectionMobile />
+          <Menu/>
+          <HowToJoinIraMobile/>
+          <JoinMovementMobile/>
+          <CarouselArtists/>
+          <Team/>
+          <FaqMobile/>
+          <NewsletterMobile/>
+          <FooterMobile/>
+        </>  
+          : 
+        <>
+          <HeroSection />
+          <Menu/>
+          <HowToJoinIra/>
+          <JoinMovement/>
+          <CarouselArtists/>
+          <Team/>
+          <Faq/>
+          <Newsletter/>
+          <Footer/>
+        </>  
+      }
 
     </div>
 
