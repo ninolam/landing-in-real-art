@@ -10,6 +10,8 @@ const useSharedLogicHeroSection = () => {
   const defaultHeaderButtons = {
     JoinIRA: defaultLangObject,
     StartIRA: defaultLangObject,
+    JoinIRALink: '',
+    StartIRALink: '',
   }
 
   const defaultHeaderTexts = {

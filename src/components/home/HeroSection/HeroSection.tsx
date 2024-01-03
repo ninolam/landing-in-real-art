@@ -34,13 +34,13 @@ const HeroSection = () => {
             <div className={styles.heroSectionContainerButton}>
               
               <div className={styles.heroSectionButton}>
-                <Link href="/test">
+                <Link href={headerButtons.JoinIRALink}>
                   <div className={styles.heroSectionRejoindreIra}>{headerButtons.JoinIRA[lang_]}</div>
                 </Link>
               </div>
               
               <div className={styles.heroSectionButton}>
-                <Link href="/test">
+                <Link href={headerButtons.StartIRALink}>
                   <div className={styles.heroSectionJeDemarre}>{headerButtons.StartIRA[lang_]}</div>
                 </Link>  
               </div>

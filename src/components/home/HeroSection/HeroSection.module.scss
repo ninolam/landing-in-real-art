@@ -99,6 +99,7 @@
   position: relative;
 }
 .heroSectionButton {
+    cursor: pointer;
     background: #5552ff;
     border-radius: 20px;
     padding: 32px 16px 32px 16px;
@@ -115,10 +116,12 @@
 }
 
 .heroSectionButton > a {
+  cursor: pointer;
   text-decoration: none;
 }
 
 .heroSectionRejoindreIra {
+  cursor: pointer;
   color: var(--primaire-white, #f6f8ff);
   text-align: center;
   font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
@@ -127,6 +130,7 @@
   position: relative;
 }
 .heroSectionJeDemarre {
+  cursor: pointer;
   color: var(--primaire-white, #f6f8ff);
   text-align: center;
   font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
