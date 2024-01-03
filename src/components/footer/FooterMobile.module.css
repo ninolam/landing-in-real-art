@@ -280,6 +280,11 @@
   flex-shrink: 0 !important;
 }
 
+a.footerLink {
+  text-decoration: none;
+  color: var(--other-secondary, #183544);
+}  
+
 
 @media (max-width: 650px) {
   .lp-mobile__footer {
