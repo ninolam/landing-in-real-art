@@ -6,6 +6,7 @@ import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import React from "react";
 import { Lang, NewsletterData, NewsletterText, defaultLangObject } from "../../../types/types";
+import useSharedLogicNewsletter from './useSharedLogicNewsletter';
 
 
 const Newsletter = () => {
@@ -14,30 +15,7 @@ const Newsletter = () => {
     const {lang } = useAppContext()
     const lang_ = lang as Lang
   
-    const FIREBASE_NEWSLETTER_COLLECTION = 'Newsletter'
-  
-    const [title, setTitle]             = useState<string>('')
-    const [description, setDescription] = useState<string>('')
-    const [emailPh, setEmailPh]         = useState<string>('')
-    const defaultNlText = {
-      title: defaultLangObject,
-      description: defaultLangObject,
-      email_placeholder: defaultLangObject,
-    }
-    const [nlTexts, setNlTexts] = useState<NewsletterText>(defaultNlText)
-  
-    useEffect(() => {
-      const fetchData = async () => {
-          const nlCollection = collection(db, FIREBASE_NEWSLETTER_COLLECTION);
-          const nlDocuments  = await getDocs(nlCollection);
-          const nlData       = nlDocuments.docs.map(doc => doc.data() as NewsletterData)
-          
-          setNlTexts(nlData[0] as NewsletterText)
-      }
-      fetchData();
-  
-    }, []);
-  
+    const {nlTexts, setNlTexts} = useSharedLogicNewsletter()
     /*
     const EmailInput = React.memo(() => {
       return <input type="text" className="email" autoFocus placeholder={emailPh}/>

@@ -114,3 +114,47 @@
   }
   
   
+  @media (max-width: 1200px) {
+    .frame36598 {
+      width: 900px;
+    }
+
+    .imageNL {
+      left: 500px;
+    }
+
+    .frame36563 {
+      padding: 0px 0px 0px 100px;
+    }  
+
+  }  
+
+  @media (max-width: 1000px) {
+    .frame36598 {
+      width: 800px;
+    }
+
+    .imageNL {
+      left: 400px;
+    }
+
+    .frame36563 {
+      padding: 0px 0px 0px 50px;
+    }  
+
+  }    
+
+  @media (max-width: 800px) {
+    .frame36598 {
+      width: 600px;
+    }
+
+    .imageNL {
+      left: 200px;
+    }
+
+    .frame36563 {
+      padding: 0px 0px 0px 5px;
+    }  
+
+  }    
