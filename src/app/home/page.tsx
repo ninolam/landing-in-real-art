@@ -46,7 +46,6 @@ export default function HomePage() {
           <Team/>
           <FaqMobile/>
           <NewsletterMobile/>
-          <MenuMobile isOpen={false}/>
           <FooterMobile/>
         </>  
           : 
