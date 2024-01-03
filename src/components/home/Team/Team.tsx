@@ -132,7 +132,7 @@ const Team = () => {
 
 
     return (
-        <div className={styles["frame-team"]}>
+        <div id="team" className={styles["frame-team"]}>
           <div className={classNames(styles["arrow"], styles["left-arrow"])} >
             <img alt="left" src="img/angle-circle-left.png" onClick={() => handleArrowClick('left')}/>
           </div>

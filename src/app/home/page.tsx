@@ -33,7 +33,7 @@ export default function HomePage() {
 
     return (
 
-      <div className="home">
+      <div id="home" className="home">
 
       {isMobile ? <HeroSectionMobile /> : <HeroSection />}
         
