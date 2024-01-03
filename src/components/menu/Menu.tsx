@@ -7,12 +7,14 @@ import { collection, getDocs } from 'firebase/firestore/lite';
 import { useAppContext } from "../../context";
 import LanguageSelector from "../language/LanguagaSelector";
 import { Lang, MenuButtons, MenuData, MenuElements, defaultLangObject } from "../../types/types";
+import HamburgerMenu from './HamburgerMenu';
 
 const Menu = () => {
 
   const {lang} = useAppContext()
   const lang_ = lang as Lang
-  const [isSticky, setSticky] = useState(false);
+  const [isSticky, setSticky]   = useState(false);
+  const [isMobile, setIsMobile] = useState(false)
 
   const FIREBASE_MENU_COLLECTION = 'Menu'
   
@@ -99,21 +101,30 @@ const Menu = () => {
           if (menu) {
             // Calculate the scroll position at which the bottom of the menu reaches the bottom of the viewport
              // Calculate the distance from the top of the document to the bottom of the menu
-            const menuBottomPosition = menu.offsetTop + menu.offsetHeight;
+            const menuBottomPosition = menu.offsetTop + menu.offsetHeight
 
             // Determine if the bottom of the menu is at or above the bottom of the viewport
-            const isMenuBottomAtViewportBottom = menuBottomPosition <= window.scrollY + window.innerHeight;
+            const isMenuBottomAtViewportBottom = menuBottomPosition <= window.scrollY + window.innerHeight
 
             if (isMenuBottomAtViewportBottom) {
-                setSticky(true);
+                setSticky(true)
             } else {
-                setSticky(false);
+                setSticky(false)
             }            
           }
       }
-      window.addEventListener('scroll', checkSticky);
+      window.addEventListener('scroll', checkSticky)
+
+      const checkScreenSize = () => {
+        setIsMobile(window.innerWidth < 800)
+      }
+  
+      checkScreenSize()
+      window.addEventListener('resize', checkScreenSize)
+  
       return () => {
-          window.removeEventListener('scroll', checkSticky);
+          window.removeEventListener('scroll', checkSticky)
+          window.removeEventListener('resize', checkScreenSize)
   }
     }, []);
 
@@ -182,53 +193,65 @@ const Menu = () => {
         <div className={isSticky ? styles.headerSticky : styles.header} id="menu">
           <LogoIRAMenu/>
           <div className={styles.wrapperLink}>
-            <div className={styles.wrapperLinkMenu}>
-              <div className={styles.linkText}></div>
-              <div className={styles.linkText2}>
-                <div className={styles.communaut}>
-                  <Link className={styles.menuLinkElement} href={communityLink}>
-                    {community}
-                  </Link>
-                </div>
-              </div>
-              <div className={styles.linkText2}>
-                <div className={styles.equipe}>
-                  <Link className={styles.menuLinkElement} href={teamLink}>
-                    {team}
-                  </Link>
-                </div>
-              </div>
-              <div className={styles.linkText2}>
-                <div className={styles.aPropos2}>
-                  <Link className={styles.menuLinkElement} href={aboutLink}>
-                    {about}
-                  </Link>
-                </div>
-              </div>
-              <div className={styles.linkText2}>
-                <div className={styles.ressources}>
-                  <Link className={styles.menuLinkElement} href={resourcesLink}>
-                    {resources}
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={styles.wrapperButton}>
-              <div className={styles.menuButtonPresale}>
-                <div className={styles.prSale}>
-                  <Link className={styles.linkPresale} href="/presale">
-                    <div className={styles.testnet}>{presale}</div> 
-                  </Link>    
-                </div>
-              </div>
-              <div className={styles.button2}>
-                  <Link className={styles.linkPresale} href="/presale">
-                    <div className={styles.testnet}>{testnet}</div>
-                  </Link>  
-              </div>
-            </div>
 
-            <LanguageSelector/>
+            {!isMobile ? 
+                <div className={styles.wrapperLinkMenu}>
+                <div className={styles.linkText}></div>
+                <div className={styles.linkText2}>
+                  <div className={styles.communaut}>
+                    <Link className={styles.menuLinkElement} href={communityLink}>
+                      {community}
+                    </Link>
+                  </div>
+                </div>
+                <div className={styles.linkText2}>
+                  <div className={styles.equipe}>
+                    <Link className={styles.menuLinkElement} href={teamLink}>
+                      {team}
+                    </Link>
+                  </div>
+                </div>
+                <div className={styles.linkText2}>
+                  <div className={styles.aPropos2}>
+                    <Link className={styles.menuLinkElement} href={aboutLink}>
+                      {about}
+                    </Link>
+                  </div>
+                </div>
+                <div className={styles.linkText2}>
+                  <div className={styles.ressources}>
+                    <Link className={styles.menuLinkElement} href={resourcesLink}>
+                      {resources}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            : ''}
+            
+
+            {!isMobile ? 
+                <>
+                    <div className={styles.wrapperButton}>
+                        <div className={styles.menuButtonPresale}>
+                        <div className={styles.prSale}>
+                            <Link className={styles.linkPresale} href="/presale">
+                            <div className={styles.testnet}>{presale}</div> 
+                            </Link>    
+                        </div>
+                        </div>
+                        <div className={styles.button2}>
+                            <Link className={styles.linkPresale} href="/presale">
+                            <div className={styles.testnet}>{testnet}</div>
+                            </Link>  
+                        </div>
+                    </div>
+                    <LanguageSelector/>
+                </>
+            : <HamburgerMenu/>
+            }
+            
+            
+            
             
           </div>
         </div>

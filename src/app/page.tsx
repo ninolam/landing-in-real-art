@@ -1,6 +1,6 @@
 import Footer from '../components/footer/Footer'
 import Header from '../components/Header'
-import Menu from '../components/Menu'
+import Menu from '../components/menu/Menu'
 import HowToJoinIra from '../components/HowToJoinIra'
 import JoinMovement from '../components/JoinMovement'
 import HelpIra from '../components/HelpIra'

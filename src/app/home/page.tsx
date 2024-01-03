@@ -1,5 +1,5 @@
 "use client"
-import Menu from "../../components/home/Menu";
+import Menu from "../../components/menu/Menu";
 import Faq from "../../components/home/Faq/Faq";
 import Footer from "../../components/footer/Footer";
 import HeroSection from "../../components/home/HeroSection/HeroSection";
@@ -18,17 +18,17 @@ import CarouselArtists from "../../components/home/Artists/CarouselArtists";
 
 export default function HomePage() {
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false)
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 800);
+      setIsMobile(window.innerWidth < 800)
     }
 
     checkScreenSize()
-    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener('resize', checkScreenSize)
 
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
+    return () => window.removeEventListener('resize', checkScreenSize)
+  }, [])
 
 
     return (
@@ -37,7 +37,7 @@ export default function HomePage() {
 
       {isMobile ? <HeroSectionMobile /> : <HeroSection />}
         
-      {isMobile ? '' : <Menu/>}
+      {isMobile ? <Menu/> : <Menu/>}
 
       {isMobile ? <HowToJoinIraMobile/> : <HowToJoinIra/>}  
         

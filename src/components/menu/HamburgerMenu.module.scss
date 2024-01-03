@@ -1,0 +1,11 @@
+.menuStyle {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.menuInstance {
+    flex-shrink: 0 !important;
+}

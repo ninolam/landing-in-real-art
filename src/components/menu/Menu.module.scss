@@ -327,3 +327,27 @@
       
     }
   }
+
+  @media (max-width: 800px) {
+    .header {
+      width: 700px; 
+      padding: 10px;
+    }
+    .headerSticky {
+      width: 700px; 
+      padding: 10px;
+    }
+
+  }  
+
+  @media (max-width: 700px) {
+    .header {
+      width: 500px; 
+      padding: 10px;
+    }
+    .headerSticky {
+      width: 500px; 
+      padding: 10px;
+    }
+
+  }  
