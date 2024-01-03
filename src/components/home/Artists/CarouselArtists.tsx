@@ -79,11 +79,11 @@ const CarouselArtists = () => {
                 {artistsTexts.description[lang_]}
             </div>
         </div>
-            <Carousel>
+            <Carousel fade>
                 {
                     allArtists.map(
                         (record, index) => (
-                            <Carousel.Item key={index}> 
+                            <Carousel.Item key={index} interval={3000}> 
                                 <div className={styles.imageContainer}>
                                     <img className={styles.imageArtist} src={record.image}/>
                                 </div>
