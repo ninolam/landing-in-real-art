@@ -72,7 +72,7 @@ const CarouselArtists = () => {
 
   return (
 
-    <div className={styles.homeArtists}>
+    <div id="artists" className={styles.homeArtists}>
         <div className={styles.frame3349}>
             <div className={styles.nosArtistes}>{artistsTexts.title[lang_]}</div>
             <div className={styles.artistsDescription}>
