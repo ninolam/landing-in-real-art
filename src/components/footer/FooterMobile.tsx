@@ -5,7 +5,6 @@ import IconInstagram from './IconInstagram/IconInstagram'
 import IconIraMobile from './IconIra/IconIraMobile'
 import IconLinkedIn from './IconLinkedIn/IconLinkedIn'
 import { IconTwitter } from './IconTwitter/IconTwitter'
-import { SystemPaperPlaneStyleOutline } from './SystemPaperPlaneStyleOutline/SystemPaperPlaneStyleOutline'
 
 
 const FooterMobile = () => {

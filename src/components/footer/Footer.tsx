@@ -9,8 +9,6 @@ import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../../firebaseConfig";
 import { FooterBlock, FooterData, Lang, defaultLangObject } from '../../types/types';
 
-
-
 const Footer = () => {
 
     //Get the language of the global context
@@ -79,8 +77,8 @@ const Footer = () => {
 
     return (
         <>
-            <div className="footer">
-                <div className="footer-left">
+            <div className={styles.footer}>
+                <div className={styles["footer-left"]}>
                     <img className="logo-2" alt="Logo" src="/img/logo-IRA.png" />
                     <div className="logo-social-network">
                         <Link href={linkedInUrl}>

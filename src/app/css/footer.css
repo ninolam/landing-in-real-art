@@ -9,7 +9,7 @@
     width: 1440px;
   }
 
-  .home .footer,
+  
   .index .footer
 {
     align-items: flex-start;
@@ -21,7 +21,6 @@
     width: 1440px;
   }
 
-  .home .footer-left,
   .index .footer-left,
   .LP .footer-left {
     align-items: flex-start;

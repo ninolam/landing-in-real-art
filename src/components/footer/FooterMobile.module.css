@@ -11,11 +11,11 @@
   padding: 20px 20px 40px 20px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
   align-items: center;
   justify-content: flex-start;
   flex-shrink: 0;
-  width: 360px;
+  width: 600px;
   position: relative;
   box-shadow: 0px -8px 12px 0px rgba(167, 176, 192, 0.32);
 }
@@ -175,6 +175,7 @@
   justify-content: center;
   flex-shrink: 0;
   position: relative;
+  top: -10px;
 }
 .lp-mobile__akar-icons-linkedin-box-fill {
   border-radius: 100px;
@@ -278,3 +279,11 @@
 .system-paper-plane {
   flex-shrink: 0 !important;
 }
+
+
+@media (max-width: 650px) {
+  .lp-mobile__footer {
+    width: 400px;
+  }
+
+}  
