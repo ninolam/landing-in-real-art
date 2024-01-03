@@ -153,6 +153,10 @@
     justify-content: center;
     flex-shrink: 0;
     position: relative;
+
+    a {
+      text-decoration: none;
+    }
   }
   
   .readTheFaq {

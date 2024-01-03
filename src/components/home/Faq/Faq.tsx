@@ -5,6 +5,7 @@ import { useAppContext } from '../../../context'
 import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { FaqButtons, FaqTexts, HelpIraData, Lang, defaultLangObject } from '../../../types/types';
+import Link from 'next/link';
 
 const Faq = () => {
 
@@ -15,7 +16,8 @@ const Faq = () => {
     const FIREBASE_FAQ_COLLECTION = 'Faq'
     
     const defaultFaqButtons = {
-      readFaq: defaultLangObject
+      readFaq: defaultLangObject,
+      readFaqLink: ''
     }
     const defaultFaqTexts = {
       faqMain: defaultLangObject,
@@ -135,7 +137,9 @@ const Faq = () => {
           </div>
           <div className={styles.linkButton2}>
             <div className={styles.button2}>
-              <div className={styles.readTheFaq}>{faqButtons.readFaq[lang_]}</div>
+              <Link href={faqButtons.readFaqLink}>
+                <div className={styles.readTheFaq}>{faqButtons.readFaq[lang_]}</div>
+              </Link>
             </div>
           </div>
         </div>

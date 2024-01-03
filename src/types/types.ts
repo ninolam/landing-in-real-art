@@ -61,6 +61,7 @@ export type NewsletterData = NewsletterText
 
 export type FaqButtons = {
     readFaq: Record<Lang, string>
+    readFaqLink: string
 }  
 
 export type FaqTexts = {
