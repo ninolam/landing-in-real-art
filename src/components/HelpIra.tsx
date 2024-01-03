@@ -23,7 +23,8 @@ const HelpIra = () => {
   const [faqMain, seFaqMain]      = useState<string>('');
   const [readFaq, setReadFaq]     = useState<string>('');
   const defaultFaqButtons = {
-    readFaq: defaultLangObject
+    readFaq: defaultLangObject,
+    readFaqLink: ''
   }
   const defaultFaqTexts = {
     faqMain: defaultLangObject,
