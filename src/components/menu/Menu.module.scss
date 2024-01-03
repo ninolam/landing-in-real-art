@@ -252,37 +252,6 @@
     z-index: 999;
   }
   
-  .logoIraMenu {
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    width: 101.49px;
-    height: 32.43px;
-  }
-
-  .fichier-3-12 {
-    display: flex;
-    flex-direction: row;
-    gap: 4.43px;
-    align-items: center;
-    justify-content: center;
-    width: 32.43px;
-    height: 32.43px;
-    /*position: absolute;*/
-    left: 96px;
-    top: 29.79px;
-    overflow: hidden;
-  }
-
-  .ira2 {
-    width: 60.21px;
-    height: 21.24px;
-    padding-left: 10px;
-    left: 137.28px;
-    top: 35.38px;
-    overflow: visible;
-  }
-  
   
   @media (max-width: 1250px) {
     .header {

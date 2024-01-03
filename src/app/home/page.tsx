@@ -15,6 +15,7 @@ import FaqMobile from "../../components/home/Faq/FaqMobile";
 import NewsletterMobile from "../../components/home/Newsletter/NewsletterMobile";
 import FooterMobile from "../../components/footer/FooterMobile";
 import CarouselArtists from "../../components/home/Artists/CarouselArtists";
+import MenuMobile from "../../components/menu/MenuMobile";
 
 export default function HomePage() {
 
@@ -45,6 +46,7 @@ export default function HomePage() {
           <Team/>
           <FaqMobile/>
           <NewsletterMobile/>
+          <MenuMobile isOpen={false}/>
           <FooterMobile/>
         </>  
           : 
