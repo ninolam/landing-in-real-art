@@ -47,6 +47,9 @@
 
     .navBarMenuMobileOpen {
         position: fixed; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        transition: background-color 0.3s;
         bottom: 50px; 
         width: 100%; 
         height: 20%;
@@ -54,7 +57,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         background-color: whitesmoke;
         z-index: 10; 
         color: var(--other-secondary, #183544);
@@ -65,4 +68,42 @@
         
     a.navBarMenuMobile  {
         text-decoration: none;
+    }
+
+    .menuMobileItem {
+      width: 100%;
+      text-align: center;
+      padding: 5px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .wrapperButton {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      position: relative;
+    }
+  
+    .menuMobileButton {
+      background: #5552ff;
+      border-radius: 10px;
+      color: #ccc;
+      text-decoration: none;
+      border-image-slice: 1;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 108px;
+      position: relative;
+
+      a {
+        color: white;
+      }
     }

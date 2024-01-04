@@ -25,25 +25,39 @@ const MenuMobile: FC<MenuMobileProps> = ({isOpen}) => {
 
   return (
     <div id="navBarMenuMobile" className={isOpen ? styles.navBarMenuMobileOpen : styles.navBarMenuMobile}>
-        <div>
+        <div className={styles.menuMobileItem}>
             <Link href={communityLink}>
                 {community[lang_]}
             </Link>
         </div>
-        <div>
+        <div className={styles.menuMobileItem}>
             <Link href={teamLink}>
                 {team[lang_]}
             </Link>
         </div>
-        <div>
+        <div className={styles.menuMobileItem}>
             <Link href={aboutLink}>
                 {about[lang_]}
             </Link>
         </div>
-        <div>
+        <div className={styles.menuMobileItem}>
             <Link className={styles.menuLinkElement} href={resourcesLink}>
                 {resources[lang_]}
             </Link>
+        </div>
+        <div className={styles.wrapperButton}>
+            <div className={styles.menuMobileButton}>
+            <div>
+                <Link className={styles.linkPresale} href="/presale">
+                <div className={styles.testnet}>{presale[lang_]}</div> 
+                </Link>    
+            </div>
+            </div>
+            <div className={styles.menuMobileButton}>
+                <Link className={styles.linkPresale} href="/presale">
+                <div className={styles.testnet}>{testnet[lang_]}</div>
+                </Link>  
+            </div>
         </div>
     </div>     
   )

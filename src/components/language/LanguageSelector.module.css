@@ -3,6 +3,13 @@
     cursor: pointer;
   }
 
+  .lang {
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
   .dropdown {
     position: absolute;
     background-color: white;

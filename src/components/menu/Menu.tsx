@@ -15,10 +15,10 @@ const Menu = () => {
   const {lang} = useAppContext()
   const lang_ = lang as Lang
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuMobileOpen, setIsMenuMobileOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsMenuMobileOpen(!isMenuMobileOpen);
   }
 
   
@@ -89,11 +89,11 @@ const Menu = () => {
                             </Link>  
                         </div>
                     </div>
-                    <LanguageSelector/>
+                    <LanguageSelector isClosed={isMenuMobileOpen}/>
                 </>
             : 
             <>
-              <LanguageSelector/>
+              <LanguageSelector isClosed={isMenuMobileOpen}/>
               {/*  Hamburger Menu Begin */}
               <div id="hamburgerMenu" onClick={toggleMenu}>
                 <svg className={classNames(styles.menuStyle, styles.menuInstance)} width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +101,7 @@ const Menu = () => {
                     </path>
                 </svg>
               </div>
-              <MenuMobile isOpen={isOpen}/>
+              <MenuMobile isOpen={isMenuMobileOpen}/>
               {/*  Hamburger Menu End*/}
             </>
             }
