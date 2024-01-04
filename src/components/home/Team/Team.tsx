@@ -6,7 +6,7 @@ import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../../../firebaseConfig";
-import { Lang, MemberData } from "../../../types/types";
+import { Lang, MemberData, defaultLangObject } from "../../../types/types";
 import TeamMember from "./TeamMember";
 import classNames from 'classnames';
 
@@ -25,6 +25,7 @@ const Team = () => {
       const [photoUrl, setPhotoUrl]           = useState<string>('')
       const [currentIndex, setCurrentIndex]   = useState(0)
       const [members, setMembers]             = useState<MemberData>([])
+      const [title, setTitle]                = useState<Record<Lang, string>>(defaultLangObject)
       const [isLoading, setIsLoading] = useState(false);
 
       const setMembersData = async(currentIndex: number, members: MemberData) => {
@@ -49,8 +50,10 @@ const Team = () => {
           const teamDocuments  = await getDocs(teamCollection);
           const teamData       = teamDocuments.docs.map(doc => doc.data());
           const members_ = teamData[0]['members'] as MemberData
+          const title_ = teamData[0]['title'] as Record<Lang, string>
           setMembers(members_)        
           setMembersData(currentIndex, members_)
+          setTitle(title_)
         }
         fetchTeamMembers()
         
@@ -132,16 +135,20 @@ const Team = () => {
 
 
     return (
-        <div id="team" className={styles["frame-team"]}>
-          <div className={classNames(styles["arrow"], styles["left-arrow"])} >
-            <img alt="left" src="img/angle-circle-left.png" onClick={() => handleArrowClick('left')}/>
+      <div>
+          <div className={styles.teamTitle}>
+              {title[lang_]}
           </div>
-          <TeamMember name={name} photo={photoUrl} role={role} text1={text1} text2={text2}/>
-          <div className={classNames(styles["arrow"], styles["right-arrow"])} >
-            <img alt="right" src="img/angle-circle-right.png" onClick={() => handleArrowClick('right')}/>
+          <div id="team" className={styles["frame-team"]}>
+            <div className={classNames(styles["arrow"], styles["left-arrow"])} >
+              <img alt="left" src="img/angle-circle-left.png" onClick={() => handleArrowClick('left')}/>
+            </div>
+            <TeamMember name={name} photo={photoUrl} role={role} text1={text1} text2={text2}/>
+            <div className={classNames(styles["arrow"], styles["right-arrow"])} >
+              <img alt="right" src="img/angle-circle-right.png" onClick={() => handleArrowClick('right')}/>
+            </div>
           </div>
-        </div>
-
+      </div>
     )
 }
 
