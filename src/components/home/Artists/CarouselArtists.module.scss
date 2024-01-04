@@ -6,6 +6,7 @@
     justify-content: flex-start;
     flex-shrink: 0;
     position: relative;
+    width: 800px;
   }
   
   .frame3349 {
@@ -57,18 +58,27 @@
   }
 
   @media (max-width: 900px) {
-    .imageContainer {
+    .homeArtists {
       width: 700px; 
     }
+    .imageContainer {
+        width: 700px; 
+      }
   }
 
   @media (max-width: 650px) {
+    .homeArtists {
+      width: 500px;
+    }
     .imageContainer {
       width: 500px; 
     }
   }
   
   @media (max-width: 500px) {
+    .homeArtists {
+      width: 350px; 
+    }
     .imageContainer {
       width: 350px; 
     }
