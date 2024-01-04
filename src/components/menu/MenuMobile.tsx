@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useRef, useState } from 'react'
 import styles from './MenuMobile.module.scss'
 import useSharedLogicMenu from './useSharedLogicMenu';
 import { useAppContext } from '../../context';
@@ -6,11 +6,12 @@ import Link from 'next/link';
 import { Lang } from '../../types/types';
 
 export interface MenuMobileProps {
-    isOpen: boolean
+    isOpen: boolean;
+    handleIsOpen: () => void
 }
 
 
-const MenuMobile: FC<MenuMobileProps> = ({isOpen}) => {
+const MenuMobile: FC<MenuMobileProps> = ({isOpen, handleIsOpen}) => {
     const {lang} = useAppContext()
     const lang_ = lang as Lang
   
@@ -22,26 +23,25 @@ const MenuMobile: FC<MenuMobileProps> = ({isOpen}) => {
         testnet, setTestnet
       } = useSharedLogicMenu()
     
-
   return (
     <div id="navBarMenuMobile" className={isOpen ? styles.navBarMenuMobileOpen : styles.navBarMenuMobile}>
         <div className={styles.menuMobileItem}>
-            <Link href={communityLink}>
+            <Link href={communityLink} onClick={handleIsOpen}>
                 {community[lang_]}
             </Link>
         </div>
         <div className={styles.menuMobileItem}>
-            <Link href={teamLink}>
+            <Link href={teamLink} onClick={handleIsOpen}>
                 {team[lang_]}
             </Link>
         </div>
         <div className={styles.menuMobileItem}>
-            <Link href={aboutLink}>
+            <Link href={aboutLink} onClick={handleIsOpen}>
                 {about[lang_]}
             </Link>
         </div>
         <div className={styles.menuMobileItem}>
-            <Link className={styles.menuLinkElement} href={resourcesLink}>
+            <Link className={styles.menuLinkElement} href={resourcesLink} onClick={handleIsOpen}>
                 {resources[lang_]}
             </Link>
         </div>

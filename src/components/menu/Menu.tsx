@@ -20,8 +20,6 @@ const Menu = () => {
   const toggleMenu = () => {
     setIsMenuMobileOpen(!isMenuMobileOpen);
   }
-
-  
   const {
     isSticky, isMobile,
     community, setCommunity, team, setTeam, about, setAbout, 
@@ -101,7 +99,7 @@ const Menu = () => {
                     </path>
                 </svg>
               </div>
-              <MenuMobile isOpen={isMenuMobileOpen}/>
+              <MenuMobile isOpen={isMenuMobileOpen} handleIsOpen={toggleMenu}/>
               {/*  Hamburger Menu End*/}
             </>
             }
