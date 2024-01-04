@@ -147,7 +147,7 @@ const Menu = () => {
                 </button>
                 </div>
 
-              <LanguageSelector/>
+              <LanguageSelector isClosed={false}/>
             </div>
         </div>
 
