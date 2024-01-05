@@ -9,6 +9,7 @@ import { storage } from "../../../firebaseConfig";
 import { Lang, MemberData, defaultLangObject } from "../../../types/types";
 import TeamMember from "./TeamMember";
 import classNames from 'classnames';
+import { Carousel } from 'react-bootstrap';
 
 const Team = () => {
 
@@ -40,6 +41,22 @@ const Team = () => {
         setPhotoUrl(url)
       }
   
+      async function getUrlPhoto(photo: string): Promise<string> {
+        const imageRef = ref(storage, photo)
+        const urlPhoto = await getDownloadURL(imageRef)
+        return urlPhoto;
+      }
+
+
+      async function transformMemberPhotos(members: MemberData): Promise<MemberData> {
+          const promises = members.map(async member => ({
+              ...member,
+              photo: await getUrlPhoto(member.photo)
+          }))
+
+          return Promise.all(promises);
+      }
+
       //--------------------------------------------------------------------- useEffect
       /**
        * UseEffect called at the first page loading 
@@ -49,9 +66,11 @@ const Team = () => {
           const teamCollection = collection(db, FIREBASE_TEAM_COLLECTION);
           const teamDocuments  = await getDocs(teamCollection);
           const teamData       = teamDocuments.docs.map(doc => doc.data());
-          const members_ = teamData[0]['members'] as MemberData
+          let members_ = teamData[0]['members'] as MemberData
+          const members_tmp = await transformMemberPhotos(members_)
+          console.log(members_tmp)
           const title_ = teamData[0]['title'] as Record<Lang, string>
-          setMembers(members_)        
+          setMembers(members_tmp)        
           setMembersData(currentIndex, members_)
           setTitle(title_)
         }
@@ -63,6 +82,7 @@ const Team = () => {
       /**
        * UseEffect called when 'lang' or 'currentIndex' has changed
        */
+      /*
       useEffect(() => {
         
         if (members.length !== 0) {
@@ -132,13 +152,30 @@ const Team = () => {
         }
       }, [isLoading]);
 
-
+*/
 
     return (
       <div>
           <div className={styles.teamTitle}>
               {title[lang_]}
           </div>
+          <div id="team" className={styles["frame-team-carousel"]}>
+            <Carousel interval={4000}>
+                  {
+                      members.map(
+                          (member, index) => (
+                              <Carousel.Item key={index}> 
+                                  <TeamMember name={member.name} photo={member.photo} role={member.role[lang_]} text1={member.text1[lang_]} text2={member.text2[lang_]}/>
+                              </Carousel.Item>
+                              
+                          )
+                      )
+                  }
+
+          </Carousel>
+
+          {
+          /*  
           <div id="team" className={styles["frame-team"]}>
             <div className={classNames(styles["arrow"], styles["left-arrow"])} >
               <img alt="left" src="img/angle-circle-left.png" onClick={() => handleArrowClick('left')}/>
@@ -148,6 +185,9 @@ const Team = () => {
               <img alt="right" src="img/angle-circle-right.png" onClick={() => handleArrowClick('right')}/>
             </div>
           </div>
+            */
+          }
+        </div>
       </div>
     )
 }
