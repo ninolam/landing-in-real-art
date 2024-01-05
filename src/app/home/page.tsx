@@ -16,6 +16,7 @@ import NewsletterMobile from "../../components/home/Newsletter/NewsletterMobile"
 import FooterMobile from "../../components/footer/FooterMobile";
 import CarouselArtists from "../../components/home/Artists/CarouselArtists";
 import MenuMobile from "../../components/menu/MenuMobile";
+import PrivateSale from "../../components/home/PrivateSale/PrivateSale";
 
 export default function HomePage() {
 
@@ -58,6 +59,7 @@ export default function HomePage() {
           <Team/>
           <Faq/>
           <Newsletter/>
+          <PrivateSale/>
           <Footer/>
         </>  
       }

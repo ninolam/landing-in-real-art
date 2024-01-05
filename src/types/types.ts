@@ -57,7 +57,15 @@ export type NewsletterText = {
     email_placeholder: Record<Lang, string>
 }  
 
+export type PrivateSaleText = {
+    title: Record<Lang, string>
+    description: Record<Lang, string>
+    email_placeholder: Record<Lang, string>
+}  
+
 export type NewsletterData = NewsletterText
+
+export type PrivateSaleData = PrivateSaleText
 
 export type FaqButtons = {
     readFaq: Record<Lang, string>
