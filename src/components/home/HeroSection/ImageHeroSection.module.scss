@@ -7,3 +7,43 @@
     overflow: visible;
   }
   
+  @media (max-width: 1200px) {
+
+    .heroSectionImage {
+      margin-top: -124px;
+      flex-shrink: 0;
+      width: 1000px;
+      height: 645px;
+      position: relative;
+      overflow: visible;
+    }
+  
+  }  
+  
+  
+  @media (max-width: 1000px) {
+  
+    .heroSectionImage {
+      margin-top: -144px;
+      flex-shrink: 0;
+      width: 940px;
+      height: 645px;
+      position: relative;
+      overflow: visible;
+    }
+  
+  }  
+  
+  @media (max-width: 900px) {
+  
+    .heroSectionImage {
+      margin-top: -164px;
+      flex-shrink: 0;
+      width: 820px;
+      height: 645px;
+      position: relative;
+      overflow: visible;
+    }
+  
+  }  
+  

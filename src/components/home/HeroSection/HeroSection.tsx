@@ -53,7 +53,7 @@ const HeroSection = () => {
             {headerTexts.text1[lang_]}
           </div>
 
-            <SpheresHeroSection/>
+            {/*<SpheresHeroSection/>*/}
         </div>
       </div>
 

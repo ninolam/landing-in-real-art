@@ -183,3 +183,186 @@
   overflow: visible;
 }
 
+@media (max-width: 1200px) {
+
+  .heroSectionContainerButton {
+    display: flex;
+    flex-direction: row;
+    gap: 538px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .heroSectionButton {
+    cursor: pointer;
+    background: #5552ff;
+    border-radius: 20px;
+    padding: 26px 16px 26px 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 220px;
+    position: relative;
+    box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(92.95px);
+}
+
+  .heroSectionParagraph {
+    color: var(--primaire-black, #000035);
+    text-align: left;
+    font-family: var(
+      --text-paragraphe-font-family,
+      "Montserrat-Regular",
+      sans-serif
+    );
+    font-size: 15px;
+    font-weight: var(--text-paragraphe-font-weight, 400);
+    position: relative;
+    width: 290px;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+  }
+  
+  .heroSectionParapgraphe {
+    margin: -166px 0 0 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  
+}  
+
+@media (max-width: 1000px) {
+
+  .heroSectionContainerButton {
+    display: flex;
+    flex-direction: row;
+    gap: 500px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .heroSectionButton {
+    cursor: pointer;
+    background: #5552ff;
+    border-radius: 20px;
+    padding: 20px 16px 20px 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 200px;
+    position: relative;
+    box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(92.95px);
+}
+
+  .heroSectionParagraph {
+    color: var(--primaire-black, #000035);
+    text-align: left;
+    font-family: var(
+      --text-paragraphe-font-family,
+      "Montserrat-Regular",
+      sans-serif
+    );
+    font-size: 13px;
+    font-weight: var(--text-paragraphe-font-weight, 400);
+    position: relative;
+    width: 290px;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+  }
+  
+  .heroSectionParapgraphe {
+    margin: -166px 0 0 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  
+}  
+
+@media (max-width: 900px) {
+
+  .heroSectionContainerButton {
+    display: flex;
+    flex-direction: row;
+    gap: 460px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .heroSectionButton {
+    cursor: pointer;
+    background: #5552ff;
+    border-radius: 20px;
+    padding: 16px 10px 16px 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 180px;
+    position: relative;
+    box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(92.95px);
+}
+
+  .heroSectionParagraph {
+    color: var(--primaire-black, #000035);
+    text-align: left;
+    font-family: var(
+      --text-paragraphe-font-family,
+      "Montserrat-Regular",
+      sans-serif
+    );
+    font-size: 12px;
+    font-weight: var(--text-paragraphe-font-weight, 400);
+    position: relative;
+    width: 220px;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+  }
+  
+  .heroSectionParapgraphe {
+    margin: -196px 0 0 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  
+}  
+
