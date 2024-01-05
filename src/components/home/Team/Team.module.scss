@@ -302,6 +302,15 @@
       width: 550px; 
     }
 
+    .frame-team-member-carousel {
+      height: 500px;
+      object-fit: cover;
+      position: relative;
+      width: 100%;
+      animation: fadeIn 4000ms ease-in-out;
+      overflow: hidden;
+    }
+
     .frame-team-member {
         height: 500px; 
         width: 100%;
@@ -342,6 +351,16 @@
         height: 500px; 
         width: 100%;
     }
+
+    .frame-team-member-carousel {
+      height: 350px;
+      object-fit: cover;
+      position: relative;
+      width: 100%;
+      animation: fadeIn 4000ms ease-in-out;
+      overflow: hidden;
+    }
+
     .wrapper-text {
         align-items: center;
     }
@@ -378,6 +397,16 @@
         height: 400px; 
         width: 100%;
     }
+
+    .frame-team-member-carousel {
+      height: 300px;
+      object-fit: cover;
+      position: relative;
+      width: 100%;
+      animation: fadeIn 4000ms ease-in-out;
+      overflow: hidden;
+    }
+
     .wrapper-text {
         align-items: center;
     }
