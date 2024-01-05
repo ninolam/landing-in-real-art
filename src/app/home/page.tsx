@@ -17,6 +17,7 @@ import FooterMobile from "../../components/footer/FooterMobile";
 import CarouselArtists from "../../components/home/Artists/CarouselArtists";
 import MenuMobile from "../../components/menu/MenuMobile";
 import PrivateSale from "../../components/home/PrivateSale/PrivateSale";
+import PrivateSaleMobile from "../../components/home/PrivateSale/PrivateSaleMobile";
 
 export default function HomePage() {
 
@@ -47,6 +48,7 @@ export default function HomePage() {
           <Team/>
           <FaqMobile/>
           <NewsletterMobile/>
+          <PrivateSaleMobile/>
           <FooterMobile/>
         </>  
           : 

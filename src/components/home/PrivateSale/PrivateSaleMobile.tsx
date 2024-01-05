@@ -2,7 +2,8 @@
 import { useAppContext } from '../../../context'
 import { Lang } from '../../../types/types'
 import styles from './PrivateSaleMobile.module.scss'
-import useSharedLogicNewsletter from './useSharedLogicPrivateSale'
+import useSharedLogicPrivateSale from './useSharedLogicPrivateSale'
+import parse from 'html-react-parser';
 
 const PrivateSaleMobile = () => {
 
@@ -10,19 +11,19 @@ const PrivateSaleMobile = () => {
     const {lang } = useAppContext()
     const lang_ = lang as Lang
   
-    const {psTexts, setPsTexts} = useSharedLogicNewsletter()
+    const {psTexts, setPsTexts} = useSharedLogicPrivateSale()
   
   return (
-    <div className={styles["lp-mobile__frame-48095806"]}>
-    <img className={styles["lp-mobile__unsplash-a-ug-tvv-qx-dhg"]} src="img/img-newsletter-mobile.png"/>
+    <div id="privateSale" className={styles["lp-mobile__frame-48095806"]}>
+    {/*<img className={styles["lp-mobile__unsplash-a-ug-tvv-qx-dhg"]} src="img/privateSale.png"/>*/}
     <div className={styles["lp-mobile__frame-36598"]}>
       <div className={styles["lp-mobile__newsletter"]}>{psTexts.title[lang_]}</div>
-      <div className={styles["newsletter-description"]}>{psTexts.description[lang_]}</div>
+      <div className={styles["newsletter-description"]}>{parse(psTexts.description[lang_])}</div>
       <div className={styles["lp-mobile__frame-48095805"]}>
         <div className={styles["lp-mobile__group-159"]}>
           <div className={styles["lp-mobile__frame-48095804"]}>
             <div className={styles["lp-mobile__envoyez-votre-mail"]}>
-              Envoyez votre mail !{" "}
+            {psTexts.email_placeholder[lang_]}
             </div>
           </div>
         </div>
