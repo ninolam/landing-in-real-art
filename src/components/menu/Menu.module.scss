@@ -330,3 +330,14 @@
       padding: 10px;
     }
   }  
+
+  @media (max-width: 400px) {
+    .header {
+      width: 3500px; 
+      padding: 7px;
+    }
+    .headerSticky {
+      width: 350px; 
+      padding: 7px;
+    }
+  }  

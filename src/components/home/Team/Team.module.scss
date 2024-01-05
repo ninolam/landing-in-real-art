@@ -362,3 +362,39 @@
 
   }
 
+  @media (max-width: 400px) {
+    .frame-team {
+        flex-direction: column;
+        padding-right: 0px;
+        width: 3500px; 
+    }
+    .frame-team-carousel {
+      flex-direction: column;
+      padding-right: 0px;
+      width: 350px; 
+    }
+
+  .frame-team-member {
+        height: 400px; 
+        width: 100%;
+    }
+    .wrapper-text {
+        align-items: center;
+    }
+
+    .member-name {
+        text-align: center;
+    }
+    .member-role {
+        text-align: center;
+    }
+
+    .team-member-p-1 {
+        font-size: large;
+    }
+    .team-member-p-2 {
+        font-size: smaller;
+    }
+
+  }
+
