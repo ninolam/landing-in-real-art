@@ -1,9 +1,10 @@
 "use client"
+import styles from './JoinMovementLink2.module.scss'
 
 const JoinMovementLink2 = () => {
   return (
     <svg
-    className="frame-48095740"
+    className={styles["frame-48095740"]}
     width="178"
     height="179"
     viewBox="0 0 178 179"

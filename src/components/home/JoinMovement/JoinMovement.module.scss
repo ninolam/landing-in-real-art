@@ -225,3 +225,120 @@ a.joinMovementLink {
   position: relative;
 }
 
+@media (max-width: 1200px) {
+
+  .wrraperCard {
+    display: flex;
+    flex-direction: row;
+    gap: 44px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .wrraperCard {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .wrraperCard {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .frameArtgallery {
+    background: var(--primaire-white, #f6f8ff);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 435px;
+    position: relative;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+    width:280px;
+  }
+
+  .frame48095731 {
+    background: var(--primaire-white, #f6f8ff);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+    width:280px;
+  }
+  
+  .frameArtasservice {
+    padding: 0px 0px 123px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    width:280px;
+  }
+
+  
+  .frameMarketplace {
+    background: var(--primaire-white, #f6f8ff);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 435px;
+    position: relative;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+    width:280px;
+  }
+  
+  .paragraph2 {
+    color: #000000;
+    text-align: left;
+    font-family: "Montserrat-Regular", sans-serif;
+    font-size: 14px;
+    line-height: 160%;
+    font-weight: 400;
+    opacity: 0.699999988079071;
+    position: relative;
+    width: 230px;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+  }
+  
+  
+}
