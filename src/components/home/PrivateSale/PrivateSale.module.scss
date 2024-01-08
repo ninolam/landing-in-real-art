@@ -36,10 +36,13 @@
   .newsletter {
     color: #ffffff;
     text-align: left;
-    font-family: "Unbounded-SemiBold", sans-serif;
-    /*font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);*/
+    font-family: "Unbounded", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    /*font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
     font-size: var(--heading-h-2-font-size, 48px);
     font-weight: var(--heading-h-2-font-weight, 600);
+    */
     position: relative;
   }
   .newsletterP1 {
@@ -128,6 +131,15 @@
       padding: 0px 0px 0px 100px;
     }  
 
+    .newsletter {
+      color: #ffffff;
+      text-align: left;
+      font-family: "Unbounded", sans-serif;
+      font-size: 43px;
+      font-weight: 600;
+      position: relative;
+    }
+  
   }  
 
   @media (max-width: 1000px) {
@@ -142,6 +154,15 @@
     .frame36563 {
       padding: 0px 0px 0px 50px;
     }  
+
+    .newsletter {
+      color: #ffffff;
+      text-align: left;
+      font-family: "Unbounded", sans-serif;
+      font-size: 38px;
+      font-weight: 600;
+      position: relative;
+    }
 
   }    
 
