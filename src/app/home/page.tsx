@@ -36,7 +36,7 @@ export default function HomePage() {
 
     return (
 
-      <div id="home" className="home">
+      <div id="home" className="home" style={isMobile?{paddingTop:'0px'}:{paddingTop:''}}>
 
       {isMobile ? 
         <>

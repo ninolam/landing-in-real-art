@@ -1,4 +1,4 @@
-.lp-mobile__frame-48095810 {
+.frame-48095810 {
     display: flex;
     flex-direction: column;
     gap: 341px;
@@ -8,7 +8,7 @@
     position: relative;
   }
   
-  .lp-mobile__frame-48095809 {
+  .frame-48095809 {
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -20,7 +20,7 @@
     position: relative;
   }
   
-  .lp-mobile__heading {
+  .heading {
     text-align: center;
     font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
     font-size: var(--heading-h-2-font-size, 48px);
@@ -45,7 +45,7 @@
     font-weight: var(--heading-h-2-font-weight, 600);
   }
   
-  .lp-mobile__container-button {
+  .container-button {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -56,7 +56,7 @@
     position: relative;
   }
   
-  .lp-mobile__frame-button {
+  .frame-button {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -67,7 +67,8 @@
     position: relative;
   }
   
-  .lp-mobile__button {
+  .button {
+    z-index: 888;
     background: #5552ff;
     border-radius: 20px;
     padding: 24px 16px 24px 16px;
@@ -82,7 +83,12 @@
     box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(92.95px);
   }
-  .lp-mobile__rejoindre-ira {
+
+  .button > a {
+    text-decoration: none;
+  }
+
+  .rejoindre-ira {
     color: var(--primaire-white, #f6f8ff);
     text-align: center;
     font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
@@ -90,7 +96,7 @@
     font-weight: var(--heading-h-4-font-weight, 500);
     position: relative;
   }
-.lp-mobile__rejoindre-ira {
+.rejoindre-ira {
   color: var(--primaire-white, #f6f8ff);
   text-align: center;
   font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
@@ -100,7 +106,7 @@
 }
   
 
-.lp-mobile__frame-button2 {
+.frame-button2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -111,7 +117,7 @@
     position: relative;
   }
   
-  .lp-mobile__je-d-marre {
+  .je-d-marre {
     color: var(--primaire-white, #f6f8ff);
     text-align: center;
     font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);

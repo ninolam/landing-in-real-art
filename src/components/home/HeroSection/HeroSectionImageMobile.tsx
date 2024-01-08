@@ -1,6 +1,6 @@
 import styles from './HeroSectionImageMobile.module.scss'
 
-const HeroSectionImage = () => {
+const HeroSectionImageMobile = () => {
   return (
 
     <svg
@@ -44,4 +44,4 @@ const HeroSectionImage = () => {
   )
 }
 
-export default HeroSectionImage
+export default HeroSectionImageMobile
