@@ -19,7 +19,7 @@ const HeroSectionMobile = () => {
     <div className={styles["frame-48095809"]}>
       <div className={styles["heading"]}>
         <span>
-          <span className={styles["lp-mobile-heading-span"]}>
+          <span className={styles["heading-span"]}>
             {headerTexts.title1[lang_]}
           </span>
           {

@@ -333,11 +333,22 @@
 
   @media (max-width: 400px) {
     .header {
-      width: 3500px; 
+      width: 350px; 
       padding: 7px;
     }
     .headerSticky {
       width: 350px; 
       padding: 7px;
+    }
+  }  
+
+  @media (max-width: 340px) {
+    .header {
+      width: 300px; 
+      padding: 6px;
+    }
+    .headerSticky {
+      width: 300px; 
+      padding: 6px;
     }
   }  

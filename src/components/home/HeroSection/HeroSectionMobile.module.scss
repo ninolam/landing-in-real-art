@@ -22,7 +22,8 @@
   
   .heading {
     text-align: center;
-    font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);*/
     font-size: var(--heading-h-2-font-size, 48px);
     font-weight: var(--heading-h-2-font-weight, 600);
     position: relative;
@@ -31,16 +32,18 @@
     transform: rotate(0deg) scale(1, 1);
   }
   
-  .lp-mobile-heading-span {
+  .heading-span {
     color: #1e344f;
-    font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);*/
     font-size: var(--heading-h-2-font-size, 48px);
     font-weight: var(--heading-h-2-font-weight, 600);
   }
   
   .lp-mobile-heading-span2 {
     color: #5552ff;
-    font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);*/
     font-size: var(--heading-h-2-font-size, 48px);
     font-weight: var(--heading-h-2-font-weight, 600);
   }
@@ -91,20 +94,12 @@
   .rejoindre-ira {
     color: var(--primaire-white, #f6f8ff);
     text-align: center;
-    font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);*/
     font-size: var(--heading-h-4-font-size, 16px);
     font-weight: var(--heading-h-4-font-weight, 500);
     position: relative;
   }
-.rejoindre-ira {
-  color: var(--primaire-white, #f6f8ff);
-  text-align: center;
-  font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
-  font-size: var(--heading-h-4-font-size, 16px);
-  font-weight: var(--heading-h-4-font-weight, 500);
-  position: relative;
-}
-  
 
 .frame-button2 {
     display: flex;
@@ -120,7 +115,8 @@
   .je-d-marre {
     color: var(--primaire-white, #f6f8ff);
     text-align: center;
-    font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);*/
     font-size: var(--heading-h-4-font-size, 16px);
     font-weight: var(--heading-h-4-font-weight, 500);
     position: relative;

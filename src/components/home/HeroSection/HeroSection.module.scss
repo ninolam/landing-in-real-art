@@ -70,7 +70,8 @@
 }
 .heroSectionHeading {
   text-align: center;
-  font-family: "Unbounded-Regular", sans-serif;
+  font-family: 'Unbounded', sans-serif;
+  /*font-family: "Unbounded-Regular", sans-serif;*/
   font-size: 70px;
   line-height: 69px;
   font-weight: 400;
@@ -78,14 +79,16 @@
 }
 .heroSectionHeadingSpan {
   color: #1e344f;
-  font-family: "Unbounded-Regular", sans-serif;
+  font-family: 'Unbounded', sans-serif;
+  /*font-family: "Unbounded-Regular", sans-serif;*/
   font-size: 70px;
   line-height: 69px;
   font-weight: 400;
 }
 .heroSectionHeadingSpan2 {
   color: #5552ff;
-  font-family: "Unbounded-Regular", sans-serif;
+  font-family: 'Unbounded', sans-serif;
+  /*font-family: "Unbounded-Regular", sans-serif;*/
   font-size: 70px;
   line-height: 69px;
   font-weight: 400;
@@ -125,7 +128,8 @@
   cursor: pointer;
   color: var(--primaire-white, #f6f8ff);
   text-align: center;
-  font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
+  font-family: 'Unbounded', sans-serif;
+  /*font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);*/
   font-size: var(--heading-h-4-font-size, 16px);
   font-weight: var(--heading-h-4-font-weight, 500);
   position: relative;
@@ -134,7 +138,8 @@
   cursor: pointer;
   color: var(--primaire-white, #f6f8ff);
   text-align: center;
-  font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
+  font-family: 'Unbounded', sans-serif;
+  /*font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);*/
   font-size: var(--heading-h-4-font-size, 16px);
   font-weight: var(--heading-h-4-font-weight, 500);
   position: relative;

@@ -44,7 +44,8 @@
   .commentFonctionneLaInrealart {
     color: var(--bleu-bleusombre-200, #2b3058);
     text-align: left;
-    font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);*/
     font-size: var(--heading-h-3-font-size, 24px);
     font-weight: var(--heading-h-3-font-weight, 500);
     position: relative;
@@ -71,7 +72,8 @@
   .pourQui {
     color: var(--bleu-bleusombre-200, #2b3058);
     text-align: left;
-    font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);*/
     font-size: var(--heading-h-3-font-size, 24px);
     font-weight: var(--heading-h-3-font-weight, 500);
     position: relative;
@@ -81,7 +83,8 @@
   .startingGuide {
     color: var(--bleu-bleusombre-200, #2b3058);
     text-align: left;
-    font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);*/
     font-size: var(--heading-h-3-font-size, 24px);
     font-weight: var(--heading-h-3-font-weight, 500);
     position: relative;
@@ -101,7 +104,8 @@
   .faq {
     color: var(--primaire-black, #000035);
     text-align: left;
-    font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);*/
     font-size: var(--heading-h-2-font-size, 48px);
     font-weight: var(--heading-h-2-font-weight, 600);
     position: relative;

@@ -8,7 +8,8 @@
     position: relative;
     color: var(--primaire-black, #000035);
     text-align: left;
-    font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);
+    font-family: "Unbounded-SemiBold", sans-serif;
+    /*font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);*/
     font-size: var(--heading-h-2-font-size, 48px);
     font-weight: var(--heading-h-2-font-weight, 600);
     position: relative;
@@ -104,7 +105,8 @@
   .team-member-p-1 {
     color: #000000;
     text-align: left;
-    font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);*/
     font-size: var(--heading-h-3-font-size, 24px);
     font-weight: var(--heading-h-3-font-weight, 500);
     position: relative;
@@ -150,7 +152,8 @@
   .member-name {
     color: #000000;
     text-align: left;
-    font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);*/
     font-size: var(--heading-h-4-font-size, 16px);
     font-weight: var(--heading-h-4-font-weight, 500);
     position: relative;
@@ -159,7 +162,8 @@
   .member-name-carousel {
     color: #000000;
     text-align: center;
-    font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);*/
     font-size: var(--heading-h-4-font-size, 16px);
     font-weight: var(--heading-h-4-font-weight, 500);
     position: relative;
@@ -385,7 +389,7 @@
     .frame-team {
         flex-direction: column;
         padding-right: 0px;
-        width: 3500px; 
+        width: 350px; 
     }
     .frame-team-carousel {
       flex-direction: column;

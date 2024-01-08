@@ -14,27 +14,27 @@ const HowToJoinIraMobile = () => {
   const {joinIraDataText, setJoinIraDataText, joinIraDataButton, setJoinIraDataButton} = useSharedLogicHowToJoinIra()
   
   return (
-    <div className={styles["lp-mobile__feature"]}>
+    <div className={styles["feature"]}>
     <img
-      className={styles["lp-mobile__rectangle-210"]}
+      className={styles["rectangle-210"]}
       src="img/rectangle-2100.png"
     />
-    <div className={styles["lp-mobile__frame-303"]}>
-      <div className={styles["lp-mobile__comment"]}>Comment ? </div>
+    <div className={styles["frame-303"]}>
+      <div className={styles["comment"]}>Comment ? </div>
       <div className={styles["lp-mobile-join-ira-main-description"]}>
         {joinIraDataText.text1[lang_]}
       </div>
-      <div className={styles["lp-mobile__link-button"]}>
-        <div className={styles["lp-mobile__button2"]}>
+      <div className={styles["link-button"]}>
+        <div className={styles["button2"]}>
           <Link className={styles.joinIRALink} href={joinIraDataButton.JoinIRALink}>
-            <div className={styles["lp-mobile__rejoindre-ira2"]}>
+            <div className={styles["rejoindre-ira2"]}>
               {joinIraDataButton.JoinIRA[lang_]}
             </div>
          </Link>   
         </div>
-        <div className={styles["lp-mobile__button3"]}>
+        <div className={styles["button3"]}>
           <Link className={styles.startIRALink} href={joinIraDataButton.StartIRALink}>
-            <div className={styles["lp-mobile__je-d-marre2"]}>
+            <div className={styles["je-d-marre2"]}>
               {joinIraDataButton.StartIRA[lang_]}
             </div>
           </Link>     
