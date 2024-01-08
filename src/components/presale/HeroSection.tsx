@@ -1,10 +1,11 @@
 "use client"
-import { useEffect, useState } from "react";
-import { useAppContext } from "../../context";
-import { db } from '../../firebaseConfig';
-import { collection, getDocs } from 'firebase/firestore/lite';
-import { Lang, PresaleDataButtons, PresaleDataTexts, defaultLangObject } from "../../types/types";
-import Link from "next/link";
+import { useEffect, useState } from "react"
+import { useAppContext } from "../../context"
+import { db } from '../../firebaseConfig'
+import { collection, getDocs } from 'firebase/firestore/lite'
+import { Lang, PresaleDataButtons, PresaleDataTexts, defaultLangObject } from "../../types/types"
+import Link from "next/link"
+import styles from './HeroSection.module.scss'
 
 const HeroSection = () => {
     //Get the language of the global context
@@ -70,40 +71,33 @@ const HeroSection = () => {
 
     
   return (
-    <div className="header-presale">
-    <div className="frame-2">
-        <div className="frame-3">   
-        <p className="heading">
-            <span className="text-wrapper"> {title1} </span>
-            <span className="presale-header-title2">{title2}</span>
+    <div className={styles["header-presale"]}>
+    <div className={styles["frame-2"]}>
+        <div className={styles["frame-3"]}>   
+        <p className={styles["heading"]}>
+            <span className={styles["text-wrapper"]}> {title1} </span>
+            <span className={styles["presale-header-title2"]}>{title2}</span>
         </p>
-        <img
-            className="rectangle"
-            alt="Rectangle"
+        <img className={styles["rectangle"]} alt=""
             src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39772@2x.png"
         />
         </div>
-        <div className="frame-4">
-        <div className="div-wrapper">
-            <p className="p">
+        <div className={styles["frame-4"]}>
+        <div className={styles["div-wrapper"]}>
+            <p className={styles["p"]}>
             {desc}
             </p>
         </div>
-        <img
-            className="img"
-            alt="Rectangle"
-            src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39773.svg"
+        <img className={styles["img"]} alt="" src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39773.svg"
         />
-        <div className="button">
+        <div className={styles["button"]}>
             <Link href={seeDropButtonLink}>
-                <div className="text-wrapper-2">{seeDropButton}</div>
+                <div className={styles["text-wrapper-2"]}>{seeDropButton}</div>
             </Link>
         </div>
         </div>
     </div>
-    <img
-        className="rectangle-2"
-        alt="Rectangle"
+    <img className={styles["rectangle-2"]} alt=""
         src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39771.svg"
     />
 </div>
