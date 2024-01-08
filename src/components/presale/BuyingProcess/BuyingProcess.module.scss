@@ -164,3 +164,16 @@
     cursor: pointer;
   }
 
+
+.text-wrapper-3 {
+    color: var(--primaireblack);
+    font-family: var(--heading-h2-font-family);
+    font-size: var(--heading-h2-font-size);
+    font-style: var(--heading-h2-font-style);
+    font-weight: var(--heading-h2-font-weight);
+    letter-spacing: var(--heading-h2-letter-spacing);
+    line-height: var(--heading-h2-line-height);
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
