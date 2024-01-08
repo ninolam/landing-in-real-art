@@ -6,6 +6,7 @@ import BuyingProcess from "../../components/presale/BuyingProcess/BuyingProcess"
 import DropPanel from "../../components/presale/DropPanel/DropPanel"
 import HeroSection from "../../components/presale/HeroSection/HeroSection"
 import PresalePros from "../../components/presale/PresalePros/PresalePros"
+import FooterMobile from "../../components/footer/FooterMobile"
 
 
 export default function PresalePage() {
@@ -35,7 +36,7 @@ export default function PresalePage() {
                     <DropPanel/>
                     <PresalePros/>
                     <BuyingProcess/>
-                    <Footer/>
+                    <FooterMobile/>
                 </>
                     :
                 <>    
