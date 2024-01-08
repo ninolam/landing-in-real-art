@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react"
 import Footer from "../../components/footer/Footer"
 import Menu from "../../components/menu/Menu"
-import BuyingProcess from "../../components/presale/BuyingProcess"
-import DropPanel from "../../components/presale/DropPanel"
-import HeroSection from "../../components/presale/HeroSection"
-import PresalePros from "../../components/presale/PresalePros"
+import BuyingProcess from "../../components/presale/BuyingProcess/BuyingProcess"
+import DropPanel from "../../components/presale/DropPanel/DropPanel"
+import HeroSection from "../../components/presale/HeroSection/HeroSection"
+import PresalePros from "../../components/presale/PresalePros/PresalePros"
 
 
 export default function PresalePage() {

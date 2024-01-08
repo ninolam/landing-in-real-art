@@ -1,5 +1,5 @@
 "use client"
-import Arrow21 from "../../components/presale/Arrows21"
+import Arrow21 from "../Arrows21"
 
 function DropPanel() {
   return (

@@ -1,9 +1,9 @@
 "use client"
 import { useEffect, useState } from "react"
-import { useAppContext } from "../../context"
-import { db } from '../../firebaseConfig'
+import { useAppContext } from "../../../context"
+import { db } from '../../../firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore/lite'
-import { Lang, PresaleDataButtons, PresaleDataTexts, defaultLangObject } from "../../types/types"
+import { Lang, PresaleDataButtons, PresaleDataTexts, defaultLangObject } from "../../../types/types"
 import Link from "next/link"
 import styles from './HeroSection.module.scss'
 

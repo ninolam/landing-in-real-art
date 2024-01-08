@@ -1,13 +1,13 @@
 "use client"
-import { RefObject, useEffect, useRef, useState } from "react";
-import { useAppContext } from "../../context";
-import { db } from '../../firebaseConfig';
-import { collection, getDocs } from 'firebase/firestore/lite';
-import { Lang, defaultLangObject } from "../../types/types";
-import parse from 'html-react-parser';
-import { PresaleBuyingProcessButtons, PresaleBuyingProcessStep, PresaleBuyingProcessTexts, defaultStepsObject } from "../../types/presale.types";
-import React from "react";
-
+import { RefObject, useEffect, useRef, useState } from "react"
+import { useAppContext } from "../../../context"
+import { db } from '../../../firebaseConfig'
+import { collection, getDocs } from 'firebase/firestore/lite'
+import { Lang, defaultLangObject } from "../../../types/types"
+import parse from 'html-react-parser'
+import { PresaleBuyingProcessButtons, PresaleBuyingProcessStep, PresaleBuyingProcessTexts, defaultStepsObject } from "../../../types/presale.types"
+import React from "react"
+import styles from './BuyingProcess.module.scss'
 
 function BuyingProcess() {
 
@@ -89,44 +89,40 @@ function BuyingProcess() {
 
 
   return (
-    <div className="frame-20">
-        <div className="frame-21">
-            <div className="text-wrapper-3">{texts.mainTitle[lang_]}</div>
-            <p className="text-wrapper-7">{texts.mainDescription[lang_]}</p>
+    <div className={styles["frame-20"]}>
+        <div className={styles["frame-21"]}>
+            <div className={styles["text-wrapper-3"]}>{texts.mainTitle[lang_]}</div>
+            <p className={styles["text-wrapper-7"]}>{texts.mainDescription[lang_]}</p>
         </div>
-        <div className="frame-22">
+        <div className={styles["frame-22"]}>
             {steps.map(([key, value], index) => (
                 
-                <div className="frame-22" 
-                    ref={divRefs[index]} 
-                    key={key}
+                <div className={styles["frame-22"]} ref={divRefs[index]} key={key}
                     style={{ display: currentStep === null || currentStep === index ? 'flex' : 'none' }}
                     >
-                    <img
-                    className="rectangle-5"
-                    alt="Rectangle"
+                    <img className={styles["rectangle-5"]} alt=""
                     src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39774.svg"
                     />
                     
-                    <div className="frame-23">
-                        <div className="text-wrapper-8">{value.stepNumber[lang_]}</div>
+                    <div className={styles["frame-23"]}>
+                        <div className={styles["text-wrapper-8"]}>{value.stepNumber[lang_]}</div>
                     </div>
                     
-                    <p className="cr-ation-d-un">
+                    <p className={styles["cr-ation-d-un"]}>
                         {parse(value.title[lang_])}
                     </p>
 
-                    <div className="frame-24">
-                        <div className="frame-25">
-                            <p className="paragraph-2">
+                    <div className={styles["frame-24"]}>
+                        <div className={styles["frame-25"]}>
+                            <p className={styles["paragraph-2"]}>
                                 {parse(value.description[lang_])}
                             </p>
-                            <div className="frame-26">
-                                <div className="frame-27">
-                                    <div className="heading-3" onClick={() => handleStepClick('left')}>{buttons.previous[lang_]}</div>
+                            <div className={styles["frame-26"]}>
+                                <div className={styles["frame-27"]}>
+                                    <div className={styles["heading-3"]} onClick={() => handleStepClick('left')}>{buttons.previous[lang_]}</div>
                                 </div>
-                                <div className="frame-28">
-                                    <div className="heading-3" onClick={() => handleStepClick('right')}>{buttons.next[lang_]}</div>
+                                <div className={styles["frame-28"]}>
+                                    <div className={styles["heading-3"]} onClick={() => handleStepClick('right')}>{buttons.next[lang_]}</div>
                                 </div>
                             </div>
                         </div>               

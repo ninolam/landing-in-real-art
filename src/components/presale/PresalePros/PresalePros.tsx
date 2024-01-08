@@ -1,12 +1,12 @@
 "use client"
-import VuesaxLinearStatusUp1 from "../../components/VuesaxLinearStatusUp1"
+import VuesaxLinearStatusUp1 from "../../VuesaxLinearStatusUp1"
 import { useEffect, useState } from "react";
 import Link from 'next/link';
-import { db } from '../../firebaseConfig';
+import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { useAppContext } from "../../context";
-import { Lang, defaultLangObject } from "../../types/types";
-import { PresaleProsButtons, PresaleProsTexts } from "../../types/presale.types";
+import { useAppContext } from "../../../context";
+import { Lang, defaultLangObject } from "../../../types/types";
+import { PresaleProsButtons, PresaleProsTexts } from "../../../types/presale.types";
 import parse from 'html-react-parser';
 
 function PresalePros() {
