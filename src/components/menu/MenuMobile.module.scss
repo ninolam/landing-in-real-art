@@ -71,10 +71,26 @@
     }
 
     .menuMobileItem {
-      width: 100%;
-      text-align: center;
-      padding: 5px;
-      border-bottom: 1px solid #ccc;
+      background: #183544;
+      border-radius: 10px;
+      color: #ccc;
+      text-decoration: none;
+      border-image-slice: 1;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 108px;
+      position: relative;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
     }
 
     .wrapperButton {
@@ -106,4 +122,22 @@
       a {
         color: white;
       }
+    }
+
+    .linkPresale {
+      color: var(--primaire-black, #000035);
+      text-align: center;
+      font-family: var(
+        --text-linktext-font-family,
+        "Montserrat-Medium",
+        sans-serif
+      );
+      font-size: var(--text-linktext-font-size, 16px);
+      font-weight: var(--text-linktext-font-weight, 500);
+      position: relative;
+      text-decoration: none;
+    }
+
+    .linkPresale > a {
+      text-decoration: none;
     }

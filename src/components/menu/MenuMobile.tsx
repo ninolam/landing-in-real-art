@@ -41,21 +41,21 @@ const MenuMobile: FC<MenuMobileProps> = ({isOpen, handleIsOpen}) => {
             </Link>
         </div>
         <div className={styles.menuMobileItem}>
-            <Link className={styles.menuLinkElement} href={resourcesLink} onClick={handleIsOpen}>
-                {resources[lang_]}
-            </Link>
+            
+                <Link className={styles.menuLinkElement} href={resourcesLink} onClick={handleIsOpen}>
+                    {resources[lang_]}
+                </Link>
+            
         </div>
         <div className={styles.wrapperButton}>
             <div className={styles.menuMobileButton}>
-            <div>
                 <Link className={styles.linkPresale} href="/presale">
-                <div className={styles.testnet}>{presale[lang_]}</div> 
-                </Link>    
-            </div>
+                    <div className={styles.testnet}>{presale[lang_]}</div> 
+                </Link>
             </div>
             <div className={styles.menuMobileButton}>
                 <Link className={styles.linkPresale} href="/presale">
-                <div className={styles.testnet}>{testnet[lang_]}</div>
+                    <div className={styles.testnet}>{testnet[lang_]}</div>
                 </Link>  
             </div>
         </div>
