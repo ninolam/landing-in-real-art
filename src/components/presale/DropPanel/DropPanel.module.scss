@@ -1,0 +1,152 @@
+@import '../../../styles/variables.scss';
+.frame-5 {
+    align-items: flex-end;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 60px;
+    position: relative;
+  }
+  
+  .frame-6 {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    position: relative;
+    width: 1263px;
+  }
+  
+  .frame-7 {
+    align-items: flex-start;
+    display: flex;
+    gap: 10px;
+    position: relative;
+    width: 673px;
+  }
+  
+  .frame-8 {
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    width: 167px;
+  }
+  
+  .text-wrapper-4 {
+    color: $primaireblack;
+    font-family: $heading-h3-font-family;
+    font-size: $heading-h3-font-size;
+    font-style: $heading-h3-font-style;
+    font-weight: $heading-h3-font-weight;
+    letter-spacing: $heading-h3-letter-spacing;
+    line-height: $heading-h3-line-height;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .frame-9 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 60px;
+    position: relative;
+  }
+  
+  .frame-10 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 41px;
+    position: relative;
+  }
+  
+  .frame-11 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+  }
+  
+  .rectangle-3 {
+    height: 489px;
+    position: relative;
+    width: 389px;
+  }
+  
+  .frame-12 {
+    align-items: center;
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
+    left: 265px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+  }
+
+.button-2 {
+    all: unset;
+    align-items: center;
+    background-color: $primairewhite;
+    border: 1px solid;
+    border-color: transparent;
+    border-image: linear-gradient(
+        to bottom,
+        rgb(236, 238, 250),
+        rgb(233.82, 236.27, 251.02) 52.6%,
+        rgb(225.25, 229.5, 255) 100%
+      )
+      1;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    justify-content: center;
+    padding: 16px;
+    position: relative;
+    width: 389px;
+  }
+
+.text-wrapper-5 {
+    color: $primaireblack;
+    font-family: $text-link-text-font-family;
+    font-size: $text-link-text-font-size;
+    font-style: $text-link-text-font-style;
+    font-weight: $text-link-text-font-weight;
+    letter-spacing: $text-link-text-letter-spacing;
+    line-height: $text-link-text-line-height;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+  }
+
+.text-wrapper-6 {
+    color: $primaireblack;
+    font-family: $text-link-text-font-family;
+    font-size: $text-link-text-font-size;
+    font-style: $text-link-text-font-style;
+    font-weight: $text-link-text-font-weight;
+    letter-spacing: $text-link-text-letter-spacing;
+    line-height: $text-link-text-line-height;
+    margin-top: -1px;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+  }
+
+.arrow {
+    height: 24px !important;
+    position: relative !important;
+    width: 45px !important;
+  }
