@@ -26,13 +26,13 @@ const FooterMobile = () => {
   } = useSharedLogicFooter()
 
   return (
-    <div className={styles["lp-mobile__footer"]}>
-    <div className={styles["lp-mobile__menu-container"]}>
-      <div className={styles["lp-mobile__frame-3353"]}>
+    <div className={styles["footer"]}>
+    <div className={styles["menu-container"]}>
+      <div className={styles["frame-3353"]}>
         <IconIraMobile/>
       </div>
-      <div className={styles["lp-mobile__frame-48095803"]}>
-        <div className={styles["lp-mobile__link-menu"]}>
+      <div className={styles["frame-48095803"]}>
+        <div className={styles["link-menu"]}>
         {
             footerBlock1.lines.map(
                 (line, index) => (
@@ -46,7 +46,7 @@ const FooterMobile = () => {
         }
         </div>
 
-        <div className={styles["lp-mobile__link-menu"]}>
+        <div className={styles["link-menu"]}>
           {
               footerBlock2.lines.map(
                   (line, index) => (
@@ -62,27 +62,27 @@ const FooterMobile = () => {
       </div>
     </div>
 
-    <div className={styles["lp-mobile__newsletter2"]}>
-      <div className={styles["lp-mobile__h-3"]}>Restez informée </div>
-      <div className={styles["lp-mobile__search-bar"]}>
-        <div className={styles["lp-mobile__frame-55"]}>
-          <div className={styles["lp-mobile__adresse-mail"]}>
+    <div className={styles["newsletter2"]}>
+      <div className={styles["h-3"]}>Restez informée </div>
+      <div className={styles["search-bar"]}>
+        <div className={styles["frame-55"]}>
+          <div className={styles["adresse-mail"]}>
             Adresse mail{" "}
           </div>
           
         </div>
       </div>
     </div>
-    <div className={styles["lp-mobile__link-social"]}>
+    <div className={styles["link-social"]}>
 
       <Link href={linkedInUrl}>
         <IconLinkedIn/>
       </Link>  
       {
         /*
-        <div className={styles["lp-mobile__frame-3202"]}>
+        <div className={styles["frame-3202"]}>
           <IconFacebook
-            className={styles["lp-mobile__icon-facebook-instance"]}
+            className={styles["icon-facebook-instance"]}
           />
         </div>
         */
@@ -92,9 +92,9 @@ const FooterMobile = () => {
       </Link>    
 
       <Link href={twitterUrl}>
-        <div className={styles["lp-mobile__frame-3203"]}>
+        <div className={styles["frame-3203"]}>
           <IconTwitter
-            className={styles["lp-mobile__icon-twitter-instance"]}
+            className={styles["icon-twitter-instance"]}
           />
         </div>
       </Link>

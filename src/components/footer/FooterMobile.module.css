@@ -1,4 +1,4 @@
-.lp-mobile__footer {
+.footer {
   background: var(
     --bg,
     linear-gradient(
@@ -19,7 +19,7 @@
   position: relative;
   box-shadow: 0px -8px 12px 0px rgba(167, 176, 192, 0.32);
 }
-.lp-mobile__menu-container {
+.menu-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -29,7 +29,7 @@
   height: 110px;
   position: relative;
 }
-.lp-mobile__frame-3353 {
+.frame-3353 {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -38,7 +38,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.lp-mobile__logo {
+.logo {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -47,7 +47,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.lp-mobile__fichier-3-1 {
+.fichier-3-1 {
   display: flex;
   flex-direction: row;
   gap: 4.43px;
@@ -59,21 +59,21 @@
   position: relative;
   overflow: hidden;
 }
-.lp-mobile__calque-1-2 {
+.calque-1-2 {
   flex-shrink: 0;
   width: 32.43px;
   height: 32.43px;
   position: relative;
   overflow: visible;
 }
-.lp-mobile__ira {
+.ira {
   flex-shrink: 0;
   width: 60.21px;
   height: 21.24px;
   position: relative;
   overflow: visible;
 }
-.lp-mobile__frame-48095803 {
+.frame-48095803 {
   display: flex;
   flex-direction: row;
   gap: 34px;
@@ -82,7 +82,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.lp-mobile__link-menu {
+.link-menu {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -106,7 +106,7 @@
   position: relative;
 }
 
-.lp-mobile__newsletter2 {
+.newsletter2 {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -115,16 +115,16 @@
   flex-shrink: 0;
   position: relative;
 }
-.lp-mobile__h-3 {
+.h-3 {
   color: var(--brand-500, #284f63);
   text-align: left;
-  font-family: "Unbounded-Bold", sans-serif;
+  font-family: "Unbounded", sans-serif;
   font-size: 20px;
   font-weight: 700;
   position: relative;
   width: 320px;
 }
-.lp-mobile__search-bar {
+.search-bar {
   background: var(--neutral-50, #f9fafb);
   border-radius: 10px;
   border-style: solid;
@@ -141,7 +141,7 @@
   height: 64px;
   position: relative;
 }
-.lp-mobile__frame-55 {
+.frame-55 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -149,7 +149,7 @@
   flex: 1;
   position: relative;
 }
-.lp-mobile__adresse-mail {
+.adresse-mail {
   color: var(--neutral-600, #71838c);
   text-align: left;
   font-family: var(
@@ -162,12 +162,12 @@
   font-weight: var(--header-16-medium-font-weight, 500);
   position: relative;
 }
-.lp-mobile__buton-primary-instance {
+.buton-primary-instance {
   background: var(--fond-header, #465c79) !important;
   padding: 10px !important;
   flex-shrink: 0 !important;
 }
-.lp-mobile__link-social {
+.link-social {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -177,7 +177,7 @@
   position: relative;
   top: -10px;
 }
-.lp-mobile__akar-icons-linkedin-box-fill {
+.akar-icons-linkedin-box-fill {
   border-radius: 100px;
   flex-shrink: 0;
   width: 55px;
@@ -185,7 +185,7 @@
   position: relative;
   overflow: visible;
 }
-.lp-mobile__frame-3202 {
+.frame-3202 {
   background: var(--blanc, #f6f8ff);
   border-radius: 100px;
   flex-shrink: 0;
@@ -193,14 +193,14 @@
   height: 55px;
   position: relative;
 }
-.lp-mobile__icon-facebook-instance {
+.icon-facebook-instance {
   width: 35px !important;
   height: 35px !important;
   position: absolute !important;
   left: calc(50% - 16.5px) !important;
   top: calc(50% - 17.5px) !important;
 }
-.lp-mobile__akar-icons-instagram-fill {
+.akar-icons-instagram-fill {
   border-radius: 100px;
   flex-shrink: 0;
   width: 55px;
@@ -208,7 +208,7 @@
   position: relative;
   overflow: visible;
 }
-.lp-mobile__frame-3203 {
+.frame-3203 {
   background: var(--blanc, #f6f8ff);
   border-radius: 100px;
   flex-shrink: 0;
@@ -216,14 +216,14 @@
   height: 55px;
   position: relative;
 }
-.lp-mobile__icon-twitter-instance {
+.icon-twitter-instance {
   width: 35px !important;
   height: 35px !important;
   position: absolute !important;
   left: calc(50% - 16.5px) !important;
   top: calc(50% - 17.5px) !important;
 }
-.lp-mobile__header {
+.header {
   background: #5552ff;
   border-radius: 100px;
   padding: 20px 24px 20px 24px;
@@ -237,13 +237,13 @@
   left: calc(50% - 160px);
   top: 717px;
 }
-.lp-mobile__logo2 {
+.logo2 {
   flex-shrink: 0;
   width: 101.49px;
   height: 32.43px;
   position: static;
 }
-.lp-mobile__fichier-3-12 {
+.fichier-3-12 {
   display: flex;
   flex-direction: row;
   gap: 4.43px;
@@ -256,14 +256,14 @@
   top: 20px;
   overflow: hidden;
 }
-.lp-mobile__calque-1-22 {
+.calque-1-22 {
   flex-shrink: 0;
   width: 32.43px;
   height: 32.43px;
   position: relative;
   overflow: visible;
 }
-.lp-mobile__ira2 {
+.ira2 {
   width: 60.21px;
   height: 21.24px;
   position: absolute;
@@ -271,7 +271,7 @@
   top: 25.59px;
   overflow: visible;
 }
-.lp-mobile__system-menu-instance {
+.system-menu-instance {
   flex-shrink: 0 !important;
 }
 
@@ -287,7 +287,7 @@ a.footerLink {
 
 
 @media (max-width: 650px) {
-  .lp-mobile__footer {
+  .footer {
     width: 400px;
   }
 

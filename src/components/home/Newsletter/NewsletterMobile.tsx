@@ -13,22 +13,22 @@ const NewsletterMobile = () => {
     const {nlTexts, setNlTexts} = useSharedLogicNewsletter()
   
   return (
-    <div className={styles["lp-mobile__frame-48095806"]}>
-    <img className={styles["lp-mobile__unsplash-a-ug-tvv-qx-dhg"]} src="img/img-newsletter-mobile.png"/>
-    <div className={styles["lp-mobile__frame-36598"]}>
-      <div className={styles["lp-mobile__newsletter"]}>{nlTexts.title[lang_]}</div>
+    <div className={styles["frame-48095806"]}>
+    <img className={styles["unsplash-a-ug-tvv-qx-dhg"]} src="img/img-newsletter-mobile.png"/>
+    <div className={styles["frame-36598"]}>
+      <div className={styles["newsletter"]}>{nlTexts.title[lang_]}</div>
       <div className={styles["newsletter-description"]}>{nlTexts.description[lang_]}</div>
-      <div className={styles["lp-mobile__frame-48095805"]}>
-        <div className={styles["lp-mobile__group-159"]}>
-          <div className={styles["lp-mobile__frame-48095804"]}>
-            <div className={styles["lp-mobile__envoyez-votre-mail"]}>
+      <div className={styles["frame-48095805"]}>
+        <div className={styles["group-159"]}>
+          <div className={styles["frame-48095804"]}>
+            <div className={styles["envoyez-votre-mail"]}>
               Envoyez votre mail !{" "}
             </div>
           </div>
         </div>
-        <div className={styles["lp-mobile__group-36616"]}>
-          <div className={styles["lp-mobile__rectangle-97"]}></div>
-          <svg className={styles["lp-mobile__material-symbols-arrow-insert"]} width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className={styles["group-36616"]}>
+          <div className={styles["rectangle-97"]}></div>
+          <svg className={styles["material-symbols-arrow-insert"]} width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_851_41484)">
               <path
                 d="M10.3053 18.5711L24.1158 18.5711L17.9298 12.3851L19.3684 10.9465L28 19.5781L19.3684 28.2097L17.9298 26.7711L24.1158 20.5851L10.3053 20.5851V18.5711Z"
