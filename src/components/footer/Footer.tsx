@@ -26,19 +26,19 @@ const Footer = () => {
                     <img className="logo-2" alt="Logo" src="/img/logo-IRA.png" />
                     <div className="logo-social-network">
                         <Link href={linkedInUrl}>
-                            <img className="add" alt="Frame" src={linkedInLogo} />
+                            <img className={styles["add"]} alt="Frame" src={linkedInLogo} />
                         </Link>
                         <Link href={instagramUrl}>
-                            <img className="add" alt="Frame" src={instagramLogo} />
+                            <img className={styles["add"]} alt="Frame" src={instagramLogo} />
                         </Link>
                         <Link href={twitterUrl}>
-                            <img className="add" alt="Frame" src={twitterLogo} />
+                            <img className={styles["add"]} alt="Frame" src={twitterLogo} />
                         </Link>
                         
                     </div>
                     <p className={styles.footerLeftFooter}>{leftBlockText}</p>
                 </div>
-                <div className="footer-right">
+                <div className={styles["footer-right"]}>
                     {/** BLOCK 1**/}
                     <div className={styles.footerBlock1}>
                         <div className={styles.footerBlock1Title}>{footerBlock1.title[lang_]}</div>

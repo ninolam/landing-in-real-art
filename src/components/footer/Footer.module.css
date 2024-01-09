@@ -18,6 +18,27 @@
   position: relative;
 }
 
+.footer-right {
+  align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 56px;
+    position: relative;
+}
+
+.add {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: visible;
+}
+
 .footerBlock1 {
     height: 152px;
     position: relative;
