@@ -8,7 +8,7 @@ const LogoIraMenu = () => {
     <Link href="/home" style={{display: 'flex', flexDirection: 'row'}}>
       <div className={styles["fichier-3-12"]}>
         <svg
-          className="calque-1-22"
+          className={styles["calque-1-22"]}
           width="33"
           height="34"
           viewBox="0 0 33 34"

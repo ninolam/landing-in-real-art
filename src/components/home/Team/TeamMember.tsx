@@ -10,7 +10,7 @@ const TeamMember: React.FC<TeamMemberProps> = ( {name, photo, role, text1, text2
         </div>
         <div className={styles["colum"]}>
         <div className={styles["wrapper-text"]}>
-            <div className="def">
+            <div className={styles["def"]}>
             <div id="team-member-p-1" className={styles["team-member-p-1"]}>
                 {text1}
             </div>

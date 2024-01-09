@@ -1,10 +1,11 @@
 "use client"
+import styles from './VuesaxLinearStatusUp.module.scss'
 
 const VuesaxLinearStatusUp = () => {
   return (
-    <div className="vuesax-linear-status-up"> 
+    <div className={styles["vuesax-linear-status-up"]}> 
     <svg
-      className="vuesax-linear-status-up2"
+      className={styles["vuesax-linear-status-up2"]}
       width="25"
       height="24"
       viewBox="0 0 25 24"
