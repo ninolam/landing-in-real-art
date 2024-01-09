@@ -18,6 +18,7 @@ import CarouselArtists from "../../components/home/Artists/CarouselArtists";
 import MenuMobile from "../../components/menu/MenuMobile";
 import PrivateSale from "../../components/home/PrivateSale/PrivateSale";
 import PrivateSaleMobile from "../../components/home/PrivateSale/PrivateSaleMobile";
+import styles from './HomePage.module.scss'
 
 export default function HomePage() {
 
@@ -36,7 +37,7 @@ export default function HomePage() {
 
     return (
 
-      <div id="home" className="home" style={isMobile?{paddingTop:'0px'}:{paddingTop:''}}>
+      <div id="home" className={styles["home"]} style={isMobile?{paddingTop:'0px'}:{paddingTop:''}}>
 
       {isMobile ? 
         <>
