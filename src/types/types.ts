@@ -186,3 +186,25 @@ export interface PresaleDataButtons {
     seeDrop: Record<Lang, string>
     seeDropLink: string
 }
+
+export interface PresaleDropPanelArtworks {
+    artworks: PresaleArtWorks
+}
+
+export type PresaleArtWorks  = Array<PresaleArtWork>
+
+export type PresaleArtWork = {
+    image: string
+    url: string
+}
+
+export interface PresaleDropPanelButtons {
+    acquireArtWork: Record<Lang, string>,
+    detailArtWork: Record<Lang, string>,
+}
+
+export interface PresaleDropPanelTexts {
+    endDrop: Record<Lang, string>
+}
+
+export type PresaleDropPanelData = PresaleDropPanelArtworks & PresaleDropPanelButtons & PresaleDropPanelTexts
