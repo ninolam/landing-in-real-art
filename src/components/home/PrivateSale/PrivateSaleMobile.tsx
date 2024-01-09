@@ -14,7 +14,7 @@ const PrivateSaleMobile = () => {
     const {psTexts, setPsTexts} = useSharedLogicPrivateSale()
   
   return (
-    <div id="privateSale" className={styles["frame-48095806"]}>
+    <div id="privateSale" className={styles["frame-PS-mobile"]}>
     {/*<img className={styles["unsplash-a-ug-tvv-qx-dhg"]} src="img/privateSale.png"/>*/}
     <div className={styles["frame-36598"]}>
       <div className={styles["newsletter"]}>{psTexts.title[lang_]}</div>
