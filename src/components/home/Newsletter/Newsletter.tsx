@@ -1,13 +1,21 @@
 "use client"
 import styles from './Newsletter.module.scss'
-import { useEffect, useState } from "react"
 import { useAppContext } from '../../../context'
-import { db } from '../../../firebaseConfig';
-import { collection, getDocs } from 'firebase/firestore/lite';
 import React from "react";
-import { Lang, NewsletterData, NewsletterText, defaultLangObject } from "../../../types/types";
+import { Lang } from "../../../types/types";
 import useSharedLogicNewsletter from './useSharedLogicNewsletter';
-
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  Input,
+  Button,
+  flexbox,
+  IconButton,
+} from '@chakra-ui/react'
+import { IoMdSend } from "react-icons/io"
+import { IoSend } from "react-icons/io5"
 
 const Newsletter = () => {
 
@@ -31,12 +39,16 @@ const Newsletter = () => {
               {nlTexts.description[lang_]}
             </div>
           </div>
-          <div className={styles.group159}>
-            <div className={styles.envoyezVotreMail}>{nlTexts.email_placeholder[lang_]}</div>
-            <div className={styles.rectangle96}></div>
-            <div className={styles.rectangle97}></div>
-            
-
+          <div style={{display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center'}}>
+            <FormControl color={'white'}>
+            <FormLabel color={'white'}>{nlTexts.email_placeholder [lang_]}</FormLabel>
+              <Input type='email' color={'white'} placeholder={nlTexts.email_placeholder [lang_]} focusBorderColor='white'/>
+              <FormHelperText color={'white'}>We'll never share your email.</FormHelperText>
+            </FormControl>
+            <div className={styles.rectangleSendEmail}>
+            <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid'>
+            </Button>
+            </div>            
           </div>
         </div>
         <img className={styles.imageNL} src="/img/unsplash-augtvvqxdhg.png" />
