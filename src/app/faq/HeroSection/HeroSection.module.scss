@@ -1,0 +1,374 @@
+.heroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .sphere,
+.sphere * {
+  box-sizing: border-box;
+}
+.sphere {
+  background: linear-gradient(
+    112.72deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  border-radius: 50%;
+  border-width: 0.5px;
+  border-style: solid;
+  border-image: transparent;
+  border-image-slice: 1;
+  width: 92px;
+  height: 90px;
+  position: relative;
+  box-shadow: inset -35.04px -50.05px 80.1px 0px rgba(172, 60, 225, 0.86),
+    inset -5.01px -5.01px 34.02px 0px rgba(109, 44, 193, 1),
+    inset 0px 20.02px 40px 0px rgba(194, 255, 255, 0.25),
+    inset 0px 0px 24px 0px rgba(255, 255, 255, 0.26);
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+
+
+.heroSection,
+.heroSection * {
+  box-sizing: border-box;
+}
+
+.heroSectionWrapperTopContain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.heroSectionTopContain {
+  z-index: 888;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.heroSectionTitle {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+.heroSectionHeading {
+  text-align: center;
+  font-family: 'Unbounded', sans-serif;
+  /*font-family: "Unbounded-Regular", sans-serif;*/
+  font-size: 70px;
+  line-height: 69px;
+  font-weight: 400;
+  position: relative;
+}
+.heroSectionHeadingSpan {
+  color: #1e344f;
+  font-family: 'Unbounded', sans-serif;
+  /*font-family: "Unbounded-Regular", sans-serif;*/
+  font-size: 70px;
+  line-height: 69px;
+  font-weight: 400;
+}
+.heroSectionHeadingSpan2 {
+  color: #5552ff;
+  font-family: 'Unbounded', sans-serif;
+  /*font-family: "Unbounded-Regular", sans-serif;*/
+  font-size: 70px;
+  line-height: 69px;
+  font-weight: 400;
+}
+.heroSectionContainerButton {
+  display: flex;
+  flex-direction: row;
+  gap: 738px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.heroSectionButton {
+    cursor: pointer;
+    background: #5552ff;
+    border-radius: 20px;
+    padding: 32px 16px 32px 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 237px;
+    position: relative;
+    box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(92.95px);
+}
+
+.heroSectionButton > a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.heroSectionRejoindreIra {
+  cursor: pointer;
+  color: var(--primaire-white, #f6f8ff);
+  text-align: center;
+  font-family: 'Unbounded', sans-serif;
+  /*font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);*/
+  font-size: var(--heading-h-4-font-size, 16px);
+  font-weight: var(--heading-h-4-font-weight, 500);
+  position: relative;
+}
+.heroSectionJeDemarre {
+  cursor: pointer;
+  color: var(--primaire-white, #f6f8ff);
+  text-align: center;
+  font-family: 'Unbounded', sans-serif;
+  /*font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);*/
+  font-size: var(--heading-h-4-font-size, 16px);
+  font-weight: var(--heading-h-4-font-weight, 500);
+  position: relative;
+}
+.heroSectionImage {
+  margin: -74px 0 0 0;
+  flex-shrink: 0;
+  width: 1312px;
+  height: 645px;
+  position: relative;
+  overflow: visible;
+}
+.heroSectionParapgraphe {
+  margin: -96px 0 0 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.heroSectionParagraph {
+  color: var(--primaire-black, #000035);
+  text-align: left;
+  font-family: var(
+    --text-paragraphe-font-family,
+    "Montserrat-Regular",
+    sans-serif
+  );
+  font-size: var(--text-paragraphe-font-size, 16px);
+  font-weight: var(--text-paragraphe-font-weight, 400);
+  position: relative;
+  width: 334px;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+.heroSectionShepre {
+  flex-shrink: 0;
+  width: 677px;
+  height: 716px;
+  position: absolute;
+  left: 374px;
+  top: -593px;
+  overflow: visible;
+}
+
+@media (max-width: 1200px) {
+
+  .heroSectionContainerButton {
+    display: flex;
+    flex-direction: row;
+    gap: 538px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .heroSectionButton {
+    cursor: pointer;
+    background: #5552ff;
+    border-radius: 20px;
+    padding: 26px 16px 26px 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 220px;
+    position: relative;
+    box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(92.95px);
+}
+
+  .heroSectionParagraph {
+    color: var(--primaire-black, #000035);
+    text-align: left;
+    font-family: var(
+      --text-paragraphe-font-family,
+      "Montserrat-Regular",
+      sans-serif
+    );
+    font-size: 15px;
+    font-weight: var(--text-paragraphe-font-weight, 400);
+    position: relative;
+    width: 290px;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+  }
+  
+  .heroSectionParapgraphe {
+    margin: -166px 0 0 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  
+}  
+
+@media (max-width: 1000px) {
+
+  .heroSectionContainerButton {
+    display: flex;
+    flex-direction: row;
+    gap: 500px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .heroSectionButton {
+    cursor: pointer;
+    background: #5552ff;
+    border-radius: 20px;
+    padding: 20px 16px 20px 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 200px;
+    position: relative;
+    box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(92.95px);
+}
+
+  .heroSectionParagraph {
+    color: var(--primaire-black, #000035);
+    text-align: left;
+    font-family: var(
+      --text-paragraphe-font-family,
+      "Montserrat-Regular",
+      sans-serif
+    );
+    font-size: 13px;
+    font-weight: var(--text-paragraphe-font-weight, 400);
+    position: relative;
+    width: 290px;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+  }
+  
+  .heroSectionParapgraphe {
+    margin: -166px 0 0 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  
+}  
+
+@media (max-width: 900px) {
+
+  .heroSectionContainerButton {
+    display: flex;
+    flex-direction: row;
+    gap: 460px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .heroSectionButton {
+    cursor: pointer;
+    background: #5552ff;
+    border-radius: 20px;
+    padding: 16px 10px 16px 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 180px;
+    position: relative;
+    box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(92.95px);
+}
+
+  .heroSectionParagraph {
+    color: var(--primaire-black, #000035);
+    text-align: left;
+    font-family: var(
+      --text-paragraphe-font-family,
+      "Montserrat-Regular",
+      sans-serif
+    );
+    font-size: 12px;
+    font-weight: var(--text-paragraphe-font-weight, 400);
+    position: relative;
+    width: 220px;
+    transform-origin: 0 0;
+    transform: rotate(0deg) scale(1, 1);
+  }
+  
+  .heroSectionParapgraphe {
+    margin: -196px 0 0 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  
+}  
+
