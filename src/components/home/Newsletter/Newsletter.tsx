@@ -25,13 +25,12 @@ const Newsletter = () => {
     const {lang } = useAppContext()
     const lang_ = lang as Lang
   
-    const {nlTexts, setNlTexts} = useSharedLogicNewsletter()
-    /*
-    const EmailInput = React.memo(() => {
-      return <input type="text" className="email" autoFocus placeholder={emailPh}/>
-    });
-    */
-  
+    const {nlTexts, setNlTexts, 
+      email, setEmail, isEmailValid, setEmailValid, checkboxNL, setCheckboxNL, 
+      checkboxPS, setCheckboxPS, validateEmail, 
+      handleChangeEmail, handleChangeCheckBoxNL, handleChangeCheckBoxPS, handlSendEmail} 
+      = useSharedLogicNewsletter()
+
     return (
         <div className={styles.frame36598}>
           <div className={styles.frame36563}>
@@ -42,23 +41,26 @@ const Newsletter = () => {
               </div>
             </div>
             <div style={{display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center'}}>
-              <FormControl color={'white'}>
+              <FormControl color={'white'} isInvalid={!isEmailValid}>
               <FormLabel color={'white'}></FormLabel>
-                <Input type='email' color={'grey'} backgroundColor={'white'}  placeholder={nlTexts.email_placeholder [lang_]} focusBorderColor='white'/>
+                <Input type='email' color={'grey'} backgroundColor={'white'} 
+                placeholder={nlTexts.email_placeholder [lang_]} 
+                focusBorderColor='white'
+                onChange={handleChangeEmail} 
+                />
                 {/*<FormHelperText color={'white'}>We'll never share your email.</FormHelperText>*/}
+                {!isEmailValid && <FormErrorMessage>{nlTexts.sendEmailErrorMsg[lang_]}</FormErrorMessage>}
               </FormControl>
               <div className={styles.rectangleSendEmail}>
-              <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid'>
+              <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid' onClick={handlSendEmail}>
               </Button>
               </div>            
             </div>
             <div>
-            <Stack spacing={5} direction='row'>
-              <Checkbox color={'white'} colorScheme='white'>Newsletter</Checkbox>
-              <Checkbox  color={'white'} colorScheme='white'>
-                Vente privée
-              </Checkbox>
-            </Stack>
+              <Stack spacing={5} direction='row'>
+                <Checkbox color={'white'} colorScheme='white' onChange={handleChangeCheckBoxNL}>{nlTexts.checkboxNewsLetter[lang_]}</Checkbox>
+                <Checkbox  color={'white'} colorScheme='white'onChange={handleChangeCheckBoxPS}>{nlTexts.checkboxPrivateSale[lang_]}</Checkbox>
+              </Stack>
             </div>
           </div>
           

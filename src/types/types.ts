@@ -51,10 +51,13 @@ export interface FooterBlockLine {
 
 }
 
-export type NewsletterText = {
-    title: Record<Lang, string>
-    description: Record<Lang, string>
-    email_placeholder: Record<Lang, string>
+export type NewsletterText<T extends Record<Lang, string>> = {
+    title: T
+    description: T
+    email_placeholder: T
+    checkboxNewsLetter: T
+    checkboxPrivateSale: T
+    sendEmailErrorMsg: T
 }  
 
 export type PrivateSaleText = {
@@ -63,7 +66,7 @@ export type PrivateSaleText = {
     email_placeholder: Record<Lang, string>
 }  
 
-export type NewsletterData = NewsletterText
+export type NewsletterData = NewsletterText<Record<Lang, string>>
 
 export type PrivateSaleData = PrivateSaleText
 
