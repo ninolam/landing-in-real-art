@@ -63,7 +63,7 @@ export default function FaqPage() {
                     {
                         faqQuestions.questions.map(
                             (faqQuestion, index) => (
-                                <AccordionItem>
+                                <AccordionItem key={index}>
                                     <h2>
                                     <AccordionButton>
                                         <Box as="span" flex='1' textAlign='left'>
