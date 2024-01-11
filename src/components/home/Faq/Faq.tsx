@@ -30,7 +30,7 @@ const Faq = () => {
     }
   
     const [faqButtons,setFaqButtons] = useState<FaqButtons>(defaultFaqButtons);
-    const [faqTexts,setFaqTexts]     = useState<FaqTexts>(defaultFaqTexts);
+    const [faqTexts,setFaqTexts]     = useState<FaqTexts<Record<Lang, string>>>(defaultFaqTexts);
   
     useEffect(() => {
       const fetchData = async () => {
@@ -42,9 +42,9 @@ const Faq = () => {
         setFaqButtons(faqData[0] as FaqButtons)
         
         //Index 1 ===> FAQ Page
-        
+
         //Index 2 ===> FAQ Text
-        setFaqTexts(faqData[2] as FaqTexts)
+        setFaqTexts(faqData[2] as FaqTexts<Record<Lang, string>>)
       }
       fetchData();
     }, [])

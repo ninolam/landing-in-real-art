@@ -156,6 +156,13 @@ a {
 }
 
 /**
+* Surcharge le CSS de composants Chakra UI
+*/
+.css-1eziwv {
+  font-family: 'Unbounded' !important;
+}
+
+/**
 * Importé de Figma
 */
 

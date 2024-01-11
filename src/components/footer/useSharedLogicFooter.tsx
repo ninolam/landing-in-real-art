@@ -38,7 +38,7 @@ const useSharedLogicFooter = () => {
         const fetchData = async () => {
             const dataDoc      = collection(db, FIREBASE_FOOTER_COLLECTION);
             const dataSnapshot = await getDocs(dataDoc);
-            const dataList     = dataSnapshot.docs.map(doc => doc.data() as FooterData);
+            const dataList     = dataSnapshot.docs.map(doc => doc.data() as FooterData<string>);
             
             //Left block
             const imageRefTwitter   = ref(storage, 'footer/twitter-logo.png')

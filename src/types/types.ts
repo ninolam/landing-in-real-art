@@ -22,20 +22,20 @@ export type HeaderTexts = {
 
 export type HeaderData = HeaderButtons & HeaderTexts
 
-export interface FooterData {
-    twitterUrl: string
-    instagramUrl: string
-    linkedInUrl: string
-    teamLinkUrl: string
-    partnersLinkUrl: string
+export interface FooterData<T extends string> {
+    twitterUrl: T
+    instagramUrl: T
+    linkedInUrl: T
+    teamLinkUrl: T
+    partnersLinkUrl: T
     Email: string
-    Telephone: string
-    Adresse: string
-    text: Record<Lang, string>
-    ourCompanyTitle: Record<Lang, string>
-    teamLinkText: Record<Lang, string>
-    partnersLinkText: Record<Lang, string>
-    contactTitle: Record<Lang, string>
+    Telephone: T
+    Adresse: T
+    text: Record<Lang, T>
+    ourCompanyTitle: Record<Lang, T>
+    teamLinkText: Record<Lang, T>
+    partnersLinkText: Record<Lang, T>
+    contactTitle: Record<Lang, T>
     block1: FooterBlock
     block2: FooterBlock
   }
@@ -72,18 +72,26 @@ export type FaqButtons = {
     readFaqLink: string
 }  
 
-export type FaqTexts = {
-    faqMain: Record<Lang, string>
-    question1: Record<Lang, string>
-    question2: Record<Lang, string>
-    question3: Record<Lang, string>
-    answer1: Record<Lang, string>
-    answer2: Record<Lang, string>
-    answer3: Record<Lang, string>
-  
+export type FaqTexts<T extends Record<Lang, string>> = {
+    faqMain: T
+    question1: T
+    question2: T
+    question3: T
+    answer1: T
+    answer2: T
+    answer3: T
 }  
 
-export type HelpIraData = FaqButtons & FaqTexts
+export type FaqQuestion = {
+    answer: Record<Lang, string>,
+    question: Record<Lang, string>
+}
+
+export type FaqQuestions = {
+    questions: Array<FaqQuestion>
+}
+
+export type HelpIraData = FaqButtons & FaqTexts<Record<Lang, string>>
 
 
 export interface ArtistsData {
