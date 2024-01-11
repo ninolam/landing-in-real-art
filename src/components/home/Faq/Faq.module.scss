@@ -1,32 +1,4 @@
-.question01 {
-    border-style: solid;
-    border-color: var(--primaire-white, #f6f8ff);
-    border-width: 1px 0px 0px 0px;
-    padding: 26px 0px 26px 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-shrink: 0;
-    width: 590px;
-    position: relative;
-  }
-  
-  .question02 {
-    border-style: solid;
-    border-color: var(--primaire-white, #f6f8ff);
-    border-width: 1px 0px 0px 0px;
-    padding: 26px 0px 26px 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-shrink: 0;
-    width: 590px;
-    position: relative;
-  }
-  
-  .question03 {
+.questionBlock {
     border-style: solid;
     border-color: var(--primaire-white, #f6f8ff);
     border-width: 1px 0px 0px 0px;
@@ -41,7 +13,7 @@
   }
   
 
-  .commentFonctionneLaInrealart {
+  .question {
     color: var(--bleu-bleusombre-200, #2b3058);
     text-align: left;
     font-family: 'Unbounded', sans-serif;
@@ -68,29 +40,7 @@
     );
     z-index:10;
   }
-  
-  .pourQui {
-    color: var(--bleu-bleusombre-200, #2b3058);
-    text-align: left;
-    font-family: 'Unbounded', sans-serif;
-    /*font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);*/
-    font-size: var(--heading-h-3-font-size, 24px);
-    font-weight: var(--heading-h-3-font-weight, 500);
-    position: relative;
-    width: 518px;
-  }
-  
-  .startingGuide {
-    color: var(--bleu-bleusombre-200, #2b3058);
-    text-align: left;
-    font-family: 'Unbounded', sans-serif;
-    /*font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);*/
-    font-size: var(--heading-h-3-font-size, 24px);
-    font-weight: var(--heading-h-3-font-weight, 500);
-    position: relative;
-    width: 518px;
-  }
-  
+    
   .homeFaq {
     display: flex;
     flex-direction: row;
@@ -186,4 +136,90 @@
     width: 500px;
   }
   
+
+  @media (max-width: 1300px) {
+    .homeFaq {
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      position: relative;
+    }  
+
+    .faqMainP {
+      color: var(--bleu-bleusombre-300, #6979a7);
+      text-align: left;
+      font-family: var(
+        --text-paragraphe-font-family,
+        "Montserrat-Regular",
+        sans-serif
+      );
+      font-size: var(--text-paragraphe-font-size, 16px);
+      font-weight: var(--text-paragraphe-font-weight, 400);
+      position: relative;
+      width: 350px;
+    }
   
+    .faqRight {
+      display: flex;  
+      flex-direction: column;
+      gap: 0px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      position: relative;
+      width: 400px;
+    }
+  
+    .questionBlock {
+      color: var(--bleu-bleusombre-200, #2b3058);
+      text-align: left;
+      font-family: 'Unbounded', sans-serif;
+      font-size: var(--heading-h-3-font-size, 24px);
+      font-weight: var(--heading-h-3-font-weight, 500);
+      position: relative;
+      width: 450px;
+    }
+  
+  }  
+    @media (max-width: 1000px) {
+
+    
+    .homeFaq {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      position: relative;
+    }  
+
+    .faqMainP {
+      color: var(--bleu-bleusombre-300, #6979a7);
+      text-align: left;
+      font-family: var(
+        --text-paragraphe-font-family,
+        "Montserrat-Regular",
+        sans-serif
+      );
+      font-size: var(--text-paragraphe-font-size, 16px);
+      font-weight: var(--text-paragraphe-font-weight, 400);
+      position: relative;
+      width: 250px;
+    }
+
+    .questionBlock {
+      color: var(--bleu-bleusombre-200, #2b3058);
+      text-align: left;
+      font-family: 'Unbounded', sans-serif;
+    
+      font-size: var(--heading-h-3-font-size, 24px);
+      font-weight: var(--heading-h-3-font-weight, 500);
+      position: relative;
+      width: 400px;
+    }
+
+  }  

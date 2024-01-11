@@ -73,6 +73,7 @@ export type FaqButtons = {
 }  
 
 export type FaqTexts<T extends Record<Lang, string>> = {
+    faqTitle: T
     faqMain: T
     question1: T
     question2: T

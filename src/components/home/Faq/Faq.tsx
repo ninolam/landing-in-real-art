@@ -1,11 +1,10 @@
 "use client"
 import styles from './Faq.module.scss'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useAppContext } from '../../../context'
-import { db } from '../../../firebaseConfig';
-import { collection, getDocs } from 'firebase/firestore/lite';
-import { FaqButtons, FaqTexts, HelpIraData, Lang, defaultLangObject } from '../../../types/types';
+import { Lang } from '../../../types/types';
 import Link from 'next/link';
+import useSharedLogicFaq from './useSharedLogicFaq';
 
 const Faq = () => {
 
@@ -13,65 +12,18 @@ const Faq = () => {
     const {lang} = useAppContext()
     const lang_ = lang as Lang
   
-    const FIREBASE_FAQ_COLLECTION = 'Faq'
-    
-    const defaultFaqButtons = {
-      readFaq: defaultLangObject,
-      readFaqLink: ''
-    }
-    const defaultFaqTexts = {
-      faqMain: defaultLangObject,
-      question1: defaultLangObject,
-      question2: defaultLangObject,
-      question3: defaultLangObject,
-      answer1: defaultLangObject,
-      answer2: defaultLangObject,
-      answer3: defaultLangObject
-    }
-  
-    const [faqButtons,setFaqButtons] = useState<FaqButtons>(defaultFaqButtons);
-    const [faqTexts,setFaqTexts]     = useState<FaqTexts<Record<Lang, string>>>(defaultFaqTexts);
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        const faqCollection = collection(db, FIREBASE_FAQ_COLLECTION);
-        const faqDocuments  = await getDocs(faqCollection);
-        const faqData       = faqDocuments.docs.map(doc => doc.data());
-        
-        //Index 0 ===> FAQ Buttons
-        setFaqButtons(faqData[0] as FaqButtons)
-        
-        //Index 1 ===> FAQ Page
-
-        //Index 2 ===> FAQ Text
-        setFaqTexts(faqData[2] as FaqTexts<Record<Lang, string>>)
-      }
-      fetchData();
-    }, [])
+    const {faqButtons, setFaqButtons, faqTexts, setFaqTexts, useQuestionVisibility} = useSharedLogicFaq()
   
     const imagePlus1Ref = useRef(null);
     const imagePlus2Ref = useRef(null);
     const imagePlus3Ref = useRef(null);
     
-    
-    const useQuestionVisibility = (initialVisibility: boolean, plusImageSrc: string, minusImageSrc: string) => {
-      const [isVisible, setIsVisible] = useState<boolean>(initialVisibility);
-      const [imageSrc, setImageSrc] = useState<string>(plusImageSrc);
-    
-      const toggleVisibility = () => {
-        setIsVisible(!isVisible);
-        setImageSrc(isVisible ? plusImageSrc : minusImageSrc);
-      };
-    
-      return { isVisible, imageSrc, toggleVisibility };
-    };
-    
     const Question1 = () => {
-      const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png");
+      const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png")
       return (
         <>
-           <div className={styles.question01}>
-            <div className={styles.commentFonctionneLaInrealart}>
+           <div className={styles.questionBlock}>
+            <div className={styles.question}>
               {faqTexts.question1[lang_]}
             </div>
             <div onClick={toggleVisibility}>
@@ -88,11 +40,11 @@ const Faq = () => {
     }
     
     const Question2 = () => {
-      const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png");
+      const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png")
       return (
         <>
-          <div className={styles.question02}>
-            <div className={styles.pourQui}>{faqTexts.question2[lang_]}</div>        
+          <div className={styles.questionBlock}>
+            <div className={styles.question}>{faqTexts.question2[lang_]}</div>        
             <div onClick={toggleVisibility}>
               <img ref={imagePlus2Ref} className={styles.plus} alt="plus" src={imageSrc} />
             </div>
@@ -108,11 +60,11 @@ const Faq = () => {
     }
     
     const Question3 = () => {
-      const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png");
+      const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png")
       return (
         <>
-          <div className={styles.question03}>
-            <div className={styles.startingGuide}>{faqTexts.question3[lang_]}</div>  
+          <div className={styles.questionBlock}>
+            <div className={styles.question}>{faqTexts.question3[lang_]}</div>  
             <div onClick={toggleVisibility}>
               <img ref={imagePlus3Ref} className={styles.plus} alt="plus" src={imageSrc} />
             </div>
@@ -130,7 +82,7 @@ const Faq = () => {
     return (
       <div className={styles.homeFaq}>
         <div className={styles.faqLeft}>
-          <div className={styles.faq}>FAQ</div>
+          <div className={styles.faq}>{faqTexts.faqTitle[lang_]}</div>
           <div
             className={styles.faqMainP}>
             {faqTexts.faqMain[lang_]}
