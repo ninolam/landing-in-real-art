@@ -41,8 +41,10 @@ const Faq = () => {
         //Index 0 ===> FAQ Buttons
         setFaqButtons(faqData[0] as FaqButtons)
         
-        //Index 1 ===> FAQ Text
-        setFaqTexts(faqData[1] as FaqTexts)
+        //Index 1 ===> FAQ Page
+        
+        //Index 2 ===> FAQ Text
+        setFaqTexts(faqData[2] as FaqTexts)
       }
       fetchData();
     }, [])
