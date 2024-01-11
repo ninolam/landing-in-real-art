@@ -49,7 +49,7 @@ export default function HomePage() {
           <Team/>
           <FaqMobile/>
           <NewsletterMobile/>
-          <PrivateSaleMobile/>
+          {/*<PrivateSaleMobile/>*/}
           <FooterMobile/>
         </>  
           : 
@@ -62,7 +62,7 @@ export default function HomePage() {
           <Team/>
           <Faq/>
           <Newsletter/>
-          <PrivateSale/>
+          {/*<PrivateSale/>*/}
           <Footer/>
         </>  
       }

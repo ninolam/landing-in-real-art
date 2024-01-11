@@ -13,9 +13,11 @@ import {
   Button,
   flexbox,
   IconButton,
+  Stack,
 } from '@chakra-ui/react'
 import { IoMdSend } from "react-icons/io"
 import { IoSend } from "react-icons/io5"
+import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
 
 const Newsletter = () => {
 
@@ -32,27 +34,36 @@ const Newsletter = () => {
   
     return (
         <div className={styles.frame36598}>
-        <div className={styles.frame36563}>
-          <div className={styles.frame3351}>
-            <div className={styles.newsletter}>{nlTexts.title[lang_]}</div>
-            <div className={styles.newsletterP1}>
-              {nlTexts.description[lang_]}
+          <div className={styles.frame36563}>
+            <div className={styles.frame3351}>
+              <div className={styles.newsletter}>{nlTexts.title[lang_]}</div>
+              <div className={styles.newsletterP1}>
+                {nlTexts.description[lang_]}
+              </div>
+            </div>
+            <div style={{display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center'}}>
+              <FormControl color={'white'}>
+              <FormLabel color={'white'}></FormLabel>
+                <Input type='email' color={'grey'} backgroundColor={'white'}  placeholder={nlTexts.email_placeholder [lang_]} focusBorderColor='white'/>
+                {/*<FormHelperText color={'white'}>We'll never share your email.</FormHelperText>*/}
+              </FormControl>
+              <div className={styles.rectangleSendEmail}>
+              <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid'>
+              </Button>
+              </div>            
+            </div>
+            <div>
+            <Stack spacing={5} direction='row'>
+              <Checkbox color={'white'} colorScheme='white'>Newsletter</Checkbox>
+              <Checkbox  color={'white'} colorScheme='white'>
+                Vente privée
+              </Checkbox>
+            </Stack>
             </div>
           </div>
-          <div style={{display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center'}}>
-            <FormControl color={'white'}>
-            <FormLabel color={'white'}>{nlTexts.email_placeholder [lang_]}</FormLabel>
-              <Input type='email' color={'white'} placeholder={nlTexts.email_placeholder [lang_]} focusBorderColor='white'/>
-              <FormHelperText color={'white'}>We'll never share your email.</FormHelperText>
-            </FormControl>
-            <div className={styles.rectangleSendEmail}>
-            <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid'>
-            </Button>
-            </div>            
-          </div>
+          
+          <img className={styles.imageNL} src="/img/unsplash-augtvvqxdhg.png" />
         </div>
-        <img className={styles.imageNL} src="/img/unsplash-augtvvqxdhg.png" />
-      </div>
 
     )
 }
