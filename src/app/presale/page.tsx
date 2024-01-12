@@ -8,6 +8,7 @@ import HeroSection from "../../components/presale/HeroSection/HeroSection"
 import PresalePros from "../../components/presale/PresalePros/PresalePros"
 import FooterMobile from "../../components/footer/FooterMobile"
 import styles from './PresalePage.module.scss'
+import HeroSectionMobile from "../../components/presale/HeroSection/HeroSectionMobile"
 
 export default function PresalePage() {
 
@@ -31,7 +32,7 @@ export default function PresalePage() {
 
             {isMobile ? 
                 <>
-                    <HeroSection/>
+                    <HeroSectionMobile/>
                     <Menu/>
                     <DropPanel/>
                     <PresalePros/>
@@ -40,7 +41,7 @@ export default function PresalePage() {
                 </>
                     :
                 <>    
-                    <HeroSection/>
+                    <HeroSectionMobile/>
                     <Menu/>
                     <DropPanel/>
                     <PresalePros/>
