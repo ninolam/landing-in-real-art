@@ -557,18 +557,6 @@ a {
   width: fit-content;
 }
 
-.LP .ne-louper-pas-la {
-  color: #ffffff;
-  font-family: var(--text-paragraphe-font-family);
-  font-size: var(--text-paragraphe-font-size);
-  font-style: var(--text-paragraphe-font-style);
-  font-weight: var(--text-paragraphe-font-weight);
-  letter-spacing: var(--text-paragraphe-letter-spacing);
-  line-height: var(--text-paragraphe-line-height);
-  position: relative;
-  width: 423px;
-}
-
 .LP .group-5 {
   height: 68px;
   left: 0;
@@ -607,17 +595,6 @@ a {
   position: absolute;
   top: 20px;
   width: 223px;
-}
-
-.LP .rectangle-4 {
-  border: 1px solid;
-  border-color: #ffffff;
-  border-radius: 20px;
-  height: 68px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 383px;
 }
 
 .LP .rectangle-5 {
@@ -767,13 +744,6 @@ a {
   position: relative;
   width: 101.49px;
 }
-
-.LP .frame-13 {
-  flex: 0 0 auto;
-  margin-bottom: -2961px;
-  position: relative;
-}
-
 
 .LP .line {
   height: 1px;

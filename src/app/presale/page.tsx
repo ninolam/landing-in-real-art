@@ -7,7 +7,7 @@ import DropPanel from "../../components/presale/DropPanel/DropPanel"
 import HeroSection from "../../components/presale/HeroSection/HeroSection"
 import PresalePros from "../../components/presale/PresalePros/PresalePros"
 import FooterMobile from "../../components/footer/FooterMobile"
-
+import styles from './PresalePage.module.scss'
 
 export default function PresalePage() {
 
@@ -26,8 +26,8 @@ export default function PresalePage() {
     
     return (
         <>
-        <div className="index">
-            <div className="frame">
+        <div className={styles["index"]}>
+            <div className={styles["frame"]}>
 
             {isMobile ? 
                 <>

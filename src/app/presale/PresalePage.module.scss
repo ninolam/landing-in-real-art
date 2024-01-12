@@ -1,0 +1,27 @@
+.index {
+    background: linear-gradient(
+      180deg,
+      rgb(236, 238, 250) 0%,
+      rgb(233.82, 236.27, 251.02) 52.6%,
+      rgb(225.25, 229.5, 255) 100%
+    );
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 204px;
+    padding: 64px 0px 0px;
+    position: relative;
+    width:100%;
+    justify-content: center;
+  }
+
+.frame {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 160px;
+    position: relative;
+    width:100%;
+  }
