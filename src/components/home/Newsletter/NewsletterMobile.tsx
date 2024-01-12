@@ -20,7 +20,7 @@ const NewsletterMobile = () => {
       = useSharedLogicNewsletter()
   
     return (
-      <div className={styles["frame-48095806"]}>
+      <div className={styles["frame-newsLetter-mobile"]}>
       <img className={styles["unsplash-a-ug-tvv-qx-dhg"]} src="img/img-newsletter-mobile.png"/>
       <div className={styles["frame-36598"]}>
         <div className={styles["newsletter"]}>{nlTexts.title[lang_]}</div>

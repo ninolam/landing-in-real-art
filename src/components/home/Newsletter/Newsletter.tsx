@@ -32,7 +32,7 @@ const Newsletter = () => {
       = useSharedLogicNewsletter()
 
     return (
-        <div className={styles.frame36598}>
+        <div id="newsLetter" className={styles.frameNewsLetter}>
           <div className={styles.frame36563}>
             <div className={styles.frame3351}>
               <div className={styles.newsletter}>{nlTexts.title[lang_]}</div>
