@@ -8,7 +8,6 @@ import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../../../firebaseConfig";
 import { Lang, MemberData, defaultLangObject } from "../../../types/types";
 import TeamMember from "./TeamMember";
-import classNames from 'classnames';
 import { Carousel } from 'react-bootstrap';
 
 const Team = () => {
@@ -53,7 +52,6 @@ const Team = () => {
               ...member,
               photo: await getUrlPhoto(member.photo)
           }))
-
           return Promise.all(promises);
       }
 
@@ -68,7 +66,6 @@ const Team = () => {
           const teamData       = teamDocuments.docs.map(doc => doc.data());
           let members_ = teamData[0]['members'] as MemberData
           const members_tmp = await transformMemberPhotos(members_)
-          console.log(members_tmp)
           const title_ = teamData[0]['title'] as Record<Lang, string>
           setMembers(members_tmp)        
           setMembersData(currentIndex, members_)

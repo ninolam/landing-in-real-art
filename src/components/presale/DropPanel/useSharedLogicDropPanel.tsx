@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { PresaleDropPanelArtworks, PresaleDropPanelButtons, PresaleDropPanelData, PresaleDropPanelTexts, defaultLangObject } from "../../../types/types";
-
+import { PresaleArtWorks, PresaleDropPanelButtons, PresaleDropPanelData, PresaleDropPanelTexts, defaultLangObject } from "../../../types/types";
+import { getDownloadURL, ref } from "firebase/storage";
+import { storage } from "../../../firebaseConfig";
 
 const useSharedLogicDropPanel = () => {
     const FIREBASE_DROPPANEL_COLLECTION = 'Presale_DropPanel'
@@ -22,10 +23,26 @@ const useSharedLogicDropPanel = () => {
         url: ''
     }
 
-    const [artWorks, setArtWorks] = useState<PresaleDropPanelArtworks>({artworks: [defaultArtwork]})
+    const [artWorks, setArtWorks] = useState<PresaleArtWorks>([defaultArtwork])
     const [buttons, setButtons] = useState<PresaleDropPanelButtons>(defaultButton)
     const [texts, setTexts] = useState<PresaleDropPanelTexts>(defaultText)
 
+
+    async function getUrlPhoto(photo: string): Promise<string> {
+        const imageRef = ref(storage, photo)
+        console.log(imageRef)
+        const urlPhoto = await getDownloadURL(imageRef)
+        return urlPhoto;
+      }
+
+    async function transformArtworksPhotos(artworks: PresaleArtWorks): Promise<PresaleArtWorks> {
+        const promises = artworks.map(async artwork => ({
+            ...artwork,
+            url: await getUrlPhoto(artwork.image)
+        }))
+
+        return Promise.all(promises);
+    }
 
     useEffect(() => {    
         const fetchData = async () => {
@@ -34,7 +51,9 @@ const useSharedLogicDropPanel = () => {
             const data        = documents.docs.map(doc => doc.data() as PresaleDropPanelData);
             console.log(data)
             //Index 0 ===> ArtWorks
-            setArtWorks(data[0])  
+            const artworks_ = data[0]['artworks'] as PresaleArtWorks
+            const artworks_tmp = await transformArtworksPhotos(artworks_)
+            setArtWorks(artworks_tmp)  
             
             //Index 1 ===> Buttons
             setButtons(data[1])  
@@ -42,6 +61,7 @@ const useSharedLogicDropPanel = () => {
             //Index 2 ===> Texts
             setTexts(data[2])  
         }
+
         fetchData()
     }, [])
 
