@@ -10,6 +10,7 @@ import FooterMobile from "../../components/footer/FooterMobile"
 import styles from './PresalePage.module.scss'
 import HeroSectionMobile from "../../components/presale/HeroSection/HeroSectionMobile"
 import PresaleProsMobile from "../../components/presale/PresalePros/PresaleProsMobile"
+import BuyingProcessMobile from "../../components/presale/BuyingProcess/BuyingProcessMobile"
 
 export default function PresalePage() {
 
@@ -37,7 +38,7 @@ export default function PresalePage() {
                     <Menu/>
                     <DropPanel/>
                     <PresaleProsMobile/>
-                    <BuyingProcess/>
+                    <BuyingProcessMobile/>
                     <FooterMobile/>
                 </>
                     :

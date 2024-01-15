@@ -1,0 +1,161 @@
+@import '../../../styles/variables.scss';
+
+.frame-48095817,
+.frame-48095817 * {
+  box-sizing: border-box;
+}
+.frame-48095817 {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 320px;
+  position: relative;
+}
+.frame-48095817__frame-3349 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.buyingProcessMainTitle {
+  color: $primaireblack;
+  text-align: left;
+  font-family: 'Unbounded';
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+.buyingProcessMainDesc {
+  color: $bleubleu-sombre-300;
+  text-align: left;
+  font-family: $text-paragraphe-font-family;
+  font-size: $text-paragraphe-font-size;
+  font-weight: $text-paragraphe-font-weight;
+  position: relative;
+  align-self: stretch;
+}
+.frame-48095817__frame-48095816 {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-48095817__frame-48095791 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 320px;
+  position: relative;
+}
+.frame-48095817__etape-01 {
+  color: $bleubleu-sombre-100;
+  text-align: left;
+  font-family: $heading-h3-font-family;
+  font-size: $heading-h3-font-size;
+  font-weight: $heading-h3-font-weight;
+  position: relative;
+}
+.frame-48095817__cr-ation-d-un-contrat-intelligent-pour-la-pr-vente {
+  color: $bleubleu-sombre-100;
+  text-align: left;
+  font-family: $heading-h3-font-family;
+  font-size: $heading-h3-font-size;
+  font-weight: $heading-h3-font-weight;
+  position: relative;
+  width: 320px;
+}
+.frame-48095817__frame-48095796 {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-48095817__frame-48095795 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-48095817__paragraph {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 160%;
+  font-weight: 400;
+  opacity: 0.699999988079071;
+  position: relative;
+  align-self: stretch;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+.frame-48095817__frame-48095794 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-48095817__frame-48095793 {
+  background: #6052ff;
+  border-radius: 6px;
+  padding: 14px 31px 14px 31px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-48095817__heading {
+  color: #ffffff;
+  text-align: left;
+  font-family: $heading-h4-font-family;
+  font-size: $heading-h4-font-size;
+  font-weight: $heading-h4-font-weight;
+  position: relative;
+}
+.frame-48095817__frame-3 {
+  background: #6052ff;
+  border-radius: 6px;
+  padding: 14px 31px 14px 31px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
