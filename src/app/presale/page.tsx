@@ -43,7 +43,7 @@ export default function PresalePage() {
                 </>
                     :
                 <>    
-                    <HeroSectionMobile/>
+                    <HeroSection/>
                     <Menu/>
                     <DropPanel/>
                     <PresalePros/>

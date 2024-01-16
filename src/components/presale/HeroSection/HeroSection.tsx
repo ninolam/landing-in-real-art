@@ -47,7 +47,7 @@ const HeroSection = () => {
             </div>
             </div>
         </div>
-        <img className={styles["rectangle-2"]} alt=""
+        <img className={styles["mainImage"]} alt=""
             src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39771.svg"
         />
     </div>
