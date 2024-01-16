@@ -16,7 +16,7 @@ function PresalePros() {
     const {presaleProsTexts, setPresaleProsTexts, presaleProsButtons, setPresaleProsButtons} = useSharedLogixPresalePros()
 
   return (
-    <div className={styles["frame-13"]}>
+    <div className={styles["frame-presalePros"]}>
     <div className={styles["frame-wrapper"]}>
         <div className={styles["frame-14"]}>
         <div className={styles["avantages-d-achats"]}>
@@ -27,8 +27,8 @@ function PresalePros() {
         </p>
         </div>
     </div>
-    <div className={styles["frame-15"]}>
-        <div className={styles["frame-16"]}>
+    <div className={styles["frame-presalePros-cards"]}>
+        <div className={styles["frame-presalePros-card"]}>
         <div className={styles["frame-17"]}>
             <div className={styles["rectangle-4"]} />
             <VuesaxLinearStatusUp1 className={styles["vuesax-linear-status"]} />
@@ -43,9 +43,9 @@ function PresalePros() {
             </Link>
         </div>
         </div>
-        <div className={styles["frame-19"]}>
+        <div className={styles["frame-presalePros-centerCard"]}>
         <div className={styles["frame-3"]}>
-            <div className={styles["frame-16"]}>
+            <div className={styles["frame-presalePros-card"]}>
             <div className={styles["frame-17"]}>
                 <div className={styles["rectangle-4"]} />
                 <VuesaxLinearStatusUp1 className={styles["vuesax-linear-status"]} />
@@ -62,7 +62,7 @@ function PresalePros() {
             </div>
         </div>
         </div>
-        <div className={styles["frame-16"]}>
+        <div className={styles["frame-presalePros-card"]}>
         <div className={styles["frame-17"]}>
             <div className={styles["rectangle-4"]} />
             <VuesaxLinearStatusUp1 className={styles["vuesax-linear-status"]} />

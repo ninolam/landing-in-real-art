@@ -17,7 +17,7 @@ export default function PresalePage() {
     const [isMobile, setIsMobile] = useState(false)
     useEffect(() => {
       const checkScreenSize = () => {
-        setIsMobile(window.innerWidth < 800)
+        setIsMobile(window.innerWidth < 700)
       }
   
       checkScreenSize()
