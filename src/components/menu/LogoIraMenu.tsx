@@ -33,7 +33,7 @@ const LogoIraMenu = () => {
           />
         </svg>
       </div>
-      <div>
+      <div className={styles['logoIraMobile']}>
         <svg
           className={styles["ira2"]}
           width="61"
