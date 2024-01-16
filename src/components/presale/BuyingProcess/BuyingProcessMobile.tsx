@@ -41,13 +41,13 @@ const BuyingProcessMobile = () => {
                                         </div>
 
                                         <div className={styles["frame-48095817__frame-48095794"]}>
-                                            <div className={styles["frame-48095817__frame-48095793"]}>
-                                                <div className={styles["frame-48095817__heading"]} onClick={() => handleStepClick('left')}>
+                                            <div className={styles["frame-48095817__frame-48095793"]} onClick={() => handleStepClick('left')}>
+                                                <div className={styles["frame-48095817__heading"]}>
                                                     {buttons.previous[lang_]}
                                                 </div>
                                             </div>
-                                            <div className={styles["frame-48095817__frame-3"]}>
-                                                <div className={styles["frame-48095817__heading"]} onClick={() => handleStepClick('rifg')}>
+                                            <div className={styles["frame-48095817__frame-3"]} onClick={() => handleStepClick('rifg')}>
+                                                <div className={styles["frame-48095817__heading"]}>
                                                     {buttons.next[lang_]}
                                                 </div>
                                             </div>
