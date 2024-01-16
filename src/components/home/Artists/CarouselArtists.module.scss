@@ -73,28 +73,17 @@
     }
     .imageContainer {
       width: 500px; 
+      height: 550px;
     }
   }
   
   @media (max-width: 500px) {
     .homeArtists {
-      width: 350px; 
-    }
-    .imageContainer {
-      width: 350px; 
-    }
-
-    .artistsDescription {
-      font-size: 15px;
-    }
-  }
-
-  @media (max-width: 500px) {
-    .homeArtists {
       width: 330px; 
     }
     .imageContainer {
-      width: 330px; 
+      width: 400px; 
+      height: 450px;
     }
 
     .artistsDescription {
