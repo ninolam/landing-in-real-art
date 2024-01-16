@@ -12,8 +12,6 @@ const useSharedLogicHeroSection = () => {
     const lang_ = lang as Lang
     
     const FIREBASE_PRESALE_HERO_SECTION_COLLECTION  = 'Presale_HeroSection'
-    const FIREBASE_PRESALE_HERO_SECTION_SEE_DROP = 'seeDrop'
-    const FIREBASE_PRESALE_HERO_SECTION_SEE_DROP_LINK = 'seeDropLink'
 
     const defaultPresaleButtons = {
         seeDrop: defaultLangObject,
@@ -28,8 +26,6 @@ const useSharedLogicHeroSection = () => {
 
     const [presaleButtons, setPresaleButtons] = useState<PresaleDataButtons>(defaultPresaleButtons)
     const [presaleTexts, setPresaleTexts]     = useState<PresaleDataTexts>(defaultPresaleTexts)
-    const [seeDropButton, setSeeDropButton] = useState<string>('')
-    const [seeDropButtonLink, setSeeDropButtonLink] = useState<string>('')
     
     useEffect(() => {
       const fetchData = async () => {
@@ -43,8 +39,6 @@ const useSharedLogicHeroSection = () => {
         //Index 1 ===> Header Text
         setPresaleTexts(presaleData[1] as PresaleDataTexts)
         
-        setSeeDropButton(presaleData[0][FIREBASE_PRESALE_HERO_SECTION_SEE_DROP][lang_])
-        setSeeDropButtonLink(presaleData[0][FIREBASE_PRESALE_HERO_SECTION_SEE_DROP_LINK])
       }
   
       fetchData();
@@ -54,9 +48,7 @@ const useSharedLogicHeroSection = () => {
     
   return {
         presaleButtons, setPresaleButtons, 
-        presaleTexts, setPresaleTexts, 
-        seeDropButton, setSeeDropButton, 
-        seeDropButtonLink, setSeeDropButtonLink
+        presaleTexts, setPresaleTexts
   }
 
 }

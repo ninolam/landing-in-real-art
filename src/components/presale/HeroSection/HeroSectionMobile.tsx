@@ -18,12 +18,12 @@ const HeroSectionMobile = ({
     const {lang } = useAppContext()
     const lang_ = lang as Lang
 
-    
+    const FIREBASE_PRESALE_HERO_SECTION_SEE_DROP = 'seeDrop'
+    const FIREBASE_PRESALE_HERO_SECTION_SEE_DROP_LINK = 'seeDropLink'
+
     const {
         presaleButtons, setPresaleButtons, 
-        presaleTexts, setPresaleTexts, 
-        seeDropButton, setSeeDropButton, 
-        seeDropButtonLink, setSeeDropButtonLink
+        presaleTexts, setPresaleTexts
     } = useSharedLogicHeroSection()
     
   return (
@@ -51,9 +51,9 @@ const HeroSectionMobile = ({
 
       <div className={styles["container__container-button"]}>
         <div className={styles["container__button"]}>
-            <Link href={seeDropButtonLink}>
+            <Link href={presaleButtons[FIREBASE_PRESALE_HERO_SECTION_SEE_DROP_LINK]}>
                 <div className={styles["container__voir-le-drop"]}>
-                    {seeDropButton}
+                    {presaleButtons[FIREBASE_PRESALE_HERO_SECTION_SEE_DROP][lang_]}
                 </div>
             </Link>    
         </div>

@@ -11,12 +11,13 @@ const HeroSection = () => {
     const {lang } = useAppContext()
     const lang_ = lang as Lang
 
+    const FIREBASE_PRESALE_HERO_SECTION_SEE_DROP = 'seeDrop'
+    const FIREBASE_PRESALE_HERO_SECTION_SEE_DROP_LINK = 'seeDropLink'
+
     
     const {
         presaleButtons, setPresaleButtons, 
-        presaleTexts, setPresaleTexts, 
-        seeDropButton, setSeeDropButton, 
-        seeDropButtonLink, setSeeDropButtonLink
+        presaleTexts, setPresaleTexts
     } = useSharedLogicHeroSection()
 
     return (
@@ -40,8 +41,8 @@ const HeroSection = () => {
             <img className={styles["img"]} alt="" src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39773.svg"
             />
             <div className={styles["button"]}>
-                <Link href={seeDropButtonLink}>
-                    <div className={styles["text-wrapper-2"]}>{seeDropButton}</div>
+                <Link href={presaleButtons[FIREBASE_PRESALE_HERO_SECTION_SEE_DROP_LINK]}>
+                    <div className={styles["text-wrapper-2"]}>{presaleButtons[FIREBASE_PRESALE_HERO_SECTION_SEE_DROP][lang_]}</div>
                 </Link>
             </div>
             </div>
