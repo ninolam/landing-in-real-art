@@ -60,6 +60,12 @@ export type NewsletterText<T extends Record<Lang, string>> = {
     sendEmailErrorMsg: T
 }  
 
+export type PartnersTexts<T extends Record<Lang, string>> = {
+    mainTitle: T
+}  
+
+export type PartnersData = PartnersTexts<Record<Lang, string>>
+
 export type PrivateSaleText = {
     title: Record<Lang, string>
     description: Record<Lang, string>

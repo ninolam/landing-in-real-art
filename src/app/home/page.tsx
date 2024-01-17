@@ -19,6 +19,7 @@ import MenuMobile from "../../components/menu/MenuMobile";
 import PrivateSale from "../../components/home/PrivateSale/PrivateSale";
 import PrivateSaleMobile from "../../components/home/PrivateSale/PrivateSaleMobile";
 import styles from './HomePage.module.scss'
+import Partners from "../../components/home/Partners/Partners";
 
 export default function HomePage() {
 
@@ -48,6 +49,7 @@ export default function HomePage() {
           <CarouselArtists/>
           <Team/>
           <FaqMobile/>
+          <Partners/>
           <NewsletterMobile/>
           {/*<PrivateSaleMobile/>*/}
           <FooterMobile/>
@@ -61,6 +63,7 @@ export default function HomePage() {
           <CarouselArtists/>
           <Team/>
           <Faq/>
+          <Partners/>
           <Newsletter/>
           {/*<PrivateSale/>*/}
           <Footer/>

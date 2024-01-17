@@ -1,0 +1,27 @@
+@import '../../../styles/variables.scss';
+
+.partnersContainer {
+
+    width: 80%;
+    margin: auto auto 50px auto;
+}
+
+.partnersTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+    color: $primaireblack;
+    text-align: left;
+    font-family: "Unbounded", sans-serif;
+    /*font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);*/
+    font-size: var(--heading-h-2-font-size, 48px);
+    font-weight: var(--heading-h-2-font-weight, 600);
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+}
