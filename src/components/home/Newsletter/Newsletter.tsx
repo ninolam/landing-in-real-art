@@ -52,8 +52,8 @@ const Newsletter = () => {
                 {!isEmailValid && <FormErrorMessage>{nlTexts.sendEmailErrorMsg[lang_]}</FormErrorMessage>}
               </FormControl>
               <div className={styles.rectangleSendEmail}>
-              <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid' onClick={handlSendEmail}>
-              </Button>
+                <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid' onClick={handlSendEmail} left={'5px'}>
+                </Button>
               </div>            
             </div>
             <div>

@@ -22,6 +22,11 @@ export type HeaderTexts = {
 
 export type HeaderData = HeaderButtons & HeaderTexts
 
+export interface FooterTexts {
+    emailTitle: Record<Lang, string>,
+    emailPlaceHolder: Record<Lang, string>
+}  
+
 export interface FooterData<T extends string> {
     twitterUrl: T
     instagramUrl: T
@@ -37,7 +42,9 @@ export interface FooterData<T extends string> {
     partnersLinkText: Record<Lang, T>
     contactTitle: Record<Lang, T>
     block1: FooterBlock
-    block2: FooterBlock
+    block2: FooterBlock,
+    emailTitle: Record<Lang, T>,
+    emailPlaceHolder: Record<Lang, T>,
   }
 
 export interface FooterBlock {
@@ -50,6 +57,7 @@ export interface FooterBlockLine {
     url: string
 
 }
+
 
 export type NewsletterText<T extends Record<Lang, string>> = {
     title: T

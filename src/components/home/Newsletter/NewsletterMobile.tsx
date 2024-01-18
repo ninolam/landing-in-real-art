@@ -35,7 +35,7 @@ const NewsletterMobile = () => {
               {/*<FormHelperText color={'white'}>We'll never share your email.</FormHelperText>*/}
             </FormControl>
             <div className={styles.rectangleSendEmail}>
-            <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid' onClick={handlSendEmail}/>
+            <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid' onClick={handlSendEmail} left={'5px'}/>
             
             </div>            
         </div>

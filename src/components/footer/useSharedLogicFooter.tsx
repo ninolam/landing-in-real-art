@@ -3,7 +3,7 @@ import { storage } from "../../firebaseConfig"
 import { useEffect, useState } from 'react'
 import { db } from '../../firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore/lite'
-import { FooterBlock, FooterData, Lang, defaultLangObject } from "../../types/types"
+import { FooterBlock, FooterData, FooterTexts, Lang, defaultLangObject } from "../../types/types"
 import { useAppContext } from "../../context"
 
 
@@ -31,8 +31,15 @@ const useSharedLogicFooter = () => {
         title: defaultLangObject,
         lines: []
     }
+
+    const defaultFooterTexts = {
+        emailTitle: defaultLangObject,
+        emailPlaceHolder: defaultLangObject
+    }
+
     const [footerBlock1, setFooterBlock1] = useState<FooterBlock>(defaultFooterBlock)
     const [footerBlock2, setFooterBlock2] = useState<FooterBlock>(defaultFooterBlock)
+    const [texts, setTexts]               = useState<FooterTexts>(defaultFooterTexts)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -69,6 +76,9 @@ const useSharedLogicFooter = () => {
             setPhone(phone)
             setAddress(address)
             setContactTitle(contactTitle)
+            
+            //Texts
+            setTexts(dataList[3] as FooterTexts)
         }
     
         fetchData()
@@ -80,7 +90,8 @@ const useSharedLogicFooter = () => {
             linkedInLogo, setLinkedInLogo, instagramLogo, setInstagramLogo, twitterUrl, setTwitterUrl, linkedInUrl, setLinkedInUrl,
             instagramUrl, setInstagramUrl, leftBlockText, setLeftBlockText,
             footerBlock1, setFooterBlock1,
-            footerBlock2, setFooterBlock2
+            footerBlock2, setFooterBlock2,
+            texts, setTexts
         }
 
 }

@@ -39,7 +39,7 @@ export default function PresalePage() {
                     <DropPanel/>
                     <PresaleProsMobile/>
                     <BuyingProcessMobile/>
-                    <FooterMobile/>
+                    <FooterMobile containsEmail={true}/>
                 </>
                     :
                 <>    

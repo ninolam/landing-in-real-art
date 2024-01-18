@@ -52,7 +52,7 @@ export default function HomePage() {
           <Partners/>
           <NewsletterMobile/>
           {/*<PrivateSaleMobile/>*/}
-          <FooterMobile/>
+          <FooterMobile containsEmail={false}/>
         </>  
           : 
         <>

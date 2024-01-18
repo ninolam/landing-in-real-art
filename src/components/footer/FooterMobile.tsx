@@ -9,9 +9,15 @@ import { IconTwitter } from './IconTwitter/IconTwitter'
 import useSharedLogicFooter from './useSharedLogicFooter'
 import { useAppContext } from '../../context'
 import { Lang } from '../../types/types'
+import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
+import { IoSend } from 'react-icons/io5'
+
+export interface FooterMobileProps {
+  containsEmail?: boolean
+}
 
 
-const FooterMobile = () => {
+const FooterMobile = ({containsEmail, ...props}: FooterMobileProps) => {
 
   //Get the language of the global context
   const {lang } = useAppContext()
@@ -22,7 +28,8 @@ const FooterMobile = () => {
     linkedInLogo, setLinkedInLogo, instagramLogo, setInstagramLogo, twitterUrl, setTwitterUrl, linkedInUrl, setLinkedInUrl,
     instagramUrl, setInstagramUrl, leftBlockText, setLeftBlockText,
     footerBlock1, setFooterBlock1,
-    footerBlock2, setFooterBlock2
+    footerBlock2, setFooterBlock2,
+    texts, setTexts
   } = useSharedLogicFooter()
 
   return (
@@ -62,17 +69,25 @@ const FooterMobile = () => {
       </div>
     </div>
 
-    <div className={styles["newsletter2"]}>
-      <div className={styles["h-3"]}>Restez informée </div>
-      <div className={styles["search-bar"]}>
-        <div className={styles["frame-55"]}>
-          <div className={styles["adresse-mail"]}>
-            Adresse mail{" "}
+    {containsEmail ?
+        <div className={styles["newsletter2"]}>
+          <div className={styles["h-3"]}>{texts.emailTitle[lang_]}</div>  
+          <div className={styles["email"]}>
+              <FormControl color={'white'}>
+                <FormLabel color={'white'}></FormLabel>
+                  <Input type='email' color={'grey'} backgroundColor={'white'} 
+                  placeholder={texts.emailPlaceHolder[lang_]} 
+                  focusBorderColor='white'/>
+                  {/*<FormHelperText color={'white'}>We'll never share your email.</FormHelperText>*/}
+              </FormControl>  
+              <div className={styles.rectangleSendEmail}>
+                <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid' left={'5px'}>
+                </Button>
+              </div>            
           </div>
-          
-        </div>
-      </div>
-    </div>
+        </div>  
+      : ''
+    }
     <div className={styles["link-social"]}>
 
       <Link href={linkedInUrl}>
