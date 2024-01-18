@@ -2,7 +2,16 @@ This is a [Next.js](https://nextjs.org/) for the landing page of "In Real Art"
 
 <img src="./public/img/Landing_IRA.png" alt="" title="">
 
+It's fully responsive.
 
+This application used some front libraries like : 
+ - [Chakra](https://chakra-ui.com/)
+ - [React Bootstrap](https://react-bootstrap.netlify.app/)
+
+
+and some backend libraries : 
+
+ - [Firebase](https://firebase.google.com/)
 
 ## Getting Started
 
