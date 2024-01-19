@@ -32,7 +32,7 @@ const Menu = () => {
     return (
         <>
         
-        <div className={isMobile ? styles.headerSticky : styles.header} id="menu">
+        <div className={(isMobile || isSticky) ? styles.headerSticky : styles.header} id="menu">
           <LogoIraMenu/>
           <div className={styles.wrapperLink}>
 
