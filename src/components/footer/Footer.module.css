@@ -9,6 +9,21 @@
   width: 1440px;
 }
 
+.logo-social-network {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.logo-2 {
+  height: 32.43px;
+  position: relative;
+  width: 101.49px;
+}
+
 .footer-left {
   align-items: flex-start;
   display: inline-flex;

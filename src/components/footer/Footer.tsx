@@ -23,8 +23,8 @@ const Footer = () => {
         <>
             <div className={styles.footer}>
                 <div className={styles["footer-left"]}>
-                    <img className="logo-2" alt="Logo" src="/img/logo-IRA.png" />
-                    <div className="logo-social-network">
+                    <img className={styles["logo-2"]} alt="" src="/img/logo-IRA.png" />
+                    <div className={styles["logo-social-network"]}>
                         <Link href={linkedInUrl}>
                             <img className={styles["add"]} alt="Frame" src={linkedInLogo} />
                         </Link>

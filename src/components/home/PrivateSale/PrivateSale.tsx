@@ -17,7 +17,7 @@ const PrivateSale = () => {
     const {psTexts, setPsTexts} = useSharedLogicPrivateSale()
     /*
     const EmailInput = React.memo(() => {
-      return <input type="text" className="email" autoFocus placeholder={emailPh}/>
+      return <input type="text" className={styles.email} autoFocus placeholder={emailPh}/>
     });
     */
   

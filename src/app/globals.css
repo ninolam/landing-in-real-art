@@ -809,11 +809,6 @@ a {
 }
 
 
-.photo-team-member {  
-  transition: opacity 0.5s ease;
-}
-
-
 .LP .photo-team-member {
   height: 650px;
   object-fit: cover;
@@ -1075,13 +1070,6 @@ a {
   width: 334px;
 }
 
-
-
-.logo-2 {
-  height: 32.43px;
-  position: relative;
-  width: 101.49px;
-}
 
 .LP .menu {
   align-items: center;

@@ -138,6 +138,10 @@
     position: relative;
   }
 
+  .photo-team-member {  
+    transition: opacity 0.5s ease;
+  }
+  
   .chara-carousel {
     display: flex;
     flex-direction: column;

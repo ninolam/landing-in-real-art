@@ -6,7 +6,7 @@ const TeamMember: React.FC<TeamMemberProps> = ( {name, photo, role, text1, text2
   return (
     <>
         <div className={styles["frame-team-member-carousel"]}>
-          <img id="photo-member" className="photo-team-member" alt="" src={photo} />
+          <img id="photo-member" className={styles["photo-team-member"]} alt="" src={photo} />
         </div>
         <div className={styles["colum"]}>
         <div className={styles["wrapper-text"]}>
