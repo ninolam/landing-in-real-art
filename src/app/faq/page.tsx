@@ -8,16 +8,19 @@ import { useAppContext } from "../../context";
 import { db } from '../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { FaqQuestions, Lang, defaultLangObject } from "../../types/types";
+import useSharedLogic from "../useSharedLogic";
+import Footer from "../../components/footer/Footer";
+import FooterMobile from "../../components/footer/FooterMobile";
 
 
 export default function FaqPage() {
 
-    const [isMobile, setIsMobile] = useState(false)
-
     //Get the language of the global context
     const {lang} = useAppContext()
     const lang_ = lang as Lang
-    
+
+    const {isMobile, setIsMobile} = useSharedLogic(800)
+
     const FIREBASE_FAQ_COLLECTION = 'Faq'
     
     const defaultFaqQuestion = {
@@ -31,12 +34,6 @@ export default function FaqPage() {
     const [faqQuestions,setFaqQuestions] = useState<FaqQuestions>(defaultFaqQuestions);
     
     useEffect(() => {
-        const checkScreenSize = () => {
-            setIsMobile(window.innerWidth < 800)
-        }
-
-        checkScreenSize()
-        window.addEventListener('resize', checkScreenSize)
 
         const fetchData = async () => {
             const faqCollection = collection(db, FIREBASE_FAQ_COLLECTION);
@@ -47,40 +44,74 @@ export default function FaqPage() {
         }
         fetchData();
 
-        return () => window.removeEventListener('resize', checkScreenSize)
     }, [])
-
 
 
     return (
         <div id="home" className={styles["home"]} style={isMobile?{paddingTop:'0px'}:{paddingTop:''}}>
 
-            <HeroSection />
-            <Menu/>
-            <div style={{width: '70%', height: '100%', marginBottom: "100px"}}>
-                <Accordion defaultIndex={[0]}>
+            {isMobile ? 
+                <>
+                    <HeroSection />
+                    <Menu/>
+                    <div style={{width: '70%', height: '100%', marginBottom: "100px"}}>
+                        <Accordion defaultIndex={[0]}>
 
-                    {
-                        faqQuestions.questions.map(
-                            (faqQuestion, index) => (
-                                <AccordionItem key={index}>
-                                    <h2>
-                                    <AccordionButton>
-                                        <Box as="span" flex='1' textAlign='left'>
-                                        {index+1}. {faqQuestion.question[lang_]}
-                                        </Box>
-                                        <AccordionIcon />
-                                    </AccordionButton>
-                                    </h2>
-                                    <AccordionPanel pb={4}>
-                                        {faqQuestion.answer[lang_]}
-                                    </AccordionPanel>
-                                </AccordionItem>
+                            {
+                                faqQuestions.questions.map(
+                                    (faqQuestion, index) => (
+                                        <AccordionItem key={index}>
+                                            <h2>
+                                            <AccordionButton>
+                                                <Box as="span" flex='1' textAlign='left'>
+                                                {index+1}. {faqQuestion.question[lang_]}
+                                                </Box>
+                                                <AccordionIcon />
+                                            </AccordionButton>
+                                            </h2>
+                                            <AccordionPanel pb={4}>
+                                                {faqQuestion.answer[lang_]}
+                                            </AccordionPanel>
+                                        </AccordionItem>
+                                    )
+                                )
+                            }
+                        </Accordion>
+                    </div>
+                    <FooterMobile/>
+                </>
+            : 
+                <>
+                <HeroSection />
+                <Menu/>
+                <div style={{width: '70%', height: '100%', marginBottom: "100px"}}>
+                    <Accordion defaultIndex={[0]}>
+
+                        {
+                            faqQuestions.questions.map(
+                                (faqQuestion, index) => (
+                                    <AccordionItem key={index}>
+                                        <h2>
+                                        <AccordionButton>
+                                            <Box as="span" flex='1' textAlign='left'>
+                                            {index+1}. {faqQuestion.question[lang_]}
+                                            </Box>
+                                            <AccordionIcon />
+                                        </AccordionButton>
+                                        </h2>
+                                        <AccordionPanel pb={4}>
+                                            {faqQuestion.answer[lang_]}
+                                        </AccordionPanel>
+                                    </AccordionItem>
+                                )
                             )
-                        )
-                    }
-                </Accordion>
-            </div>
+                        }
+                    </Accordion>
+                </div>
+                <Footer/>    
+                </>
+            }    
+            
         </div>        
     )
 

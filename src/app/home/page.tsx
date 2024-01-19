@@ -15,26 +15,14 @@ import FaqMobile from "../../components/home/Faq/FaqMobile";
 import NewsletterMobile from "../../components/home/Newsletter/NewsletterMobile";
 import FooterMobile from "../../components/footer/FooterMobile";
 import CarouselArtists from "../../components/home/Artists/CarouselArtists";
-import MenuMobile from "../../components/menu/MenuMobile";
-import PrivateSale from "../../components/home/PrivateSale/PrivateSale";
-import PrivateSaleMobile from "../../components/home/PrivateSale/PrivateSaleMobile";
 import styles from './HomePage.module.scss'
 import Partners from "../../components/home/Partners/Partners";
+import useSharedLogic from "../useSharedLogic";
 
 export default function HomePage() {
 
-  const [isMobile, setIsMobile] = useState(false)
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 800)
-    }
-
-    checkScreenSize()
-    window.addEventListener('resize', checkScreenSize)
-
-    return () => window.removeEventListener('resize', checkScreenSize)
-  }, [])
-
+  const {isMobile, setIsMobile} = useSharedLogic(800)
+  
 
     return (
 
