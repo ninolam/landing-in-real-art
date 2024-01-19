@@ -1,14 +1,95 @@
-.homeArtists {
+  
+  .frame-artists-carousel {
+    background: var(--primaire-white, #f6f8ff);
+    border-radius: 60px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: var(
+      --bg-bgcolor,
+      linear-gradient(
+        135.65deg,
+        rgba(236, 238, 250, 1) 0%,
+        rgba(234, 236, 251, 1) 52.60416865348816%,
+        rgba(225, 229, 255, 1) 100%
+      )
+    );
+    border-image-slice: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 80px;
     align-items: center;
     justify-content: flex-start;
     flex-shrink: 0;
+    width: 900px;
     position: relative;
-    width: 800px;
+    overflow: hidden;
+  }
+
+  .frame-artist-carousel {
+    height: 650px;
+    object-fit: cover;
+    position: relative;
+    width: 100%;
+    animation: fadeIn 4000ms ease-in-out;
+    overflow: hidden;
   }
   
+  .frame-artist-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex: 1;
+    position: relative;
+    margin: 20px
+  }  
+  
+  .wrapper-text {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .frame-artist-carousel > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+  }
+
+  .photo-artist {  
+    transition: opacity 0.5s ease;
+  }
+
+  .frameArtistName {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .artistName {
+    color: #000000;
+    text-align: center;
+    font-family: 'Unbounded', sans-serif;
+    /*font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);*/
+    font-size: var(--heading-h-4-font-size, 16px);
+    font-weight: var(--heading-h-4-font-weight, 500);
+    position: relative;
+    align-self: stretch;
+  }
+
   .frame3349 {
     display: flex;
     flex-direction: column;
@@ -50,41 +131,126 @@
     border-radius: 10px;
   }
 
-  .imageContainer {
-    display: flex;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 900px; 
-    height: 700px
+  @media (max-width: 900px) {
+    .frame-artists-carousel {
+      flex-direction: column;
+      padding-right: 0px;
+      width: 800px; 
+    }
+
+    .wrapper-text {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
   }
 
-  @media (max-width: 900px) {
-    .homeArtists {
+  @media (max-width: 800px) {
+
+    .frame-artists-carousel {
+      flex-direction: column;
+      padding-right: 0px;
       width: 700px; 
     }
-    .imageContainer {
-        width: 700px; 
-      }
+
+    .frame-artist-carousel {
+      height: 500px;
+      object-fit: cover;
+      position: relative;
+      width: 100%;
+      animation: fadeIn 4000ms ease-in-out;
+      overflow: hidden;
+    }
+
+    .wrapper-text {
+      align-items: center;
+    }
+
+    .artistDesc {
+      font-size: smaller;
+    }
+
+
   }
 
-  @media (max-width: 650px) {
-    .homeArtists {
-      width: 500px;
+  @media (max-width: 700px) {
+    .frame-artists-carousel {
+      flex-direction: column;
+      padding-right: 0px;
+      width: 600px; 
     }
-    .imageContainer {
-      width: 500px; 
-      height: 550px;
+
+    .frame-artist-carousel {
+      height: 400px;
+      object-fit: cover;
+      position: relative;
+      animation: fadeIn 4000ms ease-in-out;
+      overflow: hidden;
     }
+
+    .wrapper-text {
+      align-items: center;
+    }
+
+    .artistDesc {
+      font-size: smaller;
+    }
+
+
   }
-  
+
+  @media (max-width: 600px) {
+    .frame-artists-carousel {
+      flex-direction: column;
+      padding-right: 0px;
+      width: 90%;
+      margin: auto; 
+    }
+
+    .frame-artist-carousel {
+      height: 500px;
+      object-fit: cover;
+      position: relative;
+      animation: fadeIn 4000ms ease-in-out;
+      overflow: hidden;
+    }
+
+    .wrapper-text {
+      align-items: center;
+    }
+
+    .artistDesc {
+      font-size: smaller;
+    }
+
+
+  }
   @media (max-width: 500px) {
-    .homeArtists {
-      width: 330px; 
+    .frame-artists-carousel {
+      flex-direction: column;
+      padding-right: 0px;
+      width: 75%;
+      margin: auto; 
     }
-    .imageContainer {
-      width: 400px; 
-      height: 450px;
+
+    .frame-artist-carousel {
+      height: 350px;
+      object-fit: cover;
+      position: relative;
+      animation: fadeIn 4000ms ease-in-out;
+      overflow: hidden;
     }
+
+    .wrapper-text {
+      align-items: center;
+    }
+
+    .artistDesc {
+      font-size: x-small;
+    }
+
 
     .artistsDescription {
       font-size: 14px;
@@ -92,12 +258,38 @@
   }
 
   @media (max-width: 400px) {
-    .homeArtists {
-      width: 300px; 
+    .frame-artists-carousel {
+      flex-direction: column;
+      padding-right: 0px;
+      width: 350px; 
     }
-    .imageContainer {
-      width: 360px; 
-      height: 400px;
+
+    .frame-artist-carousel {
+      height: 300px;
+      object-fit: cover;
+      position: relative;
+      width: 100%;
+      animation: fadeIn 4000ms ease-in-out;
+      overflow: hidden;
+    }
+
+    .wrapper-text {
+      align-items: center;
+    }
+
+    .def {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      align-self: stretch;
+      flex-shrink: 0;
+      position: relative;
+    }
+    
+    .artistDesc {
+      font-size: x-small;
     }
 
     .artistsDescription {

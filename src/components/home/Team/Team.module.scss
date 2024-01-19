@@ -151,6 +151,7 @@
     align-self: stretch;
     flex-shrink: 0;
     position: relative;
+    margin-bottom: 40px;
   }
 
   .member-name {
@@ -289,7 +290,7 @@
       flex-direction: column;
       padding-right: 0px;
       width: 800px; 
-  }
+    }
     .frame-team-member {
         height: 650px; 
         width: 100%;

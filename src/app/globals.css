@@ -809,14 +809,6 @@ a {
 }
 
 
-.LP .photo-team-member {
-  height: 650px;
-  object-fit: cover;
-  position: relative;
-  width: 474px;
-  animation: fadeIn 4000ms ease-in-out;
-}
-
 .LP .team-member-description {
   align-items: flex-end;
   display: flex;
@@ -839,27 +831,6 @@ a {
   position: relative;
 }
 
-.LP .wrapper-text {
-  align-items: flex-start;
-  align-self: stretch;
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: column;
-  gap: 32px;
-  position: relative;
-  width: 100%;
-}
-
-.LP .def {
-  align-items: flex-start;
-  align-self: stretch;
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: column;
-  gap: 16px;
-  position: relative;
-  width: 100%;
-}
 
 .LP .passionn-par-l-art {
   align-self: stretch;

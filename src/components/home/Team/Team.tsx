@@ -157,7 +157,7 @@ const Team = () => {
               {title[lang_]}
           </div>
           <div className={styles["frame-team-carousel"]}>
-            <Carousel interval={4000}>
+            <Carousel interval={3000}>
                   {
                       members.map(
                           (member, index) => (

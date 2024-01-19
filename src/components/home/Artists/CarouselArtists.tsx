@@ -9,7 +9,7 @@ import { storage } from "../../../firebaseConfig";
 import { useAppContext } from "../../../context";
 import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-
+import Artist from './Artist'
 
 const CarouselArtists = () => {
 
@@ -71,35 +71,31 @@ const CarouselArtists = () => {
     }, [])
 
   return (
-
-    <div id="artists" className={styles.homeArtists}>
+    <div>
         <div className={styles.frame3349}>
             <div className={styles.nosArtistes}>{artistsTexts.title[lang_]}</div>
             <div className={styles.artistsDescription}>
                 {artistsTexts.description[lang_]}
             </div>
         </div>
-            <Carousel fade>
-                {
-                    allArtists.map(
-                        (record, index) => (
-                            <Carousel.Item key={index} interval={3000}> 
-                                <div className={styles.imageContainer}>
-                                    <img className={styles.imageArtist} src={record.image}/>
-                                </div>
-                                <Carousel.Caption className={styles.carouselCaption}>
-                                    <h3>{record.name}</h3>
-                                    <p style={{ textAlign: 'justify' }}>{record.desc[lang_]}</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            
+
+        <div className={styles["frame-artists-carousel"]}>
+            <Carousel interval={4000}>
+                    {
+                        allArtists.map(
+                            (record, index) => (
+                                <Carousel.Item key={index}> 
+                                    <Artist name={record.name} image={record.image} desc={record.desc[lang_]} />
+                                </Carousel.Item>
+                                
+                            )
                         )
-                    )
-                }
+                    }
 
-        </Carousel>
+            </Carousel>
+        </div>
+    </div>
 
-        </div>      
     
   )
 }

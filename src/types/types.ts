@@ -202,6 +202,12 @@ export interface TeamMemberProps {
     text2: string
 }
   
+export interface ArtistMemberProps {
+    name: string
+    image: string
+    desc: string
+}
+
 export interface PresaleDataTexts {
     title1: Record<Lang, string>
     title2: Record<Lang, string>
