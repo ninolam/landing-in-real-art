@@ -36,7 +36,7 @@ const Footer = () => {
                         </Link>
                         
                     </div>
-                    <p className={styles.footerLeftFooter}>{leftBlockText}</p>
+                    <p className={styles.footerLeftFooter}>{leftBlockText[lang_]}</p>
                 </div>
                 <div className={styles["footer-right"]}>
                     {/** BLOCK 1**/}

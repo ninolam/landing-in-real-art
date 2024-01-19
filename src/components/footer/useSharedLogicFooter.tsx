@@ -25,7 +25,7 @@ const useSharedLogicFooter = () => {
     const [twitterUrl, setTwitterUrl]       = useState("")
     const [linkedInUrl, setLinkedInUrl]     = useState("")
     const [instagramUrl, setInstagramUrl]   = useState("")
-    const [leftBlockText, setLeftBlockText] = useState<string>("")
+    const [leftBlockText, setLeftBlockText] = useState<Record<Lang,string>>(defaultLangObject)
 
     const defaultFooterBlock = {
         title: defaultLangObject,
@@ -60,7 +60,7 @@ const useSharedLogicFooter = () => {
             setTwitterUrl(dataList[1].twitterUrl)
             setInstagramUrl(dataList[1].instagramUrl)
             setLinkedInUrl(dataList[1].linkedInUrl)
-            const leftBlockText_ = dataList[1].text[lang_]
+            const leftBlockText_ = dataList[1].text
             setLeftBlockText(leftBlockText_)
 
             //Links block
