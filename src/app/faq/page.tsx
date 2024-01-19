@@ -2,7 +2,7 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import styles from './FaqPage.module.scss'
-import HeroSection from "./HeroSection/HeroSection";
+import HeroSection from "../../components/faqPage/HeroSection/HeroSection";
 import Menu from "../../components/menu/Menu";
 import { useAppContext } from "../../context";
 import { db } from '../../firebaseConfig';
@@ -11,6 +11,7 @@ import { FaqQuestions, Lang, defaultLangObject } from "../../types/types";
 import useSharedLogic from "../useSharedLogic";
 import Footer from "../../components/footer/Footer";
 import FooterMobile from "../../components/footer/FooterMobile";
+import MenuFaq from "../../components/faqPage/menu/MenuFaq";
 
 
 export default function FaqPage() {
@@ -57,25 +58,7 @@ export default function FaqPage() {
                     <div style={{width: '70%', height: '100%', marginBottom: "100px"}}>
                         <Accordion defaultIndex={[0]}>
 
-                            {
-                                faqQuestions.questions.map(
-                                    (faqQuestion, index) => (
-                                        <AccordionItem key={index}>
-                                            <h2>
-                                            <AccordionButton>
-                                                <Box as="span" flex='1' textAlign='left'>
-                                                {index+1}. {faqQuestion.question[lang_]}
-                                                </Box>
-                                                <AccordionIcon />
-                                            </AccordionButton>
-                                            </h2>
-                                            <AccordionPanel pb={4}>
-                                                {faqQuestion.answer[lang_]}
-                                            </AccordionPanel>
-                                        </AccordionItem>
-                                    )
-                                )
-                            }
+                          
                         </Accordion>
                     </div>
                     <FooterMobile/>
@@ -83,29 +66,12 @@ export default function FaqPage() {
             : 
                 <>
                 <HeroSection />
+                <MenuFaq/>
                 <Menu/>
                 <div style={{width: '70%', height: '100%', marginBottom: "100px"}}>
                     <Accordion defaultIndex={[0]}>
 
-                        {
-                            faqQuestions.questions.map(
-                                (faqQuestion, index) => (
-                                    <AccordionItem key={index}>
-                                        <h2>
-                                        <AccordionButton>
-                                            <Box as="span" flex='1' textAlign='left'>
-                                            {index+1}. {faqQuestion.question[lang_]}
-                                            </Box>
-                                            <AccordionIcon />
-                                        </AccordionButton>
-                                        </h2>
-                                        <AccordionPanel pb={4}>
-                                            {faqQuestion.answer[lang_]}
-                                        </AccordionPanel>
-                                    </AccordionItem>
-                                )
-                            )
-                        }
+                       
                     </Accordion>
                 </div>
                 <Footer/>    

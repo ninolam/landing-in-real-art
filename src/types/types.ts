@@ -100,6 +100,17 @@ export type FaqTexts<T extends Record<Lang, string>> = {
     answer3: T
 }  
 
+export type FaqPageMenu = {
+    items: Array<FaqQuestion>,
+    textButton: Record<Lang, string>
+}
+
+export type FaqPage = {
+    faqNFT: FaqPageMenu,
+    faqProject: FaqPageMenu
+}
+
+
 export type FaqQuestion = {
     answer: Record<Lang, string>,
     question: Record<Lang, string>
