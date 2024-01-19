@@ -229,14 +229,22 @@
   position: relative;
   overflow: visible;
 }
-.frame-3203 {
+.div-logo-twitter {
   background: var(--blanc, #f6f8ff);
   border-radius: 100px;
   flex-shrink: 0;
   width: 55px;
   height: 55px;
   position: relative;
+  margin: auto;
 }
+
+.logo-twitter {
+  position: relative;
+  top: 11px;
+  left: 11px;
+ }
+
 .icon-twitter-instance {
   width: 35px !important;
   height: 35px !important;

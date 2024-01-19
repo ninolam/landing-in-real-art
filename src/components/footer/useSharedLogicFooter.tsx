@@ -48,7 +48,7 @@ const useSharedLogicFooter = () => {
             const dataList     = dataSnapshot.docs.map(doc => doc.data() as FooterData<string>);
             
             //Left block
-            const imageRefTwitter   = ref(storage, 'footer/twitter-logo.png')
+            const imageRefTwitter   = ref(storage, 'footer/twitter-x-logo.png')
             const imageRefLinkedIn  = ref(storage, 'footer/linkedin-logo.png') 
             const imageRefInstagram = ref(storage, 'footer/instagram-logo.png')
             const urlTwitter   = await getDownloadURL(imageRefTwitter)

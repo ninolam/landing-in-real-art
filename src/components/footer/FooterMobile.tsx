@@ -107,10 +107,8 @@ const FooterMobile = ({containsEmail, ...props}: FooterMobileProps) => {
       </Link>    
 
       <Link href={twitterUrl}>
-        <div className={styles["frame-3203"]}>
-          <IconTwitter
-            className={styles["icon-twitter-instance"]}
-          />
+        <div className={styles["div-logo-twitter"]}>
+          <img  className={styles["logo-twitter"]} src='img/twitter-x-logo-mobile-32px.png' alt=''/>
         </div>
       </Link>
 
