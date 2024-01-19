@@ -16,8 +16,8 @@ const Partners = () => {
     return (
         // Passing `columns={[2, null, 3]}` and `columns={{sm: 2, md: 3}}`
         // will have the same effect.*/}
-        <div className={styles.partnersContainer}>
-            <div id="partners" className={styles.partnersTitle}>
+        <div id="partners" className={styles.partnersContainer}>
+            <div className={styles.partnersTitle}>
                 {partnersTexts.mainTitle[lang_]}
             </div>
             <SimpleGrid columns={[1, null, 2]} spacing='100px' border='10px'>
