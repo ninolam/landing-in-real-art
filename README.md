@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) for the landing page of "In Real Art"
+This is the landing page of the project "In Real Art" : a fine artwork's web3 marketplace.
+It will embrace the blochchain technology with use of Non Fungible Token (NFT).
+This is built with[Next.js](https://nextjs.org/) and others front & back libraries.
 
 <img src="./public/img/Landing_IRA.png" alt="" title="">
 
