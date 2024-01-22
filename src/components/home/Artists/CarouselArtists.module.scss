@@ -23,6 +23,7 @@
     width: 900px;
     position: relative;
     overflow: hidden;
+    min-height: 600px;
   }
 
   .frame-artist-carousel {
@@ -54,6 +55,7 @@
     align-self: stretch;
     flex-shrink: 0;
     position: relative;
+    min-height: 300px;
   }
 
   .frame-artist-carousel > img {
