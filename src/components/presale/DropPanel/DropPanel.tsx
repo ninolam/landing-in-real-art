@@ -1,9 +1,9 @@
 "use client"
 import { useAppContext } from "../../../context"
 import { Lang } from "../../../types/types"
-import Arrow21 from "../Arrows21"
 import styles from './DropPanel.module.scss'
 import useSharedLogicDropPanel from "./useSharedLogicDropPanel"
+import { useState } from "react"
 
 function DropPanel() {
 
@@ -13,7 +13,37 @@ function DropPanel() {
     
     const {artWorks, buttons, texts} = useSharedLogicDropPanel()
 
-    console.log(artWorks)
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalContent, setModalContent] = useState('');
+
+    const showModal = (description: string) => {
+        setModalContent(description);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    interface ModalProps {
+        description: string;
+        onClose: () => void;
+    }
+    
+    const Modal: React.FC<ModalProps> = ({ description, onClose }) => {
+        return (
+            <div className={styles["modal-backdrop"]}>
+                <div className={styles["modal"]}>
+                    <p>{description}</p>
+                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: '20px'}}>
+                        <button style={{cursor: 'pointer', backgroundColor: 'lightgrey', borderRadius: '5px', padding: '10px'}} onClick={onClose}>Close</button>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+    
+  
     return (
         <>
         <div className={styles["grid-wrapper"]}>
@@ -23,13 +53,16 @@ function DropPanel() {
                 </div>
                 <div className={styles["text-wrapper-4"]}>65J 20H</div>
             </div>
+            
             <div className={styles["image-grid"]}>
                 {
                     artWorks.map( (artwork, index) => (
-                        <div key={index} className={styles["image-container"]}>
+                        <div key={index} id={index.toString()} className={styles["image-container"]}>
+                            
                             <div className={styles.frameDetailArtWorkLink}>
                                 <div></div>
-                                <div style={{backgroundColor: 'white', padding: '2px 8px 2px 8px',borderRadius: '0px 5px', fontFamily: 'Unbounded'}}>
+                                <div style={{backgroundColor: 'white', padding: '2px 8px 2px 8px',borderRadius: '0px 5px', fontFamily: 'Unbounded'}} 
+                                    onClick={() => showModal(artwork.description[lang_])}>
                                     {buttons.detailArtWork[lang_]}
                                 </div>
                                 
@@ -43,6 +76,10 @@ function DropPanel() {
                         </div>
                     ))
                 }
+                
+                {isModalOpen && (
+                    <Modal description={modalContent} onClose={closeModal} />
+                )}
                 
             </div>
         </div>

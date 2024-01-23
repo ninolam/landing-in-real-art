@@ -19,6 +19,7 @@ const useSharedLogicDropPanel = () => {
     }
 
     const defaultArtwork = {
+        description: defaultLangObject,
         image: '',
         url: ''
     }
@@ -36,7 +37,6 @@ const useSharedLogicDropPanel = () => {
         let imageRef: any = null
         try {
             imageRef = ref(storage, photo)
-            console.log(imageRef)
             const urlPhoto = await getDownloadURL(imageRef)
             return urlPhoto;    
         } catch (error) {
@@ -58,7 +58,7 @@ const useSharedLogicDropPanel = () => {
             const collection_ = collection(db, FIREBASE_DROPPANEL_COLLECTION);
             const documents   = await getDocs(collection_);
             const data        = documents.docs.map(doc => doc.data() as PresaleDropPanelData);
-            console.log(data)
+            
             //Index 0 ===> ArtWorks
             const artworks_ = data[0]['artworks'] as PresaleArtWorks
             const artworks_tmp = await transformArtworksPhotos(artworks_)
