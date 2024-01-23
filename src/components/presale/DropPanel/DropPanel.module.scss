@@ -209,6 +209,24 @@
   overflow: hidden;
 }
 
+.frameDetailArtWorkLink {
+  width: 100%;
+  background-color: "";
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+   position: relative;
+   top: 48px;
+}
+
+.detailArtworkLink {
+
+  background-color: red; 
+  padding: 2px 8px 2px 8px; 
+  border-radius: 0px 5px;
+  font-family: 'Unbounded', sans-serif;
+}
+
 @media screen and (min-width: 500px) {
   /* For screens wider than 500px, adjust to 2x3 grid */
   .image-grid {

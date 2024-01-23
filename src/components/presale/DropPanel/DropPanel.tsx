@@ -27,6 +27,13 @@ function DropPanel() {
                 {
                     artWorks.map( (artwork, index) => (
                         <div key={index} className={styles["image-container"]}>
+                            <div className={styles.frameDetailArtWorkLink}>
+                                <div></div>
+                                <div style={{backgroundColor: 'white', padding: '2px 8px 2px 8px',borderRadius: '0px 5px', fontFamily: 'Unbounded'}}>
+                                    Détail
+                                </div>
+                                
+                            </div>    
                             <div className={styles["artworkUnit"]}>
                                 <img src={artwork.url}/>
                             </div>    
