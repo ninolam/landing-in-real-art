@@ -29,6 +29,10 @@ const useSharedLogicDropPanel = () => {
 
 
     async function getUrlPhoto(photo: string): Promise<string> {
+        if (photo === "") {
+            return ""
+        }
+
         const imageRef = ref(storage, photo)
         console.log(imageRef)
         const urlPhoto = await getDownloadURL(imageRef)
