@@ -4,6 +4,7 @@ import { Lang } from "../../../types/types"
 import styles from './DropPanel.module.scss'
 import useSharedLogicDropPanel from "./useSharedLogicDropPanel"
 import { useState } from "react"
+import parse from 'html-react-parser';
 
 function DropPanel() {
 
@@ -34,7 +35,7 @@ function DropPanel() {
         return (
             <div className={styles["modal-backdrop"]}>
                 <div className={styles["modal"]}>
-                    <p>{description}</p>
+                    <p>{parse(description)}</p>
                     <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: '20px'}}>
                         <button style={{cursor: 'pointer', backgroundColor: 'lightgrey', borderRadius: '5px', padding: '10px'}} onClick={onClose}>Close</button>
                     </div>
@@ -76,7 +77,7 @@ function DropPanel() {
                         </div>
                     ))
                 }
-                
+
                 {isModalOpen && (
                     <Modal description={modalContent} onClose={closeModal} />
                 )}
