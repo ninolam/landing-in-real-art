@@ -30,7 +30,7 @@ function DropPanel() {
                             <div className={styles.frameDetailArtWorkLink}>
                                 <div></div>
                                 <div style={{backgroundColor: 'white', padding: '2px 8px 2px 8px',borderRadius: '0px 5px', fontFamily: 'Unbounded'}}>
-                                    Détail
+                                    {buttons.detailArtWork[lang_]}
                                 </div>
                                 
                             </div>    
