@@ -33,10 +33,15 @@ const useSharedLogicDropPanel = () => {
             return ""
         }
 
-        const imageRef = ref(storage, photo)
-        console.log(imageRef)
-        const urlPhoto = await getDownloadURL(imageRef)
-        return urlPhoto;
+        let imageRef: any = null
+        try {
+            imageRef = ref(storage, photo)
+            console.log(imageRef)
+            const urlPhoto = await getDownloadURL(imageRef)
+            return urlPhoto;    
+        } catch (error) {
+            return ''
+        }
       }
 
     async function transformArtworksPhotos(artworks: PresaleArtWorks): Promise<PresaleArtWorks> {

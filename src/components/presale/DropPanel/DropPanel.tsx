@@ -27,7 +27,9 @@ function DropPanel() {
                 {
                     artWorks.map( (artwork, index) => (
                         <div key={index} className={styles["image-container"]}>
-                            <img src={artwork.url}/>
+                            <div className={styles["artworkUnit"]}>
+                                <img src={artwork.url}/>
+                            </div>    
                             <button className={styles["button-2"]}>
                                 <div className={styles["text-wrapper-6"]}>{buttons.acquireArtWork[lang_]}</div>
                             </button>

@@ -194,6 +194,21 @@
   height: auto;
 }
 
+.artworkUnit {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.artworkUnit > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
 @media screen and (min-width: 500px) {
   /* For screens wider than 500px, adjust to 2x3 grid */
   .image-grid {
