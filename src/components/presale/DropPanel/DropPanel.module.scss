@@ -242,13 +242,16 @@
 
 .modal {
   background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1001; /* Above the backdrop */
-  max-width: 500px; /* Or any other max-width or width */
-  width: 80%; /* Responsive width */
-  margin: 0 auto; /* Centering for smaller devices */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    max-width: 500px;
+    width: 80%;
+    margin: 0 auto;
+    max-height: 70vh; /* Maximum height of the modal */
+    overflow-y: auto; /* Add vertical scrollbar if needed */
+    overflow-x: hidden; /* Hide 
 }
 
 @media screen and (min-width: 500px) {
