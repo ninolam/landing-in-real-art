@@ -117,7 +117,7 @@ export type FaqQuestion = {
 }
 
 export type FaqQuestions = {
-    questions: Array<FaqQuestion>
+    items: Array<FaqQuestion>
 }
 
 export type HelpIraData = FaqButtons & FaqTexts<Record<Lang, string>>

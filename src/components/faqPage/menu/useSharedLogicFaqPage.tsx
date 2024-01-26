@@ -1,4 +1,4 @@
-import { FaqPage, defaultLangObject } from '../../../types/types'
+import { FaqPage, FaqQuestions, defaultLangObject } from '../../../types/types'
 import { db } from '../../../firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore/lite'
 import { useEffect, useState } from 'react'
@@ -23,8 +23,19 @@ const useSharedLogicFaqPage = () => {
             textButton: defaultLangObject
         }
     }
-    const [faqPage, setFaqPage] = useState<FaqPage>(defaultFaqPage)
 
+    const defaultFaqQuestion = {
+        answer: defaultLangObject,
+        question: defaultLangObject
+    }
+
+    const defaultFaqQuestions = {
+        items: [defaultFaqQuestion]
+    }
+
+    const [faqPage, setFaqPage] = useState<FaqPage>(defaultFaqPage)
+    const [currentFaqQuestions, setCurrentFaqQuestions] = useState<FaqQuestions>(defaultFaqQuestions);
+    
     useEffect(() => {
         const fetchData = async () => {
           const collection_ = collection(db, FIREBASE_FAQ_PAGE_COLLECTION);
@@ -34,12 +45,14 @@ const useSharedLogicFaqPage = () => {
           //Index 1 ===> Faq Page
           const faqPage = data[1] as FaqPage
           setFaqPage(faqPage) 
+          console.log(faqPage)
 
         }
         fetchData();
+        setCurrentFaqQuestions(faqPage.faqProject)
       }, [])
   
-  return {faqPage, setFaqPage}
+  return {faqPage, setFaqPage, currentFaqQuestions, setCurrentFaqQuestions}
 }
 
 export default useSharedLogicFaqPage

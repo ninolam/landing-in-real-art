@@ -93,7 +93,7 @@ const DropPanel: React.FC = () => {
 
                 {visibleCount < artWorks.length && (
                     <div className={styles["image-container"]} style={{justifyContent: 'center'}}>
-                        <button className={styles["button-2"]} onClick={loadMoreArtworks}>{buttons.viewMoreArtworks[lang_]}</button>
+                        <button className={styles["button-2"]} style={{cursor: 'pointer'}} onClick={loadMoreArtworks}>{buttons.viewMoreArtworks[lang_]}</button>
                     </div>    
 
                 )}
