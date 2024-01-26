@@ -1,15 +1,15 @@
 "use client"
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button } from "@chakra-ui/react";
-import { useState } from "react";
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button } from "@chakra-ui/react"
+import { useState } from "react"
 import styles from './FaqPage.module.scss'
-import HeroSection from "../../components/faqPage/HeroSection/HeroSection";
-import Menu from "../../components/menu/Menu";
-import { useAppContext } from "../../context";
-import { Lang } from "../../types/types";
-import useSharedLogic from "../useSharedLogic";
-import Footer from "../../components/footer/Footer";
-import FooterMobile from "../../components/footer/FooterMobile";
-import useSharedLogicFaqPage from "../../components/faqPage/menu/useSharedLogicFaqPage";
+import HeroSection from "../../components/faqPage/HeroSection/HeroSection"
+import Menu from "../../components/menu/Menu"
+import { useAppContext } from "../../context"
+import { Lang } from "../../types/types"
+import useSharedLogic from "../useSharedLogic"
+import Footer from "../../components/footer/Footer"
+import FooterMobile from "../../components/footer/FooterMobile"
+import useSharedLogicFaqPage from "../../components/faqPage/menu/useSharedLogicFaqPage"
 
 export default function FaqPage() {
 
@@ -19,8 +19,6 @@ export default function FaqPage() {
 
     const {isMobile, setIsMobile} = useSharedLogic(800)
 
-    const FIREBASE_FAQ_COLLECTION = 'Faq'
-    
     const [currentFaqSubPage, setCurrentFaqSubPage] = useState<string>('')
     
     const {faqPage, setFaqPage, currentFaqQuestions, setCurrentFaqQuestions} = useSharedLogicFaqPage()
