@@ -6,7 +6,7 @@ import useSharedLogicDropPanel from "./useSharedLogicDropPanel"
 import { useState } from "react"
 import parse from 'html-react-parser';
 
-function DropPanel() {
+const DropPanel: React.FC = () => {
 
     //Get the language of the global context
     const {lang } = useAppContext()
@@ -14,11 +14,15 @@ function DropPanel() {
     
     const {artWorks, buttons, texts} = useSharedLogicDropPanel()
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalContent, setModalContent] = useState('');
+    const [isModalOpen, setIsModalOpen]   = useState(false);
+    const [modalContent, setModalContent] = useState<string>('');
+    const [closeButton, setCloseButton]   = useState<string>('');
 
-    const showModal = (description: string) => {
+    const showModal = (description: string, closeButton: string) => {
+        console.log('closeButton')
+        console.log(closeButton)
         setModalContent(description);
+        setCloseButton(closeButton)
         setIsModalOpen(true);
     };
 
@@ -28,16 +32,19 @@ function DropPanel() {
 
     interface ModalProps {
         description: string;
+        closeButton: string;
         onClose: () => void;
     }
     
-    const Modal: React.FC<ModalProps> = ({ description, onClose }) => {
+    const Modal: React.FC<ModalProps> = ({ description, closeButton, onClose }) => {
         return (
             <div className={styles["modal-backdrop"]}>
                 <div className={styles["modal"]}>
                     <p>{parse(description)}</p>
                     <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: '20px'}}>
-                        <button style={{cursor: 'pointer', backgroundColor: 'lightgrey', borderRadius: '5px', padding: '10px'}} onClick={onClose}>Close</button>
+                        <button style={{cursor: 'pointer', backgroundColor: 'lightgrey', borderRadius: '5px', padding: '10px'}} onClick={onClose}>
+                            {closeButton}
+                        </button>
                     </div>
                 </div>
             </div>
@@ -62,8 +69,8 @@ function DropPanel() {
                             
                             <div className={styles.frameDetailArtWorkLink}>
                                 <div></div>
-                                <div style={{backgroundColor: 'white', padding: '2px 8px 2px 8px',borderRadius: '0px 5px', fontFamily: 'Unbounded'}} 
-                                    onClick={() => showModal(artwork.description[lang_])}>
+                                <div style={{backgroundColor: 'white', cursor: 'pointer', padding: '2px 8px 2px 8px',borderRadius: '0px 5px', fontFamily: 'Unbounded'}} 
+                                    onClick={() => showModal(artwork.description[lang_], buttons.closeArtworkDetail[lang_])}>
                                     {buttons.detailArtWork[lang_]}
                                 </div>
                                 
@@ -79,7 +86,7 @@ function DropPanel() {
                 }
 
                 {isModalOpen && (
-                    <Modal description={modalContent} onClose={closeModal} />
+                    <Modal description={modalContent} closeButton={closeButton} onClose={closeModal} />
                 )}
                 
             </div>

@@ -244,6 +244,7 @@ export type PresaleArtWork = {
 
 export interface PresaleDropPanelButtons {
     acquireArtWork: Record<Lang, string>,
+    closeArtworkDetail: Record<Lang, string>,
     detailArtWork: Record<Lang, string>,
 }
 
