@@ -4,7 +4,7 @@ import { Lang } from "../../../types/types"
 import styles from './DropPanel.module.scss'
 import useSharedLogicDropPanel from "./useSharedLogicDropPanel"
 import { useState } from "react"
-import parse from 'html-react-parser';
+import parse from 'html-react-parser'
 
 const DropPanel: React.FC = () => {
 
@@ -14,20 +14,26 @@ const DropPanel: React.FC = () => {
     
     const {artWorks, buttons, texts} = useSharedLogicDropPanel()
 
-    const [isModalOpen, setIsModalOpen]   = useState(false);
-    const [modalContent, setModalContent] = useState<string>('');
-    const [closeButton, setCloseButton]   = useState<string>('');
+    const [isModalOpen, setIsModalOpen]   = useState(false)
+    const [modalContent, setModalContent] = useState<string>('')
+    const [closeButton, setCloseButton]   = useState<string>('')
+
+    // State to keep track of how many images are currently displayed
+    const [visibleCount, setVisibleCount] = useState(10)
+
+    // Function to load more images
+    const loadMoreArtworks = () => {
+        setVisibleCount(prevCount => prevCount + 10);
+    };
 
     const showModal = (description: string, closeButton: string) => {
-        console.log('closeButton')
-        console.log(closeButton)
-        setModalContent(description);
+        setModalContent(description)
         setCloseButton(closeButton)
-        setIsModalOpen(true);
+        setIsModalOpen(true)
     };
 
     const closeModal = () => {
-        setIsModalOpen(false);
+        setIsModalOpen(false)
     };
 
     interface ModalProps {
@@ -64,7 +70,7 @@ const DropPanel: React.FC = () => {
             
             <div className={styles["image-grid"]}>
                 {
-                    artWorks.map( (artwork, index) => (
+                    artWorks.slice(0, visibleCount).map( (artwork, index) => (
                         <div key={index} id={index.toString()} className={styles["image-container"]}>
                             
                             <div className={styles.frameDetailArtWorkLink}>
@@ -84,6 +90,13 @@ const DropPanel: React.FC = () => {
                         </div>
                     ))
                 }
+
+                {visibleCount < artWorks.length && (
+                    <div className={styles["image-container"]} style={{justifyContent: 'center'}}>
+                        <button className={styles["button-2"]} onClick={loadMoreArtworks}>{buttons.viewMoreArtworks[lang_]}</button>
+                    </div>    
+
+                )}
 
                 {isModalOpen && (
                     <Modal description={modalContent} closeButton={closeButton} onClose={closeModal} />

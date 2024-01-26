@@ -246,6 +246,7 @@ export interface PresaleDropPanelButtons {
     acquireArtWork: Record<Lang, string>,
     closeArtworkDetail: Record<Lang, string>,
     detailArtWork: Record<Lang, string>,
+    viewMoreArtworks: Record<Lang, string>
 }
 
 export interface PresaleDropPanelTexts {

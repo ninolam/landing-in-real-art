@@ -15,8 +15,8 @@ const useSharedLogicDropPanel = () => {
     const defaultButton = {
         acquireArtWork: defaultLangObject,
         closeArtworkDetail: defaultLangObject,
-        detailArtWork: defaultLangObject
-
+        detailArtWork: defaultLangObject,
+        viewMoreArtworks: defaultLangObject
     }
 
     const defaultArtwork = {
