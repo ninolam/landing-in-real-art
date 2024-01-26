@@ -21,6 +21,20 @@
   position: relative;
 }
 
+.buttoncontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.buttoncontainer button {
+  flex: 1 1 auto; /* Flex-grow, flex-shrink, and flex-basis */
+  margin: 5px;
+  padding: 10px;
+  min-width: 100px; /* Minimum width for buttons */
+}
+
 @media (max-width: 900px) {
   .home {
     background: var(

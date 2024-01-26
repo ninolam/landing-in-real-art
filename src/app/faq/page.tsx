@@ -1,19 +1,15 @@
 "use client"
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Flex, Spacer } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button } from "@chakra-ui/react";
+import { useState } from "react";
 import styles from './FaqPage.module.scss'
 import HeroSection from "../../components/faqPage/HeroSection/HeroSection";
 import Menu from "../../components/menu/Menu";
 import { useAppContext } from "../../context";
-import { db } from '../../firebaseConfig';
-import { collection, getDocs } from 'firebase/firestore/lite';
-import { FaqQuestions, Lang, defaultLangObject } from "../../types/types";
+import { Lang } from "../../types/types";
 import useSharedLogic from "../useSharedLogic";
 import Footer from "../../components/footer/Footer";
 import FooterMobile from "../../components/footer/FooterMobile";
-import Link from "next/link";
 import useSharedLogicFaqPage from "../../components/faqPage/menu/useSharedLogicFaqPage";
-import stylesMenuFaq from '../../components/faqPage/menu/MenuFaq.module.scss'
 
 export default function FaqPage() {
 
@@ -44,29 +40,15 @@ export default function FaqPage() {
     }
     
     const MenuFaq = () => {
-
         return (
-                <div className={styles.faqMenuContainer}>
-                    <Flex>
-                        {faqPage_.map(([key, value], index) => (
-                            <div key={index} >
-                                <Box w='200px' h='10' bg='' marginRight={'100px'}>
-                                    <div className={stylesMenuFaq.buttonFaqMenu}>
-                                        <Link className={stylesMenuFaq.faqMenuLink} href='#faqAccordion'>
-                                            <div id={key} className={stylesMenuFaq.heading3} onClick={handleClickFaqButton}>
-                                                {value.textButton[lang_]}
-                                            </div>
-                                        </Link>  
-                                        </div>
-                                </Box>    
-                            <Spacer/>
-                            </div>
-                        ))}
-                    </Flex>
-    
-                </div>       
+            <div className={styles.buttoncontainer}>
+                {
+                faqPage_.map(([key, value], index) => (
+                    <Button id={key} key={index} onClick={handleClickFaqButton}>{value.textButton[lang_]}</Button>    
+                         
+                ))}
+            </div>
         )
-    
     }
     
     const AccordionComponent = () => {
@@ -103,7 +85,7 @@ export default function FaqPage() {
                     <HeroSection />
                     <MenuFaq/>
                     <Menu/>
-                    <div id="faqAccordion" style={{width: '50%', height: '100%', marginBottom: "100px"}}>
+                    <div id="faqAccordion" style={{width: '60%', height: '100%', marginBottom: "100px"}}>
                         <AccordionComponent/>
                     </div>
                     <FooterMobile/>
@@ -113,7 +95,7 @@ export default function FaqPage() {
                     <HeroSection />
                     <MenuFaq/>
                     <Menu/>
-                    <div id="faqAccordion" style={{width: '50%', height: '100%', marginBottom: "100px"}}>
+                    <div id="faqAccordion" style={{width: '60%', height: '100%', marginBottom: "100px"}}>
                         <AccordionComponent/>
                     </div>
                     <Footer/>    
