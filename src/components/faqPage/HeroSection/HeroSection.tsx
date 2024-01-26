@@ -2,8 +2,6 @@
 import styles from './HeroSection.module.scss'
 import { useAppContext } from "../../../context";
 import { Lang } from "../../../types/types";
-import ImageHeroSection from './ImageHeroSection';
-import { useState } from 'react';
 import useSharedLogicFaqHeroSection from './useSharedLogicFaqHeroSection';
 
 
@@ -19,9 +17,7 @@ const HeroSection = () => {
       <div
       className={styles["section-hero"]}
       style={{
-        background: "url(/img/faq_section_hero.jpeg) center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
+        backgroundImage: 'url(/img/faq_section_hero.jpeg)',
       }}
     >
       <div className={styles["section-hero__wrapper-text"]}>

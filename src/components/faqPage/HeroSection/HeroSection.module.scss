@@ -205,6 +205,10 @@
   width: 1248px;
   position: relative;
   overflow: hidden;
+  height: 50vh;
+  width: 100%; 
+  background-size: cover; 
+  background-position: center;  
 }
 .section-hero__wrapper-text {
   background: rgba(255, 255, 255, 0.3);
