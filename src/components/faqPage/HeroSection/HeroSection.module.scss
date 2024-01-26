@@ -189,6 +189,180 @@
   overflow: visible;
 }
 
+/** NEW HERO SECTION **/
+.section-hero,
+.section-hero * {
+  box-sizing: border-box;
+}
+.section-hero {
+  border-radius: 50px;
+  padding: 171px 86px 171px 86px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 1248px;
+  position: relative;
+  overflow: hidden;
+}
+.section-hero__wrapper-text {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 36px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: absolute;
+  left: 86px;
+  top: 256px;
+  backdrop-filter: var(--background-blur-backdrop-filter, blur(22px));
+}
+.section-hero__subtitle {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.section-hero__un-nouveau-march {
+  color: var(--primaire-white, #f6f8ff);
+  text-align: left;
+  font-family: var(--heading-h-3-font-family, "Unbounded-Medium", sans-serif);
+  font-size: var(--heading-h-3-font-size, 24px);
+  font-weight: var(--heading-h-3-font-weight, 500);
+  position: relative;
+}
+.section-hero__title {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.section-hero__l-art-n-a-jamais-t-aussi-disponible {
+  color: var(--primaire-white, #f6f8ff);
+  text-align: left;
+  font-family: var(--heading-h-1-font-family, "Unbounded-Bold", sans-serif);
+  font-size: var(--heading-h-1-font-size, 64px);
+  font-weight: var(--heading-h-1-font-weight, 700);
+  position: relative;
+  width: 766px;
+}
+.section-hero__paragraphe {
+  padding: 20px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.section-hero__inrealart-propose-un-projet-communautaire-pour-connecter-l-art-physique-et-la-blockchain-d-une-mani-re-saine-et-durable {
+  color: var(--primaire-white, #f6f8ff);
+  text-align: left;
+  font-family: var(
+    --text-paragraphe-font-family,
+    "Montserrat-Regular",
+    sans-serif
+  );
+  font-size: var(--text-paragraphe-font-size, 16px);
+  font-weight: var(--text-paragraphe-font-weight, 400);
+  position: relative;
+}
+.section-hero__wrapper-button {
+  padding: 40px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.section-hero__button {
+  background: var(--primaire-white, #f6f8ff);
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-image: var(
+    --bg-bgcolor,
+    linear-gradient(
+      135.65deg,
+      rgba(236, 238, 250, 1) 0%,
+      rgba(234, 236, 251, 1) 52.60416865348816%,
+      rgba(225, 229, 255, 1) 100%
+    )
+  );
+  border-image-slice: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.section-hero__voir-notre-solution {
+  color: var(--primaire-black, #000035);
+  text-align: center;
+  font-family: var(
+    --text-linktext-font-family,
+    "Montserrat-Medium",
+    sans-serif
+  );
+  font-size: var(--text-linktext-font-size, 16px);
+  font-weight: var(--text-linktext-font-weight, 500);
+  position: relative;
+}
+.section-hero__button2 {
+  background: var(--primaire-white, #f6f8ff);
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-image: var(
+    --bg-bgcolor,
+    linear-gradient(
+      135.65deg,
+      rgba(236, 238, 250, 1) 0%,
+      rgba(234, 236, 251, 1) 52.60416865348816%,
+      rgba(225, 229, 255, 1) 100%
+    )
+  );
+  border-image-slice: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 170px;
+  position: relative;
+}
+.section-hero__nos-artistes {
+  color: var(--primaire-black, #000035);
+  text-align: center;
+  font-family: var(
+    --text-linktext-font-family,
+    "Montserrat-Medium",
+    sans-serif
+  );
+  font-size: var(--text-linktext-font-size, 16px);
+  font-weight: var(--text-linktext-font-weight, 500);
+  position: relative;
+}
+
+
 @media (max-width: 1200px) {
 
   .heroSectionContainerButton {

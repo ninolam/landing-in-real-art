@@ -22,8 +22,9 @@ export default function FaqPage() {
     const [currentFaqSubPage, setCurrentFaqSubPage] = useState<string>('')
     
     const {faqPage, setFaqPage, currentFaqQuestions, setCurrentFaqQuestions} = useSharedLogicFaqPage()
-    console.log(currentFaqQuestions)
     const faqPage_ = Object.entries(faqPage)
+    
+    console.log(faqPage_)
 
     const handleClickFaqButton = (event: any) => {
         setCurrentFaqSubPage(event.target.id)

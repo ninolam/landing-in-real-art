@@ -84,6 +84,10 @@ export type NewsletterData = NewsletterText<Record<Lang, string>>
 
 export type PrivateSaleData = PrivateSaleText
 
+export type FaqHeroSection = {
+    mainTitle : Record<Lang, string>
+}
+
 export type FaqButtons = {
     readFaq: Record<Lang, string>
     readFaqLink: string
