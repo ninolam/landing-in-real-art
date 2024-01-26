@@ -28,22 +28,19 @@ export default function FaqPage() {
     const [currentFaqSubPage, setCurrentFaqSubPage] = useState<string>('')
     
     const {faqPage, setFaqPage, currentFaqQuestions, setCurrentFaqQuestions} = useSharedLogicFaqPage()
+    console.log(currentFaqQuestions)
     const faqPage_ = Object.entries(faqPage)
 
     const handleClickFaqButton = (event: any) => {
-        console.log(event.target.id)
         setCurrentFaqSubPage(event.target.id)
-        
-        console.log(faqPage_)
+
         const currentFaqSubPage = faqPage_.filter(
             (obj) => {
                 return (obj[0] === event.target.id)
             }
         )
-        // console.log(currentFaqSubPage[0][1]['items'])
+
         setCurrentFaqQuestions(currentFaqSubPage[0][1])
-        console.log(currentFaqSubPage[0][1])
-        // const faqSubPageItems = faqPage[currentFaqSubPage]
     }
     
     const MenuFaq = () => {
@@ -55,7 +52,7 @@ export default function FaqPage() {
                             <div key={index} >
                                 <Box w='200px' h='10' bg='' marginRight={'100px'}>
                                     <div className={stylesMenuFaq.buttonFaqMenu}>
-                                        <Link className={stylesMenuFaq.faqMenuLink} href=''>
+                                        <Link className={stylesMenuFaq.faqMenuLink} href='#faqAccordion'>
                                             <div id={key} className={stylesMenuFaq.heading3} onClick={handleClickFaqButton}>
                                                 {value.textButton[lang_]}
                                             </div>
@@ -74,7 +71,7 @@ export default function FaqPage() {
     
     const AccordionComponent = () => {
         return (
-            <Accordion defaultIndex={[0]}>
+            <Accordion defaultIndex={[0]} allowMultiple>
                 {
                     currentFaqQuestions.items.map(
                         (faqQuestion, index) => (
@@ -106,28 +103,8 @@ export default function FaqPage() {
                     <HeroSection />
                     <MenuFaq/>
                     <Menu/>
-                    <div style={{width: '70%', height: '100%', marginBottom: "100px"}}>
-                        <Accordion defaultIndex={[0]}>
-                            {
-                                currentFaqQuestions.items.map(
-                                    (faqQuestion, index) => (
-                                        <AccordionItem key={index}>
-                                            <h2>
-                                                <AccordionButton>
-                                                <Box as="span" flex='1' textAlign='left'>
-                                                {index+1}. {faqQuestion.question[lang_]}
-                                                </Box>
-                                                <AccordionIcon />
-                                            </AccordionButton>
-                                            </h2>
-                                            <AccordionPanel pb={4}>
-                                                {faqQuestion.answer[lang_]}
-                                            </AccordionPanel>
-                                        </AccordionItem>
-                                    )
-                                )
-                            }                          
-                        </Accordion>
+                    <div id="faqAccordion" style={{width: '50%', height: '100%', marginBottom: "100px"}}>
+                        <AccordionComponent/>
                     </div>
                     <FooterMobile/>
                 </>
@@ -136,7 +113,7 @@ export default function FaqPage() {
                     <HeroSection />
                     <MenuFaq/>
                     <Menu/>
-                    <div style={{width: '70%', height: '100%', marginBottom: "100px"}}>
+                    <div id="faqAccordion" style={{width: '50%', height: '100%', marginBottom: "100px"}}>
                         <AccordionComponent/>
                     </div>
                     <Footer/>    

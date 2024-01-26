@@ -44,12 +44,12 @@ const useSharedLogicFaqPage = () => {
           
           //Index 1 ===> Faq Page
           const faqPage = data[1] as FaqPage
+          setCurrentFaqQuestions(faqPage.faqProject)
           setFaqPage(faqPage) 
-          console.log(faqPage)
-
         }
+        
         fetchData();
-        setCurrentFaqQuestions(faqPage.faqProject)
+        
       }, [])
   
   return {faqPage, setFaqPage, currentFaqQuestions, setCurrentFaqQuestions}
