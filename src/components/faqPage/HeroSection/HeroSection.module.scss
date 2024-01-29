@@ -211,18 +211,17 @@
   background-position: center;  
 }
 .section-hero__wrapper-text {
+  margin: 250px auto auto auto;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 36px;
   padding: 32px;
   display: flex;
   flex-direction: column;
   gap: 0px;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  position: absolute;
-  left: 86px;
-  top: 256px;
+  width: 100%;
   backdrop-filter: var(--background-blur-backdrop-filter, blur(22px));
 }
 .section-hero__subtitle {
