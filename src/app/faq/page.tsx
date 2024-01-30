@@ -84,7 +84,7 @@ export default function FaqPage() {
                     <HeroSection />
                     <MenuFaq/>
                     <Menu/>
-                    <div id="faqAccordion" style={{width: '60%', height: '100%', marginBottom: "100px", position: 'relative', top: '-80px'}}>
+                    <div id="faqAccordion" className={styles.faqAccordion}>
                         <AccordionComponent/>
                     </div>
                     <FooterMobile/>
@@ -94,7 +94,7 @@ export default function FaqPage() {
                     <HeroSection />
                     <MenuFaq/>
                     <Menu/>
-                    <div id="faqAccordion" style={{width: '60%', height: '100%', marginBottom: "100px", position: 'relative', top: '-130px'}}>
+                    <div id="faqAccordion" className={styles.faqAccordion}>
                         <AccordionComponent/>
                     </div>
                     <Footer/>    

@@ -37,6 +37,22 @@
   min-width: 100px; /* Minimum width for buttons */
 }
 
+.faqAccordionMobile {
+  width: 60%;
+  height: 100%;
+  margin-bottom: 100px;
+  position: relative;
+  top: -80px
+}
+
+.faqAccordion {
+  width: 60%;
+  height: 100%;
+  margin-bottom: 100px;
+  position: relative;
+  top: -130px
+}
+
 @media (max-width: 900px) {
   .home {
     background: var(
@@ -57,5 +73,38 @@
     position: relative;
   }
   
+
+}  
+
+@media (min-width: 1000px) {
+  .faqAccordion {
+    width: 70%;
+    height: 100%;
+    margin-bottom: 100px;
+    position: relative;
+    top: -80px
+  }
+
+}  
+
+@media (min-width: 800px) {
+  .faqAccordion {
+    width: 70%;
+    height: 100%;
+    margin-bottom: 100px;
+    position: relative;
+    top: -80px
+  }
+
+}  
+
+@media (min-width: 300px) {
+  .faqAccordion {
+    width: 80%;
+    height: 100%;
+    margin-bottom: 100px;
+    position: relative;
+    top: -80px
+  }
 
 }  
