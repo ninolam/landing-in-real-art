@@ -14,12 +14,7 @@ const HeroSection = () => {
     const {faqHeroSection, setFaqHeroSection} = useSharedLogicFaqHeroSection()
     return (
 
-      <div
-      className={styles["section-hero"]}
-      style={{
-        backgroundImage: 'url(/img/faq_section_hero.jpeg)',
-      }}
-    >
+      <div className={styles["section-hero"]} style={{backgroundImage: 'url(/img/faq_section_hero.jpeg)'}}>
       <div className={styles["section-hero__wrapper-text"]}>
         <div className={styles["section-hero__subtitle"]}>
           <div className={styles["section-hero__un-nouveau-march"]}>
