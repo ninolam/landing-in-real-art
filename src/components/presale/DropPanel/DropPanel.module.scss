@@ -219,6 +219,33 @@
    top: 48px;
 }
 
+.frameDetailArtWorkLinkCorner {
+  background-color: white;
+  cursor: pointer;
+  padding: 2px 8px 2px 8px; 
+  border-radius: 0px 5px;
+  font-family: 'Unbounded';
+
+}
+
+.frameDetailArtWorkCreator {
+  width: 100%;
+  background-color: "";
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  top: 67px;
+}
+
+.frameDetailArtWorkCreatorName {
+  background-color: white;
+  cursor: pointer;
+  padding: 2px 8px 2px 8px;
+  border-radius: 0px;
+}
+
+
 .detailArtworkLink {
 
   background-color: red; 

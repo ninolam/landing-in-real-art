@@ -81,14 +81,21 @@ const DropPanel: React.FC = () => {
                     artWorks.slice(0, visibleCount).map( (artwork, index) => (
                         <div key={index} id={index.toString()} className={styles["image-container"]}>
                             
+                            <div className={styles.frameDetailArtWorkCreator}>
+                                <div></div>
+                                <div className={styles.frameDetailArtWorkCreatorName}>
+                                    {artwork.artistName}
+                                </div>
+                            </div>    
+
                             <div className={styles.frameDetailArtWorkLink}>
                                 <div></div>
-                                <div style={{backgroundColor: 'white', cursor: 'pointer', padding: '2px 8px 2px 8px',borderRadius: '0px 5px', fontFamily: 'Unbounded'}} 
+                                <div className={styles.frameDetailArtWorkLinkCorner}
                                     onClick={() => showModal(artwork.description[lang_], buttons.closeArtworkDetail[lang_])}>
                                     {buttons.detailArtWork[lang_]}
                                 </div>
-                                
                             </div>    
+
                             <div className={styles["artworkUnit"]}>
                                 <img src={artwork.url}/>
                             </div>    

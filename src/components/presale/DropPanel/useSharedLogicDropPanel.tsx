@@ -20,6 +20,7 @@ const useSharedLogicDropPanel = () => {
     }
 
     const defaultArtwork = {
+        artistName: '',
         description: defaultLangObject,
         image: '',
         url: ''

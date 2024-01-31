@@ -241,6 +241,7 @@ export interface PresaleDropPanelArtworks {
 export type PresaleArtWorks  = Array<PresaleArtWork>
 
 export type PresaleArtWork = {
+    artistName: string
     description: Record<Lang, string>,
     image: string
     url: string
