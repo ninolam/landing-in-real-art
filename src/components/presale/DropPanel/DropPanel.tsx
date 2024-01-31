@@ -3,7 +3,7 @@ import { useAppContext } from "../../../context"
 import { Lang } from "../../../types/types"
 import styles from './DropPanel.module.scss'
 import useSharedLogicDropPanel from "./useSharedLogicDropPanel"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import parse from 'html-react-parser'
 
 const DropPanel: React.FC = () => {
@@ -14,6 +14,8 @@ const DropPanel: React.FC = () => {
     
     const {artWorks, buttons, texts} = useSharedLogicDropPanel()
 
+    const modalRef = useRef<HTMLDivElement>(null)
+    
     const [isModalOpen, setIsModalOpen]   = useState(false)
     const [modalContent, setModalContent] = useState<string>('')
     const [closeButton, setCloseButton]   = useState<string>('')
@@ -32,26 +34,32 @@ const DropPanel: React.FC = () => {
         setIsModalOpen(true)
     };
 
-    const closeModal = () => {
-        setIsModalOpen(false)
+    const closeModal = (e: any) => {
+        if (modalRef.current && !modalRef.current.contains(e.target)) {
+            setIsModalOpen(false)
+        }    
     };
 
     interface ModalProps {
-        description: string;
-        closeButton: string;
-        onClose: () => void;
+        description: string
+        closeButton: string
+        /*
+        onClose: () => void
+        */
     }
     
-    const Modal: React.FC<ModalProps> = ({ description, closeButton, onClose }) => {
+    useEffect(() => {
+        document.addEventListener('mousedown', closeModal);
+        return () => {
+            document.removeEventListener('mousedown', closeModal);
+        };
+    }, []);
+    
+    const Modal: React.FC<ModalProps> = ({ description, closeButton }) => {
         return (
             <div className={styles["modal-backdrop"]}>
-                <div className={styles["modal"]}>
+                <div ref={modalRef} className={styles["modal"]}>
                     <p>{parse(description)}</p>
-                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: '20px'}}>
-                        <button style={{cursor: 'pointer', backgroundColor: 'lightgrey', borderRadius: '5px', padding: '10px'}} onClick={onClose}>
-                            {closeButton}
-                        </button>
-                    </div>
                 </div>
             </div>
         );
@@ -99,7 +107,7 @@ const DropPanel: React.FC = () => {
                 )}
 
                 {isModalOpen && (
-                    <Modal description={modalContent} closeButton={closeButton} onClose={closeModal} />
+                    <Modal description={modalContent} closeButton={closeButton} />
                 )}
                 
             </div>

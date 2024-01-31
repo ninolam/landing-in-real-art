@@ -20,9 +20,9 @@ const FaqMobile = ({ className, ...props }: IFaqProps): JSX.Element => {
 
   const {faqButtons, setFaqButtons, faqTexts, setFaqTexts, useQuestionVisibility} = useSharedLogicFaq()
   
-  const imagePlus1Ref = useRef(null);
-  const imagePlus2Ref = useRef(null);
-  const imagePlus3Ref = useRef(null);
+  const imagePlus1Ref = useRef(null)
+  const imagePlus2Ref = useRef(null)
+  const imagePlus3Ref = useRef(null)
 
   const Question1 = () => {
     const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png")

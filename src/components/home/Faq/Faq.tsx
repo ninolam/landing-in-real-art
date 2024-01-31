@@ -1,6 +1,6 @@
 "use client"
 import styles from './Faq.module.scss'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { useAppContext } from '../../../context'
 import { Lang } from '../../../types/types';
 import Link from 'next/link';

@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from 'react'
+import React, { FC } from 'react'
 import styles from './MenuMobile.module.scss'
 import useSharedLogicMenu from './useSharedLogicMenu';
 import { useAppContext } from '../../context';
