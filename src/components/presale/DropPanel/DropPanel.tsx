@@ -60,7 +60,7 @@ const DropPanel: React.FC = () => {
   
     return (
         <>
-        <div className={styles["grid-wrapper"]}>
+        <div id="dropPanel" className={styles["grid-wrapper"]}>
             <div className={styles["header"]}>
                 <div className={styles["frame-7"]}>
                     <div className={styles["text-wrapper-3"]}>{texts.endDrop[lang_]}</div>

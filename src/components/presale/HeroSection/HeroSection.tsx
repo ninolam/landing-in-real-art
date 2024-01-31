@@ -1,7 +1,6 @@
 "use client"
-import { useEffect, useState } from "react"
 import { useAppContext } from "../../../context"
-import { Lang, PresaleDataButtons, PresaleDataTexts, defaultLangObject } from "../../../types/types"
+import { Lang } from "../../../types/types"
 import Link from "next/link"
 import styles from './HeroSection.module.scss'
 import useSharedLogicHeroSection from "./useSharedLogicHeroSection"

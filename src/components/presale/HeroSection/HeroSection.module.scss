@@ -98,7 +98,6 @@
   }
   
 .button {
-    all: unset;
     -webkit-backdrop-filter: blur(185.9px) brightness(100%);
     align-items: center;
     /*backdrop-filter: blur(185.9px) brightness(100%;*/
@@ -117,6 +116,7 @@
 
     a {
       text-decoration: none;
+      cursor: pointer;
     }
   }
 
