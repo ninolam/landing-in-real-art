@@ -42,13 +42,6 @@ const useSharedLogicBuyingProcess = () => {
         setTexts(texts_)
         const steps = Object.entries(texts_.steps)
         setSteps(steps)
-        /*
-        for (const [key, value] of steps) {
-            const val = value as PresaleBuyingProcessStep
-            console.dir(`${key}: ${val.stepNumber[lang_]}`);
-            console.dir(`${key}: ${val.title[lang_]}`);
-            console.dir(`${key}: ${val.description[lang_]}`);
-        }*/
         
 
         divRefs.forEach((ref, index) => {

@@ -254,8 +254,15 @@ export interface PresaleDropPanelButtons {
     viewMoreArtworks: Record<Lang, string>
 }
 
+export type EndDateTimestamp = {
+    seconds: number;
+    nanoseconds: number;
+}
 export interface PresaleDropPanelTexts {
     endDrop: Record<Lang, string>
+    countDown: {
+        endDate: EndDateTimestamp
+    }
 }
 
 export type PresaleDropPanelData = PresaleDropPanelArtworks & PresaleDropPanelButtons & PresaleDropPanelTexts

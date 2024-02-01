@@ -145,6 +145,79 @@
 
 
 
+.heroSectionContainer{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
+  width: 90%;
+  gap: 30px;
+}
 
+.heroSectionContainer1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
 
+.heroSectionTitle {
+  width: 800px;
+  flex-grow: 1;
+}
 
+.heroSectionTopImage {
+  width: 30%; /* or any other size */
+  height: auto; /* Adjust the height automatically */
+  overflow: hidden;   
+}
+
+.heroSectionTopImage img {
+  width: 100%; /* Makes the image fully occupy the container width */
+  height: auto; /* Adjust the height to maintain the aspect ratio */
+  object-fit: cover; /* Optional: Cover the container without losing aspect ratio */
+}
+
+.heroSectionTopTitle {
+  width: 70%; /* or any other size */
+  padding: 20px; /* Optional: Adds some space around the text */
+}
+
+.heroSectionTopTitle p {
+  font-size: 3vw; /* Adjusts size based on the width of the viewport */
+  color: transparent;
+  font-family: $heading-h2-font-family;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 69px;
+  margin-top: -1px;
+  position: relative;
+}
+
+.heroSectionTopTitle1 {
+  color: #1e344f
+}
+.heroSectionTopTitle2 {
+  color: #1e344f
+}
+
+.heroSectionContainer2{
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-start;
+  width: 80%;
+  gap: 30px;
+}
+
+.heroSectionContainer3{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
+  flex-grow: 1;
+  width: 100%;
+  gap: 30px
+}

@@ -44,3 +44,6 @@ next-env.d.ts
 .env.prod
 .env.production
 .env.test 
+
+# VS Code settings
+launch.json

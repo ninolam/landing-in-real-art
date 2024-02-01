@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { PresaleArtWorks, PresaleDropPanelButtons, PresaleDropPanelData, PresaleDropPanelTexts, defaultLangObject } from "../../../types/types";
+import { EndDateTimestamp, PresaleArtWorks, PresaleDropPanelButtons, PresaleDropPanelData, PresaleDropPanelTexts, defaultLangObject } from "../../../types/types";
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../../../firebaseConfig";
 
@@ -9,7 +9,13 @@ const useSharedLogicDropPanel = () => {
     const FIREBASE_DROPPANEL_COLLECTION = 'Presale_DropPanel'
 
     const defaultText = {
-        endDrop: defaultLangObject
+        endDrop: defaultLangObject,
+        countDown: {
+            endDate: {
+                nanoseconds: 0,
+                seconds: 0
+            }
+        }
     }
 
     const defaultButton = {

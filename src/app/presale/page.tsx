@@ -11,6 +11,7 @@ import styles from './PresalePage.module.scss'
 import HeroSectionMobile from "../../components/presale/HeroSection/HeroSectionMobile"
 import PresaleProsMobile from "../../components/presale/PresalePros/PresaleProsMobile"
 import BuyingProcessMobile from "../../components/presale/BuyingProcess/BuyingProcessMobile"
+import HeroSection2 from "../../components/presale/HeroSection/HeroSection2"
 
 export default function PresalePage() {
 

@@ -1,10 +1,11 @@
 "use client"
 import { useAppContext } from "../../../context"
-import { Lang } from "../../../types/types"
+import { EndDateTimestamp, Lang } from "../../../types/types"
 import styles from './DropPanel.module.scss'
 import useSharedLogicDropPanel from "./useSharedLogicDropPanel"
 import { useEffect, useRef, useState } from "react"
 import parse from 'html-react-parser'
+import CountdownTimer from "./CountDownTimer"
 
 const DropPanel: React.FC = () => {
 
@@ -73,7 +74,9 @@ const DropPanel: React.FC = () => {
                 <div className={styles["frame-7"]}>
                     <div className={styles["text-wrapper-3"]}>{texts.endDrop[lang_]}</div>
                 </div>
-                <div className={styles["text-wrapper-4"]}>65J 20H</div>
+                <div className={styles["text-wrapper-4"]}>
+                <CountdownTimer endDate="2024-03-01T00:00:00" />
+                </div>
             </div>
             
             <div className={styles["image-grid"]}>
