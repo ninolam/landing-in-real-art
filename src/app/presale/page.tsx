@@ -11,14 +11,17 @@ import styles from './PresalePage.module.scss'
 import HeroSectionMobile from "../../components/presale/HeroSection/HeroSectionMobile"
 import PresaleProsMobile from "../../components/presale/PresalePros/PresaleProsMobile"
 import BuyingProcessMobile from "../../components/presale/BuyingProcess/BuyingProcessMobile"
-import HeroSection2 from "../../components/presale/HeroSection/HeroSection2"
+import HeroSectionTablet from "../../components/presale/HeroSection/HeroSectionTablet"
 
 export default function PresalePage() {
 
     const [isMobile, setIsMobile] = useState(false)
+    const [isTablet, setIsTablet] = useState(false)
+
     useEffect(() => {
       const checkScreenSize = () => {
         setIsMobile(window.innerWidth < 700)
+        setIsTablet(window.innerWidth < 1300)
       }
   
       checkScreenSize()
@@ -33,24 +36,26 @@ export default function PresalePage() {
         <div className={styles["index"]}>
             <div className={styles["frame"]}>
 
-            {isMobile ? 
-                <>
-                    <HeroSectionMobile/>
-                    <Menu/>
-                    <DropPanel/>
-                    <PresaleProsMobile/>
-                    <BuyingProcessMobile/>
-                    <FooterMobile containsEmail={true}/>
-                </>
-                    :
-                <>    
-                    <HeroSection/>
-                    <Menu/>
-                    <DropPanel/>
-                    <PresalePros/>
-                    <BuyingProcess/>
-                    <Footer/>
-                </>
+            {isMobile 
+                ?
+                    <>
+                        <HeroSectionMobile/>
+                        <Menu/>
+                        <DropPanel/>
+                        <PresaleProsMobile/>
+                        <BuyingProcessMobile/>
+                        <FooterMobile containsEmail={true}/>
+                    </>
+                :
+                    
+                    <>    
+                        {isTablet ?<HeroSectionTablet/>:<HeroSection/>}
+                        <Menu/>
+                        <DropPanel/>
+                        <PresalePros/>
+                        <BuyingProcess/>
+                        <Footer/>
+                    </>
             }
             </div>
         </div>

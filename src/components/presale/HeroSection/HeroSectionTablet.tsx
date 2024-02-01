@@ -5,7 +5,7 @@ import Link from "next/link"
 import styles from './HeroSection.module.scss'
 import useSharedLogicHeroSection from "./useSharedLogicHeroSection"
 
-const HeroSection2 = () => {
+const HeroSectionTablet = () => {
     //Get the language of the global context
     const {lang } = useAppContext()
     const lang_ = lang as Lang
@@ -57,5 +57,5 @@ const HeroSection2 = () => {
   )
 }
 
-export default HeroSection2
+export default HeroSectionTablet
 

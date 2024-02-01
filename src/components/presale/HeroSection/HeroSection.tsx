@@ -27,7 +27,7 @@ const HeroSection = () => {
                 <span className={styles["text-wrapper"]}> {presaleTexts.title1[lang_]} </span>
                 <span className={styles["presale-header-title2"]}>{presaleTexts.title2[lang_]}</span>
             </p>
-            <img className={styles["rectangle"]} alt=""
+            <img className={styles["rectangle"]} alt="" style={{width: '255px', marginLeft: '50px'}}
                 src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39772@2x.png"
             />
             </div>
