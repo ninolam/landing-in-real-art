@@ -5,28 +5,28 @@ interface CountdownTimerProps {
 }
 
 interface TimeLeft {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
+  D: number;
+  H: number;
+  M: number;
+  S: number;
 }
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({ endDate }) => {
   const calculateTimeLeft = (): TimeLeft => {
     const difference = +new Date(endDate) - +new Date();
     let timeLeft: TimeLeft = {
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
+      D: 0,
+      H: 0,
+      M: 0,
+      S: 0,
     };
 
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        D: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        H: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        M: Math.floor((difference / 1000 / 60) % 60),
+        S: Math.floor((difference / 1000) % 60),
       };
     }
 

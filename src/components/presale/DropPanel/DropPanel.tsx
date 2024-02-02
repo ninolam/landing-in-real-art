@@ -99,8 +99,8 @@ const DropPanel: React.FC = () => {
                                 </div>
                             </div>    
 
-                            <div className={styles["artworkUnit"]}>
-                                <img src={artwork.url}/>
+                            <div className={styles["artworkUnit"]} style={{backgroundImage: `url(${artwork.url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+                                
                             </div>    
                             <button className={styles["button-2"]}>
                                 <div className={styles["text-wrapper-6"]}>{buttons.acquireArtWork[lang_]}</div>
