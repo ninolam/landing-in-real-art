@@ -266,3 +266,11 @@ export interface PresaleDropPanelTexts {
 }
 
 export type PresaleDropPanelData = PresaleDropPanelArtworks & PresaleDropPanelButtons & PresaleDropPanelTexts
+
+export interface ModalProps {
+    description: string
+    closeButton?: string
+    /*
+    onClose: () => void
+    */
+}

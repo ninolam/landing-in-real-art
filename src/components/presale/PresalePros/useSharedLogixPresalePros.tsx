@@ -13,10 +13,13 @@ const useSharedLogixPresalePros = () => {
         mainDescription: defaultLangObject,
         buyArtWorkTitle: defaultLangObject,
         buyArtWorkDescription: defaultLangObject,
+        buyArtWorkDetail: defaultLangObject,
         exclusiveBenefitsTitle: defaultLangObject,
         exclusiveBenefitsDescription: defaultLangObject,
+        exclusiveBenefitsDetail: defaultLangObject,
         bonusTitle: defaultLangObject,
-        bonusDescription: defaultLangObject
+        bonusDescription: defaultLangObject,
+        bonusDetail: defaultLangObject
     }
 
     const defaultPresaleProsButtons = {

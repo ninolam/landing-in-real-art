@@ -5,10 +5,13 @@ export type PresaleProsTexts = {
     mainDescription: Record<Lang, string>
     buyArtWorkTitle: Record<Lang, string>
     buyArtWorkDescription: Record<Lang, string>
+    buyArtWorkDetail: Record<Lang, string>
     exclusiveBenefitsTitle: Record<Lang, string>
     exclusiveBenefitsDescription: Record<Lang, string>
+    exclusiveBenefitsDetail: Record<Lang, string>
     bonusTitle: Record<Lang, string>
     bonusDescription: Record<Lang, string>
+    bonusDetail: Record<Lang, string>
 }
 
 export type PresaleProsButtons = {

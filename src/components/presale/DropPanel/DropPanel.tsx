@@ -1,6 +1,6 @@
 "use client"
 import { useAppContext } from "../../../context"
-import { EndDateTimestamp, Lang } from "../../../types/types"
+import { EndDateTimestamp, Lang, ModalProps } from "../../../types/types"
 import styles from './DropPanel.module.scss'
 import useSharedLogicDropPanel from "./useSharedLogicDropPanel"
 import { useEffect, useRef, useState } from "react"
@@ -14,7 +14,7 @@ const DropPanel: React.FC = () => {
     const lang_ = lang as Lang
     
     const {artWorks, buttons, texts} = useSharedLogicDropPanel()
-
+    console.log(artWorks)
     const modalRef = useRef<HTMLDivElement>(null)
     
     const [isModalOpen, setIsModalOpen]   = useState(false)
@@ -41,14 +41,6 @@ const DropPanel: React.FC = () => {
         }    
     };
 
-    interface ModalProps {
-        description: string
-        closeButton: string
-        /*
-        onClose: () => void
-        */
-    }
-    
     useEffect(() => {
         document.addEventListener('mousedown', closeModal);
         return () => {
@@ -94,7 +86,7 @@ const DropPanel: React.FC = () => {
                             <div className={styles.frameDetailArtWorkLink}>
                                 <div></div>
                                 <div className={styles.frameDetailArtWorkLinkCorner}
-                                    onClick={() => showModal(artwork.description[lang_], buttons.closeArtworkDetail[lang_])}>
+                                    onClick={() => {showModal(artwork.description[lang_], buttons.closeArtworkDetail[lang_]); console.log(artwork.description[lang_])}}>
                                     {buttons.detailArtWork[lang_]}
                                 </div>
                             </div>    
