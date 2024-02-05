@@ -152,8 +152,8 @@ const Team = () => {
 */
 
     return (
-      <div>
-          <div id="team" className={styles.teamTitle}>
+      <div id="team" >
+          <div className={styles.teamTitle}>
               {title[lang_]}
           </div>
           <div className={styles["frame-team-carousel"]}>
