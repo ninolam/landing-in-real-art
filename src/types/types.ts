@@ -128,6 +128,10 @@ export type AboutTexts = {
     mainTitle : Record<Lang, string>
 }
 
+export type TosTexts = {
+    mainTitle : Record<Lang, string>
+}
+
 export type HelpIraData = FaqButtons & FaqTexts<Record<Lang, string>>
 
 
