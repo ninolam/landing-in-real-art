@@ -124,6 +124,10 @@ export type FaqQuestions = {
     items: Array<FaqQuestion>
 }
 
+export type AboutTexts = {
+    mainTitle : Record<Lang, string>
+}
+
 export type HelpIraData = FaqButtons & FaqTexts<Record<Lang, string>>
 
 

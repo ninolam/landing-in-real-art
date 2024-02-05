@@ -10,6 +10,8 @@ import useSharedLogic from "../useSharedLogic"
 import Footer from "../../components/footer/Footer"
 import FooterMobile from "../../components/footer/FooterMobile"
 import useSharedLogicFaqPage from "../../components/faqPage/menu/useSharedLogicFaqPage"
+import useSharedLogicFaqHeroSection from "../../components/faqPage/HeroSection/useSharedLogicFaqHeroSection"
+import SimpleHeroSection from "../../components/heroSection/SimpleHeroSection"
 
 export default function FaqPage() {
 
@@ -23,8 +25,9 @@ export default function FaqPage() {
     
     const {faqPage, setFaqPage, currentFaqQuestions, setCurrentFaqQuestions} = useSharedLogicFaqPage()
     const faqPage_ = Object.entries(faqPage)
+
+    const {faqHeroSection, setFaqHeroSection} = useSharedLogicFaqHeroSection()
     
-    console.log(faqPage_)
 
     const handleClickFaqButton = (event: any) => {
         setCurrentFaqSubPage(event.target.id)
@@ -81,7 +84,7 @@ export default function FaqPage() {
 
             {isMobile ? 
                 <>
-                    <HeroSection />
+                    <SimpleHeroSection mainTitle={faqHeroSection.mainTitle[lang_]}/>
                     <MenuFaq/>
                     <Menu/>
                     <div id="faqAccordion" className={styles.faqAccordion}>
@@ -91,7 +94,7 @@ export default function FaqPage() {
                 </>
             : 
                 <>
-                    <HeroSection />
+                    <SimpleHeroSection mainTitle={faqHeroSection.mainTitle[lang_]}/>
                     <MenuFaq/>
                     <Menu/>
                     <div id="faqAccordion" className={styles.faqAccordion}>
