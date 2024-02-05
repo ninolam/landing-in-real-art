@@ -16,7 +16,10 @@ const InvestmentCard = ({ number, title1, title2, details, imageSrc }: Investmen
   const [isHovered, setIsHovered] = useState(false);
 
   let borderRadius= ''
-  if (number === '03') {
+  if (number === '01' ) {
+    borderRadius = '50px 0px 0px 50px'
+  }
+  else if (number === '03' ) {
     borderRadius = '0px 50px 50px 0px'
   }
 

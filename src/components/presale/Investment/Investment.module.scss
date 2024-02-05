@@ -5,7 +5,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%; 
+    width: 60%; 
 }
 .card {
     display: flex;
@@ -21,7 +21,7 @@
   }
   
   .card:hover {
-    transform: scale(1.1); /* Enlarge the card */
+    transform: scale(1.5); /* Enlarge the card */
     z-index: 10; /* Ensure it's above other elements */
   }
   
