@@ -2,7 +2,6 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button } from "@chakra-ui/react"
 import { useState } from "react"
 import styles from './FaqPage.module.scss'
-import HeroSection from "../../components/faqPage/HeroSection/HeroSection"
 import Menu from "../../components/menu/Menu"
 import { useAppContext } from "../../context"
 import { Lang } from "../../types/types"

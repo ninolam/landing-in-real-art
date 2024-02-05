@@ -1,6 +1,5 @@
 "use client"
 import styles from './AboutPage.module.scss'
-import HeroSection from "../../components/faqPage/HeroSection/HeroSection"
 import Menu from "../../components/menu/Menu"
 import { useAppContext } from "../../context"
 import { Lang } from "../../types/types"
