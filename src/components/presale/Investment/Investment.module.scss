@@ -1,0 +1,104 @@
+/* Card.module.css */
+@import '../../../styles/variables.scss';
+
+.investmentContainer { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%; 
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 33%;
+    height: 600px;
+    background-size: cover;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    margin: 0px; /* Adjust as necessary */
+  }
+  
+  .card:hover {
+    transform: scale(1.1); /* Enlarge the card */
+    z-index: 10; /* Ensure it's above other elements */
+  }
+  
+  .title {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    top: 50px;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .details {
+    position: absolute;
+    background: white;
+    padding: 10px;
+    width: 100%;
+    bottom: -100%; /* Adjust based on your design */
+    left: 0;
+    transition: bottom 0.3s ease-in-out;
+  }
+  
+  .card:hover .details {
+    bottom: 0;
+  }
+  
+  .cardTitleContainer,
+.cardTitleContainer * {
+  box-sizing: border-box;
+}
+.cardTitleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.cardTitleNumber {
+  color: #ffffff;
+  text-align: left;
+  font-family: $heading-h2-font-family;
+  font-size: $heading-h2-font-size;
+  font-weight: $heading-h2-font-weight;
+  position: relative;
+}
+.cardTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.cardTitle1 {
+  color: #ffffff;
+  text-align: left;
+  font-family: $heading-h3-font-family;
+  font-size: $heading-h3-font-size;
+  font-weight: heading-h3-font-weight;
+  position: relative;
+}
+.cardTitle2 {
+  color: var(--primaire-white, #f6f8ff);
+  text-align: left;
+  font-family: $heading-h4-font-family;
+  font-size: $heading-h4-font-size;
+  font-weight: $heading-h4-font-weight;
+  position: relative;
+}
+
+
+  @media (max-width: 600px) {
+    .card {
+      width: 100%; /* Full width on small screens */
+      height: auto; /* Adjust height accordingly */
+    }
+  }
+  

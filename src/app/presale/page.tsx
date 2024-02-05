@@ -12,6 +12,7 @@ import HeroSectionMobile from "../../components/presale/HeroSection/HeroSectionM
 import PresaleProsMobile from "../../components/presale/PresalePros/PresaleProsMobile"
 import BuyingProcessMobile from "../../components/presale/BuyingProcess/BuyingProcessMobile"
 import HeroSectionTablet from "../../components/presale/HeroSection/HeroSectionTablet"
+import Investment from "../../components/presale/Investment/Investment"
 
 export default function PresalePage() {
 
@@ -43,6 +44,7 @@ export default function PresalePage() {
                         <Menu/>
                         <DropPanel/>
                         <PresaleProsMobile/>
+                        <Investment/>
                         <BuyingProcessMobile/>
                         <FooterMobile containsEmail={true}/>
                     </>
@@ -53,6 +55,7 @@ export default function PresalePage() {
                         <Menu/>
                         <DropPanel/>
                         <PresalePros/>
+                        <Investment/>
                         <BuyingProcess/>
                         <Footer/>
                     </>
