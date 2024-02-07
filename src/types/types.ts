@@ -6,6 +6,8 @@ export const defaultLangObject = {
     'FR': ''
 }
 
+export type TranslatedTexts = Record<Lang,string>
+
 export type HeaderButtons = {
     JoinIRA: Record<Lang,string>,
     StartIRA: Record<Lang,string>
@@ -253,6 +255,21 @@ export type PresaleArtWork = {
     description: Record<Lang, string>,
     image: string
     url: string
+}
+
+export type PresaleInvestmentsTexts = {
+    card1: PresaleInvestmentsCard
+    card2: PresaleInvestmentsCard
+    card3: PresaleInvestmentsCard
+} 
+
+export type PresaleInvestmentsCard = {
+    number: TranslatedTexts
+    details: TranslatedTexts
+    title1: TranslatedTexts
+    title2: TranslatedTexts
+    image: string
+
 }
 
 export interface PresaleDropPanelButtons {
