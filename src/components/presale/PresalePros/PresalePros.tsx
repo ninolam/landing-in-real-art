@@ -18,8 +18,7 @@ function PresalePros() {
     const [modalContent, setModalContent] = useState<string>('')
     
     const {presaleProsTexts, setPresaleProsTexts, presaleProsButtons, setPresaleProsButtons} = useSharedLogixPresalePros()
-    console.log(presaleProsTexts)
-
+    
     const showModal = (description: string) => {
         setModalContent(description)
         setIsModalOpen(true)

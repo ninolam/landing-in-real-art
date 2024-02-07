@@ -18,9 +18,15 @@ const InvestmentCard = ({ number, title1, title2, details, imageSrc }: Investmen
   let borderRadius= ''
   if (number === '01' ) {
     borderRadius = '50px 0px 0px 50px'
+    if (window.innerWidth < 600) {
+      borderRadius = '50px 50px 0px 0px'
+    }
   }
   else if (number === '03' ) {
     borderRadius = '0px 50px 50px 0px'
+    if (window.innerWidth < 600) {
+      borderRadius = '0px 0px 50px 50px'
+    }  
   }
 
   return (

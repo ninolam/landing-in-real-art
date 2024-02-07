@@ -14,7 +14,7 @@ const DropPanel: React.FC = () => {
     const lang_ = lang as Lang
     
     const {artWorks, buttons, texts} = useSharedLogicDropPanel()
-    console.log(artWorks)
+    
     const modalRef = useRef<HTMLDivElement>(null)
     
     const [isModalOpen, setIsModalOpen]   = useState(false)

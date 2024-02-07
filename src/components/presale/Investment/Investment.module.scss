@@ -5,7 +5,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 60%; 
+    width: 70%; 
 }
 .card {
     display: flex;
@@ -21,7 +21,7 @@
   }
   
   .card:hover {
-    transform: scale(1.5); /* Enlarge the card */
+    transform: scale(1.4, 1.4); /* Enlarge the card */
     z-index: 10; /* Ensure it's above other elements */
   }
   
@@ -94,11 +94,143 @@
   position: relative;
 }
 
-
-  @media (max-width: 600px) {
-    .card {
-      width: 100%; /* Full width on small screens */
-      height: auto; /* Adjust height accordingly */
-    }
+@media (max-width: 1800px) {
+  .investmentContainer { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 70%; 
   }
+}
+
+@media (max-width: 1600px) {
+
+  .investmentContainer { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%; 
+  }
+}
+
+@media (max-width: 1400px) {
+
+  .investmentContainer { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 85%; 
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .investmentContainer { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%; 
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 33%;
+    height: 500px;
+    background-size: cover;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    margin: 0px; /* Adjust as necessary */
+  }
+
+}
+
+@media (max-width: 1000px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 33%;
+    height: 450px;
+    background-size: cover;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    margin: 0px; /* Adjust as necessary */
+  }
+}
+
+@media (max-width: 800px) {
+  .investmentContainer { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%; 
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 33%;
+    height: 400px;
+    background-size: cover;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    margin: 0px; /* Adjust as necessary */
+  }
+}
+
+@media (max-width: 600px) {
+  .investmentContainer { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%; 
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    margin: 0px; /* Adjust as necessary */
+  }
+}
+
+@media (max-width: 400px) {
+  .investmentContainer { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%; 
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    margin: 0px; /* Adjust as necessary */
+  }
+
+  .card:hover {
+    transform: scale(1.3, 1.3); /* Enlarge the card */
+    z-index: 10; /* Ensure it's above other elements */
+  }
+
+}
   

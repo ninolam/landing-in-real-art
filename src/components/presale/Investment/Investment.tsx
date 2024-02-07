@@ -16,7 +16,7 @@ const Investment = () => {
     texts.card1,
     texts.card2,
     texts.card3
-  ];
+  ]
 
   return (
     <div className={styles.investmentContainer}>
