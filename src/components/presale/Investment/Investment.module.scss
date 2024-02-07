@@ -153,6 +153,7 @@ div.cardTitleContainer {
 
 @media (max-width: 900px) {
   .investmentContainer {
+    top: -80px;
     width: 80%;
     height: 900px;
     flex-direction: column; /* Stack divs vertically */
