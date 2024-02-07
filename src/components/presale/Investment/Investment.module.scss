@@ -11,7 +11,8 @@
     display: flex;
     flex-direction: row; /* Default to row */
     width: 70%;
-
+    top: -150px;
+    position: relative;
     transition: flex-grow 0.5s ease
 }
 .investmentContainer div {
@@ -128,9 +129,31 @@ div.cardTitleContainer {
   position: relative;
 }
 
+
 /* Responsive adjustments */
-@media (max-width: 1000px) {
+
+@media (max-width: 1600px) {
+  .investmentContainer { 
+    width: 75%;
+  }
+
+}
+
+@media (max-width: 1400px) {
+  .investmentContainer { 
+    width: 80%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .investmentContainer { 
+    width: 90%;
+  }
+}
+
+@media (max-width: 900px) {
   .investmentContainer {
+    width: 80%;
     height: 900px;
     flex-direction: column; /* Stack divs vertically */
   }
