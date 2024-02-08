@@ -18,32 +18,11 @@ const InvestmentCard = ({ number, title1, title2, details, imageSrc }: Investmen
 
   const widthToGoVertically = 900
 
-  let borderRadius= ''
-  let styleCard = ''
-  if (number === '01' ) {
-    borderRadius = '50px 0px 0px 50px'
-    if (window.innerWidth < widthToGoVertically) {
-      borderRadius = '50px 50px 0px 0px'
-    }
-    styleCard = styles.card1
-  }
-  else if (number === '03' ) {
-    borderRadius = '0px 50px 50px 0px'
-    if (window.innerWidth < widthToGoVertically) {
-      borderRadius = '0px 0px 50px 50px'
-    }  
-    styleCard = styles.card3
-  }
-  else if (number === '03' ) {
-    styleCard = styles.card2
-  }  
-
   return (
     <div
-        className=''
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        style={{ backgroundImage: `url(${imageSrc})`, backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: `${borderRadius}` }}
+        style={{ backgroundImage: `url(${imageSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
         
         <div className={styles.cardTitleContainer}>

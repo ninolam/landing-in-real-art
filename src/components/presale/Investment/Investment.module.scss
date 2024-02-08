@@ -8,12 +8,14 @@
     justify-content: center;
     width: 70%; 
     */
+    border-radius: 40px;
     display: flex;
     flex-direction: row; /* Default to row */
     width: 70%;
     top: -150px;
     position: relative;
-    transition: flex-grow 0.5s ease
+    transition: flex-grow 0.5s ease;
+    
 }
 .investmentContainer div {
   flex: 1; /* Initially, each div takes up an equal amount of space */
@@ -27,6 +29,15 @@
   align-items: flex-start;
   margin: 0px;
 }
+
+.investmentContainer div:nth-child(1) {
+  border-radius: 50px 0px 0px 50px;
+}
+
+.investmentContainer div:nth-child(3) {
+  border-radius: 0px 50px 50px 0px;
+}
+
 /* Hover effect */
 .investmentContainer div:hover {
   flex-grow: 4.666; /* Approximately results in the hovered div taking 70% of the space */
@@ -153,7 +164,7 @@ div.cardTitleContainer {
 
 @media (max-width: 900px) {
   .investmentContainer {
-    top: -80px;
+    top: 50px;
     width: 80%;
     height: 900px;
     flex-direction: column; /* Stack divs vertically */
@@ -172,6 +183,14 @@ div.cardTitleContainer {
     margin: 0px;
   }
 
+  .investmentContainer div:nth-child(1) {
+    border-radius: 50px 50px 0px 0px;
+  }
+  
+  .investmentContainer div:nth-child(3) {
+    border-radius: 0px 0px 50px 50px;
+  }
+  
   
   /* Adjust hover effect for vertical layout */
   .investmentContainer div:hover {
@@ -179,5 +198,12 @@ div.cardTitleContainer {
   }
   .investmentContainer div:not(:hover) {
     flex-grow: 0.667; /* Adjust non-hovered divs in a vertical layout */
+  }
+}
+
+@media (max-width: 700px) {
+  .investmentContainer {
+    top: -50px;
+    
   }
 }
