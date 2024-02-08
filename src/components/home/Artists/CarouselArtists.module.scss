@@ -55,7 +55,7 @@
     align-self: stretch;
     flex-shrink: 0;
     position: relative;
-    min-height: 300px;
+    min-height: 250px;
   }
 
   .frame-artist-carousel > img {
@@ -72,13 +72,13 @@
   .frameArtistName {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0px;
     align-items: center;
     justify-content: center;
     align-self: stretch;
     flex-shrink: 0;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
   }
 
   .artistName {
@@ -133,6 +133,12 @@
     border-radius: 10px;
   }
 
+  @media (max-width: 1400px) {
+    .frame-artist-carousel {
+      height: 500px;
+    }  
+  }
+
   @media (max-width: 900px) {
     .frame-artists-carousel {
       flex-direction: column;
@@ -158,7 +164,7 @@
     }
 
     .frame-artist-carousel {
-      height: 500px;
+      height: 450px;
       object-fit: cover;
       position: relative;
       width: 100%;
