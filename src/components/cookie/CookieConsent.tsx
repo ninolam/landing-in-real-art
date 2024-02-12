@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import styles from './CookieConsent.module.scss'
-import { Box, Button, ButtonGroup, Center, Flex, Heading, Icon, Spacer, Text, VStack, useColorModeValue  } from '@chakra-ui/react';
-import * as evaiconsOutline from '@emotion-icons/evaicons-outline'
-import { IoClose, IoNotificationsOutline } from 'react-icons/io5';
+import { Box, Button, ButtonGroup, Center, Flex, Heading, Text, VStack, useColorModeValue  } from '@chakra-ui/react';
 
 function CookieConsent() {
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [cookiesAccepted, setCookiesAccepted] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(['cookieConsent']);
 
+  const bg = useColorModeValue('gray.100', 'gray.700');
   useEffect(() => {
     if (cookies['cookieConsent']) {
       setCookiesAccepted(true);
@@ -75,9 +74,6 @@ function CookieConsent() {
     return null;
   }
 
-  const bg = useColorModeValue('gray.100', 'gray.700');
-  const color = useColorModeValue('black', 'white');
-  
   return (
     <CookiesProvider>
       {showCookieBanner && (

@@ -22,10 +22,10 @@ const Partners = () => {
             </div>
             <SimpleGrid columns={[1, null, 2]} spacing='100px' border='10px'>
                 <Box height='100px' width='150px' margin={'auto'} >
-                    <img src='https://bye-buy-car.com/wp-content/uploads/2023/11/Logo.webp'/>
+                    <img src='https://bye-buy-car.com/wp-content/uploads/2023/11/Logo.webp' alt=''/>
                 </Box>
                 <Box height='100px' width='200px' margin={'auto'} >
-                    <img src='https://bolides-legendes.com/wp-content/uploads/2023/06/logo.webp'/>
+                    <img src='https://bolides-legendes.com/wp-content/uploads/2023/06/logo.webp' alt=''/>
                 </Box>
             </SimpleGrid>
         </div> 

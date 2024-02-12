@@ -21,7 +21,7 @@ const NewsletterMobile = () => {
   
     return (
       <div className={styles["frame-newsLetter-mobile"]}>
-      <img className={styles["unsplash-a-ug-tvv-qx-dhg"]} src="img/img-newsletter-mobile.png"/>
+      <img className={styles["unsplash-a-ug-tvv-qx-dhg"]} src="img/img-newsletter-mobile.png" alt=''/>
       <div className={styles["frame-36598"]}>
         <div className={styles["newsletter"]}>{nlTexts.title[lang_]}</div>
         <div className={styles["newsletter-description"]}>{nlTexts.description[lang_]}</div>

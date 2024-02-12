@@ -17,7 +17,7 @@ const HowToJoinIraMobile = () => {
     <div className={styles["feature"]}>
     <img
       className={styles["rectangle-210"]}
-      src="img/rectangle-2100.png"
+      src="img/rectangle-2100.png" alt=''
     />
     <div className={styles["frame-303"]}>
       <div className={styles["comment"]}>Comment ? </div>

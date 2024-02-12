@@ -18,10 +18,10 @@ const HowToJoinIra = () => {
         <div className={styles.feature}>
         <div className={styles.frame36597}>
           <div className={styles.frame48095734}>
-            <img className={styles.rectangle62} src="/img/rectangle-62.svg" />
+            <img className={styles.rectangle62} src="/img/rectangle-62.svg" alt=''/>
           </div>
           <div className={styles.frame48095735}>
-            <img className={styles.rectangle210} src="/img/rectangle-210.svg" />
+            <img className={styles.rectangle210} src="/img/rectangle-210.svg" alt=""/>
           </div>
         </div>
         <div className={styles.frame48095733}>

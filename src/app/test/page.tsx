@@ -10,32 +10,32 @@ const TestPage = () => {
     </div>
     <div className={styles["image-grid"]}>
         <div className={styles["image-container"]}>
-        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg"/>
+        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg" alt=''/>
             <button>Button 1</button>
         </div>
         
         <div className={styles["image-container"]}>
-        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg"/>
+        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg" alt=''/>
             <button>Button 1</button>
         </div>
         <div className={styles["image-container"]}>
-        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg"/>
+        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg" alt=''/>
             <button>Button 1</button>
         </div>
         <div className={styles["image-container"]}>
-        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg"/>
+        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg" alt=''/>
             <button>Button 1</button>
         </div>
         <div className={styles["image-container"]}>
-        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg"/>
+        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg" alt=''/>
             <button>Button 1</button>
         </div>
         <div className={styles["image-container"]}>
-        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg"/>
+        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg" alt=''/>
             <button>Button 1</button>
         </div>
         <div className={styles["image-container"]}>
-        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg"/>
+        <img src="https://cdn.animaapp.com/projects/655cacc35c6faf1eb176ebc4/releases/657325d4ed28baa6bd577524/img/rectangle-39770.svg" alt=''/>
             <button>Button 1</button>
         </div>
     </div>
