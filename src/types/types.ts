@@ -134,6 +134,10 @@ export type TosTexts = {
     mainTitle : Record<Lang, string>
 }
 
+export type LegalNoticeTexts = {
+    mainTitle : Record<Lang, string>
+}
+
 export type HelpIraData = FaqButtons & FaqTexts<Record<Lang, string>>
 
 
