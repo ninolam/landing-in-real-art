@@ -18,6 +18,8 @@ import CarouselArtists from "../../components/home/Artists/CarouselArtists";
 import styles from './HomePage.module.scss'
 import Partners from "../../components/home/Partners/Partners";
 import useSharedLogic from "../useSharedLogic";
+import CookieConsent from "../../components/cookie/CookieConsent";
+import { CookiesProvider } from "react-cookie";
 
 export default function HomePage() {
 
@@ -30,6 +32,9 @@ export default function HomePage() {
 
       {isMobile ? 
         <>
+          <CookiesProvider>
+            <CookieConsent/>
+          </CookiesProvider>
           <HeroSectionMobile />
           <Menu/>
           <HowToJoinIraMobile/>
@@ -44,6 +49,9 @@ export default function HomePage() {
         </>  
           : 
         <>
+          <CookiesProvider>
+            <CookieConsent/>
+          </CookiesProvider>
           <HeroSection />
           <Menu/>
           <HowToJoinIra/>
