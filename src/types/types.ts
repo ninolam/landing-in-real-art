@@ -256,9 +256,10 @@ export type PresaleArtWorks  = Array<PresaleArtWork>
 
 export type PresaleArtWork = {
     artistName: string
-    description: Record<Lang, string>,
+    description: Record<Lang, string>
     image: string
     url: string
+    price: number
 }
 
 export type PresaleInvestmentsTexts = {
@@ -278,6 +279,7 @@ export type PresaleInvestmentsCard = {
 
 export interface PresaleDropPanelButtons {
     acquireArtWork: Record<Lang, string>,
+    buyArtworkNow: Record<Lang, string>,
     closeArtworkDetail: Record<Lang, string>,
     detailArtWork: Record<Lang, string>,
     viewMoreArtworks: Record<Lang, string>
@@ -305,5 +307,8 @@ export interface ModalProps {
 }
 
 export interface AcquireModalProps {
-    description: string
+    buttonBuyStripe: string,
+    description: string,
+    imageUrl: string,
+    price: number
 }

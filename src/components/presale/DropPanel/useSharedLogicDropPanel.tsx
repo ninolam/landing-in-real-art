@@ -20,6 +20,7 @@ const useSharedLogicDropPanel = () => {
 
     const defaultButton = {
         acquireArtWork: defaultLangObject,
+        buyArtworkNow: defaultLangObject,
         closeArtworkDetail: defaultLangObject,
         detailArtWork: defaultLangObject,
         viewMoreArtworks: defaultLangObject
@@ -29,7 +30,8 @@ const useSharedLogicDropPanel = () => {
         artistName: '',
         description: defaultLangObject,
         image: '',
-        url: ''
+        url: '',
+        price: 0
     }
 
     const [artWorks, setArtWorks] = useState<PresaleArtWorks>([defaultArtwork])

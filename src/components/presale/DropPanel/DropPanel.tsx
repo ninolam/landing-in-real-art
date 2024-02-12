@@ -6,6 +6,7 @@ import useSharedLogicDropPanel from "./useSharedLogicDropPanel"
 import { useEffect, useRef, useState } from "react"
 import parse from 'html-react-parser'
 import CountdownTimer from "./CountDownTimer"
+import { Card, CardBody, CardFooter, Divider, Heading, Stack, ButtonGroup, Button, Text, Image } from "@chakra-ui/react"
 
 const DropPanel: React.FC = () => {
 
@@ -22,6 +23,9 @@ const DropPanel: React.FC = () => {
     const [isAcquireModalOpen, setIsAcquireModalOpen] = useState(false)
     const [modalContent, setModalContent] = useState<string>('')
     const [acquireModalContent, setAcquireModalContent] = useState<string>('')
+    const [acquireModalPrice, setAcquireModalPrice] = useState<number>(0)
+    const [acquireModalImageUrl, setAcquireModalImageUrl] = useState<string>('')
+    const [acquireButtonBuyStripe, setAcquireButtonBuyStripe] = useState<string>('')
     const [closeButton, setCloseButton]   = useState<string>('')
 
     // State to keep track of how many images are currently displayed
@@ -38,9 +42,12 @@ const DropPanel: React.FC = () => {
         setIsModalOpen(true)
     }
 
-    const showAcquireModal = (description: string) => {
+    const showAcquireModal = (description: string, buttonBuyStripe: string, imageUrl: string, price: number) => {
         console.log('test')
-        setAcquireModalContent(description)
+        setAcquireModalContent(description.slice(0, 100))
+        setAcquireButtonBuyStripe(buttonBuyStripe)
+        setAcquireModalImageUrl(imageUrl)
+        setAcquireModalPrice(price)
         setIsAcquireModalOpen(true)
     }
 
@@ -70,11 +77,36 @@ const DropPanel: React.FC = () => {
         )
     }
     
-    const AcquireModal: React.FC<AcquireModalProps> = ({ description }) => {
+    const AcquireModal: React.FC<AcquireModalProps> = ({ description, buttonBuyStripe, imageUrl, price }) => {
         return (
             <div className={styles["acquire-modal-backdrop"]}>
                 <div ref={acquireModalRef} className={styles["acquire-modal"]}>
-                    <p>{parse(description)}</p>
+                    <Card maxW='sm'>
+                        <CardBody>
+                            <Image
+                            src={imageUrl}
+                            alt=''
+                            borderRadius='lg'
+                            />
+                            <Stack mt='6' spacing='3'>
+                            <Heading size='md'>Artwork</Heading>
+                            <Text>
+                                {description}
+                            </Text>
+                            <Text color='blue.600' fontSize='2xl'>
+                                {price} €
+                            </Text>
+                            </Stack>
+                        </CardBody>
+                        <Divider />
+                        <CardFooter>
+                            <ButtonGroup spacing='2'>
+                                <Button variant='solid' colorScheme='blue'>
+                                    {buttonBuyStripe}
+                                </Button>
+                            </ButtonGroup>
+                        </CardFooter>
+                    </Card>
                 </div>
             </div>
         )
@@ -115,7 +147,7 @@ const DropPanel: React.FC = () => {
                             <div className={styles["artworkUnit"]} style={{backgroundImage: `url(${artwork.url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
                                 
                             </div>    
-                            <button className={styles["button-2"]} onClick={() => {showAcquireModal(artwork.description[lang_])}}>
+                            <button className={styles["button-2"]} onClick={() => {showAcquireModal(artwork.description[lang_], buttons.buyArtworkNow[lang_], artwork.url, artwork.price)}}>
                                 <div className={styles["text-wrapper-6"]}>
                                         {buttons.acquireArtWork[lang_]}
                                 </div>
@@ -135,7 +167,7 @@ const DropPanel: React.FC = () => {
                     <Modal description={modalContent} closeButton={closeButton} />
                 )}
                 {isAcquireModalOpen && (
-                    <AcquireModal description={acquireModalContent} />
+                    <AcquireModal description={acquireModalContent} buttonBuyStripe={acquireButtonBuyStripe} imageUrl={acquireModalImageUrl} price={acquireModalPrice} />
                 )}
                 
             </div>
