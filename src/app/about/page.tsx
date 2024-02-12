@@ -8,6 +8,7 @@ import Footer from "../../components/footer/Footer"
 import FooterMobile from "../../components/footer/FooterMobile"
 import useSharedLogicAboutPage from "../../components/aboutPage/useSharedLogicAboutPage"
 import SimpleHeroSection from '../../components/heroSection/SimpleHeroSection'
+import AboutDescription from '../../components/aboutPage/AboutDescription'
 
 export default function AboutPage() {
 
@@ -27,12 +28,14 @@ export default function AboutPage() {
             {isMobile ? 
                 <>
                     <SimpleHeroSection mainTitle={mainTitle}/>
+                    <AboutDescription/>
                     <Menu/>
                     <FooterMobile/>
                 </>
             : 
                 <>
                     <SimpleHeroSection mainTitle={mainTitle}/>
+                    <AboutDescription/>
                     <Menu/>
                     <Footer/>    
                 </>

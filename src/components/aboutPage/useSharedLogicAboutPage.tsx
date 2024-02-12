@@ -8,7 +8,8 @@ const useSharedLogicAboutPage = () => {
     const FIREBASE_ABOUT_PAGE_COLLECTION = 'About'
 
     const defaultAboutTexts = {
-      mainTitle: defaultLangObject
+      mainTitle: defaultLangObject,
+      mainDescription: defaultLangObject
     }
 
     const [texts, setTexts] = useState<AboutTexts>(defaultAboutTexts)

@@ -128,6 +128,7 @@ export type FaqQuestions = {
 
 export type AboutTexts = {
     mainTitle : Record<Lang, string>
+    mainDescription : Record<Lang, string>
 }
 
 export type TosTexts = {
