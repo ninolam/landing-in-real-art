@@ -1,5 +1,5 @@
 "use client"
-import styles from './TermsOfServicePage.module.scss'
+import styles from './TermsOfServiceNftPage.module.scss'
 import Menu from "../../components/menu/Menu"
 import { useAppContext } from "../../context"
 import { Lang } from "../../types/types"
@@ -10,7 +10,7 @@ import SimpleHeroSection from '../../components/heroSection/SimpleHeroSection'
 import useSharedLogicTosPage from '../../components/tosPage/useSharedLogicTosPage'
 import TosContent from '../../components/tosPage/TosContent'
 
-export default function TermsOfServicePage() {
+export default function TermsOfServiceNftPage() {
 
     //Get the language of the global context
     const {lang} = useAppContext()
@@ -18,11 +18,12 @@ export default function TermsOfServicePage() {
 
     const {isMobile, setIsMobile} = useSharedLogic(800)
 
-    const FIREBASE_TOS_PAGE_COLLECTION = 'ToS'
+    const FIREBASE_TOS_PAGE_COLLECTION = 'TosNft'
     const {texts, setTexts} = useSharedLogicTosPage(FIREBASE_TOS_PAGE_COLLECTION)
-    
-    const mainTitle   = texts.mainTitle[lang_]
+
+    const mainTitle = texts.mainTitle[lang_]
     const mainContent = texts.mainContent[lang_]
+    
 
     return (
         <div id="home" className={styles["home"]} style={isMobile?{paddingTop:'0px'}:{paddingTop:''}}>

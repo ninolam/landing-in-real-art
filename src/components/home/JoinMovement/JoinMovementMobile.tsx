@@ -3,10 +3,10 @@
 import styles from './JoinMovementMobile.module.scss'
 import { VuesaxLinearStatusUpMobile } from './VuesaxLinearStatusUpMobile/VuesaxLinearStatusUpMobile'
 import { useAppContext } from '../../../context'
-import parse from 'html-react-parser';
-import { Lang } from '../../../types/types';
-import Link from 'next/link';
-import useSharedLogicJoinMovement from './useSharedLogicJoinMovement';
+import parse from 'html-react-parser'
+import { Lang } from '../../../types/types'
+import Link from 'next/link'
+import useSharedLogicJoinMovement from './useSharedLogicJoinMovement'
 
 
 const JoinMovementMobile = () => {

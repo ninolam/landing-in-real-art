@@ -133,6 +133,11 @@ export type AboutTexts = {
 
 export type TosTexts = {
     mainTitle : Record<Lang, string>
+    mainContent: Record<Lang, string>
+}
+
+export interface TosContentProps {
+    mainContent: string
 }
 
 export type LegalNoticeTexts = {

@@ -3,12 +3,11 @@ import { db } from '../../firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore/lite'
 import { useEffect, useState } from 'react'
 
-const useSharedLogicTosPage = () => {
-
-    const FIREBASE_TOS_PAGE_COLLECTION = 'ToS'
+const useSharedLogicTosPage = (fireBaseTosPageCollection:string) => {
 
     const defaultTosTexts = {
-      mainTitle: defaultLangObject
+      mainTitle: defaultLangObject,
+      mainContent: defaultLangObject,
     }
 
     const [texts, setTexts] = useState<TosTexts>(defaultTosTexts)
@@ -16,7 +15,7 @@ const useSharedLogicTosPage = () => {
     useEffect(() => {
         
         const fetchData = async () => {
-          const collection_ = collection(db, FIREBASE_TOS_PAGE_COLLECTION);
+          const collection_ = collection(db, fireBaseTosPageCollection);
           const documents  = await getDocs(collection_); 
           const data       = documents.docs.map(doc => doc.data());
           
