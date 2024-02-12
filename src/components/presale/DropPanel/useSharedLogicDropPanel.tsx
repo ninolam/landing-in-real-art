@@ -74,7 +74,6 @@ const useSharedLogicDropPanel = () => {
             
             //Index 1 ===> Buttons
             setButtons(data[1])  
-            console.log(data[1])
             //Index 2 ===> Texts
             setTexts(data[2])  
         }

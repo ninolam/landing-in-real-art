@@ -303,3 +303,7 @@ export interface ModalProps {
     onClose: () => void
     */
 }
+
+export interface AcquireModalProps {
+    description: string
+}

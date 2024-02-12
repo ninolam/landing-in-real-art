@@ -1,6 +1,6 @@
 "use client"
 import { useAppContext } from "../../../context"
-import { EndDateTimestamp, Lang, ModalProps } from "../../../types/types"
+import { AcquireModalProps, EndDateTimestamp, Lang, ModalProps } from "../../../types/types"
 import styles from './DropPanel.module.scss'
 import useSharedLogicDropPanel from "./useSharedLogicDropPanel"
 import { useEffect, useRef, useState } from "react"
@@ -15,10 +15,13 @@ const DropPanel: React.FC = () => {
     
     const {artWorks, buttons, texts} = useSharedLogicDropPanel()
     
-    const modalRef = useRef<HTMLDivElement>(null)
-    
+    const modalRef        = useRef<HTMLDivElement>(null)
+    const acquireModalRef = useRef<HTMLDivElement>(null)
+
     const [isModalOpen, setIsModalOpen]   = useState(false)
+    const [isAcquireModalOpen, setIsAcquireModalOpen] = useState(false)
     const [modalContent, setModalContent] = useState<string>('')
+    const [acquireModalContent, setAcquireModalContent] = useState<string>('')
     const [closeButton, setCloseButton]   = useState<string>('')
 
     // State to keep track of how many images are currently displayed
@@ -27,26 +30,35 @@ const DropPanel: React.FC = () => {
     // Function to load more images
     const loadMoreArtworks = () => {
         setVisibleCount(prevCount => prevCount + 10);
-    };
+    }
 
     const showModal = (description: string, closeButton: string) => {
         setModalContent(description)
         setCloseButton(closeButton)
         setIsModalOpen(true)
-    };
+    }
+
+    const showAcquireModal = (description: string) => {
+        console.log('test')
+        setAcquireModalContent(description)
+        setIsAcquireModalOpen(true)
+    }
 
     const closeModal = (e: any) => {
         if (modalRef.current && !modalRef.current.contains(e.target)) {
             setIsModalOpen(false)
+        }
+        if (acquireModalRef.current && !acquireModalRef.current.contains(e.target)) {
+            setIsAcquireModalOpen(false)
         }    
-    };
+    }
 
     useEffect(() => {
         document.addEventListener('mousedown', closeModal);
         return () => {
-            document.removeEventListener('mousedown', closeModal);
-        };
-    }, []);
+            document.removeEventListener('mousedown', closeModal)
+        }
+    }, [])
     
     const Modal: React.FC<ModalProps> = ({ description, closeButton }) => {
         return (
@@ -55,9 +67,18 @@ const DropPanel: React.FC = () => {
                     <p>{parse(description)}</p>
                 </div>
             </div>
-        );
-    };
+        )
+    }
     
+    const AcquireModal: React.FC<AcquireModalProps> = ({ description }) => {
+        return (
+            <div className={styles["acquire-modal-backdrop"]}>
+                <div ref={acquireModalRef} className={styles["acquire-modal"]}>
+                    <p>{parse(description)}</p>
+                </div>
+            </div>
+        )
+    }
   
     return (
         <>
@@ -86,7 +107,7 @@ const DropPanel: React.FC = () => {
                             <div className={styles.frameDetailArtWorkLink}>
                                 <div></div>
                                 <div className={styles.frameDetailArtWorkLinkCorner}
-                                    onClick={() => {showModal(artwork.description[lang_], buttons.closeArtworkDetail[lang_]); console.log(artwork.description[lang_])}}>
+                                    onClick={() => {showModal(artwork.description[lang_], buttons.closeArtworkDetail[lang_])}}>
                                     {buttons.detailArtWork[lang_]}
                                 </div>
                             </div>    
@@ -94,8 +115,10 @@ const DropPanel: React.FC = () => {
                             <div className={styles["artworkUnit"]} style={{backgroundImage: `url(${artwork.url})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
                                 
                             </div>    
-                            <button className={styles["button-2"]}>
-                                <div className={styles["text-wrapper-6"]}>{buttons.acquireArtWork[lang_]}</div>
+                            <button className={styles["button-2"]} onClick={() => {showAcquireModal(artwork.description[lang_])}}>
+                                <div className={styles["text-wrapper-6"]}>
+                                        {buttons.acquireArtWork[lang_]}
+                                </div>
                             </button>
                         </div>
                     ))
@@ -110,6 +133,9 @@ const DropPanel: React.FC = () => {
 
                 {isModalOpen && (
                     <Modal description={modalContent} closeButton={closeButton} />
+                )}
+                {isAcquireModalOpen && (
+                    <AcquireModal description={acquireModalContent} />
                 )}
                 
             </div>

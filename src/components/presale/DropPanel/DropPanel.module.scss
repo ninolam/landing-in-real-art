@@ -252,7 +252,7 @@
   font-family: 'Unbounded', sans-serif;
 }
 
-.modal-backdrop {
+.modal-backdrop, .acquire-modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -265,7 +265,7 @@
   z-index: 1000; /* Ensure it's above other content */
 }
 
-.modal {
+.modal, .acquire-modal {
   background-color: white;
     padding: 20px;
     border-radius: 5px;
