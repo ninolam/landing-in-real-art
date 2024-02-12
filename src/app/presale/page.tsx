@@ -13,6 +13,8 @@ import PresaleProsMobile from "../../components/presale/PresalePros/PresaleProsM
 import BuyingProcessMobile from "../../components/presale/BuyingProcess/BuyingProcessMobile"
 import HeroSectionTablet from "../../components/presale/HeroSection/HeroSectionTablet"
 import Investment from "../../components/presale/Investment/Investment"
+import { CookiesProvider } from "react-cookie"
+import CookieConsent from "../../components/cookie/CookieConsent"
 
 export default function PresalePage() {
 
@@ -40,6 +42,9 @@ export default function PresalePage() {
             {isMobile 
                 ?
                     <>
+                        <CookiesProvider>
+                            <CookieConsent/>
+                        </CookiesProvider>
                         <HeroSectionMobile/>
                         <Menu/>
                         <DropPanel/>
@@ -51,6 +56,9 @@ export default function PresalePage() {
                 :
                     
                     <>    
+                        <CookiesProvider>
+                            <CookieConsent/>
+                        </CookiesProvider>
                         {isTablet ?<HeroSectionTablet/>:<HeroSection/>}
                         <Menu/>
                         <DropPanel/>

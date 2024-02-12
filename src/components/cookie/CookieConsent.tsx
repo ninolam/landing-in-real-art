@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import styles from './CookieConsent.module.scss'
-import { Box, Button, ButtonGroup, Center, Flex, Heading, Icon, Spacer, Text  } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Center, Flex, Heading, Icon, Spacer, Text, VStack, useColorModeValue  } from '@chakra-ui/react';
 import * as evaiconsOutline from '@emotion-icons/evaicons-outline'
 import { IoClose, IoNotificationsOutline } from 'react-icons/io5';
 
@@ -75,52 +75,33 @@ function CookieConsent() {
     return null;
   }
 
+  const bg = useColorModeValue('gray.100', 'gray.700');
+  const color = useColorModeValue('black', 'white');
+  
   return (
     <CookiesProvider>
       {showCookieBanner && (
-        <div className={styles["cookie-banner"]}>
-          <Center width="100%">
-            <Box
-              bg="white"
-              boxShadow="md"
-              borderRadius="sm"
-              p={4}
-              width="100%"
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              position="fixed"
-              bottom="0"
-              left="0"
-              right="0"
-              zIndex="8888"
-              height="700px"
-            >
-              <Text fontWeight="semibold">This website uses cookies...</Text>
-              <Flex align="center">
-                <Text mx={2}>
-                  We use cookies to enhance your experience, analyze site usage, and
-                  personalize ads. Please read our
-                  <a href="/cookie-policy">Cookie Policy</a> to learn more.
-                </Text>
-                {/*<IoNotificationsOutline/>*/}
-                
-              </Flex>
-              <Flex>
-                <Button mr={2} onClick={handleAccept} variant="outline">
-                  Accept
-                </Button>
-                <Button variant="outline" onClick={handleDecline}>
-                  Decline
-                </Button>
-              </Flex>
-              {/*<IoClose onClick={handleClose}/>*/}
-              
-            </Box>
-    </Center>
-          
-          
-        </div>
+
+      <VStack as="div" bg={bg} borderRadius="md" boxShadow="md" p={4} position="fixed" bottom="0" left="0" right="0" zIndex={9999} height="50%">
+        {/* Title */}
+        <Heading as="h3" size="md" mb={2}>
+            Cookie Policy
+          </Heading>
+
+          {/* Description */}
+          <Text>
+            This website uses cookies to improve your user experience. 
+            <br/>
+            By using this website, you consent to the use of all cookies in
+            accordance with our Privacy Policy.
+          </Text>
+
+          {/* Buttons */}
+          <Box display="flex" justifyContent="space-between" mt={4}>
+            <Button colorScheme="teal" onClick={handleAccept} >Accept</Button>
+            <Button variant="ghost" onClick={handleDecline}>Decline</Button>
+          </Box>
+      </VStack>
       )}
       {/* Rest of your Next.js application */}
     </CookiesProvider>
