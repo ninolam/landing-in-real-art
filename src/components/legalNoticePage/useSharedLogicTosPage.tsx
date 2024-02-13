@@ -8,7 +8,8 @@ const useSharedLogicLegalNoticePage = () => {
     const FIREBASE_LN_PAGE_COLLECTION = 'LegalNotice'
 
     const defaultTosTexts = {
-      mainTitle: defaultLangObject
+      mainTitle: defaultLangObject,
+      mainContent: defaultLangObject
     }
 
     const [texts, setTexts] = useState<LegalNoticeTexts>(defaultTosTexts)

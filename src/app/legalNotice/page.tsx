@@ -9,6 +9,7 @@ import FooterMobile from "../../components/footer/FooterMobile"
 import SimpleHeroSection from '../../components/heroSection/SimpleHeroSection'
 import useSharedLogicTosPage from '../../components/tosPage/useSharedLogicTosPage'
 import useSharedLogicLegalNoticePage from '../../components/legalNoticePage/useSharedLogicTosPage'
+import TosContent from '../../components/tosPage/TosContent'
 
 export default function LegalNoticePage() {
 
@@ -21,6 +22,7 @@ export default function LegalNoticePage() {
     const {texts, setTexts} = useSharedLogicLegalNoticePage()
     
     const mainTitle = texts.mainTitle[lang_]
+    const mainContent = texts.mainContent[lang_]
     
     return (
         <div id="home" className={styles["home"]} style={isMobile?{paddingTop:'0px'}:{paddingTop:''}}>
@@ -28,12 +30,14 @@ export default function LegalNoticePage() {
             {isMobile ? 
                 <>
                     <SimpleHeroSection mainTitle={mainTitle}/>
+                    <TosContent mainContent={mainContent} />
                     <Menu/>
                     <FooterMobile/>
                 </>
             : 
                 <>
                     <SimpleHeroSection mainTitle={mainTitle}/>
+                    <TosContent mainContent={mainContent} />
                     <Menu/>
                     <Footer/>    
                 </>

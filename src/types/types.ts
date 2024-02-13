@@ -142,6 +142,7 @@ export interface TosContentProps {
 
 export type LegalNoticeTexts = {
     mainTitle : Record<Lang, string>
+    mainContent : Record<Lang, string>
 }
 
 export type HelpIraData = FaqButtons & FaqTexts<Record<Lang, string>>
