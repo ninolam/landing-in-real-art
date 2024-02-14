@@ -71,7 +71,10 @@ const Invest = () =>  {
           title1={data.title1[lang_]} 
           title2={data.title2[lang_]} 
           backgroundImage={data.backgroundImage} 
-          details={data.details[lang_]} details1={data.details1[lang_]}/>
+          details={data.details[lang_]} 
+          details1={data.details1[lang_]}
+          details2={data.details2[lang_]}
+          />
       ))}
     </div>
   );

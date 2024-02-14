@@ -6,8 +6,8 @@
   gap: 0px; 
   border-radius: 40px;
   overflow: hidden;
-  width: 90%;
-  height: 500px;
+  width: 80%;
+  height: 600px;
   position: relative;
   top: -130px;
 }
@@ -20,7 +20,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-size: cover;
   background-position: center;
 }
@@ -34,9 +34,6 @@
 }
 
 .title1 {
-  position: absolute;
-  top: 80px;
-  left: 20px;
   margin: 10px;
   color: #fff;
   z-index: 2;
@@ -48,9 +45,6 @@
 }
 
 .title2 {
-  position: absolute;
-  top: 110px;
-  left: 20px;
   margin: 10px;
   color: #fff;
   z-index: 2;
@@ -62,9 +56,6 @@
 }
 
 .number {
-  position: absolute;
-  top: 20px;
-  left: 20px;
   margin: 10px;
   color: #fff;
   z-index: 2;
@@ -83,7 +74,7 @@
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   color: #fff;
-  padding: 20px;
+  padding: 30px;
   width: 100%;
 }
 
@@ -92,7 +83,7 @@
   flex-direction: column;
 }
 
-.details1Item {
+.details1Item, .details2Item {
   display: flex;
   flex-direction: row;
 }
@@ -103,6 +94,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 }
 
 .textContent, .list {
