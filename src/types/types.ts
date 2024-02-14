@@ -6,7 +6,14 @@ export const defaultLangObject = {
     'FR': ''
 }
 
+export const defaultLangObjectArray = {
+    'CN': [''],
+    'EN': [''],
+    'FR': ['']
+}
 export type TranslatedTexts = Record<Lang,string>
+
+export type TranslatedArrayTexts = Record<Lang,Array<string>>
 
 export type HeaderButtons = {
     JoinIRA: Record<Lang,string>,
@@ -278,9 +285,12 @@ export type PresaleInvestmentsTexts = {
 export type PresaleInvestmentsCard = {
     number: TranslatedTexts
     details: TranslatedTexts
+    details1: TranslatedArrayTexts
+    details2: TranslatedArrayTexts
     title1: TranslatedTexts
     title2: TranslatedTexts
-    image: string
+    backgroundImage: string
+    
 
 }
 

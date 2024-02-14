@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
-import { PresaleInvestmentsTexts, defaultLangObject } from "../../../types/types";
+import { PresaleInvestmentsTexts, defaultLangObject, defaultLangObjectArray } from "../../../types/types";
 
 
 const useSharedLogicInvestment = () => {
@@ -13,7 +13,9 @@ const useSharedLogicInvestment = () => {
       title1: defaultLangObject,
       title2: defaultLangObject,
       details: defaultLangObject,
-      image: ''
+      details1: defaultLangObjectArray,
+      details2: defaultLangObjectArray,
+      backgroundImage: ''
     }
 
     const defaultInvestmentTexts = {

@@ -15,6 +15,7 @@ import HeroSectionTablet from "../../components/presale/HeroSection/HeroSectionT
 import Investment from "../../components/presale/Investment/Investment"
 import { CookiesProvider } from "react-cookie"
 import CookieConsent from "../../components/cookie/CookieConsent"
+import Invest from "../../components/presale/Invest/Invest"
 
 export default function PresalePage() {
 
@@ -49,7 +50,7 @@ export default function PresalePage() {
                         <Menu/>
                         <DropPanel/>
                         <PresaleProsMobile/>
-                        <Investment/>
+                        <Invest/>
                         <BuyingProcessMobile/>
                         <FooterMobile containsEmail={true}/>
                     </>
@@ -63,7 +64,7 @@ export default function PresalePage() {
                         <Menu/>
                         <DropPanel/>
                         <PresalePros/>
-                        <Investment/>
+                        <Invest/>
                         <BuyingProcess/>
                         <Footer/>
                     </>

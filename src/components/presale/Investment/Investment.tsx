@@ -21,7 +21,7 @@ const Investment = () => {
   return (
     <div className={styles.investmentContainer}>
       {cards.map((card, index) => (
-        <InvestmentCard key={index} number={card.number[lang_]} title1={card.title1[lang_]} title2={card.title2[lang_]} details={card.details[lang_]} imageSrc={card.image} />
+        <InvestmentCard key={index} number={card.number[lang_]} title1={card.title1[lang_]} title2={card.title2[lang_]} details={card.details[lang_]} imageSrc={card.backgroundImage} />
       ))}
     </div>
   );
