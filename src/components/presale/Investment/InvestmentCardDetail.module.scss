@@ -1,251 +1,226 @@
-.frame-3387,
-.frame-3387 * {
+@import '../../../styles/variables.scss';
+
+.investmentCardDetailContainer,
+.investmentCardDetailContainer * {
   box-sizing: border-box;
 }
-.frame-3387 {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-  backdrop-filter: blur(12px);
+.investmentCardDetailContainer {
+  background: rgba(255, 255, 255, 0.7) ;
+  height:80%;
+  border-radius: 10px ;
+  padding: 16px ;
+  display: flex ;
+  flex-direction: row ;
+  gap: 32px ;
+  align-items: flex-start ;
+  justify-content: flex-start ;
+  flex-shrink: 0 ;
+  position: relative ;
+  backdrop-filter: blur(12px) ;
 }
 .frame-3387__frame-3386 {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
+  display: flex ;
+  flex-direction: row ;
+  gap: 8px ;
+  align-items: flex-start ;
+  justify-content: flex-start ;
+  flex-shrink: 0 ;
+  position: relative ;
 }
 .frame-3387__group-36601 {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  position: relative;
-  overflow: visible;
+  flex-shrink: 0 ;
+  width: 22px ;
+  height: 22px ;
+  position: relative ;
+  overflow: visible ;
 }
 .frame-3387__droit-de-cession-de-20-ans-avec-possibilit-s-tendues-telles-que-reproduire-l-uvre-distribuer-l-uvre-exposer-l-uvre-commercialiser-l-uvre-utiliser-l-uvre-des-fins-commerciales-c-der-le-droit-de-cession-une-tierce-personne-adapter-l-uvre {
-  color: var(--primaire-black, #000035);
-  text-align: left;
-  font-family: var(
-    --text-paragraphe-font-family,
-    "Montserrat-Regular",
-    sans-serif
-  );
-  font-size: var(--text-paragraphe-font-size, 16px);
-  font-weight: var(--text-paragraphe-font-weight, 400);
+  color: $primaireblack ;
+  text-align: left ;
+  font-family: $text-paragraphe-font-family ;
+  font-size: $text-paragraphe-font-size ;
+  font-weight: $text-paragraphe-font-weight ;
   position: relative;
   width: 227px;
 }
 .frame-3387__frame-3385 {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
+  display: flex ;
+  flex-direction: column ;
+  gap: 16px ;
+  align-items: flex-start ;
+  justify-content: flex-start ;
+  flex-shrink: 0 ;
+  position: relative ;
 }
 .frame-3387__frame-3379 {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
+  display: flex ;
+  flex-direction: row ;
+  gap: 8px ;
+  align-items: flex-start ;
+  justify-content: flex-start ;
+  flex-shrink: 0 ;
+  position: relative ;
 }
 .frame-3387__group-36600 {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  position: relative;
-  overflow: visible;
+  flex-shrink: 0 ;
+  width: 22px ;
+  height: 22px ;
+  position: relative ;
+  overflow: visible ;
 }
 .frame-3387__rencontre-avec-l-artiste {
-  color: var(--primaire-black, #000035);
+  color: $primaireblack ;
   text-align: left;
-  font-family: var(
-    --text-paragraphe-font-family,
-    "Montserrat-Regular",
-    sans-serif
-  );
-  font-size: var(--text-paragraphe-font-size, 16px);
-  font-weight: var(--text-paragraphe-font-weight, 400);
+  font-family: $text-paragraphe-font-family ;
+  font-size: $text-paragraphe-font-size ;
+  font-weight: $text-paragraphe-font-weight ;
   position: relative;
 }
 .frame-3387__frame-3380 {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
+  display: flex ;
+  flex-direction: row ;
+  gap: 8px ;
+  align-items: flex-start ;
+  justify-content: flex-start ;
+  flex-shrink: 0 ;
+  position: relative ;
 }
 .frame-3387__group-366012 {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  position: relative;
-  overflow: visible;
+  flex-shrink: 0 ;
+  width: 22px ;
+  height: 22px ;
+  position: relative ;
+  overflow: visible ;
 }
 .frame-3387__cl-ledger-designer-par-l-artiste {
-  color: var(--primaire-black, #000035);
-  text-align: left;
-  font-family: var(
-    --text-paragraphe-font-family,
-    "Montserrat-Regular",
-    sans-serif
-  );
-  font-size: var(--text-paragraphe-font-size, 16px);
-  font-weight: var(--text-paragraphe-font-weight, 400);
+  color: $primaireblack ;
+  text-align: left ;
+  font-family: $text-paragraphe-font-family ;
+  font-size: $text-paragraphe-font-size ;
+  font-weight: $text-paragraphe-font-weight ;
   position: relative;
 }
 .frame-3387__frame-3381 {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
+  display: flex ;
+  flex-direction: row ;
+  gap: 8px ;
+  align-items: flex-start ;
+  justify-content: flex-start ;
+  flex-shrink: 0 ;
+  position: relative ;
 }
 .frame-3387__group-366002 {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  position: relative;
-  overflow: visible;
+  flex-shrink: 0 ;
+  width: 22px ;
+  height: 22px ;
+  position: relative ;
+  overflow: visible ;
 }
 .frame-3387__libre-choix-de-la-galerie-de-d-p-t {
-  color: var(--primaire-black, #000035);
-  text-align: left;
-  font-family: var(
-    --text-paragraphe-font-family,
-    "Montserrat-Regular",
-    sans-serif
-  );
-  font-size: var(--text-paragraphe-font-size, 16px);
-  font-weight: var(--text-paragraphe-font-weight, 400);
-  position: relative;
+  color: $primaireblack ;
+  text-align: left ;
+  font-family: $text-paragraphe-font-family ;
+  font-size: $text-paragraphe-font-size ;
+  font-weight: $text-paragraphe-font-weight ;
+  position: relative ;
 }
 .frame-3387__frame-3382 {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
+  display: flex ;
+  flex-direction: row ;
+  gap: 8px ;
+  align-items: flex-start ;
+  justify-content: flex-start ;
+  flex-shrink: 0 ;
+  position: relative ;
 }
 .frame-3387__group-366013 {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  position: static;
+  flex-shrink: 0 ;
+  width: 22px ;
+  height: 22px ;
+  position: static ;
 }
 .frame-3387__vector-75 {
-  width: 9px;
-  height: 6px;
-  position: absolute;
-  left: 7px;
-  top: 8px;
-  overflow: visible;
+  width: 9px ;
+  height: 6px ;
+  position: absolute ;
+  left: 7px ;
+  top: 8px ;
+  overflow: visible ;
 }
 .frame-3387__group-366003 {
-  width: 22px;
-  height: 22px;
-  position: static;
+  width: 22px ;
+  height: 22px ;
+  position: static ;
 }
 .frame-3387__vector-76 {
-  width: 9px;
-  height: 6px;
-  position: absolute;
-  left: 7px;
-  top: 8px;
-  overflow: visible;
+  width: 9px ;
+  height: 6px ;
+  position: absolute ;
+  left: 7px ;
+  top: 8px ;
+  overflow: visible ;
 }
 .frame-3387__group-366004 {
-  width: 22px;
-  height: 22px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  overflow: visible;
+  width: 22px ;
+  height: 22px ;
+  position: absolute ;
+  left: 0px ;
+  top: 0px ;
+  overflow: visible ;
 }
 .frame-3387__typologie-de-vente-libre-voir-white-paper {
-  color: var(--primaire-black, #000035);
+  color: $primaireblack ;
   text-align: left;
-  font-family: var(
-    --text-paragraphe-font-family,
-    "Montserrat-Regular",
-    sans-serif
-  );
-  font-size: var(--text-paragraphe-font-size, 16px);
-  font-weight: var(--text-paragraphe-font-weight, 400);
-  position: relative;
+  font-family: $text-paragraphe-font-family ;
+  font-size: $text-paragraphe-font-size ;
+  font-weight: $text-paragraphe-font-weight ;
+  position: relative ;
 }
 .frame-3387__frame-3383 {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
+  display: flex ;
+  flex-direction: row ;
+  gap: 8px ;
+  align-items: flex-start ;
+  justify-content: flex-start ;
+  flex-shrink: 0 ;
+  position: relative ;
 }
 .frame-3387__group-36602 {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  position: relative;
-  overflow: visible;
+  flex-shrink: 0 ;
+  width: 22px ;
+  height: 22px ;
+  position: relative ;
+  overflow: visible ;
 }
 .frame-3387__possibilit-de-vendre-sur-notre-marketplace-exclusive {
-  color: var(--primaire-black, #000035);
-  text-align: left;
-  font-family: var(
-    --text-paragraphe-font-family,
-    "Montserrat-Regular",
-    sans-serif
-  );
-  font-size: var(--text-paragraphe-font-size, 16px);
-  font-weight: var(--text-paragraphe-font-weight, 400);
-  position: relative;
+  color: $primaireblack ;
+  text-align: left ;
+  font-family: $text-paragraphe-font-family ;
+  font-size: $text-paragraphe-font-size ;
+  font-weight: $text-paragraphe-font-weight ;
+  position: relative ;
 }
 .frame-3387__frame-3384 {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
+  display: flex ; 
+  flex-direction: row ;
+  gap: 8px ;
+  align-items: flex-start ;
+  justify-content: flex-start ;
+  flex-shrink: 0 ;
+  position: relative ;
 }
 .frame-3387__group-366022 {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  position: relative;
-  overflow: visible;
+  flex-shrink: 0 ;
+  width: 22px ;
+  height: 22px ;
+  position: relative ;
+  overflow: visible ;
 }
 .frame-3387__possibilit-de-laisser-l-uvre-en-galerie {
-  color: var(--primaire-black, #000035);
-  text-align: left;
-  font-family: var(
-    --text-paragraphe-font-family,
-    "Montserrat-Regular",
-    sans-serif
-  );
-  font-size: var(--text-paragraphe-font-size, 16px);
-  font-weight: var(--text-paragraphe-font-weight, 400);
-  position: relative;
+  color: $primaireblack ;
+  text-align: left ;
+  font-family: $text-paragraphe-font-family ;
+  font-size: $text-paragraphe-font-size ;
+  font-weight: $text-paragraphe-font-weight ;
+  position: relative ;
 }
