@@ -46,17 +46,16 @@ const InvestCard: React.FC<InvestCardProps> = ({ number, title1, title2, backgro
         {/*<div className={styles.textContent}>{details}</div> */}
         <div className={styles.details1}>
             {details1?.map((item, index) => (
-
-              <div className={styles.details1Item}>
+              <div key={index} className={styles.details1Item}>
                 <CheckBoxChecked key={index}/>&nbsp;&nbsp;{item}
               </div>
             ))}          
         </div> 
         <div className={styles.details2}>
             {details2?.map((item, index) => (
-              <>
-              <CheckBoxChecked key={index}/>&nbsp;&nbsp;{item}
-              </>
+              <div key={index}>
+                <CheckBoxChecked key={index}/>&nbsp;&nbsp;{item}
+              </div>
             ))}          
         </div> 
       </div>
