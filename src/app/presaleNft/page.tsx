@@ -48,8 +48,8 @@ export default function PresalePage() {
                         <CookiesProvider>
                             <CookieConsent/>
                         </CookiesProvider>
-                        <Menu/>
                         <JoinMovementNft/>
+                        <Menu/>
                         <AboutArtist/>
                         <GetReadyToBuy/>
                         <FooterMobile containsEmail={true}/>
@@ -60,8 +60,8 @@ export default function PresalePage() {
                         <CookiesProvider>
                             <CookieConsent/>
                         </CookiesProvider>
-                        <Menu/>
                         <JoinMovementNft/>
+                        <Menu/>
                         <AboutArtist/>
                         <GetReadyToBuy/>
                         <Footer/>
