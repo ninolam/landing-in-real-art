@@ -1,0 +1,88 @@
+.about,
+.about * {
+  box-sizing: border-box;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 50px;
+}
+.aboutContent {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+}
+
+.aboutImg {
+  width: 503px;
+  height: 755px;
+  object-fit: cover;
+}
+
+.aboutImgContainer {
+    border-radius: 30px;
+    background-image: url('../../../../public/img/presaleNft/julian-hochgesang.png');
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    flex: 1;
+    flex-shrink: 1;
+    
+}
+
+.aboutArtist {
+  color: #021056;
+  text-align: center;
+  font-family: "Roboto-Bold", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  width: 80%;
+  height: 60px;
+  margin: auto;
+}
+.aboutContentRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 588px;
+    
+}
+.aboutContentRightDesc {
+  color: #021056;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 20px;
+  line-height: 180%;
+  font-weight: 500;
+}
+.aboutContentRightTitle {
+  color: #021056;
+  text-align: left;
+  font-family: "Poppins-Bold", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  left: 100px;
+}
+
+.frame-3 {
+    background: #5552ff;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    max-width: max-content;
+  }
+
+.frame-3__show-more {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  

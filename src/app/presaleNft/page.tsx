@@ -16,6 +16,7 @@ import { CookiesProvider } from "react-cookie"
 import CookieConsent from "../../components/cookie/CookieConsent"
 import Invest from "../../components/presale/Invest/Invest"
 import JoinMovementNft from "../../components/presaleNft/JoinMovement/JoinMovementNft"
+import AboutArtist from "../../components/presaleNft/AboutArtist/AboutArtist"
 
 export default function PresalePage() {
 
@@ -48,6 +49,7 @@ export default function PresalePage() {
                         </CookiesProvider>
                         <Menu/>
                         <JoinMovementNft/>
+                        <AboutArtist/>
                         <FooterMobile containsEmail={true}/>
                     </>
                 :
@@ -58,6 +60,7 @@ export default function PresalePage() {
                         </CookiesProvider>
                         <Menu/>
                         <JoinMovementNft/>
+                        <AboutArtist/>
                         <Footer/>
                     </>
             }
