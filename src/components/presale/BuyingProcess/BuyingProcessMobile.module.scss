@@ -1,20 +1,20 @@
 @import '../../../styles/variables.scss';
 
-.frame-48095817,
-.frame-48095817 * {
+.buyingProcessContainer,
+.buyingProcessContainer * {
   box-sizing: border-box;
 }
-.frame-48095817 {
+.buyingProcessContainer {
   display: flex;
   flex-direction: column;
   gap: 32px;
   align-items: flex-start;
   justify-content: flex-start;
   flex-shrink: 0;
-  width: 320px;
+  width: 70%;
   position: relative;
 }
-.frame-48095817__frame-3349 {
+.buyingProcessContainerTitleDesc {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -42,7 +42,7 @@
   position: relative;
   align-self: stretch;
 }
-.frame-48095817__frame-48095816 {
+.buyingProcessStepsContainer {
   display: flex;
   flex-direction: column;
   gap: 17px;
@@ -52,7 +52,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.frame-48095817__frame-48095791 {
+.buyingProcessStepsTitle {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -62,7 +62,7 @@
   width: 320px;
   position: relative;
 }
-.frame-48095817__etape-01 {
+.buyingProcessStepsNumber {
   color: $bleubleu-sombre-100;
   text-align: left;
   font-family: $heading-h3-font-family;
@@ -70,7 +70,7 @@
   font-weight: $heading-h3-font-weight;
   position: relative;
 }
-.frame-48095817__cr-ation-d-un-contrat-intelligent-pour-la-pr-vente {
+.buyingProcessStepsMainTitle {
   color: $bleubleu-sombre-100;
   text-align: left;
   font-family: $heading-h3-font-family;
@@ -79,7 +79,7 @@
   position: relative;
   width: 320px;
 }
-.frame-48095817__frame-48095796 {
+.buyingProcessStepsContentContainer {
   background: #ffffff;
   border-radius: 20px;
   padding: 24px;
@@ -92,7 +92,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.frame-48095817__frame-48095795 {
+.buyingProcessStepsContent {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -102,7 +102,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.frame-48095817__paragraph {
+.buyingProcessStepsDesc {
   color: #000000;
   text-align: left;
   font-family: "Montserrat-Regular", sans-serif;
@@ -115,7 +115,7 @@
   transform-origin: 0 0;
   transform: rotate(0deg) scale(1, 1);
 }
-.frame-48095817__frame-48095794 {
+.buyingProcessStepsButtons {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -125,7 +125,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.frame-48095817__frame-48095793 {
+.buyingProcessStepsButtonPrevious {
   background: #6052ff;
   border-radius: 6px;
   padding: 14px 31px 14px 31px;
@@ -138,7 +138,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.frame-48095817__heading {
+.buyingProcessStepsButtonText {
   color: #ffffff;
   text-align: left;
   font-family: $heading-h4-font-family;
@@ -146,7 +146,7 @@
   font-weight: $heading-h4-font-weight;
   position: relative;
 }
-.frame-48095817__frame-3 {
+.buyingProcessStepsButtonNext {
   background: #6052ff;
   border-radius: 6px;
   padding: 14px 31px 14px 31px;

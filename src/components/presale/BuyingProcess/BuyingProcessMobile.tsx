@@ -14,51 +14,51 @@ const BuyingProcessMobile = () => {
 
         
     return (
-        <div className={styles["frame-48095817"]}>
-        <div className={styles["frame-48095817__frame-3349"]}>
-            <div className={styles["buyingProcessMainTitle"]}>
-            {texts.mainTitle[lang_]}
+        <div className={styles["buyingProcessContainer"]}>
+            <div className={styles["buyingProcessContainerTitleDesc"]}>
+                <div className={styles["buyingProcessMainTitle"]}>
+                {texts.mainTitle[lang_]}
+                </div>
+                <div className={styles["buyingProcessMainDesc"]}>
+                {texts.mainDescription[lang_]}
+                </div>
             </div>
-            <div className={styles["buyingProcessMainDesc"]}>
-            {texts.mainDescription[lang_]}
-            </div>
-        </div>
 
-        {steps.map(([key, value], index) => (
-            <div className={styles["frame-48095817__frame-48095816"]} ref={divRefs[index]} key={key}
-            style={{ display: currentStep === null || currentStep === index ? 'flex' : 'none' }}>          
-                    
-                        <div className={styles["frame-48095817__frame-48095791"]}>
-                            <div className={styles["frame-48095817__etape-01"]}>{value.stepNumber[lang_]}</div>
-                            <div className={styles["frame-48095817__cr-ation-d-un-contrat-intelligent-pour-la-pr-vente"]}>
-                                {texts.mainTitle[lang_]}
-                            </div>
-                        </div>
-                        <div className={styles["frame-48095817__frame-48095796"]}>
-                                <div className={styles["frame-48095817__frame-48095795"]}>
-                                        <div className={styles["frame-48095817__paragraph"]}>
-                                            {parse(value.description[lang_])}
-                                        </div>
-
-                                        <div className={styles["frame-48095817__frame-48095794"]}>
-                                            <div className={styles["frame-48095817__frame-48095793"]} onClick={() => handleStepClick('left')}>
-                                                <div className={styles["frame-48095817__heading"]}>
-                                                    {buttons.previous[lang_]}
-                                                </div>
-                                            </div>
-                                            <div className={styles["frame-48095817__frame-3"]} onClick={() => handleStepClick('rifg')}>
-                                                <div className={styles["frame-48095817__heading"]}>
-                                                    {buttons.next[lang_]}
-                                                </div>
-                                            </div>
-                                        </div>
-
-
+            {steps.map(([key, value], index) => (
+                <div className={styles["buyingProcessStepsContainer"]} ref={divRefs[index]} key={key}
+                style={{ display: currentStep === null || currentStep === index ? 'flex' : 'none' }}>          
+                        
+                            <div className={styles["buyingProcessStepsTitle"]}>
+                                <div className={styles["buyingProcessStepsNumber"]}>{value.stepNumber[lang_]}</div>
+                                <div className={styles["buyingProcessStepsMainTitle"]}>
+                                    {texts.mainTitle[lang_]}
                                 </div>
-                        </div>
-            </div>
-        ))}
-    </div>
+                            </div>
+                            <div className={styles["buyingProcessStepsContentContainer"]}>
+                                    <div className={styles["buyingProcessStepsContent"]}>
+                                            <div className={styles["buyingProcessStepsDesc"]}>
+                                                {parse(value.description[lang_])}
+                                            </div>
+
+                                            <div className={styles["buyingProcessStepsButtons"]}>
+                                                <div className={styles["buyingProcessStepsButtonPrevious"]} onClick={() => handleStepClick('left')}>
+                                                    <div className={styles["buyingProcessStepsButtonText"]}>
+                                                        {buttons.previous[lang_]}
+                                                    </div>
+                                                </div>
+                                                <div className={styles["buyingProcessStepsButtonNext"]} onClick={() => handleStepClick('rifg')}>
+                                                    <div className={styles["buyingProcessStepsButtonText"]}>
+                                                        {buttons.next[lang_]}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                    </div>
+                            </div>
+                </div>
+            ))}
+        </div>
   )
 }
 

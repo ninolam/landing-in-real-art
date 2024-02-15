@@ -65,7 +65,7 @@ export default function PresalePage() {
                         <DropPanel/>
                         <PresalePros/>
                         <Invest/>
-                        <BuyingProcess/>
+                        {isTablet ?<BuyingProcessMobile/>:<BuyingProcess/>}
                         <Footer/>
                     </>
             }
