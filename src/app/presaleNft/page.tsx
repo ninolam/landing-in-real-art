@@ -17,6 +17,7 @@ import CookieConsent from "../../components/cookie/CookieConsent"
 import Invest from "../../components/presale/Invest/Invest"
 import JoinMovementNft from "../../components/presaleNft/JoinMovement/JoinMovementNft"
 import AboutArtist from "../../components/presaleNft/AboutArtist/AboutArtist"
+import GetReadyToBuy from "../../components/presaleNft/GetReadyToBuy/GetReadyToBuy"
 
 export default function PresalePage() {
 
@@ -50,6 +51,7 @@ export default function PresalePage() {
                         <Menu/>
                         <JoinMovementNft/>
                         <AboutArtist/>
+                        <GetReadyToBuy/>
                         <FooterMobile containsEmail={true}/>
                     </>
                 :
@@ -61,6 +63,7 @@ export default function PresalePage() {
                         <Menu/>
                         <JoinMovementNft/>
                         <AboutArtist/>
+                        <GetReadyToBuy/>
                         <Footer/>
                     </>
             }
