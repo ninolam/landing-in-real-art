@@ -1,0 +1,151 @@
+.joinMovementNft,
+.joinMovementNft * {
+  box-sizing: border-box;
+}
+.joinMovementNft {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    gap: 50px;
+}
+.rejoindre-le-mouvement {
+    color: var(--primaire-black, #000035);
+    text-align: left;
+    font-family: var(--heading-h2-font-family, "Unbounded-SemiBold", sans-serif);
+    font-size: var(--heading-h2-font-size, 48px);
+    font-weight: var(--heading-h2-font-weight, 600);
+    position: relative;
+    width: 394px;
+}
+  
+.joinMovementNftHeroleft {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  gap: 30px;
+}
+.joinMovementNft__desc {
+  width: 300px;
+  height: 50px;
+  
+}
+.joinMovementNft__action {
+  width: 300px;
+  height: 50px;
+  
+}
+.joinMovementNft__frame-1 {
+  background: linear-gradient(
+    214.02deg,
+    rgba(2, 16, 86, 0.5) 0%,
+    rgba(2, 16, 86, 0.5) 100%
+  );
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.joinMovementNft__explore-now {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+}
+.joinMovementNft__frame-2 {
+  background: #5552ff;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.joinMovementNft__buy-nft {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+}
+
+
+.joinMovementNftGallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex: 1;
+}
+.joinMovementNftGalleryItem {
+    flex: 1 1 calc(33.333% - 20px);
+    height: 200px;
+    background-color: #eee;
+}
+
+.joinMovementNft__rectangle-15 {
+  border-radius: 10px;
+  width: 187px;
+  height: 140px;
+  position: relative;
+  object-fit: cover;
+}
+.joinMovementNft__rectangle-18 {
+  border-radius: 10px;
+  width: 187px;
+  height: 127px;
+  position: relative;
+  object-fit: cover;
+}
+.joinMovementNft__rectangle-20 {
+  border-radius: 10px;
+  width: 179px;
+  height: 159px;
+  position: relative;
+  object-fit: cover;
+}
+.joinMovementNft__rectangle-17 {
+  border-radius: 10px;
+  width: 187px;
+  height: 220px;
+  position: relative;
+  object-fit: cover;
+}
+.joinMovementNft__rectangle-16 {
+  border-radius: 10px;
+  width: 187px;
+  height: 108px;
+  position: relative;
+  object-fit: cover;
+}
+.joinMovementNft__rectangle-19 {
+  border-radius: 10px;
+  width: 187px;
+  height: 220px;
+  position: relative;
+  object-fit: cover;
+}
+.joinMovementNft__rectangle-21 {
+  border-radius: 10px;
+  width: 187px;
+  height: 412px;
+  position: absolute;
+  object-fit: cover;
+}
+.joinMovementNftDescription {
+  color: #021056;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 20px;
+  line-height: 180%;
+  font-weight: 500;
+  position: relative;
+  width: 490px;
+}
