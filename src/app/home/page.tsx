@@ -3,11 +3,9 @@ import Menu from "../../components/menu/Menu";
 import Faq from "../../components/home/Faq/Faq";
 import Footer from "../../components/footer/Footer";
 import HeroSection from "../../components/home/HeroSection/HeroSection";
-import HowToJoinIra from "../../components/testnet/JoinIRA/HowToJoinIra";
 import JoinMovement from "../../components/home/JoinMovement/JoinMovement";
 import Newsletter from "../../components/home/Newsletter/Newsletter";
 import Team from "../../components/home/Team/Team";
-import { useEffect, useState } from "react";
 import HeroSectionMobile from "../../components/home/HeroSection/HeroSectionMobile";
 import HowToJoinIraMobile from "../../components/home/JoinIRA/HowToJoinIraMobile";
 import JoinMovementMobile from "../../components/home/JoinMovement/JoinMovementMobile";
@@ -20,6 +18,7 @@ import Partners from "../../components/home/Partners/Partners";
 import useSharedLogic from "../useSharedLogic";
 import CookieConsent from "../../components/cookie/CookieConsent";
 import { CookiesProvider } from "react-cookie";
+import HowToJoinIra from "../../components/home/JoinIRA/HowToJoinIra";
 
 export default function HomePage() {
 

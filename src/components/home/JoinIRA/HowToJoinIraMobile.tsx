@@ -11,7 +11,9 @@ const HowToJoinIraMobile = () => {
   const {lang} = useAppContext()
   const lang_ = lang as Lang
 
-  const {joinIraDataText, setJoinIraDataText, joinIraDataButton, setJoinIraDataButton} = useSharedLogicHowToJoinIra()
+  const FIREBASE_JOIN_IRA_COLLECTION = 'JoinIRA'
+
+  const {joinIraDataText, setJoinIraDataText, joinIraDataButton, setJoinIraDataButton} = useSharedLogicHowToJoinIra(FIREBASE_JOIN_IRA_COLLECTION)
   
   return (
     <div className={styles["feature"]}>
@@ -32,13 +34,15 @@ const HowToJoinIraMobile = () => {
             </div>
          </Link>   
         </div>
-        <div className={styles["button3"]}>
-          <Link className={styles.startIRALink} href={joinIraDataButton.StartIRALink}>
-            <div className={styles["je-d-marre2"]}>
-              {joinIraDataButton.StartIRA[lang_]}
-            </div>
-          </Link>     
-        </div>
+        {joinIraDataButton.StartIRA && 
+          <div className={styles["button3"]}>
+            <Link className={styles.startIRALink} href={joinIraDataButton.StartIRALink}>
+              <div className={styles["je-d-marre2"]}>
+                {joinIraDataButton.StartIRA[lang_]}
+              </div>
+            </Link>     
+          </div>
+        }
       </div>
     </div>
   </div>
