@@ -182,25 +182,8 @@ const DropPanel: React.FC = () => {
                                         {buttons.acquireArtWork[lang_]}
                                 </div>
                             </button>
-                        </div>
-                        
-                        {/*showDesign == index+1 && (
-                            <div key={index+1} id={(index+1).toString()} className={styles["image-container2"]}
-                            style={{
-                                visibility: showDesign === index+1 ? 'visible' : 'hidden',
-                                backgroundImage: `url(${artwork.url2})`, 
-                                backgroundSize: 'cover', 
-                                backgroundPosition: 'center', 
-                                backgroundRepeat: 'no-repeat', 
-                                zIndex: 2, 
-                            }}
-                            >
-                            
-                            </div>
-                        )*/}
+                        </div>                        
                         </>
-
-
                     ))
                 }
 

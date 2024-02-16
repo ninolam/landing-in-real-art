@@ -267,6 +267,15 @@
     position: relative;
   }  
   
+  @media (max-width: 1450px) {
+    .frame-team-carousel {
+        width: 700px; 
+    }
+    .frame-team-member-carousel {
+      height: 500px;
+    }
+  }
+
   @media (max-width: 1250px) {
     .frame-team {
         width: 1000px; 
