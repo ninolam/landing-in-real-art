@@ -3,7 +3,7 @@ import styles from './HowToJoinIra.module.scss'
 import { useAppContext } from "../../../context"
 import { Lang } from "../../../types/types"
 import Link from 'next/link';
-import useSharedLogicHowToJoinIra from './useSharedLogicHowToJoinIra'
+import useSharedLogicHowToJoinIra from '../../home/JoinIRA/useSharedLogicHowToJoinIra'
 
 
 const HowToJoinIra = () => {
@@ -12,7 +12,9 @@ const HowToJoinIra = () => {
     const {lang} = useAppContext()
     const lang_ = lang as Lang
   
-    const {joinIraDataText, setJoinIraDataText, joinIraDataButton, setJoinIraDataButton} = useSharedLogicHowToJoinIra()
+    const FIREBASE_JOIN_IRA_COLLECTION = 'Testnet_JoinIRA'
+    
+    const {joinIraDataText, setJoinIraDataText, joinIraDataButton, setJoinIraDataButton} = useSharedLogicHowToJoinIra(FIREBASE_JOIN_IRA_COLLECTION)
 
     return (
         <div className={styles.feature}>
@@ -39,11 +41,14 @@ const HowToJoinIra = () => {
                   <div className={styles.rejoindreIra2}>{joinIraDataButton.JoinIRA[lang_]}</div>
                 </Link>  
               </div>
-              <div className={styles.button3}>
+              {joinIraDataButton.StartIRA && 
+                <div className={styles.button3}>
                 <Link className={styles.startIRALink} href={joinIraDataButton.StartIRALink}>
                   <div className={styles.jeDemarre2}>{joinIraDataButton.StartIRA[lang_]}</div>
                 </Link>  
-              </div>
+                </div>
+              }
+              
             </div>
           </div>
         </div>

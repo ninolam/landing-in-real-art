@@ -3,7 +3,7 @@ import Menu from "../../components/menu/Menu";
 import Faq from "../../components/home/Faq/Faq";
 import Footer from "../../components/footer/Footer";
 import HeroSection from "../../components/home/HeroSection/HeroSection";
-import HowToJoinIra from "../../components/home/JoinIRA/HowToJoinIra";
+import HowToJoinIra from "../../components/testnet/JoinIRA/HowToJoinIra";
 import JoinMovement from "../../components/home/JoinMovement/JoinMovement";
 import Newsletter from "../../components/home/Newsletter/Newsletter";
 import Team from "../../components/home/Team/Team";

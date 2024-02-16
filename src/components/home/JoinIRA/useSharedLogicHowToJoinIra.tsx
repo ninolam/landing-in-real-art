@@ -4,11 +4,9 @@ import { db } from '../../../firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore/lite'
 
 
-const useSharedLogicHowToJoinIra = () => {
+const useSharedLogicHowToJoinIra = (firebaseCollection: string) => {
 
   
-    const FIREBASE_JOIN_IRA_COLLECTION = 'JoinIRA'
-    
     const defaultJoinIraText = {
       text1: defaultLangObject,
       text2: defaultLangObject,
@@ -28,7 +26,7 @@ const useSharedLogicHowToJoinIra = () => {
   
     useEffect(() => {
       const fetchData = async () => {
-        const joinIRACollection = collection(db, FIREBASE_JOIN_IRA_COLLECTION);
+        const joinIRACollection = collection(db, firebaseCollection);
         const joinIRADocuments  = await getDocs(joinIRACollection);
         const joinIRAData       = joinIRADocuments.docs.map(doc => doc.data());
         
