@@ -133,16 +133,18 @@
     border-radius: 10px;
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1450px) {
+    .frame-artists-carousel {
+      width: 730px; 
+    }
+
     .frame-artist-carousel {
-      height: 500px;
+      height: 430px;
     }  
   }
 
   @media (max-width: 900px) {
     .frame-artists-carousel {
-      flex-direction: column;
-      padding-right: 0px;
       width: 800px; 
     }
 
@@ -158,8 +160,6 @@
   @media (max-width: 800px) {
 
     .frame-artists-carousel {
-      flex-direction: column;
-      padding-right: 0px;
       width: 700px; 
     }
 
@@ -185,8 +185,6 @@
 
   @media (max-width: 700px) {
     .frame-artists-carousel {
-      flex-direction: column;
-      padding-right: 0px;
       width: 600px; 
     }
 
@@ -211,8 +209,6 @@
 
   @media (max-width: 600px) {
     .frame-artists-carousel {
-      flex-direction: column;
-      padding-right: 0px;
       width: 90%;
       margin: auto; 
     }
@@ -237,8 +233,6 @@
   }
   @media (max-width: 500px) {
     .frame-artists-carousel {
-      flex-direction: column;
-      padding-right: 0px;
       width: 75%;
       margin: auto; 
     }
@@ -267,8 +261,6 @@
 
   @media (max-width: 400px) {
     .frame-artists-carousel {
-      flex-direction: column;
-      padding-right: 0px;
       width: 350px; 
     }
 
