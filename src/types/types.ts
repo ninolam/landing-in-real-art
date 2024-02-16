@@ -292,8 +292,19 @@ export type PresaleInvestmentsCard = {
     title1: TranslatedTexts
     title2: TranslatedTexts
     backgroundImage: string
-    
+}
 
+export type TestnetProsTexts = {
+    card1: TestnetProsCard
+    card2: TestnetProsCard
+    card3: TestnetProsCard
+    card4: TestnetProsCard
+} 
+
+export type TestnetProsCard = {
+    number: TranslatedTexts
+    title1: TranslatedTexts
+    backgroundImage: string
 }
 
 export interface PresaleDropPanelButtons {

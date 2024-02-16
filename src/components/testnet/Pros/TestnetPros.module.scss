@@ -1,0 +1,130 @@
+/* components/ImageBlock.module.css */
+@import '../../../styles/variables.scss';
+
+.imageBlockContainer {
+  display: flex;
+  gap: 0px; 
+  border-radius: 40px;
+  overflow: hidden;
+  width: 80%;
+  height: 600px;
+  position: relative;
+  top: 0px;
+}
+
+.imageBlock {
+  flex: 1;
+  flex-basis: calc(33.3333% - 10px); /* Adjust based on the gap */
+  transition: flex-basis 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-size: cover;
+  background-position: center;
+}
+
+.imageBlockContainer:hover .imageBlock {
+  flex-basis: 15%;
+}
+
+.imageBlockContainer .imageBlock:hover {
+  flex-basis: 70%;
+}
+
+.title1 {
+  margin: 10px;
+  color: #fff;
+  z-index: 2;
+  color: #ffffff;
+  text-align: left;
+  font-family: $heading-h3-font-family;
+  font-size: $heading-h3-font-size;
+  font-weight: heading-h3-font-weight;
+}
+
+.title2 {
+  margin: 10px;
+  color: #fff;
+  z-index: 2;
+  color: $primairewhite;
+  text-align: left;
+  font-family: $heading-h4-font-family;
+  font-size: $heading-h4-font-size;
+  font-weight: $heading-h4-font-weight;
+}
+
+.number {
+  margin: 10px;
+  color: #fff;
+  z-index: 2;
+  color: #ffffff;
+  text-align: left;
+  font-family: $heading-h2-font-family;
+  font-size: $heading-h2-font-size;
+  font-weight: $heading-h2-font-weight;
+}
+
+.content {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  padding: 30px;
+  width: 100%;
+}
+
+.details1, .details2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.details1Item, .details2Item {
+  display: flex;
+  flex-direction: row;
+}
+
+.imageBlock:hover .content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.textContent, .list {
+  width: 50%;
+}
+
+@media (max-width: 1000px) {
+  /*
+  .imageBlockContainer {
+    flex-direction: column;
+  }
+
+  .imageBlock, .imageBlockContainer:hover .imageBlock, .imageBlockContainer .imageBlock:hover {
+    flex-basis: auto; 
+  }
+  */
+
+  .imageBlockContainer {
+    flex-direction: column;
+  }
+
+  .imageBlock, .imageBlockContainer:hover .imageBlock {
+    flex-basis: auto; /* Reset flex-basis for mobile view */
+    height: 30%; /* Set a default height for non-hovered items */
+  }
+
+  .imageBlockContainer .imageBlock:hover {
+    height: 70%; /* Increase height on hover */
+    flex-basis: auto;
+  }
+
+
+}

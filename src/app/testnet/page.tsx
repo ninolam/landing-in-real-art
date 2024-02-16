@@ -15,6 +15,7 @@ import Footer from "../../components/footer/Footer";
 import useSharedLogic from "../useSharedLogic";
 import HowToJoinIra from "../../components/testnet/JoinIRA/HowToJoinIra";
 import HowToJoinIraMobile from "../../components/testnet/JoinIRA/HowToJoinIraMobile";
+import TestnetPros from "../../components/testnet/Pros/TestnetPros";
 
 export default function HomePage() {
 
@@ -33,7 +34,7 @@ export default function HomePage() {
           <HeroSection/>
           <Menu/>
           <HowToJoinIraMobile/>
-          
+          <TestnetPros/>
           <FaqMobile/>
           <NewsletterMobile/>
           <FooterMobile containsEmail={false}/>
@@ -46,7 +47,7 @@ export default function HomePage() {
           <HeroSection/>
           <Menu/>
           <HowToJoinIra/>
-    
+          <TestnetPros/>
           <Faq/>
           
           <Newsletter/>
