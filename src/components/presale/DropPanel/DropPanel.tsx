@@ -139,7 +139,7 @@ const DropPanel: React.FC = () => {
                             style={{
                                 zIndex: showDesign === index+1 ? 1 : 1,
                                 backgroundImage: showDesign === index+1?`url(${artwork.url2})`:``, 
-                                backgroundSize: showDesign === index+1?`contain`:``, 
+                                backgroundSize: showDesign === index+1?`cover`:``, 
                                 backgroundPosition: showDesign === index+1?`center`:``, 
                                 backgroundRepeat: showDesign === index+1?`no-repeat`:``,
                                 backgroundColor: showDesign === index+1?`black`:``,
