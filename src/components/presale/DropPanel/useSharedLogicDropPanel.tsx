@@ -30,14 +30,16 @@ const useSharedLogicDropPanel = () => {
         artistName: '',
         description: defaultLangObject,
         image: '',
+        image2: '',
         url: '',
+        url2: '',
         price: 0
     }
 
     const [artWorks, setArtWorks] = useState<PresaleArtWorks>([defaultArtwork])
     const [buttons, setButtons] = useState<PresaleDropPanelButtons>(defaultButton)
     const [texts, setTexts] = useState<PresaleDropPanelTexts>(defaultText)
-
+    const [showDesign, setShowDesign] = useState<number | null>(null);
 
     async function getUrlPhoto(photo: string): Promise<string> {
         if (photo === "") {
@@ -57,7 +59,8 @@ const useSharedLogicDropPanel = () => {
     async function transformArtworksPhotos(artworks: PresaleArtWorks): Promise<PresaleArtWorks> {
         const promises = artworks.map(async artwork => ({
             ...artwork,
-            url: await getUrlPhoto(artwork.image)
+            url: await getUrlPhoto(artwork.image),
+            url2: await getUrlPhoto(artwork.image2)
         }))
 
         return Promise.all(promises);
@@ -81,9 +84,10 @@ const useSharedLogicDropPanel = () => {
         }
 
         fetchData()
+        setShowDesign(0)
     }, [])
 
-    return {artWorks, buttons, texts}
+    return {artWorks, buttons, texts, showDesign, setShowDesign}
 }
   
 

@@ -272,7 +272,9 @@ export type PresaleArtWork = {
     artistName: string
     description: Record<Lang, string>
     image: string
+    image2: string
     url: string
+    url2: string
     price: number
 }
 

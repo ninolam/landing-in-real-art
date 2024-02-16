@@ -14,7 +14,7 @@ const DropPanel: React.FC = () => {
     const {lang } = useAppContext()
     const lang_ = lang as Lang
     
-    const {artWorks, buttons, texts} = useSharedLogicDropPanel()
+    const {artWorks, buttons, texts, showDesign, setShowDesign} = useSharedLogicDropPanel()
     
     const modalRef        = useRef<HTMLDivElement>(null)
     const acquireModalRef = useRef<HTMLDivElement>(null)
@@ -30,6 +30,7 @@ const DropPanel: React.FC = () => {
 
     // State to keep track of how many images are currently displayed
     const [visibleCount, setVisibleCount] = useState(10)
+    
 
     // Function to load more images
     const loadMoreArtworks = () => {
@@ -77,6 +78,8 @@ const DropPanel: React.FC = () => {
         )
     }
     
+    console.log('showDesign')
+    console.log(showDesign)
     const AcquireModal: React.FC<AcquireModalProps> = ({ description, buttonBuyStripe, imageUrl, price }) => {
         return (
             <div className={styles["acquire-modal-backdrop"]}>
@@ -112,6 +115,10 @@ const DropPanel: React.FC = () => {
         )
     }
   
+    const handleDesignVisibility = (e: any) => {
+
+    }
+
     return (
         <>
         <div id="dropPanel" className={styles["grid-wrapper"]}>
@@ -127,16 +134,27 @@ const DropPanel: React.FC = () => {
             <div className={styles["image-grid"]}>
                 {
                     artWorks.slice(0, visibleCount).map( (artwork, index) => (
-                        <div key={index} id={index.toString()} className={styles["image-container"]}>
+                        <>
+                        <div key={index+1} id={(index+1).toString()} className={styles["image-container"]}
+                            style={{
+                                zIndex: showDesign === index+1 ? 1 : 1,
+                                backgroundImage: showDesign === index+1?`url(${artwork.url2})`:``, 
+                                backgroundSize: showDesign === index+1?`contain`:``, 
+                                backgroundPosition: showDesign === index+1?`center`:``, 
+                                backgroundRepeat: showDesign === index+1?`no-repeat`:``,
+                                backgroundColor: showDesign === index+1?`black`:``,
+                                borderRadius: showDesign === index+1?`20px`:``,
+                                }}>
                             
-                            <div className={styles.frameDetailArtWorkCreator}>
+                            <div className={styles.frameDetailArtWorkCreator}
+                                style={{visibility: showDesign === index+1?`hidden`:`visible`}}>
                                 <div></div>
                                 <div className={styles.frameDetailArtWorkCreatorName}>
                                     {artwork.artistName}
                                 </div>
                             </div>    
 
-                            <div className={styles.frameDetailArtWorkLink}>
+                            <div className={styles.frameDetailArtWorkLink} style={{visibility: showDesign === index+1?`hidden`:`visible`}}>
                                 <div></div>
                                 <div className={styles.frameDetailArtWorkLinkCorner}
                                     onClick={() => {showModal(artwork.description[lang_], buttons.closeArtworkDetail[lang_])}}>
@@ -144,15 +162,45 @@ const DropPanel: React.FC = () => {
                                 </div>
                             </div>    
 
-                            <div className={styles["artworkUnit"]} style={{backgroundImage: `url(${artwork.url})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundColor: 'black'}}>
+                            <div className={styles["artworkUnit"]} 
+                                style={{
+                                    cursor: 'pointer', 
+                                    backgroundImage: showDesign === index+1?``:`url(${artwork.url})`, 
+                                    backgroundSize: showDesign === index+1?'':`contain`, 
+                                    backgroundPosition: showDesign === index+1?'':`center`, 
+                                    backgroundRepeat: showDesign === index+1?'':`no-repeat`, 
+                                    backgroundColor: showDesign === index+1?'':`black`}}
+                                onMouseOver={() => {setShowDesign(index+1)}}
+                                onMouseLeave={() => {setShowDesign(null)}}
+                                >
                                 
                             </div>    
-                            <button className={styles["button-2"]} onClick={() => {showAcquireModal(artwork.description[lang_], buttons.buyArtworkNow[lang_], artwork.url, artwork.price)}}>
+                            <button 
+                                style={{visibility: showDesign === index+1?`hidden`:`visible`}}
+                                className={styles["button-2"]} onClick={() => {showAcquireModal(artwork.description[lang_], buttons.buyArtworkNow[lang_], artwork.url, artwork.price)}}>
                                 <div className={styles["text-wrapper-6"]}>
                                         {buttons.acquireArtWork[lang_]}
                                 </div>
                             </button>
                         </div>
+                        
+                        {/*showDesign == index+1 && (
+                            <div key={index+1} id={(index+1).toString()} className={styles["image-container2"]}
+                            style={{
+                                visibility: showDesign === index+1 ? 'visible' : 'hidden',
+                                backgroundImage: `url(${artwork.url2})`, 
+                                backgroundSize: 'cover', 
+                                backgroundPosition: 'center', 
+                                backgroundRepeat: 'no-repeat', 
+                                zIndex: 2, 
+                            }}
+                            >
+                            
+                            </div>
+                        )*/}
+                        </>
+
+
                     ))
                 }
 
