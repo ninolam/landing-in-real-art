@@ -131,7 +131,7 @@
     width: fit-content;
   }
 
-.text-wrapper-6 {
+.textButtonAcquire {
     color: $primaireblack;
     font-family: $text-link-text-font-family;
     font-size: $text-link-text-font-size;
@@ -143,6 +143,7 @@
     position: relative;
     text-align: center;
     width: fit-content;
+    cursor: pointer;
   }
 
 .arrow {
@@ -255,6 +256,7 @@
   cursor: pointer;
   padding: 2px 8px 2px 8px;
   border-radius: 0px;
+  font-family: 'Unbounded', sans-serif;
 }
 
 

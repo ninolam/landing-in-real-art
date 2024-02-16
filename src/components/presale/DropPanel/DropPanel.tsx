@@ -178,7 +178,7 @@ const DropPanel: React.FC = () => {
                             <button 
                                 style={{visibility: showDesign === index+1?`hidden`:`visible`}}
                                 className={styles["button-2"]} onClick={() => {showAcquireModal(artwork.description[lang_], buttons.buyArtworkNow[lang_], artwork.url, artwork.price)}}>
-                                <div className={styles["text-wrapper-6"]}>
+                                <div className={styles["textButtonAcquire"]}>
                                         {buttons.acquireArtWork[lang_]}
                                 </div>
                             </button>
