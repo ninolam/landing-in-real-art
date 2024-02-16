@@ -20,14 +20,14 @@ const Partners = () => {
             <div className={styles.partnersTitle}>
                 {partnersTexts.mainTitle[lang_]}
             </div>
-            <SimpleGrid columns={[1, null, 2]} spacing='100px' border='10px'>
+            <SimpleGrid columns={[1, null, 3]} spacing='100px' border='10px'>
                 <Box height='100px' width='150px' margin={'auto'} >
                     <img src='img/partners/byebuycar.webp' alt=''/>
                 </Box>
                 <Box height='100px' width='200px' margin={'auto'} >
                     <img src='img/partners/bolidesLegendes.webp' alt=''/>
                 </Box>
-                <Box height='100px' width='200px' margin={'auto'} >
+                <Box height='100px' width='200px' margin={'auto'} style={{position: 'relative', top: '-50px'}}>
                     <img src='img/partners/cyberAlt.jpg' alt=''/>
                 </Box>
             </SimpleGrid>
