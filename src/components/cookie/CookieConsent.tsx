@@ -78,7 +78,7 @@ function CookieConsent() {
     <CookiesProvider>
       {showCookieBanner && (
 
-      <VStack as="div" bg={bg} borderRadius="md" boxShadow="md" p={4} position="fixed" bottom="0" left="0" right="0" zIndex={9999} height="30%">
+      <VStack as="div" bg={bg} borderRadius="md" boxShadow="md" p={4} position="fixed" bottom="0" left="0" right="0" zIndex={9999} height="35%">
         {/* Title */}
         <Heading as="h3" size="md" mb={2}>
             Cookie Policy
