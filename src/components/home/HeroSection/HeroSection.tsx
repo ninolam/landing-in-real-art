@@ -3,7 +3,6 @@ import styles from './HeroSection.module.scss'
 import { useAppContext } from "../../../context";
 import { Lang } from "../../../types/types";
 import ImageHeroSection from "./ImageHeroSection";
-import SpheresHeroSection from "./SpheresHeroSection";
 import Link from "next/link";
 import useSharedLogicHeroSection from './useSharedLogicHeroSection';
 
