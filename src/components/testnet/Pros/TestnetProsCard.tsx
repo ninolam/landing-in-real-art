@@ -14,12 +14,6 @@ const TestnetProsCard: React.FC<TestnetProsCardProps> = ({ number, title1, backg
     <div className={styles.imageBlock} style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className={styles.number}>{number}</div>
       <div className={styles.title1}>{title1}</div>
-      <div className={styles.content}>
-        <div className={styles.details1}>
-                      
-        </div> 
-        
-      </div>
     </div>
   );
 };
