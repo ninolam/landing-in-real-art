@@ -1,6 +1,14 @@
 /* components/ImageBlock.module.css */
 @import '../../../styles/variables.scss';
 
+.container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .header {
   display: flex;
   flex-direction: column;

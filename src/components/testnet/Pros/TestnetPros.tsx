@@ -33,7 +33,7 @@ const TestnetPros = () =>  {
 
     console.log(cards)
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.header}>
           <div className={styles.mainTitle}>Rejoignez notre Testnet</div>
           <div className={styles.mainDescription}>
