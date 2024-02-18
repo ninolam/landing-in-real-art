@@ -33,16 +33,24 @@ const TestnetPros = () =>  {
 
     console.log(cards)
   return (
-    <div className={styles.imageBlockContainer}>
-        
-      {cards.map((data, index) => (
-        <TestnetProsCard key={index} 
-          number={data.number[lang_]} 
-          title1={data.title1[lang_]} 
-          backgroundImage={data.backgroundImage} 
-          />
-      ))}
-    </div>
+    <div>
+      <div className={styles.header}>
+          <div className={styles.mainTitle}>Rejoignez notre Testnet</div>
+          <div className={styles.mainDescription}>
+              Obtenez des avantages premium IRA
+          </div>
+      </div>
+
+      <div className={styles.imageBlockContainer}>
+        {cards.map((data, index) => (
+          <TestnetProsCard key={index} 
+            number={data.number[lang_]} 
+            title1={data.title1[lang_]} 
+            backgroundImage={data.backgroundImage} 
+            />
+        ))}
+      </div>
+   </div>   
   );
 }
 

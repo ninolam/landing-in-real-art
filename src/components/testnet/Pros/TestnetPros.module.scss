@@ -1,6 +1,36 @@
 /* components/ImageBlock.module.css */
 @import '../../../styles/variables.scss';
 
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.mainTitle {
+  color: $primaireblack;
+  text-align: left;
+  font-family: $heading-h2-font-family;
+  font-size: $heading-h2-font-size;
+  font-weight: $heading-h2-font-weight;
+  position: relative;
+}
+
+.mainDescription {
+  color: $bleubleu-sombre-300;
+  text-align: center;
+  font-family: $text-paragraphe-font-family;
+  font-size: $text-paragraphe-font-size;
+  font-weight: $text-paragraphe-font-weight;
+  position: relative;
+  width: 544px;
+}
+
+
 .imageBlockContainer {
   display: flex;
   gap: 0px; 
