@@ -18,26 +18,22 @@ const Faq = ({faqTexts, faqButtons, ...props}: FaqProps) => {
     const {lang} = useAppContext()
     const lang_ = lang as Lang
   
-    
-    const imagePlus2Ref = useRef(null);
-    const imagePlus3Ref = useRef(null);
-
     const Question1 = () => {
-      const imagePlus1Ref = useRef(null);
+      const imagePlus1Ref = useRef(null)
       return (
           <Question question={faqTexts.question1[lang_]} answer={faqTexts.answer1[lang_]} imagePlusRef={imagePlus1Ref}/>
       )
     }
     
     const Question2 = () => {
-      const imagePlus2Ref = useRef(null);
+      const imagePlus2Ref = useRef(null)
       return (
           <Question question={faqTexts.question2[lang_]} answer={faqTexts.answer2[lang_]} imagePlusRef={imagePlus2Ref}/>
       )
     }
     
     const Question3 = () => {
-      const imagePlus3Ref = useRef(null);
+      const imagePlus3Ref = useRef(null)
       return (
           <Question question={faqTexts.question3[lang_]} answer={faqTexts.answer3[lang_]} imagePlusRef={imagePlus3Ref}/>
       )

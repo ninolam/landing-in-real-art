@@ -6,6 +6,7 @@ import stylesFaq from "./Faq.module.scss"
 import classNames from 'classnames'
 import useSharedLogicFaq from "./useSharedLogicFaq"
 import { useRef } from "react"
+import Question from "./Question"
 
 
 export interface IFaqProps {
@@ -18,87 +19,26 @@ const FaqMobile = ({ className, ...props }: IFaqProps): JSX.Element => {
   const {lang} = useAppContext()
   const lang_ = lang as Lang
 
-  const {faqButtons, setFaqButtons, faqTexts, setFaqTexts, useQuestionVisibility} = useSharedLogicFaq()
+  const {faqButtons, faqTexts} = useSharedLogicFaq()
   
-  const imagePlus1Ref = useRef(null)
-  const imagePlus2Ref = useRef(null)
-  const imagePlus3Ref = useRef(null)
-
   const Question1 = () => {
-    const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png")
+    const imagePlus1Ref = useRef(null);
     return (
-      <>
-        <div className={classNames(styles["mobile-instance-1"], styles["mobile-instance-2"])}>
-          <div className={styles["faq-mobile-block"]}>
-            <div className={styles["faq-mobile-question"]}>
-              <div className={styles["faq-mobile-question-h3"]}>
-                {faqTexts.question1[lang_]}
-              </div>
-            </div>
-            <div onClick={toggleVisibility}>
-              <img ref={imagePlus1Ref} className={styles.plus} alt="plus" src={imageSrc} />
-            </div>
-            
-          </div>
-        </div>
-        {isVisible && (
-            <div className={styles.answer}>
-              {faqTexts.answer1[lang_]}
-            </div>
-          )}
-      </>  
+        <Question question={faqTexts.question1[lang_]} answer={faqTexts.answer1[lang_]} imagePlusRef={imagePlus1Ref}/>
     )
   }
 
   const Question2 = () => {
-    const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png")
+    const imagePlus2Ref = useRef(null)
     return (
-      <>
-        <div className={classNames(styles["mobile-instance-1"], styles["mobile-instance-2"])}>
-          <div className={styles["faq-mobile-block"]}>
-            <div className={styles["faq-mobile-question"]}>
-              <div className={styles["faq-mobile-question-h3"]}>
-                {faqTexts.question2[lang_]}
-              </div>
-            </div>
-            <div onClick={toggleVisibility}>
-              <img ref={imagePlus2Ref} className={styles.plus} alt="plus" src={imageSrc} />
-            </div>
-            
-          </div>
-        </div>
-        {isVisible && (
-            <div className={styles.answer}>
-              {faqTexts.answer2[lang_]}
-            </div>
-          )}
-      </>  
+        <Question question={faqTexts.question2[lang_]} answer={faqTexts.answer2[lang_]} imagePlusRef={imagePlus2Ref}/>
     )
   }
 
   const Question3 = () => {
-    const { isVisible, imageSrc, toggleVisibility } = useQuestionVisibility(false, "/img/plus_16px.png", "/img/minus_16px.png")
+    const imagePlus3Ref = useRef(null)
     return (
-      <>
-        <div className={classNames(styles["mobile-instance-1"], styles["mobile-instance-2"])}>
-          <div className={styles["faq-mobile-block"]}>
-            <div className={styles["faq-mobile-question"]}>
-              <div className={styles["faq-mobile-question-h3"]}>
-                {faqTexts.question3[lang_]}
-              </div>
-            </div>
-            <div onClick={toggleVisibility}>
-              <img ref={imagePlus3Ref} className={styles.plus} alt="plus" src={imageSrc} />
-            </div>
-            
-          </div>
-        </div>
-        {isVisible && (
-            <div className={styles.answer}>
-              {faqTexts.answer3[lang_]}
-            </div>
-          )}
-      </>  
+        <Question question={faqTexts.question3[lang_]} answer={faqTexts.answer3[lang_]} imagePlusRef={imagePlus3Ref}/>
     )
   }
 
