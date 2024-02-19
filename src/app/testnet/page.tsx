@@ -17,12 +17,16 @@ import TestnetPros from "../../components/testnet/Pros/TestnetPros";
 import useSharedLogicFaq from "../../components/common/Faq/useSharedLogicFaq";
 import Faq from "../../components/common/Faq/Faq";
 import FaqMobile from "../../components/common/Faq/FaqMobile";
+import useSharedLogicHeroSection from "../../components/home/HeroSection/useSharedLogicHeroSection";
+import HeroSectionMobile from "../../components/common/HeroSection/HeroSectionMobile";
 
 export default function HomePage() {
 
   const {isMobile, setIsMobile} = useSharedLogic(800)
   const FIREBASE_TESTNET_FAQ_COLLECTION = 'Testnet_Faq'
+  const FIREBASE_TESTNET_HEADER_COLLECTION = 'Testnet_Header'
   const {faqButtons, faqTexts } = useSharedLogicFaq(FIREBASE_TESTNET_FAQ_COLLECTION)
+  const {headerButtons, setHeaderButtons, headerTexts, setHeaderTexts} = useSharedLogicHeroSection(FIREBASE_TESTNET_HEADER_COLLECTION);
 
     return (
 
@@ -33,7 +37,7 @@ export default function HomePage() {
           <CookiesProvider>
             <CookieConsent/>
           </CookiesProvider>
-          <HeroSection/>
+          <HeroSectionMobile headerTexts={headerTexts} headerButtons={headerButtons} onlyFirstButton={true}/>
           <Menu/>
           <HowToJoinIraMobile/>
           <TestnetPros/>
