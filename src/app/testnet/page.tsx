@@ -6,10 +6,8 @@ import { CookiesProvider } from "react-cookie";
 import CookieConsent from "../../components/cookie/CookieConsent";
 import HeroSection from "../../components/testnet/HeroSection/HeroSection";
 import Menu from "../../components/menu/Menu";
-import FaqMobile from "../../components/home/Faq/FaqMobile";
 import NewsletterMobile from "../../components/home/Newsletter/NewsletterMobile";
 import FooterMobile from "../../components/footer/FooterMobile";
-import Faq from "../../components/home/Faq/Faq";
 import Newsletter from "../../components/home/Newsletter/Newsletter";
 import Footer from "../../components/footer/Footer";
 import useSharedLogic from "../useSharedLogic";
@@ -35,7 +33,7 @@ export default function HomePage() {
           <Menu/>
           <HowToJoinIraMobile/>
           <TestnetPros/>
-          <FaqMobile/>
+          
           <NewsletterMobile/>
           <FooterMobile containsEmail={false}/>
         </>  
@@ -48,7 +46,7 @@ export default function HomePage() {
           <Menu/>
           <HowToJoinIra/>
           <TestnetPros/>
-          <Faq/>
+          
           
           <Newsletter/>
           <Footer/>

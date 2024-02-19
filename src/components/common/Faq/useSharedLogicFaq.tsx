@@ -26,18 +26,6 @@ const useSharedLogicFaq = () => {
     const [faqButtons,setFaqButtons] = useState<FaqButtons>(defaultFaqButtons);
     const [faqTexts,setFaqTexts]     = useState<FaqTexts<Record<Lang, string>>>(defaultFaqTexts);
   
-    const useQuestionVisibility = (initialVisibility: boolean, plusImageSrc: string, minusImageSrc: string) => {
-        const [isVisible, setIsVisible] = useState<boolean>(initialVisibility)
-        const [imageSrc, setImageSrc] = useState<string>(plusImageSrc)
-      
-        const toggleVisibility = () => {
-          setIsVisible(!isVisible)
-          setImageSrc(isVisible ? plusImageSrc : minusImageSrc)
-        }
-      
-        return { isVisible, imageSrc, toggleVisibility }
-      }
-  
     useEffect(() => {
       const fetchData = async () => {
         const faqCollection = collection(db, FIREBASE_FAQ_COLLECTION);
@@ -56,11 +44,7 @@ const useSharedLogicFaq = () => {
     }, [])
 
 
-  return {
-    faqButtons, setFaqButtons,
-    faqTexts, setFaqTexts,
-    useQuestionVisibility
-  }
+  return {faqButtons, faqTexts}
 }
 
 export default useSharedLogicFaq

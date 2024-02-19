@@ -1,6 +1,5 @@
 "use client"
 import Menu from "../../components/menu/Menu";
-import Faq from "../../components/home/Faq/Faq";
 import Footer from "../../components/footer/Footer";
 import HeroSection from "../../components/home/HeroSection/HeroSection";
 import JoinMovement from "../../components/home/JoinMovement/JoinMovement";
@@ -9,7 +8,6 @@ import Team from "../../components/home/Team/Team";
 import HeroSectionMobile from "../../components/home/HeroSection/HeroSectionMobile";
 import HowToJoinIraMobile from "../../components/home/JoinIRA/HowToJoinIraMobile";
 import JoinMovementMobile from "../../components/home/JoinMovement/JoinMovementMobile";
-import FaqMobile from "../../components/home/Faq/FaqMobile";
 import NewsletterMobile from "../../components/home/Newsletter/NewsletterMobile";
 import FooterMobile from "../../components/footer/FooterMobile";
 import CarouselArtists from "../../components/home/Artists/CarouselArtists";
@@ -19,12 +17,16 @@ import useSharedLogic from "../useSharedLogic";
 import CookieConsent from "../../components/cookie/CookieConsent";
 import { CookiesProvider } from "react-cookie";
 import HowToJoinIra from "../../components/home/JoinIRA/HowToJoinIra";
+import useSharedLogicFaq from "../../components/common/Faq/useSharedLogicFaq";
+import FaqMobile from "../../components/common/Faq/FaqMobile";
+import Faq from "../../components/common/Faq/Faq";
 
 export default function HomePage() {
 
   const {isMobile, setIsMobile} = useSharedLogic(800)
   
-
+  const {faqButtons, faqTexts } = useSharedLogicFaq()
+  
     return (
 
       <div id="home" className={styles["home"]} style={isMobile?{paddingTop:'0px'}:{paddingTop:''}}>
@@ -57,7 +59,7 @@ export default function HomePage() {
           <JoinMovement/>
           <CarouselArtists/>
           <Team/>
-          <Faq/>
+          <Faq faqTexts={faqTexts} faqButtons={faqButtons} />
           <Partners/>
           <Newsletter/>
           {/*<PrivateSale/>*/}
