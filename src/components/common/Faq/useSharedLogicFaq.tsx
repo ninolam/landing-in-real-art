@@ -4,10 +4,8 @@ import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 
 
-const useSharedLogicFaq = () => {
+const useSharedLogicFaq = (fireBaseCollection: string) => {
 
-    const FIREBASE_FAQ_COLLECTION = 'Faq'
-    
     const defaultFaqButtons = {
       readFaq: defaultLangObject,
       readFaqLink: ''
@@ -28,10 +26,10 @@ const useSharedLogicFaq = () => {
   
     useEffect(() => {
       const fetchData = async () => {
-        const faqCollection = collection(db, FIREBASE_FAQ_COLLECTION);
+        const faqCollection = collection(db, fireBaseCollection);
         const faqDocuments  = await getDocs(faqCollection);
         const faqData       = faqDocuments.docs.map(doc => doc.data());
-        
+        console.log(faqData)
         //Index 0 ===> FAQ Buttons
         setFaqButtons(faqData[0] as FaqButtons)
         

@@ -14,11 +14,15 @@ import useSharedLogic from "../useSharedLogic";
 import HowToJoinIra from "../../components/testnet/JoinIRA/HowToJoinIra";
 import HowToJoinIraMobile from "../../components/testnet/JoinIRA/HowToJoinIraMobile";
 import TestnetPros from "../../components/testnet/Pros/TestnetPros";
+import useSharedLogicFaq from "../../components/common/Faq/useSharedLogicFaq";
+import Faq from "../../components/common/Faq/Faq";
+import FaqMobile from "../../components/common/Faq/FaqMobile";
 
 export default function HomePage() {
 
   const {isMobile, setIsMobile} = useSharedLogic(800)
-  
+  const FIREBASE_TESTNET_FAQ_COLLECTION = 'Testnet_Faq'
+  const {faqButtons, faqTexts } = useSharedLogicFaq(FIREBASE_TESTNET_FAQ_COLLECTION)
 
     return (
 
@@ -33,7 +37,7 @@ export default function HomePage() {
           <Menu/>
           <HowToJoinIraMobile/>
           <TestnetPros/>
-          
+          <FaqMobile faqTexts={faqTexts} faqButtons={faqButtons}/>
           <NewsletterMobile/>
           <FooterMobile containsEmail={false}/>
         </>  
@@ -46,8 +50,7 @@ export default function HomePage() {
           <Menu/>
           <HowToJoinIra/>
           <TestnetPros/>
-          
-          
+          <Faq faqTexts={faqTexts} faqButtons={faqButtons} />
           <Newsletter/>
           <Footer/>
         </>  

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { useAppContext } from "../../../context"
-import { Lang } from "../../../types/types"
+import { FaqButtons, FaqTexts, Lang } from "../../../types/types"
 import styles from "./FaqMobile.module.scss"
 import stylesFaq from "./Faq.module.scss"
 import classNames from 'classnames'
@@ -9,17 +9,16 @@ import { useRef } from "react"
 import Question from "./Question"
 
 
-export interface IFaqProps {
-  className?: string
+export interface FaqMobileProps {
+  faqTexts: FaqTexts<Record<Lang, string>>
+  faqButtons: FaqButtons
 }
 
-const FaqMobile = ({ className, ...props }: IFaqProps): JSX.Element => {
+const FaqMobile = ({faqTexts, faqButtons, ...props}: FaqMobileProps): JSX.Element => {
 
   //Get the language of the global context
   const {lang} = useAppContext()
   const lang_ = lang as Lang
-
-  const {faqButtons, faqTexts} = useSharedLogicFaq()
   
   const Question1 = () => {
     const imagePlus1Ref = useRef(null);
@@ -43,7 +42,7 @@ const FaqMobile = ({ className, ...props }: IFaqProps): JSX.Element => {
   }
 
   return (
-    <div className={styles["faq"] + " " + className}>
+    <div className={styles["faq"]}>
       <div className={styles["faq-mobile-title"]}>
         {faqTexts.faqTitle[lang_]}
       </div>

@@ -24,8 +24,8 @@ import Faq from "../../components/common/Faq/Faq";
 export default function HomePage() {
 
   const {isMobile, setIsMobile} = useSharedLogic(800)
-  
-  const {faqButtons, faqTexts } = useSharedLogicFaq()
+  const FIREBASE_FAQ_COLLECTION = 'Faq'
+  const {faqButtons, faqTexts } = useSharedLogicFaq(FIREBASE_FAQ_COLLECTION)
   
     return (
 
@@ -42,7 +42,7 @@ export default function HomePage() {
           <JoinMovementMobile/>
           <CarouselArtists/>
           <Team/>
-          <FaqMobile/>
+          <FaqMobile faqTexts={faqTexts} faqButtons={faqButtons}/>
           <Partners/>
           <NewsletterMobile/>
           {/*<PrivateSaleMobile/>*/}
