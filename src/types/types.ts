@@ -304,6 +304,7 @@ export type TestnetProsTexts = {
 export type TestnetProsCard = {
     number: TranslatedTexts
     title1: TranslatedTexts
+    urlLink: string
     backgroundImage: string
 }
 

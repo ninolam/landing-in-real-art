@@ -45,6 +45,7 @@ const TestnetPros = () =>  {
           <TestnetProsCard key={index} 
             number={data.number[lang_]} 
             title1={data.title1[lang_]} 
+            urlLink={data.urlLink} 
             backgroundImage={data.backgroundImage} 
             />
         ))}

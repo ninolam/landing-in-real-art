@@ -11,6 +11,7 @@ const useSharedLogicTestnetPros = () => {
     const defaultInvestmentCard = {
       number: defaultLangObject,
       title1: defaultLangObject,
+      urlLink: '',
       backgroundImage: ''
     }
 
