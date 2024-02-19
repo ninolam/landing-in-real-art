@@ -1,19 +1,23 @@
 import styles from './HeroSectionMobile.module.scss'
 import HeroSectionImageMobile from './HeroSectionImageMobile'
 import { useAppContext } from '../../../context'
-import { Lang } from '../../../types/types'
-import useSharedLogicHeroSection from './useSharedLogicHeroSection'
+import { HeaderButtons, HeaderTexts, Lang } from '../../../types/types'
+import useSharedLogicHeroSection from '../../home/HeroSection/useSharedLogicHeroSection'
 import Link from 'next/link'
 
+export interface HeroSectionMobileProps {
+  headerTexts: HeaderTexts
+  headerButtons: HeaderButtons
+  onlyFirstButton: boolean
+}
 
-const HeroSectionMobile = () => {
+
+const HeroSectionMobile = ({headerTexts, headerButtons, onlyFirstButton, ...props}: HeroSectionMobileProps) => {
   
   //Get the language of the global context
   const {lang} = useAppContext()
   const lang_ = lang as Lang
 
-  const {headerButtons, setHeaderButtons, headerTexts, setHeaderTexts} = useSharedLogicHeroSection();
-  
   return (
     <div className={styles["frame-48095810"]}>
     <div className={styles["frame-48095809"]}>
@@ -41,15 +45,21 @@ const HeroSectionMobile = () => {
           </Link>  
         </div>
       </div>
-      <div className={styles["frame-button2"]}>
-        <div className={styles["button"]}>
-          <Link href={headerButtons.StartIRALink}>
-            <div className={styles["je-d-marre"]}>
-              {headerButtons.StartIRA[lang_]}
-            </div>  
-           </Link>  
-        </div>
-      </div>
+      {
+        onlyFirstButton === false &&   
+          (
+            <div className={styles["frame-button2"]}>
+              <div className={styles["button"]}>
+                <Link href={headerButtons.StartIRALink}>
+                  <div className={styles["je-d-marre"]}>
+                    {headerButtons.StartIRA[lang_]}
+                  </div>  
+                </Link>  
+              </div>
+            </div>
+          )
+      }
+      
     </div>
 
     <HeroSectionImageMobile/>

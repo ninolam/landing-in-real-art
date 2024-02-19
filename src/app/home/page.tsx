@@ -5,7 +5,7 @@ import HeroSection from "../../components/home/HeroSection/HeroSection";
 import JoinMovement from "../../components/home/JoinMovement/JoinMovement";
 import Newsletter from "../../components/home/Newsletter/Newsletter";
 import Team from "../../components/home/Team/Team";
-import HeroSectionMobile from "../../components/home/HeroSection/HeroSectionMobile";
+import HeroSectionMobile from "../../components/common/HeroSection/HeroSectionMobile";
 import HowToJoinIraMobile from "../../components/home/JoinIRA/HowToJoinIraMobile";
 import JoinMovementMobile from "../../components/home/JoinMovement/JoinMovementMobile";
 import NewsletterMobile from "../../components/home/Newsletter/NewsletterMobile";
@@ -20,12 +20,15 @@ import HowToJoinIra from "../../components/home/JoinIRA/HowToJoinIra";
 import useSharedLogicFaq from "../../components/common/Faq/useSharedLogicFaq";
 import FaqMobile from "../../components/common/Faq/FaqMobile";
 import Faq from "../../components/common/Faq/Faq";
+import useSharedLogicHeroSection from "../../components/home/HeroSection/useSharedLogicHeroSection";
 
 export default function HomePage() {
 
   const {isMobile, setIsMobile} = useSharedLogic(800)
   const FIREBASE_FAQ_COLLECTION = 'Faq'
   const {faqButtons, faqTexts } = useSharedLogicFaq(FIREBASE_FAQ_COLLECTION)
+  const {headerButtons, setHeaderButtons, headerTexts, setHeaderTexts} = useSharedLogicHeroSection();
+  
   
     return (
 
@@ -36,7 +39,7 @@ export default function HomePage() {
           <CookiesProvider>
             <CookieConsent/>
           </CookiesProvider>
-          <HeroSectionMobile />
+          <HeroSectionMobile headerTexts={headerTexts} headerButtons={headerButtons} onlyFirstButton={false}/>
           <Menu/>
           <HowToJoinIraMobile/>
           <JoinMovementMobile/>
