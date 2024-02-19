@@ -39,9 +39,9 @@ export default function HomePage() {
 
       {isMobile ? 
         <>
-          <CookiesProvider>
+          {/*<CookiesProvider>
             <CookieConsent/>
-          </CookiesProvider>
+          </CookiesProvider>*/}
           <HeroSectionMobile headerTexts={headerTexts} headerButtons={headerButtons} onlyFirstButton={false}/>
           <Menu/>
           <HowToJoinIraMobile joinIraDataText={joinIraDataText} joinIraDataButton={joinIraDataButton} onlyFirstButton={false}/>
