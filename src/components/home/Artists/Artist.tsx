@@ -5,8 +5,17 @@ import styles from './CarouselArtists.module.scss'
 const Artist: React.FC<ArtistMemberProps> = ( {name, image, desc} ) => {
   return (
     <>
-        <div className={styles["frame-artist-carousel"]}>
-          <img id="photo-member" className={styles["photo-artist"]} alt="" src={image} />
+        <div className={styles["frame-artist-carousel"]}
+          style={
+            {
+              backgroundImage: `url(${image})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'contain',
+              backgroundPosition: 'center',
+              backgroundColor: 'black'
+            }}
+        >
+          {/*<img id="photo-member" className={styles["photo-artist"]} alt="" src={image} />*/}
         </div>
         <div className={styles["frame-artist-description"]}>
             <div className={styles["wrapper-text"]}>
