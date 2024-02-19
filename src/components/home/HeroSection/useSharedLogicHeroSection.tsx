@@ -3,9 +3,7 @@ import { HeaderButtons, HeaderTexts, defaultLangObject } from "../../../types/ty
 import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 
-const useSharedLogicHeroSection = () => {
-
-  const FIREBASE_HEADER_COLLECTION = 'Header'
+const useSharedLogicHeroSection = (firebaseCollection: string) => {
 
   const defaultHeaderButtons = {
     JoinIRA: defaultLangObject,
@@ -24,7 +22,7 @@ const useSharedLogicHeroSection = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const headerCollection = collection(db, FIREBASE_HEADER_COLLECTION);
+      const headerCollection = collection(db, firebaseCollection);
       const headerDocuments  = await getDocs(headerCollection); 
       const headerData       = headerDocuments.docs.map(doc => doc.data());
       //Index 0 ===> Header_Buttons

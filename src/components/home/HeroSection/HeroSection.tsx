@@ -12,8 +12,8 @@ const HeroSection = () => {
     //Get the language of the global context
     const {lang} = useAppContext()
     const lang_ = lang as Lang
-  
-    const {headerButtons, setHeaderButtons, headerTexts, setHeaderTexts} = useSharedLogicHeroSection();
+    const FIREBASE_HEADER_COLLECTION = 'Header'
+    const {headerButtons, setHeaderButtons, headerTexts, setHeaderTexts} = useSharedLogicHeroSection(FIREBASE_HEADER_COLLECTION);
 
     return (
       <div className={styles.heroSection}>

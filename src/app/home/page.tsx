@@ -26,8 +26,9 @@ export default function HomePage() {
 
   const {isMobile, setIsMobile} = useSharedLogic(800)
   const FIREBASE_FAQ_COLLECTION = 'Faq'
+  const FIREBASE_HEADER_COLLECTION = 'Header'
   const {faqButtons, faqTexts } = useSharedLogicFaq(FIREBASE_FAQ_COLLECTION)
-  const {headerButtons, setHeaderButtons, headerTexts, setHeaderTexts} = useSharedLogicHeroSection();
+  const {headerButtons, setHeaderButtons, headerTexts, setHeaderTexts} = useSharedLogicHeroSection(FIREBASE_HEADER_COLLECTION);
   
   
     return (
