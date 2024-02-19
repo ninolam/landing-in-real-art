@@ -21,7 +21,6 @@ const useSharedLogicTosPage = (fireBaseTosPageCollection:string) => {
           
           //Index 0 ===> About Page Texts
           const texts = data[0] as TosTexts
-          console.log(texts)
           setTexts(texts) 
         }
         

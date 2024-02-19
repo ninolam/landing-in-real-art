@@ -61,7 +61,6 @@ const Invest = () =>  {
       texts.card3
     ]
 
-    console.log(cards)
   return (
     <div className={styles.imageBlockContainer}>
         

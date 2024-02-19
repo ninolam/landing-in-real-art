@@ -44,7 +44,6 @@ const DropPanel: React.FC = () => {
     }
 
     const showAcquireModal = (description: string, buttonBuyStripe: string, imageUrl: string, price: number) => {
-        console.log('test')
         setAcquireModalContent(description.slice(0, 100))
         setAcquireButtonBuyStripe(buttonBuyStripe)
         setAcquireModalImageUrl(imageUrl)
@@ -78,8 +77,6 @@ const DropPanel: React.FC = () => {
         )
     }
     
-    console.log('showDesign')
-    console.log(showDesign)
     const AcquireModal: React.FC<AcquireModalProps> = ({ description, buttonBuyStripe, imageUrl, price }) => {
         return (
             <div className={styles["acquire-modal-backdrop"]}>

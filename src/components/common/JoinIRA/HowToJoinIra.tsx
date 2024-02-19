@@ -1,21 +1,22 @@
 "use client"
 import styles from './HowToJoinIra.module.scss'
 import { useAppContext } from "../../../context"
-import { Lang } from "../../../types/types"
+import { JoinIraDataButton, JoinIraDataText, Lang } from "../../../types/types"
 import Link from 'next/link';
-import useSharedLogicHowToJoinIra from '../../home/JoinIRA/useSharedLogicHowToJoinIra'
+import useSharedLogicHowToJoinIra from './useSharedLogicHowToJoinIra'
 
+export interface HowToJoinIraProps {
+  joinIraDataText: JoinIraDataText
+  joinIraDataButton: JoinIraDataButton
+  onlyFirstButton: boolean
+}
 
-const HowToJoinIra = () => {
+const HowToJoinIra = ({joinIraDataText, joinIraDataButton, onlyFirstButton, ...props}: HowToJoinIraProps) => {
 
     //Get the language of the global context
     const {lang} = useAppContext()
     const lang_ = lang as Lang
   
-    const FIREBASE_JOIN_IRA_COLLECTION = 'Testnet_JoinIRA'
-    
-    const {joinIraDataText, setJoinIraDataText, joinIraDataButton, setJoinIraDataButton} = useSharedLogicHowToJoinIra(FIREBASE_JOIN_IRA_COLLECTION)
-
     return (
         <div className={styles.feature}>
         <div className={styles.frame36597}>

@@ -35,7 +35,6 @@ const useSharedLogicInvestment = () => {
           
           //Index 0 ===> Presale Investment Texts
           const texts = data[0] as PresaleInvestmentsTexts
-          console.log(texts)
           setTexts(texts) 
         }
         

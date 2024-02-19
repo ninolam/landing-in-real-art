@@ -29,7 +29,7 @@ const useSharedLogicFaq = (fireBaseCollection: string) => {
         const faqCollection = collection(db, fireBaseCollection);
         const faqDocuments  = await getDocs(faqCollection);
         const faqData       = faqDocuments.docs.map(doc => doc.data());
-        console.log(faqData)
+        
         //Index 0 ===> FAQ Buttons
         setFaqButtons(faqData[0] as FaqButtons)
         

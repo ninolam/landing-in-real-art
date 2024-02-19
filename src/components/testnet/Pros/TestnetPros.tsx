@@ -31,7 +31,6 @@ const TestnetPros = () =>  {
       texts.card4,
     ]
 
-    console.log(cards)
   return (
     <div className={styles.container}>
       <div className={styles.header}>

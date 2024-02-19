@@ -32,7 +32,6 @@ const useSharedLogicTestnetPros = () => {
           
           //Index 0 ===> Testnet Pros Texts
           const texts = data[0] as TestnetProsTexts
-          console.log(texts)
           setTexts(texts) 
         }
         

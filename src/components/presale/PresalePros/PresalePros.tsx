@@ -38,7 +38,6 @@ function PresalePros() {
     }, [])
 
     const Modal: React.FC<ModalProps> = ({ description, closeButton }) => {
-        console.log(description)
         return (
             <div className={styles["modal-backdrop"]}>
                 <div ref={modalRef} className={styles["modal"]}>

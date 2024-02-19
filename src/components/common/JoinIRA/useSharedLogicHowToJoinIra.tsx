@@ -39,7 +39,7 @@ const useSharedLogicHowToJoinIra = (firebaseCollection: string) => {
     fetchData();
     }, [])
 
-    return {joinIraDataText, setJoinIraDataText, joinIraDataButton, setJoinIraDataButton}
+    return {joinIraDataText, joinIraDataButton}
 
 }
   

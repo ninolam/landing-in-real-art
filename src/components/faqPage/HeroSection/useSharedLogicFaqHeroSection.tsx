@@ -23,7 +23,6 @@ const useSharedLogicFaqHeroSection = () => {
           //Index 3 ===> Faq HeroSection
           const faqHeroSection = data[3] as FaqHeroSection
           setFaqHeroSection(faqHeroSection) 
-          console.log(faqHeroSection)
         }
         
         fetchData();

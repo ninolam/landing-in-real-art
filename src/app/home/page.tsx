@@ -6,7 +6,7 @@ import JoinMovement from "../../components/home/JoinMovement/JoinMovement";
 import Newsletter from "../../components/home/Newsletter/Newsletter";
 import Team from "../../components/home/Team/Team";
 import HeroSectionMobile from "../../components/common/HeroSection/HeroSectionMobile";
-import HowToJoinIraMobile from "../../components/home/JoinIRA/HowToJoinIraMobile";
+import HowToJoinIraMobile from "../../components/common/JoinIRA/HowToJoinIraMobile";
 import JoinMovementMobile from "../../components/home/JoinMovement/JoinMovementMobile";
 import NewsletterMobile from "../../components/home/Newsletter/NewsletterMobile";
 import FooterMobile from "../../components/footer/FooterMobile";
@@ -16,20 +16,22 @@ import Partners from "../../components/home/Partners/Partners";
 import useSharedLogic from "../useSharedLogic";
 import CookieConsent from "../../components/cookie/CookieConsent";
 import { CookiesProvider } from "react-cookie";
-import HowToJoinIra from "../../components/home/JoinIRA/HowToJoinIra";
+import HowToJoinIra from "../../components/common/JoinIRA/HowToJoinIra";
 import useSharedLogicFaq from "../../components/common/Faq/useSharedLogicFaq";
 import FaqMobile from "../../components/common/Faq/FaqMobile";
 import Faq from "../../components/common/Faq/Faq";
 import useSharedLogicHeroSection from "../../components/home/HeroSection/useSharedLogicHeroSection";
+import useSharedLogicHowToJoinIra from "../../components/common/JoinIRA/useSharedLogicHowToJoinIra";
 
 export default function HomePage() {
 
   const {isMobile, setIsMobile} = useSharedLogic(800)
   const FIREBASE_FAQ_COLLECTION = 'Faq'
   const FIREBASE_HEADER_COLLECTION = 'Header'
+  const FIREBASE_JOIN_IRA_COLLECTION = 'JoinIRA'
   const {faqButtons, faqTexts } = useSharedLogicFaq(FIREBASE_FAQ_COLLECTION)
   const {headerButtons, setHeaderButtons, headerTexts, setHeaderTexts} = useSharedLogicHeroSection(FIREBASE_HEADER_COLLECTION);
-  
+  const {joinIraDataText, joinIraDataButton} = useSharedLogicHowToJoinIra(FIREBASE_JOIN_IRA_COLLECTION)
   
     return (
 
@@ -42,7 +44,7 @@ export default function HomePage() {
           </CookiesProvider>
           <HeroSectionMobile headerTexts={headerTexts} headerButtons={headerButtons} onlyFirstButton={false}/>
           <Menu/>
-          <HowToJoinIraMobile/>
+          <HowToJoinIraMobile joinIraDataText={joinIraDataText} joinIraDataButton={joinIraDataButton} onlyFirstButton={false}/>
           <JoinMovementMobile/>
           <CarouselArtists/>
           <Team/>
@@ -59,7 +61,7 @@ export default function HomePage() {
           </CookiesProvider>
           <HeroSection />
           <Menu/>
-          <HowToJoinIra/>
+          <HowToJoinIra joinIraDataText={joinIraDataText} joinIraDataButton={joinIraDataButton} onlyFirstButton={false}/>
           <JoinMovement/>
           <CarouselArtists/>
           <Team/>

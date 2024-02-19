@@ -23,7 +23,6 @@ const useSharedLogicLegalNoticePage = () => {
           
           //Index 0 ===> About Page Texts
           const texts = data[0] as LegalNoticeTexts
-          console.log(texts)
           setTexts(texts) 
         }
         

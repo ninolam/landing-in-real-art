@@ -23,7 +23,6 @@ const useSharedLogicAboutPage = () => {
           
           //Index 0 ===> About Page Texts
           const texts = data[0] as AboutTexts
-          console.log(texts)
           setTexts(texts) 
         }
         
