@@ -184,6 +184,7 @@
     }
   
   }  
+
     @media (max-width: 1000px) {
 
     
@@ -220,6 +221,30 @@
       font-weight: var(--heading-h-3-font-weight, 500);
       position: relative;
       width: 400px;
+    }
+
+  }  
+
+  @media (max-width: 500px) {
+
+    .questionBlock {
+      width: 350px;
+    }  
+
+    .question {
+      width: 250px;
+    }
+
+  }  
+  
+  @media (max-width: 400px) {
+
+    .questionBlock {
+      width: 300px;
+    }  
+
+    .question {
+      width: 200px;
     }
 
   }  

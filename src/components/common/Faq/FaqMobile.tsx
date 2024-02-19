@@ -3,8 +3,6 @@ import { useAppContext } from "../../../context"
 import { FaqButtons, FaqTexts, Lang } from "../../../types/types"
 import styles from "./FaqMobile.module.scss"
 import stylesFaq from "./Faq.module.scss"
-import classNames from 'classnames'
-import useSharedLogicFaq from "./useSharedLogicFaq"
 import { useRef } from "react"
 import Question from "./Question"
 
