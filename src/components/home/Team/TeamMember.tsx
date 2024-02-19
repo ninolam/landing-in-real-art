@@ -10,7 +10,7 @@ const TeamMember: React.FC<TeamMemberProps> = ( {name, photo, role, text1, text2
             {
               backgroundImage: `url(${photo})`,
               backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
+              backgroundSize: 'contain',
               backgroundPosition: 'center',
               backgroundColor: 'black'
             }}
