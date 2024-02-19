@@ -23,7 +23,7 @@ import HowToJoinIra from "../../components/common/JoinIRA/HowToJoinIra";
 
 export default function HomePage() {
 
-  const {isMobile, setIsMobile} = useSharedLogic(800)
+  const {isMobile, setIsMobile} = useSharedLogic(1000)
   const FIREBASE_TESTNET_FAQ_COLLECTION    = 'Testnet_Faq'
   const FIREBASE_TESTNET_HEADER_COLLECTION = 'Testnet_Header'
   const FIREBASE_JOIN_IRA_COLLECTION       = 'Testnet_JoinIRA'

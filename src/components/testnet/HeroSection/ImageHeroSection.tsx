@@ -1,11 +1,10 @@
-import styles from './ImageHeroSection.module.scss'
+import styles from './HeroSection.module.scss'
+
 const ImageHeroSection = () => {
   return (
 
     <svg
-    className="frame-48095766__rectangle-39769"
-    width="1312"
-    height="743"
+    className={styles.imageHeroSectionTestnet}
     viewBox="0 0 1312 743"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

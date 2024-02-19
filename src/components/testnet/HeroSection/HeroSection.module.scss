@@ -1,8 +1,10 @@
-.frame-48095766,
-.frame-48095766 * {
+@import '../../../styles/variables.scss';
+
+.heroSectionTestnetContainer,
+.heroSectionTestnetContainer * {
   box-sizing: border-box;
 }
-.frame-48095766 {
+.heroSectionTestnetContainer {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -11,7 +13,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.frame-48095766__rectangle-39769 {
+.imageHeroSectionTestnet {
   border-radius: 0px;
   flex-shrink: 0;
   width: 1312px;
@@ -20,7 +22,7 @@
   overflow: visible;
   object-fit: cover;
 }
-.frame-48095766__frame-48095764 {
+.heroSectionTestnetTexts {
   display: flex;
   flex-direction: column;
   gap: 483px;
@@ -31,7 +33,7 @@
   left: 0px;
   top: 42px;
 }
-.frame-48095766__frame-48095765 {
+.buttonJoinTestnetContainer {
   padding: 0px 0px 0px 42px;
   display: flex;
   flex-direction: column;
@@ -41,7 +43,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.frame-48095766__button {
+.buttonJoinTestnet {
   background: #5552ff;
   border-radius: 20px;
   padding: 32px 16px 32px 16px;
@@ -56,7 +58,7 @@
   box-shadow: 0px 38.05px 98.57px 0px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(92.95px);
 }
-.frame-48095766__rejoindre-le-test-net {
+.buttonJoinTestnetInner {
   color: var(--primaire-white, #f6f8ff);
   text-align: center;
   font-family: var(--heading-h4-font-family, "Unbounded-Medium", sans-serif);
@@ -64,10 +66,10 @@
   font-weight: var(--heading-h4-font-weight, 500);
   position: relative;
 }
-.frame-48095766__frame-48095763 {
+.heroSectionTestnetTextsBottom {
   display: flex;
   flex-direction: row;
-  gap: 716px;
+  gap: 830px;
   align-items: center;
   justify-content: flex-start;
   flex-shrink: 0;
@@ -97,7 +99,8 @@
   line-height: 69px;
   font-weight: 400;
 }
-.frame-48095766__faites-partie-de-l-exp-rience-qui-red-finira-le-monde-de-l-art {
+
+.heroSectionTestnetTextsBottomRight {
   color: var(--bleu-bleu-sombre-100, #021056);
   text-align: right;
   font-family: "Inter-Regular", sans-serif;
@@ -106,4 +109,43 @@
   font-weight: 400;
   position: relative;
   width: 198px;
+}
+
+
+@media screen and (max-width: 1350px) {
+
+  .heroSectionTestnetTexts {
+    gap: 345px;
+  }  
+  .heroSectionTestnetTextsBottom {
+    gap: 650px;
+  }
+
+  .buttonJoinTestnetContainer {
+    padding-left: 10px;
+    padding-top: 70px;
+  }
+
+  .buttonJoinTestnet {
+    padding: 22px 16px;
+    width: 200px;
+  }
+
+  .imageHeroSectionTestnet {
+    width: 1000px;
+  }
+
+  .heroSectionTestnetTextsBottomRight {
+    width: 150px;
+  } 
+
+  
+  .heading-span, .heading-span2 {
+    font-size: 50px;
+  }
+ 
+  .heroSectionTestnetTextsBottomRight {
+    width: 140px;
+    font-size: 15px;
+  }  
 }
