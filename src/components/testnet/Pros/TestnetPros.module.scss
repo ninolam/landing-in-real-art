@@ -58,7 +58,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
   background-size: cover;
   background-position: center;
 }
@@ -80,6 +81,7 @@
   font-family: $heading-h3-font-family;
   font-size: $heading-h3-font-size;
   font-weight: heading-h3-font-weight;
+  cursor: pointer;
 }
 
 .title2 {
