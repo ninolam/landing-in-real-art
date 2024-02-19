@@ -8,10 +8,10 @@ const useSharedLogicHeroSection = () => {
   const FIREBASE_HEADER_COLLECTION = 'Header'
 
   const defaultHeaderButtons = {
-    JoinIRA: defaultLangObject,
-    StartIRA: defaultLangObject,
-    JoinIRALink: '',
-    StartIRALink: '',
+    button1: defaultLangObject,
+    button2: defaultLangObject,
+    button1Link: '',
+    button2Link: '',
   }
 
   const defaultHeaderTexts = {

@@ -34,18 +34,18 @@ const HeroSectionMobile = () => {
     <div className={styles["container-button"]}>
       <div className={styles["frame-button"]}>
         <div className={styles["button"]}>
-          <Link href={headerButtons.JoinIRALink}>
+          <Link href={headerButtons.button1Link}>
             <div className={styles["rejoindre-ira"]}>
-              {headerButtons.JoinIRA[lang_]}
+              {headerButtons.button1[lang_]}
             </div>
           </Link>  
         </div>
       </div>
       <div className={styles["frame-button2"]}>
         <div className={styles["button"]}>
-          <Link href={headerButtons.StartIRALink}>
+          <Link href={headerButtons.button1Link}>
             <div className={styles["je-d-marre"]}>
-              {headerButtons.StartIRA[lang_]}
+              {headerButtons.button1[lang_]}
             </div>  
            </Link>  
         </div>

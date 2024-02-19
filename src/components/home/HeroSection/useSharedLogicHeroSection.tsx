@@ -6,10 +6,10 @@ import { collection, getDocs } from 'firebase/firestore/lite';
 const useSharedLogicHeroSection = (firebaseCollection: string) => {
 
   const defaultHeaderButtons = {
-    JoinIRA: defaultLangObject,
-    StartIRA: defaultLangObject,
-    JoinIRALink: '',
-    StartIRALink: '',
+    button1: defaultLangObject,
+    button2: defaultLangObject,
+    button1Link: '',
+    button2Link: '',
   }
 
   const defaultHeaderTexts = {

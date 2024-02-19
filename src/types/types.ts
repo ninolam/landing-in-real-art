@@ -16,10 +16,10 @@ export type TranslatedTexts = Record<Lang,string>
 export type TranslatedArrayTexts = Record<Lang,Array<string>>
 
 export type HeaderButtons = {
-    JoinIRA: Record<Lang,string>,
-    StartIRA: Record<Lang,string>
-    JoinIRALink: string,
-    StartIRALink: string
+    button1: Record<Lang,string>,
+    button2: Record<Lang,string>
+    button1Link: string,
+    button2Link: string
 }
 
 export type HeaderTexts = {
