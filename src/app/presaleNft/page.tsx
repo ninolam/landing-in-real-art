@@ -10,6 +10,7 @@ import JoinMovementNft from "../../components/presaleNft/JoinMovement/JoinMoveme
 import AboutArtist from "../../components/presaleNft/AboutArtist/AboutArtist"
 import GetReadyToBuy from "../../components/presaleNft/GetReadyToBuy/GetReadyToBuy"
 import NftCollection from "../../components/presaleNft/NftCollection/NftCollection"
+import TopCreator from "../../components/presaleNft/TopCreator/TopCreator"
 
 export default function PresalePage() {
     const [isMobile, setIsMobile] = useState(false)
@@ -56,6 +57,7 @@ export default function PresalePage() {
                         <Menu/>
                         <AboutArtist/>
                         <NftCollection/>
+                        <TopCreator/>
                         <GetReadyToBuy/>
                         <Footer/>
                     </>
