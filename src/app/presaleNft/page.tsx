@@ -42,7 +42,7 @@ export default function PresalePage() {
                         <JoinMovementNft/>
                         <Menu/>
                         <AboutArtist/>
-                        {/*<NftCollection/>*/}
+                        <NftCollection/>
                         <GetReadyToBuy/>
                         <FooterMobile containsEmail={true}/>
                     </>
@@ -55,7 +55,7 @@ export default function PresalePage() {
                         <JoinMovementNft/>
                         <Menu/>
                         <AboutArtist/>
-                        {/*<NftCollection/>*/}
+                        <NftCollection/>
                         <GetReadyToBuy/>
                         <Footer/>
                     </>

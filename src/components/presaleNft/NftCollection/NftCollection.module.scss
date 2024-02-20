@@ -1,9 +1,71 @@
 @import '../../../styles/variables.scss';
 
+.nftCollectionContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+  
+.nftCollectionTitle {
+    color: #021056;
+    text-align: left;
+    font-family: "Poppins-Bold", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+ }
+
+ .nftCollectionDesc {
+    color: rgba(2, 16, 86, 0.51);
+    text-align: center;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    width: 423px;
+  }  
+  
+  .category {
+    width: 263.46px;
+    height: 40px;
+  }
+  .categoryFrame {
+    background: rgba(2, 16, 86, 0.1);
+    border-radius: 10px;
+    padding: 5px 70px 5px 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 263.46px;
+  }
+
+  .categoryLeloluce {
+    color: #021056;
+    text-align: left;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+  }
+
 .nftCollection {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
 }
 
 .nftCard {
@@ -24,7 +86,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/inrealartlanding-3a094.appspot.com/o/presale%2FdropPanel%2Fartist4.jpg?alt=media&token=3fd1c5ba-06e6-448a-8f47-e0f840b9ac8b'); 
     background-size: contain; 
     background-position: center center; 
     background-repeat: no-repeat;
