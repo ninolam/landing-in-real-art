@@ -1,7 +1,36 @@
 "use client"
+import { useEffect, useState } from 'react'
 import styles from './JoinMovement.module.scss'
+import JoinMovementNftGallery from './JoinMovementNftGallery'
+import JoinMovementNftGallery1100 from './JoinMovementNftGallery1100'
+import JoinMovementNftGallery950 from './JoinMovementNftGallery950'
 
 const JoinMovementNft = () => {
+
+    const [isUnder1100, setIsUnder1100] = useState(false)
+    const [isUnder950, setIsUnder950] = useState(false)
+
+    useEffect(() => {
+      const checkScreenSize = () => {
+        if (window.innerWidth < 1100 && window.innerWidth > 950) {
+            setIsUnder1100(true)
+            setIsUnder950(false)
+        }
+        if (window.innerWidth < 950) {
+            setIsUnder950(true)
+            setIsUnder1100(false)
+        }
+        
+        
+      }
+  
+      checkScreenSize()
+      window.addEventListener('resize', checkScreenSize)
+  
+      return () => window.removeEventListener('resize', checkScreenSize)
+    }, [])
+
+
   return (
     <div className={styles["joinMovementNft"]}>
         <div className={styles["joinMovementNftHeroleft"]}>
@@ -26,24 +55,13 @@ const JoinMovementNft = () => {
 
 
         </div>
-        <div className={styles["joinMovementNftGallery"]}>
-            <div className={styles["joinMovementNftGalleryColumn1"]}>
-                <img className={styles["joinMovementNftGalleryItem11"]} src="img/presaleNft/heroImage15.png" />
-                <img className={styles["joinMovementNftGalleryItem13"]} src="img/presaleNft/heroImage20.png" />
-                <img className={styles["joinMovementNftGalleryItem12"]} src="img/presaleNft/heroImage18.png" />
-            </div>
-            
-            <div className={styles["joinMovementNftGalleryColumn2"]}>
-                <img className={styles["joinMovementNftGalleryItem21"]} src="img/presaleNft/heroImage17.png" />
-                <img className={styles["joinMovementNftGalleryItem23"]} src="img/presaleNft/heroImage19.png" />
-                <img className={styles["joinMovementNftGalleryItem22"]} src="img/presaleNft/heroImage16.png" />
-            </div>
-            
-            <div className={styles["joinMovementNftGalleryColumn3"]}>
-                <img className={styles["joinMovementNftGalleryItem31"]} src="img/presaleNft/heroImage21.png" />
-            </div>
-            
-        </div>
+        {   
+            isUnder1100 
+                ?<JoinMovementNftGallery1100/>
+                : (isUnder950 ? <JoinMovementNftGallery950/> : <JoinMovementNftGallery/>) 
+
+        }
+        
     </div>
 
   )
