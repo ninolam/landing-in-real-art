@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { CookiesProvider, useCookies } from 'react-cookie';
 import styles from './CookieConsent.module.scss'
 import { Box, Button, ButtonGroup, Center, Flex, Heading, Text, VStack, useColorModeValue  } from '@chakra-ui/react';
+import classNames from 'classnames';
 
 function CookieConsent() {
   const [showCookieBanner, setShowCookieBanner] = useState(true);
@@ -78,26 +79,44 @@ function CookieConsent() {
     <CookiesProvider>
       {showCookieBanner && (
 
-      <VStack as="div" bg={bg} borderRadius="md" boxShadow="md" p={4} position="fixed" bottom="0" left="0" right="0" zIndex={9999} height="35%">
-        {/* Title */}
-        <Heading as="h3" size="md" mb={2}>
-            Cookie Policy
-          </Heading>
+          <>
+          <div className={styles.cookieContainer}>
+          <div className={styles.cookieBanner}>
+            <div className={styles.cookieBannerInner}>
+              <div style={{gridTemplateColumns: '1fr'}}>
+                <div id="banner-inner-description">
+                  <div id="banner-description" className="banner-description">
+                    <div>
+                      This site uses tracking technologies. You may opt in or opt out of the use of these technologies.
+                    </div>
+                  </div>
+                </div>
+              </div>  
 
-          {/* Description */}
-          <Text>
-            This website uses cookies to improve your user experience. 
-            <br/>
-            By using this website, you consent to the use of all cookies in
-            accordance with our Privacy Policy.
-          </Text>
+              <div className={styles.cookieButtonGroup}>
+                <div style={{display: 'flex'}}>
+                  <button type="button" 
+                    className={classNames(styles.cookieBannerButton, styles.buttonSecondary, styles.preferencesbutton )} 
+                    data-testid="Consent Settings-btn">Consent Settings
+                  </button>
+                </div>
+                <div className={styles.cookieButtonGroup}>
+                  <button type="button" onClick={handleDecline}
+                    className={classNames(styles.cookieBannerButton, styles.buttonSecondary, styles.preferencesbutton )}>
+                    Deny
+                  </button>
+                  <button type="button" onClick={handleAccept}
+                    className={classNames(styles.cookieBannerButton, styles.buttonSecondary, styles.preferencesbutton )}>
+                    Accept all
+                  </button>
+                </div>
+              </div>
+            </div>  
+          </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+          </div>
+          </>
 
-          {/* Buttons */}
-          <Box display="flex" justifyContent="space-between" mt={4}>
-            <Button colorScheme="teal" onClick={handleAccept} >Accept</Button>
-            <Button variant="ghost" onClick={handleDecline}>Decline</Button>
-          </Box>
-      </VStack>
+
       )}
       {/* Rest of your Next.js application */}
     </CookiesProvider>
