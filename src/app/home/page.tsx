@@ -22,6 +22,7 @@ import FaqMobile from "../../components/common/Faq/FaqMobile";
 import Faq from "../../components/common/Faq/Faq";
 import useSharedLogicHeroSection from "../../components/home/HeroSection/useSharedLogicHeroSection";
 import useSharedLogicHowToJoinIra from "../../components/common/JoinIRA/useSharedLogicHowToJoinIra";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function HomePage() {
 
