@@ -7,8 +7,9 @@
 .joinMovementNft {
     display: flex;
     flex-direction: row;
-    width: 70%;
+    width: 60%;
     gap: 50px;
+    //height: 300px;
 }
 .joinMovementNftHeroleftTitle {
     color: $primaireblack;
@@ -17,7 +18,9 @@
     font-size: $heading-h2-font-size;
     font-weight: $heading-h2-font-weight;
     position: relative;
-    //width: 394px;
+    width: 350px;
+    word-break: normal;
+    //overflow-wrap: normal; /* Allows breaking at normal word breaks, but we're preventing wrapping entirely with white-space */
 }
   
 .joinMovementNftHeroleft {

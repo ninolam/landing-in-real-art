@@ -44,6 +44,7 @@ export default function PresalePage() {
                         <Menu/>
                         <AboutArtist/>
                         <NftCollection/>
+                        <TopCreator/>
                         <GetReadyToBuy/>
                         <FooterMobile containsEmail={true}/>
                     </>
