@@ -27,7 +27,9 @@ const NftCollection = () => {
                         0.005 ETH
                     </div>
                 </div>  
-                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
+                <div className={styles.buyButtonContainer}>
+                    <div className={styles.buyButton}>Buy</div>
+                </div>
             </div>
             <div className={styles.nftCard}>
                 <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}/>
@@ -40,7 +42,9 @@ const NftCollection = () => {
                         0.005 ETH
                     </div>
                 </div>  
-                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
+                <div className={styles.buyButtonContainer}>
+                    <div className={styles.buyButton}>Buy</div>
+                </div>
                 
             </div>
             <div className={styles.nftCard}>
@@ -54,7 +58,9 @@ const NftCollection = () => {
                         0.005 ETH
                     </div>
                 </div>  
-                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
+                <div className={styles.buyButtonContainer}>
+                    <div className={styles.buyButton}>Buy</div>
+                </div>
 
             </div>
             <div className={styles.nftCard}>
@@ -68,7 +74,9 @@ const NftCollection = () => {
                         0.005 ETH
                     </div>
                 </div>  
-                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
+                <div className={styles.buyButtonContainer}>
+                    <div className={styles.buyButton}>Buy</div>
+                </div>
 
             </div>
             <div className={styles.nftCard}>
@@ -82,8 +90,9 @@ const NftCollection = () => {
                         0.005 ETH
                     </div>
                 </div>  
-                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
-
+                <div className={styles.buyButtonContainer}>
+                    <div className={styles.buyButton}>Buy</div>
+                </div>
             </div>
             <div className={styles.nftCard}>
                 <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}/>
@@ -96,7 +105,9 @@ const NftCollection = () => {
                         0.005 ETH
                     </div>
                 </div>  
-                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
+                <div className={styles.buyButtonContainer}>
+                    <div className={styles.buyButton}>Buy</div>
+                </div>
 
             </div>
         </div>

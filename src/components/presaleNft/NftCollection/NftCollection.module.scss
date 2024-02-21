@@ -1,7 +1,7 @@
 @import '../../../styles/variables.scss';
 
 .nftCollectionContainer {
-    width: 70%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,7 +114,11 @@
 }
 
 .nftCardArtworkName {
-  color: #fff
+  color: #fff;
+  font-family: "Poppins-Bold", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
 }
 
 .nftButtonBuy {
@@ -139,4 +143,26 @@
 
 .nftPrice {
   color: #fff;
+}
+
+.buyButtonContainer {
+  background: #5552ff;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  //max-width: max-content;
+  width: 100%;
+  cursor: pointer;
+}
+
+.buyButton {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
 }

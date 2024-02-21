@@ -22,8 +22,8 @@ const AboutArtist = () => {
                 </div>
                 
                 
-                <div className={styles["frame-3"]}>
-                    <div className={styles["frame-3__show-more"]}>Show more</div>
+                <div className={styles["showMoreButtonContainer"]}>
+                    <div className={styles["showMoreButton"]}>Show more</div>
                 </div>
             </div>
         </div>
