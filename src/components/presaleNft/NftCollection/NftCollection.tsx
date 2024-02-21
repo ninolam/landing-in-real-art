@@ -17,58 +17,87 @@ const NftCollection = () => {
 
         <div className={styles.nftCollection}>
             <div className={styles.nftCard}>
-                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}>
-                
-                </div>    
+                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}/>
                 <div className={styles.nftCardInfo}>
-                
-                </div>    
-                <a className="Button Button--gold" href="/nfts/1">Buy</a>
+                    <div className={styles.nftCardNames}>
+                        <a className={styles.nftCardArtistPseudo} href="">@FBoucheix</a>
+                        <a className={styles.nftCardArtworkName} href="">Musicata</a>
+                    </div>
+                    <div className={styles.nftPrice}>
+                        0.005 ETH
+                    </div>
+                </div>  
+                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
             </div>
             <div className={styles.nftCard}>
-                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}>
+                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}/>
+                    <div className={styles.nftCardInfo}>
+                    <div className={styles.nftCardNames}>
+                        <a className={styles.nftCardArtistPseudo} href="">@FBoucheix</a>
+                        <a className={styles.nftCardArtworkName} href="">Musicata</a>
+                    </div>
+                    <div className={styles.nftPrice}>
+                        0.005 ETH
+                    </div>
+                </div>  
+                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
                 
-                </div>    
-                <div className={styles.nftCardInfo}>
-                
-                </div>    
-                <a className="Button Button--gold" href="/nfts/1">Buy</a>
             </div>
             <div className={styles.nftCard}>
-                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}>
-                
-                </div>    
-                <div className={styles.nftCardInfo}>
-                
-                </div>    
-                <a className="Button Button--gold" href="/nfts/1">Buy</a>
-            </div>
-            <div className={styles.nftCard}>
-                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}>
+                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}/>
+                    <div className={styles.nftCardInfo}>
+                    <div className={styles.nftCardNames}>
+                        <a className={styles.nftCardArtistPseudo} href="">@FBoucheix</a>
+                        <a className={styles.nftCardArtworkName} href="">Musicata</a>
+                    </div>
+                    <div className={styles.nftPrice}>
+                        0.005 ETH
+                    </div>
+                </div>  
+                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
 
-                </div>    
-                <div className={styles.nftCardInfo}>
-                
-                </div>    
-                <a className="Button Button--gold" href="/nfts/1">Buy</a>
             </div>
             <div className={styles.nftCard}>
-                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}>
+                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}/>
+                    <div className={styles.nftCardInfo}>
+                    <div className={styles.nftCardNames}>
+                        <a className={styles.nftCardArtistPseudo} href="">@FBoucheix</a>
+                        <a className={styles.nftCardArtworkName} href="">Musicata</a>
+                    </div>
+                    <div className={styles.nftPrice}>
+                        0.005 ETH
+                    </div>
+                </div>  
+                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
 
-                </div>    
-                <div className={styles.nftCardInfo}>
-                
-                </div>    
-                <a className="Button Button--gold" href="/nfts/1">Buy</a>
             </div>
             <div className={styles.nftCard}>
-                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}>
+                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}/>
+                    <div className={styles.nftCardInfo}>
+                    <div className={styles.nftCardNames}>
+                        <a className={styles.nftCardArtistPseudo} href="">@FBoucheix</a>
+                        <a className={styles.nftCardArtworkName} href="">Musicata</a>
+                    </div>
+                    <div className={styles.nftPrice}>
+                        0.005 ETH
+                    </div>
+                </div>  
+                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
 
-                </div>    
-                <div className={styles.nftCardInfo}>
-                
-                </div>    
-                <a className="Button Button--gold" href="/nfts/1">Buy</a>
+            </div>
+            <div className={styles.nftCard}>
+                <div className={styles.nftCardBackground} style={{backgroundImage: `url('img/presaleNft/collection3.png')`}}/>
+                    <div className={styles.nftCardInfo}>
+                    <div className={styles.nftCardNames}>
+                        <a className={styles.nftCardArtistPseudo} href="">@FBoucheix</a>
+                        <a className={styles.nftCardArtworkName} href="">Musicata</a>
+                    </div>
+                    <div className={styles.nftPrice}>
+                        0.005 ETH
+                    </div>
+                </div>  
+                <button className={styles.nftButtonBuy} type="button"><span>Buy</span></button>
+
             </div>
         </div>
     </div>

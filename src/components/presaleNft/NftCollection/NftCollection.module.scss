@@ -1,7 +1,7 @@
 @import '../../../styles/variables.scss';
 
 .nftCollectionContainer {
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,9 +74,9 @@
     height: 100%;
     padding: 10px;
     border-radius: 20px;
-    background-color: $bleubleu-sombre-100;
-    width: calc(25% - 40px);
-
+    background-color: $bleubleu-sombre-300;
+    width: calc(33.3333% - 20px);
+    padding-top: 30px;
 }
 
 .nftCardBackground{
@@ -96,5 +96,47 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0;
+    gap: 10px;
+    padding: 10px 5px;
 }    
+
+.nftCardNames {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 0;
+}    
+
+.nftCardArtistPseudo {
+  color: $bleubleu-sombre-100;
+}
+
+.nftCardArtworkName {
+  color: #fff
+}
+
+.nftButtonBuy {
+    margin: 0 20px 10px;
+    background-color: red;
+    font-family: Poppins,sans-serif;
+    font-size: 20px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    display: flex;
+    padding: 15px 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.nftPrice {
+  color: #fff;
+}
