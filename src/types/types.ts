@@ -339,17 +339,18 @@ export interface ModalProps {
 
 export interface AcquireModalProps {
     buttonBuyStripe: string,
-    description: string,
-    imageUrl: string,
+    description: string
+    imageUrl: string
     price: number
 }
 
 export interface BuyModalProps {
     showBuyModal: boolean
-    setShowBuyModal: React.Dispatch<React.SetStateAction<boolean>>;
-    description: string,
-    imageUrl: string,
+    setShowBuyModal: React.Dispatch<React.SetStateAction<boolean>>
+    description: string
+    imageUrl: string
     price: number
+    buy: (() => void) | undefined
 }
 
 export interface NftProps {

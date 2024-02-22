@@ -2,36 +2,27 @@ import { useEffect, useState } from 'react';
 import { NftProps } from '../../../types/types'
 import BuyModal from '../../common/Modal/BuyModal'
 import styles from './NftCollection.module.scss'
-
+import {
+    useConnectModal,
+    useAddRecentTransaction,
+  } from '@rainbow-me/rainbowkit';
+import { useAccount } from 'wagmi';
 
 const Nft: React.FC<NftProps> = ({ artistName, nftName, imageUrl, price }) => {
+    const { isConnected } = useAccount();
+    const { openConnectModal } = useConnectModal();
     const [showBuyModal, setShowBuyModal] = useState<boolean>(false);
     
-    const closeModal = (e: any) => {
-       setShowBuyModal(false)
-    }
-
-    useEffect(() => {
-        setShowBuyModal(false)
-        document.addEventListener('mousedown', closeModal);
-        return () => {
-            document.removeEventListener('mousedown', closeModal)
-        }
-    }, [])
-
-    useEffect(() => {
-        if (showBuyModal) {
-          document.body.style.overflow = 'hidden';
-        }
-        return () => {
-          document.body.style.overflow = 'visible';
-        };
-      }, [showBuyModal]);
-
     return (
         <>
             {showBuyModal && (
-                <BuyModal showBuyModal={showBuyModal} setShowBuyModal={setShowBuyModal} description={''} imageUrl={imageUrl} price={price}/>
+                <BuyModal 
+                    showBuyModal={showBuyModal}
+                    setShowBuyModal={setShowBuyModal}
+                    description={''}
+                    imageUrl={imageUrl} price={price} 
+                    buy={isConnected ? () => {console.log('Connected')} : openConnectModal}
+                    />
             )}
             <div className={styles.nftCard}>
                 <div className={styles.nftCardBackground} style={{backgroundImage: `url('${imageUrl}')`}}/>
