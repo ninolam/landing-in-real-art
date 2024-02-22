@@ -2,20 +2,52 @@
 import { Card, CardBody, CardFooter, Divider, Heading, Stack, ButtonGroup, Button, Text, Image } from "@chakra-ui/react"
 import styles from './BuyModal.module.scss'
 import { BuyModalProps } from "../../../types/types"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { useAccount } from "wagmi"
 import {Close} from '@emotion-icons/evaicons-solid'
 
 const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, description, imageUrl, price }) => {
 
+    const [file, setFile] = useState("");
+    const [cid, setCid] = useState("");
+    const [uploading, setUploading] = useState(false);
+
     const { isConnected } = useAccount();
     const buyModalRef  = useRef<HTMLDivElement>(null)
     
+    const uploadFile = async (fileToUpload: any) => {
+        try {
+          setUploading(true);
+          const data = new FormData();
+          data.set("file", fileToUpload);
+          const res = await fetch("/api/files", {
+            method: "POST",
+            body: data,
+          });
+          const resData = await res.json();
+          setCid(resData.IpfsHash);
+          setUploading(false);
+        } catch (e) {
+          console.log(e);
+          setUploading(false);
+          alert("Trouble uploading file");
+        }
+      }
+
+    const handleChange = (e: any) => {
+        setFile(e.target.files[0]);
+        uploadFile(e.target.files[0]);
+    }
+
     const closeModal = () => {
         setShowBuyModal(false)
     }
     
+    const mintNFT = () => {
+        uploadFile(imageUrl)
+    }
+
     return (
         <div className={styles.buyModalBackdrop} ref={buyModalRef}>
             <div className={styles.buyModal}>
@@ -42,9 +74,9 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, desc
                     <Divider />
                     <CardFooter>
                         <ButtonGroup spacing='2'>
-                            {isConnected 
-                                ? <Button variant='solid' colorScheme='blue'>
-                                    Buy
+                            {!isConnected 
+                                ? <Button variant='solid' colorScheme='blue' disabled={uploading} onClick={mintNFT}>
+                                    {uploading ? "Uploading NFT..." : "Buy"}
                                 </Button>
                             
                             : 
@@ -59,11 +91,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, desc
                                     You must connect to the web3 to buy this NFT
                                 </div>
                             </div>
-                            
-                            
                             }
-
-                            
                         </ButtonGroup>
                     </CardFooter>
                 </Card>
