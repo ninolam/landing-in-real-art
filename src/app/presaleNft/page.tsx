@@ -37,9 +37,9 @@ export default function PresalePage() {
             {isMobile 
                 ?
                     <>
-                        {/*<CookiesProvider>
+                        <CookiesProvider>
                             <CookieConsent/>
-                        </CookiesProvider>*/}
+                        </CookiesProvider>
                         <JoinMovementNft/>
                         <Menu/>
                         <AboutArtist/>

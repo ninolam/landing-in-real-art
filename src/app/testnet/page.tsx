@@ -50,9 +50,9 @@ export default function HomePage() {
         </>  
           : 
         <>
-          {/*<CookiesProvider>
+          <CookiesProvider>
             <CookieConsent/>
-         </CookiesProvider>*/}
+         </CookiesProvider>
           <HeroSection/>
           <Menu/>
           <HowToJoinIra joinIraDataText={joinIraDataText} joinIraDataButton={joinIraDataButton} onlyFirstButton={true}/>

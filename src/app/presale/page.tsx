@@ -43,9 +43,9 @@ export default function PresalePage() {
             {isMobile 
                 ?
                     <>
-                        {/*<CookiesProvider>
+                        <CookiesProvider>
                             <CookieConsent/>
-                        </CookiesProvider>*/}
+                        </CookiesProvider>
                         <HeroSectionMobile/>
                         <Menu/>
                         <DropPanel/>
