@@ -343,3 +343,18 @@ export interface AcquireModalProps {
     imageUrl: string,
     price: number
 }
+
+export interface BuyModalProps {
+    showBuyModal: boolean
+    setShowBuyModal: React.Dispatch<React.SetStateAction<boolean>>;
+    description: string,
+    imageUrl: string,
+    price: number
+}
+
+export interface NftProps {
+    artistName: string
+    nftName: string
+    imageUrl: string
+    price: number
+}
