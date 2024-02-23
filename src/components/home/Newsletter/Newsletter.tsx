@@ -64,7 +64,7 @@ const Newsletter = () => {
             </div>
           </div>
           
-          <img className={styles.imageNL} src="/img/unsplash-augtvvqxdhg.png" alt=''/>
+          <img className={styles.imageNL} src="/img/home/roman_statue.png" alt=''/>
         </div>
 
     )
