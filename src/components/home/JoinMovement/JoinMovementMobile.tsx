@@ -7,6 +7,9 @@ import parse from 'html-react-parser'
 import { Lang } from '../../../types/types'
 import Link from 'next/link'
 import useSharedLogicJoinMovement from './useSharedLogicJoinMovement'
+import { HiMiniShoppingBag } from "react-icons/hi2";
+import { MdRealEstateAgent } from "react-icons/md";
+import { TfiGallery } from "react-icons/tfi";
 
 
 const JoinMovementMobile = () => {
@@ -28,7 +31,7 @@ const JoinMovementMobile = () => {
       <div className={styles["lp-mobile__frame-48095730"]}>
         <div className={styles["lp-mobile__frame-76"]}>
           <div className={styles["lp-mobile__rectangle-52"]}></div>
-          <VuesaxLinearStatusUpMobile className={styles["lp-mobile__vuesax-linear-status-up-instance"]}
+          <TfiGallery className={styles["lp-mobile__vuesax-linear-status-up-instance"]}
           />
         </div>
         <div className={styles["lp-mobile__frame-7"]}>
@@ -44,7 +47,7 @@ const JoinMovementMobile = () => {
       <div className={styles["lp-mobile__frame-48095731"]}>
         <div className={styles["lp-mobile__frame-76"]}>
           <div className={styles["lp-mobile__rectangle-52"]}></div>
-          <VuesaxLinearStatusUpMobile className={styles["lp-mobile__vuesax-linear-status-up-instance"]}/>
+          <MdRealEstateAgent className={styles["lp-mobile__vuesax-linear-status-up-instance"]}/>
         </div>
         <div className={styles["lp-mobile__frame-7"]}>
           <div className={styles["lp-mobile__heading4"]}>{parse(joinTrendtexts.aas_title[lang_])}</div>
@@ -59,7 +62,7 @@ const JoinMovementMobile = () => {
       <div className={styles["lp-mobile__frame-48095732"]}>
         <div className={styles["lp-mobile__frame-76"]}>
           <div className={styles["lp-mobile__rectangle-52"]}></div>
-          <VuesaxLinearStatusUpMobile className={styles["lp-mobile__vuesax-linear-status-up-instance"]}/>
+          <HiMiniShoppingBag className={styles["lp-mobile__vuesax-linear-status-up-instance"]}/>
         </div>
         <div className={styles["lp-mobile__frame-72"]}>
           <div className={styles["lp-mobile__heading6"]}>{joinTrendtexts.marketplace_title[lang_]}</div>

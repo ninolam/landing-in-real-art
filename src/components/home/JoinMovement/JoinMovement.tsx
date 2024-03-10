@@ -5,7 +5,6 @@ import parse from "html-react-parser";
 import { Lang } from "../../../types/types";
 import Link from "next/link";
 import JoinMovementLink1 from "./JoinMovementLink1";
-import VuesaxLinearStatusUp from "./VuesaxLinearStatusUp";
 import { HiMiniShoppingBag } from "react-icons/hi2";
 import { MdRealEstateAgent } from "react-icons/md";
 import { TfiGallery } from "react-icons/tfi";
