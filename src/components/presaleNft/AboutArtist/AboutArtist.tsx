@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link'
 import styles from './AboutArtist.module.scss'
 
 const AboutArtist = () => {
@@ -23,7 +24,7 @@ const AboutArtist = () => {
                 
                 
                 <div className={styles["showMoreButtonContainer"]}>
-                    <div className={styles["showMoreButton"]}>Show more</div>
+                    <Link href="#collection" className={styles["showMoreButton"]}>Discover Collection</Link>
                 </div>
             </div>
         </div>

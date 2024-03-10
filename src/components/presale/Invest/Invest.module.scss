@@ -30,7 +30,7 @@
 }
 
 .imageBlockContainer .imageBlock:hover {
-  flex-basis: 70%;
+  flex-basis: 40%;
 }
 
 .title1 {
@@ -122,8 +122,8 @@
   }
 
   .imageBlockContainer .imageBlock:hover {
-    height: 70%; /* Increase height on hover */
-    flex-basis: auto;
+    // height: 70%; /* Increase height on hover */
+    flex-basis: 160%;
   }
 
 

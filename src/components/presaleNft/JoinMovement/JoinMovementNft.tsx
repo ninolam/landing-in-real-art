@@ -4,6 +4,7 @@ import styles from './JoinMovement.module.scss'
 import JoinMovementNftGallery from './JoinMovementNftGallery'
 import JoinMovementNftGallery1100 from './JoinMovementNftGallery1100'
 import JoinMovementNftGallery950 from './JoinMovementNftGallery950'
+import Link from 'next/link'
 
 const JoinMovementNft = () => {
 
@@ -44,11 +45,8 @@ const JoinMovementNft = () => {
 
             <div className={styles["joinMovementNftButtonsContainer"]}>
                 <div className={styles["joinMovementNftButtons"]}>
-                    <div className={styles["joinMovementNft__frame-1"]}>
-                        <div className={styles["joinMovementNft__explore-now"]}>Explore Now</div>
-                    </div>
                     <div className={styles["joinMovementNft__frame-2"]}>
-                        <div className={styles["joinMovementNft__buy-nft"]}>Buy NFT</div>
+                        <Link href="#collection" className={styles["joinMovementNft__buy-nft"]}>Buy NFT</Link>
                     </div>
                 </div>
             </div>

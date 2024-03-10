@@ -6,6 +6,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media (max-width: 800px) {
+      width: calc(80%);
+    }  
   }
 
 .header {
@@ -74,9 +77,17 @@
     height: 100%;
     padding: 10px;
     border-radius: 20px;
-    background-color: $bleubleu-sombre-300;
+    background-color: $bleubleu-clair;
     width: calc(33.3333% - 20px);
     padding-top: 30px;
+
+    @media (max-width: 1200px) {
+      width: calc(50% - 20px);
+    }  
+    @media (max-width: 600px) {
+      width: calc(100%);
+    }  
+    
 }
 
 .nftCardBackground{

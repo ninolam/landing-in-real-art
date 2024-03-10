@@ -9,6 +9,9 @@
     flex-direction: row;
     width: 60%;
     gap: 50px;
+    @media (max-width: 800px) {
+      width: calc(80%);
+    }  
     //height: 300px;
 }
 .joinMovementNftHeroleftTitle {
@@ -230,6 +233,10 @@
 
   .joinMovementNftHeroleftTitle {
     font-size: 40px;
+  }
+
+  .joinMovementNft {
+    flex-direction: column;
   }
   
 

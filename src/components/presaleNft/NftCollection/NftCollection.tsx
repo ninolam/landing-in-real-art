@@ -4,7 +4,7 @@ import styles from './NftCollection.module.scss'
 
 const NftCollection = () => {
   return (
-    <div className={styles.nftCollectionContainer}>
+    <div id="collection" className={styles.nftCollectionContainer}>
         <div className={styles.header}>
             <div className={styles.nftCollectionTitle}>Collection</div>
             <div className={styles.nftCollectionDesc}>

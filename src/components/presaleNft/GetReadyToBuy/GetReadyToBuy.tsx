@@ -1,14 +1,15 @@
 "use client"
+import Link from 'next/link'
 import styles from './GetReadyToBuy.module.scss'
 
 const GetReadyToBuy = () => {
   return (
     <div className={styles["getReady"]}>
-        <div className={styles["getReadyTitle"]}>
+        <Link href='/presale' className={styles["getReadyTitle"]}>
             Get ready to buy
             <br />
-            your artwork
-        </div>
+            your real world assets
+        </Link>
         <div className={styles["cta__frame-1"]}>
             <div className={styles["cta__get-started"]}>Get Started</div>
             

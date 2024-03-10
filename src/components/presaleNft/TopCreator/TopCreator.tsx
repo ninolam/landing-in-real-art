@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styles from './TopCreator.module.scss'
 
 const TopCreator = () => {
@@ -27,7 +28,7 @@ const TopCreator = () => {
                     </div>
                 </div>
                 <div className={styles.cardFooter}>
-                    <a href="#" className={styles.moreInfo}>More Info</a>
+                    <Link href="/presale" className={styles.moreInfo}>More Info</Link>
                 </div>
             </div>
             {/* Creator 2*/}
@@ -41,7 +42,7 @@ const TopCreator = () => {
                     </div>
                 </div>
                 <div className={styles.cardFooter}>
-                    <a href="#" className={styles.moreInfo}>More Info</a>
+                    <Link href="/presale" className={styles.moreInfo}>More Info</Link>
                 </div>
             </div>
             {/* Creator 3*/}
@@ -55,7 +56,7 @@ const TopCreator = () => {
                     </div>
                 </div>
                 <div className={styles.cardFooter}>
-                    <a href="#" className={styles.moreInfo}>More Info</a>
+                    <Link href="/presale" className={styles.moreInfo}>More Info</Link>
                 </div>
             </div>
         </div>

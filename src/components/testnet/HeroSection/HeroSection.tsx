@@ -1,6 +1,7 @@
 import React from 'react'
 import ImageHeroSection from './ImageHeroSection'
 import styles from './HeroSection.module.scss'
+import Link from 'next/link'
 
 const HeroSection = () => {
   return (
@@ -11,9 +12,9 @@ const HeroSection = () => {
         <div className={styles["heroSectionTestnetTexts"]}>
           <div className={styles["buttonJoinTestnetContainer"]}>
             <div className={styles["buttonJoinTestnet"]}>
-              <div className={styles["buttonJoinTestnetInner"]}>
+              <Link href='/presale' className={styles["buttonJoinTestnetInner"]}>
                 Rejoindre le TestNet
-              </div>
+              </Link>
             </div>
           </div>
           <div className={styles["heroSectionTestnetTextsBottom"]}>
