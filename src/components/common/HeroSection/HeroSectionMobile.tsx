@@ -4,6 +4,7 @@ import { useAppContext } from '../../../context'
 import { HeaderButtons, HeaderTexts, Lang } from '../../../types/types'
 import useSharedLogicHeroSection from '../../home/HeroSection/useSharedLogicHeroSection'
 import Link from 'next/link'
+import parse from 'html-react-parser';
 
 export interface HeroSectionMobileProps {
   headerTexts: HeaderTexts
@@ -24,7 +25,7 @@ const HeroSectionMobile = ({headerTexts, headerButtons, onlyFirstButton, ...prop
       <div className={styles["heading"]}>
         <span>
           <span className={styles["heading-span"]}>
-            {headerTexts.title1[lang_]}
+            {parse(headerTexts.title1[lang_])}
           </span>
           {
             /*
@@ -40,7 +41,7 @@ const HeroSectionMobile = ({headerTexts, headerButtons, onlyFirstButton, ...prop
         <div className={styles["button"]}>
           <Link href={headerButtons.button1Link}>
             <div className={styles["rejoindre-ira"]}>
-              {headerButtons.button1[lang_]}
+              {parse(headerButtons.button1[lang_])}
             </div>
           </Link>  
         </div>
@@ -52,7 +53,7 @@ const HeroSectionMobile = ({headerTexts, headerButtons, onlyFirstButton, ...prop
               <div className={styles["button"]}>
                 <Link href={headerButtons.button2Link}>
                   <div className={styles["je-d-marre"]}>
-                    {headerButtons.button2[lang_]}
+                    {parse(headerButtons.button2[lang_])}
                   </div>  
                 </Link>  
               </div>

@@ -11,6 +11,7 @@ import FooterMobile from "../../components/footer/FooterMobile"
 import useSharedLogicFaqPage from "../../components/faqPage/menu/useSharedLogicFaqPage"
 import useSharedLogicFaqHeroSection from "../../components/faqPage/HeroSection/useSharedLogicFaqHeroSection"
 import SimpleHeroSection from "../../components/heroSection/SimpleHeroSection"
+import parse from 'html-react-parser';
 
 export default function FaqPage() {
 
@@ -62,13 +63,13 @@ export default function FaqPage() {
                                 <h2>
                                 <AccordionButton>
                                     <Box as="span" flex='1' textAlign='left'>
-                                    {index+1}. {faqQuestion.question[lang_]}
+                                    {index+1}. {parse(faqQuestion.question[lang_])}
                                     </Box>
                                     <AccordionIcon />
                                 </AccordionButton>
                                 </h2>
                                 <AccordionPanel pb={4}>
-                                    {faqQuestion.answer[lang_]}
+                                    {parse(faqQuestion.answer[lang_])}
                                 </AccordionPanel>
                             </AccordionItem>
                         )

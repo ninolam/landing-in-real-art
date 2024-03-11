@@ -1,6 +1,7 @@
 "use client"
 import { ArtistMemberProps } from '../../../types/types'
 import styles from './CarouselArtists.module.scss'
+import parse from 'html-react-parser';
 
 const Artist: React.FC<ArtistMemberProps> = ( {name, image, desc} ) => {
   return (
@@ -21,7 +22,7 @@ const Artist: React.FC<ArtistMemberProps> = ( {name, image, desc} ) => {
             <div className={styles["wrapper-text"]}>
                 <div className={styles["def"]}>
                     <div id="artistDesc" className={styles["artistDesc"]}>
-                        {desc}
+                        {parse(desc)}
                     </div>
                 </div>
                 <div className={styles["frameArtistName"]}>
