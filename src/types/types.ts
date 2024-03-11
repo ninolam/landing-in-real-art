@@ -75,6 +75,8 @@ export type NewsletterText<T extends Record<Lang, string>> = {
     checkboxNewsLetter: T
     checkboxPrivateSale: T
     sendEmailErrorMsg: T
+    msgSuccessNewsLetter: T
+    msgSuccessPrivateSale: T
 }  
 
 export type PartnersTexts<T extends Record<Lang, string>> = {

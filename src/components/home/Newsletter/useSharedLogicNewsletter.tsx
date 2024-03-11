@@ -5,8 +5,14 @@ import { collection, getDocs } from 'firebase/firestore/lite'
 import { supabase } from "../../../utils/supabase/supabaseConnection"
 import {NEWSLETTER_TABLE, PRIVATESALE_TABLE} from '../../../utils/supabase/constants'
 import { useToast } from '@chakra-ui/react'
+import parse from 'html-react-parser';
+import { useAppContext } from "../../../context"
 
 const useSharedLogicNewsletter = () => {
+    //Get the language of the global context
+    const {lang} = useAppContext()
+    const lang_ = lang as Lang
+  
     const toast = useToast()
     const FIREBASE_NEWSLETTER_COLLECTION = 'Newsletter'
   
@@ -21,7 +27,9 @@ const useSharedLogicNewsletter = () => {
       email_placeholder: defaultLangObject,
       checkboxNewsLetter: defaultLangObject,
       checkboxPrivateSale: defaultLangObject,
-      sendEmailErrorMsg: defaultLangObject
+      sendEmailErrorMsg: defaultLangObject,
+      msgSuccessNewsLetter: defaultLangObject,
+      msgSuccessPrivateSale: defaultLangObject
     }
     const [nlTexts, setNlTexts] = useState<NewsletterText<Record<Lang, string>>>(defaultNlText)
   
@@ -76,8 +84,8 @@ const useSharedLogicNewsletter = () => {
             }
             else {
               toast({
-                title: 'Check your email with some great future news !',
-                description: "We've created your account for you.",
+                title: parse(nlTexts.msgSuccessNewsLetter[lang_]),
+                description: '',
                 status: 'success',
                 duration: 3000,
                 isClosable: true,
@@ -93,8 +101,8 @@ const useSharedLogicNewsletter = () => {
             }
             else {
               toast({
-                title: 'Check your email to be notified about future news on private sale !',
-                description: "We've created your account for you.",
+                title: parse(nlTexts.msgSuccessPrivateSale[lang_]),
+                description: '',
                 status: 'success',
                 duration: 3000,
                 isClosable: true,
