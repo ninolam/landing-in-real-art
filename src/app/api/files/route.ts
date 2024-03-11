@@ -6,6 +6,13 @@ export const config = {
   },
 };
 
+
+export async function GET() {
+  return NextResponse.json({
+    hello: "files"
+  })
+}
+
 export async function POST(request: NextRequest) {
   try {
     const data = await request.formData();
