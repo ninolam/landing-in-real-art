@@ -9,6 +9,8 @@ declare namespace NodeJS {
         NEXT_PUBLIC_FIREBASE_APP_ID: string
         NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID: string
         NEXT_PUBLIC_FIREBASE_IMAGES_TOKEN: string
+        SUPABASE_PROJECT_URL: string
+        SUPABASE_API_KEY: string
       // Define more variables as needed
     }
   }
