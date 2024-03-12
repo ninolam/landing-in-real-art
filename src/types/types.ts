@@ -140,13 +140,23 @@ export type AboutTexts = {
     mainDescription : Record<Lang, string>
 }
 
-export type PresaleNftTexts = {
+export type PresaleNftJoinMovementTexts = {
     mainTitle : Record<Lang, string>
     mainDescription : Record<Lang, string>
 }
 
-export type PresaleNftButtons = {
+export type PresaleNftJoinMovementButtons = {
     buyNft : Record<Lang, string>
+}
+
+export type PresaleNftAboutArtistTexts = {
+    mainTitle : Record<Lang, string>
+    secondaryTitle : Record<Lang, string>
+    description : Record<Lang, string>
+}
+
+export type PresaleNftAboutArtistButtons = {
+    discoverCollection : Record<Lang, string>
 }
 
 

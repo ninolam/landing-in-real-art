@@ -1,23 +1,24 @@
-import { AboutTexts, FaqPage, FaqQuestions, PresaleNftJoinMovementButtons, PresaleNftJoinMovementTexts, defaultLangObject } from '../../../types/types'
+import { PresaleNftAboutArtistButtons, PresaleNftAboutArtistTexts, PresaleNftJoinMovementButtons, PresaleNftJoinMovementTexts, defaultLangObject } from '../../../types/types'
 import { db } from '../../../firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore/lite'
 import { useEffect, useState } from 'react'
 
-const useSharedLogicJoinMovementNft = () => {
+const useSharedLogicAboutArtistNft = () => {
 
-    const FIREBASE_COLLECTION = 'PresaleNFT_JoinMovement'
+    const FIREBASE_COLLECTION = 'PresaleNFT_AboutArtist'
 
     const defaultTexts = {
       mainTitle: defaultLangObject,
-      mainDescription: defaultLangObject
+      secondaryTitle: defaultLangObject,
+      description: defaultLangObject
     }
 
     const defaultButtons = {
-        buyNft: defaultLangObject
+        discoverCollection: defaultLangObject
       }
   
-    const [texts, setTexts] = useState<PresaleNftJoinMovementTexts>(defaultTexts)
-    const [buttons, setButtons] = useState<PresaleNftJoinMovementButtons>(defaultButtons)
+    const [texts, setTexts] = useState<PresaleNftAboutArtistTexts>(defaultTexts)
+    const [buttons, setButtons] = useState<PresaleNftAboutArtistButtons>(defaultButtons)
     
     useEffect(() => {
         
@@ -27,11 +28,11 @@ const useSharedLogicJoinMovementNft = () => {
           const data       = documents.docs.map(doc => doc.data());
           
           //Index 0 ===> Buttons
-          const buttons = data[0] as PresaleNftJoinMovementButtons
+          const buttons = data[0] as PresaleNftAboutArtistButtons
           setButtons(buttons) 
 
           //Index 1 ===> Texts
-          const texts = data[1] as PresaleNftJoinMovementTexts
+          const texts = data[1] as PresaleNftAboutArtistTexts
           setTexts(texts) 
         }
         
@@ -42,4 +43,4 @@ const useSharedLogicJoinMovementNft = () => {
   return {texts, setTexts, buttons, setButtons}
 }
 
-export default useSharedLogicJoinMovementNft
+export default useSharedLogicAboutArtistNft
