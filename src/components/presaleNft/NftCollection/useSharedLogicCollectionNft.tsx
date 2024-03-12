@@ -18,7 +18,9 @@ const useSharedLogicCollectionNft = () => {
 
     const defaultTexts = {
       mainTitle: defaultLangObject,
-      secondaryTitle: defaultLangObject
+      secondaryTitle: defaultLangObject,
+      msgSuccessEmail: defaultLangObject,
+      msgErrorEmail: defaultLangObject
     }
 
     const defaultButtons = {

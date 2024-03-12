@@ -43,6 +43,8 @@ const NftCollection = () => {
                                 nftName={nft.name[lang_]} 
                                 imageUrl={nft.url} 
                                 price={nft.price} 
+                                msgSuccessEmail={texts.msgSuccessEmail[lang_]}
+                                msgErrorEmail={texts.msgErrorEmail[lang_]}
                                 buttonBuy={buttons.buyLeloluceNft[lang_]} 
                                 buttonPreBuy={buttons.preBuyLeloluceNft[lang_]}></Nft>        
                         </>

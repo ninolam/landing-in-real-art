@@ -1,5 +1,5 @@
 'use client';
-import { Card, CardBody, CardFooter, Divider, Heading, Stack, ButtonGroup, Button, Text, Image, FormControl, FormLabel, Input, FormErrorMessage } from "@chakra-ui/react"
+import { Card, CardBody, CardFooter, Divider, Heading, Stack, ButtonGroup, Button, Text, Image, FormControl, FormLabel, Input, FormErrorMessage, useToast } from "@chakra-ui/react"
 import styles from './BuyModal.module.scss'
 import { BuyModalProps } from "../../../types/types"
 import { useEffect, useRef, useState } from "react"
@@ -7,13 +7,19 @@ import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { useAccount } from "wagmi"
 import {Close} from '@emotion-icons/evaicons-solid'
 import { IoSend } from "react-icons/io5";
+import { insertEmail } from "../../../utils/supabase/supabaseFunctions";
+import { COLLECTION_NFTS_TABLE } from "../../../utils/supabase/constants";
+import parse from 'html-react-parser';
 
-const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftName, description, imageUrl, price }) => {
+const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftName, description, imageUrl, price, msgSuccessEmail, msgErrorEmail }) => {
 
     const [file, setFile] = useState("");
     const [cid, setCid] = useState("");
     const [uploading, setUploading] = useState(false);
-
+    const [email, setEmail]               = useState('')
+    const [isEmailValid, setEmailValid]   = useState(true)
+    const toast = useToast()
+    
     //const { isConnected } = useAccount();
     const buyModalRef  = useRef<HTMLDivElement>(null)
     
@@ -49,6 +55,61 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftN
         uploadFile(imageUrl)
     }
 
+    // Email validation function
+    const validateEmail = (email: string) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(String(email).toLowerCase());
+      }
+  
+    const handleChangeEmail = (e: any) => setEmail(e.target.value)
+
+        //------------------------------------------------------------------------------ handlSendEmail
+        const handlSendEmail = async () => {
+            
+            if (validateEmail(email)) {
+                setEmailValid(true)
+      
+                try {
+                  //Insert in collectionNfts Table
+                    
+                    const msgError = await insertEmail(COLLECTION_NFTS_TABLE, email)
+                    if (msgError !== '') {
+                        toast({
+                        title: msgError,
+                        description: '',
+                        status: 'error',
+                        duration: 3000,
+                        isClosable: true,
+                        })  
+                    }
+                    else {
+                        // Popup a succes toast if no errors.
+                        toast({
+                        title: parse(msgSuccessEmail),
+                        description: '',
+                        status: 'success',
+                        duration: 3000,
+                        isClosable: true,
+                        })
+                    }
+                            
+                } catch (error) {
+                  throw error
+                }
+      
+            } else {
+                setEmailValid(false)
+                // Popup a succes toast if no errors.
+                toast({
+                    title: parse(msgErrorEmail),
+                    description: '',
+                    status: 'error',
+                    duration: 3000,
+                    isClosable: true,
+                    })
+            }
+          }
+      
     return (
         <div className={styles.buyModalBackdrop} ref={buyModalRef}>
             <div className={styles.buyModal}>
@@ -98,18 +159,18 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftN
                                 <div className={styles.messageNotConnected}>
                                     Remplissez votre email pour accéder à l'achat du NFT
                                 </div>
-                                <div style={{display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center', borderRadius: '5px'}}>
+                                <div style={{display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center', justifyContent: 'center', borderRadius: '5px'}}>
                                     <FormControl color={'white'} isInvalid={false}>
                                     <FormLabel color={'blue'}></FormLabel>
                                         <Input type='email' color={'black'} backgroundColor={'white'} 
                                         placeholder={''} 
                                         focusBorderColor='white'
-                                        
+                                        onChange={handleChangeEmail} 
                                         />
-                                        {<FormErrorMessage></FormErrorMessage>}
+                                        {!isEmailValid && <FormErrorMessage>{msgErrorEmail}</FormErrorMessage>}
                                     </FormControl>
                                     <div className={styles.rectangleSendEmail}>
-                                        <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid' left={'5px'}>
+                                        <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid' left={'5px'} onClick={handlSendEmail}>
                                         </Button>
                                     </div>            
                                 </div>

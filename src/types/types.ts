@@ -160,6 +160,8 @@ export type PresaleNftAboutArtistTexts = {
 export type PresaleNftCollectionTexts = {
     mainTitle : Record<Lang, string>
     secondaryTitle : Record<Lang, string>
+    msgSuccessEmail: Record<Lang, string>
+    msgErrorEmail: Record<Lang, string>
 }
 
 export type PresaleNftCollectionButtons = {
@@ -394,7 +396,9 @@ export interface BuyModalProps {
     nftName: string
     description: string
     imageUrl: string
-    price: string
+    price: string, 
+    msgSuccessEmail: string,
+    msgErrorEmail: string,
     buy: (() => void) | undefined
 }
 
@@ -402,6 +406,8 @@ export interface NftProps {
     artistName: string
     nftName: string
     imageUrl: string
+    msgSuccessEmail: string
+    msgErrorEmail: string
     price: string
     buttonBuy: string
     buttonPreBuy: string

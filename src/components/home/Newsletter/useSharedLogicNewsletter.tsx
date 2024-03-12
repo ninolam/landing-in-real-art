@@ -5,7 +5,7 @@ import { collection, getDocs } from 'firebase/firestore/lite'
 import { supabase } from "../../../utils/supabase/supabaseConnection"
 import {CODE_UNIQUE_KEY_VIOLATION, COLLECTION_NFTS_TABLE, NEWSLETTER_TABLE, PRIVATESALE_TABLE} from '../../../utils/supabase/constants'
 import { useToast } from '@chakra-ui/react'
-import parse from 'html-react-parser';
+import parse from 'html-react-parser'
 import { useAppContext } from "../../../context"
 
 const useSharedLogicNewsletter = () => {
