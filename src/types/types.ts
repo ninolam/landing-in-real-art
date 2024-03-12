@@ -391,6 +391,7 @@ export interface AcquireModalProps {
 export interface BuyModalProps {
     showBuyModal: boolean
     setShowBuyModal: React.Dispatch<React.SetStateAction<boolean>>
+    nftName: string
     description: string
     imageUrl: string
     price: string

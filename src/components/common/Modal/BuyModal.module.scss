@@ -32,6 +32,14 @@
     gap: 20px;
 }  
 
+.buttonPreBuyContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: antiquewhite;
+    padding: 10px;
+}  
+
 .messageNotConnected {
     font-family: $heading-h2-font-family;
 }
@@ -46,3 +54,17 @@
 .closeModalButton {
     cursor: pointer;
 }    
+
+.rectangleSendEmail {
+    background: #465c79;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 4px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

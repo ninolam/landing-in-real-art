@@ -1,19 +1,20 @@
 'use client';
-import { Card, CardBody, CardFooter, Divider, Heading, Stack, ButtonGroup, Button, Text, Image } from "@chakra-ui/react"
+import { Card, CardBody, CardFooter, Divider, Heading, Stack, ButtonGroup, Button, Text, Image, FormControl, FormLabel, Input, FormErrorMessage } from "@chakra-ui/react"
 import styles from './BuyModal.module.scss'
 import { BuyModalProps } from "../../../types/types"
 import { useEffect, useRef, useState } from "react"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { useAccount } from "wagmi"
 import {Close} from '@emotion-icons/evaicons-solid'
+import { IoSend } from "react-icons/io5";
 
-const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, description, imageUrl, price }) => {
+const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftName, description, imageUrl, price }) => {
 
     const [file, setFile] = useState("");
     const [cid, setCid] = useState("");
     const [uploading, setUploading] = useState(false);
 
-    const { isConnected } = useAccount();
+    //const { isConnected } = useAccount();
     const buyModalRef  = useRef<HTMLDivElement>(null)
     
     const uploadFile = async (fileToUpload: any) => {
@@ -62,7 +63,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, desc
                         borderRadius='lg'
                         />
                         <Stack mt='6' spacing='3'>
-                        <Heading size='md'>Artwork</Heading>
+                        <Heading size='md'>{nftName}</Heading>
                         <Text>
                             {description}
                         </Text>
@@ -74,7 +75,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, desc
                     <Divider />
                     <CardFooter>
                         <ButtonGroup spacing='2'>
-                            {!isConnected 
+                            {/*!isConnected 
                                 ? <Button variant='solid' colorScheme='blue' disabled={uploading} onClick={mintNFT}>
                                     {uploading ? "Uploading NFT..." : "Buy"}
                                 </Button>
@@ -91,7 +92,29 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, desc
                                     You must connect to the web3 to buy this NFT
                                 </div>
                             </div>
+                            */
                             }
+                            <div className={styles.buttonPreBuyContainer}>
+                                <div className={styles.messageNotConnected}>
+                                    Remplissez votre email pour accéder à l'achat du NFT
+                                </div>
+                                <div style={{display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center', borderRadius: '5px'}}>
+                                    <FormControl color={'white'} isInvalid={false}>
+                                    <FormLabel color={'blue'}></FormLabel>
+                                        <Input type='email' color={'black'} backgroundColor={'white'} 
+                                        placeholder={''} 
+                                        focusBorderColor='white'
+                                        
+                                        />
+                                        {<FormErrorMessage></FormErrorMessage>}
+                                    </FormControl>
+                                    <div className={styles.rectangleSendEmail}>
+                                        <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid' left={'5px'}>
+                                        </Button>
+                                    </div>            
+                                </div>
+                                
+                            </div>
                         </ButtonGroup>
                     </CardFooter>
                 </Card>

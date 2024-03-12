@@ -19,6 +19,7 @@ const Nft: React.FC<NftProps> = ({ artistName, nftName, imageUrl, price, buttonB
                 <BuyModal 
                     showBuyModal={showBuyModal}
                     setShowBuyModal={setShowBuyModal}
+                    nftName={nftName}
                     description={''}
                     imageUrl={imageUrl} price={price} 
                     buy={isConnected ? () => {console.log('Connected')} : openConnectModal}
