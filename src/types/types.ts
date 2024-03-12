@@ -155,6 +155,11 @@ export type PresaleNftAboutArtistTexts = {
     description : Record<Lang, string>
 }
 
+export type PresaleNftCollectionTexts = {
+    mainTitle : Record<Lang, string>
+    secondaryTitle : Record<Lang, string>
+}
+
 export type PresaleNftAboutArtistButtons = {
     discoverCollection : Record<Lang, string>
 }
