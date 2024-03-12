@@ -28,7 +28,7 @@ const Newsletter = () => {
     const {nlTexts, setNlTexts, 
       email, setEmail, isEmailValid, setEmailValid, checkboxNL, setCheckboxNL, 
       checkboxPS, setCheckboxPS, validateEmail, 
-      handleChangeEmail, handleChangeCheckBoxNL, handleChangeCheckBoxPS, handlSendEmail} 
+      handleChangeEmail, handleChangeCheckBoxNL, handleChangeCheckBoxPS, handleChangeCheckBoxNFTS, handlSendEmail} 
       = useSharedLogicNewsletter()
 
     return (
@@ -60,6 +60,7 @@ const Newsletter = () => {
               <Stack spacing={5} direction='row'>
                 <Checkbox color={'white'} colorScheme='white' onChange={handleChangeCheckBoxNL}>{nlTexts.checkboxNewsLetter[lang_]}</Checkbox>
                 <Checkbox  color={'white'} colorScheme='white'onChange={handleChangeCheckBoxPS}>{nlTexts.checkboxPrivateSale[lang_]}</Checkbox>
+                <Checkbox  color={'white'} colorScheme='white'onChange={handleChangeCheckBoxNFTS}>{nlTexts.checkboxCollectionNfts[lang_]}</Checkbox>
               </Stack>
             </div>
           </div>

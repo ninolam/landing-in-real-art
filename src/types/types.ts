@@ -74,9 +74,11 @@ export type NewsletterText<T extends Record<Lang, string>> = {
     email_placeholder: T
     checkboxNewsLetter: T
     checkboxPrivateSale: T
+    checkboxCollectionNfts: T
     sendEmailErrorMsg: T
     msgSuccessNewsLetter: T
     msgSuccessPrivateSale: T
+    msgSuccessNfts: T
 }  
 
 export type PartnersTexts<T extends Record<Lang, string>> = {

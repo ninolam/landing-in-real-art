@@ -3,7 +3,7 @@ import { Lang, NewsletterData, NewsletterText, defaultLangObject } from "../../.
 import { db } from '../../../firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore/lite'
 import { supabase } from "../../../utils/supabase/supabaseConnection"
-import {CODE_UNIQUE_KEY_VIOLATION, NEWSLETTER_TABLE, PRIVATESALE_TABLE} from '../../../utils/supabase/constants'
+import {CODE_UNIQUE_KEY_VIOLATION, COLLECTION_NFTS_TABLE, NEWSLETTER_TABLE, PRIVATESALE_TABLE} from '../../../utils/supabase/constants'
 import { useToast } from '@chakra-ui/react'
 import parse from 'html-react-parser';
 import { useAppContext } from "../../../context"
@@ -16,10 +16,11 @@ const useSharedLogicNewsletter = () => {
     const toast = useToast()
     const FIREBASE_NEWSLETTER_COLLECTION = 'Newsletter'
   
-    const [email, setEmail]             = useState('')
-    const [isEmailValid, setEmailValid] = useState(true)
-    const [checkboxNL, setCheckboxNL]   = useState(false);
-    const [checkboxPS, setCheckboxPS]   = useState(false);
+    const [email, setEmail]               = useState('')
+    const [isEmailValid, setEmailValid]   = useState(true)
+    const [checkboxNL, setCheckboxNL]     = useState(false);
+    const [checkboxPS, setCheckboxPS]     = useState(false);
+    const [checkboxNFTS, setCheckboxNFTS] = useState(false);
 
     const defaultNlText = {
       title: defaultLangObject,
@@ -27,9 +28,11 @@ const useSharedLogicNewsletter = () => {
       email_placeholder: defaultLangObject,
       checkboxNewsLetter: defaultLangObject,
       checkboxPrivateSale: defaultLangObject,
+      checkboxCollectionNfts: defaultLangObject,
       sendEmailErrorMsg: defaultLangObject,
       msgSuccessNewsLetter: defaultLangObject,
-      msgSuccessPrivateSale: defaultLangObject
+      msgSuccessPrivateSale: defaultLangObject,
+      msgSuccessNfts: defaultLangObject
     }
     const [nlTexts, setNlTexts] = useState<NewsletterText<Record<Lang, string>>>(defaultNlText)
   
@@ -38,7 +41,7 @@ const useSharedLogicNewsletter = () => {
           const nlCollection = collection(db, FIREBASE_NEWSLETTER_COLLECTION)
           const nlDocuments  = await getDocs(nlCollection)
           const nlData       = nlDocuments.docs.map(doc => doc.data() as NewsletterData)
-          
+          console.log(nlData[0])
           setNlTexts(nlData[0] as NewsletterText<Record<Lang, string>>)
       }
       fetchData()
@@ -54,6 +57,7 @@ const useSharedLogicNewsletter = () => {
     const handleChangeEmail = (e: any) => setEmail(e.target.value)
     const handleChangeCheckBoxNL = (e: any) => setCheckboxNL(e.target.checked)
     const handleChangeCheckBoxPS = (e: any) => setCheckboxPS(e.target.checked)
+    const handleChangeCheckBoxNFTS = (e: any) => setCheckboxNFTS(e.target.checked)
 
     //------------------------------------------------------------------------------ insertEmail
     const insertEmail = async (table: string) => {
@@ -72,7 +76,7 @@ const useSharedLogicNewsletter = () => {
 
     //------------------------------------------------------------------------------ handlSendEmail
     const handlSendEmail = async () => {
-      const isAtLeastOneCheckboxChecked = checkboxNL || checkboxPS;
+      const isAtLeastOneCheckboxChecked = checkboxNL || checkboxPS || checkboxNFTS;
       
       if (validateEmail(email) && isAtLeastOneCheckboxChecked) {
           setEmailValid(true)
@@ -125,6 +129,29 @@ const useSharedLogicNewsletter = () => {
                 })
               }
             }          
+            //Insert in collectionNfts Table
+            if (checkboxNFTS) {
+              const msgError = await insertEmail(COLLECTION_NFTS_TABLE)
+              if (msgError !== '') {
+                toast({
+                  title: msgError,
+                  description: '',
+                  status: 'error',
+                  duration: 3000,
+                  isClosable: true,
+                })  
+              }
+              else {
+                // Popup a succes toast if no errors.
+                toast({
+                  title: parse(nlTexts.msgSuccessNfts[lang_]),
+                  description: '',
+                  status: 'success',
+                  duration: 3000,
+                  isClosable: true,
+                })
+              }
+            }          
           } catch (error) {
             throw error
           }
@@ -135,7 +162,7 @@ const useSharedLogicNewsletter = () => {
     }
     
 
-    return {nlTexts, setNlTexts, email, setEmail, isEmailValid, setEmailValid, checkboxNL, setCheckboxNL, checkboxPS, setCheckboxPS, validateEmail, handleChangeEmail, handleChangeCheckBoxNL, handleChangeCheckBoxPS, handlSendEmail}
+    return {nlTexts, setNlTexts, email, setEmail, isEmailValid, setEmailValid, checkboxNL, setCheckboxNL, checkboxPS, setCheckboxPS, validateEmail, handleChangeEmail, handleChangeCheckBoxNL, handleChangeCheckBoxPS, handleChangeCheckBoxNFTS, handlSendEmail}
 }    
 
 export default useSharedLogicNewsletter
