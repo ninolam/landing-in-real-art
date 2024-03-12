@@ -5,8 +5,17 @@ import JoinMovementNftGallery from './JoinMovementNftGallery'
 import JoinMovementNftGallery1100 from './JoinMovementNftGallery1100'
 import JoinMovementNftGallery950 from './JoinMovementNftGallery950'
 import Link from 'next/link'
+import { useAppContext } from '../../../context'
+import { Lang } from '../../../types/types'
+import useSharedLogicJoinMovementNft from './useSharedLogicJoinMovementNft'
 
 const JoinMovementNft = () => {
+
+    //Get the language of the global context
+    const {lang } = useAppContext()
+    const lang_ = lang as Lang
+
+    const {texts, setTexts, buttons, setButtons} = useSharedLogicJoinMovementNft()
 
     const [isUnder1100, setIsUnder1100] = useState(false)
     const [isUnder950, setIsUnder950] = useState(false)
@@ -35,18 +44,16 @@ const JoinMovementNft = () => {
   return (
     <div className={styles["joinMovementNft"]}>
         <div className={styles["joinMovementNftHeroleft"]}>
-            <div className={styles["joinMovementNftHeroleftTitle"]}>Rejoindre le mouvement</div>
+            <div className={styles["joinMovementNftHeroleftTitle"]}>{texts.mainTitle[lang_]}</div>
 
             <div className={styles["joinMovementNftDescription"]}>
-                Inreal Art offers buyers the possibility to acquire an NFT work linked to a
-                real asset that is nothing other than the physical work. The buyer has the
-                choice of sales typology and can resell it on our marketplace.
+                {texts.mainDescription[lang_]}
             </div>
 
             <div className={styles["joinMovementNftButtonsContainer"]}>
                 <div className={styles["joinMovementNftButtons"]}>
                     <div className={styles["joinMovementNft__frame-2"]}>
-                        <Link href="#collection" className={styles["joinMovementNft__buy-nft"]}>Buy NFT</Link>
+                        <Link href="#collection" className={styles["joinMovementNft__buy-nft"]}>{buttons.buyNft[lang_]}</Link>
                     </div>
                 </div>
             </div>

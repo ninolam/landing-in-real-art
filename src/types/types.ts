@@ -140,6 +140,16 @@ export type AboutTexts = {
     mainDescription : Record<Lang, string>
 }
 
+export type PresaleNftTexts = {
+    mainTitle : Record<Lang, string>
+    mainDescription : Record<Lang, string>
+}
+
+export type PresaleNftButtons = {
+    buyNft : Record<Lang, string>
+}
+
+
 export type TosTexts = {
     mainTitle : Record<Lang, string>
     mainContent: Record<Lang, string>
