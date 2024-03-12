@@ -160,6 +160,11 @@ export type PresaleNftCollectionTexts = {
     secondaryTitle : Record<Lang, string>
 }
 
+export type PresaleNftCollectionButtons = {
+    buyLeloluceNft : Record<Lang, string>
+    preBuyLeloluceNft : Record<Lang, string>
+}
+
 export type PresaleNftAboutArtistButtons = {
     discoverCollection : Record<Lang, string>
 }
@@ -395,4 +400,6 @@ export interface NftProps {
     nftName: string
     imageUrl: string
     price: string
+    buttonBuy: string
+    buttonPreBuy: string
 }

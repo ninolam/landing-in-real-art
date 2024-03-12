@@ -8,7 +8,7 @@ import {
   } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 
-const Nft: React.FC<NftProps> = ({ artistName, nftName, imageUrl, price }) => {
+const Nft: React.FC<NftProps> = ({ artistName, nftName, imageUrl, price, buttonBuy, buttonPreBuy }) => {
     const { isConnected } = useAccount();
     const { openConnectModal } = useConnectModal();
     const [showBuyModal, setShowBuyModal] = useState<boolean>(false);
@@ -36,7 +36,7 @@ const Nft: React.FC<NftProps> = ({ artistName, nftName, imageUrl, price }) => {
                     </div>
                 </div>  
                 <div className={styles.buyButtonContainer} onClick={() => setShowBuyModal(true)}>
-                    <div className={styles.buyButton}>Buy</div>
+                    <div className={styles.buyButton}>{buttonBuy}</div>
                 </div>
             </div>
         </>       

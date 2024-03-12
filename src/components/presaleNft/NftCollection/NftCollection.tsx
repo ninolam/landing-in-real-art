@@ -13,7 +13,7 @@ const NftCollection = () => {
     const {lang } = useAppContext()
     const lang_ = lang as Lang
     
-    const {texts, setTexts, nfts,setNfts } = useSharedLogicCollectionNft()
+    const { buttons, setButtons, texts, setTexts, nfts,setNfts } = useSharedLogicCollectionNft()
     
     // State to keep track of how many images are currently displayed
     const [visibleCount, setVisibleCount] = useState(10)
@@ -38,7 +38,13 @@ const NftCollection = () => {
             {
                     nfts.slice(0, visibleCount).map( (nft, index) => (
                         <>
-                            <Nft artistName={'@Leloluce'} nftName={nft.name[lang_]} imageUrl={nft.url} price={nft.price} ></Nft>        
+                            <Nft 
+                                artistName={'@Leloluce'} 
+                                nftName={nft.name[lang_]} 
+                                imageUrl={nft.url} 
+                                price={nft.price} 
+                                buttonBuy={buttons.buyLeloluceNft[lang_]} 
+                                buttonPreBuy={buttons.preBuyLeloluceNft[lang_]}></Nft>        
                         </>
                         ))
                     }
