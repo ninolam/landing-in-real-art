@@ -305,6 +305,16 @@ export type PresaleArtWork = {
     price: number
 }
 
+export type CollectionLeloluceNfts  = Array<LeloluceNft>
+
+export type LeloluceNft = {
+    description: Record<Lang, string>
+    image: string
+    name: Record<Lang, string>
+    price: string
+    url: string
+}
+
 export type PresaleInvestmentsTexts = {
     card1: PresaleInvestmentsCard
     card2: PresaleInvestmentsCard
@@ -376,7 +386,7 @@ export interface BuyModalProps {
     setShowBuyModal: React.Dispatch<React.SetStateAction<boolean>>
     description: string
     imageUrl: string
-    price: number
+    price: string
     buy: (() => void) | undefined
 }
 
@@ -384,5 +394,5 @@ export interface NftProps {
     artistName: string
     nftName: string
     imageUrl: string
-    price: number
+    price: string
 }

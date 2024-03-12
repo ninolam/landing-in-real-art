@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useAppContext } from '../../../context'
 import { Lang } from '../../../types/types'
 import BuyModal from '../../common/Modal/BuyModal'
@@ -12,8 +13,11 @@ const NftCollection = () => {
     const {lang } = useAppContext()
     const lang_ = lang as Lang
     
-    const {texts, setTexts } = useSharedLogicCollectionNft()
-    console.log(texts)
+    const {texts, setTexts, nfts,setNfts } = useSharedLogicCollectionNft()
+    
+    // State to keep track of how many images are currently displayed
+    const [visibleCount, setVisibleCount] = useState(10)
+
     const ARTIST_NAME = 'Leloluce'
 
     return (
@@ -31,12 +35,13 @@ const NftCollection = () => {
             </div>
 
             <div className={styles.nftCollection}>
-                <Nft artistName={'@Leloluce'} nftName={'Musicata'} imageUrl={'img/presaleNft/leloluce1.jpg'} price={1} ></Nft>
-                <Nft artistName={'@Leloluce'} nftName={'Musicata'} imageUrl={'img/presaleNft/leloluce2.jpg'} price={0.5} ></Nft>
-                <Nft artistName={'@Leloluce'} nftName={'Musicata'} imageUrl={'img/presaleNft/leloluce3.jpg'} price={2.5} ></Nft>
-                <Nft artistName={'@Leloluce'} nftName={'Musicata'} imageUrl={'img/presaleNft/leloluce4.jpg'} price={0.8} ></Nft>
-                <Nft artistName={'@Leloluce'} nftName={'Musicata'} imageUrl={'img/presaleNft/leloluce5.jpg'} price={0.8} ></Nft>
-                <Nft artistName={'@Leloluce'} nftName={'Musicata'} imageUrl={'img/presaleNft/leloluce6.jpg'} price={0.8} ></Nft>
+            {
+                    nfts.slice(0, visibleCount).map( (nft, index) => (
+                        <>
+                            <Nft artistName={'@Leloluce'} nftName={nft.name[lang_]} imageUrl={nft.url} price={nft.price} ></Nft>        
+                        </>
+                        ))
+                    }
             </div>
         </div>
     )
