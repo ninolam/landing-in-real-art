@@ -45,16 +45,6 @@ const JoinMovement = () => {
               {parse(joinTrendtexts.artgallery_description[lang_])}
             </div>
           </div>
-          <div className={styles.buttonJoinMovement}>
-            <Link
-              className={styles.joinMovementLink}
-              href={joinTrendButtons.artgallery_join_link}
-            >
-              <div className={styles.heading3}>
-                {joinTrendButtons.artgallery_join[lang_]}
-              </div>
-            </Link>
-          </div>
         </div>
         <div className={styles.frameArtasservice}>
           <div className={styles.frame48095731}>
@@ -94,16 +84,6 @@ const JoinMovement = () => {
             <div className={styles.paragraph2}>
               {parse(joinTrendtexts.marketplace_description[lang_])}
             </div>
-          </div>
-          <div className={styles.buttonJoinMovement}>
-            <Link
-              className={styles.joinMovementLink}
-              href={joinTrendButtons.marketplace_join_link}
-            >
-              <div className={styles.heading3}>
-                {joinTrendButtons.marketplace_join[lang_]}
-              </div>
-            </Link>
           </div>
         </div>
 

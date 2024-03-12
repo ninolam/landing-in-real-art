@@ -141,9 +141,11 @@ a.joinMovementLink {
   }
   
   .lp-mobile__frame-3 {
+    margin: 0 auto;
+    margin-top: 30px;
     background: #6052ff;
     border-radius: 6px;
-    padding: 14px 31px 14px 31px;
+    padding: 14px 31px;
     display: flex;
     flex-direction: row;
     gap: 10px;

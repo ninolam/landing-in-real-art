@@ -1,48 +1,48 @@
 .frame48095739 {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-shrink: 0;
-    position: relative;
-  }
-  
-  .titleJoinMovement {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: flex-start;
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
 
-  .rejoindreLeMouvement {
-    color: var(--primaire-black, #000035);
-    text-align: left;
-    font-family: 'Unbounded', sans-serif;
-    /*font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);*/
-    font-size: var(--heading-h-2-font-size, 48px);
-    font-weight: var(--heading-h-2-font-weight, 600);
-    position: relative;
-    width: 394px;
-  }
+.titleJoinMovement {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
 
-  .vuesax-linear-status {
-    height: 24px !important;
-    left: 23px !important;
-    position: absolute !important;
-    top: 25px !important;
-    width: 24px !important;
-    color: #7A5F9A;
-  }
-  
+.rejoindreLeMouvement {
+  color: var(--primaire-black, #000035);
+  text-align: left;
+  font-family: "Unbounded", sans-serif;
+  /*font-family: var(--heading-h-2-font-family, "Unbounded-SemiBold", sans-serif);*/
+  font-size: var(--heading-h-2-font-size, 48px);
+  font-weight: var(--heading-h-2-font-weight, 600);
+  position: relative;
+  width: 394px;
+}
+
+.vuesax-linear-status {
+  height: 24px !important;
+  left: 23px !important;
+  position: absolute !important;
+  top: 25px !important;
+  width: 24px !important;
+  color: #7a5f9a;
+}
+
 a.joinMovementLink {
-    text-decoration: none;
-}  
+  text-decoration: none;
+}
 
 .wrraperCard {
   display: flex;
@@ -97,11 +97,7 @@ a.joinMovementLink {
   border-radius: 41px;
   border-width: 1px;
   border-style: solid;
-  border-image: linear-gradient(
-    114.95deg,
-    rgba(255, 255, 255, 0.6) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  border-image: linear-gradient(114.95deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
   border-image-slice: 1;
   flex-shrink: 0;
   width: 70px;
@@ -115,7 +111,7 @@ a.joinMovementLink {
 .heading2 {
   color: #000000;
   text-align: left;
-  font-family: 'Unbounded', sans-serif;
+  font-family: "Unbounded", sans-serif;
   /*font-family: "Unbounded-Regular", sans-serif;*/
   font-size: 30px;
   font-weight: 400;
@@ -141,24 +137,26 @@ a.joinMovementLink {
   cursor: pointer;
   background: #6052ff;
   border-radius: 6px;
-  padding: 14px 31px 14px 31px;
+  padding: 20px 40px;
   display: flex;
   flex-direction: row;
   gap: 10px;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  position: relative;
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
   transform-origin: 0 0;
-  transform: rotate(0deg) scale(1, 1);
+  transform: translateX(-50%);
 }
 
 .heading3 {
   color: #ffffff;
   text-align: left;
-  font-family: 'Unbounded', sans-serif;
+  font-family: "Unbounded", sans-serif;
   /*font-family: var(--heading-h-4-font-family, "Unbounded-Medium", sans-serif);*/
-  font-size: var(--heading-h-4-font-size, 16px);
+  font-size: var(--heading-h-4-font-size, 18px);
   font-weight: var(--heading-h-4-font-weight, 500);
   position: relative;
 }
@@ -166,7 +164,7 @@ a.joinMovementLink {
 .heading4 {
   color: #000000;
   text-align: left;
-  font-family: 'Unbounded', sans-serif;
+  font-family: "Unbounded", sans-serif;
   /*font-family: "Unbounded-Regular", sans-serif;*/
   font-size: 30px;
   font-weight: 400;
@@ -232,7 +230,7 @@ a.joinMovementLink {
 .heading5 {
   color: #000000;
   text-align: left;
-  font-family: 'Unbounded', sans-serif;
+  font-family: "Unbounded", sans-serif;
   /*font-family: "Unbounded-Regular", sans-serif;*/
   font-size: 30px;
   font-weight: 400;
@@ -240,7 +238,6 @@ a.joinMovementLink {
 }
 
 @media (max-width: 1200px) {
-
   .wrraperCard {
     display: flex;
     flex-direction: row;
@@ -253,7 +250,6 @@ a.joinMovementLink {
 }
 
 @media (max-width: 1100px) {
-
   .wrraperCard {
     display: flex;
     flex-direction: row;
@@ -266,7 +262,6 @@ a.joinMovementLink {
 }
 
 @media (max-width: 1000px) {
-
   .wrraperCard {
     display: flex;
     flex-direction: row;
@@ -291,7 +286,7 @@ a.joinMovementLink {
     position: relative;
     transform-origin: 0 0;
     transform: rotate(0deg) scale(1, 1);
-    width:280px;
+    width: 280px;
   }
 
   .frame48095731 {
@@ -307,9 +302,9 @@ a.joinMovementLink {
     position: relative;
     transform-origin: 0 0;
     transform: rotate(0deg) scale(1, 1);
-    width:280px;
+    width: 280px;
   }
-  
+
   .frameArtasservice {
     padding: 0px 0px 123px 0px;
     display: flex;
@@ -319,10 +314,9 @@ a.joinMovementLink {
     justify-content: center;
     flex-shrink: 0;
     position: relative;
-    width:280px;
+    width: 280px;
   }
 
-  
   .frameMarketplace {
     background: var(--primaire-white, #f6f8ff);
     border-radius: 24px;
@@ -337,9 +331,9 @@ a.joinMovementLink {
     position: relative;
     transform-origin: 0 0;
     transform: rotate(0deg) scale(1, 1);
-    width:280px;
+    width: 280px;
   }
-  
+
   .paragraph2 {
     color: #000000;
     text-align: left;
@@ -353,6 +347,4 @@ a.joinMovementLink {
     transform-origin: 0 0;
     transform: rotate(0deg) scale(1, 1);
   }
-  
-  
 }

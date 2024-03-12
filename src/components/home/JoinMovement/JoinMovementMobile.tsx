@@ -38,11 +38,6 @@ const JoinMovementMobile = () => {
           <div className={styles["lp-mobile__heading2"]}>{parse(joinTrendtexts.artgallery_title[lang_])}</div>
           <div className={styles["lp-mobile__paragraph"]}>{parse(joinTrendtexts.artgallery_description[lang_])}</div>
         </div>
-        <div className={styles["lp-mobile__frame-3"]}>
-          <Link className={styles.joinMovementLink} href={joinTrendButtons.artgallery_join_link}>
-            <div className={styles["lp-mobile__heading3"]}>{joinTrendButtons.artgallery_join[lang_]}</div>
-          </Link>  
-        </div>
       </div>
       <div className={styles["lp-mobile__frame-48095731"]}>
         <div className={styles["lp-mobile__frame-76"]}>
@@ -52,11 +47,6 @@ const JoinMovementMobile = () => {
         <div className={styles["lp-mobile__frame-7"]}>
           <div className={styles["lp-mobile__heading4"]}>{parse(joinTrendtexts.aas_title[lang_])}</div>
           <div className={styles["lp-mobile__paragraph"]}>{parse(joinTrendtexts.aas_description[lang_])}</div>
-        </div>
-        <div className={styles["lp-mobile__frame-3"]}>
-          <Link className={styles.joinMovementLink} href={joinTrendButtons.aas_join_link}>
-            <div className={styles["lp-mobile__heading5"]}>{joinTrendButtons.aas_join[lang_]}</div>
-          </Link>  
         </div>
       </div>
       <div className={styles["lp-mobile__frame-48095732"]}>
@@ -68,12 +58,12 @@ const JoinMovementMobile = () => {
           <div className={styles["lp-mobile__heading6"]}>{joinTrendtexts.marketplace_title[lang_]}</div>
           <div className={styles["lp-mobile__paragraph"]}>{parse(joinTrendtexts.marketplace_description[lang_])}</div>
         </div>
-        <div className={styles["lp-mobile__frame-3"]}>
+      </div>
+      <div className={styles["lp-mobile__frame-3"]}>
           <Link className={styles.joinMovementLink} href={joinTrendButtons.marketplace_join_link}>  
             <div className={styles["lp-mobile__heading7"]}>{joinTrendButtons.marketplace_join[lang_]}</div>
           </Link>  
         </div>
-      </div>
     </div>
   </div>
 
