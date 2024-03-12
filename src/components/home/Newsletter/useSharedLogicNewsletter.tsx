@@ -3,7 +3,7 @@ import { Lang, NewsletterData, NewsletterText, defaultLangObject } from "../../.
 import { db } from '../../../firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore/lite'
 import { supabase } from "../../../utils/supabase/supabaseConnection"
-import {NEWSLETTER_TABLE, PRIVATESALE_TABLE} from '../../../utils/supabase/constants'
+import {CODE_UNIQUE_KEY_VIOLATION, NEWSLETTER_TABLE, PRIVATESALE_TABLE} from '../../../utils/supabase/constants'
 import { useToast } from '@chakra-ui/react'
 import parse from 'html-react-parser';
 import { useAppContext } from "../../../context"
@@ -55,18 +55,19 @@ const useSharedLogicNewsletter = () => {
     const handleChangeCheckBoxNL = (e: any) => setCheckboxNL(e.target.checked)
     const handleChangeCheckBoxPS = (e: any) => setCheckboxPS(e.target.checked)
 
-    //------------------------------------------------------------------------------ checkEmailDoesNotExist
-    const checkEmailDoesNotExist = async () => {
-
-    }
-    
     //------------------------------------------------------------------------------ insertEmail
     const insertEmail = async (table: string) => {
-        const { error } = await supabase
-          .from(table)
-          .insert({ email: email })
-        console.log('error email', error)  
-        return error  
+      let msgError = ''
+      const { error } = await supabase
+        .from(table)
+        .insert({ email: email })
+      if (error?.code == CODE_UNIQUE_KEY_VIOLATION) {
+        msgError = 'This email already exists in our e-mail base'    
+      }
+      else {
+        if (error) throw error  
+      }
+      return msgError
     }
 
     //------------------------------------------------------------------------------ handlSendEmail
@@ -74,42 +75,60 @@ const useSharedLogicNewsletter = () => {
       const isAtLeastOneCheckboxChecked = checkboxNL || checkboxPS;
       
       if (validateEmail(email) && isAtLeastOneCheckboxChecked) {
-          setEmailValid(true);
-          //Insert in Newsletter Table
-          if (checkboxNL) {
-            const error = await insertEmail(NEWSLETTER_TABLE)
-            // Handle any errors.
-            if (error) { 
-              throw error 
+          setEmailValid(true)
+
+          try {
+            //Insert in Newsletter Table
+            if (checkboxNL) {
+              const msgError = await insertEmail(NEWSLETTER_TABLE)
+              if (msgError !== '') {
+                toast({
+                  title: msgError,
+                  description: '',
+                  status: 'error',
+                  duration: 3000,
+                  isClosable: true,
+                })  
+              }
+              else {
+                // Popup a succes toast if no errors.
+                toast({
+                  title: parse(nlTexts.msgSuccessNewsLetter[lang_]),
+                  description: '',
+                  status: 'success',
+                  duration: 3000,
+                  isClosable: true,
+                })
+              }
+              
             }
-            else {
-              toast({
-                title: parse(nlTexts.msgSuccessNewsLetter[lang_]),
-                description: '',
-                status: 'success',
-                duration: 3000,
-                isClosable: true,
-              })
-            }
+            //Insert in Privatesale Table
+            if (checkboxPS) {
+              const msgError = await insertEmail(PRIVATESALE_TABLE)
+              if (msgError !== '') {
+                toast({
+                  title: msgError,
+                  description: '',
+                  status: 'error',
+                  duration: 3000,
+                  isClosable: true,
+                })  
+              }
+              else {
+                // Popup a succes toast if no errors.
+                toast({
+                  title: parse(nlTexts.msgSuccessPrivateSale[lang_]),
+                  description: '',
+                  status: 'success',
+                  duration: 3000,
+                  isClosable: true,
+                })
+              }
+            }          
+          } catch (error) {
+            throw error
           }
-          //Insert in Privatesale Table
-          if (checkboxPS) {
-            const error = await insertEmail(PRIVATESALE_TABLE)
-            // Handle any errors.
-            if (error) { 
-              throw error 
-            }
-            else {
-              toast({
-                title: parse(nlTexts.msgSuccessPrivateSale[lang_]),
-                description: '',
-                status: 'success',
-                duration: 3000,
-                isClosable: true,
-              })
-            }
-          }
-          
+
       } else {
           setEmailValid(false)
       }
