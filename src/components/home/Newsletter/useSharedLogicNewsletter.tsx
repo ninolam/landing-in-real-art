@@ -76,82 +76,31 @@ const useSharedLogicNewsletter = () => {
 
     //------------------------------------------------------------------------------ handlSendEmail
     const handlSendEmail = async () => {
-      const isAtLeastOneCheckboxChecked = checkboxNL || checkboxPS || checkboxNFTS;
       
-      if (validateEmail(email) && isAtLeastOneCheckboxChecked) {
+      if (validateEmail(email)) {
           setEmailValid(true)
-
           try {
             //Insert in Newsletter Table
-            if (checkboxNL) {
-              const msgError = await insertEmail(NEWSLETTER_TABLE)
-              if (msgError !== '') {
-                toast({
-                  title: msgError,
-                  description: '',
-                  status: 'error',
-                  duration: 3000,
-                  isClosable: true,
-                })  
-              }
-              else {
-                // Popup a succes toast if no errors.
-                toast({
-                  title: parse(nlTexts.msgSuccessNewsLetter[lang_]),
-                  description: '',
-                  status: 'success',
-                  duration: 3000,
-                  isClosable: true,
-                })
-              }
-              
+            const msgError = await insertEmail(NEWSLETTER_TABLE)
+            if (msgError !== '') {
+              toast({
+                title: msgError,
+                description: '',
+                status: 'error',
+                duration: 3000,
+                isClosable: true,
+              })  
             }
-            //Insert in Privatesale Table
-            if (checkboxPS) {
-              const msgError = await insertEmail(PRIVATESALE_TABLE)
-              if (msgError !== '') {
-                toast({
-                  title: msgError,
-                  description: '',
-                  status: 'error',
-                  duration: 3000,
-                  isClosable: true,
-                })  
-              }
-              else {
-                // Popup a succes toast if no errors.
-                toast({
-                  title: parse(nlTexts.msgSuccessPrivateSale[lang_]),
-                  description: '',
-                  status: 'success',
-                  duration: 3000,
-                  isClosable: true,
-                })
-              }
-            }          
-            //Insert in collectionNfts Table
-            if (checkboxNFTS) {
-              const msgError = await insertEmail(COLLECTION_NFTS_TABLE)
-              if (msgError !== '') {
-                toast({
-                  title: msgError,
-                  description: '',
-                  status: 'error',
-                  duration: 3000,
-                  isClosable: true,
-                })  
-              }
-              else {
-                // Popup a succes toast if no errors.
-                toast({
-                  title: parse(nlTexts.msgSuccessNfts[lang_]),
-                  description: '',
-                  status: 'success',
-                  duration: 3000,
-                  isClosable: true,
-                })
-              }
-            }          
+            else {
+              // Popup a succes toast if no errors.
+              toast({
+                title: parse(nlTexts.msgSuccessNewsLetter[lang_]),
+                description: '',
+                status: 'success',
+                duration: 3000,
+                isClosable: true,
+              })
+            }
           } catch (error) {
             throw error
           }
