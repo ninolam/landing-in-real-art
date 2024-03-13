@@ -373,6 +373,9 @@ export interface PresaleDropPanelTexts {
     countDown: {
         endDate: EndDateTimestamp
     }
+    msgErrorEmail: string
+    msgSuccessEmail: string
+    titleFormEmail: Record<Lang, string>
 }
 
 export type PresaleDropPanelData = PresaleDropPanelArtworks & PresaleDropPanelButtons & PresaleDropPanelTexts
@@ -388,8 +391,11 @@ export interface ModalProps {
 export interface AcquireModalProps {
     buttonBuyStripe: string,
     description: string
+    imagePath: string
     imageUrl: string
     price: number
+    msgSuccessEmail: string
+    msgErrorEmail: string
 }
 
 export interface BuyModalProps {

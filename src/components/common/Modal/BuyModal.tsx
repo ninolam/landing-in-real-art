@@ -11,6 +11,7 @@ import { insertEmail } from "../../../utils/supabase/supabaseFunctions";
 import { COLLECTION_NFTS_TABLE } from "../../../utils/supabase/constants";
 import parse from 'html-react-parser';
 import VideoNft from "../Video/VideoNft";
+import { validateEmail } from "../../../utils/client/clientFunctions";
 
 const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftName, description, imagePath, imageUrl, videoUrl, price, msgSuccessEmail, msgErrorEmail }) => {
 
@@ -56,59 +57,54 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftN
         uploadFile(imageUrl)
     }
 
-    // Email validation function
-    const validateEmail = (email: string) => {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(String(email).toLowerCase());
-      }
-  
+    //------------------------------------------------------------------------------ handleChangeEmail
     const handleChangeEmail = (e: any) => setEmail(e.target.value)
 
-        //------------------------------------------------------------------------------ handlSendEmail
-        const handlSendEmail = async () => {
-            if (validateEmail(email)) {
-                setEmailValid(true)
-      
-                try {
-                  //Insert in collectionNfts Table
-                    
-                    const msgError = await insertEmail(COLLECTION_NFTS_TABLE, email, imagePath)
-                    if (msgError !== '') {
-                        toast({
-                        title: msgError,
-                        description: '',
-                        status: 'error',
-                        duration: 3000,
-                        isClosable: true,
-                        })  
-                    }
-                    else {
-                        // Popup a succes toast if no errors.
-                        toast({
-                        title: parse(msgSuccessEmail),
-                        description: '',
-                        status: 'success',
-                        duration: 3000,
-                        isClosable: true,
-                        })
-                    }
-                            
-                } catch (error) {
-                  throw error
-                }
-      
-            } else {
-                setEmailValid(false)
-                // Popup a succes toast if no errors.
-                toast({
-                    title: parse(msgErrorEmail),
+    //------------------------------------------------------------------------------ handlSendEmail
+    const handlSendEmail = async () => {
+        if (validateEmail(email)) {
+            setEmailValid(true)
+    
+            try {
+                //Insert in collectionNfts Table
+                
+                const msgError = await insertEmail(COLLECTION_NFTS_TABLE, email, imagePath)
+                if (msgError !== '') {
+                    toast({
+                    title: msgError,
                     description: '',
                     status: 'error',
                     duration: 3000,
                     isClosable: true,
+                    })  
+                }
+                else {
+                    // Popup a succes toast if no errors.
+                    toast({
+                    title: parse(msgSuccessEmail),
+                    description: '',
+                    status: 'success',
+                    duration: 3000,
+                    isClosable: true,
                     })
+                }
+                        
+            } catch (error) {
+                throw error
             }
-          }
+    
+        } else {
+            setEmailValid(false)
+            // Popup a succes toast if no errors.
+            toast({
+                title: parse(msgErrorEmail),
+                description: '',
+                status: 'error',
+                duration: 3000,
+                isClosable: true,
+                })
+        }
+    }
       
     return (
         <div className={styles.buyModalBackdrop} ref={buyModalRef}>

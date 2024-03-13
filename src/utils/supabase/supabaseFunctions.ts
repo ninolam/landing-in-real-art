@@ -14,5 +14,5 @@ export const insertEmail = async (table: string, email: string, resourcePath: st
         if (error) throw error  
     }
     return msgError
-    }
+}
   

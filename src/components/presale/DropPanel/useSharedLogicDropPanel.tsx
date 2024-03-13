@@ -15,7 +15,10 @@ const useSharedLogicDropPanel = () => {
                 nanoseconds: 0,
                 seconds: 0
             }
-        }
+        },
+        msgErrorEmail: '',
+        msgSuccessEmail: '',
+        titleFormEmail: defaultLangObject
     }
 
     const defaultButton = {

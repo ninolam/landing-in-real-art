@@ -6,7 +6,11 @@ import useSharedLogicDropPanel from "./useSharedLogicDropPanel"
 import { useEffect, useRef, useState } from "react"
 import parse from 'html-react-parser'
 import CountdownTimer from "./CountDownTimer"
-import { Card, CardBody, CardFooter, Divider, Heading, Stack, ButtonGroup, Button, Text, Image } from "@chakra-ui/react"
+import { Card, CardBody, CardFooter, Divider, Heading, Stack, ButtonGroup, Button, Text, Image, FormControl, FormLabel, Input, useToast, FormErrorMessage } from "@chakra-ui/react"
+import { IoSend } from "react-icons/io5"
+import { validateEmail } from "../../../utils/client/clientFunctions"
+import { insertEmail } from "../../../utils/supabase/supabaseFunctions"
+import { PRIVATESALE_TABLE } from "../../../utils/supabase/constants"
 
 const DropPanel: React.FC = () => {
 
@@ -27,7 +31,10 @@ const DropPanel: React.FC = () => {
     const [acquireModalImageUrl, setAcquireModalImageUrl] = useState<string>('')
     const [acquireButtonBuyStripe, setAcquireButtonBuyStripe] = useState<string>('')
     const [closeButton, setCloseButton]   = useState<string>('')
-
+    const [email, setEmail]               = useState('')
+    const [isEmailValid, setEmailValid]   = useState(true)
+    const toast = useToast()
+    
     // State to keep track of how many images are currently displayed
     const [visibleCount, setVisibleCount] = useState(10)
     
@@ -77,7 +84,56 @@ const DropPanel: React.FC = () => {
         )
     }
     
-    const AcquireModal: React.FC<AcquireModalProps> = ({ description, buttonBuyStripe, imageUrl, price }) => {
+    const AcquireModal: React.FC<AcquireModalProps> = ({ description, buttonBuyStripe, imagePath, imageUrl, price, msgSuccessEmail, msgErrorEmail }) => {
+        //------------------------------------------------------------------------------ handleChangeEmail
+        const handleChangeEmail = (e: any) => setEmail(e.target.value)
+
+        //------------------------------------------------------------------------------ handlSendEmail
+        const handlSendEmail = async () => {
+            if (validateEmail(email)) {
+                setEmailValid(true)
+        
+                try {
+                    //Insert in collectionNfts Table
+                    const msgError = await insertEmail(PRIVATESALE_TABLE, email, imagePath)
+                    if (msgError !== '') {
+                        toast({
+                        title: msgError,
+                        description: '',
+                        status: 'error',
+                        duration: 3000,
+                        isClosable: true,
+                        })  
+                    }
+                    else {
+                        // Popup a succes toast if no errors.
+                        toast({
+                        title: parse(msgSuccessEmail),
+                        description: '',
+                        status: 'success',
+                        duration: 3000,
+                        isClosable: true,
+                        })
+                    }
+                            
+                } catch (error) {
+                    throw error
+                }
+        
+            } else {
+                setEmailValid(false)
+                // Popup a succes toast if no errors.
+                toast({
+                    title: parse(msgErrorEmail),
+                    description: '',
+                    status: 'error',
+                    duration: 3000,
+                    isClosable: true,
+                    })
+            }
+        }
+
+
         return (
             <div className={styles["acquire-modal-backdrop"]}>
                 <div ref={acquireModalRef} className={styles["acquire-modal"]}>
@@ -91,7 +147,7 @@ const DropPanel: React.FC = () => {
                             <Stack mt='6' spacing='3'>
                             <Heading size='md'>Artwork</Heading>
                             <Text>
-                                {description}
+                                {parse(description)}
                             </Text>
                             <Text color='blue.600' fontSize='2xl'>
                                 {price} €
@@ -101,9 +157,33 @@ const DropPanel: React.FC = () => {
                         <Divider />
                         <CardFooter>
                             <ButtonGroup spacing='2'>
-                                <Button variant='solid' colorScheme='blue'>
-                                    {buttonBuyStripe}
-                                </Button>
+                                {
+                                    /*
+                                        <Button variant='solid' colorScheme='blue'>
+                                            {buttonBuyStripe}
+                                        </Button>
+                                    */
+                                }
+                                <div className={styles.buttonPreBuyContainer}>
+                                    <div className={styles.messageNotConnected}>
+                                        {texts.titleFormEmail[lang_]}
+                                    </div>
+                                    <div style={{display: 'flex', flexDirection: 'row', gap: '10px', alignItems: 'center', justifyContent: 'center', borderRadius: '5px'}}>
+                                        <FormControl color={'white'} isInvalid={false}>
+                                        <FormLabel color={'blue'}></FormLabel>
+                                            <Input type='email' color={'black'} backgroundColor={'white'} 
+                                            placeholder={''} 
+                                            focusBorderColor='white'
+                                            onChange={handleChangeEmail} 
+                                            />
+                                            {!isEmailValid && <FormErrorMessage>{msgErrorEmail}</FormErrorMessage>}
+                                        </FormControl>
+                                        <div className={styles.rectangleSendEmail}>
+                                            <Button leftIcon={<IoSend />} colorScheme='#465c79' variant='solid' left={'5px'} onClick={handlSendEmail}>
+                                            </Button>
+                                        </div>            
+                                    </div>  
+                                </div>
                             </ButtonGroup>
                         </CardFooter>
                     </Card>
@@ -194,7 +274,14 @@ const DropPanel: React.FC = () => {
                     <Modal description={modalContent} closeButton={closeButton} />
                 )}
                 {isAcquireModalOpen && (
-                    <AcquireModal description={acquireModalContent} buttonBuyStripe={acquireButtonBuyStripe} imageUrl={acquireModalImageUrl} price={acquireModalPrice} />
+                    <AcquireModal 
+                        description={acquireModalContent} 
+                        buttonBuyStripe={acquireButtonBuyStripe} 
+                        imagePath={acquireModalImageUrl} 
+                        imageUrl={acquireModalImageUrl} 
+                        price={acquireModalPrice} 
+                        msgSuccessEmail={texts.msgSuccessEmail} 
+                        msgErrorEmail={texts.msgErrorEmail}/>
                 )}
                 
             </div>
