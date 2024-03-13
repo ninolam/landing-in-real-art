@@ -131,8 +131,7 @@ const DropPanel: React.FC = () => {
             <div className={styles["image-grid"]}>
                 {
                     artWorks.slice(0, visibleCount).map( (artwork, index) => (
-                        <>
-                        <div key={index+1} id={(index+1).toString()} className={styles["image-container"]}
+                        <div key={index} id={(index+1).toString()} className={styles["image-container"]}
                             style={{
                                 zIndex: showDesign === index+1 ? 1 : 1,
                                 backgroundImage: showDesign === index+1?`url(${artwork.url2})`:``, 
@@ -180,7 +179,7 @@ const DropPanel: React.FC = () => {
                                 </div>
                             </button>
                         </div>                        
-                        </>
+                        
                     ))
                 }
 
