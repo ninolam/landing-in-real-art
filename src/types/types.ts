@@ -398,6 +398,7 @@ export interface BuyModalProps {
     nftName: string
     description: string
     imageUrl: string
+    videoUrl: string
     price: string, 
     msgSuccessEmail: string,
     msgErrorEmail: string,
@@ -414,4 +415,8 @@ export interface NftProps {
     price: string
     buttonBuy: string
     buttonPreBuy: string
+}
+
+export interface VideoNftProps {
+    urlVideo: string
 }

@@ -10,8 +10,9 @@ import { IoSend } from "react-icons/io5";
 import { insertEmail } from "../../../utils/supabase/supabaseFunctions";
 import { COLLECTION_NFTS_TABLE } from "../../../utils/supabase/constants";
 import parse from 'html-react-parser';
+import VideoNft from "../Video/VideoNft";
 
-const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftName, description, imageUrl, price, msgSuccessEmail, msgErrorEmail }) => {
+const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftName, description, imageUrl, videoUrl, price, msgSuccessEmail, msgErrorEmail }) => {
 
     const [file, setFile] = useState("");
     const [cid, setCid] = useState("");
@@ -118,11 +119,18 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftN
                 </div>
                 <Card maxW='sm'>
                     <CardBody>
+                        {
+                            /*
                         <Image
                         src={imageUrl}
                         alt=''
                         borderRadius='lg'
                         />
+                            */
+                        }
+                        
+                        <VideoNft urlVideo={videoUrl}/>
+
                         <Stack mt='6' spacing='3'>
                         <Heading size='md'>{nftName}</Heading>
                         <Text>
@@ -136,6 +144,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftN
                     <Divider />
                     <CardFooter>
                         <ButtonGroup spacing='2'>
+
                             {/*!isConnected 
                                 ? <Button variant='solid' colorScheme='blue' disabled={uploading} onClick={mintNFT}>
                                     {uploading ? "Uploading NFT..." : "Buy"}
