@@ -39,9 +39,10 @@ const NftCollection = () => {
                     nfts.slice(0, visibleCount).map( (nft, index) => (
                         <>
                             <Nft 
+                                key={index+1}
                                 artistName={'@Leloluce'} 
                                 nftName={nft.name[lang_]} 
-                                imageUrl={nft.url} 
+                                imageUrl={nft.urlImage} 
                                 price={nft.price} 
                                 msgSuccessEmail={texts.msgSuccessEmail[lang_]}
                                 msgErrorEmail={texts.msgErrorEmail[lang_]}

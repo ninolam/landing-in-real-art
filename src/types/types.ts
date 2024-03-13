@@ -319,9 +319,11 @@ export type CollectionLeloluceNfts  = Array<LeloluceNft>
 export type LeloluceNft = {
     description: Record<Lang, string>
     image: string
+    video: string
     name: Record<Lang, string>
     price: string
-    url: string
+    urlImage: string
+    urlVideo: string
 }
 
 export type PresaleInvestmentsTexts = {

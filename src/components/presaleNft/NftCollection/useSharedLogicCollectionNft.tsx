@@ -13,7 +13,9 @@ const useSharedLogicCollectionNft = () => {
       image: '',
       name: defaultLangObject,
       price: '',
-      url: ''
+      urlImage: '',
+      urlVideo: '',
+      video: ''
   }
 
     const defaultTexts = {
@@ -33,15 +35,15 @@ const useSharedLogicCollectionNft = () => {
     const [buttons, setButtons] = useState<PresaleNftCollectionButtons>(defaultButtons)
     
     //------------------------------------------------------------ getUrlPhoto
-    async function getUrlPhoto(photo: string): Promise<string> {
+    async function getUrlResource(photo: string): Promise<string> {
       if (photo === "") {
           return ""
       }
 
-      let imageRef: any = null
+      let resourceRef: any = null
       try {
-          imageRef = ref(storage, photo)
-          const urlPhoto = await getDownloadURL(imageRef)
+        resourceRef = ref(storage, photo)
+          const urlPhoto = await getDownloadURL(resourceRef)
           return urlPhoto;    
       } catch (error) {
           return ''
@@ -49,14 +51,15 @@ const useSharedLogicCollectionNft = () => {
     }
 
     //------------------------------------------------------------ transformArtworksPhotos
-    async function transformArtworksPhotos(nfts: CollectionLeloluceNfts): Promise<CollectionLeloluceNfts> {
+    async function transformArtworksResources(nfts: CollectionLeloluceNfts): Promise<CollectionLeloluceNfts> {
       const promises = nfts.map(async nft => ({
           ...nft,
-          url: await getUrlPhoto(nft.image)
+          urlImage: await getUrlResource(nft.image),
+          urlVideo: await getUrlResource(nft.video)
       }))
 
       return Promise.all(promises);
-  }
+    }
 
     useEffect(() => {
         
@@ -71,7 +74,7 @@ const useSharedLogicCollectionNft = () => {
           
           //Index 1 ===> Nfts
           const nfts_ = data[1]['nfts'] as CollectionLeloluceNfts
-          const nfts_tmp = await transformArtworksPhotos(nfts_)
+          const nfts_tmp = await transformArtworksResources(nfts_)
           setNfts(nfts_tmp)  
           
           //Index 2 ===> Texts
