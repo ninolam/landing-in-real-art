@@ -408,6 +408,7 @@ export interface NftProps {
     artistName: string
     nftName: string
     imageUrl: string
+    videoUrl: string
     msgSuccessEmail: string
     msgErrorEmail: string
     price: string

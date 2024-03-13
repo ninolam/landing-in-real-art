@@ -43,6 +43,7 @@ const NftCollection = () => {
                                 artistName={'@Leloluce'} 
                                 nftName={nft.name[lang_]} 
                                 imageUrl={nft.urlImage} 
+                                videoUrl={nft.urlVideo} 
                                 price={nft.price} 
                                 msgSuccessEmail={texts.msgSuccessEmail[lang_]}
                                 msgErrorEmail={texts.msgErrorEmail[lang_]}
