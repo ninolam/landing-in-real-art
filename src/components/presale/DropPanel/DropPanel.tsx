@@ -29,11 +29,9 @@ const DropPanel: React.FC = () => {
     const [acquireModalContent, setAcquireModalContent] = useState<string>('')
     const [acquireModalPrice, setAcquireModalPrice] = useState<number>(0)
     const [acquireModalImageUrl, setAcquireModalImageUrl] = useState<string>('')
+    const [acquireModalImagePath, setAcquireModalImagePath] = useState<string>('')
     const [acquireButtonBuyStripe, setAcquireButtonBuyStripe] = useState<string>('')
     const [closeButton, setCloseButton]   = useState<string>('')
-    const [email, setEmail]               = useState('')
-    const [isEmailValid, setEmailValid]   = useState(true)
-    const toast = useToast()
     
     // State to keep track of how many images are currently displayed
     const [visibleCount, setVisibleCount] = useState(10)
@@ -50,9 +48,10 @@ const DropPanel: React.FC = () => {
         setIsModalOpen(true)
     }
 
-    const showAcquireModal = (description: string, buttonBuyStripe: string, imageUrl: string, price: number) => {
+    const showAcquireModal = (description: string, buttonBuyStripe: string, imagePath: string, imageUrl: string, price: number) => {
         setAcquireModalContent(description.slice(0, 100))
         setAcquireButtonBuyStripe(buttonBuyStripe)
+        setAcquireModalImagePath(imagePath)
         setAcquireModalImageUrl(imageUrl)
         setAcquireModalPrice(price)
         setIsAcquireModalOpen(true)
@@ -85,6 +84,9 @@ const DropPanel: React.FC = () => {
     }
     
     const AcquireModal: React.FC<AcquireModalProps> = ({ description, buttonBuyStripe, imagePath, imageUrl, price, msgSuccessEmail, msgErrorEmail }) => {
+        const [email, setEmail]               = useState<string>('')
+        const [isEmailValid, setEmailValid]   = useState<boolean>(true)
+        const toast = useToast()
         //------------------------------------------------------------------------------ handleChangeEmail
         const handleChangeEmail = (e: any) => setEmail(e.target.value)
 
@@ -253,7 +255,7 @@ const DropPanel: React.FC = () => {
                             </div>    
                             <button 
                                 style={{visibility: showDesign === index+1?`hidden`:`visible`}}
-                                className={styles["button-2"]} onClick={() => {showAcquireModal(artwork.description[lang_], buttons.buyArtworkNow[lang_], artwork.url, artwork.price)}}>
+                                className={styles["button-2"]} onClick={() => {showAcquireModal(artwork.description[lang_], buttons.buyArtworkNow[lang_], artwork.image, artwork.url, artwork.price)}}>
                                 <div className={styles["textButtonAcquire"]}>
                                         {buttons.acquireArtWork[lang_]}
                                 </div>
@@ -277,11 +279,11 @@ const DropPanel: React.FC = () => {
                     <AcquireModal 
                         description={acquireModalContent} 
                         buttonBuyStripe={acquireButtonBuyStripe} 
-                        imagePath={acquireModalImageUrl} 
+                        imagePath={acquireModalImagePath} 
                         imageUrl={acquireModalImageUrl} 
                         price={acquireModalPrice} 
-                        msgSuccessEmail={texts.msgSuccessEmail} 
-                        msgErrorEmail={texts.msgErrorEmail}/>
+                        msgSuccessEmail={texts.msgSuccessEmail[lang_]} 
+                        msgErrorEmail={texts.msgErrorEmail[lang_]}/>
                 )}
                 
             </div>

@@ -288,12 +288,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1001;
     max-width: 500px;
-    width: 80%;
     margin: 0 auto;
     max-height: 70vh; /* Maximum height of the modal */
     overflow-y: auto; /* Add vertical scrollbar if needed */
     overflow-x: hidden; /* Hide 
 }
+
 
 @media screen and (min-width: 500px) {
   /* For screens wider than 500px, adjust to 2x3 grid */
@@ -301,6 +301,33 @@
       grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.buttonPreBuyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #5552ff;
+  padding: 10px;
+  border-radius: 5px;
+}  
+
+.messageNotConnected {
+  font-family: $heading-h2-font-family;
+}
+
+.rectangleSendEmail {
+  background: #465c79;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 4px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 @media screen and (max-width: 1800px) {
   .artworkUnit {

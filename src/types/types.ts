@@ -373,8 +373,8 @@ export interface PresaleDropPanelTexts {
     countDown: {
         endDate: EndDateTimestamp
     }
-    msgErrorEmail: string
-    msgSuccessEmail: string
+    msgErrorEmail: Record<Lang, string>
+    msgSuccessEmail: Record<Lang, string>
     titleFormEmail: Record<Lang, string>
 }
 
