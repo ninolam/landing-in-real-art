@@ -117,7 +117,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftN
                 <div className={styles.closeModalContainer} onClick={closeModal}>
                     <div><Close size='50px'></Close></div>
                 </div>
-                <Card maxW='sm'>
+                <Card >
                     <CardBody>
                         {
                             /*
@@ -137,7 +137,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftN
                             {description}
                         </Text>
                         <Text color='blue.600' fontSize='2xl'>
-                            {price} ETH
+                            {price}
                         </Text>
                         </Stack>
                     </CardBody>

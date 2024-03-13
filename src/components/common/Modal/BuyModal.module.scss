@@ -2,15 +2,16 @@
 
 .buyModal {
     background-color: white;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 1001;
-      max-width: 500px;
-      margin: 0 auto;
-      max-height: 70vh; 
-      overflow-y: auto; 
-      overflow-x: hidden;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    max-width: 500px;
+    margin: 0 auto;
+    max-height: 70vh; 
+    overflow-y: auto; 
+    overflow-x: hidden;
+    width: 100%;
   }
 
 .buyModalBackdrop {

@@ -58,9 +58,7 @@ const Newsletter = () => {
             </div>
             <div>
               <Stack spacing={5} direction='row'>
-                <Checkbox color={'white'} colorScheme='white' onChange={handleChangeCheckBoxNL}>{nlTexts.checkboxNewsLetter[lang_]}</Checkbox>
-                <Checkbox  color={'white'} colorScheme='white'onChange={handleChangeCheckBoxPS}>{nlTexts.checkboxPrivateSale[lang_]}</Checkbox>
-                <Checkbox  color={'white'} colorScheme='white'onChange={handleChangeCheckBoxNFTS}>{nlTexts.checkboxCollectionNfts[lang_]}</Checkbox>
+                {/*<Checkbox color={'white'} colorScheme='white' onChange={handleChangeCheckBoxNL}>{nlTexts.checkboxNewsLetter[lang_]}</Checkbox>*/}
               </Stack>
             </div>
           </div>
