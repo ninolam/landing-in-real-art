@@ -78,9 +78,9 @@ const Footer = () => {
                     {/** BLOCK CONTACT **/}
                     <div className={styles.footerContact}>
                         <div className={styles.footerBlock1Title}>{contactTitle[lang_]}</div>  
-                        <p className={styles.footerBlockLine}>{phone}</p>
+                        <a href={`tel:${phone}`} className={styles.footerBlockLine}>{phone}</a>
                         <div className={styles.footerBlockLine}>{address}</div>
-                        <div className={styles.footerBlockLine}>{email}</div>
+                        <a href={`mailto:${email}`} className={styles.footerBlockLine}>{email}</a>
                     </div>
                 </div>
             </div>

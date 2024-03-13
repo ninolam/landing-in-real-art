@@ -41,14 +41,14 @@ const Menu = () => {
                 <div className={styles.linkText}></div>
                 <div className={styles.linkText2}>
                   <div className={styles.communaut}>
-                    <Link className={styles.menuLinkElement} href={communityLink}>
+                    <Link className={styles.menuLinkElement} href={`/home${communityLink}`}>
                       {community[lang_]}
                     </Link>
                   </div>
                 </div>
                 <div className={styles.linkText2}>
                   <div className={styles.equipe}>
-                    <Link className={styles.menuLinkElement} href={teamLink}>
+                    <Link className={styles.menuLinkElement} href={`/home${teamLink}`}>
                       {team[lang_]}
                     </Link>
                   </div>

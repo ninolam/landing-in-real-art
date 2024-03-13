@@ -14,8 +14,6 @@ import CarouselArtists from "../../components/home/Artists/CarouselArtists";
 import styles from './HomePage.module.scss'
 import Partners from "../../components/home/Partners/Partners";
 import useSharedLogic from "../useSharedLogic";
-import CookieConsent from "../../components/cookie/CookieConsent";
-import { CookiesProvider } from "react-cookie";
 import HowToJoinIra from "../../components/common/JoinIRA/HowToJoinIra";
 import useSharedLogicFaq from "../../components/common/Faq/useSharedLogicFaq";
 import FaqMobile from "../../components/common/Faq/FaqMobile";
@@ -40,11 +38,8 @@ export default function HomePage() {
 
       {isMobile ? 
         <>
-          <CookiesProvider>
-            <CookieConsent/>
-          </CookiesProvider>  
           <HeroSectionMobile headerTexts={headerTexts} headerButtons={headerButtons} onlyFirstButton={false}/>
-          <Menu/>
+          
           <HowToJoinIraMobile joinIraDataText={joinIraDataText} joinIraDataButton={joinIraDataButton} onlyFirstButton={false}/>
           <JoinMovementMobile/>
           <CarouselArtists/>
@@ -57,11 +52,8 @@ export default function HomePage() {
         </>  
           : 
         <>
-          <CookiesProvider>
-            <CookieConsent/>
-          </CookiesProvider>
           <HeroSection />
-          <Menu/>
+          
           <HowToJoinIra joinIraDataText={joinIraDataText} joinIraDataButton={joinIraDataButton} onlyFirstButton={false}/>
           <JoinMovement/>
           <CarouselArtists/>

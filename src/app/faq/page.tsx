@@ -86,7 +86,7 @@ export default function FaqPage() {
                 <>
                     <SimpleHeroSection mainTitle={faqHeroSection.mainTitle[lang_]}/>
                     <MenuFaq/>
-                    <Menu/>
+                    
                     <div id="faqAccordion" className={styles.faqAccordion}>
                         <AccordionComponent/>
                     </div>
@@ -96,7 +96,7 @@ export default function FaqPage() {
                 <>
                     <SimpleHeroSection mainTitle={faqHeroSection.mainTitle[lang_]}/>
                     <MenuFaq/>
-                    <Menu/>
+                    
                     <div id="faqAccordion" className={styles.faqAccordion}>
                         <AccordionComponent/>
                     </div>

@@ -32,14 +32,12 @@ export default function TermsOfServiceNftPage() {
                 <>
                     <SimpleHeroSection mainTitle={mainTitle}/>
                     <TosContent mainContent={mainContent} />
-                    <Menu/>
                     <FooterMobile/>
                 </>
             : 
                 <>
                     <SimpleHeroSection mainTitle={mainTitle}/>
                     <TosContent mainContent={mainContent} />
-                    <Menu/>
                     <Footer/>    
                 </>
             }    

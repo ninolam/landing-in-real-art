@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import styles from './TestnetPage.module.scss'
 
-import { CookiesProvider } from "react-cookie"
 import CookieConsent from "../../components/cookie/CookieConsent"
 import HeroSection from "../../components/testnet/HeroSection/HeroSection"
 import Menu from "../../components/menu/Menu"
@@ -37,11 +36,7 @@ export default function HomePage() {
 
       {isMobile ? 
         <>
-          <CookiesProvider>
-            <CookieConsent/>
-          </CookiesProvider>
           <HeroSectionMobile headerTexts={headerTexts} headerButtons={headerButtons} onlyFirstButton={true}/>
-          <Menu/>
           <HowToJoinIraMobile joinIraDataText={joinIraDataText} joinIraDataButton={joinIraDataButton} onlyFirstButton={true}/>
           <TestnetPros/>
           <FaqMobile faqTexts={faqTexts} faqButtons={faqButtons}/>
@@ -50,11 +45,7 @@ export default function HomePage() {
         </>  
           : 
         <>
-          <CookiesProvider>
-            <CookieConsent/>
-         </CookiesProvider>
           <HeroSection/>
-          <Menu/>
           <HowToJoinIra joinIraDataText={joinIraDataText} joinIraDataButton={joinIraDataButton} onlyFirstButton={true}/>
           <TestnetPros/>
           <Faq faqTexts={faqTexts} faqButtons={faqButtons} />

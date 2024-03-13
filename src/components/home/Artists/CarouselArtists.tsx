@@ -71,7 +71,7 @@ const CarouselArtists = () => {
     }, [])
 
   return (
-    <div>
+    <div id="artists">
         <div className={styles.frame3349}>
             <div className={styles.nosArtistes}>{artistsTexts.title[lang_]}</div>
             <div className={styles.artistsDescription}>

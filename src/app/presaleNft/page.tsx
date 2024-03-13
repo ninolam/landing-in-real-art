@@ -4,8 +4,6 @@ import Footer from "../../components/footer/Footer"
 import Menu from "../../components/menu/Menu"
 import FooterMobile from "../../components/footer/FooterMobile"
 import styles from './PresaleNftPage.module.scss'
-import { CookiesProvider } from "react-cookie"
-import CookieConsent from "../../components/cookie/CookieConsent"
 import JoinMovementNft from "../../components/presaleNft/JoinMovement/JoinMovementNft"
 import AboutArtist from "../../components/presaleNft/AboutArtist/AboutArtist"
 import GetReadyToBuy from "../../components/presaleNft/GetReadyToBuy/GetReadyToBuy"
@@ -37,11 +35,7 @@ export default function PresalePage() {
             {isMobile 
                 ?
                     <>
-                        <CookiesProvider>
-                            <CookieConsent/>
-                        </CookiesProvider>
                         <JoinMovementNft/>
-                        <Menu/>
                         <AboutArtist/>
                         <NftCollection/>
                         <TopCreator/>
@@ -50,12 +44,8 @@ export default function PresalePage() {
                     </>
                 :
                     
-                    <>    
-                        <CookiesProvider>
-                            <CookieConsent/>
-                        </CookiesProvider>
+                    <>
                         <JoinMovementNft/>
-                        <Menu/>
                         <AboutArtist/>
                         <NftCollection/>
                         <TopCreator/>

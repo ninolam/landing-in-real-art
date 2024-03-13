@@ -29,14 +29,14 @@ export default function AboutPage() {
                 <>
                     <SimpleHeroSection mainTitle={mainTitle}/>
                     <AboutDescription/>
-                    <Menu/>
+                    
                     <FooterMobile/>
                 </>
             : 
                 <>
                     <SimpleHeroSection mainTitle={mainTitle}/>
                     <AboutDescription/>
-                    <Menu/>
+                    
                     <Footer/>    
                 </>
             }    
