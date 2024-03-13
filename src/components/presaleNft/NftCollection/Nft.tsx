@@ -37,7 +37,7 @@ const Nft: React.FC<NftProps> = ({ artistName, nftName, imageUrl, videoUrl, msgS
                         <a className={styles.nftCardArtworkName} href="">{nftName}</a>
                     </div>
                     <div className={styles.nftPrice}>
-                        {price} ETH
+                        {price}
                     </div>
                 </div>  
                 <div className={styles.buyButtonContainer} onClick={() => setShowBuyModal(true)}>
