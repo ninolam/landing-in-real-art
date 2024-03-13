@@ -397,6 +397,7 @@ export interface BuyModalProps {
     setShowBuyModal: React.Dispatch<React.SetStateAction<boolean>>
     nftName: string
     description: string
+    imagePath: string
     imageUrl: string
     videoUrl: string
     price: string, 
@@ -408,6 +409,7 @@ export interface BuyModalProps {
 export interface NftProps {
     artistName: string
     nftName: string
+    imagePath: string
     imageUrl: string
     videoUrl: string
     msgSuccessEmail: string

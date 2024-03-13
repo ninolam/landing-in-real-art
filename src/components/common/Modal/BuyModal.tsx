@@ -12,7 +12,7 @@ import { COLLECTION_NFTS_TABLE } from "../../../utils/supabase/constants";
 import parse from 'html-react-parser';
 import VideoNft from "../Video/VideoNft";
 
-const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftName, description, imageUrl, videoUrl, price, msgSuccessEmail, msgErrorEmail }) => {
+const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftName, description, imagePath, imageUrl, videoUrl, price, msgSuccessEmail, msgErrorEmail }) => {
 
     const [file, setFile] = useState("");
     const [cid, setCid] = useState("");
@@ -66,14 +66,13 @@ const BuyModal: React.FC<BuyModalProps> = ({ showBuyModal, setShowBuyModal, nftN
 
         //------------------------------------------------------------------------------ handlSendEmail
         const handlSendEmail = async () => {
-            
             if (validateEmail(email)) {
                 setEmailValid(true)
       
                 try {
                   //Insert in collectionNfts Table
                     
-                    const msgError = await insertEmail(COLLECTION_NFTS_TABLE, email)
+                    const msgError = await insertEmail(COLLECTION_NFTS_TABLE, email, imagePath)
                     if (msgError !== '') {
                         toast({
                         title: msgError,

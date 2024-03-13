@@ -37,19 +37,18 @@ const NftCollection = () => {
             <div className={styles.nftCollection}>
             {
                     nfts.slice(0, visibleCount).map( (nft, index) => (
-                        <>
-                            <Nft 
-                                key={index+1}
-                                artistName={'@Leloluce'} 
-                                nftName={nft.name[lang_]} 
-                                imageUrl={nft.urlImage} 
-                                videoUrl={nft.urlVideo} 
-                                price={nft.price} 
-                                msgSuccessEmail={texts.msgSuccessEmail[lang_]}
-                                msgErrorEmail={texts.msgErrorEmail[lang_]}
-                                buttonBuy={buttons.buyLeloluceNft[lang_]} 
-                                buttonPreBuy={buttons.preBuyLeloluceNft[lang_]}></Nft>        
-                        </>
+                        <Nft 
+                            key={index}
+                            artistName={'@Leloluce'} 
+                            nftName={nft.name[lang_]} 
+                            imagePath={nft.image}
+                            imageUrl={nft.urlImage} 
+                            videoUrl={nft.urlVideo} 
+                            price={nft.price} 
+                            msgSuccessEmail={texts.msgSuccessEmail[lang_]}
+                            msgErrorEmail={texts.msgErrorEmail[lang_]}
+                            buttonBuy={buttons.buyLeloluceNft[lang_]} 
+                            buttonPreBuy={buttons.preBuyLeloluceNft[lang_]}/>
                         ))
                     }
             </div>
