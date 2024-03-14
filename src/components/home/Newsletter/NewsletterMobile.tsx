@@ -39,12 +39,6 @@ const NewsletterMobile = () => {
             
             </div>            
         </div>
-        <div className={styles.checkboxEmail}>
-          <Stack spacing={5} direction='row'>
-            <Checkbox color={'white'} colorScheme='white' onChange={handleChangeCheckBoxNL}>{nlTexts.checkboxNewsLetter[lang_]}</Checkbox>
-            <Checkbox  color={'white'} colorScheme='white' onChange={handleChangeCheckBoxPS}>{nlTexts.checkboxPrivateSale[lang_]}</Checkbox>
-          </Stack>
-        </div>
 
       </div>
     </div>
