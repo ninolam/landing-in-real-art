@@ -53,7 +53,6 @@ const useSharedLogicTopCreator = () => {
     //------------------------------------------------------------ transformTopCreatorPhoto
     async function transformTopCreatorPhoto(topCreator: PresaleNftTopCreator) {
       const urlPhoto_ = await getUrlResource(topCreator.photo)
-      console.log(urlPhoto_)
       return urlPhoto_
     }
 
@@ -66,7 +65,6 @@ const useSharedLogicTopCreator = () => {
 
           //Index 0 ===> Buttons
           const buttons = data[0] as PresaleNftTopCreatorsButtons
-          console.log(buttons)
           setButtons(buttons) 
           
           //Index 1 ===> Top Creators Cards
@@ -74,12 +72,10 @@ const useSharedLogicTopCreator = () => {
           topCreators.card1.urlPhoto = await transformTopCreatorPhoto(topCreators.card1)
           topCreators.card2.urlPhoto = await transformTopCreatorPhoto(topCreators.card2)
           topCreators.card3.urlPhoto = await transformTopCreatorPhoto(topCreators.card3)
-          console.log(topCreators)
           setTopCreators(topCreators) 
 
           //Index 2 ===> Texts
           const texts = data[2] as PresaleNftTopCreatorsTexts
-          console.log(texts)
           setTexts(texts) 
         }
         

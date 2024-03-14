@@ -75,6 +75,7 @@ const useSharedLogicCollectionNft = () => {
           //Index 1 ===> Nfts
           const nfts_ = data[1]['nfts'] as CollectionLeloluceNfts
           const nfts_tmp = await transformArtworksResources(nfts_)
+          console.log(nfts_tmp)
           setNfts(nfts_tmp)  
           
           //Index 2 ===> Texts
