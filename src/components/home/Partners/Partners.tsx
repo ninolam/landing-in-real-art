@@ -25,7 +25,7 @@ const Partners = () => {
                     <img src='img/partners/byebuycar.webp' alt=''/>
                 </Box>
                 <Box height='100px' width='200px' margin={'auto'} >
-                    <img src='img/partners/bolidesLegendes.webp' alt=''/>
+                    <img src='img/partners/retrovrs.png' alt=''/>
                 </Box>
                 <Box height='100px' width='200px' margin={'auto'} style={{position: 'relative', top: '-50px'}}>
                     <img src='img/partners/cyberAlt.jpg' alt=''/>
