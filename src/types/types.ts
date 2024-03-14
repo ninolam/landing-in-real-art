@@ -1,3 +1,8 @@
+declare global {
+    interface Window {
+        gtag: (type: string, action: string, options: { 'analytics_storage'?: string, 'page_path'?: string }) => void;
+    }
+}
 export type Lang = 'CN' | 'EN' | 'FR'
 
 export const defaultLangObject = {
@@ -11,21 +16,21 @@ export const defaultLangObjectArray = {
     'EN': [''],
     'FR': ['']
 }
-export type TranslatedTexts = Record<Lang,string>
+export type TranslatedTexts = Record<Lang, string>
 
-export type TranslatedArrayTexts = Record<Lang,Array<string>>
+export type TranslatedArrayTexts = Record<Lang, Array<string>>
 
 export type HeaderButtons = {
-    button1: Record<Lang,string>,
-    button2: Record<Lang,string>
+    button1: Record<Lang, string>,
+    button2: Record<Lang, string>
     button1Link: string,
     button2Link: string
 }
 
 export type HeaderTexts = {
-    title1: Record<Lang,string> 
-    title2: Record<Lang,string> 
-    text1: Record<Lang,string>
+    title1: Record<Lang, string>
+    title2: Record<Lang, string>
+    text1: Record<Lang, string>
 }
 
 
@@ -34,7 +39,7 @@ export type HeaderData = HeaderButtons & HeaderTexts
 export interface FooterTexts {
     emailTitle: Record<Lang, string>,
     emailPlaceHolder: Record<Lang, string>
-}  
+}
 
 export interface FooterData<T extends string> {
     twitterUrl: T
@@ -54,12 +59,12 @@ export interface FooterData<T extends string> {
     block2: FooterBlock,
     emailTitle: Record<Lang, T>,
     emailPlaceHolder: Record<Lang, T>,
-  }
+}
 
 export interface FooterBlock {
     title: Record<Lang, string>
     lines: Array<FooterBlockLine>
-}  
+}
 
 export interface FooterBlockLine {
     text: Record<Lang, string>
@@ -79,11 +84,11 @@ export type NewsletterText<T extends Record<Lang, string>> = {
     msgSuccessNewsLetter: T
     msgSuccessPrivateSale: T
     msgSuccessNfts: T
-}  
+}
 
 export type PartnersTexts<T extends Record<Lang, string>> = {
     mainTitle: T
-}  
+}
 
 export type PartnersData = PartnersTexts<Record<Lang, string>>
 
@@ -91,20 +96,20 @@ export type PrivateSaleText = {
     title: Record<Lang, string>
     description: Record<Lang, string>
     email_placeholder: Record<Lang, string>
-}  
+}
 
 export type NewsletterData = NewsletterText<Record<Lang, string>>
 
 export type PrivateSaleData = PrivateSaleText
 
 export type FaqHeroSection = {
-    mainTitle : Record<Lang, string>
+    mainTitle: Record<Lang, string>
 }
 
 export type FaqButtons = {
     readFaq: Record<Lang, string>
     readFaqLink: string
-}  
+}
 
 export type FaqTexts<T extends Record<Lang, string>> = {
     faqTitle: T
@@ -115,7 +120,7 @@ export type FaqTexts<T extends Record<Lang, string>> = {
     answer1: T
     answer2: T
     answer3: T
-}  
+}
 
 export type FaqPageMenu = {
     items: Array<FaqQuestion>,
@@ -138,28 +143,28 @@ export type FaqQuestions = {
 }
 
 export type AboutTexts = {
-    mainTitle : Record<Lang, string>
-    mainDescription : Record<Lang, string>
+    mainTitle: Record<Lang, string>
+    mainDescription: Record<Lang, string>
 }
 
 export type PresaleNftJoinMovementTexts = {
-    mainTitle : Record<Lang, string>
-    mainDescription : Record<Lang, string>
+    mainTitle: Record<Lang, string>
+    mainDescription: Record<Lang, string>
 }
 
 export type PresaleNftJoinMovementButtons = {
-    buyNft : Record<Lang, string>
+    buyNft: Record<Lang, string>
 }
 
 export type PresaleNftAboutArtistTexts = {
-    mainTitle : Record<Lang, string>
-    secondaryTitle : Record<Lang, string>
-    description : Record<Lang, string>
+    mainTitle: Record<Lang, string>
+    secondaryTitle: Record<Lang, string>
+    description: Record<Lang, string>
 }
 
 export type PresaleNftCollectionTexts = {
-    mainTitle : Record<Lang, string>
-    secondaryTitle : Record<Lang, string>
+    mainTitle: Record<Lang, string>
+    secondaryTitle: Record<Lang, string>
     msgSuccessEmail: Record<Lang, string>
     msgErrorEmail: Record<Lang, string>
 }
@@ -171,7 +176,7 @@ export type PresaleNftCollectionButtons = {
 }
 
 export type PresaleNftAboutArtistButtons = {
-    discoverCollection : Record<Lang, string>
+    discoverCollection: Record<Lang, string>
 }
 
 export type PresaleNftTopCreators = {
@@ -197,7 +202,7 @@ export type PresaleNftTopCreatorsButtons = {
 } 
 
 export type TosTexts = {
-    mainTitle : Record<Lang, string>
+    mainTitle: Record<Lang, string>
     mainContent: Record<Lang, string>
 }
 
@@ -206,8 +211,8 @@ export interface TosContentProps {
 }
 
 export type LegalNoticeTexts = {
-    mainTitle : Record<Lang, string>
-    mainContent : Record<Lang, string>
+    mainTitle: Record<Lang, string>
+    mainContent: Record<Lang, string>
 }
 
 export type HelpIraData = FaqButtons & FaqTexts<Record<Lang, string>>
@@ -216,18 +221,18 @@ export type HelpIraData = FaqButtons & FaqTexts<Record<Lang, string>>
 export interface ArtistsData {
     title: Record<Lang, string>
     description: Record<Lang, string>
-  }
+}
 
 export interface ArtistNameDesc {
     name: string
     desc: Record<Lang, string>
     image: string
-}  
+}
 
 export type ArtistCarouselElement = Record<string, ArtistNameDesc>
 
 
-export type Artists  = Array<ArtistNameDesc>
+export type Artists = Array<ArtistNameDesc>
 
 export interface JoinIraDataButton {
     JoinIRA: Record<Lang, string>
@@ -251,7 +256,7 @@ export type JoinTrendButtons = {
     aas_join: Record<Lang, string>
     aas_join_link: string
     marketplace_join: Record<Lang, string>
-    marketplace_join_link: string    
+    marketplace_join_link: string
 }
 
 export type JoinTrendTexts = {
@@ -287,12 +292,12 @@ export type MenuData = MenuButtons & MenuElements
 
 
 export type MemberData = {
-    text1: Record<Lang,string>
-    text2: Record<Lang,string>
-    role: Record<Lang,string>
+    text1: Record<Lang, string>
+    text2: Record<Lang, string>
+    role: Record<Lang, string>
     name: string
     photo: string
-  }[];
+}[];
 
 
 export interface TeamMemberProps {
@@ -302,7 +307,7 @@ export interface TeamMemberProps {
     text1: string
     text2: string
 }
-  
+
 export interface ArtistMemberProps {
     name: string
     image: string
@@ -324,7 +329,7 @@ export interface PresaleDropPanelArtworks {
     artworks: PresaleArtWorks
 }
 
-export type PresaleArtWorks  = Array<PresaleArtWork>
+export type PresaleArtWorks = Array<PresaleArtWork>
 
 export type PresaleArtWork = {
     artistName: string
@@ -336,7 +341,7 @@ export type PresaleArtWork = {
     price: number
 }
 
-export type CollectionLeloluceNfts  = Array<LeloluceNft>
+export type CollectionLeloluceNfts = Array<LeloluceNft>
 
 export type LeloluceNft = {
     description: Record<Lang, string>
@@ -352,7 +357,7 @@ export type PresaleInvestmentsTexts = {
     card1: PresaleInvestmentsCard
     card2: PresaleInvestmentsCard
     card3: PresaleInvestmentsCard
-} 
+}
 
 export type PresaleInvestmentsCard = {
     number: TranslatedTexts
@@ -369,7 +374,7 @@ export type TestnetProsTexts = {
     card2: TestnetProsCard
     card3: TestnetProsCard
     card4: TestnetProsCard
-} 
+}
 
 export type TestnetProsCard = {
     number: TranslatedTexts
@@ -428,7 +433,7 @@ export interface BuyModalProps {
     imagePath: string
     imageUrl: string
     videoUrl: string
-    price: string, 
+    price: string,
     msgSuccessEmail: string,
     msgErrorEmail: string,
     buy: (() => void) | undefined

@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
-import { setCookie, hasCookie, deleteCookie } from "cookies-next";
+import { setCookie, hasCookie, getCookie } from "cookies-next";
 import styles from "./CookieConsent.module.scss";
 import classNames from "classnames";
 
 function CookieConsent() {
   const [showConsent, setShowConsent] = useState(false);
+
+  // expire in 6 months
   let date = new Date();
   date.setMonth(date.getMonth() + 6);
 
@@ -28,7 +30,7 @@ function CookieConsent() {
   }*/
 
   const handleAccept = () => {
-    setCookie("cookieConsent", "accepted", {
+    setCookie("cookieConsent", true, {
       path: "/",
       expires: date,
     });
@@ -37,7 +39,7 @@ function CookieConsent() {
 
   const handleDecline = () => {
     // Handle declining cookies, e.g., disable analytics
-    setCookie("cookieConsent", "declined", {
+    setCookie("cookieConsent", false, {
       path: "/",
       expires: date,
     });
@@ -46,13 +48,19 @@ function CookieConsent() {
 
   // const handleClose = () => {
   //   // Optionally, store a temporary dismissal preference
-  //   localStorage.setItem("dismissedCookies", "true");
   //   setShowConsent(false);
   // };
 
+
   useEffect(() => {
     setShowConsent(!hasCookie("cookieConsent"));
-  }, []);
+
+    const newValue = getCookie("cookieConsent") ? "granted" : "denied";
+    
+    window.gtag("consent", "update", {
+      "analytics_storage": newValue
+    });
+  }, [getCookie("cookieConsent")]);
 
   if (!showConsent) {
     return null;
@@ -75,19 +83,6 @@ function CookieConsent() {
             </div>
 
             <div className={styles.cookieButtonGroup}>
-              {/* <div style={{ display: "flex" }}>
-                <button
-                  type="button"
-                  className={classNames(
-                    styles.cookieBannerButton,
-                    styles.buttonSecondary,
-                    styles.preferencesbutton
-                  )}
-                  data-testid="Consent Settings-btn"
-                >
-                  Consent Settings
-                </button>
-              </div> */}
               <div className={styles.cookieButtonGroup}>
                 <button
                   type="button"
