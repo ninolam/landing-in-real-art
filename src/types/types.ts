@@ -233,7 +233,7 @@ export interface JoinIraDataButton {
     JoinIRA: Record<Lang, string>
     StartIRA?: Record<Lang, string>
     JoinIRALink: string
-    StartIRALink: string
+    StartIRALink: Record<Lang, string>
 }
 
 export interface JoinIraDataText {

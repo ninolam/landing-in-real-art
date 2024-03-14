@@ -44,7 +44,7 @@ const HowToJoinIra = ({joinIraDataText, joinIraDataButton, onlyFirstButton, ...p
               </div>
               {(joinIraDataButton.StartIRA) && 
                 <div className={styles.button3}>
-                <Link className={styles.startIRALink} href={joinIraDataButton.StartIRALink}>
+                <Link className={styles.startIRALink} href={joinIraDataButton.StartIRALink[lang_]}>
                   <div className={styles.jeDemarre2}>{joinIraDataButton.StartIRA[lang_]}</div>
                 </Link>  
                 </div>

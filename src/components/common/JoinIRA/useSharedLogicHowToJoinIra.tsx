@@ -17,7 +17,7 @@ const useSharedLogicHowToJoinIra = (firebaseCollection: string) => {
       JoinIRA: defaultLangObject,
       StartIRA: defaultLangObject,
       JoinIRALink: '',
-      StartIRALink: ''
+      StartIRALink: defaultLangObject
     }
   
   

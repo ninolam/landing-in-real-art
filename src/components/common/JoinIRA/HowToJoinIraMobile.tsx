@@ -39,7 +39,7 @@ const HowToJoinIraMobile = ({joinIraDataText, joinIraDataButton, onlyFirstButton
         </div>
         {joinIraDataButton.StartIRA && 
           <div className={styles["button3"]}>
-            <Link className={styles.startIRALink} href={joinIraDataButton.StartIRALink}>
+            <Link className={styles.startIRALink} href={joinIraDataButton.StartIRALink[lang_]}>
               <div className={styles["je-d-marre2"]}>
                 {joinIraDataButton.StartIRA[lang_]}
               </div>
