@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useAppContext } from '../../../context'
 import { Lang } from '../../../types/types'
-import BuyModal from '../../common/Modal/BuyModal'
 import Nft from './Nft'
 import styles from './NftCollection.module.scss'
 import useSharedLogicCollectionNft from './useSharedLogicCollectionNft'
@@ -18,6 +17,11 @@ const NftCollection = () => {
     // State to keep track of how many images are currently displayed
     const [visibleCount, setVisibleCount] = useState(10)
 
+    // Function to load more Nfts
+    const loadMoreNfts = () => {
+        setVisibleCount(prevCount => prevCount + 10);
+    }
+    
     const ARTIST_NAME = 'Leloluce'
 
     return (
@@ -35,7 +39,7 @@ const NftCollection = () => {
             </div>
 
             <div className={styles.nftCollection}>
-            {
+                {
                     nfts.slice(0, visibleCount).map( (nft, index) => (
                         <Nft 
                             key={index}
@@ -50,7 +54,17 @@ const NftCollection = () => {
                             buttonBuy={buttons.buyLeloluceNft[lang_]} 
                             buttonPreBuy={buttons.preBuyLeloluceNft[lang_]}/>
                         ))
-                    }
+                }
+
+                {visibleCount < nfts.length && (
+                    <div className={styles.nftCardViewMore} style={{justifyContent: 'center'}}>
+                        
+                        <div className={styles.buyButtonContainer} onClick={loadMoreNfts}>
+                            <div className={styles.buyButton}>{buttons.viewMoreNfts[lang_]}</div>
+                        </div>
+                    </div>    
+
+                )}
             </div>
         </div>
     )

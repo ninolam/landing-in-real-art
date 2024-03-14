@@ -167,6 +167,7 @@ export type PresaleNftCollectionTexts = {
 export type PresaleNftCollectionButtons = {
     buyLeloluceNft : Record<Lang, string>
     preBuyLeloluceNft : Record<Lang, string>
+    viewMoreNfts: Record<Lang, string>
 }
 
 export type PresaleNftAboutArtistButtons = {

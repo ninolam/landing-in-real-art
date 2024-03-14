@@ -27,7 +27,8 @@ const useSharedLogicCollectionNft = () => {
 
     const defaultButtons = {
       buyLeloluceNft: defaultLangObject,
-      preBuyLeloluceNft: defaultLangObject
+      preBuyLeloluceNft: defaultLangObject,
+      viewMoreNfts: defaultLangObject
     }
 
     const [nfts, setNfts] = useState<CollectionLeloluceNfts>([defaultLeloluceNft])
