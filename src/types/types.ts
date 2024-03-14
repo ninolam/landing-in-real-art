@@ -173,6 +173,27 @@ export type PresaleNftAboutArtistButtons = {
     discoverCollection : Record<Lang, string>
 }
 
+export type PresaleNftTopCreators = {
+    card1: PresaleNftTopCreator
+    card2: PresaleNftTopCreator
+    card3: PresaleNftTopCreator
+} 
+
+export type PresaleNftTopCreator = {
+    artistDescription: Record<Lang, string>
+    artistName: string
+    photo: string
+    urlPhoto: string
+}
+
+export type PresaleNftTopCreatorsTexts = {
+    mainDescription: Record<Lang, string>
+    mainTitle: Record<Lang, string>
+} 
+
+export type PresaleNftTopCreatorsButtons = {
+    discoverRwa: Record<Lang, string>
+} 
 
 export type TosTexts = {
     mainTitle : Record<Lang, string>
