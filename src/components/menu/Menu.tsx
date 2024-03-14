@@ -82,7 +82,7 @@ const Menu = () => {
                         </div>
                         </div>
                         <div className={styles.button2}>
-                            <Link className={styles.linkPresale} href="/presale">
+                            <Link className={styles.linkPresale} href="/testnet">
                             <div className={styles.testnet}>{testnet[lang_]}</div>
                             </Link>  
                         </div>
