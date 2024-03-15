@@ -60,13 +60,13 @@ const Menu = () => {
                     </Link>
                   </div>
                 </div>
-                <div className={styles.linkText2}>
+                {/* <div className={styles.linkText2}>
                   <div className={styles.ressources}>
                     <Link className={styles.menuLinkElement} href={resourcesLink}>
                       {resources[lang_]}
                     </Link>
                   </div>
-                </div>
+                </div> */}
               </div>
             : ''}
             

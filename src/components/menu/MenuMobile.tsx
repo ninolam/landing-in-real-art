@@ -26,12 +26,12 @@ const MenuMobile: FC<MenuMobileProps> = ({isOpen, handleIsOpen}) => {
   return (
     <div id="navBarMenuMobile" className={isOpen ? styles.navBarMenuMobileOpen : styles.navBarMenuMobile}>
         <div className={styles.menuMobileItem}>
-            <Link href={communityLink} onClick={handleIsOpen}>
+            <Link href={`/home${communityLink}`} onClick={handleIsOpen}>
                 {community[lang_]}
             </Link>
         </div>
         <div className={styles.menuMobileItem}>
-            <Link href={teamLink} onClick={handleIsOpen}>
+            <Link href={`/home${teamLink}`} onClick={handleIsOpen}>
                 {team[lang_]}
             </Link>
         </div>
@@ -40,13 +40,13 @@ const MenuMobile: FC<MenuMobileProps> = ({isOpen, handleIsOpen}) => {
                 {about[lang_]}
             </Link>
         </div>
-        <div className={styles.menuMobileItem}>
+        {/* <div className={styles.menuMobileItem}>
             
                 <Link className={styles.menuLinkElement} href={resourcesLink} onClick={handleIsOpen}>
                     {resources[lang_]}
                 </Link>
             
-        </div>
+        </div> */}
         <div className={styles.wrapperButton}>
             <div className={styles.menuMobileButton}>
                 <Link className={styles.linkPresale} href="/presale">
@@ -54,7 +54,7 @@ const MenuMobile: FC<MenuMobileProps> = ({isOpen, handleIsOpen}) => {
                 </Link>
             </div>
             <div className={styles.menuMobileButton}>
-                <Link className={styles.linkPresale} href="/presale">
+                <Link className={styles.linkPresale} href="/testnet">
                     <div className={styles.testnet}>{testnet[lang_]}</div>
                 </Link>  
             </div>

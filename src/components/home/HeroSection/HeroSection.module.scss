@@ -219,13 +219,10 @@
 }
 
   .heroSectionParagraph {
+    margin-top: 10px;
     color: var(--primaire-black, #000035);
     text-align: left;
-    font-family: var(
-      --text-paragraphe-font-family,
-      "Montserrat-Regular",
-      sans-serif
-    );
+    font-family: 'Unbounded', sans-serif;
     font-size: 15px;
     font-weight: var(--text-paragraphe-font-weight, 400);
     position: relative;
@@ -280,13 +277,10 @@
 }
 
   .heroSectionParagraph {
+    margin-top: 10px;
     color: var(--primaire-black, #000035);
     text-align: left;
-    font-family: var(
-      --text-paragraphe-font-family,
-      "Montserrat-Regular",
-      sans-serif
-    );
+    font-family: 'Unbounded', sans-serif;
     font-size: 13px;
     font-weight: var(--text-paragraphe-font-weight, 400);
     position: relative;

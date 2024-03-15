@@ -3,6 +3,7 @@ import { Lang } from "../../../types/types";
 import styles from "./PresaleProsMobile.module.scss";
 import parse from 'html-react-parser';
 import useSharedLogixPresalePros from "./useSharedLogixPresalePros";
+import Link from "next/link";
 
 const PresaleProsMobile = () => {
 
@@ -32,9 +33,9 @@ const PresaleProsMobile = () => {
             </div>
           </div>
           <div className={styles["frame-48095815__frame-3"]}>
-            <div className={styles["frame-48095815__heading2"]}>    
+            <Link href="#dropPanel" className={styles["frame-48095815__heading2"]}>    
               Acquérir une œuvre{" "}
-            </div>
+            </Link>
           </div>
         </div>
         <div className={styles["frame-48095815__slider"]}>

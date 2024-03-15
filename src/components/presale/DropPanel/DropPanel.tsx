@@ -206,7 +206,7 @@ const DropPanel: React.FC = () => {
                     <div className={styles["text-wrapper-3"]}>{texts.endDrop[lang_]}</div>
                 </div>
                 <div className={styles["text-wrapper-4"]}>
-                <CountdownTimer endDate="2024-03-01T00:00:00" />
+                <CountdownTimer endDate="2024-04-05T00:00:00" />
                 </div>
             </div>
             
