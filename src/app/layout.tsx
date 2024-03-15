@@ -16,6 +16,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "In Real Art",
   description: "Landing page In Real Art",
+  icons: {
+    icon: '/img/favicon-32x32.png',
+    shortcut: '/img/favicon-16x16.png',
+    apple: '/img/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({
