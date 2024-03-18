@@ -1,9 +1,17 @@
 /* components/ImageBlock.module.css */
-@import '../../../styles/variables.scss';
+@import "../../../styles/variables.scss";
+
+.close {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  margin-bottom: 30px;
+}
 
 .imageBlockContainer {
   display: flex;
-  gap: 0px; 
+  gap: 0px;
   border-radius: 40px;
   overflow: hidden;
   width: 80%;
@@ -16,7 +24,6 @@
   flex: 1;
   flex-basis: calc(33.3333% - 10px); /* Adjust based on the gap */
   transition: flex-basis 0.5s ease;
-  position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -25,13 +32,13 @@
   background-position: center;
 }
 
-.imageBlockContainer:hover .imageBlock {
-  flex-basis: 15%;
-}
+// .imageBlockContainer:hover .imageBlock {
+//   flex-basis: 15%;
+// }
 
-.imageBlockContainer .imageBlock:hover {
-  flex-basis: 40%;
-}
+// .imageBlockContainer .imageBlock:hover {
+//   flex-basis: 40%;
+// }
 
 .title1 {
   margin: 10px;
@@ -66,38 +73,61 @@
   font-weight: $heading-h2-font-weight;
 }
 
+
 .content {
-  display: none;
+  overflow: scroll;
   position: absolute;
-  bottom: 0;
+  top: 0;
+  z-index: 100;
   left: 0;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgb(94 89 89 / 39%);
   backdrop-filter: blur(12px);
   color: #fff;
   padding: 30px;
   width: 100%;
+  height: 100%;
+  .frame-3387__group-366012 {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
-.details1, .details2 {
+.details1,
+.details2 {
   display: flex;
   flex-direction: column;
+  svg {
+    width: 22px;
+    height: 22px;
+    flex: none;
+  }
 }
 
-.details1Item, .details2Item {
+.details1Item,
+.details2Item {
   display: flex;
   flex-direction: row;
+  margin-bottom: 15px;
+  gap: 10px;
 }
 
-.imageBlock:hover .content {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+.imageBlock {
+  &:hover,
+  &:focus {
+    .content {
+      width: 100%;
+      display: block;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+  }
 }
 
-.textContent, .list {
+.textContent,
+.list {
   width: 50%;
 }
 
@@ -116,15 +146,8 @@
     flex-direction: column;
   }
 
-  .imageBlock, .imageBlockContainer:hover .imageBlock {
-    flex-basis: auto; /* Reset flex-basis for mobile view */
-    height: 30%; /* Set a default height for non-hovered items */
-  }
-
-  .imageBlockContainer .imageBlock:hover {
-    // height: 70%; /* Increase height on hover */
-    flex-basis: 160%;
-  }
-
-
+  // .imageBlockContainer .imageBlock:hover {
+  //   // height: 70%; /* Increase height on hover */
+  //   flex-basis: 160%;
+  // }
 }
