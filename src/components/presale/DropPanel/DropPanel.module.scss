@@ -288,11 +288,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1001;
     //max-width: 500px;
-    width: 700px;
+    width: 550px;
     margin: 0 auto;
     //max-height: 70vh; /* Maximum height of the modal */
     overflow-y: auto; /* Add vertical scrollbar if needed */
-    overflow-x: hidden; /* Hide 
+    overflow-x: hidden;
+    max-height: 90vh;
 }
 
 
