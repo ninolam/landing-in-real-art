@@ -143,7 +143,7 @@ const DropPanel: React.FC = () => {
         return (
             <div className={styles["acquire-modal-backdrop"]}>
                 <div ref={acquireModalRef} className={styles["acquire-modal"]}>
-                    <Card maxW='sm'>
+                    <Card maxW='lg'>
                         <CardBody>
                             <Image
                             src={imageUrl}
