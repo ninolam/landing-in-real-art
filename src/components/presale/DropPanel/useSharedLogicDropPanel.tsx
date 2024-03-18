@@ -36,7 +36,9 @@ const useSharedLogicDropPanel = () => {
         image2: '',
         url: '',
         url2: '',
-        price: 0
+        price: 0,
+        size: defaultLangObject,
+        name: defaultLangObject
     }
 
     const [artWorks, setArtWorks] = useState<PresaleArtWorks>([defaultArtwork])

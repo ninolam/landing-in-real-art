@@ -170,8 +170,8 @@ export type PresaleNftCollectionTexts = {
 }
 
 export type PresaleNftCollectionButtons = {
-    buyLeloluceNft : Record<Lang, string>
-    preBuyLeloluceNft : Record<Lang, string>
+    buyLeloluceNft: Record<Lang, string>
+    preBuyLeloluceNft: Record<Lang, string>
     viewMoreNfts: Record<Lang, string>
 }
 
@@ -183,7 +183,7 @@ export type PresaleNftTopCreators = {
     card1: PresaleNftTopCreator
     card2: PresaleNftTopCreator
     card3: PresaleNftTopCreator
-} 
+}
 
 export type PresaleNftTopCreator = {
     artistDescription: Record<Lang, string>
@@ -195,11 +195,11 @@ export type PresaleNftTopCreator = {
 export type PresaleNftTopCreatorsTexts = {
     mainDescription: Record<Lang, string>
     mainTitle: Record<Lang, string>
-} 
+}
 
 export type PresaleNftTopCreatorsButtons = {
     discoverRwa: Record<Lang, string>
-} 
+}
 
 export type TosTexts = {
     mainTitle: Record<Lang, string>
@@ -339,6 +339,8 @@ export type PresaleArtWork = {
     url: string
     url2: string
     price: number
+    size: Record<Lang, string>
+    name: Record<Lang, string>
 }
 
 export type CollectionLeloluceNfts = Array<LeloluceNft>
@@ -420,6 +422,8 @@ export interface AcquireModalProps {
     description: string
     imagePath: string
     imageUrl: string
+    name: string
+    size: string
     price: number
     msgSuccessEmail: string
     msgErrorEmail: string

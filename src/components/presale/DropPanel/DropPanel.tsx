@@ -27,6 +27,8 @@ const DropPanel: React.FC = () => {
     const [isAcquireModalOpen, setIsAcquireModalOpen] = useState(false)
     const [modalContent, setModalContent] = useState<string>('')
     const [acquireModalContent, setAcquireModalContent] = useState<string>('')
+    const [acquireModalTitle, setAcquireModalTitle] = useState<string>('')
+    const [acquireModalSize, setAcquireModalSize] = useState<string>('')
     const [acquireModalPrice, setAcquireModalPrice] = useState<number>(0)
     const [acquireModalImageUrl, setAcquireModalImageUrl] = useState<string>('')
     const [acquireModalImagePath, setAcquireModalImagePath] = useState<string>('')
@@ -48,12 +50,14 @@ const DropPanel: React.FC = () => {
         setIsModalOpen(true)
     }
 
-    const showAcquireModal = (description: string, buttonBuyStripe: string, imagePath: string, imageUrl: string, price: number) => {
+    const showAcquireModal = (name: string, description: string, size: string, buttonBuyStripe: string, imagePath: string, imageUrl: string, price: number) => {
         setAcquireModalContent(description.slice(0, 100))
         setAcquireButtonBuyStripe(buttonBuyStripe)
         setAcquireModalImagePath(imagePath)
         setAcquireModalImageUrl(imageUrl)
         setAcquireModalPrice(price)
+        setAcquireModalTitle(name)
+        setAcquireModalSize(size)
         setIsAcquireModalOpen(true)
     }
 
@@ -83,7 +87,7 @@ const DropPanel: React.FC = () => {
         )
     }
     
-    const AcquireModal: React.FC<AcquireModalProps> = ({ description, buttonBuyStripe, imagePath, imageUrl, price, msgSuccessEmail, msgErrorEmail }) => {
+    const AcquireModal: React.FC<AcquireModalProps> = ({ name, description, size, buttonBuyStripe, imagePath, imageUrl, price, msgSuccessEmail, msgErrorEmail }) => {
         const [email, setEmail]               = useState<string>('')
         const [isEmailValid, setEmailValid]   = useState<boolean>(true)
         const toast = useToast()
@@ -147,9 +151,9 @@ const DropPanel: React.FC = () => {
                             borderRadius='lg'
                             />
                             <Stack mt='6' spacing='3'>
-                            <Heading size='md'>Artwork</Heading>
+                            <Heading size='md'><b>{name}</b></Heading>
                             <Text>
-                                {parse(description)}
+                                {size}
                             </Text>
                             <Text color='blue.600' fontSize='2xl'>
                                 {price} €
@@ -259,7 +263,7 @@ const DropPanel: React.FC = () => {
                             </div>    
                             <button 
                                 style={{visibility: showDesign === index+1?`hidden`:`visible`}}
-                                className={styles["button-2"]} onClick={() => {showAcquireModal(artwork.description[lang_], buttons.buyArtworkNow[lang_], artwork.image, artwork.url, artwork.price)}}>
+                                className={styles["button-2"]} onClick={() => {showAcquireModal(artwork.name[lang_], artwork.description[lang_], artwork.size[lang_], buttons.buyArtworkNow[lang_], artwork.image, artwork.url, artwork.price)}}>
                                 <div className={styles["textButtonAcquire"]}>
                                         {buttons.acquireArtWork[lang_]}
                                 </div>
@@ -281,7 +285,9 @@ const DropPanel: React.FC = () => {
                 )}
                 {isAcquireModalOpen && (
                     <AcquireModal 
+                        name={acquireModalTitle}
                         description={acquireModalContent} 
+                        size={acquireModalSize}
                         buttonBuyStripe={acquireButtonBuyStripe} 
                         imagePath={acquireModalImagePath} 
                         imageUrl={acquireModalImageUrl} 
