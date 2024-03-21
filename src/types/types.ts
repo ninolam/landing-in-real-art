@@ -341,6 +341,8 @@ export type PresaleArtWork = {
     price: number
     size: Record<Lang, string>
     name: Record<Lang, string>
+    order: number
+    mockups: string[]
 }
 
 export type CollectionLeloluceNfts = Array<LeloluceNft>
@@ -387,6 +389,7 @@ export type TestnetProsCard = {
 
 export interface PresaleDropPanelButtons {
     acquireArtWork: Record<Lang, string>,
+    seeMoreImages: Record<Lang, string>,
     buyArtworkNow: Record<Lang, string>,
     closeArtworkDetail: Record<Lang, string>,
     detailArtWork: Record<Lang, string>,
@@ -410,11 +413,10 @@ export interface PresaleDropPanelTexts {
 export type PresaleDropPanelData = PresaleDropPanelArtworks & PresaleDropPanelButtons & PresaleDropPanelTexts
 
 export interface ModalProps {
+    title: string
     description: string
-    closeButton?: string
-    /*
-    onClose: () => void
-    */
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>
+    showModal: boolean
 }
 
 export interface AcquireModalProps {
@@ -427,6 +429,8 @@ export interface AcquireModalProps {
     price: number
     msgSuccessEmail: string
     msgErrorEmail: string
+    showModal: boolean
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export interface BuyModalProps {

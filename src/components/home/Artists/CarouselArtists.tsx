@@ -10,6 +10,7 @@ import { useAppContext } from "../../../context";
 import { db } from '../../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import Artist from './Artist'
+import Link from 'next/link'
 
 const CarouselArtists = () => {
 
@@ -85,7 +86,9 @@ const CarouselArtists = () => {
                         allArtists.map(
                             (record, index) => (
                                 <Carousel.Item key={index}> 
+                                <Link href="/presale#dropPanel">
                                     <Artist name={record.name} image={record.image} desc={record.desc[lang_]} />
+                                    </Link>
                                 </Carousel.Item>
                                 
                             )

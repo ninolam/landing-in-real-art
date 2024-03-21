@@ -99,7 +99,7 @@ const Menu = () => {
                     </path>
                 </svg>
               </div>
-              <MenuMobile isOpen={isMenuMobileOpen} handleIsOpen={toggleMenu}/>
+              {isMenuMobileOpen && <MenuMobile isOpen={isMenuMobileOpen} closeMenu={toggleMenu}/>}
               {/*  Hamburger Menu End*/}
             </>
             }
