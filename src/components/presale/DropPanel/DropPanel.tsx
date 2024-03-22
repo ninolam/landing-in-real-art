@@ -33,22 +33,20 @@ const DropPanel: React.FC = () => {
       />
     );
   }
-  console.log(loading, buttons.detailArtWork);
 
   return (
     <>
       <div id="dropPanel" className={styles["grid-wrapper"]}>
-        {/*
-                    <div className={styles["header"]}>
-                        <div className={styles["frame-7"]}>
-                            <div className={styles["text-wrapper-3"]}>{texts.endDrop[lang_]}</div>
-                        </div>
-                        <div className={styles["text-wrapper-4"]}>
-                            <CountdownTimer endDate="2024-04-05T00:00:00" />
-                        </div>
-                    </div>
-                    */}
-
+        <div className={styles["header"]}>
+          <div className={styles["frame-7"]}>
+            <div className={styles["text-wrapper-3"]}>
+              {texts.endDrop[lang_]}
+            </div>
+          </div>
+          <div className={styles["text-wrapper-4"]}>
+            {new Date('2024-04-10T12:00:00').toLocaleDateString() + ""}
+          </div>
+        </div>
         <div className={styles["image-grid"]}>
           {artWorks.slice(0, visibleCount).map((artwork, index) => (
             <ArtworkCard
