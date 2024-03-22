@@ -181,8 +181,9 @@
   align-items: center;
   padding: 10px;
   background-color: #f0f0f0; /* Background color for the header */
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
+  margin-bottom: 70px;
 }
 
 .grid-wrapper {
@@ -203,7 +204,8 @@
 }
 
 .img--noBorder {
-    border: none;
+    border: none!important;
+    box-shadow: none;
 }
 
 .img-main {
@@ -238,7 +240,7 @@
   gap: 40px 10px; /* space between images */
   margin: 0 auto; //Center horizontally the dic according to its parent
   padding: 0px;
-  width: 70%;
+  width: 80%;
 }
 
 .image-container {
@@ -381,6 +383,10 @@
   /* For screens wider than 500px, adjust to 2x3 grid */
   .image-grid {
     grid-template-columns: repeat(2, 1fr);
+    width: 75%;
+  }
+  .header {
+    width: 75%;
   }
 }
 
