@@ -343,6 +343,8 @@ export type PresaleArtWork = {
     name: Record<Lang, string>
     order: number
     mockups: string[]
+    noBorder: boolean
+    desactivate: boolean
 }
 
 export type CollectionLeloluceNfts = Array<LeloluceNft>
