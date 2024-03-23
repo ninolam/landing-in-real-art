@@ -431,6 +431,7 @@ export interface AcquireModalProps {
     price: number
     msgSuccessEmail: string
     msgErrorEmail: string
+    titleFormEmail: string
     showModal: boolean
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 }
