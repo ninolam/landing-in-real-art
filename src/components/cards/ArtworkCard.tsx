@@ -97,6 +97,7 @@ const ArtworkCard = ({ id, artwork, buttons, texts }: ArtworkCardProps) => {
         price={price}
         msgSuccessEmail={texts.msgSuccessEmail[lang_]}
         msgErrorEmail={texts.msgErrorEmail[lang_]}
+        titleFormEmail={texts.titleFormEmail[lang_]}
       />
     </section>
   );
